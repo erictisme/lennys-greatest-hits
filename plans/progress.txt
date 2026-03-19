@@ -13,3 +13,5 @@ Task 6: Created 12 Suno prompt JSON files in content/suno-prompts/ with full sty
 Each follows the vocal-forward style formula with genre-specific instruments, reference artists, BPM, and key.
 Task 7: SKIPPED — no .env.local file with SUNO_COOKIE found. Suno API generation not possible.
 Fallback prompts from Task 6 (content/suno-prompts/) are ready for manual copy-paste into suno.com.
+Task 8: Scaffolded Next.js project with TypeScript, Tailwind v4, ESLint, shadcn/ui, and all deps (framer-motion, lucide-react, posthog-js, wavesurfer.js).
+Dev server runs successfully on localhost.

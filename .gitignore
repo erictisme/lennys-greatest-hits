@@ -3,3 +3,7 @@ node_modules/
 .next/
 public/audio/*.mp3
 logs/
+.DS_Store
+*.tsbuildinfo
+next-env.d.ts
+.vercel

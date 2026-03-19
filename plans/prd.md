@@ -238,7 +238,7 @@ Use the unofficial Suno API. Set up a simple Node.js script at `scripts/generate
 
   **Exit**: 20+ demo MP3 files in `public/audio/`, generation log showing status
 
-- [ ] **Task 8: Scaffold Next.js project**
+- [x] **Task 8: Scaffold Next.js project**
   Initialize the web app. Run in the project root:
   ```
   pnpm create next-app@latest . --typescript --tailwind --eslint --app --src-dir=false --import-alias="@/*" --turbopack
