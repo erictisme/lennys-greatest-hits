@@ -31,7 +31,12 @@ export default function AlbumPageClient({ slug }: { slug: string }) {
   };
 
   return (
-    <div className="flex flex-col min-h-screen">
+    <motion.div
+      className="flex flex-col min-h-screen"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.3 }}
+    >
       {/* Album Header */}
       <header
         className={`${gradientClass[album.slug] ?? ""} px-4 sm:px-6 pt-8 pb-10 sm:pb-12`}
@@ -179,6 +184,6 @@ export default function AlbumPageClient({ slug }: { slug: string }) {
           </p>
         </div>
       </footer>
-    </div>
+    </motion.div>
   );
 }

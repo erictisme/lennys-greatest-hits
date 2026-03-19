@@ -46,10 +46,47 @@ export function AudioProvider({ children }: { children: ReactNode }) {
   const [duration, setDuration] = useState(0);
   const [queue, setQueue] = useState<Track[]>([]);
 
+  // Restore last-played track from localStorage on mount
+  useEffect(() => {
+    try {
+      const saved = localStorage.getItem("lgh-last-track");
+      if (saved) {
+        const slug = JSON.parse(saved);
+        const allTracks = getAllTracks();
+        const track = allTracks.find((t) => t.slug === slug);
+        if (track) {
+          setCurrentTrack(track);
+          const albumTracks = allTracks.filter((t) => t.albumSlug === track.albumSlug);
+          setQueue(albumTracks);
+        }
+      }
+    } catch {
+      // ignore
+    }
+  }, []);
+
+  // Persist current track slug to localStorage
+  useEffect(() => {
+    if (currentTrack) {
+      try {
+        localStorage.setItem("lgh-last-track", JSON.stringify(currentTrack.slug));
+      } catch {
+        // ignore
+      }
+    }
+  }, [currentTrack]);
+
   // Create audio element once on mount
   useEffect(() => {
     const audio = new Audio();
     audio.preload = "metadata";
+    // Restore saved volume
+    try {
+      const savedVol = localStorage.getItem("lgh-volume");
+      if (savedVol) audio.volume = parseFloat(savedVol);
+    } catch {
+      // ignore
+    }
     audioRef.current = audio;
 
     const onTimeUpdate = () => setCurrentTime(audio.currentTime);
@@ -73,11 +110,16 @@ export function AudioProvider({ children }: { children: ReactNode }) {
     const onPlay = () => setIsPlaying(true);
     const onPause = () => setIsPlaying(false);
 
+    const onVolumeChange = () => {
+      try { localStorage.setItem("lgh-volume", String(audio.volume)); } catch { /* ignore */ }
+    };
+
     audio.addEventListener("timeupdate", onTimeUpdate);
     audio.addEventListener("loadedmetadata", onLoadedMetadata);
     audio.addEventListener("ended", onEnded);
     audio.addEventListener("play", onPlay);
     audio.addEventListener("pause", onPause);
+    audio.addEventListener("volumechange", onVolumeChange);
 
     return () => {
       audio.removeEventListener("timeupdate", onTimeUpdate);
@@ -85,6 +127,7 @@ export function AudioProvider({ children }: { children: ReactNode }) {
       audio.removeEventListener("ended", onEnded);
       audio.removeEventListener("play", onPlay);
       audio.removeEventListener("pause", onPause);
+      audio.removeEventListener("volumechange", onVolumeChange);
       audio.pause();
       audio.src = "";
     };

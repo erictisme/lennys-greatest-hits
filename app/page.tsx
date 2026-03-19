@@ -54,7 +54,8 @@ export default function Home() {
             >
               <Link href={`/album/${album.slug}`} className="block group">
                 <div
-                  className={`${gradientClass[album.slug] ?? ""} card-glass rounded-xl p-6 sm:p-8 transition-all duration-300 group-hover:scale-[1.02] group-hover:shadow-lg`}
+                  className={`${gradientClass[album.slug] ?? ""} card-glass card-glow rounded-xl p-6 sm:p-8 transition-all duration-300 group-hover:scale-[1.02]`}
+                  style={{ "--glow-color": album.accentColor } as React.CSSProperties}
                 >
                   {/* Accent bar */}
                   <div

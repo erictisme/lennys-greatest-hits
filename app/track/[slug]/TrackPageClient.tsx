@@ -89,7 +89,12 @@ export default function TrackPageClient({ slug }: { slug: string }) {
   const progress = duration > 0 ? (currentTime / duration) * 100 : 0;
 
   return (
-    <div className="flex flex-col min-h-screen">
+    <motion.div
+      className="flex flex-col min-h-screen"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.3 }}
+    >
       {/* Header */}
       <header
         className={`${gradientClass[album.slug] ?? ""} px-4 sm:px-6 pt-8 pb-8 sm:pb-10`}
@@ -292,6 +297,6 @@ export default function TrackPageClient({ slug }: { slug: string }) {
           )}
         </div>
       </nav>
-    </div>
+    </motion.div>
   );
 }

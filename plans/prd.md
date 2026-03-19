@@ -401,7 +401,7 @@ Use the unofficial Suno API. Set up a simple Node.js script at `scripts/generate
 
   **Exit**: Sharing any URL on X/LinkedIn shows a beautiful preview card
 
-- [ ] **Task 19: Polish — animations + loading states**
+- [x] **Task 19: Polish — animations + loading states**
   - Framer Motion page transitions (subtle fade)
   - Album card hover effects (slight scale + glow)
   - Staggered track list entrance on album pages

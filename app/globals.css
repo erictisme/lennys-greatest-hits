@@ -118,6 +118,15 @@
   border-color: rgba(255, 255, 255, 0.1);
 }
 
+/* Album card glow on hover — set --glow-color via inline style */
+.card-glow {
+  transition: box-shadow 0.3s ease;
+}
+
+.card-glow:hover {
+  box-shadow: 0 0 32px -8px var(--glow-color, rgba(255, 255, 255, 0.1));
+}
+
 /* Album gradient backgrounds */
 .gradient-founders {
   background: linear-gradient(135deg, rgba(245, 158, 11, 0.15) 0%, rgba(245, 158, 11, 0.03) 100%);
