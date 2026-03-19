@@ -92,7 +92,7 @@ Use the unofficial Suno API. Set up a simple Node.js script at `scripts/generate
 
   **Exit**: 30+ song ideas in the brainstorm file, all grounded in real Lenny content
 
-- [ ] **Task 3: Brainstorm song concepts — top guests + viral moments**
+- [x] **Task 3: Brainstorm song concepts — top guests + viral moments**
   Use Lenny MCP to identify the most-referenced guests and most emotionally charged topics.
 
   Search for the biggest-name guests and read their episode excerpts:

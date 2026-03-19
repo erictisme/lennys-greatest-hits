@@ -3,3 +3,5 @@ Task 1: Created scripts/generate-songs.ts with Suno API integration (auth, gener
 Script loads SUNO_COOKIE from .env.local, supports --test, --file, and --all modes.
 Task 2: Created content/brainstorm/iconic-concepts.md with 32 song ideas grounded in Lenny's archive.
 Lenny MCP unavailable — used deep knowledge of archive. Covers all themes: founding, product, growth, burnout, AI, hiring, etc.
+Task 3: Created content/brainstorm/top-guests.md with 18 guest-specific song ideas across 12+ top guests.
+Covers Chesky, Shreyas, Vohra, Verna, Bier, Cagan, Rabois, Fried/DHH, Caldwell, Dunford, Mehta, Winters + cross-guest debates and emotional moments.
