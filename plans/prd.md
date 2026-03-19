@@ -355,7 +355,7 @@ Use the unofficial Suno API. Set up a simple Node.js script at `scripts/generate
 
   **Exit**: Bottom player shows when a track is playing, persists across page navigation, controls work
 
-- [ ] **Task 15: Responsive layout pass**
+- [x] **Task 15: Responsive layout pass**
   Ensure all pages look great on mobile (375px), tablet (768px), and desktop (1024px+).
 
   - Landing: 1-column album grid on mobile, 2x2 on desktop

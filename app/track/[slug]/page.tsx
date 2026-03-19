@@ -107,7 +107,7 @@ export default function TrackPage({
     <div className="flex flex-col min-h-screen">
       {/* Header */}
       <header
-        className={`${gradientClass[album.slug] ?? ""} px-6 pt-8 pb-10`}
+        className={`${gradientClass[album.slug] ?? ""} px-4 sm:px-6 pt-8 pb-8 sm:pb-10`}
       >
         <div className="max-w-2xl mx-auto w-full">
           <Link
@@ -140,7 +140,7 @@ export default function TrackPage({
       </header>
 
       {/* Audio Player */}
-      <div className="px-6 py-6 border-b border-border/30">
+      <div className="px-4 sm:px-6 py-5 sm:py-6 border-b border-border/30">
         <div className="max-w-2xl mx-auto w-full">
           {/* Controls */}
           <div className="flex items-center justify-center gap-6 mb-4">
@@ -197,7 +197,7 @@ export default function TrackPage({
       </div>
 
       {/* Main Content */}
-      <main className="flex-1 px-6 py-8 max-w-2xl mx-auto w-full">
+      <main className="flex-1 px-4 sm:px-6 py-6 sm:py-8 max-w-2xl mx-auto w-full">
         {/* Key Quote */}
         {track.keyQuote && (
           <motion.blockquote
@@ -277,7 +277,7 @@ export default function TrackPage({
       </main>
 
       {/* Prev / Next Navigation */}
-      <nav className="border-t border-border/30 px-6 py-6">
+      <nav className="border-t border-border/30 px-4 sm:px-6 py-5 sm:py-6">
         <div className="max-w-2xl mx-auto flex justify-between">
           {prevTrack ? (
             <Link

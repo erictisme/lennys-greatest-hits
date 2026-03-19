@@ -40,7 +40,7 @@ export default function AlbumPage({
     <div className="flex flex-col min-h-screen">
       {/* Album Header */}
       <header
-        className={`${gradientClass[album.slug] ?? ""} px-6 pt-8 pb-12`}
+        className={`${gradientClass[album.slug] ?? ""} px-4 sm:px-6 pt-8 pb-10 sm:pb-12`}
       >
         <div className="max-w-3xl mx-auto w-full">
           <Link
@@ -94,7 +94,7 @@ export default function AlbumPage({
       </header>
 
       {/* Track List */}
-      <main className="flex-1 px-6 py-8 max-w-3xl mx-auto w-full">
+      <main className="flex-1 px-4 sm:px-6 py-6 sm:py-8 max-w-3xl mx-auto w-full">
         <div className="flex flex-col">
           {album.tracks.map((track, i) => {
             const isCurrentTrack = audio.currentTrack?.slug === track.slug;
@@ -175,7 +175,7 @@ export default function AlbumPage({
       </main>
 
       {/* Footer */}
-      <footer className="border-t border-border/50 px-6 py-8">
+      <footer className="border-t border-border/50 px-4 sm:px-6 py-6 sm:py-8">
         <div className="max-w-3xl mx-auto text-center">
           <p className="text-xs text-muted-foreground/50">
             {album.tracks.length} tracks &middot;{" "}

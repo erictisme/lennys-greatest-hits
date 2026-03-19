@@ -18,7 +18,7 @@ export default function Home() {
   return (
     <div className="flex flex-col min-h-screen">
       {/* Hero */}
-      <header className="flex flex-col items-center justify-center px-6 pt-24 pb-16 text-center">
+      <header className="flex flex-col items-center justify-center px-4 sm:px-6 pt-16 sm:pt-24 pb-12 sm:pb-16 text-center">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -43,7 +43,7 @@ export default function Home() {
       </header>
 
       {/* Album Grid */}
-      <main className="flex-1 px-6 pb-16 max-w-4xl mx-auto w-full">
+      <main className="flex-1 px-4 sm:px-6 pb-16 max-w-4xl mx-auto w-full">
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           {albums.map((album, i) => (
             <motion.div
@@ -82,7 +82,7 @@ export default function Home() {
       </main>
 
       {/* About + Footer */}
-      <footer className="border-t border-border/50 px-6 py-12">
+      <footer className="border-t border-border/50 px-4 sm:px-6 py-8 sm:py-12">
         <div className="max-w-4xl mx-auto text-center">
           <p className="text-sm text-muted-foreground mb-2">
             Built from Lenny Rachitsky&apos;s archive of 349 newsletters and 289

@@ -27,3 +27,5 @@ Task 13: Created app/track/[slug]/page.tsx with accent gradient header, HTML5 au
 Uses getTrackBySlug(), getAlbumForTrack(), getAllTracks() for data and navigation. Framer Motion entrance animations.
 Task 14: Created lib/audio-context.tsx (AudioProvider with global play/pause/seek/next/prev/queue), components/NowPlayingBar.tsx (fixed bottom bar with progress, controls, track info).
 Wired into layout.tsx. Updated track page and album page to use global audio context. Play All and per-track play buttons now work with persistent playback across navigation.
+Task 15: Responsive layout pass — tightened mobile padding (px-4, reduced pt/py) on all pages, compact NowPlayingBar on mobile (smaller swatch/text, hidden skip+time), overflow-x-hidden on body.
+Already had 1-col/2x2 grid, full-width track list, stacked track layout, and hidden skip buttons — added mobile-first spacing refinements.
