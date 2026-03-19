@@ -194,7 +194,7 @@ Use the unofficial Suno API. Set up a simple Node.js script at `scripts/generate
 
   **Exit**: 12 complete sets of lyrics, all with proper Suno structure tags
 
-- [ ] **Task 6: Create Suno prompt sheets for all 12 songs**
+- [x] **Task 6: Create Suno prompt sheets for all 12 songs**
   For each song, create a complete Suno Custom Mode input file.
 
   **Style prompt formula** (this goes in Suno's "Style of Music" box):
