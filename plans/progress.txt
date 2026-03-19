@@ -7,3 +7,5 @@ Task 3: Created content/brainstorm/top-guests.md with 18 guest-specific song ide
 Covers Chesky, Shreyas, Vohra, Verna, Bier, Cagan, Rabois, Fried/DHH, Caldwell, Dunford, Mehta, Winters + cross-guest debates and emotional moments.
 Task 4: Curated final 12 songs (3 per album) in content/song-concepts/final-12.md.
 Founders: Do Things That Don't Scale, PMF, The Maze. Product: Taste, Eleven Stars, Talk to Users. Builders: Ship It, Vibe Coding, Feature Factory. Human Side: Imposter, Burnout, The IC Track.
+Task 5: Wrote full lyrics for all 12 songs in content/lyrics/ (01-12 .md files).
+Each has Suno structure tags, consistent syllable counts, genre-appropriate language, guest quotes woven in as hooks/chorus lines.

@@ -153,7 +153,7 @@ Use the unofficial Suno API. Set up a simple Node.js script at `scripts/generate
 
   **Exit**: 12 song concepts, 3 per album, all with detailed briefs
 
-- [ ] **Task 5: Write lyrics for all 12 songs**
+- [x] **Task 5: Write lyrics for all 12 songs**
   Write full lyrics for each of the 12 songs. This is the most important creative task.
 
   **Rules**:
