@@ -281,7 +281,7 @@ Use the unofficial Suno API. Set up a simple Node.js script at `scripts/generate
 
   **Exit**: Dark theme looks premium, not generic. Album accent colors defined and usable.
 
-- [ ] **Task 10: TypeScript types + data layer**
+- [x] **Task 10: TypeScript types + data layer**
   Create `lib/types.ts`:
   ```typescript
   type Album = { slug, title, subtitle, description, coverImage, accentColor, tracks }

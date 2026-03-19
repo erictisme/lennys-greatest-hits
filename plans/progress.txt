@@ -17,3 +17,5 @@ Task 8: Scaffolded Next.js project with TypeScript, Tailwind v4, ESLint, shadcn/
 Dev server runs successfully on localhost.
 Task 9: Dark music-app theme with #0a0a0a background, Inter font, album accent colors (amber/blue/emerald/violet), glass-morphism cards, gradient utilities.
 Updated layout.tsx with dark class on html, metadata for "Lenny's Greatest Hits".
+Task 10: Created lib/types.ts (Album, Track, LyricLine, Source types), lib/albums.ts (all 4 albums with 12 tracks fully populated from lyrics/concepts), lib/tracks.ts (getters).
+All data populated from song concepts and lyrics files. TypeScript compiles clean.
