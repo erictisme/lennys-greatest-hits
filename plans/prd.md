@@ -60,7 +60,7 @@ Use the unofficial Suno API. Set up a simple Node.js script at `scripts/generate
 
   **Exit**: Running `pnpm tsx scripts/generate-songs.ts --test` generates a test MP3 in `public/audio/test.mp3`
 
-- [ ] **Task 2: Brainstorm song concepts — iconic ideas (Lenny MCP)**
+- [x] **Task 2: Brainstorm song concepts — iconic ideas (Lenny MCP)**
   Use the Lenny MCP to search for the most culturally iconic ideas in the archive. Search for these terms and read excerpts from the top results:
 
   DO NOT just search narrow keywords. Cast a WIDE net across the entire archive:
