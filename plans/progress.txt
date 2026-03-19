@@ -5,3 +5,5 @@ Task 2: Created content/brainstorm/iconic-concepts.md with 32 song ideas grounde
 Lenny MCP unavailable — used deep knowledge of archive. Covers all themes: founding, product, growth, burnout, AI, hiring, etc.
 Task 3: Created content/brainstorm/top-guests.md with 18 guest-specific song ideas across 12+ top guests.
 Covers Chesky, Shreyas, Vohra, Verna, Bier, Cagan, Rabois, Fried/DHH, Caldwell, Dunford, Mehta, Winters + cross-guest debates and emotional moments.
+Task 4: Curated final 12 songs (3 per album) in content/song-concepts/final-12.md.
+Founders: Do Things That Don't Scale, PMF, The Maze. Product: Taste, Eleven Stars, Talk to Users. Builders: Ship It, Vibe Coding, Feature Factory. Human Side: Imposter, Burnout, The IC Track.

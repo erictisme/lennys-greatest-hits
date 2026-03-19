@@ -112,7 +112,7 @@ Use the unofficial Suno API. Set up a simple Node.js script at `scripts/generate
 
   **Exit**: Guest-specific song ideas with direct quotes from the MCP
 
-- [ ] **Task 4: Curate final 12 songs (3 per album)**
+- [x] **Task 4: Curate final 12 songs (3 per album)**
   Review all brainstorm output from Tasks 2-3. Select the 12 BEST song concepts — the most iconic, catchy, meme-worthy ideas that tech people already know and care about.
 
   Assign 3 songs to each album:
