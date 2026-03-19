@@ -1,0 +1,21 @@
+{
+  "name": "lenny-greatest-hits",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "generate:test": "tsx scripts/generate-songs.ts --test",
+    "generate:all": "tsx scripts/generate-songs.ts --all"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "packageManager": "pnpm@10.32.1",
+  "devDependencies": {
+    "@types/node": "^25.5.0",
+    "dotenv": "^17.3.1",
+    "tsx": "^4.21.0",
+    "typescript": "^5.9.3"
+  }
+}
