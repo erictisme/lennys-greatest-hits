@@ -23,3 +23,5 @@ Task 11: Built landing page with hero section, 4 album cards in 2x2 grid with ac
 Build passes clean. Uses getAllAlbums() data layer, responsive 1-col mobile / 2x2 desktop grid.
 Task 12: Created app/album/[slug]/page.tsx with album header (accent gradient, title, subtitle, description), Play All button, numbered track list with hover play icons, duration, and genre/mood info.
 Uses getAlbumBySlug(), Framer Motion staggered track entrance, back link to home, responsive layout.
+Task 13: Created app/track/[slug]/page.tsx with accent gradient header, HTML5 audio player with play/pause/seek/progress, lyrics display, source attribution links, share button, and prev/next track navigation.
+Uses getTrackBySlug(), getAlbumForTrack(), getAllTracks() for data and navigation. Framer Motion entrance animations.

@@ -322,7 +322,7 @@ Use the unofficial Suno API. Set up a simple Node.js script at `scripts/generate
 
   **Exit**: Album page renders with 3 tracks, numbered and playable (or showing "play" buttons that work with placeholder audio)
 
-- [ ] **Task 13: Track view page**
+- [x] **Task 13: Track view page**
   Create `app/track/[slug]/page.tsx`.
 
   Design:
