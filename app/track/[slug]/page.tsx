@@ -15,6 +15,7 @@ import { motion } from "framer-motion";
 import { getTrackBySlug, getAlbumForTrack, getAllTracks } from "@/lib/tracks";
 import { notFound } from "next/navigation";
 import { useAudio } from "@/lib/audio-context";
+import SyncedLyrics from "@/components/SyncedLyrics";
 
 const gradientClass: Record<string, string> = {
   founders: "gradient-founders",
@@ -23,15 +24,6 @@ const gradientClass: Record<string, string> = {
   "the-human-side": "gradient-human",
 };
 
-function parseDisplayLyrics(raw: string): string[] {
-  return raw
-    .split("\n")
-    .filter(
-      (line) =>
-        line.trim() !== "" &&
-        !line.trim().startsWith("[")
-    );
-}
 
 export default function TrackPage({
   params,
@@ -100,7 +92,6 @@ export default function TrackPage({
     }
   };
 
-  const lyricLines = parseDisplayLyrics(track.lyrics);
   const progress = duration > 0 ? (currentTime / duration) * 100 : 0;
 
   return (
@@ -216,21 +207,19 @@ export default function TrackPage({
           </motion.blockquote>
         )}
 
-        {/* Lyrics */}
+        {/* Synced Lyrics */}
         <section className="mb-10">
           <h2 className="text-xs font-medium uppercase tracking-widest text-muted-foreground/50 mb-4">
             Lyrics
           </h2>
-          <div className="space-y-1">
-            {lyricLines.map((line, i) => (
-              <p
-                key={i}
-                className="text-[15px] leading-relaxed text-muted-foreground/80"
-              >
-                {line}
-              </p>
-            ))}
-          </div>
+          <SyncedLyrics
+            lyrics={track.lyrics}
+            currentTime={currentTime}
+            duration={duration}
+            isPlaying={isPlaying}
+            accentColor={album.accentColor}
+            onSeek={(time) => audio.seek(time)}
+          />
         </section>
 
         {/* Source Attribution */}

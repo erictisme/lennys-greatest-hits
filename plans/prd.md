@@ -365,7 +365,7 @@ Use the unofficial Suno API. Set up a simple Node.js script at `scripts/generate
 
   **Exit**: All pages responsive, no horizontal scroll on mobile
 
-- [ ] **Task 16: Synced lyrics display**
+- [x] **Task 16: Synced lyrics display**
   Upgrade the track page lyrics from static text to a synced display.
 
   - Current lyric line highlighted (brighter text, slightly larger)
