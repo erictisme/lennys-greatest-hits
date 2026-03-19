@@ -33,3 +33,5 @@ Task 16: Created components/SyncedLyrics.tsx — lyrics highlight and auto-scrol
 Updated track page to use SyncedLyrics instead of static text. Active line uses album accent color, surrounding lines dim. Quote lines styled italic with speaker attribution.
 Task 17: Created ShareLyricModal component with html2canvas-pro for PNG card generation. Share icon appears on hover for each lyric line.
 Modal shows styled card preview (lyric, accent gradient, attribution, watermark) with Download PNG, Share on X, and LinkedIn buttons.
+Task 18: Created app/api/og/route.tsx with dynamic OG images for tracks (title + key lyric + accent gradient), albums (title + track list), and default landing (4 album color grid).
+Refactored track/album pages into server wrappers with generateMetadata + client components. Added metadataBase, twitter cards, and OpenGraph metadata to all pages.

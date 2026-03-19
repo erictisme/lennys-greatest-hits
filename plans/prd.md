@@ -390,7 +390,7 @@ Use the unofficial Suno API. Set up a simple Node.js script at `scripts/generate
 
   **Exit**: Tapping a lyric shows a shareable card, download works
 
-- [ ] **Task 18: OG images for sharing**
+- [x] **Task 18: OG images for sharing**
   Create dynamic OG images via `app/api/og/route.tsx`:
 
   - `/api/og?type=track&slug=xxx` — track card: blurred album color background, track title, one key lyric, album name

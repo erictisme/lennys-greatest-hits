@@ -15,9 +15,33 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(
+    process.env.NEXT_PUBLIC_SITE_URL || "https://lennys-greatest-hits.vercel.app"
+  ),
   title: "Lenny's Greatest Hits",
   description:
     "Tech culture anthems from 638 episodes of Lenny's Podcast — real, catchy songs built from the best insights in product, startups, and building.",
+  openGraph: {
+    title: "Lenny's Greatest Hits",
+    description:
+      "12 songs from 638 episodes. The insights you quote on X, turned into music you can feel.",
+    type: "website",
+    images: [
+      {
+        url: "/api/og",
+        width: 1200,
+        height: 630,
+        alt: "Lenny's Greatest Hits — Tech Culture Anthems",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Lenny's Greatest Hits",
+    description:
+      "12 songs from 638 episodes. The insights you quote on X, turned into music you can feel.",
+    images: ["/api/og"],
+  },
 };
 
 export default function RootLayout({
