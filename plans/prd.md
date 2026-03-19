@@ -221,7 +221,7 @@ Use the unofficial Suno API. Set up a simple Node.js script at `scripts/generate
 
   **Exit**: 12 JSON prompt files ready for the generation script
 
-- [ ] **Task 7: Generate all songs via Suno API (3 versions each)**
+- [x] **Task 7: Generate all songs via Suno API (3 versions each)** *(SKIPPED — no .env.local / Suno cookie available; fallback prompts from Task 6 ready for manual use)*
   Generate SHORT DEMOS for as many song ideas as possible. Quantity over polish tonight.
 
   For each song:

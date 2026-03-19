@@ -11,3 +11,5 @@ Task 5: Wrote full lyrics for all 12 songs in content/lyrics/ (01-12 .md files).
 Each has Suno structure tags, consistent syllable counts, genre-appropriate language, guest quotes woven in as hooks/chorus lines.
 Task 6: Created 12 Suno prompt JSON files in content/suno-prompts/ with full style prompts and lyrics.
 Each follows the vocal-forward style formula with genre-specific instruments, reference artists, BPM, and key.
+Task 7: SKIPPED — no .env.local file with SUNO_COOKIE found. Suno API generation not possible.
+Fallback prompts from Task 6 (content/suno-prompts/) are ready for manual copy-paste into suno.com.
