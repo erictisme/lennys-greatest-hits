@@ -21,3 +21,5 @@ Task 10: Created lib/types.ts (Album, Track, LyricLine, Source types), lib/album
 All data populated from song concepts and lyrics files. TypeScript compiles clean.
 Task 11: Built landing page with hero section, 4 album cards in 2x2 grid with accent gradients, staggered Framer Motion animations, and footer with credits.
 Build passes clean. Uses getAllAlbums() data layer, responsive 1-col mobile / 2x2 desktop grid.
+Task 12: Created app/album/[slug]/page.tsx with album header (accent gradient, title, subtitle, description), Play All button, numbered track list with hover play icons, duration, and genre/mood info.
+Uses getAlbumBySlug(), Framer Motion staggered track entrance, back link to home, responsive layout.

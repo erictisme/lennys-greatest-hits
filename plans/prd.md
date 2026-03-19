@@ -311,7 +311,7 @@ Use the unofficial Suno API. Set up a simple Node.js script at `scripts/generate
 
   **Exit**: Landing page renders with 4 album cards, looks like a real music platform
 
-- [ ] **Task 12: Album view page**
+- [x] **Task 12: Album view page**
   Create `app/album/[slug]/page.tsx`.
 
   Design:
