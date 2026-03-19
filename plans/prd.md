@@ -377,7 +377,7 @@ Use the unofficial Suno API. Set up a simple Node.js script at `scripts/generate
 
   **Exit**: Lyrics highlight and scroll as the song plays
 
-- [ ] **Task 17: "Share a Lyric" feature**
+- [x] **Task 17: "Share a Lyric" feature**
   The key viral mechanic. When user taps/clicks any lyric line:
 
   1. Show a preview of a shareable card: the lyric text in large bold font, album art as blurred background, album name + track title at bottom, "lennys-greatest-hits.vercel.app" watermark

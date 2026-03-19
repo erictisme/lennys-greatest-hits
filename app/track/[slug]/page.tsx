@@ -218,6 +218,8 @@ export default function TrackPage({
             duration={duration}
             isPlaying={isPlaying}
             accentColor={album.accentColor}
+            trackTitle={track.title}
+            albumTitle={album.title}
             onSeek={(time) => audio.seek(time)}
           />
         </section>

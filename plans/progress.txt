@@ -31,3 +31,5 @@ Task 15: Responsive layout pass — tightened mobile padding (px-4, reduced pt/p
 Already had 1-col/2x2 grid, full-width track list, stacked track layout, and hidden skip buttons — added mobile-first spacing refinements.
 Task 16: Created components/SyncedLyrics.tsx — lyrics highlight and auto-scroll as song plays, with click-to-seek. Lines evenly spaced across duration.
 Updated track page to use SyncedLyrics instead of static text. Active line uses album accent color, surrounding lines dim. Quote lines styled italic with speaker attribution.
+Task 17: Created ShareLyricModal component with html2canvas-pro for PNG card generation. Share icon appears on hover for each lyric line.
+Modal shows styled card preview (lyric, accent gradient, attribution, watermark) with Download PNG, Share on X, and LinkedIn buttons.

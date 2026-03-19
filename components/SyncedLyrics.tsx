@@ -1,6 +1,8 @@
 "use client";
 
-import { useRef, useEffect, useMemo } from "react";
+import { useRef, useEffect, useMemo, useState } from "react";
+import { Share2 } from "lucide-react";
+import ShareLyricModal from "./ShareLyricModal";
 
 interface SyncedLine {
   text: string;
@@ -16,6 +18,8 @@ interface SyncedLyricsProps {
   duration: number;
   isPlaying: boolean;
   accentColor: string;
+  trackTitle: string;
+  albumTitle: string;
   onSeek: (time: number) => void;
 }
 
@@ -77,10 +81,13 @@ export default function SyncedLyrics({
   duration,
   isPlaying,
   accentColor,
+  trackTitle,
+  albumTitle,
   onSeek,
 }: SyncedLyricsProps) {
   const containerRef = useRef<HTMLDivElement>(null);
-  const lineRefs = useRef<(HTMLButtonElement | null)[]>([]);
+  const lineRefs = useRef<(HTMLDivElement | null)[]>([]);
+  const [shareLine, setShareLine] = useState<string | null>(null);
 
   const lines = useMemo(() => parseLyrics(lyrics, duration), [lyrics, duration]);
 
@@ -110,49 +117,69 @@ export default function SyncedLyrics({
   if (lines.length === 0) return null;
 
   return (
-    <div
-      ref={containerRef}
-      className="space-y-1"
-    >
-      {lines.map((line, i) => {
-        const isActive = i === activeIndex;
-        const isNear = Math.abs(i - activeIndex) <= 2;
-        const hasActiveState = activeIndex >= 0 && duration > 0;
+    <>
+      <div ref={containerRef} className="space-y-1">
+        {lines.map((line, i) => {
+          const isActive = i === activeIndex;
+          const isNear = Math.abs(i - activeIndex) <= 2;
+          const hasActiveState = activeIndex >= 0 && duration > 0;
 
-        let opacity = 1;
-        if (hasActiveState) {
-          if (isActive) opacity = 1;
-          else if (isNear) opacity = 0.5;
-          else opacity = 0.3;
-        } else {
-          opacity = 0.8;
-        }
+          let opacity = 1;
+          if (hasActiveState) {
+            if (isActive) opacity = 1;
+            else if (isNear) opacity = 0.5;
+            else opacity = 0.3;
+          } else {
+            opacity = 0.8;
+          }
 
-        return (
-          <button
-            key={i}
-            ref={(el) => { lineRefs.current[i] = el; }}
-            onClick={() => {
-              if (duration > 0) onSeek(line.time);
-            }}
-            className="block w-full text-left transition-all duration-300 cursor-pointer rounded px-2 py-0.5 hover:bg-white/5"
-            style={{
-              opacity,
-              color: isActive ? accentColor : undefined,
-              fontSize: isActive ? "17px" : "15px",
-              fontWeight: isActive ? 600 : 400,
-              fontStyle: line.isQuote ? "italic" : undefined,
-            }}
-          >
-            {line.text}
-            {line.isQuote && line.speaker && (
-              <span className="text-xs text-muted-foreground/50 ml-2 not-italic">
-                — {line.speaker}
-              </span>
-            )}
-          </button>
-        );
-      })}
-    </div>
+          return (
+            <div
+              key={i}
+              ref={(el) => { lineRefs.current[i] = el; }}
+              className="group flex items-center gap-1 rounded hover:bg-white/5 transition-all duration-300"
+              style={{ opacity }}
+            >
+              <button
+                onClick={() => {
+                  if (duration > 0) onSeek(line.time);
+                }}
+                className="flex-1 text-left cursor-pointer px-2 py-0.5"
+                style={{
+                  color: isActive ? accentColor : undefined,
+                  fontSize: isActive ? "17px" : "15px",
+                  fontWeight: isActive ? 600 : 400,
+                  fontStyle: line.isQuote ? "italic" : undefined,
+                }}
+              >
+                {line.text}
+                {line.isQuote && line.speaker && (
+                  <span className="text-xs text-muted-foreground/50 ml-2 not-italic">
+                    — {line.speaker}
+                  </span>
+                )}
+              </button>
+              <button
+                onClick={() => setShareLine(line.text)}
+                className="opacity-0 group-hover:opacity-60 hover:!opacity-100 p-1.5 rounded-full hover:bg-white/10 transition-all shrink-0"
+                aria-label={`Share lyric: ${line.text}`}
+              >
+                <Share2 className="w-3.5 h-3.5" />
+              </button>
+            </div>
+          );
+        })}
+      </div>
+
+      {shareLine && (
+        <ShareLyricModal
+          lyric={shareLine}
+          trackTitle={trackTitle}
+          albumTitle={albumTitle}
+          accentColor={accentColor}
+          onClose={() => setShareLine(null)}
+        />
+      )}
+    </>
   );
 }
