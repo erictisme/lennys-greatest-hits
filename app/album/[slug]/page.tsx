@@ -2,10 +2,11 @@
 
 import { use } from "react";
 import Link from "next/link";
-import { ArrowLeft, Play, Clock } from "lucide-react";
+import { ArrowLeft, Play, Pause, Clock } from "lucide-react";
 import { motion } from "framer-motion";
 import { getAlbumBySlug } from "@/lib/tracks";
 import { notFound } from "next/navigation";
+import { useAudio } from "@/lib/audio-context";
 
 const gradientClass: Record<string, string> = {
   founders: "gradient-founders",
@@ -21,10 +22,19 @@ export default function AlbumPage({
 }) {
   const { slug } = use(params);
   const album = getAlbumBySlug(slug);
+  const audio = useAudio();
 
   if (!album) {
     notFound();
   }
+
+  const handlePlayAll = () => {
+    audio.playAlbum(album.slug, 0);
+  };
+
+  const handlePlayTrack = (index: number) => {
+    audio.playAlbum(album.slug, index);
+  };
 
   return (
     <div className="flex flex-col min-h-screen">
@@ -69,6 +79,7 @@ export default function AlbumPage({
             className="mt-6"
           >
             <button
+              onClick={handlePlayAll}
               className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-medium transition-colors"
               style={{
                 backgroundColor: album.accentColor,
@@ -85,52 +96,81 @@ export default function AlbumPage({
       {/* Track List */}
       <main className="flex-1 px-6 py-8 max-w-3xl mx-auto w-full">
         <div className="flex flex-col">
-          {album.tracks.map((track, i) => (
-            <motion.div
-              key={track.slug}
-              initial={{ opacity: 0, y: 12 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.35, delay: 0.15 + i * 0.08 }}
-            >
-              <Link
-                href={`/track/${track.slug}`}
-                className="group flex items-center gap-4 px-4 py-4 -mx-4 rounded-lg hover:bg-white/[0.04] transition-colors"
+          {album.tracks.map((track, i) => {
+            const isCurrentTrack = audio.currentTrack?.slug === track.slug;
+            const isPlaying = isCurrentTrack && audio.isPlaying;
+
+            return (
+              <motion.div
+                key={track.slug}
+                initial={{ opacity: 0, y: 12 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.35, delay: 0.15 + i * 0.08 }}
               >
-                {/* Track Number */}
-                <span className="w-6 text-center text-sm text-muted-foreground/50 group-hover:hidden">
-                  {track.trackNumber}
-                </span>
-                <span className="w-6 text-center hidden group-hover:block">
-                  <Play
-                    className="w-4 h-4 mx-auto"
-                    style={{ color: album.accentColor }}
-                    fill="currentColor"
-                  />
-                </span>
+                <div className="group flex items-center gap-4 px-4 py-4 -mx-4 rounded-lg hover:bg-white/[0.04] transition-colors">
+                  {/* Track Number / Play Button */}
+                  <button
+                    onClick={() => {
+                      if (isCurrentTrack) {
+                        audio.togglePlay();
+                      } else {
+                        handlePlayTrack(i);
+                      }
+                    }}
+                    className="w-6 flex items-center justify-center"
+                  >
+                    {isPlaying ? (
+                      <Pause
+                        className="w-4 h-4"
+                        style={{ color: album.accentColor }}
+                        fill="currentColor"
+                      />
+                    ) : (
+                      <>
+                        <span className={`text-sm ${isCurrentTrack ? "" : "group-hover:hidden"} ${isCurrentTrack ? "hidden" : ""}`} style={isCurrentTrack ? { color: album.accentColor } : { color: "rgba(161,161,170,0.5)" }}>
+                          {track.trackNumber}
+                        </span>
+                        <span className={`${isCurrentTrack ? "" : "hidden group-hover:block"}`}>
+                          <Play
+                            className="w-4 h-4"
+                            style={{ color: album.accentColor }}
+                            fill="currentColor"
+                          />
+                        </span>
+                      </>
+                    )}
+                  </button>
 
-                {/* Track Info */}
-                <div className="flex-1 min-w-0">
-                  <p className="text-[15px] font-medium truncate group-hover:text-foreground transition-colors">
-                    {track.title}
-                  </p>
-                  <p className="text-xs text-muted-foreground/60 truncate mt-0.5">
-                    {track.genre} &middot; {track.mood}
-                  </p>
+                  {/* Track Info */}
+                  <Link
+                    href={`/track/${track.slug}`}
+                    className="flex-1 min-w-0"
+                  >
+                    <p
+                      className="text-[15px] font-medium truncate transition-colors"
+                      style={isCurrentTrack ? { color: album.accentColor } : {}}
+                    >
+                      {track.title}
+                    </p>
+                    <p className="text-xs text-muted-foreground/60 truncate mt-0.5">
+                      {track.genre} &middot; {track.mood}
+                    </p>
+                  </Link>
+
+                  {/* Duration */}
+                  <div className="flex items-center gap-1.5 text-xs text-muted-foreground/50">
+                    <Clock className="w-3 h-3" />
+                    {track.duration}
+                  </div>
                 </div>
 
-                {/* Duration */}
-                <div className="flex items-center gap-1.5 text-xs text-muted-foreground/50">
-                  <Clock className="w-3 h-3" />
-                  {track.duration}
-                </div>
-              </Link>
-
-              {/* Divider (not after last) */}
-              {i < album.tracks.length - 1 && (
-                <div className="border-b border-border/30 mx-4" />
-              )}
-            </motion.div>
-          ))}
+                {/* Divider (not after last) */}
+                {i < album.tracks.length - 1 && (
+                  <div className="border-b border-border/30 mx-4" />
+                )}
+              </motion.div>
+            );
+          })}
         </div>
       </main>
 

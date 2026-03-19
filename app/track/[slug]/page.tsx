@@ -1,6 +1,6 @@
 "use client";
 
-import { use, useRef, useState, useEffect } from "react";
+import { use, useEffect } from "react";
 import Link from "next/link";
 import {
   ArrowLeft,
@@ -14,6 +14,7 @@ import {
 import { motion } from "framer-motion";
 import { getTrackBySlug, getAlbumForTrack, getAllTracks } from "@/lib/tracks";
 import { notFound } from "next/navigation";
+import { useAudio } from "@/lib/audio-context";
 
 const gradientClass: Record<string, string> = {
   founders: "gradient-founders",
@@ -40,34 +41,26 @@ export default function TrackPage({
   const { slug } = use(params);
   const track = getTrackBySlug(slug);
   const album = track ? getAlbumForTrack(slug) : undefined;
+  const audio = useAudio();
 
-  const audioRef = useRef<HTMLAudioElement | null>(null);
-  const [isPlaying, setIsPlaying] = useState(false);
-  const [currentTime, setCurrentTime] = useState(0);
-  const [duration, setDuration] = useState(0);
-
+  // Set the queue to the album's tracks when visiting a track page
   useEffect(() => {
-    const audio = audioRef.current;
-    if (!audio) return;
-
-    const onTimeUpdate = () => setCurrentTime(audio.currentTime);
-    const onLoadedMetadata = () => setDuration(audio.duration);
-    const onEnded = () => setIsPlaying(false);
-
-    audio.addEventListener("timeupdate", onTimeUpdate);
-    audio.addEventListener("loadedmetadata", onLoadedMetadata);
-    audio.addEventListener("ended", onEnded);
-
-    return () => {
-      audio.removeEventListener("timeupdate", onTimeUpdate);
-      audio.removeEventListener("loadedmetadata", onLoadedMetadata);
-      audio.removeEventListener("ended", onEnded);
-    };
-  }, []);
+    if (album) {
+      audio.playAlbum(album.slug, (track?.trackNumber ?? 1) - 1);
+    }
+    // Only run when slug changes, not on every audio state update
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [slug]);
 
   if (!track || !album) {
     notFound();
   }
+
+  // Determine if this track is the currently playing one
+  const isCurrentTrack = audio.currentTrack?.slug === track.slug;
+  const isPlaying = isCurrentTrack && audio.isPlaying;
+  const currentTime = isCurrentTrack ? audio.currentTime : 0;
+  const duration = isCurrentTrack ? audio.duration : 0;
 
   // Prev/Next track navigation
   const allTracks = getAllTracks();
@@ -77,22 +70,18 @@ export default function TrackPage({
     currentIndex < allTracks.length - 1 ? allTracks[currentIndex + 1] : null;
 
   const togglePlay = () => {
-    const audio = audioRef.current;
-    if (!audio) return;
-    if (isPlaying) {
-      audio.pause();
+    if (isCurrentTrack) {
+      audio.togglePlay();
     } else {
-      audio.play();
+      audio.play(track);
     }
-    setIsPlaying(!isPlaying);
   };
 
   const seek = (e: React.MouseEvent<HTMLDivElement>) => {
-    const audio = audioRef.current;
-    if (!audio || !duration) return;
+    if (!duration) return;
     const rect = e.currentTarget.getBoundingClientRect();
     const fraction = (e.clientX - rect.left) / rect.width;
-    audio.currentTime = fraction * duration;
+    audio.seek(fraction * duration);
   };
 
   const formatTime = (s: number) => {
@@ -153,8 +142,6 @@ export default function TrackPage({
       {/* Audio Player */}
       <div className="px-6 py-6 border-b border-border/30">
         <div className="max-w-2xl mx-auto w-full">
-          <audio ref={audioRef} src={track.audioUrl} preload="metadata" />
-
           {/* Controls */}
           <div className="flex items-center justify-center gap-6 mb-4">
             {prevTrack ? (

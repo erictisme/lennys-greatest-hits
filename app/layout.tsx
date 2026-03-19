@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Inter, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import { AudioProvider } from "@/lib/audio-context";
+import NowPlayingBar from "@/components/NowPlayingBar";
 
 const inter = Inter({
   variable: "--font-sans",
@@ -29,7 +31,10 @@ export default function RootLayout({
       className={`${inter.variable} ${geistMono.variable} dark h-full antialiased`}
     >
       <body className="min-h-full flex flex-col bg-background text-foreground">
-        {children}
+        <AudioProvider>
+          <div className="pb-[72px]">{children}</div>
+          <NowPlayingBar />
+        </AudioProvider>
       </body>
     </html>
   );

@@ -336,7 +336,7 @@ Use the unofficial Suno API. Set up a simple Node.js script at `scripts/generate
 
   **Exit**: Track page renders with audio player, lyrics, and source attribution
 
-- [ ] **Task 14: Persistent bottom player (NowPlayingBar)**
+- [x] **Task 14: Persistent bottom player (NowPlayingBar)**
   Create `components/NowPlayingBar.tsx` — fixed bottom bar.
 
   - Album art thumbnail (or colored square matching album)
