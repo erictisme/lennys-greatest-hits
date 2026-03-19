@@ -296,7 +296,7 @@ Use the unofficial Suno API. Set up a simple Node.js script at `scripts/generate
 
   **Exit**: Types compile, data renders when logged
 
-- [ ] **Task 11: Landing page**
+- [x] **Task 11: Landing page**
   Create `app/page.tsx` — the album landing page.
 
   Design:
