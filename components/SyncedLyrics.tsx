@@ -2,6 +2,7 @@
 
 import { useRef, useEffect, useMemo, useState } from "react";
 import { Share2 } from "lucide-react";
+import { trackEvent } from "@/lib/analytics";
 import ShareLyricModal from "./ShareLyricModal";
 
 interface SyncedLine {
@@ -160,7 +161,7 @@ export default function SyncedLyrics({
                 )}
               </button>
               <button
-                onClick={() => setShareLine(line.text)}
+                onClick={() => { trackEvent("lyric_shared", { lyric: line.text, track: trackTitle }); setShareLine(line.text); }}
                 className="opacity-0 group-hover:opacity-60 hover:!opacity-100 p-1.5 rounded-full hover:bg-white/10 transition-all shrink-0"
                 aria-label={`Share lyric: ${line.text}`}
               >

@@ -3,6 +3,7 @@ import { Inter, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { AudioProvider } from "@/lib/audio-context";
 import NowPlayingBar from "@/components/NowPlayingBar";
+import { PostHogProvider } from "@/components/PostHogProvider";
 
 const inter = Inter({
   variable: "--font-sans",
@@ -55,10 +56,12 @@ export default function RootLayout({
       className={`${inter.variable} ${geistMono.variable} dark h-full antialiased`}
     >
       <body className="min-h-full flex flex-col bg-background text-foreground overflow-x-hidden">
-        <AudioProvider>
-          <div className="pb-[72px]">{children}</div>
-          <NowPlayingBar />
-        </AudioProvider>
+        <PostHogProvider>
+          <AudioProvider>
+            <div className="pb-[72px]">{children}</div>
+            <NowPlayingBar />
+          </AudioProvider>
+        </PostHogProvider>
       </body>
     </html>
   );

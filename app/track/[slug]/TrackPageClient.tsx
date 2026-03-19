@@ -1,6 +1,6 @@
 "use client";
 
-import { use, useEffect } from "react";
+import { use, useEffect, useRef } from "react";
 import Link from "next/link";
 import {
   ArrowLeft,
@@ -15,6 +15,7 @@ import { motion } from "framer-motion";
 import { getTrackBySlug, getAlbumForTrack, getAllTracks } from "@/lib/tracks";
 import { notFound } from "next/navigation";
 import { useAudio } from "@/lib/audio-context";
+import { trackEvent } from "@/lib/analytics";
 import SyncedLyrics from "@/components/SyncedLyrics";
 
 const gradientClass: Record<string, string> = {
@@ -38,6 +39,19 @@ export default function TrackPageClient({ slug }: { slug: string }) {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [slug]);
 
+  // Track lyrics_viewed on page load
+  useEffect(() => {
+    if (track) {
+      trackEvent("lyrics_viewed", { track: slug, track_title: track?.title });
+    }
+  }, [slug]); // eslint-disable-line react-hooks/exhaustive-deps
+
+  // Track listening depth milestones (25/50/75/100%)
+  const milestonesHit = useRef<Set<number>>(new Set());
+  useEffect(() => {
+    milestonesHit.current = new Set();
+  }, [slug]);
+
   if (!track || !album) {
     notFound();
   }
@@ -55,10 +69,20 @@ export default function TrackPageClient({ slug }: { slug: string }) {
   const nextTrack =
     currentIndex < allTracks.length - 1 ? allTracks[currentIndex + 1] : null;
 
+  // Track listening depth milestones
+  const pct = duration > 0 ? (currentTime / duration) * 100 : 0;
+  for (const milestone of [25, 50, 75, 100]) {
+    if (pct >= milestone && !milestonesHit.current.has(milestone)) {
+      milestonesHit.current.add(milestone);
+      trackEvent(`track_completed_${milestone}`, { track: slug, track_title: track.title });
+    }
+  }
+
   const togglePlay = () => {
     if (isCurrentTrack) {
       audio.togglePlay();
     } else {
+      trackEvent("track_played", { track: slug, track_title: track.title, page: "track" });
       audio.play(track);
     }
   };
@@ -77,6 +101,7 @@ export default function TrackPageClient({ slug }: { slug: string }) {
   };
 
   const handleShare = async () => {
+    trackEvent("share_clicked", { platform: "native", track: slug, track_title: track.title });
     const url = window.location.href;
     const text = `${track.title} — Lenny's Greatest Hits`;
     if (navigator.share) {
@@ -236,6 +261,7 @@ export default function TrackPageClient({ slug }: { slug: string }) {
                   href={source.url}
                   target="_blank"
                   rel="noopener noreferrer"
+                  onClick={() => trackEvent("source_clicked", { source_title: source.title, guest: source.guest, track: slug })}
                   className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors group"
                 >
                   <ExternalLink className="w-3.5 h-3.5 opacity-50 group-hover:opacity-100" />

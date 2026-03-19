@@ -6,6 +6,8 @@ import { motion } from "framer-motion";
 import { getAlbumBySlug } from "@/lib/tracks";
 import { notFound } from "next/navigation";
 import { useAudio } from "@/lib/audio-context";
+import { trackEvent } from "@/lib/analytics";
+import { useEffect } from "react";
 
 const gradientClass: Record<string, string> = {
   founders: "gradient-founders",
@@ -18,15 +20,24 @@ export default function AlbumPageClient({ slug }: { slug: string }) {
   const album = getAlbumBySlug(slug);
   const audio = useAudio();
 
+  useEffect(() => {
+    if (album) {
+      trackEvent("album_opened", { album: album.slug, album_title: album.title });
+    }
+  }, [slug]); // eslint-disable-line react-hooks/exhaustive-deps
+
   if (!album) {
     notFound();
   }
 
   const handlePlayAll = () => {
+    trackEvent("track_played", { track: album.tracks[0]?.slug, track_title: album.tracks[0]?.title, page: "album" });
     audio.playAlbum(album.slug, 0);
   };
 
   const handlePlayTrack = (index: number) => {
+    const t = album.tracks[index];
+    if (t) trackEvent("track_played", { track: t.slug, track_title: t.title, page: "album" });
     audio.playAlbum(album.slug, index);
   };
 

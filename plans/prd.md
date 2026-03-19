@@ -411,7 +411,7 @@ Use the unofficial Suno API. Set up a simple Node.js script at `scripts/generate
 
   **Exit**: App feels polished and intentional, no jarring transitions
 
-- [ ] **Task 20: PostHog analytics**
+- [x] **Task 20: PostHog analytics**
   Copy PostHogProvider from `../which-expert-to-ignore/components/PostHogProvider.tsx`.
 
   Track events:

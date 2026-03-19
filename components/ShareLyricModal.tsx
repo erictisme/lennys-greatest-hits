@@ -3,6 +3,7 @@
 import { useRef, useState, useCallback } from "react";
 import { X, Download, Share2 } from "lucide-react";
 import html2canvas from "html2canvas-pro";
+import { trackEvent } from "@/lib/analytics";
 
 interface ShareLyricModalProps {
   lyric: string;
@@ -35,6 +36,7 @@ export default function ShareLyricModal({
   }, []);
 
   const handleDownload = async () => {
+    trackEvent("share_clicked", { platform: "download", track: trackTitle, lyric });
     setDownloading(true);
     try {
       const blob = await generateImage();
@@ -53,6 +55,7 @@ export default function ShareLyricModal({
   const shareText = `"${lyric}"\n\n${trackTitle} — ${albumTitle}\nLenny's Greatest Hits`;
 
   const shareOnX = () => {
+    trackEvent("share_clicked", { platform: "x", track: trackTitle, lyric });
     const url = encodeURIComponent(window.location.href);
     const text = encodeURIComponent(shareText);
     window.open(
@@ -62,6 +65,7 @@ export default function ShareLyricModal({
   };
 
   const shareOnLinkedIn = () => {
+    trackEvent("share_clicked", { platform: "linkedin", track: trackTitle, lyric });
     const url = encodeURIComponent(window.location.href);
     window.open(
       `https://www.linkedin.com/sharing/share-offsite/?url=${url}`,
