@@ -425,7 +425,7 @@ Use the unofficial Suno API. Set up a simple Node.js script at `scripts/generate
 
   **Exit**: Events fire correctly (verify in browser console)
 
-- [ ] **Task 21: Build + deploy prep**
+- [x] **Task 21: Build + deploy prep**
   - Run `pnpm build` and fix any errors
   - Ensure all audio files are in `public/audio/`
   - Test OG images render correctly

@@ -39,3 +39,5 @@ Task 19: Added page fade transitions (Framer Motion), album card glow hover effe
 Build passes clean. Created not-found.tsx, loading.tsx files for root/album/track routes, card-glow CSS class, and localStorage save/restore in audio-context.
 Task 20: Created lib/analytics.ts and PostHogProvider component (copied pattern from which-expert-to-ignore). Wired into layout.tsx.
 Added tracking events: album_opened, track_played, track_completed_25/50/75/100, lyrics_viewed, lyric_shared, source_clicked, share_clicked (x/linkedin/download/native) across album, track, SyncedLyrics, and ShareLyricModal.
+Task 21: `pnpm build` succeeds with zero errors. OG images render as dynamic routes. Audio dir exists (empty — awaiting manual Suno generation).
+No vercel.json needed — Next.js on Vercel serves public/ audio files natively.
