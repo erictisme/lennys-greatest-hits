@@ -15,3 +15,5 @@ Task 7: SKIPPED — no .env.local file with SUNO_COOKIE found. Suno API generati
 Fallback prompts from Task 6 (content/suno-prompts/) are ready for manual copy-paste into suno.com.
 Task 8: Scaffolded Next.js project with TypeScript, Tailwind v4, ESLint, shadcn/ui, and all deps (framer-motion, lucide-react, posthog-js, wavesurfer.js).
 Dev server runs successfully on localhost.
+Task 9: Dark music-app theme with #0a0a0a background, Inter font, album accent colors (amber/blue/emerald/violet), glass-morphism cards, gradient utilities.
+Updated layout.tsx with dark class on html, metadata for "Lenny's Greatest Hits".

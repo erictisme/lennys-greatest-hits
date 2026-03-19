@@ -259,7 +259,7 @@ Use the unofficial Suno API. Set up a simple Node.js script at `scripts/generate
 
   **Exit**: `pnpm dev` runs, default Next.js page shows at localhost:3000
 
-- [ ] **Task 9: Design system — dark music-app theme**
+- [x] **Task 9: Design system — dark music-app theme**
   Create a premium dark theme inspired by Spotify/Apple Music. NOT generic shadcn defaults.
 
   In `app/globals.css`:
