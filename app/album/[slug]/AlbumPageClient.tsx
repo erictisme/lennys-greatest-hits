@@ -260,25 +260,25 @@ export default function AlbumPageClient({ slug }: { slug: string }) {
                           animate={{ opacity: 1, scale: 1, y: 0 }}
                           exit={{ opacity: 0, scale: 0.95, y: -4 }}
                           transition={{ duration: 0.15 }}
-                          className="absolute right-0 top-full mt-1 z-50 bg-white rounded-lg shadow-lg border border-border/50 py-1 min-w-[160px]"
+                          className="absolute right-0 top-full mt-1 z-50 bg-white rounded-lg shadow-lg border border-border/50 py-1 w-[180px]"
                         >
                           <button
                             onClick={() => handleShareX(track.slug, track.title)}
-                            className="flex items-center gap-2.5 w-full px-3 py-2 text-sm text-foreground/80 hover:bg-black/[0.04] transition-colors"
+                            className="flex items-center gap-2.5 w-full px-3 py-2 text-sm text-foreground/80 hover:bg-black/[0.04] transition-colors whitespace-nowrap"
                           >
                             <Share2 className="w-3.5 h-3.5" />
                             Share to X
                           </button>
                           <button
                             onClick={() => handleShareLinkedIn(track.slug, track.title)}
-                            className="flex items-center gap-2.5 w-full px-3 py-2 text-sm text-foreground/80 hover:bg-black/[0.04] transition-colors"
+                            className="flex items-center gap-2.5 w-full px-3 py-2 text-sm text-foreground/80 hover:bg-black/[0.04] transition-colors whitespace-nowrap"
                           >
                             <Share2 className="w-3.5 h-3.5" />
                             Share to LinkedIn
                           </button>
                           <button
                             onClick={() => handleCopyLink(track.slug, track.title)}
-                            className="flex items-center gap-2.5 w-full px-3 py-2 text-sm text-foreground/80 hover:bg-black/[0.04] transition-colors"
+                            className="flex items-center gap-2.5 w-full px-3 py-2 text-sm text-foreground/80 hover:bg-black/[0.04] transition-colors whitespace-nowrap"
                           >
                             {copiedSlug === track.slug ? (
                               <Check className="w-3.5 h-3.5 text-green-600" />
