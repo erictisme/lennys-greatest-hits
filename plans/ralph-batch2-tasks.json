@@ -26,7 +26,7 @@
         "Write to content/brainstorm/batch2/02-deep-reads.md"
       ],
       "files": ["content/brainstorm/batch2/01-archive-scan.md", "content/brainstorm/batch2/02-deep-reads.md"],
-      "passes": false
+      "passes": true
     },
     {
       "id": 3,
