@@ -3,11 +3,16 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useState, useMemo } from "react";
+import { useRouter } from "next/navigation";
+import { Shuffle } from "lucide-react";
 import { getAllAlbums } from "@/lib/tracks";
+import { useAudio } from "@/lib/audio-context";
 import EmailSignup from "@/components/EmailSignup";
 
 export default function Home() {
   const albums = getAllAlbums();
+  const router = useRouter();
+  const audio = useAudio();
   const [selectedTag, setSelectedTag] = useState<string | null>(null);
 
   // Collect all unique tags with counts
@@ -54,6 +59,20 @@ export default function Home() {
           </p>
         </div>
       </header>
+
+      {/* Shuffle All */}
+      <div className="flex justify-center pb-8">
+        <button
+          onClick={() => {
+            const track = audio.shuffleAll();
+            if (track) router.push(`/track/${track.slug}`);
+          }}
+          className="inline-flex items-center gap-2 px-5 py-2.5 text-sm font-medium rounded-full border border-border/50 text-muted-foreground hover:text-foreground hover:border-border transition-colors"
+        >
+          <Shuffle className="w-4 h-4" />
+          Shuffle All
+        </button>
+      </div>
 
       {/* Browse by Topic */}
       <section className="px-4 sm:px-6 pb-8 max-w-5xl mx-auto w-full">

@@ -6,3 +6,7 @@ Task 69: Added app/track/[slug]/opengraph-image.tsx for per-track OG images with
 Task 70: Added album-level Share button (X, LinkedIn, Copy Link) next to Play All / Coming Soon badge on album pages.
 Task 71: Added Browse by Topic tag cloud above album grid — clickable pills filter albums by tag with counts.
 Task 72: Keyboard shortcuts already implemented in audio-context.tsx. Removed duplicate Space handler from TrackPageClient.tsx that caused double-toggle bug.
+Task 40: Superseded by Task 54 — auto-scroll was fully removed, so the toggle fix is moot.
+Task 41: Resolved by Tasks 51/60 — cross-album advancement and locked-track guards fix the looping bug.
+Task 42: Already working — AudioProvider wraps app in layout.tsx, audio element persists across navigation.
+Task 73: Added shuffleAll() to audio-context and Shuffle All button on homepage. Navigates to first shuffled track.

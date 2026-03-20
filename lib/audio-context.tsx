@@ -28,6 +28,7 @@ interface AudioState {
   prev: () => void;
   playAlbum: (albumSlug: string, startIndex?: number) => void;
   setAlbumQueue: (albumSlug: string) => void;
+  shuffleAll: () => Track | null;
   accentColor: string;
   getPlayCount: (slug: string) => number;
   upNextTrack: Track | null;
@@ -375,6 +376,78 @@ export function AudioProvider({ children }: { children: ReactNode }) {
     [play]
   );
 
+  const shuffleAll = useCallback((): Track | null => {
+    const allTracks = getAllTracks().filter((t) => !t.isLocked && t.audioUrl);
+    if (allTracks.length === 0) return null;
+    // Fisher-Yates shuffle
+    const shuffled = [...allTracks];
+    for (let i = shuffled.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+    }
+    setQueue(shuffled);
+    const first = shuffled[0];
+    const audio = audioRef.current;
+    if (audio && first) {
+      clearCountdown();
+      audio.src = first.audioUrl;
+      audio.play().catch(() => {});
+      setCurrentTrack(first);
+      setIsPlaying(true);
+      setCurrentTime(0);
+      setDuration(0);
+    }
+    return first;
+  }, [clearCountdown]);
+
+  // Global keyboard shortcuts
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      // Skip when typing in inputs
+      const tag = (e.target as HTMLElement)?.tagName;
+      if (tag === "INPUT" || tag === "TEXTAREA" || tag === "SELECT") return;
+      if ((e.target as HTMLElement)?.isContentEditable) return;
+
+      switch (e.code) {
+        case "Space":
+          e.preventDefault();
+          togglePlay();
+          break;
+        case "ArrowLeft":
+          e.preventDefault();
+          if (audioRef.current) {
+            const newTime = Math.max(0, audioRef.current.currentTime - 10);
+            audioRef.current.currentTime = newTime;
+            setCurrentTime(newTime);
+          }
+          break;
+        case "ArrowRight":
+          e.preventDefault();
+          if (audioRef.current) {
+            const newTime = Math.min(audioRef.current.duration || 0, audioRef.current.currentTime + 10);
+            audioRef.current.currentTime = newTime;
+            setCurrentTime(newTime);
+          }
+          break;
+        case "KeyN":
+          if (!e.metaKey && !e.ctrlKey && !e.altKey) {
+            e.preventDefault();
+            next();
+          }
+          break;
+        case "KeyP":
+          if (!e.metaKey && !e.ctrlKey && !e.altKey) {
+            e.preventDefault();
+            prev();
+          }
+          break;
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [togglePlay, next, prev]);
+
   const accentColor = currentTrack
     ? getAlbumForTrack(currentTrack.slug)?.accentColor ?? "#fafafa"
     : "#fafafa";
@@ -396,6 +469,7 @@ export function AudioProvider({ children }: { children: ReactNode }) {
         prev,
         playAlbum,
         setAlbumQueue,
+        shuffleAll,
         accentColor,
         getPlayCount,
         upNextTrack,
