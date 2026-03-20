@@ -430,7 +430,7 @@
         "pnpm build passes"
       ],
       "files": ["app/album/[slug]/opengraph-image.tsx"],
-      "passes": false
+      "passes": true
     },
     {
       "id": 69,

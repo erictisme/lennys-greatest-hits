@@ -11,10 +11,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const album = getAlbumBySlug(slug);
 
   if (!album) {
-    return { title: "Album Not Found — Lenny's Greatest Hits" };
+    return { title: "Album Not Found | Lenny's Greatest Hits" };
   }
 
-  const title = `${album.title} — Lenny's Greatest Hits`;
+  const title = `${album.title} | Lenny's Greatest Hits`;
   const description = `${album.subtitle}. ${album.description}`;
 
   return {
@@ -24,20 +24,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       title,
       description,
       type: "music.album",
-      images: [
-        {
-          url: `/api/og?type=album&slug=${slug}`,
-          width: 1200,
-          height: 630,
-          alt: album.title,
-        },
-      ],
     },
     twitter: {
       card: "summary_large_image",
       title,
       description,
-      images: [`/api/og?type=album&slug=${slug}`],
     },
   };
 }
