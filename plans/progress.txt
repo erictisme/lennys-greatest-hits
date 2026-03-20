@@ -5,3 +5,4 @@ Lyric-Craft Task 1: Studied lyrics from 5 reference artists (Guerra, Ogden, Vern
 Lyric-Craft Task 2: Extracted 10 songwriting principles with bad/good examples (batch 1 vs reference artists) to content/brainstorm/lyric-principles.md.
 Lyric-Craft Task 3: Researched Suno v5 lyric tips from community sources — 13 practical tips covering syllable patterns, structure tags, voice control, mumbling fixes, and genre-specific advice to content/brainstorm/suno-lyric-tips.md.
 Lyric-Craft Task 4: Audited all 11 batch 1 songs (skipped feature-factory). Identified best/worst lines per song with 2-3 rewrites each, plus 5 cross-song patterns to content/brainstorm/batch1-audit.md.
+Task 3: Identified 14 thematic gaps across all 4 albums (3-4 per album) with best episode/article for each gap. Top song-potential gaps: The Pivot, Shopify Bans KPIs, When to Quit, Finding Meaning, Craft & Quality. Written to 03-thematic-gaps.md.

@@ -40,7 +40,7 @@
         "Write to content/brainstorm/batch2/03-thematic-gaps.md"
       ],
       "files": ["content/brainstorm/batch2/03-thematic-gaps.md"],
-      "passes": false
+      "passes": true
     },
     {
       "id": 4,
