@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { supabase } from "@/lib/supabase";
 
-export default function EmailSignup() {
+export default function EmailSignup({ heading }: { heading?: string } = {}) {
   const [email, setEmail] = useState("");
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "duplicate" | "error">("idle");
 
@@ -30,7 +30,7 @@ export default function EmailSignup() {
 
   return (
     <div className="text-center">
-      <h3 className="text-lg font-semibold mb-1">More songs coming</h3>
+      <h3 className="text-lg font-semibold mb-1">{heading || "More songs coming"}</h3>
       <p className="text-sm text-muted-foreground mb-4">
         Get notified when new albums drop.
       </p>

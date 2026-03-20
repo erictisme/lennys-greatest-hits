@@ -4,3 +4,4 @@ Task 58: Added 5 Coming Soon albums (The Operators, Growth Engine, The Startup L
 Task 59: Added 5 CSS gradient classes (operators=orange, growth-engine=yellow, startup-life=violet, career-moves=cyan, frameworks=indigo) to globals.css and updated gradient lookup maps in AlbumPageClient.tsx and TrackPageClient.tsx. Build passes.
 Task 60: Added locked track guards to audio-context.tsx — play() returns early for locked tracks, next/prev/onEnded skip locked tracks across album boundaries, playAlbum() filters locked tracks from queue. Build passes.
 Task 61: Added Coming Soon visual treatment to homepage album cards — gradient placeholders for empty coverImage, Coming Soon pill badge, updated track count text. Build passes.
+Task 62: Updated album page for Coming Soon albums — Lock icons instead of play buttons, concept description for locked tracks, hidden duration/share, EmailSignup CTA below track list. Build passes.

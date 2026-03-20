@@ -335,7 +335,7 @@
         "pnpm build passes"
       ],
       "files": ["app/album/[slug]/AlbumPageClient.tsx"],
-      "passes": false
+      "passes": true
     },
     {
       "id": 63,
@@ -358,11 +358,12 @@
       "id": 64,
       "category": "feature",
       "priority": 0,
-      "description": "Add a subtle Code Riff footer link to the homepage. In app/page.tsx, in the existing footer section (below the 'Built by Eric Tan' credit line), add a new line: 'Build with us on Code Riff' that links to https://www.youtube.com/@CodeRiffAI. Style it very subtly: use text-xs and text-muted-foreground/30 (even more muted than the Eric Tan credit). The link should open in a new tab (target='_blank' rel='noopener noreferrer') and have a subtle hover state (hover:text-foreground/50). This should be a quiet credit, not a promotional section. DONE: homepage footer shows 'Build with us on Code Riff' link below existing credits. DO NOT TOUCH: anything else on the page. VERIFY: pnpm build passes, scroll to footer, see the Code Riff link, click it opens YouTube channel.",
+      "description": "Add subtle footer credit links to the homepage. In app/page.tsx, in the existing footer section (below the 'Built by Eric Tan' credit line), add two subtle links on the same line separated by a middot character: 'Built on Lenny's Data' linking to https://www.lennysdata.com/ and 'Build with us on Code Riff' linking to https://www.youtube.com/@CodeRiffAI. Style both very subtly: use text-xs and text-muted-foreground/30 (even more muted than the Eric Tan credit). Links should open in new tabs (target='_blank' rel='noopener noreferrer') and have subtle hover states (hover:text-foreground/50). These should be quiet credits, not promotional. DONE: homepage footer shows 'Built on Lenny's Data' and 'Build with us on Code Riff' links below existing credits. DO NOT TOUCH: anything else on the page. VERIFY: pnpm build passes, scroll to footer, see both links, clicking them opens correct URLs.",
       "steps": [
         "Read app/page.tsx footer section",
-        "Add 'Build with us on Code Riff' link below existing credits",
-        "Style subtly with text-xs text-muted-foreground/30",
+        "Add 'Built on Lenny's Data' link to https://www.lennysdata.com/",
+        "Add 'Build with us on Code Riff' link to https://www.youtube.com/@CodeRiffAI",
+        "Same line, middot separator, text-xs text-muted-foreground/30",
         "pnpm build passes"
       ],
       "files": ["app/page.tsx"],

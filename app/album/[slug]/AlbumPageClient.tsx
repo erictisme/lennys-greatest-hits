@@ -2,13 +2,14 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowLeft, Play, Pause, Clock, MoreHorizontal, Share2, Check } from "lucide-react";
+import { ArrowLeft, Play, Pause, Clock, MoreHorizontal, Share2, Check, Lock } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { getAlbumBySlug } from "@/lib/tracks";
 import { notFound } from "next/navigation";
 import { useAudio } from "@/lib/audio-context";
 import { trackEvent } from "@/lib/analytics";
 import { useEffect, useState, useRef } from "react";
+import EmailSignup from "@/components/EmailSignup";
 
 const gradientClass: Record<string, string> = {
   founders: "gradient-founders",
@@ -124,13 +125,21 @@ export default function AlbumPageClient({ slug }: { slug: string }) {
 
           <div className="flex items-start gap-6">
             <div className="shrink-0">
-              <Image
-                src={album.coverImage}
-                alt={album.title}
-                width={160}
-                height={160}
-                className="rounded-lg shadow-md"
-              />
+              {album.coverImage ? (
+                <Image
+                  src={album.coverImage}
+                  alt={album.title}
+                  width={160}
+                  height={160}
+                  className="rounded-lg shadow-md"
+                />
+              ) : (
+                <div
+                  className={`w-[160px] h-[160px] rounded-lg shadow-md ${gradientClass[album.slug] ?? ""} flex items-center justify-center`}
+                >
+                  <span className="text-5xl opacity-30">🎵</span>
+                </div>
+              )}
             </div>
             <div className="min-w-0">
               <div
@@ -149,19 +158,26 @@ export default function AlbumPageClient({ slug }: { slug: string }) {
             </div>
           </div>
 
-          {/* Play All Button */}
+          {/* Play All Button or Coming Soon Badge */}
           <div className="mt-6">
-            <button
-              onClick={handlePlayAll}
-              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-medium transition-colors"
-              style={{
-                backgroundColor: album.accentColor,
-                color: "#ffffff",
-              }}
-            >
-              <Play className="w-4 h-4" fill="currentColor" />
-              Play All
-            </button>
+            {album.comingSoon ? (
+              <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium bg-muted text-muted-foreground">
+                <Lock className="w-3.5 h-3.5" />
+                Coming Soon
+              </span>
+            ) : (
+              <button
+                onClick={handlePlayAll}
+                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-medium transition-colors"
+                style={{
+                  backgroundColor: album.accentColor,
+                  color: "#ffffff",
+                }}
+              >
+                <Play className="w-4 h-4" fill="currentColor" />
+                Play All
+              </button>
+            )}
           </div>
         </div>
       </header>
@@ -172,53 +188,62 @@ export default function AlbumPageClient({ slug }: { slug: string }) {
           {album.tracks.map((track, i) => {
             const isCurrentTrack = audio.currentTrack?.slug === track.slug;
             const isPlaying = isCurrentTrack && audio.isPlaying;
+            const locked = !!track.isLocked;
 
             return (
               <div key={track.slug}>
                 <div className="group flex items-center gap-4 px-4 py-4 -mx-4 rounded-lg hover:bg-black/[0.04] transition-colors">
-                  {/* Track Number / Play Button */}
-                  <button
-                    onClick={() => {
-                      if (isCurrentTrack) {
-                        audio.togglePlay();
-                      } else {
-                        handlePlayTrack(i);
-                      }
-                    }}
-                    className="w-6 flex items-center justify-center"
-                  >
-                    {isPlaying ? (
-                      <Pause
-                        className="w-4 h-4"
-                        style={{ color: album.accentColor }}
-                        fill="currentColor"
-                      />
-                    ) : (
-                      <>
-                        <span className={`text-sm ${isCurrentTrack ? "" : "group-hover:hidden"} ${isCurrentTrack ? "hidden" : ""}`} style={isCurrentTrack ? { color: album.accentColor } : { color: "rgba(161,161,170,0.5)" }}>
-                          {track.trackNumber}
-                        </span>
-                        <span className={`${isCurrentTrack ? "" : "hidden group-hover:block"}`}>
-                          <Play
-                            className="w-4 h-4"
-                            style={{ color: album.accentColor }}
-                            fill="currentColor"
-                          />
-                        </span>
-                      </>
-                    )}
-                  </button>
+                  {/* Track Number / Play Button / Lock Icon */}
+                  {locked ? (
+                    <div className="w-6 flex items-center justify-center">
+                      <Lock className="w-4 h-4 text-muted-foreground/40" />
+                    </div>
+                  ) : (
+                    <button
+                      onClick={() => {
+                        if (isCurrentTrack) {
+                          audio.togglePlay();
+                        } else {
+                          handlePlayTrack(i);
+                        }
+                      }}
+                      className="w-6 flex items-center justify-center"
+                    >
+                      {isPlaying ? (
+                        <Pause
+                          className="w-4 h-4"
+                          style={{ color: album.accentColor }}
+                          fill="currentColor"
+                        />
+                      ) : (
+                        <>
+                          <span className={`text-sm ${isCurrentTrack ? "" : "group-hover:hidden"} ${isCurrentTrack ? "hidden" : ""}`} style={isCurrentTrack ? { color: album.accentColor } : { color: "rgba(161,161,170,0.5)" }}>
+                            {track.trackNumber}
+                          </span>
+                          <span className={`${isCurrentTrack ? "" : "hidden group-hover:block"}`}>
+                            <Play
+                              className="w-4 h-4"
+                              style={{ color: album.accentColor }}
+                              fill="currentColor"
+                            />
+                          </span>
+                        </>
+                      )}
+                    </button>
+                  )}
 
-                  {/* Track Thumbnail */}
-                  <Link href={`/track/${track.slug}`} className="shrink-0">
-                    <Image
-                      src={track.coverImage}
-                      alt={track.title}
-                      width={40}
-                      height={40}
-                      className="rounded"
-                    />
-                  </Link>
+                  {/* Track Thumbnail (hidden for locked) */}
+                  {!locked && track.coverImage && (
+                    <Link href={`/track/${track.slug}`} className="shrink-0">
+                      <Image
+                        src={track.coverImage}
+                        alt={track.title}
+                        width={40}
+                        height={40}
+                        className="rounded"
+                      />
+                    </Link>
+                  )}
 
                   {/* Track Info */}
                   <Link
@@ -231,87 +256,99 @@ export default function AlbumPageClient({ slug }: { slug: string }) {
                     >
                       {track.title}
                     </p>
-                    <p className="text-xs text-muted-foreground/60 truncate mt-0.5">
-                      {track.genre} &middot; {track.mood}
-                    </p>
-                    {track.tags && track.tags.length > 0 && (
-                      <div className="flex flex-wrap gap-1 mt-1">
-                        {track.tags.map((tag) => (
-                          <span
-                            key={tag}
-                            className="px-1.5 py-0 text-[10px] font-medium rounded-full border border-border/30 text-muted-foreground/50"
-                          >
-                            {tag}
-                          </span>
-                        ))}
-                      </div>
+                    {locked ? (
+                      <p className="text-xs text-muted-foreground/60 truncate mt-0.5">
+                        {track.concept}
+                      </p>
+                    ) : (
+                      <>
+                        <p className="text-xs text-muted-foreground/60 truncate mt-0.5">
+                          {track.genre} &middot; {track.mood}
+                        </p>
+                        {track.tags && track.tags.length > 0 && (
+                          <div className="flex flex-wrap gap-1 mt-1">
+                            {track.tags.map((tag) => (
+                              <span
+                                key={tag}
+                                className="px-1.5 py-0 text-[10px] font-medium rounded-full border border-border/30 text-muted-foreground/50"
+                              >
+                                {tag}
+                              </span>
+                            ))}
+                          </div>
+                        )}
+                      </>
                     )}
                   </Link>
 
-                  {/* Play Count + Duration */}
-                  <div className="flex items-center gap-3 text-xs text-muted-foreground/50">
-                    {(playCounts[track.slug] || 0) > 0 && (
-                      <span className="tabular-nums">
-                        {playCounts[track.slug]} {playCounts[track.slug] === 1 ? "play" : "plays"}
-                      </span>
-                    )}
-                    <span className="flex items-center gap-1.5">
-                      <Clock className="w-3 h-3" />
-                      {track.duration}
-                    </span>
-                  </div>
-
-                  {/* Share Menu */}
-                  <div className="relative" ref={openMenu === track.slug ? menuRef : undefined}>
-                    <button
-                      onClick={(e) => {
-                        e.stopPropagation();
-                        setOpenMenu(openMenu === track.slug ? null : track.slug);
-                      }}
-                      className="opacity-0 group-hover:opacity-100 focus:opacity-100 transition-opacity p-1.5 rounded-md hover:bg-black/[0.06]"
-                      aria-label="Share options"
-                    >
-                      <MoreHorizontal className="w-4 h-4 text-muted-foreground/60" />
-                    </button>
-
-                    <AnimatePresence>
-                      {openMenu === track.slug && (
-                        <motion.div
-                          initial={{ opacity: 0, scale: 0.95, y: -4 }}
-                          animate={{ opacity: 1, scale: 1, y: 0 }}
-                          exit={{ opacity: 0, scale: 0.95, y: -4 }}
-                          transition={{ duration: 0.15 }}
-                          className="absolute right-0 top-full mt-1 z-50 bg-white rounded-lg shadow-lg border border-border/50 py-1 w-[180px]"
-                        >
-                          <button
-                            onClick={() => handleShareX(track.slug, track.title)}
-                            className="flex items-center gap-2.5 w-full px-3 py-2 text-sm text-foreground/80 hover:bg-black/[0.04] transition-colors whitespace-nowrap"
-                          >
-                            <Share2 className="w-3.5 h-3.5" />
-                            Share to X
-                          </button>
-                          <button
-                            onClick={() => handleShareLinkedIn(track.slug, track.title)}
-                            className="flex items-center gap-2.5 w-full px-3 py-2 text-sm text-foreground/80 hover:bg-black/[0.04] transition-colors whitespace-nowrap"
-                          >
-                            <Share2 className="w-3.5 h-3.5" />
-                            Share to LinkedIn
-                          </button>
-                          <button
-                            onClick={() => handleCopyLink(track.slug, track.title)}
-                            className="flex items-center gap-2.5 w-full px-3 py-2 text-sm text-foreground/80 hover:bg-black/[0.04] transition-colors whitespace-nowrap"
-                          >
-                            {copiedSlug === track.slug ? (
-                              <Check className="w-3.5 h-3.5 text-green-600" />
-                            ) : (
-                              <Share2 className="w-3.5 h-3.5" />
-                            )}
-                            {copiedSlug === track.slug ? "Copied!" : "Copy Link"}
-                          </button>
-                        </motion.div>
+                  {/* Play Count + Duration (hidden for locked) */}
+                  {!locked && (
+                    <div className="flex items-center gap-3 text-xs text-muted-foreground/50">
+                      {(playCounts[track.slug] || 0) > 0 && (
+                        <span className="tabular-nums">
+                          {playCounts[track.slug]} {playCounts[track.slug] === 1 ? "play" : "plays"}
+                        </span>
                       )}
-                    </AnimatePresence>
-                  </div>
+                      <span className="flex items-center gap-1.5">
+                        <Clock className="w-3 h-3" />
+                        {track.duration}
+                      </span>
+                    </div>
+                  )}
+
+                  {/* Share Menu (hidden for locked) */}
+                  {!locked && (
+                    <div className="relative" ref={openMenu === track.slug ? menuRef : undefined}>
+                      <button
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          setOpenMenu(openMenu === track.slug ? null : track.slug);
+                        }}
+                        className="opacity-0 group-hover:opacity-100 focus:opacity-100 transition-opacity p-1.5 rounded-md hover:bg-black/[0.06]"
+                        aria-label="Share options"
+                      >
+                        <MoreHorizontal className="w-4 h-4 text-muted-foreground/60" />
+                      </button>
+
+                      <AnimatePresence>
+                        {openMenu === track.slug && (
+                          <motion.div
+                            initial={{ opacity: 0, scale: 0.95, y: -4 }}
+                            animate={{ opacity: 1, scale: 1, y: 0 }}
+                            exit={{ opacity: 0, scale: 0.95, y: -4 }}
+                            transition={{ duration: 0.15 }}
+                            className="absolute right-0 top-full mt-1 z-50 bg-white rounded-lg shadow-lg border border-border/50 py-1 w-[180px]"
+                          >
+                            <button
+                              onClick={() => handleShareX(track.slug, track.title)}
+                              className="flex items-center gap-2.5 w-full px-3 py-2 text-sm text-foreground/80 hover:bg-black/[0.04] transition-colors whitespace-nowrap"
+                            >
+                              <Share2 className="w-3.5 h-3.5" />
+                              Share to X
+                            </button>
+                            <button
+                              onClick={() => handleShareLinkedIn(track.slug, track.title)}
+                              className="flex items-center gap-2.5 w-full px-3 py-2 text-sm text-foreground/80 hover:bg-black/[0.04] transition-colors whitespace-nowrap"
+                            >
+                              <Share2 className="w-3.5 h-3.5" />
+                              Share to LinkedIn
+                            </button>
+                            <button
+                              onClick={() => handleCopyLink(track.slug, track.title)}
+                              className="flex items-center gap-2.5 w-full px-3 py-2 text-sm text-foreground/80 hover:bg-black/[0.04] transition-colors whitespace-nowrap"
+                            >
+                              {copiedSlug === track.slug ? (
+                                <Check className="w-3.5 h-3.5 text-green-600" />
+                              ) : (
+                                <Share2 className="w-3.5 h-3.5" />
+                              )}
+                              {copiedSlug === track.slug ? "Copied!" : "Copy Link"}
+                            </button>
+                          </motion.div>
+                        )}
+                      </AnimatePresence>
+                    </div>
+                  )}
                 </div>
 
                 {/* Divider (not after last) */}
@@ -322,6 +359,12 @@ export default function AlbumPageClient({ slug }: { slug: string }) {
             );
           })}
         </div>
+
+        {album.comingSoon && (
+          <div className="mt-8">
+            <EmailSignup heading="Get notified when this album drops" />
+          </div>
+        )}
       </main>
 
       {/* Footer */}
