@@ -28,27 +28,47 @@ export default function Home() {
       {/* Album Grid */}
       <main className="flex-1 px-4 sm:px-6 pb-16 max-w-5xl mx-auto w-full">
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-5 sm:gap-6">
-          {albums.map((album, i) => (
-            <div key={album.slug}>
-              <Link href={`/album/${album.slug}`} className="block group">
-                <div className="relative aspect-square w-full overflow-hidden rounded-lg mb-3 shadow-md transition-transform duration-300 group-hover:scale-[1.03]">
-                  <Image
-                    src={album.coverImage}
-                    alt={album.title}
-                    width={320}
-                    height={320}
-                    className="object-cover w-full h-full"
-                  />
-                </div>
-                <h2 className="text-sm sm:text-base font-bold tracking-tight truncate">
-                  {album.title}
-                </h2>
-                <p className="text-xs sm:text-sm text-muted-foreground truncate">
-                  {album.tracks.length} tracks &middot; {album.subtitle}
-                </p>
-              </Link>
-            </div>
-          ))}
+          {albums.map((album) => {
+            const gradientMap: Record<string, string> = {
+              "the-operators": "gradient-the-operators",
+              "growth-engine": "gradient-growth-engine",
+              "the-startup-life": "gradient-the-startup-life",
+              "career-moves": "gradient-career-moves",
+              "frameworks": "gradient-frameworks",
+            };
+            return (
+              <div key={album.slug}>
+                <Link href={`/album/${album.slug}`} className="block group">
+                  <div className="relative aspect-square w-full overflow-hidden rounded-lg mb-3 shadow-md transition-transform duration-300 group-hover:scale-[1.03]">
+                    {album.coverImage ? (
+                      <Image
+                        src={album.coverImage}
+                        alt={album.title}
+                        width={320}
+                        height={320}
+                        className="object-cover w-full h-full"
+                      />
+                    ) : (
+                      <div className={`w-full h-full ${gradientMap[album.slug] || ""} flex items-center justify-center`}>
+                        <span className="text-4xl sm:text-5xl opacity-30">🎵</span>
+                      </div>
+                    )}
+                    {album.comingSoon && (
+                      <span className="absolute top-2 right-2 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wide rounded-full bg-primary/80 text-primary-foreground">
+                        Coming Soon
+                      </span>
+                    )}
+                  </div>
+                  <h2 className="text-sm sm:text-base font-bold tracking-tight truncate">
+                    {album.title}
+                  </h2>
+                  <p className="text-xs sm:text-sm text-muted-foreground truncate">
+                    {album.tracks.length} tracks{album.comingSoon ? " — Coming Soon" : ` · ${album.subtitle}`}
+                  </p>
+                </Link>
+              </div>
+            );
+          })}
         </div>
       </main>
 
