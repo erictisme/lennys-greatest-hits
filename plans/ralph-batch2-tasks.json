@@ -55,7 +55,7 @@
         "Write to content/brainstorm/batch2/04-hidden-gems.md"
       ],
       "files": ["content/brainstorm/batch2/04-hidden-gems.md"],
-      "passes": false
+      "passes": true
     },
     {
       "id": 5,
