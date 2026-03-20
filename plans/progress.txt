@@ -5,3 +5,4 @@ Task 68: Added app/album/[slug]/opengraph-image.tsx for per-album OG images with
 Task 69: Added app/track/[slug]/opengraph-image.tsx for per-track OG images with key quotes and Coming Soon indicators. Updated page.tsx metadata.
 Task 70: Added album-level Share button (X, LinkedIn, Copy Link) next to Play All / Coming Soon badge on album pages.
 Task 71: Added Browse by Topic tag cloud above album grid — clickable pills filter albums by tag with counts.
+Task 72: Keyboard shortcuts already implemented in audio-context.tsx. Removed duplicate Space handler from TrackPageClient.tsx that caused double-toggle bug.

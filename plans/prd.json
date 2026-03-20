@@ -491,7 +491,7 @@
         "pnpm build passes"
       ],
       "files": ["lib/audio-context.tsx", "app/track/[slug]/TrackPageClient.tsx"],
-      "passes": false
+      "passes": true
     },
     {
       "id": 73,

@@ -57,19 +57,6 @@ export default function TrackPageClient({ slug }: { slug: string }) {
     }
   }, [slug]); // eslint-disable-line react-hooks/exhaustive-deps
 
-  // Spacebar play/pause
-  useEffect(() => {
-    const handleKeyDown = (e: KeyboardEvent) => {
-      if (e.code !== "Space") return;
-      const tag = (e.target as HTMLElement)?.tagName;
-      if (tag === "INPUT" || tag === "TEXTAREA" || (e.target as HTMLElement)?.isContentEditable) return;
-      e.preventDefault();
-      audio.togglePlay();
-    };
-    window.addEventListener("keydown", handleKeyDown);
-    return () => window.removeEventListener("keydown", handleKeyDown);
-  }, [audio]);
-
   // Track listening depth milestones (25/50/75/100%)
   const milestonesHit = useRef<Set<number>>(new Set());
   useEffect(() => {
@@ -295,7 +282,16 @@ export default function TrackPageClient({ slug }: { slug: string }) {
             </div>
             <div className="flex justify-between text-xs text-muted-foreground/50 mt-1.5">
               <span>{formatTime(currentTime)}</span>
-              <span>{duration > 0 ? formatTime(duration) : track.duration}</span>
+              <span className="group/keys relative cursor-default">
+                {duration > 0 ? formatTime(duration) : track.duration}
+                <span className="hidden sm:inline ml-2 text-muted-foreground/30">⌨</span>
+                <span className="invisible group-hover/keys:visible absolute right-0 bottom-full mb-2 w-48 p-2 bg-foreground text-background text-[10px] leading-relaxed rounded shadow-lg z-50 pointer-events-none">
+                  Space — play / pause<br />
+                  ← → — seek ±10s<br />
+                  N — next track<br />
+                  P — previous track
+                </span>
+              </span>
             </div>
           </div>
         </div>
