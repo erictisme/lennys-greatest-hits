@@ -70,7 +70,7 @@
         "Write to content/brainstorm/batch2/05-final-candidates.md"
       ],
       "files": ["content/brainstorm/batch2/02-deep-reads.md", "content/brainstorm/batch2/03-thematic-gaps.md", "content/brainstorm/batch2/04-hidden-gems.md", "content/brainstorm/batch2/05-final-candidates.md"],
-      "passes": false
+      "passes": true
     },
     {
       "id": 6,
