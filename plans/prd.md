@@ -575,3 +575,11 @@ Cover images are already in `public/covers/`. Album covers: `founders.jpg`, `pro
 - [ ] For moods and descriptions, rewrite to avoid the dash entirely. Example: "The anxiety of not knowing — then knowing" becomes "The anxiety of not knowing, then knowing"
 - [ ] DO NOT modify audio files
 - [ ] `pnpm build` passes
+
+### Task 34: Add creator credit with LinkedIn link
+- [ ] Add a footer or credit section on the home page (app/page.tsx) that credits the creator: "Built by Eric Tan" linking to https://www.linkedin.com/in/erictisme/
+- [ ] Keep it subtle and tasteful, matching the existing design (small text, muted color, bottom of page)
+- [ ] Also add Eric's LinkedIn to the site footer if one exists in layout.tsx
+- [ ] Link should open in a new tab (target="_blank", rel="noopener noreferrer")
+- [ ] DO NOT modify audio files or lyrics
+- [ ] `pnpm build` passes
