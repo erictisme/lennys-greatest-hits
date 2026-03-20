@@ -99,7 +99,7 @@
         "Write to content/brainstorm/batch2/07-notable-articles.md"
       ],
       "files": ["content/brainstorm/batch2/07-notable-articles.md"],
-      "passes": false
+      "passes": true
     },
     {
       "id": 8,
