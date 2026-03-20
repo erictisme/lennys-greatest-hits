@@ -6,6 +6,7 @@ export type Album = {
   coverImage: string;
   accentColor: string;
   tracks: Track[];
+  comingSoon?: boolean;
 };
 
 export type Track = {
@@ -26,6 +27,7 @@ export type Track = {
   coverImage: string;
   storyBehind?: string;
   tags?: string[];
+  isLocked?: boolean;
 };
 
 export type LyricLine = {

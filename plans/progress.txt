@@ -1,2 +1,2 @@
-# Ralph DEFAULT run Fri Mar 20 18:53:31 +08 2026
-Task 56: Removed all decorative fade/slide framer-motion animations from page.tsx, AlbumPageClient, TrackPageClient, not-found.tsx. Kept functional AnimatePresence for dropdown menu.
+# Ralph DEFAULT run Fri Mar 20 22:13:09 +08 2026
+Task 57: Added comingSoon?: boolean to Album type and isLocked?: boolean to Track type in lib/types.ts. Build passes.

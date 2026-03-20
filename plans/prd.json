@@ -243,6 +243,130 @@
       ],
       "files": ["app/page.tsx", "app/album/[slug]/AlbumPageClient.tsx", "app/track/[slug]/TrackPageClient.tsx", "components/EmailSignup.tsx"],
       "passes": true
+    },
+    {
+      "id": 57,
+      "category": "feature",
+      "priority": 0,
+      "description": "Add comingSoon and isLocked fields to the type system. In lib/types.ts, add 'comingSoon?: boolean' to the Album type and 'isLocked?: boolean' to the Track type. These are optional booleans so existing Batch 1 albums don't need any changes. Locked tracks will use audioUrl: '' (empty string). DONE: types compile, no existing code breaks, pnpm build passes. DO NOT TOUCH: any file other than lib/types.ts. VERIFY: pnpm build passes with no type errors.",
+      "steps": [
+        "Read lib/types.ts",
+        "Add comingSoon?: boolean to Album type",
+        "Add isLocked?: boolean to Track type",
+        "pnpm build passes"
+      ],
+      "files": ["lib/types.ts"],
+      "passes": true
+    },
+    {
+      "id": 58,
+      "category": "feature",
+      "priority": 0,
+      "description": "Add 5 Coming Soon albums with 25 locked tracks to lib/albums.ts. Read content/brainstorm/batch2/00b-album-map.md for album structure and song titles. Read the songwriting files in content/brainstorm/batch2/songwriting/ (e.g. 01-duolingo-streak.md, 02-founder-mode.md, etc.) for each track's concept, keyInsight, keyQuote, quoteSpeaker, and sources. The 5 albums are: 'The Operators' (slug: the-operators, 5 tracks: Duolingo Streak, Founder Mode, Scaling Stripe, Linear's Way, The Ramp Speed), 'Growth Engine' (slug: growth-engine, 5 tracks: The Racecar, North Star, First Thousand, Go Viral, Positioning), 'The Startup Life' (slug: the-startup-life, 5 tracks: Chicken and Egg, Not Venture-Scale, The Fundraise, Lessons from Failure, YC Lessons), 'Career Moves' (slug: career-moves, 5 tracks: The Magic Loop, Ten Commandments, Fire with Grace, When Enough Is Enough, Managing Up), 'Frameworks' (slug: frameworks, 5 tracks: Mission to Task, The Nature of Product, A/B Test Everything, Jobs to Be Done, The LNO Framework). Each album gets comingSoon: true, coverImage: '' (empty, will use gradient placeholder), a unique accentColor (pick warm/amber tones different from existing 4 albums). Each track gets isLocked: true, audioUrl: '', lyrics: '', duration: '', and populate concept, keyInsight, keyQuote, quoteSpeaker, sources from the songwriting research files. Add appropriate genre, mood, and tags for each track based on content. DONE: getAllAlbums() returns 9 albums, all Batch 2 tracks have isLocked: true. DO NOT TOUCH: existing Batch 1 album data. VERIFY: pnpm build passes.",
+      "steps": [
+        "Read content/brainstorm/batch2/00b-album-map.md for album structure",
+        "Read songwriting files in content/brainstorm/batch2/songwriting/ for track metadata",
+        "Add 5 new albums with 25 tracks to lib/albums.ts",
+        "Each album: comingSoon: true, each track: isLocked: true, audioUrl: '', lyrics: ''",
+        "Populate concept, keyInsight, keyQuote, sources from research files",
+        "pnpm build passes"
+      ],
+      "files": ["lib/albums.ts"],
+      "passes": false
+    },
+    {
+      "id": 59,
+      "category": "feature",
+      "priority": 0,
+      "description": "Add CSS gradient classes for the 5 new albums and update gradient lookup maps. Add 5 new gradient classes to app/globals.css: gradient-the-operators, gradient-growth-engine, gradient-the-startup-life, gradient-career-moves, gradient-frameworks. Use warm tones that complement but differ from existing gradients (founders=amber, product=blue, builders=emerald, human=rose). Suggested: operators=orange, growth-engine=yellow, startup-life=violet, career-moves=cyan, frameworks=indigo. Update the gradientClass lookup objects in both AlbumPageClient.tsx and TrackPageClient.tsx to include the new album slugs mapping to their gradient classes. DONE: new album pages render with distinct gradient backgrounds. DO NOT TOUCH: existing gradient classes or album data. VERIFY: pnpm build passes.",
+      "steps": [
+        "Read app/globals.css for existing gradient pattern",
+        "Add 5 new gradient classes",
+        "Update gradientClass map in AlbumPageClient.tsx",
+        "Update gradientClass map in TrackPageClient.tsx",
+        "pnpm build passes"
+      ],
+      "files": ["app/globals.css", "app/album/[slug]/AlbumPageClient.tsx", "app/track/[slug]/TrackPageClient.tsx"],
+      "passes": false
+    },
+    {
+      "id": 60,
+      "category": "feature",
+      "priority": 0,
+      "description": "Add audio context guards to prevent playing locked tracks. In lib/audio-context.tsx: (1) In the play() function, add an early return if track.isLocked is true. (2) In next(), when advancing through the queue, skip any tracks where isLocked is true. If all remaining tracks are locked, try the next album. If next album is all locked too, stop playback. (3) Same skip logic in prev() going backwards. (4) In the onEnded handler, skip locked tracks when auto-advancing. (5) In playAlbum(), filter out locked tracks from the queue so they never enter the play queue. This prevents the auto-advance feature from trying to play empty audioUrls after the last Batch 1 song. DONE: playing through all Batch 1 tracks and auto-advancing never attempts to play a locked track. DO NOT TOUCH: existing playback behavior for unlocked tracks. VERIFY: pnpm build passes.",
+      "steps": [
+        "Read lib/audio-context.tsx",
+        "Add early return in play() for locked tracks",
+        "Add skip logic in next() and prev() for locked tracks",
+        "Filter locked tracks in playAlbum() queue",
+        "Guard onEnded handler",
+        "pnpm build passes"
+      ],
+      "files": ["lib/audio-context.tsx"],
+      "passes": false
+    },
+    {
+      "id": 61,
+      "category": "feature",
+      "priority": 0,
+      "description": "Add Coming Soon visual treatment to album cards on the homepage. In app/page.tsx, when rendering an album with comingSoon: true: (1) Show a small 'Coming Soon' pill badge overlaid on the top-right corner of the album cover (use absolute positioning, small rounded pill with bg-primary/80 or similar). (2) If the album has no coverImage (empty string), render a gradient placeholder div using the album's accentColor instead of an <Image> tag. (3) Change the track count text to show '5 tracks - Coming Soon' instead of just '5 tracks'. Albums are still clickable, linking to their album page as normal. DONE: homepage shows 9 albums, Batch 2 albums have visible Coming Soon badges and gradient placeholders, clicking them navigates to album page. DO NOT TOUCH: Batch 1 album card rendering, audio playback. VERIFY: pnpm build passes, homepage shows 9 album cards.",
+      "steps": [
+        "Read app/page.tsx album grid rendering",
+        "Add Coming Soon pill badge for comingSoon albums",
+        "Add gradient placeholder for albums with empty coverImage",
+        "Update track count text for coming soon albums",
+        "pnpm build passes"
+      ],
+      "files": ["app/page.tsx"],
+      "passes": false
+    },
+    {
+      "id": 62,
+      "category": "feature",
+      "priority": 0,
+      "description": "Update album page to handle Coming Soon albums with lock icons and email CTA. In app/album/[slug]/AlbumPageClient.tsx: (1) When album.comingSoon is true, hide the 'Play All' button and show a 'Coming Soon' badge instead. (2) For locked tracks in the track list: replace the play button/track number with a Lock icon from lucide-react, show the track title and concept as a 1-line description below the title, hide duration and play count columns, hide the share menu. Locked tracks are still clickable links to their track pages. (3) After the track list, add the existing EmailSignup component (import from components/EmailSignup.tsx) with modified heading text: 'Get notified when this album drops'. DONE: coming soon album pages show lock icons instead of play buttons, no play controls, email signup CTA below track list. DO NOT TOUCH: Batch 1 album page rendering, audio playback. VERIFY: pnpm build passes, navigate to a coming soon album and see lock icons and email CTA.",
+      "steps": [
+        "Read AlbumPageClient.tsx",
+        "Hide Play All button for comingSoon albums, show Coming Soon badge",
+        "Replace play buttons with Lock icon for locked tracks",
+        "Show concept description for locked tracks",
+        "Hide duration, play count, share menu for locked tracks",
+        "Add EmailSignup component below track list for coming soon albums",
+        "pnpm build passes"
+      ],
+      "files": ["app/album/[slug]/AlbumPageClient.tsx"],
+      "passes": false
+    },
+    {
+      "id": 63,
+      "category": "feature",
+      "priority": 0,
+      "description": "Update track page to handle locked tracks with concept preview and email CTA. In app/track/[slug]/TrackPageClient.tsx, when track.isLocked is true: (1) Hide the entire audio player section (controls + progress bar) and replace with a 'Coming Soon' message and the EmailSignup component (import from components/EmailSignup.tsx). (2) Show concept, keyQuote, quoteSpeaker, storyBehind, and sources sections as normal — this is teaser content. (3) Hide the lyrics section entirely or show 'Lyrics coming soon...' placeholder. (4) Hide share buttons. (5) Guard the useEffect that calls audio.playAlbum — add early return if track.isLocked is true to prevent trying to load an empty audio URL. DONE: locked track pages show concept/quote/story but no audio player or lyrics, email signup is prominent, no console errors. DO NOT TOUCH: Batch 1 track page rendering. VERIFY: pnpm build passes, navigate to a locked track page, confirm no audio player and no console errors.",
+      "steps": [
+        "Read TrackPageClient.tsx",
+        "Guard useEffect to skip playAlbum for locked tracks",
+        "Hide audio player, show Coming Soon + EmailSignup instead",
+        "Keep concept, keyQuote, storyBehind, sources visible",
+        "Hide lyrics section or show placeholder",
+        "Hide share buttons for locked tracks",
+        "pnpm build passes"
+      ],
+      "files": ["app/track/[slug]/TrackPageClient.tsx"],
+      "passes": false
+    },
+    {
+      "id": 64,
+      "category": "feature",
+      "priority": 0,
+      "description": "Add a subtle Code Riff footer link to the homepage. In app/page.tsx, in the existing footer section (below the 'Built by Eric Tan' credit line), add a new line: 'Built with AI on Code Riff' that links to https://www.youtube.com/@CodeRiffAI. Style it very subtly: use text-xs and text-muted-foreground/30 (even more muted than the Eric Tan credit). The link should open in a new tab (target='_blank' rel='noopener noreferrer') and have a subtle hover state (hover:text-foreground/50). This should be a quiet credit, not a promotional section. DONE: homepage footer shows 'Built with AI on Code Riff' link below existing credits. DO NOT TOUCH: anything else on the page. VERIFY: pnpm build passes, scroll to footer, see the Code Riff link, click it opens YouTube channel.",
+      "steps": [
+        "Read app/page.tsx footer section",
+        "Add Code Riff link below existing credits",
+        "Style subtly with text-xs text-muted-foreground/30",
+        "pnpm build passes"
+      ],
+      "files": ["app/page.tsx"],
+      "passes": false
     }
   ]
 }
