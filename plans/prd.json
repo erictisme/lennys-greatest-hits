@@ -445,7 +445,7 @@
         "pnpm build passes"
       ],
       "files": ["app/track/[slug]/opengraph-image.tsx"],
-      "passes": false
+      "passes": true
     },
     {
       "id": 70,

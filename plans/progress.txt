@@ -2,3 +2,4 @@
 Task 66: Audited all Coming Soon album/track links — all slugs, gradients, and lookups correct. No fixes needed.
 Task 67: Fixed 2 broken source URLs — racecar-growth-framework slug corrected, venture-scale article replaced with Jason Fried podcast. All other URLs verified.
 Task 68: Added app/album/[slug]/opengraph-image.tsx for per-album OG images with accent color gradients and Coming Soon badges. Updated page.tsx metadata to use file-based OG.
+Task 69: Added app/track/[slug]/opengraph-image.tsx for per-track OG images with key quotes and Coming Soon indicators. Updated page.tsx metadata.

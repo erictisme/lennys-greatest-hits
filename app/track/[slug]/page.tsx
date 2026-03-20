@@ -12,12 +12,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const album = track ? getAlbumForTrack(slug) : undefined;
 
   if (!track || !album) {
-    return { title: "Track Not Found — Lenny's Greatest Hits" };
+    return { title: "Track Not Found | Lenny's Greatest Hits" };
   }
 
-  const title = `${track.title} — ${album.title} | Lenny's Greatest Hits`;
+  const title = `${track.title} - ${album.title} | Lenny's Greatest Hits`;
   const description = track.keyQuote
-    ? `"${track.keyQuote}" — ${track.quoteSpeaker}. ${track.concept}`
+    ? `"${track.keyQuote}" - ${track.quoteSpeaker}. ${track.concept}`
     : track.concept;
 
   return {
@@ -27,20 +27,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       title,
       description,
       type: "music.song",
-      images: [
-        {
-          url: `/api/og?type=track&slug=${slug}`,
-          width: 1200,
-          height: 630,
-          alt: track.title,
-        },
-      ],
     },
     twitter: {
       card: "summary_large_image",
       title,
       description,
-      images: [`/api/og?type=track&slug=${slug}`],
     },
   };
 }
