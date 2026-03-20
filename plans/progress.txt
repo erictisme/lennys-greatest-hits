@@ -1,10 +1,2 @@
-# Ralph DEFAULT run Fri Mar 20 14:00:01 +08 2026
-Task 40: Added "Follow lyrics" toggle to SyncedLyrics.tsx. When off, scrollIntoView is skipped so page doesn't jump while reading backstory.
-Task 41: Removed duplicate onEnded handler from mount effect in audio-context.tsx. The mount effect's handler used a stale queue closure and lacked next-album logic, conflicting with the correct queue-dependent handler.
-Task 42: Fixed audio interruption on page navigation. TrackPageClient was calling playAlbum on every visit, restarting playback. Added setAlbumQueue to audio context so navigation only updates the queue without interrupting current playback.
-Task 47: Fixed all broken source links in lib/albums.ts. Searched Lenny MCP archive for each guest, found correct Lenny podcast/newsletter URLs for 13 empty sources. Used paulgraham.com for Paul Graham's external essay.
-Task 43: Added section labels (Verse, Chorus, Bridge, Outro) to lyrics display. Section tags now render as small, muted, uppercase headers between lyric lines instead of being hidden.
-Task 44: Added "Up Next" countdown to audio-context and NowPlayingBar. When a song ends, a 5-second countdown banner shows the next track title with a Cancel button instead of auto-advancing immediately.
-Task 45: Replaced color swatch in NowPlayingBar with actual cover art thumbnail using next/image. Shows track's coverImage at 40x40 rounded.
-Task 46: Added tags field to Track type and 1-3 tags per track in albums.ts. Displayed as pill badges on track page and album page track rows.
-Task 48: NowPlayingBar already had Link wrapping track info. Added hover underline on title and subtle bg highlight for discoverability.
+# Ralph DEFAULT run Fri Mar 20 16:42:58 +08 2026
+Task 50: Made progress bars thicker (6px default, 10px on hover) in TrackPageClient and NowPlayingBar. Added padding for larger click targets.

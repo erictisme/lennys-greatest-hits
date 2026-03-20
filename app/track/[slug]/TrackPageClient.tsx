@@ -263,21 +263,23 @@ export default function TrackPageClient({ slug }: { slug: string }) {
 
           {/* Progress Bar */}
           <div
-            className="group relative h-1.5 bg-black/10 rounded-full cursor-pointer"
+            className="group relative cursor-pointer py-2 -my-2"
             onClick={seek}
             onMouseMove={handleProgressHover}
             onMouseLeave={() => setHoverTime(null)}
           >
-            <div
-              className="absolute inset-y-0 left-0 rounded-full transition-[width] duration-100"
-              style={{
-                width: `${progress}%`,
-                backgroundColor: album.accentColor,
-              }}
-            />
+            <div className="relative h-[6px] group-hover:h-[10px] bg-black/10 rounded-full transition-[height] duration-150">
+              <div
+                className="absolute inset-y-0 left-0 rounded-full transition-[width] duration-100"
+                style={{
+                  width: `${progress}%`,
+                  backgroundColor: album.accentColor,
+                }}
+              />
+            </div>
             {hoverTime && (
               <div
-                className="absolute -top-8 -translate-x-1/2 px-2 py-0.5 bg-foreground text-background text-xs rounded pointer-events-none"
+                className="absolute -top-6 -translate-x-1/2 px-2 py-0.5 bg-foreground text-background text-xs rounded pointer-events-none"
                 style={{ left: hoverTime.x }}
               >
                 {formatTime(hoverTime.time)}

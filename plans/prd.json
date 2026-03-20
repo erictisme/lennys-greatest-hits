@@ -141,6 +141,34 @@
       ],
       "files": ["lib/audio-context.tsx", "app/track/[slug]/TrackPageClient.tsx"],
       "passes": false
+    },
+    {
+      "id": 50,
+      "category": "bugfix",
+      "priority": 0,
+      "description": "Make the progress/seek bar thicker and easier to click. The time progress bar on the track page (TrackPageClient.tsx) and in the NowPlayingBar is too thin and hard to click/tap, especially on mobile. Increase the bar height to at least 6-8px (from current ~2-4px). Make the hover state even thicker (~10-12px) so it's easy to grab. Also ensure the clickable/draggable area extends beyond the visual bar (add padding to the hit target). DONE: progress bar is visually thicker and easy to click on both desktop and mobile. DO NOT TOUCH: audio playback logic, lyrics, track data. VERIFY: pnpm build passes, open track page and confirm progress bar is thicker and easy to click.",
+      "steps": [
+        "Find progress bar styling in TrackPageClient.tsx and NowPlayingBar.tsx",
+        "Increase bar height to 6-8px default, 10-12px on hover",
+        "Add padding to increase click target area",
+        "pnpm build passes"
+      ],
+      "files": ["app/track/[slug]/TrackPageClient.tsx", "components/NowPlayingBar.tsx"],
+      "passes": true
+    },
+    {
+      "id": 51,
+      "category": "bugfix",
+      "priority": 0,
+      "description": "Fix next/previous track buttons to navigate across albums. Currently clicking next track on the last song of an album does not advance to the first song of the next album. The next button should work across album boundaries: last track of Founders -> first track of Product, etc. Same for previous: first track of Product -> last track of Founders. When on the very last track of the last album, next should be disabled. When on the very first track of the first album, previous should be disabled. DONE: next/prev buttons work across album boundaries. DO NOT TOUCH: audio files, lyrics, UI styling. VERIFY: pnpm build passes, play last track of Founders, click next, confirm Product album first track plays.",
+      "steps": [
+        "Read audio-context.tsx next/previous track logic",
+        "Update to handle cross-album navigation",
+        "Disable buttons at absolute start/end",
+        "pnpm build passes"
+      ],
+      "files": ["lib/audio-context.tsx"],
+      "passes": false
     }
   ]
 }

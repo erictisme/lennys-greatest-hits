@@ -80,12 +80,12 @@ export default function NowPlayingBar() {
 
       {/* Progress bar — thin line at top of bar */}
       <div
-        className="h-1 cursor-pointer group relative"
+        className="cursor-pointer group relative py-1.5 -mb-1.5"
         onClick={handleSeek}
         onMouseMove={handleBarHover}
         onMouseLeave={() => setHoverTime(null)}
       >
-        <div className="relative h-full bg-black/10">
+        <div className="relative h-[6px] group-hover:h-[10px] bg-black/10 transition-[height] duration-150">
           <div
             className="absolute inset-y-0 left-0"
             style={{
@@ -96,7 +96,7 @@ export default function NowPlayingBar() {
         </div>
         {hoverTime && (
           <div
-            className="absolute -top-7 -translate-x-1/2 px-2 py-0.5 bg-foreground text-background text-xs rounded pointer-events-none"
+            className="absolute -top-5 -translate-x-1/2 px-2 py-0.5 bg-foreground text-background text-xs rounded pointer-events-none"
             style={{ left: hoverTime.x }}
           >
             {formatTime(hoverTime.time)}
