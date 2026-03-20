@@ -114,7 +114,7 @@
         "Write to content/brainstorm/batch2/08-album-structure.md"
       ],
       "files": ["content/brainstorm/batch2/07-notable-articles.md", "content/brainstorm/batch2/05-final-candidates.md", "content/brainstorm/batch2/08-album-structure.md"],
-      "passes": false
+      "passes": true
     }
   ]
 }
