@@ -12,7 +12,7 @@
         "Write to content/brainstorm/batch2/01-archive-scan.md"
       ],
       "files": ["content/brainstorm/batch2/01-archive-scan.md"],
-      "passes": false
+      "passes": true
     },
     {
       "id": 2,
