@@ -184,7 +184,7 @@
         "pnpm build passes"
       ],
       "files": ["lib/supabase.ts", "components/EmailSignup.tsx", "app/page.tsx"],
-      "passes": false
+      "passes": true
     },
     {
       "id": 53,

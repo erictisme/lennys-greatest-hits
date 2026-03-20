@@ -4,6 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { getAllAlbums } from "@/lib/tracks";
+import EmailSignup from "@/components/EmailSignup";
 
 export default function Home() {
   const albums = getAllAlbums();
@@ -60,6 +61,13 @@ export default function Home() {
           ))}
         </div>
       </main>
+
+      {/* Email Signup */}
+      <section className="px-4 sm:px-6 py-10 sm:py-14">
+        <div className="max-w-4xl mx-auto">
+          <EmailSignup />
+        </div>
+      </section>
 
       {/* About + Footer */}
       <footer className="border-t border-border/50 px-4 sm:px-6 py-8 sm:py-12">

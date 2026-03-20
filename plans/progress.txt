@@ -2,3 +2,4 @@
 Task 54: Removed 'Follow lyrics' toggle button and all auto-scroll (scrollIntoView) from SyncedLyrics.tsx. Active line highlighting preserved.
 Task 53: Added smooth CSS transition (300ms ease-linear) to progress bar fill in both TrackPageClient and NowPlayingBar. Clickable area already correct via padding.
 Task 55: Created app/opengraph-image.tsx (warm gradient OG image), app/icon.tsx (music note favicon), deleted old favicon.ico, updated layout metadata with siteName + JSON-LD.
+Task 52: Created lib/supabase.ts client, components/EmailSignup.tsx with duplicate handling, added signup section to homepage. Supabase table+RLS already existed.
