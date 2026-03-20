@@ -10,8 +10,8 @@ import {
   type ReactNode,
 } from "react";
 import { Track } from "./types";
-import { getAllTracks } from "./tracks";
-import { getAlbumForTrack } from "./tracks";
+import { getAllTracks, getAlbumForTrack } from "./tracks";
+import { albums } from "./albums";
 
 interface AudioState {
   currentTrack: Track | null;
@@ -157,6 +157,22 @@ export function AudioProvider({ children }: { children: ReactNode }) {
           setIsPlaying(true);
           return nextTrack;
         }
+        // Queue exhausted — try to auto-play next album
+        const albumIdx = albums.findIndex((a) => a.slug === prev.albumSlug);
+        if (albumIdx >= 0 && albumIdx < albums.length - 1) {
+          const nextAlbum = albums[albumIdx + 1];
+          const nextAlbumTracks = nextAlbum.tracks;
+          if (nextAlbumTracks.length > 0) {
+            setQueue(nextAlbumTracks);
+            queueRef.current = nextAlbumTracks;
+            const firstTrack = nextAlbumTracks[0];
+            audio.src = firstTrack.audioUrl;
+            audio.play().catch(() => {});
+            setIsPlaying(true);
+            return firstTrack;
+          }
+        }
+        // Last album — stop playback
         setIsPlaying(false);
         return prev;
       });

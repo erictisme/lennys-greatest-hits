@@ -459,12 +459,12 @@ Use the unofficial Suno API. Set up a simple Node.js script at `scripts/generate
 - [x] `pnpm build` passes
 
 ### Task 23: Auto-play next album when current album finishes
-- [ ] In lib/audio-context.tsx, find the onended handler for the audio element
-- [ ] When the queue is exhausted (last track of album ends), look up the current album in the albums array, find the NEXT album, and set the queue to that album's tracks starting at index 0
-- [ ] Import albums from lib/albums.ts and use the order: Founders → Product → Builders → The Human Side
-- [ ] If on the last album (The Human Side), stop playback — do not loop
-- [ ] DO NOT change the track data structure, album ordering, or UI components
-- [ ] `pnpm build` passes
+- [x] In lib/audio-context.tsx, find the onended handler for the audio element
+- [x] When the queue is exhausted (last track of album ends), look up the current album in the albums array, find the NEXT album, and set the queue to that album's tracks starting at index 0
+- [x] Import albums from lib/albums.ts and use the order: Founders → Product → Builders → The Human Side
+- [x] If on the last album (The Human Side), stop playback — do not loop
+- [x] DO NOT change the track data structure, album ordering, or UI components
+- [x] `pnpm build` passes
 
 ### Task 24: Fix home page track count and album descriptions
 - [ ] Update app/page.tsx subtitle from "12 songs" to "10 songs"

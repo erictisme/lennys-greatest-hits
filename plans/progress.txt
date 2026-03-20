@@ -1,2 +1,3 @@
 # Ralph DEFAULT run Fri Mar 20 11:07:42 +08 2026
 Task 22: Added Share to X, Share to LinkedIn, Copy Link buttons on TrackPageClient. Added share dropdown to NowPlayingBar with same 3 options. Build passes.
+Task 23: Auto-play next album when current album ends. Order: Founders → Product → Builders → The Human Side. Stops after last album.
