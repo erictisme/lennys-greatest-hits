@@ -538,14 +538,43 @@ Use the unofficial Suno API. Set up a simple Node.js script at `scripts/generate
 - [ ] DO NOT invent URLs — only use URLs returned by the MCP tools
 - [ ] `pnpm build` passes
 
-### Task 32: Display album art and track cover images on the site
-- [ ] Cover images have been extracted from MP3s and are in `public/covers/` — album covers at `founders.jpg`, `product.jpg`, `builders.jpg`, `the-human-side.jpg` and per-track covers at `{track-slug}.jpg`
-- [ ] On the HOME page (app/page.tsx): display album coverImage in each album card — show a small album art thumbnail (e.g., 48x48 or 64x64 rounded) alongside the album title/subtitle
-- [ ] On the ALBUM page (AlbumPageClient.tsx): display the album coverImage in the header section — a larger album art image (e.g., 200x200) positioned nicely with the album title/description
-- [ ] On the TRACK page (TrackPageClient.tsx): display the per-track cover image using `/covers/{track.slug}.jpg` — show it as a hero image or alongside the track title
-- [ ] Use Next.js `<Image>` component with proper width/height/alt attributes
-- [ ] Images should have rounded corners and a subtle shadow for the premium Spotify-like aesthetic
+### Task 32: Spotify-style layout with album art (MAJOR UI OVERHAUL)
+
+Reference: Spotify's artist page and album page layout. Dark theme. Cover images have been extracted from MP3s and are in `public/covers/`. Album covers: `founders.jpg`, `product.jpg`, `builders.jpg`, `the-human-side.jpg`. Per-track covers: `{track-slug}.jpg`.
+
+**HOME PAGE (app/page.tsx) - "Discography" grid layout:**
+- [ ] Replace the current album list with a horizontal grid of square album cover art cards
+- [ ] Each card: square cover image (fill width of card, ~180-200px), album title below in white bold text, subtitle below in gray smaller text (e.g., "4 songs" or track count)
+- [ ] Cards should be responsive: 2 columns on mobile, 3-4 on desktop
+- [ ] Clicking a card navigates to the album page
+- [ ] Dark background (bg-black or bg-zinc-950), not the current light theme
+- [ ] Use Next.js Image component with proper width/height/alt
+
+**ALBUM PAGE (AlbumPageClient.tsx) - Spotify album detail layout:**
+- [ ] At the top: album cover art on the left (~140x140 or ~180x180 rounded-sm) with album title, metadata ("Album . {track count} songs"), and play button to the right of it, horizontally aligned
+- [ ] Below that: a tracklist table with columns: # (track number) | small track cover art thumbnail (~40x40) | Title + subtitle row | Duration on the far right
+- [ ] Track rows should show cover art thumbnail for each track using `/covers/{track.slug}.jpg`
+- [ ] Keep the existing play/pause functionality on track number click
+- [ ] Keep the existing share dot menu (MoreHorizontal) on each row
+- [ ] Dark background throughout
+
+**TRACK PAGE (TrackPageClient.tsx):**
+- [ ] Display the per-track cover image using `/covers/{track.slug}.jpg` as a prominent image near the track title area
+- [ ] Size: ~200x200 or similar, with rounded corners and subtle shadow
+
+**Data layer:**
 - [ ] Add a `coverImage` field to the Track type in lib/types.ts (value: `/covers/{slug}.jpg`)
-- [ ] Populate the coverImage for each track in lib/albums.ts
+- [ ] Populate coverImage for each track in lib/albums.ts
 - [ ] DO NOT modify audio files or lyrics
+- [ ] `pnpm build` passes
+
+### Task 33: Remove em dashes from all user-facing text
+- [ ] Replace ALL em dashes (the long dash character) with regular dashes, commas, periods, or rewrite the phrase naturally, whichever reads better
+- [ ] Check these files: lib/albums.ts (moods, descriptions, concepts, keyInsights, storyBehind, keyQuotes), app/page.tsx, app/layout.tsx, app/album/[slug]/page.tsx, app/track/[slug]/page.tsx, app/track/[slug]/TrackPageClient.tsx, components/NowPlayingBar.tsx, components/ShareLyricModal.tsx
+- [ ] DO NOT touch em dashes inside actual song lyrics (the lyric lines in lib/albums.ts between quote marks in the lyrics arrays). Lyrics are artistic and should stay as-is.
+- [ ] DO NOT touch code comments (CSS comments, JS comments)
+- [ ] DO NOT touch the regex pattern in SyncedLyrics.tsx that matches em dashes (that's parsing logic, not display text)
+- [ ] For page titles and share text, use " | " or " - " instead of the em dash
+- [ ] For moods and descriptions, rewrite to avoid the dash entirely. Example: "The anxiety of not knowing — then knowing" becomes "The anxiety of not knowing, then knowing"
+- [ ] DO NOT modify audio files
 - [ ] `pnpm build` passes
