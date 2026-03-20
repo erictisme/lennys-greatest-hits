@@ -28,7 +28,7 @@
         "Write to content/brainstorm/lyric-principles.md"
       ],
       "files": ["content/brainstorm/lyric-study-raw.md", "content/brainstorm/lyric-principles.md"],
-      "passes": false
+      "passes": true
     },
     {
       "id": 3,
