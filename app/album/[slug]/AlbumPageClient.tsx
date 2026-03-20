@@ -30,7 +30,10 @@ export default function AlbumPageClient({ slug }: { slug: string }) {
   const [playCounts, setPlayCounts] = useState<Record<string, number>>({});
   const [openMenu, setOpenMenu] = useState<string | null>(null);
   const [copiedSlug, setCopiedSlug] = useState<string | null>(null);
+  const [albumShareOpen, setAlbumShareOpen] = useState(false);
+  const [albumCopied, setAlbumCopied] = useState(false);
   const menuRef = useRef<HTMLDivElement>(null);
+  const albumShareRef = useRef<HTMLDivElement>(null);
 
   // Close menu on outside click
   useEffect(() => {
@@ -45,8 +48,49 @@ export default function AlbumPageClient({ slug }: { slug: string }) {
     }
   }, [openMenu]);
 
+  // Close album share menu on outside click
+  useEffect(() => {
+    const handleClick = (e: MouseEvent) => {
+      if (albumShareRef.current && !albumShareRef.current.contains(e.target as Node)) {
+        setAlbumShareOpen(false);
+      }
+    };
+    if (albumShareOpen) {
+      document.addEventListener("mousedown", handleClick);
+      return () => document.removeEventListener("mousedown", handleClick);
+    }
+  }, [albumShareOpen]);
+
+  const getAlbumUrl = () =>
+    typeof window !== "undefined" ? `${window.location.origin}/album/${slug}` : "";
+
   const getTrackUrl = (trackSlug: string) =>
     typeof window !== "undefined" ? `${window.location.origin}/track/${trackSlug}` : "";
+
+  const handleAlbumShareX = () => {
+    const url = getAlbumUrl();
+    const comingSoonText = album?.comingSoon ? " (coming soon)" : "";
+    const text = encodeURIComponent(`Check out ${album?.title}${comingSoonText} on Lenny's Greatest Hits — ${album?.subtitle}`);
+    window.open(`https://twitter.com/intent/tweet?text=${text}&url=${encodeURIComponent(url)}`, "_blank");
+    trackEvent("share_clicked", { platform: "x", album: slug, type: "album" });
+    setAlbumShareOpen(false);
+  };
+
+  const handleAlbumShareLinkedIn = () => {
+    const url = getAlbumUrl();
+    window.open(`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(url)}`, "_blank");
+    trackEvent("share_clicked", { platform: "linkedin", album: slug, type: "album" });
+    setAlbumShareOpen(false);
+  };
+
+  const handleAlbumCopyLink = async () => {
+    const url = getAlbumUrl();
+    await navigator.clipboard.writeText(url);
+    setAlbumCopied(true);
+    setTimeout(() => setAlbumCopied(false), 2000);
+    trackEvent("share_clicked", { platform: "copy_link", album: slug, type: "album" });
+    setAlbumShareOpen(false);
+  };
 
   const handleShareX = (trackSlug: string, title: string) => {
     const url = getTrackUrl(trackSlug);
@@ -158,8 +202,8 @@ export default function AlbumPageClient({ slug }: { slug: string }) {
             </div>
           </div>
 
-          {/* Play All Button or Coming Soon Badge */}
-          <div className="mt-6">
+          {/* Play All Button or Coming Soon Badge + Share */}
+          <div className="mt-6 flex items-center gap-3">
             {album.comingSoon ? (
               <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium bg-muted text-muted-foreground">
                 <Lock className="w-3.5 h-3.5" />
@@ -178,6 +222,55 @@ export default function AlbumPageClient({ slug }: { slug: string }) {
                 Play All
               </button>
             )}
+
+            {/* Album Share Button */}
+            <div className="relative" ref={albumShareRef}>
+              <button
+                onClick={() => setAlbumShareOpen(!albumShareOpen)}
+                className="inline-flex items-center gap-2 px-4 py-2.5 rounded-full text-sm font-medium border border-border/50 text-muted-foreground hover:text-foreground hover:border-border transition-colors"
+              >
+                <Share2 className="w-4 h-4" />
+                Share
+              </button>
+
+              <AnimatePresence>
+                {albumShareOpen && (
+                  <motion.div
+                    initial={{ opacity: 0, scale: 0.95, y: -4 }}
+                    animate={{ opacity: 1, scale: 1, y: 0 }}
+                    exit={{ opacity: 0, scale: 0.95, y: -4 }}
+                    transition={{ duration: 0.15 }}
+                    className="absolute left-0 top-full mt-1 z-50 bg-white rounded-lg shadow-lg border border-border/50 py-1 w-[180px]"
+                  >
+                    <button
+                      onClick={handleAlbumShareX}
+                      className="flex items-center gap-2.5 w-full px-3 py-2 text-sm text-foreground/80 hover:bg-black/[0.04] transition-colors whitespace-nowrap"
+                    >
+                      <Share2 className="w-3.5 h-3.5" />
+                      Share to X
+                    </button>
+                    <button
+                      onClick={handleAlbumShareLinkedIn}
+                      className="flex items-center gap-2.5 w-full px-3 py-2 text-sm text-foreground/80 hover:bg-black/[0.04] transition-colors whitespace-nowrap"
+                    >
+                      <Share2 className="w-3.5 h-3.5" />
+                      Share to LinkedIn
+                    </button>
+                    <button
+                      onClick={handleAlbumCopyLink}
+                      className="flex items-center gap-2.5 w-full px-3 py-2 text-sm text-foreground/80 hover:bg-black/[0.04] transition-colors whitespace-nowrap"
+                    >
+                      {albumCopied ? (
+                        <Check className="w-3.5 h-3.5 text-green-600" />
+                      ) : (
+                        <Share2 className="w-3.5 h-3.5" />
+                      )}
+                      {albumCopied ? "Copied!" : "Copy Link"}
+                    </button>
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </div>
           </div>
         </div>
       </header>
