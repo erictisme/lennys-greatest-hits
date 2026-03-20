@@ -1,16 +1,10 @@
 "use client";
 
 import Link from "next/link";
-import { Music, Headphones } from "lucide-react";
+import Image from "next/image";
+import { Headphones } from "lucide-react";
 import { motion } from "framer-motion";
 import { getAllAlbums } from "@/lib/tracks";
-
-const gradientClass: Record<string, string> = {
-  founders: "gradient-founders",
-  product: "gradient-product",
-  builders: "gradient-builders",
-  "the-human-side": "gradient-human",
-};
 
 export default function Home() {
   const albums = getAllAlbums();
@@ -43,8 +37,8 @@ export default function Home() {
       </header>
 
       {/* Album Grid */}
-      <main className="flex-1 px-4 sm:px-6 pb-16 max-w-4xl mx-auto w-full">
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+      <main className="flex-1 px-4 sm:px-6 pb-16 max-w-5xl mx-auto w-full">
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-5 sm:gap-6">
           {albums.map((album, i) => (
             <motion.div
               key={album.slug}
@@ -53,29 +47,21 @@ export default function Home() {
               transition={{ duration: 0.5, delay: 0.15 + i * 0.1 }}
             >
               <Link href={`/album/${album.slug}`} className="block group">
-                <div
-                  className={`${gradientClass[album.slug] ?? ""} card-glass card-glow rounded-xl p-6 sm:p-8 transition-all duration-300 group-hover:scale-[1.02]`}
-                  style={{ "--glow-color": album.accentColor } as React.CSSProperties}
-                >
-                  {/* Accent bar */}
-                  <div
-                    className="w-10 h-1 rounded-full mb-4"
-                    style={{ backgroundColor: album.accentColor }}
+                <div className="relative aspect-square w-full overflow-hidden rounded-lg mb-3 shadow-md transition-transform duration-300 group-hover:scale-[1.03]">
+                  <Image
+                    src={album.coverImage}
+                    alt={album.title}
+                    width={320}
+                    height={320}
+                    className="object-cover w-full h-full"
                   />
-                  <h2 className="text-2xl font-bold tracking-tight mb-1">
-                    {album.title}
-                  </h2>
-                  <p className="text-sm text-muted-foreground mb-3">
-                    {album.subtitle}
-                  </p>
-                  <p className="text-sm text-muted-foreground/70 leading-relaxed mb-4">
-                    {album.description}
-                  </p>
-                  <div className="flex items-center gap-2 text-xs text-muted-foreground/50">
-                    <Music className="w-3.5 h-3.5" />
-                    <span>{album.tracks.length} tracks</span>
-                  </div>
                 </div>
+                <h2 className="text-sm sm:text-base font-bold tracking-tight truncate">
+                  {album.title}
+                </h2>
+                <p className="text-xs sm:text-sm text-muted-foreground truncate">
+                  {album.tracks.length} tracks &middot; {album.subtitle}
+                </p>
               </Link>
             </motion.div>
           ))}

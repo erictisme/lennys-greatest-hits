@@ -1,64 +1,125 @@
 {
   "features": [
     {
-      "id": 1,
+      "id": 31,
       "category": "feature",
-      "priority": 2,
-      "description": "Add share buttons to track page and NowPlayingBar. DONE looks like: Each track page has Share to X, Share to LinkedIn, and Copy Link buttons. X share pre-fills: '🎵 [Song Title] — Lenny's Greatest Hits [URL]'. LinkedIn share pre-fills similarly. Copy link shows a 'Copied!' toast. NowPlayingBar gets a small share icon next to controls. DO NOT touch audio playback logic, lyrics component, or album data structure. VERIFY: pnpm build passes, click Share on track page and NowPlayingBar, confirm X/LinkedIn open with pre-filled text, confirm copy link works.",
+      "priority": 0,
+      "description": "Research and add real source URLs for all 'Inspired by' links. There are 18 sources across 10 tracks in lib/albums.ts, all with url: ''. For EACH source: (1) call mcp__lennysdata__search_content with the guest name, (2) find the matching Lenny Substack article (lennysnewsletter.com or lennyrachitsky.com), (3) call mcp__lennysdata__read_content to confirm and get URL, (4) update the url field in lib/albums.ts. If no Lenny article exists for a source, link to the original source but update the title to indicate it (e.g. 'Do Things That Don't Scale (paulgraham.com)'). DO NOT invent URLs. If unfindable, leave url as ''. Also fix TrackPageClient.tsx display: when url is non-empty, wrap in <a> tag (target='_blank', rel='noopener noreferrer') with ExternalLink icon. Show source title as link text, NOT 'Based on Lenny's episode with {guest}'. When url is empty, show as plain text using title. DONE: every source has a real URL or is confirmed unfindable, TrackPageClient.tsx renders clickable links. DO NOT TOUCH: audio files, lyrics, album structure. VERIFY: pnpm build passes, open any track page and confirm source links are clickable and go to real pages.",
       "steps": [
-        "Update TrackPageClient.tsx share section — replace single Share button with 3 buttons: Share to X, Share to LinkedIn, Copy Link",
-        "X button opens twitter.com/intent/tweet with text and url params",
-        "LinkedIn button opens linkedin.com/sharing/share-offsite with url param",
-        "Copy Link button copies URL to clipboard and shows brief 'Copied!' feedback",
-        "Add share icon to NowPlayingBar.tsx next to play controls that opens same share options",
+        "Read all sources from lib/albums.ts",
+        "For each source, search Lenny MCP with guest name using mcp__lennysdata__search_content",
+        "Confirm match and get URL via mcp__lennysdata__read_content",
+        "Update url field in lib/albums.ts for each source",
+        "Fix source display in TrackPageClient.tsx to show title as link text with ExternalLink icon",
         "pnpm build passes"
       ],
-      "files": ["app/track/[slug]/TrackPageClient.tsx", "components/NowPlayingBar.tsx"],
+      "files": ["lib/albums.ts", "app/track/[slug]/TrackPageClient.tsx"],
+      "passes": true
+    },
+    {
+      "id": 32,
+      "category": "feature",
+      "priority": 1,
+      "description": "Add coverImage field to the data layer. Add coverImage: string to the Track type in lib/types.ts. For each track in lib/albums.ts, add coverImage: '/covers/{slug}.jpg' (e.g. coverImage: '/covers/ship-it.jpg'). Cover image files already exist in public/covers/. DONE: every track has a coverImage field, TypeScript compiles. DO NOT TOUCH: any components, audio files, or lyrics. VERIFY: pnpm build passes, no TypeScript errors.",
+      "steps": [
+        "Add coverImage: string to Track type in lib/types.ts",
+        "Add coverImage field to every track in lib/albums.ts",
+        "pnpm build passes"
+      ],
+      "files": ["lib/types.ts", "lib/albums.ts"],
+      "passes": true
+    },
+    {
+      "id": 33,
+      "category": "feature",
+      "priority": 1,
+      "description": "Replace album cards on home page with a cover art grid. Keep the existing warm Lenny light theme (cream/white backgrounds, warm orange accents). DO NOT switch to dark theme. Replace the current 2-column card grid in app/page.tsx with a responsive album cover art grid. Each card: square cover image on top (~160-180px, rounded-lg) using album.coverImage, album title below in bold, track count + subtitle in muted text. Responsive: 2 cols mobile, 3-4 cols tablet, 4-6 cols desktop (must scale to many albums). Use Next.js Image component with width/height/alt. DONE: home page shows album cover art images in a responsive grid. DO NOT TOUCH: audio files, lyrics, other pages, color theme. VERIFY: pnpm build passes, open home page and see album cover images.",
+      "steps": [
+        "Import Image from next/image in app/page.tsx",
+        "Replace card grid with cover art grid layout",
+        "Add responsive columns",
+        "pnpm build passes"
+      ],
+      "files": ["app/page.tsx"],
+      "passes": true
+    },
+    {
+      "id": 34,
+      "category": "feature",
+      "priority": 1,
+      "description": "Add album cover art to album page header and track cover thumbnails to tracklist rows. Keep existing warm Lenny light theme, gradients, and accent colors. DO NOT switch to dark. In album header (AlbumPageClient.tsx): add album cover art on the left (~140-160px, rounded-lg) with title/subtitle/track count to the right, horizontally aligned. In each track row: add a small cover art thumbnail (~40x40, rounded) between the track number and the track title, using the track's coverImage field. Use Next.js Image component. DONE: album page shows album art in header and small thumbnails per track row. DO NOT TOUCH: audio files, lyrics, gradient backgrounds, accent colors, play/pause logic, share menu. VERIFY: pnpm build passes, open any album page and see cover art in header and thumbnails in rows.",
+      "steps": [
+        "Import Image from next/image in AlbumPageClient.tsx",
+        "Add album cover image to header layout (horizontal with title)",
+        "Add track thumbnail to each track row between number and title",
+        "pnpm build passes"
+      ],
+      "files": ["app/album/[slug]/AlbumPageClient.tsx"],
       "passes": false
     },
     {
-      "id": 2,
+      "id": 35,
       "category": "feature",
-      "priority": 2,
-      "description": "Auto-play next album when current album finishes. DONE looks like: When the last track of an album finishes playing, automatically start playing the first track of the next album in order (Founders → Product → Builders → The Human Side). After the last album, stop. DO NOT change the track data structure, album ordering in albums.ts, or modify the UI components. VERIFY: pnpm build passes, play the last track of Founders album, confirm it auto-starts Product album track 1 when it ends.",
+      "priority": 1,
+      "description": "Add track cover image to the track detail page. Keep existing warm Lenny light theme. DO NOT switch to dark. In TrackPageClient.tsx, add the track cover image (~160-200px, rounded-lg with subtle shadow) in the header area near the track title. Use Next.js Image component with width/height/alt. DONE: track page shows cover art image in header area. DO NOT TOUCH: audio files, lyrics, existing sections (quote, story, lyrics, sources, share), color theme. VERIFY: pnpm build passes, open any track page and see cover art image.",
       "steps": [
-        "In lib/audio-context.tsx, find the onended handler for the audio element",
-        "When queue is exhausted (no next track), look up the current album, find the next album in the albums array, and set the queue to that album's tracks starting at index 0",
-        "Import albums from lib/albums and use the order defined there",
-        "If on the last album (The Human Side), stop playback",
+        "Import Image from next/image in TrackPageClient.tsx",
+        "Add cover image near track title in header",
         "pnpm build passes"
       ],
-      "files": ["lib/audio-context.tsx", "lib/albums.ts"],
+      "files": ["app/track/[slug]/TrackPageClient.tsx"],
       "passes": false
     },
     {
-      "id": 3,
-      "category": "feature",
-      "priority": 2,
-      "description": "Add play count tracking using Vercel KV (free tier). DONE looks like: Each time a track starts playing, increment a counter in Vercel KV. Display play count next to each track on album pages (e.g. '142 plays'). Add a 'Most Played' sort option on the home page. DO NOT modify audio files, lyrics, or album data structure. DO NOT add Supabase. VERIFY: pnpm build passes, play a track and refresh — count increments, album page shows play counts, sort toggle works on home page.",
-      "steps": [
-        "Install @vercel/kv: pnpm add @vercel/kv",
-        "Create app/api/plays/route.ts — POST increments count for a slug, GET returns all counts",
-        "In audio-context.tsx, fire a POST to /api/plays when a track starts playing (debounce — only count if played >5 seconds)",
-        "Create a usePlayCounts hook that fetches counts on mount",
-        "Display play count in AlbumPageClient.tsx next to each track duration",
-        "Add sort toggle on home page: 'By Album' (default) vs 'Most Played' (flat list sorted by count)",
-        "pnpm build passes"
-      ],
-      "files": ["app/api/plays/route.ts", "lib/audio-context.tsx", "app/album/[slug]/AlbumPageClient.tsx", "app/page.tsx"],
-      "passes": false
-    },
-    {
-      "id": 4,
+      "id": 36,
       "category": "polish",
-      "priority": 3,
-      "description": "Update home page subtitle to show correct track count (10 not 12) and improve album descriptions to be more JTBD/human. DONE looks like: Home page says '10 songs from 638 episodes' not '12 songs'. Album subtitles are human-readable and describe the feeling, not production jargon. Builders album description acknowledges it only has 2 tracks. DO NOT change audio, lyrics, or track data. VERIFY: pnpm build passes, home page shows correct count, descriptions read naturally.",
+      "priority": 2,
+      "description": "Remove all em dashes from user-facing non-lyric text. Replace ALL em dashes (the long dash character) with regular dashes, commas, periods, or natural rewrites. Files to check: lib/albums.ts (moods, descriptions, concepts, keyInsights, storyBehind, keyQuotes), app/page.tsx, app/layout.tsx, app/album/[slug]/page.tsx, app/track/[slug]/page.tsx, TrackPageClient.tsx, NowPlayingBar.tsx, ShareLyricModal.tsx. For page titles and share text use ' | ' or ' - '. For moods and descriptions rewrite naturally. DONE: zero em dashes in user-facing non-lyric text. DO NOT TOUCH: em dashes inside song lyrics (artistic choice), code comments, the regex in SyncedLyrics.tsx, audio files. VERIFY: pnpm build passes, grep for em dashes confirms none remain outside lyrics and comments.",
       "steps": [
-        "Update app/page.tsx subtitle from '12 songs' to '10 songs'",
-        "Review and update album subtitle/description in lib/albums.ts for each album to be human/JTBD focused",
+        "Find all em dashes in target files",
+        "Replace each with natural alternative",
+        "Confirm none remain outside lyrics/comments",
         "pnpm build passes"
       ],
-      "files": ["app/page.tsx", "lib/albums.ts"],
+      "files": ["lib/albums.ts", "app/page.tsx", "app/layout.tsx", "app/album/[slug]/page.tsx", "app/track/[slug]/page.tsx", "app/track/[slug]/TrackPageClient.tsx", "components/NowPlayingBar.tsx", "components/ShareLyricModal.tsx"],
+      "passes": false
+    },
+    {
+      "id": 37,
+      "category": "polish",
+      "priority": 2,
+      "description": "Remove 'Tech Culture Anthems' label from the site. Remove the subtitle from the home page hero section in app/page.tsx (around line 30) including the entire div with the Headphones icon and text. Remove from OG image alt text in app/layout.tsx (change to just 'Lenny's Greatest Hits'). DONE: no mention of 'Tech Culture Anthems' anywhere. DO NOT TOUCH: audio files, lyrics, any other components. VERIFY: pnpm build passes, grep for 'Tech Culture Anthems' returns zero results.",
+      "steps": [
+        "Remove Headphones + Tech Culture Anthems div from app/page.tsx",
+        "Update OG alt text in app/layout.tsx",
+        "pnpm build passes"
+      ],
+      "files": ["app/page.tsx", "app/layout.tsx"],
+      "passes": false
+    },
+    {
+      "id": 38,
+      "category": "polish",
+      "priority": 2,
+      "description": "Add creator credit with LinkedIn link. Add a footer/credit on the home page (app/page.tsx): 'Built by Eric Tan' linking to https://www.linkedin.com/in/erictisme/. Subtle, tasteful, small muted text at the bottom. Also add to layout.tsx footer if one exists. Link: target='_blank', rel='noopener noreferrer'. DONE: bottom of home page shows 'Built by Eric Tan' with clickable LinkedIn link. DO NOT TOUCH: audio files, lyrics, any other functionality. VERIFY: pnpm build passes, scroll to bottom of home page and see credit with working link.",
+      "steps": [
+        "Add credit footer to app/page.tsx",
+        "Add to layout.tsx footer if exists",
+        "pnpm build passes"
+      ],
+      "files": ["app/page.tsx", "app/layout.tsx"],
+      "passes": false
+    },
+    {
+      "id": 39,
+      "category": "deploy",
+      "priority": 3,
+      "description": "Deploy to Vercel production. Run vercel --prod and confirm it succeeds with no errors. DONE: site is live at lennys-greatest-hits.vercel.app with all recent changes. DO NOT TOUCH: any source code. VERIFY: vercel --prod exits successfully, pnpm build passes.",
+      "steps": [
+        "pnpm build passes",
+        "vercel --prod succeeds"
+      ],
+      "files": [],
       "passes": false
     }
   ]
