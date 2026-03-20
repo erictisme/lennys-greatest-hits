@@ -1,0 +1,80 @@
+{
+  "features": [
+    {
+      "id": 1,
+      "category": "content",
+      "priority": 0,
+      "description": "Study actual lyrics from Eric's reference artists. For each artist, find 2-3 of their best songs online and analyze what makes the lyrics work. Artists: Jon Guerra (warmth, honesty), Jonathan Ogden (vulnerability, simplicity), Bon Iver/Justin Vernon (abstract imagery, emotional weight), Phoebe Bridgers (dry wit, specificity), Iron and Wine (pastoral imagery, storytelling). Note: word choice, line length, imagery patterns, rhyme style, emotional techniques. DONE: content/brainstorm/lyric-study-raw.md exists with analysis of 10-15 songs across 5 artists. NOT TOUCH: code files, suno-prompts. VERIFY: file covers all 5 artists with 2-3 songs each, includes actual lyric excerpts and analysis of what makes them work.",
+      "steps": [
+        "Search web for Jon Guerra lyrics — analyze 2-3 songs",
+        "Search web for Jonathan Ogden lyrics — analyze 2-3 songs",
+        "Search web for Bon Iver lyrics — analyze 2-3 songs",
+        "Search web for Phoebe Bridgers lyrics — analyze 2-3 songs",
+        "Search web for Iron and Wine lyrics — analyze 2-3 songs",
+        "Write analysis to content/brainstorm/lyric-study-raw.md"
+      ],
+      "files": ["content/brainstorm/lyric-study-raw.md"],
+      "passes": false
+    },
+    {
+      "id": 2,
+      "category": "content",
+      "priority": 1,
+      "description": "Extract songwriting principles from the lyric study (Task 1) + general craft knowledge. Cover: syllable economy (ideal syllables per line), show vs tell (compare our batch 1 'telling' lines to how reference artists would 'show'), vowel sounds (which sing well on high notes), specificity (concrete details beat abstractions), hook test (can you hum it after one listen), emotional arc (tension/release), rhyme quality (perfect vs slant vs none by genre). DONE: content/brainstorm/lyric-principles.md exists with 7+ principles each with examples. NOT TOUCH: code files. VERIFY: file has 7+ principles, each with a bad example and good example.",
+      "steps": [
+        "Read lyric study from Task 1",
+        "Extract principles with examples from reference artists",
+        "Compare to our batch 1 lyrics for contrast",
+        "Write to content/brainstorm/lyric-principles.md"
+      ],
+      "files": ["content/brainstorm/lyric-study-raw.md", "content/brainstorm/lyric-principles.md"],
+      "passes": false
+    },
+    {
+      "id": 3,
+      "category": "content",
+      "priority": 2,
+      "description": "Research Suno v5-specific lyric tips from the web. Search Reddit (r/SunoAI), forums, blog posts for: what syllable patterns Suno handles well, what vocal styles it nails vs struggles with, how structure tags ([Verse], [Chorus], etc.) affect output, what makes Suno mumble or lose words, male vs female voice quality differences, tips for getting better vocal performances, common mistakes that produce AI-slop. DONE: content/brainstorm/suno-lyric-tips.md exists with 10+ practical tips. NOT TOUCH: code files. VERIFY: file has 10+ specific tips, sourced from real community experience, not generic advice.",
+      "steps": [
+        "Search web for Suno v5 lyric writing tips",
+        "Search for common Suno mistakes and fixes",
+        "Search for male vs female voice tips",
+        "Search for structure tag best practices",
+        "Write to content/brainstorm/suno-lyric-tips.md"
+      ],
+      "files": ["content/brainstorm/suno-lyric-tips.md"],
+      "passes": false
+    },
+    {
+      "id": 4,
+      "category": "content",
+      "priority": 3,
+      "description": "Audit batch 1 lyrics. Read all lyrics from content/suno-prompts/*.json (skip feature-factory.json — cancelled). For each of the 10 songs, note: lines that are too wordy (could be tighter), lines where rhymes feel forced, lines that TELL instead of SHOW, lines that are generic startup advice vs specific Lenny content, and the BEST lines to learn from. Suggest rewrites for the worst 2-3 lines per song using principles from Tasks 1-2. DONE: content/brainstorm/batch1-audit.md exists with audit of all 10 songs. NOT TOUCH: the actual json files — this is analysis only. VERIFY: file covers all 10 songs, each with specific line callouts (good and bad) and 2-3 rewrite suggestions.",
+      "steps": [
+        "Read all 10 suno-prompt json files (skip feature-factory)",
+        "Apply principles from Tasks 1-2 to audit each song",
+        "Identify best and worst lines per song",
+        "Write rewrites for worst 2-3 lines per song",
+        "Write to content/brainstorm/batch1-audit.md"
+      ],
+      "files": ["content/brainstorm/batch1-audit.md"],
+      "passes": false
+    },
+    {
+      "id": 5,
+      "category": "content",
+      "priority": 4,
+      "description": "Compile everything into a practical 1-page lyric craft guide. Combine lyric study (Task 1), principles (Task 2), Suno tips (Task 3), and batch 1 audit (Task 4) into a single actionable guide under 100 lines. Structure: 5 core rules (each with example), per-genre tips for each album (Indie Folk/Jazz Pop/Lo-Fi Hip Hop/Acoustic Soul), Suno-specific section, and a pre-write checklist. This guide will be used when writing batch 2 lyrics. DONE: content/lyric-craft-guide.md exists, is under 100 lines, covers all sections. NOT TOUCH: code files, json files. VERIFY: file exists, under 100 lines, has 5 rules + 4 genre sections + Suno tips + checklist.",
+      "steps": [
+        "Read all research from Tasks 1-4",
+        "Distill into 5 core rules with examples",
+        "Write genre-specific tips for each album",
+        "Add Suno-specific section",
+        "Add pre-write checklist",
+        "Write to content/lyric-craft-guide.md — keep under 100 lines"
+      ],
+      "files": ["content/lyric-craft-guide.md"],
+      "passes": false
+    }
+  ]
+}
