@@ -55,7 +55,7 @@
         "pnpm build passes"
       ],
       "files": ["components/SyncedLyrics.tsx"],
-      "passes": false
+      "passes": true
     },
     {
       "id": 44,

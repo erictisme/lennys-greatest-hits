@@ -10,6 +10,7 @@ interface SyncedLine {
   time: number;
   isChorus: boolean;
   isQuote: boolean;
+  isSectionLabel: boolean;
   speaker?: string;
 }
 
@@ -47,6 +48,15 @@ function parseLyrics(raw: string, duration: number): SyncedLine[] {
         inQuote = false;
         speaker = undefined;
       }
+      // Add as a visible section label
+      const label = trimmed.slice(1, -1); // Remove brackets
+      lines.push({
+        text: label,
+        time: 0,
+        isChorus: inChorus,
+        isQuote: false,
+        isSectionLabel: true,
+      });
       continue;
     }
 
@@ -61,6 +71,7 @@ function parseLyrics(raw: string, duration: number): SyncedLine[] {
       time: 0, // filled below
       isChorus: inChorus,
       isQuote: lineIsQuote,
+      isSectionLabel: false,
       speaker: lineSpeaker,
     });
   }
@@ -143,6 +154,21 @@ export default function SyncedLyrics({
             else opacity = 0.3;
           } else {
             opacity = 0.8;
+          }
+
+          if (line.isSectionLabel) {
+            return (
+              <div
+                key={i}
+                ref={(el) => { lineRefs.current[i] = el; }}
+                className="px-2 pt-4 pb-1"
+                style={{ opacity: hasActiveState ? 0.4 : 0.5 }}
+              >
+                <span className="text-[10px] font-semibold uppercase tracking-[0.15em] text-muted-foreground/50">
+                  {line.text}
+                </span>
+              </div>
+            );
           }
 
           return (
