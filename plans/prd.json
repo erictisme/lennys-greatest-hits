@@ -42,7 +42,7 @@
         "pnpm build passes"
       ],
       "files": ["lib/audio-context.tsx", "app/layout.tsx"],
-      "passes": false
+      "passes": true
     },
     {
       "id": 43,

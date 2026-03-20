@@ -30,10 +30,15 @@ export default function TrackPageClient({ slug }: { slug: string }) {
   const album = track ? getAlbumForTrack(slug) : undefined;
   const audio = useAudio();
 
-  // Set the queue to the album's tracks when visiting a track page
+  // Set the queue to the album's tracks when visiting a track page.
+  // If audio is already playing, only update the queue without interrupting playback.
   useEffect(() => {
     if (album) {
-      audio.playAlbum(album.slug, (track?.trackNumber ?? 1) - 1);
+      if (audio.isPlaying || audio.currentTrack) {
+        audio.setAlbumQueue(album.slug);
+      } else {
+        audio.playAlbum(album.slug, (track?.trackNumber ?? 1) - 1);
+      }
     }
     // Only run when slug changes, not on every audio state update
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -125,7 +130,7 @@ export default function TrackPageClient({ slug }: { slug: string }) {
   const [copied, setCopied] = useState(false);
 
   const shareUrl = typeof window !== "undefined" ? window.location.href : "";
-  const shareText = `🎵 ${track.title} — Lenny's Greatest Hits`;
+  const shareText = `🎵 ${track.title} | Lenny's Greatest Hits`;
 
   const handleShareX = () => {
     trackEvent("share_clicked", { platform: "x", track: slug, track_title: track.title });
@@ -288,7 +293,7 @@ export default function TrackPageClient({ slug }: { slug: string }) {
             &ldquo;{track.keyQuote}&rdquo;
             {track.quoteSpeaker && (
               <span className="block mt-1 not-italic text-xs text-muted-foreground/50">
-                — {track.quoteSpeaker}
+                - {track.quoteSpeaker}
               </span>
             )}
           </motion.blockquote>

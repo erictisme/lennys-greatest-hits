@@ -27,6 +27,7 @@ interface AudioState {
   next: () => void;
   prev: () => void;
   playAlbum: (albumSlug: string, startIndex?: number) => void;
+  setAlbumQueue: (albumSlug: string) => void;
   accentColor: string;
   getPlayCount: (slug: string) => number;
 }
@@ -260,6 +261,14 @@ export function AudioProvider({ children }: { children: ReactNode }) {
     }
   }, [currentTrack, queue, play]);
 
+  const setAlbumQueue = useCallback((albumSlug: string) => {
+    const allTracks = getAllTracks();
+    const albumTracks = allTracks.filter((t) => t.albumSlug === albumSlug);
+    if (albumTracks.length > 0) {
+      setQueue(albumTracks);
+    }
+  }, []);
+
   const playAlbum = useCallback(
     (albumSlug: string, startIndex = 0) => {
       const allTracks = getAllTracks();
@@ -291,6 +300,7 @@ export function AudioProvider({ children }: { children: ReactNode }) {
         next,
         prev,
         playAlbum,
+        setAlbumQueue,
         accentColor,
         getPlayCount,
       }}
