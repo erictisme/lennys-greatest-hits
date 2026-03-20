@@ -2,7 +2,6 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { useState, useMemo } from "react";
 import { useRouter } from "next/navigation";
 import { Shuffle } from "lucide-react";
 import { getAllAlbums } from "@/lib/tracks";
@@ -13,35 +12,6 @@ export default function Home() {
   const albums = getAllAlbums();
   const router = useRouter();
   const audio = useAudio();
-  const [selectedTag, setSelectedTag] = useState<string | null>(null);
-
-  // Collect all unique tags with counts
-  const tagCounts = useMemo(() => {
-    const counts: Record<string, number> = {};
-    for (const album of albums) {
-      for (const track of album.tracks) {
-        if (track.tags) {
-          for (const tag of track.tags) {
-            counts[tag] = (counts[tag] || 0) + 1;
-          }
-        }
-      }
-    }
-    return counts;
-  }, [albums]);
-
-  const sortedTags = useMemo(
-    () => Object.entries(tagCounts).sort((a, b) => b[1] - a[1]),
-    [tagCounts]
-  );
-
-  // Filter albums by selected tag
-  const filteredAlbums = useMemo(() => {
-    if (!selectedTag) return albums;
-    return albums.filter((album) =>
-      album.tracks.some((track) => track.tags?.includes(selectedTag))
-    );
-  }, [albums, selectedTag]);
 
   return (
     <div className="flex flex-col min-h-screen">
@@ -74,38 +44,10 @@ export default function Home() {
         </button>
       </div>
 
-      {/* Browse by Topic */}
-      <section className="px-4 sm:px-6 pb-8 max-w-5xl mx-auto w-full">
-        <h2 className="text-sm font-medium text-muted-foreground/60 uppercase tracking-wider mb-3">Browse by topic</h2>
-        <div className="flex flex-wrap gap-2">
-          {selectedTag && (
-            <button
-              onClick={() => setSelectedTag(null)}
-              className="px-3 py-1 text-xs font-medium rounded-full border border-border/50 text-foreground bg-foreground/10 transition-colors"
-            >
-              All &times;
-            </button>
-          )}
-          {sortedTags.map(([tag, count]) => (
-            <button
-              key={tag}
-              onClick={() => setSelectedTag(selectedTag === tag ? null : tag)}
-              className={`px-3 py-1 text-xs font-medium rounded-full border transition-colors ${
-                selectedTag === tag
-                  ? "border-foreground/30 bg-foreground/10 text-foreground"
-                  : "border-border/30 text-muted-foreground/60 hover:text-foreground hover:border-border/60"
-              }`}
-            >
-              {tag} <span className="opacity-50 ml-0.5">{count}</span>
-            </button>
-          ))}
-        </div>
-      </section>
-
       {/* Album Grid */}
       <main className="flex-1 px-4 sm:px-6 pb-16 max-w-5xl mx-auto w-full">
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-5 sm:gap-6">
-          {filteredAlbums.map((album) => {
+          {albums.map((album) => {
             const gradientMap: Record<string, string> = {
               "the-operators": "gradient-the-operators",
               "growth-engine": "gradient-growth-engine",
