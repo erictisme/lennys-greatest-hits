@@ -1,2 +1,3 @@
 # Ralph DEFAULT run Fri Mar 20 11:49:27 +08 2026
 Task 1: Scanned full archive (289 podcasts, 349 newsletters). Flagged 42 story-rich candidates with specific numbers/stories to content/brainstorm/batch2/01-archive-scan.md.
+Lyric-Craft Task 1: Studied lyrics from 5 reference artists (Guerra, Ogden, Vernon, Bridgers, Beam) — 14 songs analyzed with techniques and takeaways in content/brainstorm/lyric-study-raw.md.

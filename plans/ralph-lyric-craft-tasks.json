@@ -14,7 +14,7 @@
         "Write analysis to content/brainstorm/lyric-study-raw.md"
       ],
       "files": ["content/brainstorm/lyric-study-raw.md"],
-      "passes": false
+      "passes": true
     },
     {
       "id": 2,
