@@ -85,6 +85,36 @@
       ],
       "files": ["content/brainstorm/batch2/05-final-candidates.md", "content/brainstorm/batch2/06-source-material.md"],
       "passes": false
+    },
+    {
+      "id": 7,
+      "category": "content",
+      "priority": 6,
+      "description": "Find Lenny's most NOTABLE long-form articles — the ones that are too long to read but packed with actionable frameworks. These are batch 2's secret weapon: songs that condense a 5,000-word article into 3 minutes. Specifically search for: 'how to start a marketplace' 'marketplace' 'two-sided' 'b2b saas' 'b2b sales' 'enterprise' 'AI changing' 'AI product' 'future of' 'pricing strategy' 'growth loops' 'retention' 'onboarding' 'hiring your first' 'fundraising guide'. For each article found, use mcp__lennysdata__read_content to get the FULL article. Extract: the core framework/steps (often numbered), specific company examples with numbers, the ONE insight that makes the article worth reading, and the best quotable line. DONE: content/brainstorm/batch2/07-notable-articles.md exists with 15+ notable articles analyzed. NOT TOUCH: code files. VERIFY: file has 15+ articles, each with framework summary + company examples + key insight + best quote.",
+      "steps": [
+        "Search archive for long-form 'how to' and framework articles",
+        "Search for marketplace, b2b, AI, pricing, growth, hiring topics",
+        "Use mcp__lennysdata__read_content for full article text",
+        "Extract framework, examples, key insight, best quote per article",
+        "Write to content/brainstorm/batch2/07-notable-articles.md"
+      ],
+      "files": ["content/brainstorm/batch2/07-notable-articles.md"],
+      "passes": false
+    },
+    {
+      "id": 8,
+      "category": "content",
+      "priority": 7,
+      "description": "Design batch 2 album structure. Batch 1 had 4 albums by JTBD (Founders/Product/Builders/Human Side). Batch 2 should add NEW albums that are article-driven — each album IS a condensed version of a notable Lenny article or article series. Propose 3-4 new album concepts based on the notable articles from Task 7. Examples: 'The Marketplace Album' (songs condensing Lenny's marketplace guides), 'The AI Album' (songs about how AI is changing building/product/work), 'The Growth Playbook' (songs from Lenny's growth/retention/onboarding articles). For each proposed album: title, subtitle (JTBD-focused), which 3-4 articles it condenses, song title ideas per track, and why this album would make Lenny proud (it proves we deeply used his content). DONE: content/brainstorm/batch2/08-album-structure.md exists with 3-4 proposed albums. NOT TOUCH: code files. VERIFY: file has 3-4 albums, each with title + subtitle + source articles + 3-4 song ideas.",
+      "steps": [
+        "Read notable articles from Task 7",
+        "Read final candidates from Task 5",
+        "Design 3-4 new album concepts that are article-driven",
+        "Map songs to albums with source articles",
+        "Write to content/brainstorm/batch2/08-album-structure.md"
+      ],
+      "files": ["content/brainstorm/batch2/07-notable-articles.md", "content/brainstorm/batch2/05-final-candidates.md", "content/brainstorm/batch2/08-album-structure.md"],
+      "passes": false
     }
   ]
 }
