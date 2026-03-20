@@ -16,6 +16,8 @@ import { notFound } from "next/navigation";
 import { useAudio } from "@/lib/audio-context";
 import { trackEvent } from "@/lib/analytics";
 import SyncedLyrics from "@/components/SyncedLyrics";
+import EmailSignup from "@/components/EmailSignup";
+import { Lock } from "lucide-react";
 
 const gradientClass: Record<string, string> = {
   founders: "gradient-founders",
@@ -37,7 +39,7 @@ export default function TrackPageClient({ slug }: { slug: string }) {
   // Set the queue to the album's tracks when visiting a track page.
   // If audio is already playing, only update the queue without interrupting playback.
   useEffect(() => {
-    if (album) {
+    if (album && !track?.isLocked) {
       if (audio.isPlaying || audio.currentTrack) {
         audio.setAlbumQueue(album.slug);
       } else {
@@ -218,74 +220,86 @@ export default function TrackPageClient({ slug }: { slug: string }) {
         </div>
       </header>
 
-      {/* Audio Player */}
-      <div className="px-4 sm:px-6 py-5 sm:py-6 border-b border-border/30">
-        <div className="max-w-2xl mx-auto w-full">
-          {/* Controls */}
-          <div className="flex items-center justify-center gap-6 mb-4">
-            {prevTrack ? (
-              <Link href={`/track/${prevTrack.slug}`}>
-                <SkipBack className="w-5 h-5 text-muted-foreground hover:text-foreground transition-colors" />
-              </Link>
-            ) : (
-              <SkipBack className="w-5 h-5 text-muted-foreground/30" />
-            )}
-
-            <button
-              onClick={togglePlay}
-              className="w-12 h-12 rounded-full flex items-center justify-center transition-colors"
-              style={{
-                backgroundColor: album.accentColor,
-                color: "#ffffff",
-              }}
-            >
-              {isPlaying ? (
-                <Pause className="w-5 h-5" fill="currentColor" />
-              ) : (
-                <Play className="w-5 h-5 ml-0.5" fill="currentColor" />
-              )}
-            </button>
-
-            {nextTrack ? (
-              <Link href={`/track/${nextTrack.slug}`}>
-                <SkipForward className="w-5 h-5 text-muted-foreground hover:text-foreground transition-colors" />
-              </Link>
-            ) : (
-              <SkipForward className="w-5 h-5 text-muted-foreground/30" />
-            )}
-          </div>
-
-          {/* Progress Bar */}
-          <div
-            className="group relative cursor-pointer py-2 -my-2"
-            onClick={seek}
-            onMouseMove={handleProgressHover}
-            onMouseLeave={() => setHoverTime(null)}
-          >
-            <div className="relative h-[6px] group-hover:h-[10px] bg-black/10 rounded-full transition-[height] duration-150">
-              <div
-                className="absolute inset-y-0 left-0 rounded-full transition-[width] duration-300 ease-linear"
-                style={{
-                  width: `${progress}%`,
-                  backgroundColor: album.accentColor,
-                }}
-              />
+      {/* Audio Player or Coming Soon */}
+      {track.isLocked ? (
+        <div className="px-4 sm:px-6 py-8 border-b border-border/30">
+          <div className="max-w-2xl mx-auto w-full text-center">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium bg-muted text-muted-foreground mb-6">
+              <Lock className="w-3.5 h-3.5" />
+              Coming Soon
             </div>
-            {hoverTime && (
-              <div
-                className="absolute -top-6 -translate-x-1/2 px-2 py-0.5 bg-foreground text-background text-xs rounded pointer-events-none"
-                style={{ left: hoverTime.x }}
-              >
-                {formatTime(hoverTime.time)}
-              </div>
-            )}
-          </div>
-          <div className="flex justify-between text-xs text-muted-foreground/50 mt-1.5">
-            <span>{formatTime(currentTime)}</span>
-            <span>{duration > 0 ? formatTime(duration) : track.duration}</span>
+            <EmailSignup heading="Get notified when this song drops" />
           </div>
         </div>
-      </div>
+      ) : (
+        <div className="px-4 sm:px-6 py-5 sm:py-6 border-b border-border/30">
+          <div className="max-w-2xl mx-auto w-full">
+            {/* Controls */}
+            <div className="flex items-center justify-center gap-6 mb-4">
+              {prevTrack ? (
+                <Link href={`/track/${prevTrack.slug}`}>
+                  <SkipBack className="w-5 h-5 text-muted-foreground hover:text-foreground transition-colors" />
+                </Link>
+              ) : (
+                <SkipBack className="w-5 h-5 text-muted-foreground/30" />
+              )}
+
+              <button
+                onClick={togglePlay}
+                className="w-12 h-12 rounded-full flex items-center justify-center transition-colors"
+                style={{
+                  backgroundColor: album.accentColor,
+                  color: "#ffffff",
+                }}
+              >
+                {isPlaying ? (
+                  <Pause className="w-5 h-5" fill="currentColor" />
+                ) : (
+                  <Play className="w-5 h-5 ml-0.5" fill="currentColor" />
+                )}
+              </button>
+
+              {nextTrack ? (
+                <Link href={`/track/${nextTrack.slug}`}>
+                  <SkipForward className="w-5 h-5 text-muted-foreground hover:text-foreground transition-colors" />
+                </Link>
+              ) : (
+                <SkipForward className="w-5 h-5 text-muted-foreground/30" />
+              )}
+            </div>
+
+            {/* Progress Bar */}
+            <div
+              className="group relative cursor-pointer py-2 -my-2"
+              onClick={seek}
+              onMouseMove={handleProgressHover}
+              onMouseLeave={() => setHoverTime(null)}
+            >
+              <div className="relative h-[6px] group-hover:h-[10px] bg-black/10 rounded-full transition-[height] duration-150">
+                <div
+                  className="absolute inset-y-0 left-0 rounded-full transition-[width] duration-300 ease-linear"
+                  style={{
+                    width: `${progress}%`,
+                    backgroundColor: album.accentColor,
+                  }}
+                />
+              </div>
+              {hoverTime && (
+                <div
+                  className="absolute -top-6 -translate-x-1/2 px-2 py-0.5 bg-foreground text-background text-xs rounded pointer-events-none"
+                  style={{ left: hoverTime.x }}
+                >
+                  {formatTime(hoverTime.time)}
+                </div>
+              )}
+            </div>
+            <div className="flex justify-between text-xs text-muted-foreground/50 mt-1.5">
+              <span>{formatTime(currentTime)}</span>
+              <span>{duration > 0 ? formatTime(duration) : track.duration}</span>
+            </div>
+          </div>
+        </div>
+      )}
 
       {/* Main Content */}
       <main className="flex-1 px-4 sm:px-6 py-6 sm:py-8 max-w-2xl mx-auto w-full">
@@ -316,22 +330,32 @@ export default function TrackPageClient({ slug }: { slug: string }) {
           </section>
         )}
 
-        {/* Synced Lyrics */}
-        <section className="mb-10">
-          <h2 className="text-xs font-medium uppercase tracking-widest text-muted-foreground/50 mb-4">
-            Lyrics
-          </h2>
-          <SyncedLyrics
-            lyrics={track.lyrics}
-            currentTime={currentTime}
-            duration={duration}
-            isPlaying={isPlaying}
-            accentColor={album.accentColor}
-            trackTitle={track.title}
-            albumTitle={album.title}
-            onSeek={(time) => audio.seek(time)}
-          />
-        </section>
+        {/* Synced Lyrics (hidden for locked tracks) */}
+        {!track.isLocked && (
+          <section className="mb-10">
+            <h2 className="text-xs font-medium uppercase tracking-widest text-muted-foreground/50 mb-4">
+              Lyrics
+            </h2>
+            <SyncedLyrics
+              lyrics={track.lyrics}
+              currentTime={currentTime}
+              duration={duration}
+              isPlaying={isPlaying}
+              accentColor={album.accentColor}
+              trackTitle={track.title}
+              albumTitle={album.title}
+              onSeek={(time) => audio.seek(time)}
+            />
+          </section>
+        )}
+        {track.isLocked && (
+          <section className="mb-10">
+            <h2 className="text-xs font-medium uppercase tracking-widest text-muted-foreground/50 mb-4">
+              Lyrics
+            </h2>
+            <p className="text-sm text-muted-foreground/50 italic">Lyrics coming soon...</p>
+          </section>
+        )}
 
         {/* Source Attribution */}
         {track.sources.length > 0 && (
@@ -367,34 +391,36 @@ export default function TrackPageClient({ slug }: { slug: string }) {
           </section>
         )}
 
-        {/* Share */}
-        <div className="flex items-center gap-3">
-          <button
-            onClick={handleCopyLink}
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium transition-colors"
-            style={{
-              backgroundColor: copied ? album.accentColor : "transparent",
-              color: copied ? "#ffffff" : undefined,
-              borderWidth: "1px",
-              borderStyle: "solid",
-              borderColor: copied ? album.accentColor : "hsl(var(--border) / 0.5)",
-            }}
-          >
-            {copied ? "Copied!" : "Copy Link"}
-          </button>
-          <button
-            onClick={handleShareX}
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm text-muted-foreground hover:text-foreground border border-border/50 hover:border-border transition-colors"
-          >
-            Share to X
-          </button>
-          <button
-            onClick={handleShareLinkedIn}
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm text-muted-foreground hover:text-foreground border border-border/50 hover:border-border transition-colors"
-          >
-            Share to LinkedIn
-          </button>
-        </div>
+        {/* Share (hidden for locked tracks) */}
+        {!track.isLocked && (
+          <div className="flex items-center gap-3">
+            <button
+              onClick={handleCopyLink}
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium transition-colors"
+              style={{
+                backgroundColor: copied ? album.accentColor : "transparent",
+                color: copied ? "#ffffff" : undefined,
+                borderWidth: "1px",
+                borderStyle: "solid",
+                borderColor: copied ? album.accentColor : "hsl(var(--border) / 0.5)",
+              }}
+            >
+              {copied ? "Copied!" : "Copy Link"}
+            </button>
+            <button
+              onClick={handleShareX}
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm text-muted-foreground hover:text-foreground border border-border/50 hover:border-border transition-colors"
+            >
+              Share to X
+            </button>
+            <button
+              onClick={handleShareLinkedIn}
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm text-muted-foreground hover:text-foreground border border-border/50 hover:border-border transition-colors"
+            >
+              Share to LinkedIn
+            </button>
+          </div>
+        )}
       </main>
 
       {/* Prev / Next Navigation */}
