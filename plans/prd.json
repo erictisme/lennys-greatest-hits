@@ -228,7 +228,7 @@
         "pnpm build passes"
       ],
       "files": ["app/opengraph-image.tsx", "app/icon.tsx", "app/layout.tsx", "app/favicon.ico"],
-      "passes": false
+      "passes": true
     }
   ]
 }
