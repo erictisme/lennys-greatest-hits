@@ -82,7 +82,7 @@
         "pnpm build passes"
       ],
       "files": ["lib/albums.ts", "app/page.tsx", "app/layout.tsx", "app/album/[slug]/page.tsx", "app/track/[slug]/page.tsx", "app/track/[slug]/TrackPageClient.tsx", "components/NowPlayingBar.tsx", "components/ShareLyricModal.tsx"],
-      "passes": false
+      "passes": true
     },
     {
       "id": 37,

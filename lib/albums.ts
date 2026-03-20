@@ -60,15 +60,15 @@ Physically go to them
 [Outro]
 Go to your users
 Physically go to them`,
-    concept: "Based on Brian Chesky's founding story — going door to door photographing Airbnb listings. Plus DoorDash's $6 flyers at Stanford and Tinder going sorority to sorority at USC. From Lenny's series on how the biggest companies got their first users.",
+    concept: "Based on Brian Chesky's founding story, going door to door photographing Airbnb listings. Plus DoorDash's $6 flyers at Stanford and Tinder going sorority to sorority at USC. From Lenny's series on how the biggest companies got their first users.",
     keyInsight: "Before you build the engine, light the flame. Every great company started with someone who refused to scale.",
     sources: [
       { title: "Brian Chesky on Airbnb's early days", type: "podcast", url: "", guest: "Brian Chesky" },
-      { title: "Paul Graham — Do Things That Don't Scale", type: "newsletter", url: "", guest: "Paul Graham" },
+      { title: "Paul Graham - Do Things That Don't Scale", type: "newsletter", url: "", guest: "Paul Graham" },
     ],
     keyQuote: "Go to your users. Physically go to them.",
     quoteSpeaker: "Brian Chesky",
-    storyBehind: "Brian Chesky told Lenny the story of flying to New York in 2009, personally photographing Airbnb listings with a rented camera because hosts' blurry phone photos weren't converting. The Collison brothers at Stripe would literally grab people's laptops and install Stripe for them on the spot. DoorDash's Tony Xu started by taping $6 flyers to dorm room doors at Stanford. Every one of these billion-dollar companies started with founders doing the most unscalable thing imaginable — and that's exactly what made them work.",
+    storyBehind: "Brian Chesky told Lenny the story of flying to New York in 2009, personally photographing Airbnb listings with a rented camera because hosts' blurry phone photos weren't converting. The Collison brothers at Stripe would literally grab people's laptops and install Stripe for them on the spot. DoorDash's Tony Xu started by taping $6 flyers to dorm room doors at Stanford. Every one of these billion-dollar companies started with founders doing the most unscalable thing imaginable, and that's exactly what made them work.",
   },
   {
     slug: "product-market-fit",
@@ -79,7 +79,7 @@ Physically go to them`,
     audioUrl: "/audio/product-market-fit.mp3",
     coverImage: "/covers/product-market-fit.jpg",
     genre: "Indie Pop",
-    mood: "The anxiety of not knowing — then knowing",
+    mood: "The anxiety of not knowing, then knowing",
     lyrics: `[Verse 1]
 Dashboards flat and silence on the feed
 Refresh again like maybe that's the lead
@@ -124,14 +124,14 @@ It feels like the product is being pulled
 Right out of your hands
 You'll know`,
     concept: "Based on Rahul Vohra's Superhuman episode. He ran the Sean Ellis test and scored 22%. Three years later, after segmenting to high-expectation customers, he hit 58%. The 40% threshold that changed how every founder measures PMF.",
-    keyInsight: "The 40% very disappointed test — if fewer than 40% of users would be very disappointed without your product, you haven't found PMF.",
+    keyInsight: "The 40% very disappointed test: if fewer than 40% of users would be very disappointed without your product, you haven't found PMF.",
     sources: [
       { title: "Rahul Vohra on Superhuman's PMF engine", type: "podcast", url: "", guest: "Rahul Vohra" },
       { title: "Lenny's PMF newsletter series", type: "newsletter", url: "", guest: "Lenny Rachitsky" },
     ],
     keyQuote: "If you have to ask, you don't have it.",
     quoteSpeaker: "Marc Andreessen",
-    storyBehind: "Rahul Vohra came on Lenny's podcast and revealed that Superhuman initially scored just 22% on the Sean Ellis PMF test — well below the 40% threshold. Instead of panicking, he segmented responses to find his 'high-expectation customers' and rebuilt the product around them. Three years later, Superhuman hit 58%. That episode gave the startup world a concrete, repeatable way to measure the thing everyone said you'd 'just know' when you had it.",
+    storyBehind: "Rahul Vohra came on Lenny's podcast and revealed that Superhuman initially scored just 22% on the Sean Ellis PMF test, well below the 40% threshold. Instead of panicking, he segmented responses to find his 'high-expectation customers' and rebuilt the product around them. Three years later, Superhuman hit 58%. That episode gave the startup world a concrete, repeatable way to measure the thing everyone said you'd 'just know' when you had it.",
   },
   {
     slug: "the-maze",
@@ -191,7 +191,7 @@ And the maze is how you find your way
 
 [Outro]
 The maze is how you find your way`,
-    concept: "Based on Dalton Caldwell's episode — 10+ years at YC, 21 batches, 1,000+ startups. Many startups pivot after getting stuck. The median founder spends a full year on a tarpit idea before realizing it.",
+    concept: "Based on Dalton Caldwell's episode. 10+ years at YC, 21 batches, 1,000+ startups. Many startups pivot after getting stuck. The median founder spends a full year on a tarpit idea before realizing it.",
     keyInsight: "If your idea is easy to explain at a dinner party, it's probably a tarpit. The maze IS the point.",
     sources: [
       { title: "Dalton Caldwell on tarpit ideas", type: "podcast", url: "https://youtu.be/m7LvNTbaqSI", guest: "Dalton Caldwell" },
@@ -199,7 +199,7 @@ The maze is how you find your way`,
     ],
     keyQuote: "Most startup ideas are tarpit ideas.",
     quoteSpeaker: "Dalton Caldwell",
-    storyBehind: "Dalton Caldwell has watched over 1,000 startups come through YC across 21 batches. On Lenny's podcast, he described how tarpit ideas trap founders: they seem like unsolved problems, you get positive feedback from everyone, but people have been starting that same startup since the '90s. The median founder spends a full year stuck before realizing it. Tarpit ideas are the ones that sound brilliant at dinner parties — everyone nods, everyone agrees — but they trap founders because the obvious-sounding problems are obvious for a reason. The real opportunities feel weird and hard to explain.",
+    storyBehind: "Dalton Caldwell has watched over 1,000 startups come through YC across 21 batches. On Lenny's podcast, he described how tarpit ideas trap founders: they seem like unsolved problems, you get positive feedback from everyone, but people have been starting that same startup since the '90s. The median founder spends a full year stuck before realizing it. Tarpit ideas are the ones that sound brilliant at dinner parties (everyone nods, everyone agrees) but they trap founders because the obvious-sounding problems are obvious for a reason. The real opportunities feel weird and hard to explain.",
   },
 ];
 
@@ -256,7 +256,7 @@ That's taste
 You know it when you see it
 But you feel it first
 That's taste`,
-    concept: "Based on Shreyas Doshi's episode on product sense and taste. Scott Belsky's rule: 'In the first 30 seconds, your user is lazy, vain, and selfish.' Taste is pattern recognition plus empathy — seeing what isn't there but needs to be.",
+    concept: "Based on Shreyas Doshi's episode on product sense and taste. Scott Belsky's rule: 'In the first 30 seconds, your user is lazy, vain, and selfish.' Taste is pattern recognition plus empathy: seeing what isn't there but needs to be.",
     keyInsight: "Product sense is pattern recognition plus empathy. Taste is the ability to say no to good ideas.",
     sources: [
       { title: "Shreyas Doshi on product sense", type: "podcast", url: "https://www.lennysnewsletter.com/p/episode-3-shreyas-doshi", guest: "Shreyas Doshi" },
@@ -264,7 +264,7 @@ That's taste`,
     ],
     keyQuote: "Taste is saying no to good ideas.",
     quoteSpeaker: "Shreyas Doshi",
-    storyBehind: "Shreyas Doshi's conversation with Lenny about product sense became one of the most-shared episodes in the archive. He argued that taste isn't some mystical gift — it's pattern recognition plus empathy, built through thousands of hours of watching real users struggle. Scott Belsky added another layer: 'In the first 30 seconds, your user is lazy, vain, and selfish.' The best product people aren't the ones with the most data — they're the ones who can feel when something's off before anyone can explain why.",
+    storyBehind: "Shreyas Doshi's conversation with Lenny about product sense became one of the most-shared episodes in the archive. He argued that taste isn't some mystical gift. It's pattern recognition plus empathy, built through thousands of hours of watching real users struggle. Scott Belsky added another layer: 'In the first 30 seconds, your user is lazy, vain, and selfish.' The best product people aren't the ones with the most data. They're the ones who can feel when something's off before anyone can explain why.",
   },
   {
     slug: "eleven-stars",
@@ -314,14 +314,14 @@ Think ten stars further
 Then come back down to Earth
 With something worth the work
 Eleven stars`,
-    concept: "Based on Brian Chesky's episode — Lenny's most listened-to episode, which took him a full year to land. Chesky's 11-star framework: at 11 stars, Elon picks you up in a rocket. Dream absurd, then design the room.",
+    concept: "Based on Brian Chesky's episode, Lenny's most listened-to episode, which took him a full year to land. Chesky's 11-star framework: at 11 stars, Elon picks you up in a rocket. Dream absurd, then design the room.",
     keyInsight: "The last 10% is 90% of the magic. Start with an impossibly ambitious vision and work backwards to what's buildable.",
     sources: [
       { title: "Brian Chesky on the 11-star framework", type: "podcast", url: "", guest: "Brian Chesky" },
     ],
     keyQuote: "What would a 10-star experience look like? Now what about 11?",
     quoteSpeaker: "Brian Chesky",
-    storyBehind: "It took Lenny a full year to land the Brian Chesky interview — and it became his most-listened-to episode ever. Chesky walked through the 11-star framework live: a 1-star Airbnb stay is sleeping on the floor, 5 stars is a nice clean place, and by 11 stars, Elon Musk picks you up in a rocket to the moon. The genius is that you're not supposed to build the 11-star version — you're supposed to dream absurd so that when you come back down to a 6 or 7, it still feels magical. 'The last 10% is 90% of the magic.'",
+    storyBehind: "It took Lenny a full year to land the Brian Chesky interview, and it became his most-listened-to episode ever. Chesky walked through the 11-star framework live: a 1-star Airbnb stay is sleeping on the floor, 5 stars is a nice clean place, and by 11 stars, Elon Musk picks you up in a rocket to the moon. The genius is that you're not supposed to build the 11-star version. You're supposed to dream absurd so that when you come back down to a 6 or 7, it still feels magical. 'The last 10% is 90% of the magic.'",
   },
   {
     slug: "talk-to-users",
@@ -372,15 +372,15 @@ One conversation
 Can save you six months
 Talk to your users
 Go sit with them`,
-    concept: "Based on Teresa Torres' episode on continuous discovery habits — the #1 most recommended book in Lenny's Slack community. She's trained 11,000+ students. Her rule: one user interview per week, every week.",
-    keyInsight: "One conversation can save you six months. You're not your user — go sit with them.",
+    concept: "Based on Teresa Torres' episode on continuous discovery habits, the #1 most recommended book in Lenny's Slack community. She's trained 11,000+ students. Her rule: one user interview per week, every week.",
+    keyInsight: "One conversation can save you six months. You're not your user. Go sit with them.",
     sources: [
       { title: "Teresa Torres on continuous discovery", type: "podcast", url: "https://www.lennyspodcast.com/teresa-torres-on-how-to-interview-customers-automating-continuous-discovery-the-opportunity-solution-tree-framework-making-the-case-for-user-research-common-interviewing-mistakes-and-much-more/", guest: "Teresa Torres" },
       { title: "Gustaf Alstromer on talking to users", type: "podcast", url: "https://www.lennyspodcast.com/lessons-from-working-with-600-yc-startups-gustaf-alstromer-y-combinator-airbnb/", guest: "Gustaf Alstromer" },
     ],
     keyQuote: "One conversation can save you six months.",
     quoteSpeaker: "Teresa Torres",
-    storyBehind: "Teresa Torres' book 'Continuous Discovery Habits' became the #1 most recommended book in Lenny's Slack community. On the podcast, she shared that she's trained over 11,000 product people, and the single most impactful habit is dead simple: one user interview per week, every week. Not quarterly research sprints, not annual surveys — weekly conversations. Gustaf Alstromer from YC reinforced it: most product failures trace back to building in a vacuum. The answers aren't in your Slack channels, they're down the street.",
+    storyBehind: "Teresa Torres' book 'Continuous Discovery Habits' became the #1 most recommended book in Lenny's Slack community. On the podcast, she shared that she's trained over 11,000 product people, and the single most impactful habit is dead simple: one user interview per week, every week. Not quarterly research sprints, not annual surveys, just weekly conversations. Gustaf Alstromer from YC reinforced it: most product failures trace back to building in a vacuum. The answers aren't in your Slack channels, they're down the street.",
   },
 ];
 
@@ -434,7 +434,7 @@ Stop planning
 Stop polishing
 Stop asking for one more review
 Ship it`,
-    concept: "Based on Ramp's episode with Geoff Charles. Ramp hit $100M ARR in 2 years — the fastest-growing SaaS ever — with fewer than 5 PMs and 50 engineers. Their mantra: 'Our culture is velocity.'",
+    concept: "Based on Ramp's episode with Geoff Charles. Ramp hit $100M ARR in 2 years, the fastest-growing SaaS ever, with fewer than 5 PMs and 50 engineers. Their mantra: 'Our culture is velocity.'",
     keyInsight: "Speed is a proxy for how much you care. If you're not embarrassed by v1, you shipped too late.",
     sources: [
       { title: "Keith Rabois on speed as competitive advantage", type: "podcast", url: "", guest: "Keith Rabois" },
@@ -442,7 +442,7 @@ Ship it`,
     ],
     keyQuote: "If you're not embarrassed by the first version, you shipped too late.",
     quoteSpeaker: "Reid Hoffman",
-    storyBehind: "Ramp's story blew up on Lenny's podcast — they hit $100M ARR in just 2 years, making them the fastest-growing SaaS company ever, with fewer than 5 PMs and 50 engineers. Their internal mantra was 'our culture is velocity.' Keith Rabois added the framework that stuck: speed isn't reckless, it's a proxy for how much you care about your users' time. Every week you don't ship is a week your users are stuck with a worse version of the thing you already built.",
+    storyBehind: "Ramp's story blew up on Lenny's podcast. They hit $100M ARR in just 2 years, making them the fastest-growing SaaS company ever, with fewer than 5 PMs and 50 engineers. Their internal mantra was 'our culture is velocity.' Keith Rabois added the framework that stuck: speed isn't reckless, it's a proxy for how much you care about your users' time. Every week you don't ship is a week your users are stuck with a worse version of the thing you already built.",
   },
   {
     slug: "vibe-coding",
@@ -453,7 +453,7 @@ Ship it`,
     audioUrl: "/audio/vibe-coding.mp3",
     coverImage: "/covers/vibe-coding.jpg",
     genre: "Glitch Hop",
-    mood: "Never wrote a line of code — shipped it anyway",
+    mood: "Never wrote a line of code, shipped it anyway",
     lyrics: `[Verse 1]
 Never wrote a line of code before last spring
 Now I'm shipping features, building everything
@@ -492,15 +492,15 @@ Vibe coding
 Welcome to the era
 Where everyone can build
 Vibe coding`,
-    concept: "Based on Lazar Jovanovic's episode — the first official 'vibe coding engineer' at Lovable. Lovable hit $200M ARR in under a year with fewer than 100 people. 500+ builders wrote to Lenny saying they shipped products without writing code.",
-    keyInsight: "The best time to learn to code was 10 years ago. The second best time is never — just vibe code.",
+    concept: "Based on Lazar Jovanovic's episode. The first official 'vibe coding engineer' at Lovable. Lovable hit $200M ARR in under a year with fewer than 100 people. 500+ builders wrote to Lenny saying they shipped products without writing code.",
+    keyInsight: "The best time to learn to code was 10 years ago. The second best time is never. Just vibe code.",
     sources: [
       { title: "The rise of the professional vibe coder", type: "podcast", url: "", guest: "Lazar Jovanovic" },
       { title: "Andrej Karpathy coined 'vibe coding'", type: "newsletter", url: "", guest: "Lenny Rachitsky" },
     ],
     keyQuote: "I just mass mass accept everything. I don't even look at the diffs. It's not even coding. I just see things, say things, run things, and copy paste things.",
     quoteSpeaker: "Andrej Karpathy",
-    storyBehind: "Lenny covered the vibe coding revolution as it was happening in real time. Lazar Jovanovic became the first official 'vibe coding engineer' at Lovable, a company that hit $200M ARR in under a year with fewer than 100 people. Over 500 builders wrote to Lenny saying they'd shipped real products without writing a single line of code. Andrej Karpathy coined the term 'vibe coding' — fully giving in to the vibes, seeing things appear, and not really caring how the code works. It's the most polarizing topic in Lenny's archive.",
+    storyBehind: "Lenny covered the vibe coding revolution as it was happening in real time. Lazar Jovanovic became the first official 'vibe coding engineer' at Lovable, a company that hit $200M ARR in under a year with fewer than 100 people. Over 500 builders wrote to Lenny saying they'd shipped real products without writing a single line of code. Andrej Karpathy coined the term 'vibe coding', fully giving in to the vibes, seeing things appear, and not really caring how the code works. It's the most polarizing topic in Lenny's archive.",
   },
 ];
 
@@ -557,14 +557,14 @@ Day by day by day
 Your imposter syndrome is lying to you
 But I know that doesn't make it quiet
 Day by day by day`,
-    concept: "Based on Julie Zhuo's episode — Episode 2 of Lenny's Podcast. She spent 13 years at Facebook, going from IC designer to VP of Design. Wrote 'The Making of a Manager' from the imposter syndrome she felt the entire way up.",
+    concept: "Based on Julie Zhuo's episode, Episode 2 of Lenny's Podcast. She spent 13 years at Facebook, going from IC designer to VP of Design. Wrote 'The Making of a Manager' from the imposter syndrome she felt the entire way up.",
     keyInsight: "Imposter syndrome is universal in tech. The feeling never disappears, you just learn to coexist with it.",
     sources: [
       { title: "Julie Zhuo on accelerating your career and impostor syndrome", type: "podcast", url: "", guest: "Julie Zhuo" },
     ],
     keyQuote: "Everyone at the table thinks everyone else belongs more.",
     quoteSpeaker: "Multiple guests",
-    storyBehind: "Julie Zhuo was Episode 2 of Lenny's Podcast. She spent 13 years at Facebook going from IC designer to VP of Design, leading teams of hundreds — and she felt like an imposter the entire way up. She wrote 'The Making of a Manager' partly to process that feeling. What made the episode resonate wasn't the advice; it was the raw honesty. Every VP, every founder, every senior IC who listened said the same thing: 'I thought it was just me.' It wasn't. It never is.",
+    storyBehind: "Julie Zhuo was Episode 2 of Lenny's Podcast. She spent 13 years at Facebook going from IC designer to VP of Design, leading teams of hundreds, and she felt like an imposter the entire way up. She wrote 'The Making of a Manager' partly to process that feeling. What made the episode resonate wasn't the advice; it was the raw honesty. Every VP, every founder, every senior IC who listened said the same thing: 'I thought it was just me.' It wasn't. It never is.",
   },
   {
     slug: "burnout",
@@ -575,7 +575,7 @@ Day by day by day`,
     audioUrl: "/audio/burnout.mp3",
     coverImage: "/covers/burnout.jpg",
     genre: "Acoustic Soul",
-    mood: "It's not the hours — it's the hollow ache",
+    mood: "It's not the hours, it's the hollow ache",
     lyrics: `[Verse 1]
 Five AM alarm, the slack is lit
 Fourteen notifications, none of it
@@ -615,14 +615,14 @@ You can't pour from an empty cup
 But you can set it down
 You can set it down`,
     concept: "Based on Andy Johns' episode. He spent 17 years at Facebook, Twitter, Wealthfront, and Quora before confronting burnout publicly on Lenny's show. Nearly 45% of tech workers report significant burnout.",
-    keyInsight: "Burnout isn't about hours — it's about meaning. You can't pour from an empty cup, but you can set it down.",
+    keyInsight: "Burnout isn't about hours. It's about meaning. You can't pour from an empty cup, but you can set it down.",
     sources: [
       { title: "When enough is enough", type: "podcast", url: "https://www.lennyspodcast.com/when-enough-is-enough-andy-johns-ex-fb-twitter-quora/", guest: "Andy Johns" },
       { title: "Managing nerves, anxiety, and burnout", type: "podcast", url: "", guest: "Jonny Miller" },
     ],
-    keyQuote: "Burnout isn't working too much — it's working on the wrong things.",
+    keyQuote: "Burnout isn't working too much. It's working on the wrong things.",
     quoteSpeaker: "Multiple guests",
-    storyBehind: "Andy Johns spent 17 years at Facebook, Twitter, Wealthfront, and Quora — some of the highest-pressure companies in tech. On Lenny's show, he was raw about what burnout actually felt like: not dramatic collapse, but a slow hollowing out where the work that once lit you up starts feeling like someone else's dream. Nearly 45% of tech workers report significant burnout. Jonny Miller introduced the 'feather, brick, dump truck' framework on a separate episode — your body sends warning signs as a feather first, then a brick, and if you ignore those, the dump truck arrives.",
+    storyBehind: "Andy Johns spent 17 years at Facebook, Twitter, Wealthfront, and Quora, some of the highest-pressure companies in tech. On Lenny's show, he was raw about what burnout actually felt like: not dramatic collapse, but a slow hollowing out where the work that once lit you up starts feeling like someone else's dream. Nearly 45% of tech workers report significant burnout. Jonny Miller introduced the 'feather, brick, dump truck' framework on a separate episode. Your body sends warning signs as a feather first, then a brick, and if you ignore those, the dump truck arrives.",
   },
   // IC Track hidden until audio is generated — see content/suno-prompts/the-ic-track.json
 ];
@@ -632,7 +632,7 @@ export const albums: Album[] = [
     slug: "founders",
     title: "Founders",
     subtitle: "For anyone who's knocked on doors and believed",
-    description: "Songs about the early days — finding PMF, escaping tarpit ideas, and doing things that don't scale. Based on Brian Chesky, Rahul Vohra, and Dalton Caldwell's episodes.",
+    description: "Songs about the early days: finding PMF, escaping tarpit ideas, and doing things that don't scale. Based on Brian Chesky, Rahul Vohra, and Dalton Caldwell's episodes.",
     coverImage: "/covers/founders.jpg",
     accentColor: "#d97706",
     tracks: foundersTracks,
@@ -659,7 +659,7 @@ export const albums: Album[] = [
     slug: "the-human-side",
     title: "The Human Side",
     subtitle: "For anyone who's wondered if they belong",
-    description: "Songs about imposter syndrome and burnout — the things nobody talks about in standups. Based on Julie Zhuo and Andy Johns' episodes. More tracks coming soon.",
+    description: "Songs about imposter syndrome and burnout, the things nobody talks about in standups. Based on Julie Zhuo and Andy Johns' episodes. More tracks coming soon.",
     coverImage: "/covers/the-human-side.jpg",
     accentColor: "#78350f",
     tracks: humanSideTracks,

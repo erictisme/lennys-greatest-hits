@@ -2,3 +2,4 @@
 Task 33: Replaced album card grid with responsive cover art grid using Next.js Image. 2-col mobile, 3-col tablet, 4-col desktop. Build passes.
 Task 34: Added album cover art (160px) to album page header alongside title, and 40x40 track thumbnails in each tracklist row. Build passes.
 Task 35: Added track cover image (176px, rounded with shadow) to track detail page header alongside title/genre/mood info. Build passes.
+Task 36: Removed em dash from storyBehind field in lib/albums.ts (only non-lyric, non-comment instance). Build passes.
