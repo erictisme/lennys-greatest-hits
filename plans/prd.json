@@ -287,7 +287,7 @@
         "pnpm build passes"
       ],
       "files": ["app/globals.css", "app/album/[slug]/AlbumPageClient.tsx", "app/track/[slug]/TrackPageClient.tsx"],
-      "passes": false
+      "passes": true
     },
     {
       "id": 60,
@@ -358,14 +358,31 @@
       "id": 64,
       "category": "feature",
       "priority": 0,
-      "description": "Add a subtle Code Riff footer link to the homepage. In app/page.tsx, in the existing footer section (below the 'Built by Eric Tan' credit line), add a new line: 'Built with AI on Code Riff' that links to https://www.youtube.com/@CodeRiffAI. Style it very subtly: use text-xs and text-muted-foreground/30 (even more muted than the Eric Tan credit). The link should open in a new tab (target='_blank' rel='noopener noreferrer') and have a subtle hover state (hover:text-foreground/50). This should be a quiet credit, not a promotional section. DONE: homepage footer shows 'Built with AI on Code Riff' link below existing credits. DO NOT TOUCH: anything else on the page. VERIFY: pnpm build passes, scroll to footer, see the Code Riff link, click it opens YouTube channel.",
+      "description": "Add a subtle Code Riff footer link to the homepage. In app/page.tsx, in the existing footer section (below the 'Built by Eric Tan' credit line), add a new line: 'Build with us on Code Riff' that links to https://www.youtube.com/@CodeRiffAI. Style it very subtly: use text-xs and text-muted-foreground/30 (even more muted than the Eric Tan credit). The link should open in a new tab (target='_blank' rel='noopener noreferrer') and have a subtle hover state (hover:text-foreground/50). This should be a quiet credit, not a promotional section. DONE: homepage footer shows 'Build with us on Code Riff' link below existing credits. DO NOT TOUCH: anything else on the page. VERIFY: pnpm build passes, scroll to footer, see the Code Riff link, click it opens YouTube channel.",
       "steps": [
         "Read app/page.tsx footer section",
-        "Add Code Riff link below existing credits",
+        "Add 'Build with us on Code Riff' link below existing credits",
         "Style subtly with text-xs text-muted-foreground/30",
         "pnpm build passes"
       ],
       "files": ["app/page.tsx"],
+      "passes": false
+    },
+    {
+      "id": 65,
+      "category": "feature",
+      "priority": 0,
+      "description": "Add a welcome email sent via Resend when someone subscribes. Install resend package: run 'pnpm add resend'. Create an API route at app/api/subscribe/route.ts that: (1) Accepts POST with { email } body, (2) Inserts into Supabase email_subscribers table (reuse lib/supabase.ts client), (3) Sends a welcome email via Resend using the RESEND_API_KEY env var. The email should be from 'Eric from Lenny's Greatest Hits <onboarding@resend.dev>' (use resend.dev sender for now since no custom domain). Subject: 'You're in! More songs are coming'. Email body should be warm, genuine HTML email in Eric's voice — casual, direct, no corporate tone. Something like: 'Hey! Thanks for signing up. I'm Eric — I'm turning Lenny Rachitsky's best newsletter and podcast insights into actual catchy songs. Right now there are [X] songs you can listen to, with [Y] more on the way. I'll email you when new albums drop. In the meantime, go play some tracks: [link to site]. Cheers, Eric'. Keep the HTML simple — no fancy template, just clean text with a link. Handle errors gracefully: if Resend fails, still save the email to Supabase (email capture is more important than the welcome email). (4) Update components/EmailSignup.tsx to POST to /api/subscribe instead of inserting directly into Supabase from the client. The API route handles both the DB insert and the email send. DONE: subscribing triggers a welcome email, email is saved to Supabase, duplicate emails show 'already subscribed'. DO NOT TOUCH: audio playback, lyrics, track data. VERIFY: pnpm build passes, test the subscribe flow end to end.",
+      "steps": [
+        "Run pnpm add resend",
+        "Create app/api/subscribe/route.ts with POST handler",
+        "Insert email into Supabase email_subscribers",
+        "Send welcome email via Resend with warm casual copy",
+        "Handle duplicates and errors gracefully",
+        "Update EmailSignup.tsx to call /api/subscribe instead of direct Supabase insert",
+        "pnpm build passes"
+      ],
+      "files": ["app/api/subscribe/route.ts", "components/EmailSignup.tsx"],
       "passes": false
     }
   ]

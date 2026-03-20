@@ -22,6 +22,11 @@ const gradientClass: Record<string, string> = {
   product: "gradient-product",
   builders: "gradient-builders",
   "the-human-side": "gradient-human",
+  "the-operators": "gradient-the-operators",
+  "growth-engine": "gradient-growth-engine",
+  "the-startup-life": "gradient-the-startup-life",
+  "career-moves": "gradient-career-moves",
+  frameworks: "gradient-frameworks",
 };
 
 export default function TrackPageClient({ slug }: { slug: string }) {
