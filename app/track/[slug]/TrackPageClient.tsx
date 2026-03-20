@@ -207,6 +207,18 @@ export default function TrackPageClient({ slug }: { slug: string }) {
               <p className="text-sm text-muted-foreground/70">
                 {track.genre} &middot; {track.mood}
               </p>
+              {track.tags && track.tags.length > 0 && (
+                <div className="flex flex-wrap gap-1.5 mt-2">
+                  {track.tags.map((tag) => (
+                    <span
+                      key={tag}
+                      className="px-2 py-0.5 text-[11px] font-medium rounded-full border border-border/40 text-muted-foreground/70"
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+              )}
             </div>
           </motion.div>
         </div>

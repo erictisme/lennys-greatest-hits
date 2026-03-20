@@ -44,7 +44,7 @@ export default function AlbumPageClient({ slug }: { slug: string }) {
 
   const handleShareX = (trackSlug: string, title: string) => {
     const url = getTrackUrl(trackSlug);
-    const text = encodeURIComponent(`🎵 ${title} — Lenny's Greatest Hits`);
+    const text = encodeURIComponent(`🎵 ${title} | Lenny's Greatest Hits`);
     window.open(`https://twitter.com/intent/tweet?text=${text}&url=${encodeURIComponent(url)}`, "_blank");
     trackEvent("share_clicked", { platform: "x", track: trackSlug, track_title: title });
     setOpenMenu(null);
@@ -249,6 +249,18 @@ export default function AlbumPageClient({ slug }: { slug: string }) {
                     <p className="text-xs text-muted-foreground/60 truncate mt-0.5">
                       {track.genre} &middot; {track.mood}
                     </p>
+                    {track.tags && track.tags.length > 0 && (
+                      <div className="flex flex-wrap gap-1 mt-1">
+                        {track.tags.map((tag) => (
+                          <span
+                            key={tag}
+                            className="px-1.5 py-0 text-[10px] font-medium rounded-full border border-border/30 text-muted-foreground/50"
+                          >
+                            {tag}
+                          </span>
+                        ))}
+                      </div>
+                    )}
                   </Link>
 
                   {/* Play Count + Duration */}

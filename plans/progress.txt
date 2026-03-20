@@ -6,3 +6,4 @@ Task 47: Fixed all broken source links in lib/albums.ts. Searched Lenny MCP arch
 Task 43: Added section labels (Verse, Chorus, Bridge, Outro) to lyrics display. Section tags now render as small, muted, uppercase headers between lyric lines instead of being hidden.
 Task 44: Added "Up Next" countdown to audio-context and NowPlayingBar. When a song ends, a 5-second countdown banner shows the next track title with a Cancel button instead of auto-advancing immediately.
 Task 45: Replaced color swatch in NowPlayingBar with actual cover art thumbnail using next/image. Shows track's coverImage at 40x40 rounded.
+Task 46: Added tags field to Track type and 1-3 tags per track in albums.ts. Displayed as pill badges on track page and album page track rows.

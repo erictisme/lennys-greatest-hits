@@ -98,7 +98,7 @@
         "pnpm build passes"
       ],
       "files": ["lib/types.ts", "lib/albums.ts", "app/track/[slug]/TrackPageClient.tsx", "app/album/[slug]/AlbumPageClient.tsx"],
-      "passes": false
+      "passes": true
     },
     {
       "id": 47,

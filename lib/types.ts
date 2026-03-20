@@ -25,6 +25,7 @@ export type Track = {
   quoteSpeaker: string;
   coverImage: string;
   storyBehind?: string;
+  tags?: string[];
 };
 
 export type LyricLine = {

@@ -11,6 +11,7 @@ const foundersTracks: Track[] = [
     coverImage: "/covers/do-things-that-dont-scale.jpg",
     genre: "Indie Folk",
     mood: "For founders who remember knocking on doors",
+    tags: ["hustle", "early-stage", "grit"],
     lyrics: `[Verse 1]
 I packed a camera and a carry-on
 Knocked on every door from dusk to dawn
@@ -80,6 +81,7 @@ Physically go to them`,
     coverImage: "/covers/product-market-fit.jpg",
     genre: "Indie Pop",
     mood: "The anxiety of not knowing, then knowing",
+    tags: ["strategy", "pivotal moment"],
     lyrics: `[Verse 1]
 Dashboards flat and silence on the feed
 Refresh again like maybe that's the lead
@@ -143,6 +145,7 @@ You'll know`,
     coverImage: "/covers/the-maze.jpg",
     genre: "Dark Folk",
     mood: "For anyone stuck in a tarpit idea",
+    tags: ["cautionary tale", "hard truths"],
     lyrics: `[Verse 1]
 Had a pitch that everyone believed
 Friends at dinner nodding, "you should leave
@@ -214,6 +217,7 @@ const productTracks: Track[] = [
     coverImage: "/covers/taste.jpg",
     genre: "Jazz Pop",
     mood: "When you know something's off but can't explain why",
+    tags: ["craft", "design intuition"],
     lyrics: `[Verse 1]
 The numbers say it's fine, the chart looks great
 Adoption's up, engagement's pulling weight
@@ -276,6 +280,7 @@ That's taste`,
     coverImage: "/covers/eleven-stars.jpg",
     genre: "Cinematic Folk",
     mood: "Dream absurd, then design the room",
+    tags: ["ambition", "vision", "inspiration"],
     lyrics: `[Verse 1]
 A one-star stay is sleeping on the floor
 A three-star stay — you get a key and door
@@ -333,6 +338,7 @@ Eleven stars`,
     coverImage: "/covers/talk-to-users.jpg",
     genre: "Acoustic Pop",
     mood: "One conversation can save you six months",
+    tags: ["customer discovery", "empathy"],
     lyrics: `[Verse 1]
 We built a survey, sent it to a list
 Analyzed the data, nothing we had missed
@@ -395,6 +401,7 @@ const buildersTracks: Track[] = [
     coverImage: "/covers/ship-it.jpg",
     genre: "Lo-Fi Hip Hop",
     mood: "Stop planning. Start shipping.",
+    tags: ["motivation", "velocity"],
     lyrics: `[Verse 1]
 Another standup, another blocker filed
 Another sprint review where nothing's compiled
@@ -454,6 +461,7 @@ Ship it`,
     coverImage: "/covers/vibe-coding.jpg",
     genre: "Glitch Hop",
     mood: "Never wrote a line of code, shipped it anyway",
+    tags: ["satire", "comedy", "AI"],
     lyrics: `[Verse 1]
 Never wrote a line of code before last spring
 Now I'm shipping features, building everything
@@ -515,6 +523,7 @@ const humanSideTracks: Track[] = [
     coverImage: "/covers/imposter.jpg",
     genre: "Ambient Folk",
     mood: "Everyone at the table feels the same way",
+    tags: ["vulnerability", "real talk"],
     lyrics: `[Verse 1]
 Walked into the room and took a seat
 Looked around the table, felt the heat
@@ -576,6 +585,7 @@ Day by day by day`,
     coverImage: "/covers/burnout.jpg",
     genre: "Acoustic Soul",
     mood: "It's not the hours, it's the hollow ache",
+    tags: ["mental health", "self-care"],
     lyrics: `[Verse 1]
 Five AM alarm, the slack is lit
 Fourteen notifications, none of it
