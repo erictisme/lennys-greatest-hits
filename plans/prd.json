@@ -108,7 +108,7 @@
         "pnpm build passes"
       ],
       "files": ["app/page.tsx", "app/layout.tsx"],
-      "passes": false
+      "passes": true
     },
     {
       "id": 39,

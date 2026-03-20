@@ -69,9 +69,9 @@ export default function Home() {
             podcasts.
           </p>
           <p className="text-xs text-muted-foreground/50">
-            Built with Suno AI + Claude Code &middot;{" "}
+            Built by{" "}
             <a
-              href="https://www.linkedin.com/in/erictansongyi/"
+              href="https://www.linkedin.com/in/erictisme/"
               target="_blank"
               rel="noopener noreferrer"
               className="underline hover:text-foreground transition-colors"
