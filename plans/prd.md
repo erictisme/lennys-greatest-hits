@@ -479,3 +479,49 @@ Use the unofficial Suno API. Set up a simple Node.js script at `scripts/generate
 - [x] This is a local-only counter (per browser) — no backend needed for now
 - [x] DO NOT modify audio files, lyrics, or album data structure
 - [x] `pnpm build` passes
+
+### Task 25b: Add storyBehind writeup to every track and display on track page
+- [x] The Track type in lib/types.ts now has an optional `storyBehind?: string` field — already added
+- [x] Add a `storyBehind` string to EVERY track in lib/albums.ts — 2-3 sentences explaining the specific Lenny episode/article this song is based on, what happened in it, why it matters. Write it like a music liner note, not a Wikipedia entry.
+- [x] For Imposter: Julie Zhuo was Episode 2 of Lenny's Podcast. She spent 13 years at Facebook going from IC designer to VP of Design. She wrote The Making of a Manager from the imposter syndrome she felt the entire way up.
+- [x] For Burnout: Andy Johns spent 17 years at Facebook, Twitter, Wealthfront, and Quora. He was raw about burnout on Lenny's show. Nearly 45% of tech workers report significant burnout. Jonny Miller coined the "feather, brick, dump truck" framework for warning signs.
+- [x] For all other tracks, write similar episode-specific liner notes using the `concept` field as starting point but more narrative/story-driven
+- [x] Display `storyBehind` on the track page (TrackPageClient.tsx) in a new section between the key quote and lyrics, with heading "The Story Behind This Song"
+- [x] DO NOT modify audio files or lyrics
+- [x] `pnpm build` passes
+
+### Task 26: Deploy to Vercel production
+- [ ] Run `vercel --prod` and confirm deployment succeeds
+- [ ] Verify all track pages load with lyrics, share buttons, and story sections
+- [ ] `pnpm build` passes
+
+### Task 27: Fact-check all quotes, sources, and attributions
+- [ ] Review every track in lib/albums.ts — check keyQuote, quoteSpeaker, sources, and concept fields
+- [ ] Use MCP tools (mcp__lennysdata__search_content, mcp__lennysdata__read_excerpt) to verify each quote is real and correctly attributed
+- [ ] Fix any incorrect attributions — if a quote can't be verified, remove it or replace with a verified one
+- [ ] Ensure every source title matches a real Lenny episode or newsletter
+- [ ] DO NOT modify audio files, lyrics structure, or UI components
+- [ ] `pnpm build` passes
+
+### Task 28: Fix spacebar play/pause on track page
+- [ ] Add a global keydown listener in TrackPageClient.tsx — when spacebar is pressed, toggle play/pause
+- [ ] Prevent default scroll behavior when spacebar is pressed (e.preventDefault())
+- [ ] Only activate when not focused on an input/textarea element
+- [ ] DO NOT modify audio-context internals, just call audio.togglePlay()
+- [ ] `pnpm build` passes
+
+### Task 29: Fix share button — make it copy link by default with toast
+- [ ] On track page, the primary Share button should COPY THE LINK to clipboard immediately (not open native share dialog)
+- [ ] Show "Copied!" toast feedback for 2 seconds after clicking
+- [ ] Keep the X and LinkedIn share buttons as secondary options below or beside it
+- [ ] In NowPlayingBar, same behavior — primary click copies link, shows "Copied!"
+- [ ] DO NOT touch audio playback or lyrics
+- [ ] `pnpm build` passes
+
+### Task 30: Fix "Inspired by" source links
+- [ ] All source URLs in lib/albums.ts are empty strings (""). This makes them dead links.
+- [ ] Remove the <a> tag wrapping when url is empty — render as plain text instead of a broken link
+- [ ] Remove the ExternalLink icon when there's no URL
+- [ ] Format as: "Based on Lenny's episode with Brian Chesky" not "Brian Chesky on Airbnb's early days — Brian Chesky" (redundant guest name)
+- [ ] DO NOT modify audio or lyrics
+- [ ] `pnpm build` passes

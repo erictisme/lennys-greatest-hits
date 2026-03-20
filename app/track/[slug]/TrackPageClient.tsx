@@ -268,6 +268,23 @@ export default function TrackPageClient({ slug }: { slug: string }) {
           </motion.blockquote>
         )}
 
+        {/* Story Behind This Song */}
+        {track.storyBehind && (
+          <motion.section
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.4 }}
+            className="mb-10"
+          >
+            <h2 className="text-xs font-medium uppercase tracking-widest text-muted-foreground/50 mb-3">
+              The Story Behind This Song
+            </h2>
+            <p className="text-sm text-muted-foreground/80 leading-relaxed">
+              {track.storyBehind}
+            </p>
+          </motion.section>
+        )}
+
         {/* Synced Lyrics */}
         <section className="mb-10">
           <h2 className="text-xs font-medium uppercase tracking-widest text-muted-foreground/50 mb-4">
