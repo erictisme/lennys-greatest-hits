@@ -21,7 +21,7 @@ export const metadata: Metadata = {
   ),
   title: "Lenny's Greatest Hits",
   description:
-    "Tech culture anthems from 638 episodes of Lenny's Podcast — real, catchy songs built from the best insights in product, startups, and building.",
+    "Tech culture anthems from 638 episodes of Lenny's Podcast. Real, catchy songs built from the best insights in product, startups, and building.",
   openGraph: {
     title: "Lenny's Greatest Hits",
     description:
@@ -32,7 +32,7 @@ export const metadata: Metadata = {
         url: "/api/og",
         width: 1200,
         height: 630,
-        alt: "Lenny's Greatest Hits — Tech Culture Anthems",
+        alt: "Lenny's Greatest Hits",
       },
     ],
   },

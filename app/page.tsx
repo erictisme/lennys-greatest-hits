@@ -2,7 +2,6 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { Headphones } from "lucide-react";
 import { motion } from "framer-motion";
 import { getAllAlbums } from "@/lib/tracks";
 
@@ -18,19 +17,13 @@ export default function Home() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
-          <div className="flex items-center justify-center gap-2 mb-6">
-            <Headphones className="w-6 h-6 text-muted-foreground" />
-            <span className="text-sm uppercase tracking-[0.2em] text-muted-foreground font-medium">
-              Tech Culture Anthems
-            </span>
-          </div>
           <h1 className="text-5xl sm:text-6xl md:text-7xl font-bold tracking-tight leading-[1.05] mb-4">
             Lenny&apos;s
             <br />
             Greatest Hits
           </h1>
           <p className="text-lg sm:text-xl text-muted-foreground max-w-md mx-auto leading-relaxed">
-            The insights you quote on X — turned into songs you can feel.
+            The insights you quote on X, turned into songs you can feel.
             Based on Lenny Rachitsky&apos;s most iconic podcast episodes.
           </p>
         </motion.div>
