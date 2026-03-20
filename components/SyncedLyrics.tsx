@@ -1,7 +1,7 @@
 "use client";
 
-import { useRef, useEffect, useMemo, useState } from "react";
-import { Share2, Eye, EyeOff } from "lucide-react";
+import { useRef, useMemo, useState } from "react";
+import { Share2 } from "lucide-react";
 import { trackEvent } from "@/lib/analytics";
 import ShareLyricModal from "./ShareLyricModal";
 
@@ -100,7 +100,6 @@ export default function SyncedLyrics({
   const containerRef = useRef<HTMLDivElement>(null);
   const lineRefs = useRef<(HTMLDivElement | null)[]>([]);
   const [shareLine, setShareLine] = useState<string | null>(null);
-  const [followLyrics, setFollowLyrics] = useState(true);
 
   const lines = useMemo(() => parseLyrics(lyrics, duration), [lyrics, duration]);
 
@@ -118,29 +117,10 @@ export default function SyncedLyrics({
     return idx;
   }, [currentTime, duration, lines]);
 
-  // Auto-scroll to keep active line centered (only when follow toggle is on)
-  useEffect(() => {
-    if (!followLyrics || activeIndex < 0 || !isPlaying) return;
-    const el = lineRefs.current[activeIndex];
-    if (el) {
-      el.scrollIntoView({ behavior: "smooth", block: "center" });
-    }
-  }, [activeIndex, isPlaying, followLyrics]);
-
   if (lines.length === 0) return null;
 
   return (
     <>
-      <div className="flex justify-end mb-2">
-        <button
-          onClick={() => setFollowLyrics((v) => !v)}
-          className="inline-flex items-center gap-1.5 text-xs text-muted-foreground/60 hover:text-muted-foreground transition-colors px-2 py-1 rounded-md hover:bg-black/5"
-          aria-label={followLyrics ? "Disable lyrics auto-scroll" : "Enable lyrics auto-scroll"}
-        >
-          {followLyrics ? <Eye className="w-3.5 h-3.5" /> : <EyeOff className="w-3.5 h-3.5" />}
-          Follow lyrics {followLyrics ? "on" : "off"}
-        </button>
-      </div>
       <div ref={containerRef} className="space-y-1">
         {lines.map((line, i) => {
           const isActive = i === activeIndex;

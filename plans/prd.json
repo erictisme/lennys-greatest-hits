@@ -169,6 +169,66 @@
       ],
       "files": ["lib/audio-context.tsx"],
       "passes": true
+    },
+    {
+      "id": 52,
+      "category": "feature",
+      "priority": 0,
+      "description": "Add email signup form to the homepage. Create a Supabase client utility at lib/supabase.ts that reads NEXT_PUBLIC_SUPABASE_URL and NEXT_PUBLIC_SUPABASE_ANON_KEY from environment. Add an email capture section near the bottom of the homepage (app/page.tsx) with a heading like 'More songs coming — get notified', a single email input field, and a submit button. On submit, insert the email into the 'email_subscribers' table in Supabase (columns: id uuid auto, email text unique, created_at timestamptz auto). Show a success message after insert. Handle duplicate emails gracefully (show 'You're already subscribed!' instead of an error). Style it to match the existing site aesthetic — warm Lenny theme, not dark Spotify. Keep it simple: no auth, no confirmation email, just capture the email. DONE: email input on homepage, submitting stores email in Supabase, success/duplicate messages work. DO NOT TOUCH: audio playback, lyrics, track data, album pages. VERIFY: pnpm build passes, enter an email on homepage, check Supabase table has the row, enter same email again and see 'already subscribed' message.",
+      "steps": [
+        "Create lib/supabase.ts with createClient using env vars",
+        "Add EmailSignup client component in components/EmailSignup.tsx",
+        "Add EmailSignup to homepage app/page.tsx near bottom",
+        "Handle submit: insert into email_subscribers, show success",
+        "Handle duplicate: catch unique constraint, show already subscribed",
+        "pnpm build passes"
+      ],
+      "files": ["lib/supabase.ts", "components/EmailSignup.tsx", "app/page.tsx"],
+      "passes": false
+    },
+    {
+      "id": 53,
+      "category": "bugfix",
+      "priority": 0,
+      "description": "Fix progress/seek bar: clickable area must match visible bar thickness, and fill must animate smoothly. Currently the bar was made thicker visually but the actual clickable/draggable hit target is still the old thin size, so users miss clicks. Also the progress fill updates in jerky steps instead of smooth animation. Fix both issues in TrackPageClient.tsx and NowPlayingBar.tsx: (1) make the clickable hit target at least as wide/tall as the visible bar by ensuring the input range or click handler div covers the full visual area, (2) use CSS transition on the fill width (e.g., transition: width 0.3s linear) so it fills smoothly between updates instead of jumping. DONE: clicking anywhere on the visible bar works to seek, and the fill animates smoothly during playback. DO NOT TOUCH: audio playback logic, lyrics, track data. VERIFY: pnpm build passes, click various spots on the progress bar and confirm they all register, watch the fill move smoothly during playback.",
+      "steps": [
+        "Read current progress bar implementation in TrackPageClient.tsx and NowPlayingBar.tsx",
+        "Ensure clickable area matches or exceeds visible bar size",
+        "Add CSS transition to progress fill for smooth animation",
+        "pnpm build passes"
+      ],
+      "files": ["app/track/[slug]/TrackPageClient.tsx", "components/NowPlayingBar.tsx"],
+      "passes": false
+    },
+    {
+      "id": 54,
+      "category": "bugfix",
+      "priority": 0,
+      "description": "Remove the 'Follow lyrics' toggle and all auto-scroll behavior from the lyrics display. The current implementation is buggy and distracting — it either scrolls when you don't want it to or doesn't work properly. Remove the toggle button entirely from SyncedLyrics.tsx. Remove all scrollIntoView calls related to lyrics auto-scrolling. The lyrics should simply be static text that the user scrolls manually. Keep the active line highlighting (current line styled differently) but do NOT auto-scroll to it. DONE: no toggle button visible, no auto-scrolling happens at any time, active line is still highlighted, user scrolls lyrics manually. DO NOT TOUCH: audio playback, track data, lyrics content. VERIFY: pnpm build passes, play a song, confirm no auto-scrolling happens and no toggle button exists, confirm active line is still highlighted.",
+      "steps": [
+        "Remove follow/unfollow toggle state and UI from SyncedLyrics.tsx",
+        "Remove all scrollIntoView calls for lyrics",
+        "Keep active line highlighting CSS",
+        "pnpm build passes"
+      ],
+      "files": ["components/SyncedLyrics.tsx"],
+      "passes": true
+    },
+    {
+      "id": 55,
+      "category": "feature",
+      "priority": 0,
+      "description": "Fix SEO, Open Graph image, and favicon. The current link preview when sharing on LinkedIn/Twitter/iMessage is ugly — it shows a generic Next.js placeholder. Fix this: (1) Create an OG image using Next.js built-in opengraph-image route (app/opengraph-image.tsx) that generates a 1200x630 image with the site title 'Lenny's Greatest Hits', subtitle 'Lenny Rachitsky's best insights turned into actual songs', and a warm gradient background matching the site's color scheme. Use ImageResponse from next/og. (2) Replace the default favicon.ico in app/ with a music-note emoji favicon generated via an app/icon.tsx route using ImageResponse — render a musical note emoji on a warm-toned circle background. (3) Update metadata in app/layout.tsx to include the OG image reference and ensure all meta tags are complete (og:type as 'website', og:site_name, twitter:card as 'summary_large_image'). (4) Add structured data (JSON-LD) in layout.tsx for MusicAlbum or WebApplication schema. DONE: sharing the URL on any platform shows a polished 1200x630 preview image with the site name, and the browser tab shows a music-note favicon instead of the default Next.js icon. DO NOT TOUCH: audio playback, lyrics, track data, page layouts. VERIFY: pnpm build passes, check /opengraph-image returns a 1200x630 image, check /icon returns a favicon, inspect page source for complete meta tags.",
+      "steps": [
+        "Create app/opengraph-image.tsx using ImageResponse with warm gradient + title",
+        "Create app/icon.tsx using ImageResponse with music note emoji",
+        "Delete old app/favicon.ico",
+        "Update metadata in app/layout.tsx with og:type, og:site_name, twitter:card",
+        "Add JSON-LD structured data in layout.tsx",
+        "pnpm build passes"
+      ],
+      "files": ["app/opengraph-image.tsx", "app/icon.tsx", "app/layout.tsx", "app/favicon.ico"],
+      "passes": false
     }
   ]
 }

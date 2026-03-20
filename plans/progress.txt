@@ -1,4 +1,2 @@
-# Ralph DEFAULT run Fri Mar 20 16:42:58 +08 2026
-Task 50: Made progress bars thicker (6px default, 10px on hover) in TrackPageClient and NowPlayingBar. Added padding for larger click targets.
-Task 51: Fixed next/prev buttons to cross album boundaries. Updated NowPlayingBar button enable/disable logic to account for cross-album tracks.
-Task 49: Already implemented — TrackNavigator component exists and is mounted in layout.tsx. Marked as done.
+# Ralph DEFAULT run Fri Mar 20 17:47:20 +08 2026
+Task 54: Removed 'Follow lyrics' toggle button and all auto-scroll (scrollIntoView) from SyncedLyrics.tsx. Active line highlighting preserved.
