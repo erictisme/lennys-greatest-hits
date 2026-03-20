@@ -527,15 +527,43 @@ Use the unofficial Suno API. Set up a simple Node.js script at `scripts/generate
 - [x] `pnpm build` passes
 
 ### Task 31: Research and add real source URLs for all "Inspired by" links
-- [ ] For EVERY source in lib/albums.ts that has `url: ""`, use the Lenny MCP tools to find the real URL
-- [ ] Use `mcp__lennysdata__search_content` with the guest name and topic to find the matching episode/newsletter
-- [ ] Use `mcp__lennysdata__read_content` to confirm it's the right piece and get the URL
-- [ ] Update each source's `url` field in lib/albums.ts with the real URL from the MCP results
-- [ ] There are ~15 sources across all tracks — research EVERY one, do not skip any
-- [ ] If the source wraps in an `<a>` tag when URL is present, verify the link renders correctly in TrackPageClient.tsx
-- [ ] If the component doesn't render links when URL is non-empty, update TrackPageClient.tsx to wrap sources with real URLs in clickable `<a>` tags (target="_blank", rel="noopener noreferrer") with the ExternalLink icon
+
+There are ~15 sources across all 10 tracks in lib/albums.ts, all with `url: ""`. Research each one using the Lenny MCP and fill in the real URL.
+
+**Step-by-step process for EACH source:**
+1. Read the source's `title` and `guest` fields from lib/albums.ts
+2. Call `mcp__lennysdata__search_content` with the guest name (e.g., "Brian Chesky") to find matching content
+3. From the search results, identify the episode/newsletter that matches the source title
+4. Call `mcp__lennysdata__read_content` on that result to confirm it's correct and get the URL
+5. Update the `url` field in lib/albums.ts with the URL from the MCP result
+
+**Also fix the source display format in TrackPageClient.tsx:**
+- [ ] When a source has a real URL, wrap it in an `<a>` tag (target="_blank", rel="noopener noreferrer") with the ExternalLink icon
+- [ ] Display format should be: the source `title` field as the link text (e.g., "Brian Chesky on Airbnb's early days"), NOT "Based on Lenny's episode with {guest}"
+- [ ] When a source has no URL, display as plain text using the `title` field
+
+**Sources to research (do ALL of these):**
+- [ ] "Brian Chesky on Airbnb's early days" (Brian Chesky) - do-things-that-dont-scale
+- [ ] "Paul Graham — Do Things That Don't Scale" (Paul Graham) - do-things-that-dont-scale
+- [ ] "Rahul Vohra on Superhuman's PMF engine" (Rahul Vohra) - product-market-fit
+- [ ] "Lenny's PMF newsletter series" (Lenny Rachitsky) - product-market-fit
+- [ ] "Dalton Caldwell on tarpit ideas" (Dalton Caldwell) - the-maze
+- [ ] "Michael Seibel on navigating uncertainty" (Michael Seibel) - the-maze
+- [ ] "Shreyas Doshi on product sense" (Shreyas Doshi) - taste
+- [ ] "Brian Chesky on detail obsession" (Brian Chesky) - taste
+- [ ] "Brian Chesky on the 11-star framework" (Brian Chesky) - eleven-stars
+- [ ] "Teresa Torres on continuous discovery" (Teresa Torres) - talk-to-users
+- [ ] "Gustaf Alstromer on talking to users" (Gustaf Alstromer) - talk-to-users
+- [ ] "Keith Rabois on speed as competitive advantage" (Keith Rabois) - ship-it
+- [ ] "Velocity over everything: How Ramp became the fastest-growing SaaS startup" (Geoff Charles) - ship-it
+- [ ] "The rise of the professional vibe coder" (Lazar Jovanovic) - vibe-coding
+- [ ] "Andrej Karpathy coined 'vibe coding'" (Lenny Rachitsky) - vibe-coding
+- [ ] "Julie Zhuo on accelerating your career and impostor syndrome" (Julie Zhuo) - imposter
+- [ ] "When enough is enough" (Andy Johns) - burnout
+- [ ] "Managing nerves, anxiety, and burnout" (Jonny Miller) - burnout
+
 - [ ] DO NOT modify audio, lyrics, or album structure
-- [ ] DO NOT invent URLs — only use URLs returned by the MCP tools
+- [ ] DO NOT invent URLs. If a source can't be found in the MCP, leave url as "" and move on
 - [ ] `pnpm build` passes
 
 ### Task 32: Add album art and track cover images to the existing layout
@@ -576,10 +604,21 @@ Cover images are already in `public/covers/`. Album covers: `founders.jpg`, `pro
 - [ ] DO NOT modify audio files
 - [ ] `pnpm build` passes
 
-### Task 34: Add creator credit with LinkedIn link
+### Task 34: Remove "Tech Culture Anthems" label
+- [ ] Remove the "Tech Culture Anthems" subtitle from the home page hero section (app/page.tsx, line ~30). Remove the entire div containing the Headphones icon and the text.
+- [ ] Remove "Tech Culture Anthems" from the OG image alt text in app/layout.tsx (change to just "Lenny's Greatest Hits")
+- [ ] DO NOT modify audio files or lyrics
+- [ ] `pnpm build` passes
+
+### Task 35: Add creator credit with LinkedIn link
 - [ ] Add a footer or credit section on the home page (app/page.tsx) that credits the creator: "Built by Eric Tan" linking to https://www.linkedin.com/in/erictisme/
 - [ ] Keep it subtle and tasteful, matching the existing design (small text, muted color, bottom of page)
 - [ ] Also add Eric's LinkedIn to the site footer if one exists in layout.tsx
 - [ ] Link should open in a new tab (target="_blank", rel="noopener noreferrer")
 - [ ] DO NOT modify audio files or lyrics
+- [ ] `pnpm build` passes
+
+### Task 36: Deploy to Vercel
+- [ ] Run `vercel --prod` and confirm deployment succeeds
+- [ ] Verify build output shows no errors
 - [ ] `pnpm build` passes
