@@ -97,6 +97,25 @@ export default function Home() {
               Eric Tan
             </a>
           </p>
+          <p className="text-xs text-muted-foreground/30 mt-1">
+            <a
+              href="https://www.lennysdata.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-foreground/50 transition-colors"
+            >
+              Built on Lenny&apos;s Data
+            </a>
+            {" · "}
+            <a
+              href="https://www.youtube.com/@CodeRiffAI"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-foreground/50 transition-colors"
+            >
+              Build with us on Code Riff
+            </a>
+          </p>
         </div>
       </footer>
     </div>
