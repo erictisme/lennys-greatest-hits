@@ -58,7 +58,7 @@
         "Write to content/brainstorm/batch1-audit.md"
       ],
       "files": ["content/brainstorm/batch1-audit.md"],
-      "passes": false
+      "passes": true
     },
     {
       "id": 5,

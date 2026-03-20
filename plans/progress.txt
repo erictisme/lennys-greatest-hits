@@ -4,3 +4,4 @@ Task 2: Deep-read all 42 candidates via read_excerpt. Rated 41 on 5 dimensions (
 Lyric-Craft Task 1: Studied lyrics from 5 reference artists (Guerra, Ogden, Vernon, Bridgers, Beam) — 14 songs analyzed with techniques and takeaways in content/brainstorm/lyric-study-raw.md.
 Lyric-Craft Task 2: Extracted 10 songwriting principles with bad/good examples (batch 1 vs reference artists) to content/brainstorm/lyric-principles.md.
 Lyric-Craft Task 3: Researched Suno v5 lyric tips from community sources — 13 practical tips covering syllable patterns, structure tags, voice control, mumbling fixes, and genre-specific advice to content/brainstorm/suno-lyric-tips.md.
+Lyric-Craft Task 4: Audited all 11 batch 1 songs (skipped feature-factory). Identified best/worst lines per song with 2-3 rewrites each, plus 5 cross-song patterns to content/brainstorm/batch1-audit.md.
