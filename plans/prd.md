@@ -538,34 +538,31 @@ Use the unofficial Suno API. Set up a simple Node.js script at `scripts/generate
 - [ ] DO NOT invent URLs — only use URLs returned by the MCP tools
 - [ ] `pnpm build` passes
 
-### Task 32: Spotify-style layout with album art (MAJOR UI OVERHAUL)
+### Task 32: Add album art and track cover images to the existing layout
 
-Reference: Spotify's artist page and album page layout. Dark theme. Cover images have been extracted from MP3s and are in `public/covers/`. Album covers: `founders.jpg`, `product.jpg`, `builders.jpg`, `the-human-side.jpg`. Per-track covers: `{track-slug}.jpg`.
+Keep the current light Lenny-style theme. Do NOT switch to a dark theme. Just add cover art images to the existing pages.
 
-**HOME PAGE (app/page.tsx) - "Discography" grid layout:**
-- [ ] Replace the current album list with a horizontal grid of square album cover art cards
-- [ ] Each card: square cover image (fill width of card, ~180-200px), album title below in white bold text, subtitle below in gray smaller text (e.g., "4 songs" or track count)
-- [ ] Cards should be responsive: 2 columns on mobile, 3-4 on desktop
-- [ ] Clicking a card navigates to the album page
-- [ ] Dark background (bg-black or bg-zinc-950), not the current light theme
-- [ ] Use Next.js Image component with proper width/height/alt
+Cover images are already in `public/covers/`. Album covers: `founders.jpg`, `product.jpg`, `builders.jpg`, `the-human-side.jpg`. Per-track covers: `{track-slug}.jpg`.
 
-**ALBUM PAGE (AlbumPageClient.tsx) - Spotify album detail layout:**
-- [ ] At the top: album cover art on the left (~140x140 or ~180x180 rounded-sm) with album title, metadata ("Album . {track count} songs"), and play button to the right of it, horizontally aligned
-- [ ] Below that: a tracklist table with columns: # (track number) | small track cover art thumbnail (~40x40) | Title + subtitle row | Duration on the far right
-- [ ] Track rows should show cover art thumbnail for each track using `/covers/{track.slug}.jpg`
-- [ ] Keep the existing play/pause functionality on track number click
-- [ ] Keep the existing share dot menu (MoreHorizontal) on each row
-- [ ] Dark background throughout
+**HOME PAGE (app/page.tsx):**
+- [ ] Add album cover art to each album card. Show a square thumbnail (~64x64, rounded-lg) to the left of the album title/subtitle
+- [ ] Keep the existing card layout and light theme, just add the image
+
+**ALBUM PAGE (AlbumPageClient.tsx):**
+- [ ] Add album cover art in the header section, to the left of the album title/description (~140x140, rounded-lg)
+- [ ] In each track row, add a small cover art thumbnail (~40x40, rounded) between the track number and the track title, using `/covers/{track.slug}.jpg`
+- [ ] Keep all existing styling, gradients, and interactions
 
 **TRACK PAGE (TrackPageClient.tsx):**
-- [ ] Display the per-track cover image using `/covers/{track.slug}.jpg` as a prominent image near the track title area
-- [ ] Size: ~200x200 or similar, with rounded corners and subtle shadow
+- [ ] Add the per-track cover image using `/covers/{track.slug}.jpg` near the track title in the header area (~160x160, rounded-lg with subtle shadow)
+- [ ] Keep the existing light theme and layout
 
 **Data layer:**
 - [ ] Add a `coverImage` field to the Track type in lib/types.ts (value: `/covers/{slug}.jpg`)
 - [ ] Populate coverImage for each track in lib/albums.ts
+- [ ] Use Next.js `<Image>` component with proper width/height/alt
 - [ ] DO NOT modify audio files or lyrics
+- [ ] DO NOT change the color theme or background colors
 - [ ] `pnpm build` passes
 
 ### Task 33: Remove em dashes from all user-facing text
