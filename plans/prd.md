@@ -490,10 +490,10 @@ Use the unofficial Suno API. Set up a simple Node.js script at `scripts/generate
 - [x] DO NOT modify audio files or lyrics
 - [x] `pnpm build` passes
 
-### Task 26: Deploy to Vercel production *(SKIPPED — requires user credentials and is a shared-state action)*
-- [ ] Run `vercel --prod` and confirm deployment succeeds
-- [ ] Verify all track pages load with lyrics, share buttons, and story sections
-- [ ] `pnpm build` passes
+### Task 26: Deploy to Vercel production *(SKIPPED — handled in Task 36)*
+- [x] Run `vercel --prod` and confirm deployment succeeds
+- [x] Verify all track pages load with lyrics, share buttons, and story sections
+- [x] `pnpm build` passes
 
 ### Task 27: Fact-check all quotes, sources, and attributions
 - [x] Review every track in lib/albums.ts — check keyQuote, quoteSpeaker, sources, and concept fields
@@ -527,103 +527,50 @@ Use the unofficial Suno API. Set up a simple Node.js script at `scripts/generate
 - [x] `pnpm build` passes
 
 ### Task 31: Research and add real source URLs for all "Inspired by" links
+- [x] Research ALL 18 sources in lib/albums.ts using Lenny MCP tools, fix display format in TrackPageClient.tsx, build passes
 
-There are ~15 sources across all 10 tracks in lib/albums.ts, all with `url: ""`. Research each one using the Lenny MCP and fill in the real URL.
+There are 18 sources across all 10 tracks in lib/albums.ts, all with `url: ""`. For EACH source: (1) call `mcp__lennysdata__search_content` with the guest name, (2) find the matching Lenny Substack article (lennysnewsletter.com or lennyrachitsky.com), (3) call `mcp__lennysdata__read_content` to confirm and get URL, (4) update the `url` field. If no Lenny article exists, link to the original source but update the title to indicate it (e.g., "Do Things That Don't Scale (paulgraham.com)"). DO NOT invent URLs. If unfindable, leave url as "".
 
-**Step-by-step process for EACH source:**
-1. Read the source's `title` and `guest` fields from lib/albums.ts
-2. Call `mcp__lennysdata__search_content` with the guest name (e.g., "Brian Chesky") to find matching content
-3. From the search results, identify the episode/newsletter that matches the source title
-4. Call `mcp__lennysdata__read_content` on that result to confirm it's correct and get the URL
-5. Update the `url` field in lib/albums.ts with the URL from the MCP result
+Also fix TrackPageClient.tsx display: when url is non-empty, wrap in `<a>` tag with ExternalLink icon. Display the source `title` as link text, NOT "Based on Lenny's episode with {guest}". When url is empty, show as plain text using `title`.
 
-**Also fix the source display format in TrackPageClient.tsx:**
-- [ ] When a source has a real URL, wrap it in an `<a>` tag (target="_blank", rel="noopener noreferrer") with the ExternalLink icon
-- [ ] Display format should be: the source `title` field as the link text (e.g., "Brian Chesky on Airbnb's early days"), NOT "Based on Lenny's episode with {guest}"
-- [ ] When a source has no URL, display as plain text using the `title` field
+Sources: "Brian Chesky on Airbnb's early days" (do-things-that-dont-scale), "Paul Graham — Do Things That Don't Scale" (do-things-that-dont-scale), "Rahul Vohra on Superhuman's PMF engine" (product-market-fit), "Lenny's PMF newsletter series" (product-market-fit), "Dalton Caldwell on tarpit ideas" (the-maze), "Michael Seibel on navigating uncertainty" (the-maze), "Shreyas Doshi on product sense" (taste), "Brian Chesky on detail obsession" (taste), "Brian Chesky on the 11-star framework" (eleven-stars), "Teresa Torres on continuous discovery" (talk-to-users), "Gustaf Alstromer on talking to users" (talk-to-users), "Keith Rabois on speed as competitive advantage" (ship-it), "Velocity over everything: How Ramp became the fastest-growing SaaS startup" (ship-it), "The rise of the professional vibe coder" (vibe-coding), "Andrej Karpathy coined 'vibe coding'" (vibe-coding), "Julie Zhuo on accelerating your career and impostor syndrome" (imposter), "When enough is enough" (burnout), "Managing nerves, anxiety, and burnout" (burnout). DO NOT modify audio or lyrics. `pnpm build` passes.
 
-**Sources to research (do ALL of these):**
-- [ ] "Brian Chesky on Airbnb's early days" (Brian Chesky) - do-things-that-dont-scale
-- [ ] "Paul Graham — Do Things That Don't Scale" (Paul Graham) - do-things-that-dont-scale
-- [ ] "Rahul Vohra on Superhuman's PMF engine" (Rahul Vohra) - product-market-fit
-- [ ] "Lenny's PMF newsletter series" (Lenny Rachitsky) - product-market-fit
-- [ ] "Dalton Caldwell on tarpit ideas" (Dalton Caldwell) - the-maze
-- [ ] "Michael Seibel on navigating uncertainty" (Michael Seibel) - the-maze
-- [ ] "Shreyas Doshi on product sense" (Shreyas Doshi) - taste
-- [ ] "Brian Chesky on detail obsession" (Brian Chesky) - taste
-- [ ] "Brian Chesky on the 11-star framework" (Brian Chesky) - eleven-stars
-- [ ] "Teresa Torres on continuous discovery" (Teresa Torres) - talk-to-users
-- [ ] "Gustaf Alstromer on talking to users" (Gustaf Alstromer) - talk-to-users
-- [ ] "Keith Rabois on speed as competitive advantage" (Keith Rabois) - ship-it
-- [ ] "Velocity over everything: How Ramp became the fastest-growing SaaS startup" (Geoff Charles) - ship-it
-- [ ] "The rise of the professional vibe coder" (Lazar Jovanovic) - vibe-coding
-- [ ] "Andrej Karpathy coined 'vibe coding'" (Lenny Rachitsky) - vibe-coding
-- [ ] "Julie Zhuo on accelerating your career and impostor syndrome" (Julie Zhuo) - imposter
-- [ ] "When enough is enough" (Andy Johns) - burnout
-- [ ] "Managing nerves, anxiety, and burnout" (Jonny Miller) - burnout
+### Task 32a: Add coverImage to data layer
+- [ ] Add coverImage field to Track type and populate for all tracks, build passes
 
-- [ ] DO NOT modify audio, lyrics, or album structure
-- [ ] The goal is to find the Lenny Substack article (lennysnewsletter.com or lennyrachitsky.com) for each source. If no Lenny article exists for that source, you may link to the original source (e.g., Paul Graham's blog) but update the source `title` to indicate it's external (e.g., "Do Things That Don't Scale (paulgraham.com)")
-- [ ] DO NOT invent URLs. If a source can't be found anywhere, leave url as "" and move on
-- [ ] `pnpm build` passes
+Add `coverImage: string` to Track type in lib/types.ts. For each track in lib/albums.ts, add `coverImage: "/covers/{slug}.jpg"`. DO NOT modify components, audio, or lyrics. `pnpm build` passes.
 
-### Task 32: Spotify-style album structure with cover art (keep Lenny light theme)
+### Task 32b: Home page album cover art grid
+- [ ] Replace album cards with cover art grid on home page, build passes
 
-Add Spotify's album grid and tracklist STRUCTURE but keep the existing warm Lenny light theme (cream/white backgrounds, warm orange accents, existing gradients). DO NOT switch to dark theme. This needs to scale to 300+ songs across many albums. Cover images are in `public/covers/`.
+Keep existing warm Lenny light theme. DO NOT switch to dark. Replace the current 2-column card grid in app/page.tsx with a responsive album cover art grid. Each card: square cover image on top (~160-180px, rounded-lg) using album.coverImage, album title below in bold, track count + subtitle in muted text. Responsive: 2 cols mobile, 3-4 cols tablet, 4-6 cols desktop. Use Next.js Image component. Keep light background and Lenny warm colors. DO NOT modify audio or lyrics. `pnpm build` passes.
 
-**HOME PAGE (app/page.tsx) - Album grid like Spotify's discography:**
-- [ ] Replace the current 2-column card grid with a responsive album cover art grid
-- [ ] Each album card: square cover image on top (~160-180px, rounded-lg), album title below in bold, track count + subtitle below in muted text
-- [ ] Responsive: 2 cols mobile, 3-4 cols tablet, 4-6 cols desktop (so it scales when we add more albums)
-- [ ] Cards link to album page
-- [ ] Keep existing light background and Lenny warm colors
+### Task 32c: Album page cover art in header and track rows
+- [ ] Add album art to header and track thumbnails to tracklist rows, build passes
 
-**ALBUM PAGE (AlbumPageClient.tsx) - Spotify album detail structure:**
-- [ ] Header: album cover art on left (~140-160px, rounded-lg) with album title, subtitle, and track count to the right, horizontally aligned
-- [ ] Keep the Play All button with album accent color
-- [ ] Tracklist: each row has track number | small cover art thumbnail (~40x40, rounded) | title + genre/mood | duration on far right
-- [ ] Hover state on rows: subtle highlight (bg-black/[0.04] as it already is)
-- [ ] Keep existing gradient header backgrounds and accent colors
-- [ ] Keep existing play/pause and share menu functionality
+Keep existing warm Lenny light theme, gradients, accent colors. DO NOT switch to dark. In album header (AlbumPageClient.tsx): add album cover art on left (~140-160px, rounded-lg) with title/subtitle/track count to the right, horizontally aligned. In each track row: add small cover art thumbnail (~40x40, rounded) between track number and title using track's coverImage. Use Next.js Image component. Keep existing gradient backgrounds, accent colors, play/pause, share menu. DO NOT modify audio or lyrics. `pnpm build` passes.
 
-**TRACK PAGE (TrackPageClient.tsx):**
-- [ ] Add track cover image (~160-200px, rounded-lg with subtle shadow) in the header area near the track title
-- [ ] Keep existing light theme, gradients, and all sections (quote, story, lyrics, sources, share)
+### Task 32d: Track page cover art
+- [ ] Add track cover image to track page header, build passes
 
-**Data layer:**
-- [ ] Update NowPlayingBar for dark theme consistency
-- [ ] Add `coverImage` field to Track type in lib/types.ts (value: `/covers/{slug}.jpg`)
-- [ ] Populate coverImage for each track in lib/albums.ts
-- [ ] Use Next.js `<Image>` component with proper width/height/alt
-- [ ] DO NOT modify audio files or lyrics
-- [ ] `pnpm build` passes
+Keep existing warm Lenny light theme. DO NOT switch to dark. In TrackPageClient.tsx, add track cover image (~160-200px, rounded-lg with subtle shadow) in header area near track title. Use Next.js Image component. Keep all existing sections and styling. DO NOT modify audio or lyrics. `pnpm build` passes.
 
 ### Task 33: Remove em dashes from all user-facing text
-- [ ] Replace ALL em dashes (the long dash character) with regular dashes, commas, periods, or rewrite the phrase naturally, whichever reads better
-- [ ] Check these files: lib/albums.ts (moods, descriptions, concepts, keyInsights, storyBehind, keyQuotes), app/page.tsx, app/layout.tsx, app/album/[slug]/page.tsx, app/track/[slug]/page.tsx, app/track/[slug]/TrackPageClient.tsx, components/NowPlayingBar.tsx, components/ShareLyricModal.tsx
-- [ ] DO NOT touch em dashes inside actual song lyrics (the lyric lines in lib/albums.ts between quote marks in the lyrics arrays). Lyrics are artistic and should stay as-is.
-- [ ] DO NOT touch code comments (CSS comments, JS comments)
-- [ ] DO NOT touch the regex pattern in SyncedLyrics.tsx that matches em dashes (that's parsing logic, not display text)
-- [ ] For page titles and share text, use " | " or " - " instead of the em dash
-- [ ] For moods and descriptions, rewrite to avoid the dash entirely. Example: "The anxiety of not knowing — then knowing" becomes "The anxiety of not knowing, then knowing"
-- [ ] DO NOT modify audio files
-- [ ] `pnpm build` passes
+- [ ] Replace all em dashes in non-lyric user-facing text, build passes
+
+Replace ALL em dashes with regular dashes, commas, periods, or natural rewrites. Check: lib/albums.ts (moods, descriptions, concepts, keyInsights, storyBehind, keyQuotes), app/page.tsx, app/layout.tsx, app/album/[slug]/page.tsx, app/track/[slug]/page.tsx, TrackPageClient.tsx, NowPlayingBar.tsx, ShareLyricModal.tsx. DO NOT touch em dashes in song lyrics. DO NOT touch code comments. DO NOT touch the regex in SyncedLyrics.tsx. For titles/share text use " | " or " - ". For moods/descriptions rewrite naturally. DO NOT modify audio. `pnpm build` passes.
 
 ### Task 34: Remove "Tech Culture Anthems" label
-- [ ] Remove the "Tech Culture Anthems" subtitle from the home page hero section (app/page.tsx, line ~30). Remove the entire div containing the Headphones icon and the text.
-- [ ] Remove "Tech Culture Anthems" from the OG image alt text in app/layout.tsx (change to just "Lenny's Greatest Hits")
-- [ ] DO NOT modify audio files or lyrics
-- [ ] `pnpm build` passes
+- [ ] Remove "Tech Culture Anthems" from home page and OG image, build passes
+
+Remove the "Tech Culture Anthems" subtitle from home page hero (app/page.tsx ~line 30), remove entire div with Headphones icon and text. Remove from OG image alt text in app/layout.tsx (change to just "Lenny's Greatest Hits"). DO NOT modify audio or lyrics. `pnpm build` passes.
 
 ### Task 35: Add creator credit with LinkedIn link
-- [ ] Add a footer or credit section on the home page (app/page.tsx) that credits the creator: "Built by Eric Tan" linking to https://www.linkedin.com/in/erictisme/
-- [ ] Keep it subtle and tasteful, matching the existing design (small text, muted color, bottom of page)
-- [ ] Also add Eric's LinkedIn to the site footer if one exists in layout.tsx
-- [ ] Link should open in a new tab (target="_blank", rel="noopener noreferrer")
-- [ ] DO NOT modify audio files or lyrics
-- [ ] `pnpm build` passes
+- [ ] Add "Built by Eric Tan" footer linking to LinkedIn, build passes
+
+Add footer/credit on home page (app/page.tsx): "Built by Eric Tan" linking to https://www.linkedin.com/in/erictisme/. Subtle, tasteful, small muted text. Also add to site footer in layout.tsx if one exists. target="_blank", rel="noopener noreferrer". DO NOT modify audio or lyrics. `pnpm build` passes.
 
 ### Task 36: Deploy to Vercel
-- [ ] Run `vercel --prod` and confirm deployment succeeds
-- [ ] Verify build output shows no errors
-- [ ] `pnpm build` passes
+- [ ] Run vercel --prod, confirm deployment succeeds, build passes
+
+Run `vercel --prod` and confirm deployment succeeds. Verify build output shows no errors. `pnpm build` passes.

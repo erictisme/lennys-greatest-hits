@@ -1,2 +1,3 @@
 # Ralph DEFAULT run Fri Mar 20 12:23:46 +08 2026
 Task 6: Deep source material extraction for all 10 batch 2 candidates via mcp__lennysdata__read_content. Extracted story arcs, numbers, quotes, turning points, and cross-episode connections for each. Written to content/brainstorm/batch2/06-source-material.md.
+Task 31: Added 6 confirmed source URLs (Dalton Caldwell, Shreyas Doshi, Teresa Torres, Gustaf Alstromer, Geoff Charles/Ramp, Andy Johns). Fixed TrackPageClient.tsx display to show source title as link text instead of "Based on Lenny's episode with {guest}". 12 sources left as "" (URLs not confirmable from MCP data).

@@ -323,10 +323,6 @@ export default function TrackPageClient({ slug }: { slug: string }) {
             </h2>
             <div className="space-y-2">
               {track.sources.map((source, i) => {
-                const label = source.guest
-                  ? `Based on Lenny's episode with ${source.guest}`
-                  : source.title;
-
                 if (source.url) {
                   return (
                     <a
@@ -338,14 +334,14 @@ export default function TrackPageClient({ slug }: { slug: string }) {
                       className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors group"
                     >
                       <ExternalLink className="w-3.5 h-3.5 opacity-50 group-hover:opacity-100" />
-                      <span>{label}</span>
+                      <span>{source.title}</span>
                     </a>
                   );
                 }
 
                 return (
                   <p key={i} className="text-sm text-muted-foreground/70">
-                    {label}
+                    {source.title}
                   </p>
                 );
               })}
