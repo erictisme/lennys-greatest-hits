@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { Play, Pause, SkipBack, SkipForward, Share2 } from "lucide-react";
 import { useAudio } from "@/lib/audio-context";
 import { getAlbumForTrack } from "@/lib/tracks";
@@ -109,9 +110,12 @@ export default function NowPlayingBar() {
           href={`/track/${currentTrack.slug}`}
           className="flex items-center gap-3 min-w-0 flex-1"
         >
-          <div
-            className="w-8 h-8 sm:w-10 sm:h-10 rounded flex-shrink-0"
-            style={{ backgroundColor: accentColor }}
+          <Image
+            src={currentTrack.coverImage}
+            alt={currentTrack.title}
+            width={40}
+            height={40}
+            className="w-8 h-8 sm:w-10 sm:h-10 rounded flex-shrink-0 object-cover"
           />
           <div className="min-w-0">
             <p className="text-xs sm:text-sm font-medium truncate">{currentTrack.title}</p>
