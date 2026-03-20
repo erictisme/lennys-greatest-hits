@@ -1,11 +1,2 @@
-# Ralph DEFAULT run Fri Mar 20 11:49:27 +08 2026
-Task 1: Scanned full archive (289 podcasts, 349 newsletters). Flagged 42 story-rich candidates with specific numbers/stories to content/brainstorm/batch2/01-archive-scan.md.
-Task 2: Deep-read all 42 candidates via read_excerpt. Rated 41 on 5 dimensions (1 excluded for batch 1 overlap). Top scorers: Intercom/Failure/Duolingo (23), Bolt/Conrad/Colonna/Halligan/Freemium (22). Written to 02-deep-reads.md.
-Lyric-Craft Task 1: Studied lyrics from 5 reference artists (Guerra, Ogden, Vernon, Bridgers, Beam) — 14 songs analyzed with techniques and takeaways in content/brainstorm/lyric-study-raw.md.
-Lyric-Craft Task 2: Extracted 10 songwriting principles with bad/good examples (batch 1 vs reference artists) to content/brainstorm/lyric-principles.md.
-Lyric-Craft Task 3: Researched Suno v5 lyric tips from community sources — 13 practical tips covering syllable patterns, structure tags, voice control, mumbling fixes, and genre-specific advice to content/brainstorm/suno-lyric-tips.md.
-Lyric-Craft Task 4: Audited all 11 batch 1 songs (skipped feature-factory). Identified best/worst lines per song with 2-3 rewrites each, plus 5 cross-song patterns to content/brainstorm/batch1-audit.md.
-Task 3: Identified 14 thematic gaps across all 4 albums (3-4 per album) with best episode/article for each gap. Top song-potential gaps: The Pivot, Shopify Bans KPIs, When to Quit, Finding Meaning, Craft & Quality. Written to 03-thematic-gaps.md.
-Lyric-Craft Task 5: Compiled all research (Tasks 1-4) into a 63-line lyric craft guide at content/lyric-craft-guide.md — 5 core rules, 4 genre tips, Suno v5 section, batch 1 mistakes, pre-write checklist.
-Task 4: Found 10 hidden gem episodes via 6 keyword searches (surprising/counterintuitive, failure/mistake, vulnerable/emotional, disagree/debate, quit/career-change, underdog/bootstrap). Top gems: Andy Johns (panic attacks at career peak), Kenneth Berger (fired from Slack 3x), Paul Millerd (pathless path), Ronny Kohavi (80% of features fail). Written to 04-hidden-gems.md.
-Task 5: Selected top 10 batch 2 candidates from all research (Tasks 1-4). Ranked by 5-dimension score (20-23 range). Album balance: Founders 3, Product 2, Builders 2, Human Side 3. Each has song title, chorus hook, vocal style, source, numbers, quote. Written to 05-final-candidates.md.
+# Ralph DEFAULT run Fri Mar 20 12:23:46 +08 2026
+Task 6: Deep source material extraction for all 10 batch 2 candidates via mcp__lennysdata__read_content. Extracted story arcs, numbers, quotes, turning points, and cross-episode connections for each. Written to content/brainstorm/batch2/06-source-material.md.

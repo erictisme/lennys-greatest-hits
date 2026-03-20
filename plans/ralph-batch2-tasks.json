@@ -84,7 +84,7 @@
         "Write to content/brainstorm/batch2/06-source-material.md"
       ],
       "files": ["content/brainstorm/batch2/05-final-candidates.md", "content/brainstorm/batch2/06-source-material.md"],
-      "passes": false
+      "passes": true
     },
     {
       "id": 7,
