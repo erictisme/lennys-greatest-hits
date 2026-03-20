@@ -62,9 +62,9 @@ export function AudioProvider({ children }: { children: ReactNode }) {
         const slug = JSON.parse(saved);
         const allTracks = getAllTracks();
         const track = allTracks.find((t) => t.slug === slug);
-        if (track) {
+        if (track && !track.isLocked) {
           setCurrentTrack(track);
-          const albumTracks = allTracks.filter((t) => t.albumSlug === track.albumSlug);
+          const albumTracks = allTracks.filter((t) => t.albumSlug === track.albumSlug && !t.isLocked);
           setQueue(albumTracks);
         }
       }
@@ -224,15 +224,22 @@ export function AudioProvider({ children }: { children: ReactNode }) {
         const idx = currentQueue.findIndex((t) => t.slug === prev.slug);
         let nextTrackToPlay: Track | null = null;
 
-        if (idx >= 0 && idx < currentQueue.length - 1) {
-          nextTrackToPlay = currentQueue[idx + 1];
-        } else {
-          // Queue exhausted — try next album
+        // Find next unlocked track in current queue
+        for (let i = idx + 1; i < currentQueue.length; i++) {
+          if (!currentQueue[i].isLocked) {
+            nextTrackToPlay = currentQueue[i];
+            break;
+          }
+        }
+        if (!nextTrackToPlay) {
+          // Queue exhausted — try next album with unlocked tracks
           const albumIdx = albums.findIndex((a) => a.slug === prev.albumSlug);
-          if (albumIdx >= 0 && albumIdx < albums.length - 1) {
-            const nextAlbum = albums[albumIdx + 1];
-            if (nextAlbum.tracks.length > 0) {
-              nextTrackToPlay = nextAlbum.tracks[0];
+          for (let a = albumIdx + 1; a < albums.length; a++) {
+            const nextAlbum = albums[a];
+            const firstUnlocked = nextAlbum.tracks.find((t) => !t.isLocked);
+            if (firstUnlocked) {
+              nextTrackToPlay = firstUnlocked;
+              break;
             }
           }
         }
@@ -256,7 +263,7 @@ export function AudioProvider({ children }: { children: ReactNode }) {
 
   const play = useCallback((track: Track) => {
     const audio = audioRef.current;
-    if (!audio) return;
+    if (!audio || track.isLocked) return;
     clearCountdown();
     // If same track, just resume
     setCurrentTrack((prev) => {
@@ -300,18 +307,22 @@ export function AudioProvider({ children }: { children: ReactNode }) {
   const next = useCallback(() => {
     if (!currentTrack) return;
     const idx = queue.findIndex((t) => t.slug === currentTrack.slug);
-    if (idx >= 0 && idx < queue.length - 1) {
-      play(queue[idx + 1]);
-    } else {
-      // Cross album boundary
-      const albumIdx = albums.findIndex((a) => a.slug === currentTrack.albumSlug);
-      if (albumIdx >= 0 && albumIdx < albums.length - 1) {
-        const nextAlbum = albums[albumIdx + 1];
-        if (nextAlbum.tracks.length > 0) {
-          const nextTrack = nextAlbum.tracks[0];
-          setQueue(nextAlbum.tracks);
-          play(nextTrack);
-        }
+    // Try next unlocked track in current queue
+    for (let i = idx + 1; i < queue.length; i++) {
+      if (!queue[i].isLocked) {
+        play(queue[i]);
+        return;
+      }
+    }
+    // Cross album boundary — find next album with unlocked tracks
+    const albumIdx = albums.findIndex((a) => a.slug === currentTrack.albumSlug);
+    for (let a = albumIdx + 1; a < albums.length; a++) {
+      const nextAlbum = albums[a];
+      const firstUnlocked = nextAlbum.tracks.find((t) => !t.isLocked);
+      if (firstUnlocked) {
+        setQueue(nextAlbum.tracks.filter((t) => !t.isLocked));
+        play(firstUnlocked);
+        return;
       }
     }
   }, [currentTrack, queue, play]);
@@ -325,18 +336,22 @@ export function AudioProvider({ children }: { children: ReactNode }) {
       return;
     }
     const idx = queue.findIndex((t) => t.slug === currentTrack.slug);
-    if (idx > 0) {
-      play(queue[idx - 1]);
-    } else {
-      // Cross album boundary backwards
-      const albumIdx = albums.findIndex((a) => a.slug === currentTrack.albumSlug);
-      if (albumIdx > 0) {
-        const prevAlbum = albums[albumIdx - 1];
-        if (prevAlbum.tracks.length > 0) {
-          const lastTrack = prevAlbum.tracks[prevAlbum.tracks.length - 1];
-          setQueue(prevAlbum.tracks);
-          play(lastTrack);
-        }
+    // Try previous unlocked track in current queue
+    for (let i = idx - 1; i >= 0; i--) {
+      if (!queue[i].isLocked) {
+        play(queue[i]);
+        return;
+      }
+    }
+    // Cross album boundary backwards — find prev album with unlocked tracks
+    const albumIdx = albums.findIndex((a) => a.slug === currentTrack.albumSlug);
+    for (let a = albumIdx - 1; a >= 0; a--) {
+      const prevAlbum = albums[a];
+      const lastUnlocked = [...prevAlbum.tracks].reverse().find((t) => !t.isLocked);
+      if (lastUnlocked) {
+        setQueue(prevAlbum.tracks.filter((t) => !t.isLocked));
+        play(lastUnlocked);
+        return;
       }
     }
   }, [currentTrack, queue, play]);
@@ -352,7 +367,7 @@ export function AudioProvider({ children }: { children: ReactNode }) {
   const playAlbum = useCallback(
     (albumSlug: string, startIndex = 0) => {
       const allTracks = getAllTracks();
-      const albumTracks = allTracks.filter((t) => t.albumSlug === albumSlug);
+      const albumTracks = allTracks.filter((t) => t.albumSlug === albumSlug && !t.isLocked);
       if (albumTracks.length === 0) return;
       setQueue(albumTracks);
       play(albumTracks[startIndex] ?? albumTracks[0]);

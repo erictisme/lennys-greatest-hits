@@ -2,3 +2,4 @@
 Task 57: Added comingSoon?: boolean to Album type and isLocked?: boolean to Track type in lib/types.ts. Build passes.
 Task 58: Added 5 Coming Soon albums (The Operators, Growth Engine, The Startup Life, Career Moves, Frameworks) with 25 locked tracks to lib/albums.ts. All metadata populated from songwriting research files. Build passes.
 Task 59: Added 5 CSS gradient classes (operators=orange, growth-engine=yellow, startup-life=violet, career-moves=cyan, frameworks=indigo) to globals.css and updated gradient lookup maps in AlbumPageClient.tsx and TrackPageClient.tsx. Build passes.
+Task 60: Added locked track guards to audio-context.tsx — play() returns early for locked tracks, next/prev/onEnded skip locked tracks across album boundaries, playAlbum() filters locked tracks from queue. Build passes.
