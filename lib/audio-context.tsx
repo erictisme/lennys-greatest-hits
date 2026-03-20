@@ -92,22 +92,6 @@ export function AudioProvider({ children }: { children: ReactNode }) {
 
     const onTimeUpdate = () => setCurrentTime(audio.currentTime);
     const onLoadedMetadata = () => setDuration(audio.duration);
-    const onEnded = () => {
-      setIsPlaying(false);
-      // Auto-advance to next track in queue
-      setCurrentTrack((prev) => {
-        if (!prev) return null;
-        const idx = queue.findIndex((t) => t.slug === prev.slug);
-        if (idx >= 0 && idx < queue.length - 1) {
-          const nextTrack = queue[idx + 1];
-          audio.src = nextTrack.audioUrl;
-          audio.play().catch(() => {});
-          setIsPlaying(true);
-          return nextTrack;
-        }
-        return prev;
-      });
-    };
     const onPlay = () => setIsPlaying(true);
     const onPause = () => setIsPlaying(false);
 
@@ -117,7 +101,6 @@ export function AudioProvider({ children }: { children: ReactNode }) {
 
     audio.addEventListener("timeupdate", onTimeUpdate);
     audio.addEventListener("loadedmetadata", onLoadedMetadata);
-    audio.addEventListener("ended", onEnded);
     audio.addEventListener("play", onPlay);
     audio.addEventListener("pause", onPause);
     audio.addEventListener("volumechange", onVolumeChange);
@@ -125,7 +108,6 @@ export function AudioProvider({ children }: { children: ReactNode }) {
     return () => {
       audio.removeEventListener("timeupdate", onTimeUpdate);
       audio.removeEventListener("loadedmetadata", onLoadedMetadata);
-      audio.removeEventListener("ended", onEnded);
       audio.removeEventListener("play", onPlay);
       audio.removeEventListener("pause", onPause);
       audio.removeEventListener("volumechange", onVolumeChange);

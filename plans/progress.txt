@@ -1,2 +1,3 @@
 # Ralph DEFAULT run Fri Mar 20 14:00:01 +08 2026
 Task 40: Added "Follow lyrics" toggle to SyncedLyrics.tsx. When off, scrollIntoView is skipped so page doesn't jump while reading backstory.
+Task 41: Removed duplicate onEnded handler from mount effect in audio-context.tsx. The mount effect's handler used a stale queue closure and lacked next-album logic, conflicting with the correct queue-dependent handler.
