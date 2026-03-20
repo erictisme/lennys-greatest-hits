@@ -302,6 +302,17 @@ export function AudioProvider({ children }: { children: ReactNode }) {
     const idx = queue.findIndex((t) => t.slug === currentTrack.slug);
     if (idx >= 0 && idx < queue.length - 1) {
       play(queue[idx + 1]);
+    } else {
+      // Cross album boundary
+      const albumIdx = albums.findIndex((a) => a.slug === currentTrack.albumSlug);
+      if (albumIdx >= 0 && albumIdx < albums.length - 1) {
+        const nextAlbum = albums[albumIdx + 1];
+        if (nextAlbum.tracks.length > 0) {
+          const nextTrack = nextAlbum.tracks[0];
+          setQueue(nextAlbum.tracks);
+          play(nextTrack);
+        }
+      }
     }
   }, [currentTrack, queue, play]);
 
@@ -316,6 +327,17 @@ export function AudioProvider({ children }: { children: ReactNode }) {
     const idx = queue.findIndex((t) => t.slug === currentTrack.slug);
     if (idx > 0) {
       play(queue[idx - 1]);
+    } else {
+      // Cross album boundary backwards
+      const albumIdx = albums.findIndex((a) => a.slug === currentTrack.albumSlug);
+      if (albumIdx > 0) {
+        const prevAlbum = albums[albumIdx - 1];
+        if (prevAlbum.tracks.length > 0) {
+          const lastTrack = prevAlbum.tracks[prevAlbum.tracks.length - 1];
+          setQueue(prevAlbum.tracks);
+          play(lastTrack);
+        }
+      }
     }
   }, [currentTrack, queue, play]);
 

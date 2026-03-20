@@ -5,7 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { Play, Pause, SkipBack, SkipForward, Share2 } from "lucide-react";
 import { useAudio } from "@/lib/audio-context";
-import { getAlbumForTrack } from "@/lib/tracks";
+import { getAlbumForTrack, getAllTracks } from "@/lib/tracks";
 import { trackEvent } from "@/lib/analytics";
 
 export default function NowPlayingBar() {
@@ -31,8 +31,10 @@ export default function NowPlayingBar() {
   const progress = duration > 0 ? (currentTime / duration) * 100 : 0;
 
   const currentIdx = queue.findIndex((t) => t.slug === currentTrack.slug);
-  const hasPrev = currentIdx > 0;
-  const hasNext = currentIdx >= 0 && currentIdx < queue.length - 1;
+  const allTracks = getAllTracks();
+  const globalIdx = allTracks.findIndex((t) => t.slug === currentTrack.slug);
+  const hasPrev = currentIdx > 0 || globalIdx > 0;
+  const hasNext = (currentIdx >= 0 && currentIdx < queue.length - 1) || (globalIdx >= 0 && globalIdx < allTracks.length - 1);
 
   const formatTime = (s: number) => {
     const mins = Math.floor(s / 60);
