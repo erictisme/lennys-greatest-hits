@@ -108,7 +108,7 @@ export default function NowPlayingBar() {
         {/* Album color swatch + track info */}
         <Link
           href={`/track/${currentTrack.slug}`}
-          className="flex items-center gap-3 min-w-0 flex-1"
+          className="flex items-center gap-3 min-w-0 flex-1 group/link rounded-md -mx-1.5 px-1.5 hover:bg-white/[0.06] transition-colors"
         >
           <Image
             src={currentTrack.coverImage}
@@ -118,7 +118,7 @@ export default function NowPlayingBar() {
             className="w-8 h-8 sm:w-10 sm:h-10 rounded flex-shrink-0 object-cover"
           />
           <div className="min-w-0">
-            <p className="text-xs sm:text-sm font-medium truncate">{currentTrack.title}</p>
+            <p className="text-xs sm:text-sm font-medium truncate group-hover/link:underline">{currentTrack.title}</p>
             <p className="text-[11px] sm:text-xs text-muted-foreground/60 truncate">
               {album?.title}
             </p>
