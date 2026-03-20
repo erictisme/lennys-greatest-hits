@@ -536,7 +536,7 @@ Also fix TrackPageClient.tsx display: when url is non-empty, wrap in `<a>` tag w
 Sources: "Brian Chesky on Airbnb's early days" (do-things-that-dont-scale), "Paul Graham — Do Things That Don't Scale" (do-things-that-dont-scale), "Rahul Vohra on Superhuman's PMF engine" (product-market-fit), "Lenny's PMF newsletter series" (product-market-fit), "Dalton Caldwell on tarpit ideas" (the-maze), "Michael Seibel on navigating uncertainty" (the-maze), "Shreyas Doshi on product sense" (taste), "Brian Chesky on detail obsession" (taste), "Brian Chesky on the 11-star framework" (eleven-stars), "Teresa Torres on continuous discovery" (talk-to-users), "Gustaf Alstromer on talking to users" (talk-to-users), "Keith Rabois on speed as competitive advantage" (ship-it), "Velocity over everything: How Ramp became the fastest-growing SaaS startup" (ship-it), "The rise of the professional vibe coder" (vibe-coding), "Andrej Karpathy coined 'vibe coding'" (vibe-coding), "Julie Zhuo on accelerating your career and impostor syndrome" (imposter), "When enough is enough" (burnout), "Managing nerves, anxiety, and burnout" (burnout). DO NOT modify audio or lyrics. `pnpm build` passes.
 
 ### Task 32a: Add coverImage to data layer
-- [ ] Add coverImage field to Track type and populate for all tracks, build passes
+- [x] Add coverImage field to Track type and populate for all tracks, build passes
 
 Add `coverImage: string` to Track type in lib/types.ts. For each track in lib/albums.ts, add `coverImage: "/covers/{slug}.jpg"`. DO NOT modify components, audio, or lyrics. `pnpm build` passes.
 
