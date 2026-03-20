@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import { supabase } from "@/lib/supabase";
 
 export default function EmailSignup({ heading }: { heading?: string } = {}) {
   const [email, setEmail] = useState("");
@@ -12,19 +11,26 @@ export default function EmailSignup({ heading }: { heading?: string } = {}) {
     if (!email.trim()) return;
 
     setStatus("loading");
-    const { error } = await supabase
-      .from("email_subscribers")
-      .insert({ email: email.trim().toLowerCase() });
 
-    if (error) {
-      if (error.code === "23505") {
+    try {
+      const res = await fetch("/api/subscribe", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email: email.trim().toLowerCase() }),
+      });
+
+      const data = await res.json();
+
+      if (data.status === "duplicate") {
         setStatus("duplicate");
+      } else if (data.status === "success") {
+        setStatus("success");
+        setEmail("");
       } else {
         setStatus("error");
       }
-    } else {
-      setStatus("success");
-      setEmail("");
+    } catch {
+      setStatus("error");
     }
   };
 

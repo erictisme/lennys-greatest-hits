@@ -384,7 +384,7 @@
         "pnpm build passes"
       ],
       "files": ["app/api/subscribe/route.ts", "components/EmailSignup.tsx"],
-      "passes": false
+      "passes": true
     }
   ]
 }

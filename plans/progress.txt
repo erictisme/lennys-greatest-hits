@@ -7,3 +7,4 @@ Task 61: Added Coming Soon visual treatment to homepage album cards — gradient
 Task 62: Updated album page for Coming Soon albums — Lock icons instead of play buttons, concept description for locked tracks, hidden duration/share, EmailSignup CTA below track list. Build passes.
 Task 63: Updated track page for locked tracks — guarded playAlbum useEffect, replaced audio player with Coming Soon + EmailSignup, hidden lyrics/share, kept concept/quote/story visible. Build passes.
 Task 64: Added subtle footer credit links — "Built on Lenny's Data" and "Build with us on Code Riff" below existing credits, middot separator, very muted styling with hover states. Build passes.
+Task 65: Added welcome email via Resend — created /api/subscribe route that inserts into Supabase then sends warm welcome email, updated EmailSignup to call API route instead of direct Supabase. Build passes.
