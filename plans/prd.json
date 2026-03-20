@@ -113,7 +113,7 @@
         "pnpm build passes"
       ],
       "files": ["lib/albums.ts"],
-      "passes": false
+      "passes": true
     },
     {
       "id": 48,
