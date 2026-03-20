@@ -188,7 +188,7 @@ And the maze is how you find your way
 
 [Outro]
 The maze is how you find your way`,
-    concept: "Based on Dalton Caldwell's episode — 10+ years at YC, 21 batches, 1,000+ startups. One in three B2B startups pivot. The median founder spends a full year on a tarpit idea before realizing it.",
+    concept: "Based on Dalton Caldwell's episode — 10+ years at YC, 21 batches, 1,000+ startups. Many startups pivot after getting stuck. The median founder spends a full year on a tarpit idea before realizing it.",
     keyInsight: "If your idea is easy to explain at a dinner party, it's probably a tarpit. The maze IS the point.",
     sources: [
       { title: "Dalton Caldwell on tarpit ideas", type: "podcast", url: "", guest: "Dalton Caldwell" },
@@ -196,7 +196,7 @@ The maze is how you find your way`,
     ],
     keyQuote: "Most startup ideas are tarpit ideas.",
     quoteSpeaker: "Dalton Caldwell",
-    storyBehind: "Dalton Caldwell has watched over 1,000 startups come through YC across 21 batches. On Lenny's podcast, he dropped a stat that haunts every founder: one in three B2C startups pivot, and the median founder spends a full year on a tarpit idea before realizing it. Tarpit ideas are the ones that sound brilliant at dinner parties — everyone nods, everyone agrees — but they trap founders because the obvious-sounding problems are obvious for a reason. The real opportunities feel weird and hard to explain.",
+    storyBehind: "Dalton Caldwell has watched over 1,000 startups come through YC across 21 batches. On Lenny's podcast, he described how tarpit ideas trap founders: they seem like unsolved problems, you get positive feedback from everyone, but people have been starting that same startup since the '90s. The median founder spends a full year stuck before realizing it. Tarpit ideas are the ones that sound brilliant at dinner parties — everyone nods, everyone agrees — but they trap founders because the obvious-sounding problems are obvious for a reason. The real opportunities feel weird and hard to explain.",
   },
 ];
 
@@ -252,7 +252,7 @@ That's taste
 You know it when you see it
 But you feel it first
 That's taste`,
-    concept: "Based on Scott Belsky's episode on product sense. His rule: 'In the first 30 seconds, your user is lazy, vain, and selfish.' Taste is pattern recognition plus empathy — seeing what isn't there but needs to be.",
+    concept: "Based on Shreyas Doshi's episode on product sense and taste. Scott Belsky's rule: 'In the first 30 seconds, your user is lazy, vain, and selfish.' Taste is pattern recognition plus empathy — seeing what isn't there but needs to be.",
     keyInsight: "Product sense is pattern recognition plus empathy. Taste is the ability to say no to good ideas.",
     sources: [
       { title: "Shreyas Doshi on product sense", type: "podcast", url: "", guest: "Shreyas Doshi" },
@@ -431,10 +431,10 @@ Ship it`,
     keyInsight: "Speed is a proxy for how much you care. If you're not embarrassed by v1, you shipped too late.",
     sources: [
       { title: "Keith Rabois on speed as competitive advantage", type: "podcast", url: "", guest: "Keith Rabois" },
-      { title: "Shishir Mehrotra on velocity", type: "podcast", url: "", guest: "Shishir Mehrotra" },
+      { title: "Velocity over everything: How Ramp became the fastest-growing SaaS startup", type: "podcast", url: "", guest: "Geoff Charles" },
     ],
     keyQuote: "If you're not embarrassed by the first version, you shipped too late.",
-    quoteSpeaker: "Keith Rabois",
+    quoteSpeaker: "Reid Hoffman",
     storyBehind: "Ramp's story blew up on Lenny's podcast — they hit $100M ARR in just 2 years, making them the fastest-growing SaaS company ever, with fewer than 5 PMs and 50 engineers. Their internal mantra was 'our culture is velocity.' Keith Rabois added the framework that stuck: speed isn't reckless, it's a proxy for how much you care about your users' time. Every week you don't ship is a week your users are stuck with a worse version of the thing you already built.",
   },
   {
@@ -487,10 +487,10 @@ Vibe coding`,
     concept: "Based on Lazar Jovanovic's episode — the first official 'vibe coding engineer' at Lovable. Lovable hit $200M ARR in under a year with fewer than 100 people. 500+ builders wrote to Lenny saying they shipped products without writing code.",
     keyInsight: "The best time to learn to code was 10 years ago. The second best time is never — just vibe code.",
     sources: [
-      { title: "AI tools for PMs", type: "newsletter", url: "", guest: "Lenny Rachitsky" },
-      { title: "Andrej Karpathy on vibe coding", type: "podcast", url: "", guest: "Andrej Karpathy" },
+      { title: "The rise of the professional vibe coder", type: "podcast", url: "", guest: "Lazar Jovanovic" },
+      { title: "Andrej Karpathy coined 'vibe coding'", type: "newsletter", url: "", guest: "Lenny Rachitsky" },
     ],
-    keyQuote: "Ship it before the model gets better.",
+    keyQuote: "I just mass mass accept everything. I don't even look at the diffs. It's not even coding. I just see things, say things, run things, and copy paste things.",
     quoteSpeaker: "Andrej Karpathy",
     storyBehind: "Lenny covered the vibe coding revolution as it was happening in real time. Lazar Jovanovic became the first official 'vibe coding engineer' at Lovable, a company that hit $200M ARR in under a year with fewer than 100 people. Over 500 builders wrote to Lenny saying they'd shipped real products without writing a single line of code. Andrej Karpathy coined the term 'vibe coding' — fully giving in to the vibes, seeing things appear, and not really caring how the code works. It's the most polarizing topic in Lenny's archive.",
   },
@@ -551,7 +551,7 @@ Day by day by day`,
     concept: "Based on Julie Zhuo's episode — Episode 2 of Lenny's Podcast. She spent 13 years at Facebook, going from IC designer to VP of Design. Wrote 'The Making of a Manager' from the imposter syndrome she felt the entire way up.",
     keyInsight: "Imposter syndrome is universal in tech. The feeling never disappears, you just learn to coexist with it.",
     sources: [
-      { title: "Lenny's newsletter on imposter syndrome", type: "newsletter", url: "", guest: "Lenny Rachitsky" },
+      { title: "Julie Zhuo on accelerating your career and impostor syndrome", type: "podcast", url: "", guest: "Julie Zhuo" },
     ],
     keyQuote: "Everyone at the table thinks everyone else belongs more.",
     quoteSpeaker: "Multiple guests",
@@ -607,7 +607,8 @@ You can set it down`,
     concept: "Based on Andy Johns' episode. He spent 17 years at Facebook, Twitter, Wealthfront, and Quora before confronting burnout publicly on Lenny's show. Nearly 45% of tech workers report significant burnout.",
     keyInsight: "Burnout isn't about hours — it's about meaning. You can't pour from an empty cup, but you can set it down.",
     sources: [
-      { title: "Mental health and work-life balance episodes", type: "podcast", url: "", guest: "Multiple guests" },
+      { title: "When enough is enough", type: "podcast", url: "", guest: "Andy Johns" },
+      { title: "Managing nerves, anxiety, and burnout", type: "podcast", url: "", guest: "Jonny Miller" },
     ],
     keyQuote: "Burnout isn't working too much — it's working on the wrong things.",
     quoteSpeaker: "Multiple guests",
@@ -630,7 +631,7 @@ export const albums: Album[] = [
     slug: "product",
     title: "Product",
     subtitle: "For the ones who obsess over every pixel",
-    description: "Songs about taste, the 11-star framework, and why one user conversation beats a thousand dashboards. Based on Scott Belsky, Brian Chesky, and Teresa Torres.",
+    description: "Songs about taste, the 11-star framework, and why one user conversation beats a thousand dashboards. Based on Shreyas Doshi, Brian Chesky, and Teresa Torres.",
     coverImage: "/covers/product.jpg",
     accentColor: "#b45309",
     tracks: productTracks,

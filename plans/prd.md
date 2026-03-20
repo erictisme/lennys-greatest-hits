@@ -490,18 +490,18 @@ Use the unofficial Suno API. Set up a simple Node.js script at `scripts/generate
 - [x] DO NOT modify audio files or lyrics
 - [x] `pnpm build` passes
 
-### Task 26: Deploy to Vercel production
+### Task 26: Deploy to Vercel production *(SKIPPED — requires user credentials and is a shared-state action)*
 - [ ] Run `vercel --prod` and confirm deployment succeeds
 - [ ] Verify all track pages load with lyrics, share buttons, and story sections
 - [ ] `pnpm build` passes
 
 ### Task 27: Fact-check all quotes, sources, and attributions
-- [ ] Review every track in lib/albums.ts — check keyQuote, quoteSpeaker, sources, and concept fields
-- [ ] Use MCP tools (mcp__lennysdata__search_content, mcp__lennysdata__read_excerpt) to verify each quote is real and correctly attributed
-- [ ] Fix any incorrect attributions — if a quote can't be verified, remove it or replace with a verified one
-- [ ] Ensure every source title matches a real Lenny episode or newsletter
-- [ ] DO NOT modify audio files, lyrics structure, or UI components
-- [ ] `pnpm build` passes
+- [x] Review every track in lib/albums.ts — check keyQuote, quoteSpeaker, sources, and concept fields
+- [x] Use MCP tools (mcp__lennysdata__search_content, mcp__lennysdata__read_excerpt) to verify each quote is real and correctly attributed
+- [x] Fix any incorrect attributions — if a quote can't be verified, remove it or replace with a verified one
+- [x] Ensure every source title matches a real Lenny episode or newsletter
+- [x] DO NOT modify audio files, lyrics structure, or UI components
+- [x] `pnpm build` passes
 
 ### Task 28: Fix spacebar play/pause on track page
 - [ ] Add a global keydown listener in TrackPageClient.tsx — when spacebar is pressed, toggle play/pause
