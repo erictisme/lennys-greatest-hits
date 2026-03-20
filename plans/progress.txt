@@ -4,3 +4,4 @@ Task 41: Removed duplicate onEnded handler from mount effect in audio-context.ts
 Task 42: Fixed audio interruption on page navigation. TrackPageClient was calling playAlbum on every visit, restarting playback. Added setAlbumQueue to audio context so navigation only updates the queue without interrupting current playback.
 Task 47: Fixed all broken source links in lib/albums.ts. Searched Lenny MCP archive for each guest, found correct Lenny podcast/newsletter URLs for 13 empty sources. Used paulgraham.com for Paul Graham's external essay.
 Task 43: Added section labels (Verse, Chorus, Bridge, Outro) to lyrics display. Section tags now render as small, muted, uppercase headers between lyric lines instead of being hidden.
+Task 44: Added "Up Next" countdown to audio-context and NowPlayingBar. When a song ends, a 5-second countdown banner shows the next track title with a Cancel button instead of auto-advancing immediately.

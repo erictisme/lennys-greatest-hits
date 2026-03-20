@@ -30,6 +30,9 @@ interface AudioState {
   setAlbumQueue: (albumSlug: string) => void;
   accentColor: string;
   getPlayCount: (slug: string) => number;
+  upNextTrack: Track | null;
+  countdown: number | null;
+  cancelCountdown: () => void;
 }
 
 const AudioContext = createContext<AudioState | null>(null);
@@ -47,6 +50,9 @@ export function AudioProvider({ children }: { children: ReactNode }) {
   const [currentTime, setCurrentTime] = useState(0);
   const [duration, setDuration] = useState(0);
   const [queue, setQueue] = useState<Track[]>([]);
+  const [upNextTrack, setUpNextTrack] = useState<Track | null>(null);
+  const [countdown, setCountdown] = useState<number | null>(null);
+  const countdownRef = useRef<ReturnType<typeof setInterval> | null>(null);
 
   // Restore last-played track from localStorage on mount
   useEffect(() => {
@@ -152,6 +158,56 @@ export function AudioProvider({ children }: { children: ReactNode }) {
   const queueRef = useRef(queue);
   queueRef.current = queue;
 
+  const clearCountdown = useCallback(() => {
+    if (countdownRef.current) {
+      clearInterval(countdownRef.current);
+      countdownRef.current = null;
+    }
+    setCountdown(null);
+    setUpNextTrack(null);
+  }, []);
+
+  const cancelCountdown = useCallback(() => {
+    clearCountdown();
+    audioRef.current?.pause();
+    setIsPlaying(false);
+  }, [clearCountdown]);
+
+  // Start playing the up-next track (used by countdown completion)
+  const playUpNext = useCallback((track: Track, newQueue?: Track[]) => {
+    const audio = audioRef.current;
+    if (!audio) return;
+    if (newQueue) {
+      setQueue(newQueue);
+      queueRef.current = newQueue;
+    }
+    audio.src = track.audioUrl;
+    audio.play().catch(() => {});
+    setIsPlaying(true);
+    setCurrentTrack(track);
+    clearCountdown();
+  }, [clearCountdown]);
+
+  // Countdown tick effect
+  useEffect(() => {
+    if (countdown === null || !upNextTrack) return;
+    if (countdown <= 0) {
+      // Find if this is a cross-album transition (upNextTrack in different album)
+      const currentQueue = queueRef.current;
+      const inCurrentQueue = currentQueue.some((t) => t.slug === upNextTrack.slug);
+      if (!inCurrentQueue) {
+        // Cross-album: set new queue
+        const nextAlbumTracks = albums.find((a) => a.slug === upNextTrack.albumSlug)?.tracks ?? [];
+        playUpNext(upNextTrack, nextAlbumTracks);
+      } else {
+        playUpNext(upNextTrack);
+      }
+      return;
+    }
+    const timer = setTimeout(() => setCountdown((c) => (c !== null ? c - 1 : null)), 1000);
+    return () => clearTimeout(timer);
+  }, [countdown, upNextTrack, playUpNext]);
+
   // Re-bind ended handler when queue changes
   useEffect(() => {
     const audio = audioRef.current;
@@ -159,37 +215,38 @@ export function AudioProvider({ children }: { children: ReactNode }) {
 
     const onEnded = () => {
       const currentQueue = queueRef.current;
+      // Read current track synchronously via a state getter
       setCurrentTrack((prev) => {
         if (!prev) {
           setIsPlaying(false);
           return null;
         }
         const idx = currentQueue.findIndex((t) => t.slug === prev.slug);
+        let nextTrackToPlay: Track | null = null;
+
         if (idx >= 0 && idx < currentQueue.length - 1) {
-          const nextTrack = currentQueue[idx + 1];
-          audio.src = nextTrack.audioUrl;
-          audio.play().catch(() => {});
-          setIsPlaying(true);
-          return nextTrack;
-        }
-        // Queue exhausted — try to auto-play next album
-        const albumIdx = albums.findIndex((a) => a.slug === prev.albumSlug);
-        if (albumIdx >= 0 && albumIdx < albums.length - 1) {
-          const nextAlbum = albums[albumIdx + 1];
-          const nextAlbumTracks = nextAlbum.tracks;
-          if (nextAlbumTracks.length > 0) {
-            setQueue(nextAlbumTracks);
-            queueRef.current = nextAlbumTracks;
-            const firstTrack = nextAlbumTracks[0];
-            audio.src = firstTrack.audioUrl;
-            audio.play().catch(() => {});
-            setIsPlaying(true);
-            return firstTrack;
+          nextTrackToPlay = currentQueue[idx + 1];
+        } else {
+          // Queue exhausted — try next album
+          const albumIdx = albums.findIndex((a) => a.slug === prev.albumSlug);
+          if (albumIdx >= 0 && albumIdx < albums.length - 1) {
+            const nextAlbum = albums[albumIdx + 1];
+            if (nextAlbum.tracks.length > 0) {
+              nextTrackToPlay = nextAlbum.tracks[0];
+            }
           }
         }
-        // Last album — stop playback
-        setIsPlaying(false);
-        return prev;
+
+        if (nextTrackToPlay) {
+          // Start countdown instead of immediate play
+          setUpNextTrack(nextTrackToPlay);
+          setCountdown(5);
+          setIsPlaying(false);
+        } else {
+          // Last album — stop playback
+          setIsPlaying(false);
+        }
+        return prev; // Keep current track displayed during countdown
       });
     };
 
@@ -200,6 +257,7 @@ export function AudioProvider({ children }: { children: ReactNode }) {
   const play = useCallback((track: Track) => {
     const audio = audioRef.current;
     if (!audio) return;
+    clearCountdown();
     // If same track, just resume
     setCurrentTrack((prev) => {
       if (prev?.slug === track.slug) {
@@ -212,7 +270,7 @@ export function AudioProvider({ children }: { children: ReactNode }) {
       setDuration(0);
       return track;
     });
-  }, []);
+  }, [clearCountdown]);
 
   const pause = useCallback(() => {
     audioRef.current?.pause();
@@ -303,6 +361,9 @@ export function AudioProvider({ children }: { children: ReactNode }) {
         setAlbumQueue,
         accentColor,
         getPlayCount,
+        upNextTrack,
+        countdown,
+        cancelCountdown,
       }}
     >
       {children}

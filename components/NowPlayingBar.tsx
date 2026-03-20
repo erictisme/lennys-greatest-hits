@@ -19,6 +19,9 @@ export default function NowPlayingBar() {
     seek,
     accentColor,
     queue,
+    upNextTrack,
+    countdown,
+    cancelCountdown,
   } = useAudio();
 
   if (!currentTrack) return null;
@@ -55,6 +58,25 @@ export default function NowPlayingBar() {
 
   return (
     <div className="fixed bottom-0 left-0 right-0 z-50 border-t border-border bg-background/95 backdrop-blur-lg">
+      {/* Up Next countdown banner */}
+      {upNextTrack && countdown !== null && (
+        <div
+          className="flex items-center justify-between px-3 sm:px-4 py-2 text-sm border-b border-border/30"
+          style={{ backgroundColor: `${accentColor}15` }}
+        >
+          <span className="text-muted-foreground">
+            Up next: <span className="font-medium text-foreground">{upNextTrack.title}</span>
+            {" "}— playing in {countdown}…
+          </span>
+          <button
+            onClick={cancelCountdown}
+            className="ml-3 px-3 py-1 text-xs font-medium rounded-full border border-border/50 hover:border-border text-muted-foreground hover:text-foreground transition-colors"
+          >
+            Cancel
+          </button>
+        </div>
+      )}
+
       {/* Progress bar — thin line at top of bar */}
       <div
         className="h-1 cursor-pointer group relative"
