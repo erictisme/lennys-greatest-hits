@@ -773,7 +773,7 @@ const growthEngineTracks: Track[] = [
     keyQuote: "Pouring fuel with no engine built, wondering why the car stood still.",
     quoteSpeaker: "Lenny Rachitsky",
     sources: [
-      { title: "The Racecar Growth Framework — expanded and illustrated", type: "newsletter", url: "https://www.lennysnewsletter.com/p/the-racecar-growth-framework", guest: "Lenny Rachitsky" },
+      { title: "The Racecar Growth Framework — expanded and illustrated", type: "newsletter", url: "https://www.lennysnewsletter.com/p/the-racecar-growth-frameworkexpanded", guest: "Lenny Rachitsky" },
     ],
     storyBehind: "The extended metaphor of a racecar: you start by push-starting (doing things that don't scale), then the engine catches (growth loops), then you pour fuel (paid growth) and grease the gears (reduce churn). The universal founder mistake is pouring fuel before building the engine.",
   },
@@ -908,7 +908,7 @@ const startupLifeTracks: Track[] = [
     keyQuote: "They want a unicorn — I built a home.",
     quoteSpeaker: "Narrative voice",
     sources: [
-      { title: "Your startup idea probably isn't venture-scale", type: "newsletter", url: "https://www.lennysnewsletter.com/p/your-startup-idea-probably-isnt-venture-scale", guest: "Lenny Rachitsky" },
+      { title: "Jason Fried challenges your thinking on fundraising, goals, growth, and more", type: "podcast", url: "https://www.lennyspodcast.com/jason-fried-challenges-your-thinking-on-fundraising-goals-growth-and-more/", guest: "Jason Fried" },
     ],
     storyBehind: "Three characters: the founder rejected by a VC at slide eleven, the buddy who took the money and ended up on a golden treadmill owning 10% of what was once his, and Patrick Campbell who bootstrapped to $200M, sold it all, and still whispered 'left a billion on the table.'",
   },

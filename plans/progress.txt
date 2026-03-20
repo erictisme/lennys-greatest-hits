@@ -1,2 +1,3 @@
 # Ralph DEFAULT run Fri Mar 20 23:54:46 +08 2026
 Task 66: Audited all Coming Soon album/track links — all slugs, gradients, and lookups correct. No fixes needed.
+Task 67: Fixed 2 broken source URLs — racecar-growth-framework slug corrected, venture-scale article replaced with Jason Fried podcast. All other URLs verified.
