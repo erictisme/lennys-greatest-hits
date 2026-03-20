@@ -519,9 +519,9 @@ Use the unofficial Suno API. Set up a simple Node.js script at `scripts/generate
 - [x] `pnpm build` passes
 
 ### Task 30: Fix "Inspired by" source links
-- [ ] All source URLs in lib/albums.ts are empty strings (""). This makes them dead links.
-- [ ] Remove the <a> tag wrapping when url is empty — render as plain text instead of a broken link
-- [ ] Remove the ExternalLink icon when there's no URL
-- [ ] Format as: "Based on Lenny's episode with Brian Chesky" not "Brian Chesky on Airbnb's early days — Brian Chesky" (redundant guest name)
-- [ ] DO NOT modify audio or lyrics
-- [ ] `pnpm build` passes
+- [x] All source URLs in lib/albums.ts are empty strings (""). This makes them dead links.
+- [x] Remove the <a> tag wrapping when url is empty — render as plain text instead of a broken link
+- [x] Remove the ExternalLink icon when there's no URL
+- [x] Format as: "Based on Lenny's episode with Brian Chesky" not "Brian Chesky on Airbnb's early days — Brian Chesky" (redundant guest name)
+- [x] DO NOT modify audio or lyrics
+- [x] `pnpm build` passes

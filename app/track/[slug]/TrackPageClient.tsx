@@ -322,27 +322,33 @@ export default function TrackPageClient({ slug }: { slug: string }) {
               Inspired by
             </h2>
             <div className="space-y-2">
-              {track.sources.map((source, i) => (
-                <a
-                  key={i}
-                  href={source.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  onClick={() => trackEvent("source_clicked", { source_title: source.title, guest: source.guest, track: slug })}
-                  className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors group"
-                >
-                  <ExternalLink className="w-3.5 h-3.5 opacity-50 group-hover:opacity-100" />
-                  <span>
-                    {source.title}
-                    {source.guest && (
-                      <span className="text-muted-foreground/50">
-                        {" "}
-                        — {source.guest}
-                      </span>
-                    )}
-                  </span>
-                </a>
-              ))}
+              {track.sources.map((source, i) => {
+                const label = source.guest
+                  ? `Based on Lenny's episode with ${source.guest}`
+                  : source.title;
+
+                if (source.url) {
+                  return (
+                    <a
+                      key={i}
+                      href={source.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      onClick={() => trackEvent("source_clicked", { source_title: source.title, guest: source.guest, track: slug })}
+                      className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors group"
+                    >
+                      <ExternalLink className="w-3.5 h-3.5 opacity-50 group-hover:opacity-100" />
+                      <span>{label}</span>
+                    </a>
+                  );
+                }
+
+                return (
+                  <p key={i} className="text-sm text-muted-foreground/70">
+                    {label}
+                  </p>
+                );
+              })}
             </div>
           </section>
         )}
