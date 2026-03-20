@@ -350,6 +350,19 @@ export default function TrackPageClient({ slug }: { slug: string }) {
         {/* Share */}
         <div className="flex items-center gap-3">
           <button
+            onClick={handleCopyLink}
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium transition-colors"
+            style={{
+              backgroundColor: copied ? album.accentColor : "transparent",
+              color: copied ? "#ffffff" : undefined,
+              borderWidth: "1px",
+              borderStyle: "solid",
+              borderColor: copied ? album.accentColor : "hsl(var(--border) / 0.5)",
+            }}
+          >
+            {copied ? "Copied!" : "Copy Link"}
+          </button>
+          <button
             onClick={handleShareX}
             className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm text-muted-foreground hover:text-foreground border border-border/50 hover:border-border transition-colors"
           >
@@ -360,12 +373,6 @@ export default function TrackPageClient({ slug }: { slug: string }) {
             className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm text-muted-foreground hover:text-foreground border border-border/50 hover:border-border transition-colors"
           >
             Share to LinkedIn
-          </button>
-          <button
-            onClick={handleCopyLink}
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm text-muted-foreground hover:text-foreground border border-border/50 hover:border-border transition-colors"
-          >
-            {copied ? "Copied!" : "Copy Link"}
           </button>
         </div>
       </main>

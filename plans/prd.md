@@ -511,12 +511,12 @@ Use the unofficial Suno API. Set up a simple Node.js script at `scripts/generate
 - [x] `pnpm build` passes
 
 ### Task 29: Fix share button — make it copy link by default with toast
-- [ ] On track page, the primary Share button should COPY THE LINK to clipboard immediately (not open native share dialog)
-- [ ] Show "Copied!" toast feedback for 2 seconds after clicking
-- [ ] Keep the X and LinkedIn share buttons as secondary options below or beside it
-- [ ] In NowPlayingBar, same behavior — primary click copies link, shows "Copied!"
-- [ ] DO NOT touch audio playback or lyrics
-- [ ] `pnpm build` passes
+- [x] On track page, the primary Share button should COPY THE LINK to clipboard immediately (not open native share dialog)
+- [x] Show "Copied!" toast feedback for 2 seconds after clicking
+- [x] Keep the X and LinkedIn share buttons as secondary options below or beside it
+- [x] In NowPlayingBar, same behavior — primary click copies link, shows "Copied!"
+- [x] DO NOT touch audio playback or lyrics
+- [x] `pnpm build` passes
 
 ### Task 30: Fix "Inspired by" source links
 - [ ] All source URLs in lib/albums.ts are empty strings (""). This makes them dead links.

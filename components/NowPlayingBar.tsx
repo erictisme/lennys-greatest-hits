@@ -37,7 +37,6 @@ export default function NowPlayingBar() {
   };
 
   const [hoverTime, setHoverTime] = useState<{ time: number; x: number } | null>(null);
-  const [shareOpen, setShareOpen] = useState(false);
   const [copied, setCopied] = useState(false);
 
   const handleSeek = (e: React.MouseEvent<HTMLDivElement>) => {
@@ -138,50 +137,23 @@ export default function NowPlayingBar() {
           <span>{duration > 0 ? formatTime(duration) : currentTrack.duration}</span>
         </div>
 
-        {/* Share */}
+        {/* Share — primary click copies link */}
         <div className="relative">
           <button
-            onClick={() => setShareOpen(!shareOpen)}
+            onClick={async () => {
+              const url = `${window.location.origin}/track/${currentTrack.slug}`;
+              trackEvent("share_clicked", { platform: "copy", track: currentTrack.slug, track_title: currentTrack.title });
+              await navigator.clipboard.writeText(url);
+              setCopied(true);
+              setTimeout(() => setCopied(false), 2000);
+            }}
             className="text-muted-foreground hover:text-foreground transition-colors p-1.5"
           >
             <Share2 className="w-4 h-4" />
           </button>
-          {shareOpen && (
-            <div className="absolute bottom-full right-0 mb-2 bg-background border border-border rounded-lg shadow-xl py-1 min-w-[160px]">
-              <button
-                onClick={() => {
-                  const url = `${window.location.origin}/track/${currentTrack.slug}`;
-                  trackEvent("share_clicked", { platform: "x", track: currentTrack.slug, track_title: currentTrack.title });
-                  window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent(`🎵 ${currentTrack.title} — Lenny's Greatest Hits`)}&url=${encodeURIComponent(url)}`, "_blank", "noopener,noreferrer");
-                  setShareOpen(false);
-                }}
-                className="w-full text-left px-3 py-2 text-sm text-muted-foreground hover:text-foreground hover:bg-muted/50 transition-colors"
-              >
-                Share to X
-              </button>
-              <button
-                onClick={() => {
-                  const url = `${window.location.origin}/track/${currentTrack.slug}`;
-                  trackEvent("share_clicked", { platform: "linkedin", track: currentTrack.slug, track_title: currentTrack.title });
-                  window.open(`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(url)}`, "_blank", "noopener,noreferrer");
-                  setShareOpen(false);
-                }}
-                className="w-full text-left px-3 py-2 text-sm text-muted-foreground hover:text-foreground hover:bg-muted/50 transition-colors"
-              >
-                Share to LinkedIn
-              </button>
-              <button
-                onClick={async () => {
-                  const url = `${window.location.origin}/track/${currentTrack.slug}`;
-                  trackEvent("share_clicked", { platform: "copy", track: currentTrack.slug, track_title: currentTrack.title });
-                  await navigator.clipboard.writeText(url);
-                  setCopied(true);
-                  setTimeout(() => { setCopied(false); setShareOpen(false); }, 2000);
-                }}
-                className="w-full text-left px-3 py-2 text-sm text-muted-foreground hover:text-foreground hover:bg-muted/50 transition-colors"
-              >
-                {copied ? "Copied!" : "Copy Link"}
-              </button>
+          {copied && (
+            <div className="absolute bottom-full right-0 mb-2 px-2 py-1 bg-foreground text-background text-xs rounded whitespace-nowrap pointer-events-none">
+              Copied!
             </div>
           )}
         </div>
