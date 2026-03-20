@@ -89,7 +89,7 @@ export default function NowPlayingBar() {
       >
         <div className="relative h-[6px] group-hover:h-[10px] bg-black/10 transition-[height] duration-150">
           <div
-            className="absolute inset-y-0 left-0"
+            className="absolute inset-y-0 left-0 transition-[width] duration-300 ease-linear"
             style={{
               width: `${progress}%`,
               backgroundColor: accentColor,

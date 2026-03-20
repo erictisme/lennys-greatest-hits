@@ -198,7 +198,7 @@
         "pnpm build passes"
       ],
       "files": ["app/track/[slug]/TrackPageClient.tsx", "components/NowPlayingBar.tsx"],
-      "passes": false
+      "passes": true
     },
     {
       "id": 54,

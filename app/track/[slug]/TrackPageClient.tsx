@@ -270,7 +270,7 @@ export default function TrackPageClient({ slug }: { slug: string }) {
           >
             <div className="relative h-[6px] group-hover:h-[10px] bg-black/10 rounded-full transition-[height] duration-150">
               <div
-                className="absolute inset-y-0 left-0 rounded-full transition-[width] duration-100"
+                className="absolute inset-y-0 left-0 rounded-full transition-[width] duration-300 ease-linear"
                 style={{
                   width: `${progress}%`,
                   backgroundColor: album.accentColor,
