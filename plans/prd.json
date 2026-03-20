@@ -120,7 +120,7 @@
         "vercel --prod succeeds"
       ],
       "files": [],
-      "passes": false
+      "passes": true
     }
   ]
 }

@@ -5,3 +5,4 @@ Task 35: Added track cover image (176px, rounded with shadow) to track detail pa
 Task 36: Removed em dash from storyBehind field in lib/albums.ts (only non-lyric, non-comment instance). Build passes.
 Task 37: Removed 'Tech Culture Anthems' label from home page hero and OG image alt text. Removed unused Headphones import. Build passes.
 Task 38: Updated footer credit to 'Built by Eric Tan' with LinkedIn link (linkedin.com/in/erictisme). Build passes.
+Task 39: Deployed to Vercel production. Site live at lennys-greatest-hits.vercel.app. Build and deploy succeeded.
