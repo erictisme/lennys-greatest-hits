@@ -43,7 +43,7 @@
         "Write to content/brainstorm/suno-lyric-tips.md"
       ],
       "files": ["content/brainstorm/suno-lyric-tips.md"],
-      "passes": false
+      "passes": true
     },
     {
       "id": 4,
