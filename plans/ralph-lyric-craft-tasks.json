@@ -74,7 +74,7 @@
         "Write to content/lyric-craft-guide.md — keep under 100 lines"
       ],
       "files": ["content/lyric-craft-guide.md"],
-      "passes": false
+      "passes": true
     }
   ]
 }
