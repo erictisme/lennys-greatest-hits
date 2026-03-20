@@ -2,6 +2,7 @@
 
 import { use, useEffect, useRef, useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import {
   ArrowLeft,
   Play,
@@ -177,19 +178,31 @@ export default function TrackPageClient({ slug }: { slug: string }) {
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
+            className="flex items-start gap-5"
           >
-            <p
-              className="text-xs font-medium uppercase tracking-widest mb-2"
-              style={{ color: album.accentColor }}
-            >
-              {album.title} &middot; Track {track.trackNumber}
-            </p>
-            <h1 className="text-3xl sm:text-4xl font-bold tracking-tight mb-1">
-              {track.title}
-            </h1>
-            <p className="text-sm text-muted-foreground/70">
-              {track.genre} &middot; {track.mood}
-            </p>
+            {track.coverImage && (
+              <Image
+                src={track.coverImage}
+                alt={track.title}
+                width={176}
+                height={176}
+                className="w-36 h-36 sm:w-44 sm:h-44 rounded-lg shadow-md object-cover flex-shrink-0"
+              />
+            )}
+            <div className="min-w-0">
+              <p
+                className="text-xs font-medium uppercase tracking-widest mb-2"
+                style={{ color: album.accentColor }}
+              >
+                {album.title} &middot; Track {track.trackNumber}
+              </p>
+              <h1 className="text-3xl sm:text-4xl font-bold tracking-tight mb-1">
+                {track.title}
+              </h1>
+              <p className="text-sm text-muted-foreground/70">
+                {track.genre} &middot; {track.mood}
+              </p>
+            </div>
           </motion.div>
         </div>
       </header>
