@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowLeft, Play, Pause, Clock, MoreHorizontal, Share2, Check } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { getAlbumBySlug } from "@/lib/tracks";
@@ -125,20 +126,32 @@ export default function AlbumPageClient({ slug }: { slug: string }) {
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
+            className="flex items-start gap-6"
           >
-            <div
-              className="w-12 h-1.5 rounded-full mb-5"
-              style={{ backgroundColor: album.accentColor }}
-            />
-            <h1 className="text-4xl sm:text-5xl font-bold tracking-tight mb-2">
-              {album.title}
-            </h1>
-            <p className="text-lg text-muted-foreground mb-3">
-              {album.subtitle}
-            </p>
-            <p className="text-sm text-muted-foreground/70 leading-relaxed max-w-xl">
-              {album.description}
-            </p>
+            <div className="shrink-0">
+              <Image
+                src={album.coverImage}
+                alt={album.title}
+                width={160}
+                height={160}
+                className="rounded-lg shadow-md"
+              />
+            </div>
+            <div className="min-w-0">
+              <div
+                className="w-12 h-1.5 rounded-full mb-5"
+                style={{ backgroundColor: album.accentColor }}
+              />
+              <h1 className="text-4xl sm:text-5xl font-bold tracking-tight mb-2">
+                {album.title}
+              </h1>
+              <p className="text-lg text-muted-foreground mb-3">
+                {album.subtitle}
+              </p>
+              <p className="text-sm text-muted-foreground/70 leading-relaxed max-w-xl">
+                {album.description}
+              </p>
+            </div>
           </motion.div>
 
           {/* Play All Button */}
@@ -210,6 +223,17 @@ export default function AlbumPageClient({ slug }: { slug: string }) {
                       </>
                     )}
                   </button>
+
+                  {/* Track Thumbnail */}
+                  <Link href={`/track/${track.slug}`} className="shrink-0">
+                    <Image
+                      src={track.coverImage}
+                      alt={track.title}
+                      width={40}
+                      height={40}
+                      className="rounded"
+                    />
+                  </Link>
 
                   {/* Track Info */}
                   <Link
