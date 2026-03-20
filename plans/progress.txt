@@ -1,8 +1,2 @@
-# Ralph DEFAULT run Fri Mar 20 12:37:35 +08 2026
-Task 33: Replaced album card grid with responsive cover art grid using Next.js Image. 2-col mobile, 3-col tablet, 4-col desktop. Build passes.
-Task 34: Added album cover art (160px) to album page header alongside title, and 40x40 track thumbnails in each tracklist row. Build passes.
-Task 35: Added track cover image (176px, rounded with shadow) to track detail page header alongside title/genre/mood info. Build passes.
-Task 36: Removed em dash from storyBehind field in lib/albums.ts (only non-lyric, non-comment instance). Build passes.
-Task 37: Removed 'Tech Culture Anthems' label from home page hero and OG image alt text. Removed unused Headphones import. Build passes.
-Task 38: Updated footer credit to 'Built by Eric Tan' with LinkedIn link (linkedin.com/in/erictisme). Build passes.
-Task 39: Deployed to Vercel production. Site live at lennys-greatest-hits.vercel.app. Build and deploy succeeded.
+# Ralph DEFAULT run Fri Mar 20 14:00:01 +08 2026
+Task 40: Added "Follow lyrics" toggle to SyncedLyrics.tsx. When off, scrollIntoView is skipped so page doesn't jump while reading backstory.
