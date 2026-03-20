@@ -103,12 +103,7 @@ export default function AlbumPageClient({ slug }: { slug: string }) {
   };
 
   return (
-    <motion.div
-      className="flex flex-col min-h-screen"
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ duration: 0.3 }}
-    >
+    <div className="flex flex-col min-h-screen">
       {/* Album Header */}
       <header
         className={`${gradientClass[album.slug] ?? ""} px-4 sm:px-6 pt-8 pb-10 sm:pb-12`}
@@ -122,12 +117,7 @@ export default function AlbumPageClient({ slug }: { slug: string }) {
             All Albums
           </Link>
 
-          <motion.div
-            initial={{ opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            className="flex items-start gap-6"
-          >
+          <div className="flex items-start gap-6">
             <div className="shrink-0">
               <Image
                 src={album.coverImage}
@@ -152,15 +142,10 @@ export default function AlbumPageClient({ slug }: { slug: string }) {
                 {album.description}
               </p>
             </div>
-          </motion.div>
+          </div>
 
           {/* Play All Button */}
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.4, delay: 0.3 }}
-            className="mt-6"
-          >
+          <div className="mt-6">
             <button
               onClick={handlePlayAll}
               className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-medium transition-colors"
@@ -172,7 +157,7 @@ export default function AlbumPageClient({ slug }: { slug: string }) {
               <Play className="w-4 h-4" fill="currentColor" />
               Play All
             </button>
-          </motion.div>
+          </div>
         </div>
       </header>
 
@@ -184,12 +169,7 @@ export default function AlbumPageClient({ slug }: { slug: string }) {
             const isPlaying = isCurrentTrack && audio.isPlaying;
 
             return (
-              <motion.div
-                key={track.slug}
-                initial={{ opacity: 0, y: 12 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.35, delay: 0.15 + i * 0.08 }}
-              >
+              <div key={track.slug}>
                 <div className="group flex items-center gap-4 px-4 py-4 -mx-4 rounded-lg hover:bg-black/[0.04] transition-colors">
                   {/* Track Number / Play Button */}
                   <button
@@ -333,7 +313,7 @@ export default function AlbumPageClient({ slug }: { slug: string }) {
                 {i < album.tracks.length - 1 && (
                   <div className="border-b border-border/30 mx-4" />
                 )}
-              </motion.div>
+              </div>
             );
           })}
         </div>
@@ -350,6 +330,6 @@ export default function AlbumPageClient({ slug }: { slug: string }) {
           </p>
         </div>
       </footer>
-    </motion.div>
+    </div>
   );
 }

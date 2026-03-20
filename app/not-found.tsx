@@ -2,16 +2,11 @@
 
 import Link from "next/link";
 import { Music } from "lucide-react";
-import { motion } from "framer-motion";
 
 export default function NotFound() {
   return (
     <div className="flex flex-col items-center justify-center min-h-screen px-4 text-center">
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}
-      >
+      <div>
         <Music className="w-12 h-12 text-muted-foreground/30 mx-auto mb-6" />
         <h1 className="text-4xl font-bold tracking-tight mb-2">
           Track Not Found
@@ -26,7 +21,7 @@ export default function NotFound() {
         >
           Back to All Albums
         </Link>
-      </motion.div>
+      </div>
     </div>
   );
 }

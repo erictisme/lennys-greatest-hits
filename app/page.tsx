@@ -2,7 +2,6 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { motion } from "framer-motion";
 import { getAllAlbums } from "@/lib/tracks";
 import EmailSignup from "@/components/EmailSignup";
 
@@ -13,11 +12,7 @@ export default function Home() {
     <div className="flex flex-col min-h-screen">
       {/* Hero */}
       <header className="flex flex-col items-center justify-center px-4 sm:px-6 pt-16 sm:pt-24 pb-12 sm:pb-16 text-center">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-        >
+        <div>
           <h1 className="text-5xl sm:text-6xl md:text-7xl font-bold tracking-tight leading-[1.05] mb-4">
             Lenny&apos;s
             <br />
@@ -27,19 +22,14 @@ export default function Home() {
             The insights you quote on X, turned into songs you can feel.
             Based on Lenny Rachitsky&apos;s most iconic podcast episodes.
           </p>
-        </motion.div>
+        </div>
       </header>
 
       {/* Album Grid */}
       <main className="flex-1 px-4 sm:px-6 pb-16 max-w-5xl mx-auto w-full">
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-5 sm:gap-6">
           {albums.map((album, i) => (
-            <motion.div
-              key={album.slug}
-              initial={{ opacity: 0, y: 24 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.15 + i * 0.1 }}
-            >
+            <div key={album.slug}>
               <Link href={`/album/${album.slug}`} className="block group">
                 <div className="relative aspect-square w-full overflow-hidden rounded-lg mb-3 shadow-md transition-transform duration-300 group-hover:scale-[1.03]">
                   <Image
@@ -57,7 +47,7 @@ export default function Home() {
                   {album.tracks.length} tracks &middot; {album.subtitle}
                 </p>
               </Link>
-            </motion.div>
+            </div>
           ))}
         </div>
       </main>

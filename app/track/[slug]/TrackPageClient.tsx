@@ -11,7 +11,6 @@ import {
   SkipForward,
   ExternalLink,
 } from "lucide-react";
-import { motion } from "framer-motion";
 import { getTrackBySlug, getAlbumForTrack, getAllTracks } from "@/lib/tracks";
 import { notFound } from "next/navigation";
 import { useAudio } from "@/lib/audio-context";
@@ -160,12 +159,7 @@ export default function TrackPageClient({ slug }: { slug: string }) {
   const progress = duration > 0 ? (currentTime / duration) * 100 : 0;
 
   return (
-    <motion.div
-      className="flex flex-col min-h-screen"
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ duration: 0.3 }}
-    >
+    <div className="flex flex-col min-h-screen">
       {/* Header */}
       <header
         className={`${gradientClass[album.slug] ?? ""} px-4 sm:px-6 pt-8 pb-8 sm:pb-10`}
@@ -179,12 +173,7 @@ export default function TrackPageClient({ slug }: { slug: string }) {
             {album.title}
           </Link>
 
-          <motion.div
-            initial={{ opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            className="flex items-start gap-5"
-          >
+          <div className="flex items-start gap-5">
             {track.coverImage && (
               <Image
                 src={track.coverImage}
@@ -220,7 +209,7 @@ export default function TrackPageClient({ slug }: { slug: string }) {
                 </div>
               )}
             </div>
-          </motion.div>
+          </div>
         </div>
       </header>
 
@@ -297,10 +286,7 @@ export default function TrackPageClient({ slug }: { slug: string }) {
       <main className="flex-1 px-4 sm:px-6 py-6 sm:py-8 max-w-2xl mx-auto w-full">
         {/* Key Quote */}
         {track.keyQuote && (
-          <motion.blockquote
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.3 }}
+          <blockquote
             className="border-l-2 pl-4 mb-8 text-sm italic text-muted-foreground/80"
             style={{ borderColor: album.accentColor }}
           >
@@ -310,24 +296,19 @@ export default function TrackPageClient({ slug }: { slug: string }) {
                 - {track.quoteSpeaker}
               </span>
             )}
-          </motion.blockquote>
+          </blockquote>
         )}
 
         {/* Story Behind This Song */}
         {track.storyBehind && (
-          <motion.section
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.4 }}
-            className="mb-10"
-          >
+          <section className="mb-10">
             <h2 className="text-xs font-medium uppercase tracking-widest text-muted-foreground/50 mb-3">
               The Story Behind This Song
             </h2>
             <p className="text-sm text-muted-foreground/80 leading-relaxed">
               {track.storyBehind}
             </p>
-          </motion.section>
+          </section>
         )}
 
         {/* Synced Lyrics */}
@@ -442,6 +423,6 @@ export default function TrackPageClient({ slug }: { slug: string }) {
           )}
         </div>
       </nav>
-    </motion.div>
+    </div>
   );
 }

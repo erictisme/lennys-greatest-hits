@@ -229,6 +229,20 @@
       ],
       "files": ["app/opengraph-image.tsx", "app/icon.tsx", "app/layout.tsx", "app/favicon.ico"],
       "passes": true
+    },
+    {
+      "id": 56,
+      "category": "bugfix",
+      "priority": 0,
+      "description": "Remove all fade-up / fade-in / slide-in text animations from the entire app. These are vibe-cody AI-generated animation patterns that look cheap and unpolished. Search all .tsx files for any framer-motion 'motion.' components that animate opacity, translateY, y, or similar entrance animations on text, headings, paragraphs, or cards. Remove the motion wrapper and render the element as a plain HTML element instead. Keep framer-motion ONLY for functional animations like the audio visualizer or progress bar — remove it from all decorative text entrance effects. DONE: no text fades in or slides up when loading any page. All text appears instantly. DO NOT TOUCH: audio playback, lyrics content, track data, audio visualizer animations. VERIFY: pnpm build passes, load homepage and album pages and confirm all text appears immediately with no fade/slide animations.",
+      "steps": [
+        "Search all .tsx files for motion.div, motion.h1, motion.p, motion.span etc with opacity/y animations",
+        "Replace motion elements with plain HTML equivalents",
+        "Remove unused framer-motion imports if no motion elements remain in file",
+        "pnpm build passes"
+      ],
+      "files": ["app/page.tsx", "app/album/[slug]/AlbumPageClient.tsx", "app/track/[slug]/TrackPageClient.tsx", "components/EmailSignup.tsx"],
+      "passes": true
     }
   ]
 }
