@@ -1,9 +1,11 @@
 "use client";
 
+import { useState } from "react";
 import Link from "next/link";
-import { Play, Pause, SkipBack, SkipForward } from "lucide-react";
+import { Play, Pause, SkipBack, SkipForward, Share2 } from "lucide-react";
 import { useAudio } from "@/lib/audio-context";
 import { getAlbumForTrack } from "@/lib/tracks";
+import { trackEvent } from "@/lib/analytics";
 
 export default function NowPlayingBar() {
   const {
@@ -34,6 +36,10 @@ export default function NowPlayingBar() {
     return `${mins}:${secs.toString().padStart(2, "0")}`;
   };
 
+  const [hoverTime, setHoverTime] = useState<{ time: number; x: number } | null>(null);
+  const [shareOpen, setShareOpen] = useState(false);
+  const [copied, setCopied] = useState(false);
+
   const handleSeek = (e: React.MouseEvent<HTMLDivElement>) => {
     if (!duration) return;
     const rect = e.currentTarget.getBoundingClientRect();
@@ -41,14 +47,23 @@ export default function NowPlayingBar() {
     seek(fraction * duration);
   };
 
+  const handleBarHover = (e: React.MouseEvent<HTMLDivElement>) => {
+    if (!duration) return;
+    const rect = e.currentTarget.getBoundingClientRect();
+    const fraction = (e.clientX - rect.left) / rect.width;
+    setHoverTime({ time: fraction * duration, x: e.clientX - rect.left });
+  };
+
   return (
-    <div className="fixed bottom-0 left-0 right-0 z-50 border-t border-border/30 bg-[#0a0a0a]/95 backdrop-blur-lg">
+    <div className="fixed bottom-0 left-0 right-0 z-50 border-t border-border bg-background/95 backdrop-blur-lg">
       {/* Progress bar — thin line at top of bar */}
       <div
-        className="h-1 cursor-pointer group"
+        className="h-1 cursor-pointer group relative"
         onClick={handleSeek}
+        onMouseMove={handleBarHover}
+        onMouseLeave={() => setHoverTime(null)}
       >
-        <div className="relative h-full bg-white/10">
+        <div className="relative h-full bg-black/10">
           <div
             className="absolute inset-y-0 left-0"
             style={{
@@ -57,6 +72,14 @@ export default function NowPlayingBar() {
             }}
           />
         </div>
+        {hoverTime && (
+          <div
+            className="absolute -top-7 -translate-x-1/2 px-2 py-0.5 bg-foreground text-background text-xs rounded pointer-events-none"
+            style={{ left: hoverTime.x }}
+          >
+            {formatTime(hoverTime.time)}
+          </div>
+        )}
       </div>
 
       <div className="flex items-center gap-2 sm:gap-3 px-3 sm:px-4 py-2.5 sm:py-3 max-w-5xl mx-auto">
@@ -90,7 +113,7 @@ export default function NowPlayingBar() {
           <button
             onClick={togglePlay}
             className="w-9 h-9 rounded-full flex items-center justify-center transition-colors"
-            style={{ backgroundColor: accentColor, color: "#0a0a0a" }}
+            style={{ backgroundColor: accentColor, color: "#ffffff" }}
           >
             {isPlaying ? (
               <Pause className="w-4 h-4" fill="currentColor" />
@@ -113,6 +136,54 @@ export default function NowPlayingBar() {
           <span>{formatTime(currentTime)}</span>
           <span className="mx-1">/</span>
           <span>{duration > 0 ? formatTime(duration) : currentTrack.duration}</span>
+        </div>
+
+        {/* Share */}
+        <div className="relative">
+          <button
+            onClick={() => setShareOpen(!shareOpen)}
+            className="text-muted-foreground hover:text-foreground transition-colors p-1.5"
+          >
+            <Share2 className="w-4 h-4" />
+          </button>
+          {shareOpen && (
+            <div className="absolute bottom-full right-0 mb-2 bg-background border border-border rounded-lg shadow-xl py-1 min-w-[160px]">
+              <button
+                onClick={() => {
+                  const url = `${window.location.origin}/track/${currentTrack.slug}`;
+                  trackEvent("share_clicked", { platform: "x", track: currentTrack.slug, track_title: currentTrack.title });
+                  window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent(`🎵 ${currentTrack.title} — Lenny's Greatest Hits`)}&url=${encodeURIComponent(url)}`, "_blank", "noopener,noreferrer");
+                  setShareOpen(false);
+                }}
+                className="w-full text-left px-3 py-2 text-sm text-muted-foreground hover:text-foreground hover:bg-muted/50 transition-colors"
+              >
+                Share to X
+              </button>
+              <button
+                onClick={() => {
+                  const url = `${window.location.origin}/track/${currentTrack.slug}`;
+                  trackEvent("share_clicked", { platform: "linkedin", track: currentTrack.slug, track_title: currentTrack.title });
+                  window.open(`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(url)}`, "_blank", "noopener,noreferrer");
+                  setShareOpen(false);
+                }}
+                className="w-full text-left px-3 py-2 text-sm text-muted-foreground hover:text-foreground hover:bg-muted/50 transition-colors"
+              >
+                Share to LinkedIn
+              </button>
+              <button
+                onClick={async () => {
+                  const url = `${window.location.origin}/track/${currentTrack.slug}`;
+                  trackEvent("share_clicked", { platform: "copy", track: currentTrack.slug, track_title: currentTrack.title });
+                  await navigator.clipboard.writeText(url);
+                  setCopied(true);
+                  setTimeout(() => { setCopied(false); setShareOpen(false); }, 2000);
+                }}
+                className="w-full text-left px-3 py-2 text-sm text-muted-foreground hover:text-foreground hover:bg-muted/50 transition-colors"
+              >
+                {copied ? "Copied!" : "Copy Link"}
+              </button>
+            </div>
+          )}
         </div>
       </div>
     </div>

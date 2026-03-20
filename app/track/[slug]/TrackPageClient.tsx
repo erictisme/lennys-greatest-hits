@@ -1,6 +1,6 @@
 "use client";
 
-import { use, useEffect, useRef } from "react";
+import { use, useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import {
   ArrowLeft,
@@ -8,7 +8,6 @@ import {
   Pause,
   SkipBack,
   SkipForward,
-  Share2,
   ExternalLink,
 } from "lucide-react";
 import { motion } from "framer-motion";
@@ -87,11 +86,20 @@ export default function TrackPageClient({ slug }: { slug: string }) {
     }
   };
 
+  const [hoverTime, setHoverTime] = useState<{ time: number; x: number } | null>(null);
+
   const seek = (e: React.MouseEvent<HTMLDivElement>) => {
     if (!duration) return;
     const rect = e.currentTarget.getBoundingClientRect();
     const fraction = (e.clientX - rect.left) / rect.width;
     audio.seek(fraction * duration);
+  };
+
+  const handleProgressHover = (e: React.MouseEvent<HTMLDivElement>) => {
+    if (!duration) return;
+    const rect = e.currentTarget.getBoundingClientRect();
+    const fraction = (e.clientX - rect.left) / rect.width;
+    setHoverTime({ time: fraction * duration, x: e.clientX - rect.left });
   };
 
   const formatTime = (s: number) => {
@@ -100,15 +108,34 @@ export default function TrackPageClient({ slug }: { slug: string }) {
     return `${mins}:${secs.toString().padStart(2, "0")}`;
   };
 
-  const handleShare = async () => {
-    trackEvent("share_clicked", { platform: "native", track: slug, track_title: track.title });
-    const url = window.location.href;
-    const text = `${track.title} — Lenny's Greatest Hits`;
-    if (navigator.share) {
-      await navigator.share({ title: text, url });
-    } else {
-      await navigator.clipboard.writeText(url);
-    }
+  const [copied, setCopied] = useState(false);
+
+  const shareUrl = typeof window !== "undefined" ? window.location.href : "";
+  const shareText = `🎵 ${track.title} — Lenny's Greatest Hits`;
+
+  const handleShareX = () => {
+    trackEvent("share_clicked", { platform: "x", track: slug, track_title: track.title });
+    window.open(
+      `https://twitter.com/intent/tweet?text=${encodeURIComponent(shareText)}&url=${encodeURIComponent(shareUrl)}`,
+      "_blank",
+      "noopener,noreferrer"
+    );
+  };
+
+  const handleShareLinkedIn = () => {
+    trackEvent("share_clicked", { platform: "linkedin", track: slug, track_title: track.title });
+    window.open(
+      `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(shareUrl)}`,
+      "_blank",
+      "noopener,noreferrer"
+    );
+  };
+
+  const handleCopyLink = async () => {
+    trackEvent("share_clicked", { platform: "copy", track: slug, track_title: track.title });
+    await navigator.clipboard.writeText(shareUrl);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
   };
 
   const progress = duration > 0 ? (currentTime / duration) * 100 : 0;
@@ -172,7 +199,7 @@ export default function TrackPageClient({ slug }: { slug: string }) {
               className="w-12 h-12 rounded-full flex items-center justify-center transition-colors"
               style={{
                 backgroundColor: album.accentColor,
-                color: "#0a0a0a",
+                color: "#ffffff",
               }}
             >
               {isPlaying ? (
@@ -193,8 +220,10 @@ export default function TrackPageClient({ slug }: { slug: string }) {
 
           {/* Progress Bar */}
           <div
-            className="group relative h-1.5 bg-white/10 rounded-full cursor-pointer"
+            className="group relative h-1.5 bg-black/10 rounded-full cursor-pointer"
             onClick={seek}
+            onMouseMove={handleProgressHover}
+            onMouseLeave={() => setHoverTime(null)}
           >
             <div
               className="absolute inset-y-0 left-0 rounded-full transition-[width] duration-100"
@@ -203,6 +232,14 @@ export default function TrackPageClient({ slug }: { slug: string }) {
                 backgroundColor: album.accentColor,
               }}
             />
+            {hoverTime && (
+              <div
+                className="absolute -top-8 -translate-x-1/2 px-2 py-0.5 bg-foreground text-background text-xs rounded pointer-events-none"
+                style={{ left: hoverTime.x }}
+              >
+                {formatTime(hoverTime.time)}
+              </div>
+            )}
           </div>
           <div className="flex justify-between text-xs text-muted-foreground/50 mt-1.5">
             <span>{formatTime(currentTime)}</span>
@@ -283,11 +320,22 @@ export default function TrackPageClient({ slug }: { slug: string }) {
         {/* Share */}
         <div className="flex items-center gap-3">
           <button
-            onClick={handleShare}
+            onClick={handleShareX}
             className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm text-muted-foreground hover:text-foreground border border-border/50 hover:border-border transition-colors"
           >
-            <Share2 className="w-4 h-4" />
-            Share
+            Share to X
+          </button>
+          <button
+            onClick={handleShareLinkedIn}
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm text-muted-foreground hover:text-foreground border border-border/50 hover:border-border transition-colors"
+          >
+            Share to LinkedIn
+          </button>
+          <button
+            onClick={handleCopyLink}
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm text-muted-foreground hover:text-foreground border border-border/50 hover:border-border transition-colors"
+          >
+            {copied ? "Copied!" : "Copy Link"}
           </button>
         </div>
       </main>

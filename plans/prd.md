@@ -444,3 +444,38 @@ Use the unofficial Suno API. Set up a simple Node.js script at `scripts/generate
 - With 60-second waits between calls = ~36-72 minutes total
 - If the Suno API wrapper doesn't work, fall back to creating copy-paste-ready prompts in `content/suno-prompts/` that Eric can manually paste into https://suno.com in the morning
 - ALWAYS have the fallback prompts ready regardless of whether API generation succeeds
+
+---
+
+## Phase 2 Tasks (Social Sharing + Polish)
+
+### Task 22: Share buttons on track page and NowPlayingBar
+- [x] Update TrackPageClient.tsx — replace single Share button with 3 buttons: Share to X, Share to LinkedIn, Copy Link
+- [x] X button opens `twitter.com/intent/tweet` with text param: `🎵 [Song Title] — Lenny's Greatest Hits` and url param
+- [x] LinkedIn button opens `linkedin.com/sharing/share-offsite` with url param
+- [x] Copy Link copies URL to clipboard and shows brief "Copied!" toast/feedback (use useState, auto-dismiss after 2s)
+- [x] Add small share icon to NowPlayingBar.tsx next to play controls — clicking it opens a dropdown with same 3 share options
+- [x] DO NOT touch audio playback logic, lyrics component, or album data structure
+- [x] `pnpm build` passes
+
+### Task 23: Auto-play next album when current album finishes
+- [ ] In lib/audio-context.tsx, find the onended handler for the audio element
+- [ ] When the queue is exhausted (last track of album ends), look up the current album in the albums array, find the NEXT album, and set the queue to that album's tracks starting at index 0
+- [ ] Import albums from lib/albums.ts and use the order: Founders → Product → Builders → The Human Side
+- [ ] If on the last album (The Human Side), stop playback — do not loop
+- [ ] DO NOT change the track data structure, album ordering, or UI components
+- [ ] `pnpm build` passes
+
+### Task 24: Fix home page track count and album descriptions
+- [ ] Update app/page.tsx subtitle from "12 songs" to "10 songs"
+- [ ] Ensure album subtitles/descriptions in lib/albums.ts are human-readable JTBD (not production jargon)
+- [ ] Builders album description should acknowledge it has 2 tracks (batch 2 coming)
+- [ ] DO NOT change audio, lyrics, or track data
+- [ ] `pnpm build` passes
+
+### Task 25: Add play count display using localStorage (no backend)
+- [ ] Create a simple play counter using localStorage — increment count per track slug when track starts playing (debounce: only count if played >5 seconds)
+- [ ] Display play count next to each track on album pages (e.g. "3 plays") — only show if count > 0
+- [ ] This is a local-only counter (per browser) — no backend needed for now
+- [ ] DO NOT modify audio files, lyrics, or album data structure
+- [ ] `pnpm build` passes
