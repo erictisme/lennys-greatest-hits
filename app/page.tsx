@@ -36,8 +36,8 @@ export default function Home() {
             Greatest Hits
           </h1>
           <p className="text-lg sm:text-xl text-muted-foreground max-w-md mx-auto leading-relaxed">
-            12 songs from 638 episodes. The insights you quote on X, turned into
-            music you can feel.
+            The insights you quote on X — turned into songs you can feel.
+            Based on Lenny Rachitsky&apos;s most iconic podcast episodes.
           </p>
         </motion.div>
       </header>

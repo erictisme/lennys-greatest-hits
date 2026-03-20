@@ -7,9 +7,9 @@ const foundersTracks: Track[] = [
     albumSlug: "founders",
     trackNumber: 1,
     duration: "3:24",
-    audioUrl: "/audio/do-things-that-dont-scale-demo.mp3",
-    genre: "Indie folk",
-    mood: "Warm and earnest",
+    audioUrl: "/audio/do-things-that-dont-scale.mp3",
+    genre: "Indie Folk",
+    mood: "For founders who remember knocking on doors",
     lyrics: `[Verse 1]
 I packed a camera and a carry-on
 Knocked on every door from dusk to dawn
@@ -74,9 +74,9 @@ Physically go to them`,
     albumSlug: "founders",
     trackNumber: 2,
     duration: "3:38",
-    audioUrl: "/audio/product-market-fit-demo.mp3",
-    genre: "Synth-pop",
-    mood: "Building from tension to euphoria",
+    audioUrl: "/audio/product-market-fit.mp3",
+    genre: "Indie Pop",
+    mood: "The anxiety of not knowing — then knowing",
     lyrics: `[Verse 1]
 Dashboards flat and silence on the feed
 Refresh again like maybe that's the lead
@@ -135,9 +135,9 @@ You'll know`,
     albumSlug: "founders",
     trackNumber: 3,
     duration: "3:45",
-    audioUrl: "/audio/the-maze-demo.mp3",
-    genre: "Dark indie folk",
-    mood: "Eerie and unsettling with hopeful resolution",
+    audioUrl: "/audio/the-maze.mp3",
+    genre: "Dark Folk",
+    mood: "For anyone stuck in a tarpit idea",
     lyrics: `[Verse 1]
 Had a pitch that everyone believed
 Friends at dinner nodding, "you should leave
@@ -204,9 +204,9 @@ const productTracks: Track[] = [
     albumSlug: "product",
     trackNumber: 1,
     duration: "3:18",
-    audioUrl: "/audio/taste-demo.mp3",
-    genre: "Jazzy indie pop",
-    mood: "Sophisticated and warm, late-night intimacy",
+    audioUrl: "/audio/taste.mp3",
+    genre: "Jazz Pop",
+    mood: "When you know something's off but can't explain why",
     lyrics: `[Verse 1]
 The numbers say it's fine, the chart looks great
 Adoption's up, engagement's pulling weight
@@ -264,9 +264,9 @@ That's taste`,
     albumSlug: "product",
     trackNumber: 2,
     duration: "3:12",
-    audioUrl: "/audio/eleven-stars-demo.mp3",
-    genre: "Warm indie folk building to orchestral",
-    mood: "Intimate start expanding to grand",
+    audioUrl: "/audio/eleven-stars.mp3",
+    genre: "Cinematic Folk",
+    mood: "Dream absurd, then design the room",
     lyrics: `[Verse 1]
 A one-star stay is sleeping on the floor
 A three-star stay — you get a key and door
@@ -319,9 +319,9 @@ Eleven stars`,
     albumSlug: "product",
     trackNumber: 3,
     duration: "3:05",
-    audioUrl: "/audio/talk-to-users-demo.mp3",
-    genre: "Acoustic pop",
-    mood: "Conversational and direct",
+    audioUrl: "/audio/talk-to-users.mp3",
+    genre: "Acoustic Pop",
+    mood: "One conversation can save you six months",
     lyrics: `[Verse 1]
 We built a survey, sent it to a list
 Analyzed the data, nothing we had missed
@@ -379,9 +379,9 @@ const buildersTracks: Track[] = [
     albumSlug: "builders",
     trackNumber: 1,
     duration: "3:30",
-    audioUrl: "/audio/ship-it-demo.mp3",
-    genre: "Lo-fi hip-hop",
-    mood: "Urgent but not frantic, driving beat",
+    audioUrl: "/audio/ship-it.mp3",
+    genre: "Lo-Fi Hip Hop",
+    mood: "Stop planning. Start shipping.",
     lyrics: `[Verse 1]
 Another standup, another blocker filed
 Another sprint review where nothing's compiled
@@ -436,9 +436,9 @@ Ship it`,
     albumSlug: "builders",
     trackNumber: 2,
     duration: "3:15",
-    audioUrl: "/audio/vibe-coding-demo.mp3",
-    genre: "Lo-fi hip-hop with glitchy electronic elements",
-    mood: "Playful and futuristic",
+    audioUrl: "/audio/vibe-coding.mp3",
+    genre: "Glitch Hop",
+    mood: "Never wrote a line of code — shipped it anyway",
     lyrics: `[Verse 1]
 Never wrote a line of code before last spring
 Now I'm shipping features, building everything
@@ -486,70 +486,6 @@ Vibe coding`,
     keyQuote: "Ship it before the model gets better.",
     quoteSpeaker: "Andrej Karpathy",
   },
-  {
-    slug: "feature-factory",
-    title: "Feature Factory",
-    albumSlug: "builders",
-    trackNumber: 3,
-    duration: "3:42",
-    audioUrl: "/audio/feature-factory-demo.mp3",
-    genre: "Industrial-tinged lo-fi",
-    mood: "Mechanical and repetitive with rebellious breakdown",
-    lyrics: `[Verse 1]
-Monday morning, Jira's full again
-Ticket in, feature out, ticket in
-No one asked if this should exist at all
-Just build the thing and ship it down the hall
-Roadmap set by stakeholders who don't use
-The product — but they've got opinions and reviews
-
-[Chorus]
-Feature factory, feature factory
-Tickets in and features out
-Feature factory, feature factory
-A product team owns the problem
-A feature team owns the doubt
-We're not building, we're just filling
-Jira tickets to the ceiling
-Feature factory never ends
-
-[Verse 2]
-Discovery's a word we say in docs
-But every sprint is predetermined blocks
-No autonomy, no room to think or test
-Just velocity metrics dressed up as the best
-The users send another bug report
-But we're heads-down on a feature no one bought
-
-[Chorus]
-Feature factory, feature factory
-Tickets in and features out
-Feature factory, feature factory
-A product team owns the problem
-A feature team owns the doubt
-We're not building, we're just filling
-Jira tickets to the ceiling
-Feature factory never ends
-
-[Bridge]
-What if we stopped the line?
-What if we asked why?
-What if we owned the outcome, not the output?
-What if we had the time?
-
-[Outro]
-Feature factory
-Is this what you signed up for?
-Feature factory
-Break the line`,
-    concept: "You're not building a product. You're feeding a machine. Ship it, check the box, ship again. No autonomy, no discovery, no soul.",
-    keyInsight: "A product team owns the problem. A feature team owns the Jira ticket.",
-    sources: [
-      { title: "Marty Cagan on product teams vs feature teams", type: "podcast", url: "", guest: "Marty Cagan" },
-    ],
-    keyQuote: "A product team owns the problem. A feature team owns the Jira ticket.",
-    quoteSpeaker: "Marty Cagan",
-  },
 ];
 
 const humanSideTracks: Track[] = [
@@ -559,9 +495,9 @@ const humanSideTracks: Track[] = [
     albumSlug: "the-human-side",
     trackNumber: 1,
     duration: "3:20",
-    audioUrl: "/audio/imposter-demo.mp3",
-    genre: "Ambient folk",
-    mood: "Vulnerable and raw",
+    audioUrl: "/audio/imposter.mp3",
+    genre: "Ambient Folk",
+    mood: "Everyone at the table feels the same way",
     lyrics: `[Verse 1]
 Walked into the room and took a seat
 Looked around the table, felt the heat
@@ -618,9 +554,9 @@ Day by day by day`,
     albumSlug: "the-human-side",
     trackNumber: 2,
     duration: "3:35",
-    audioUrl: "/audio/burnout-demo.mp3",
-    genre: "Slow acoustic soul",
-    mood: "Heavy and tired but beautiful",
+    audioUrl: "/audio/burnout.mp3",
+    genre: "Acoustic Soul",
+    mood: "It's not the hours — it's the hollow ache",
     lyrics: `[Verse 1]
 Five AM alarm, the slack is lit
 Fourteen notifications, none of it
@@ -673,9 +609,9 @@ You can set it down`,
     albumSlug: "the-human-side",
     trackNumber: 3,
     duration: "3:28",
-    audioUrl: "/audio/the-ic-track-demo.mp3",
-    genre: "Neo-soul",
-    mood: "Introspective, late-night career reflection",
+    audioUrl: "/audio/the-ic-track.mp3",
+    genre: "Neo-Soul",
+    mood: "At 2am, which version of you is awake?",
     lyrics: `[Verse 1]
 They offered me the title and the team
 Director-level, living someone's dream
@@ -734,8 +670,8 @@ export const albums: Album[] = [
   {
     slug: "founders",
     title: "Founders",
-    subtitle: "For people building companies from scratch",
-    description: "The leap, the grind, the loneliness, and the magic of starting something from nothing. Indie folk and acoustic pop for the ones crazy enough to try.",
+    subtitle: "For anyone who's knocked on doors and believed",
+    description: "Songs about the early days — finding PMF, escaping tarpit ideas, and doing things that don't scale. Based on Brian Chesky, Rahul Vohra, and Dalton Caldwell's episodes.",
     coverImage: "/covers/founders.jpg",
     accentColor: "#f59e0b",
     tracks: foundersTracks,
@@ -743,8 +679,8 @@ export const albums: Album[] = [
   {
     slug: "product",
     title: "Product",
-    subtitle: "For product managers and product thinkers",
-    description: "Taste, craft, and the relentless pursuit of what users actually need. Jazzy indie pop and warm folk for the ones who obsess over every pixel.",
+    subtitle: "For the ones who obsess over every pixel",
+    description: "Songs about taste, the 11-star framework, and why one user conversation beats a thousand dashboards. Based on Scott Belsky, Brian Chesky, and Teresa Torres.",
     coverImage: "/covers/product.jpg",
     accentColor: "#3b82f6",
     tracks: productTracks,
@@ -752,8 +688,8 @@ export const albums: Album[] = [
   {
     slug: "builders",
     title: "Builders",
-    subtitle: "For engineers, designers, and makers",
-    description: "Ship it, break it, build it again. Lo-fi beats and electronic textures for the ones who make things real.",
+    subtitle: "For the ones who'd rather ship than plan",
+    description: "Songs about shipping velocity and the vibe coding revolution. Based on Ramp's story and the rise of AI-powered building.",
     coverImage: "/covers/builders.jpg",
     accentColor: "#10b981",
     tracks: buildersTracks,
@@ -761,8 +697,8 @@ export const albums: Album[] = [
   {
     slug: "the-human-side",
     title: "The Human Side",
-    subtitle: "For anyone in tech feeling the weight",
-    description: "Burnout, imposter syndrome, and the career crossroads we all face. Ambient folk and neo-soul for the moments when you need to feel seen.",
+    subtitle: "For anyone who's wondered if they belong",
+    description: "Songs about imposter syndrome, burnout, and choosing craft over title. Based on Julie Zhuo, Andy Johns, and Tal Raviv's stories.",
     coverImage: "/covers/the-human-side.jpg",
     accentColor: "#8b5cf6",
     tracks: humanSideTracks,
