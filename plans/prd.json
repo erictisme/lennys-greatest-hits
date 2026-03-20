@@ -385,6 +385,128 @@
       ],
       "files": ["app/api/subscribe/route.ts", "components/EmailSignup.tsx"],
       "passes": true
+    },
+    {
+      "id": 66,
+      "category": "bugfix",
+      "priority": 0,
+      "description": "Fix all broken internal links for Coming Soon albums and locked tracks. The Coming Soon albums and locked tracks were just added but some links may be broken — album slugs not matching route params, track slugs not matching, or pages returning 404. Read lib/albums.ts and check every Coming Soon album slug and every locked track slug. Then verify that: (1) The homepage album card links use the correct href /album/{album.slug}, (2) Album page track links use the correct href /track/{track.slug}, (3) The getAlbumBySlug and getTrackBySlug functions in lib/tracks.ts correctly find Coming Soon albums and locked tracks, (4) AlbumPageClient and TrackPageClient handle the new album slugs in their gradient lookups without errors. Fix any mismatches. Also check that clicking album cards on the homepage navigates correctly and that clicking track rows on album pages navigates correctly. DONE: every Coming Soon album and locked track is reachable via its link — no 404s, no broken navigation. DO NOT TOUCH: audio playback, Batch 1 album data. VERIFY: pnpm build passes, manually trace every Coming Soon album slug and track slug to confirm they resolve.",
+      "steps": [
+        "Read lib/albums.ts — list all Coming Soon album slugs and track slugs",
+        "Read lib/tracks.ts — verify getAlbumBySlug and getTrackBySlug work for new slugs",
+        "Check homepage links in app/page.tsx",
+        "Check album page track links in AlbumPageClient.tsx",
+        "Check gradient lookups for new album slugs",
+        "Fix any slug mismatches or broken references",
+        "pnpm build passes"
+      ],
+      "files": ["lib/albums.ts", "lib/tracks.ts", "app/page.tsx", "app/album/[slug]/AlbumPageClient.tsx", "app/track/[slug]/TrackPageClient.tsx"],
+      "passes": true
+    },
+    {
+      "id": 67,
+      "category": "bugfix",
+      "priority": 0,
+      "description": "Fix all source links for Batch 2 locked tracks. Many locked tracks in lib/albums.ts may have empty or placeholder source URLs. For each of the 25 locked tracks, check the sources array. If any source has an empty url field, search for the correct Lenny URL using mcp__lennysdata__search_content with the guest name or topic. For podcast sources, the URL pattern is typically https://www.lennysnewsletter.com/p/[slug]. For newsletter sources, same pattern. Update every empty source URL with the correct Lenny article/podcast URL. If a source genuinely has no Lenny URL (external content), use the original external URL and note it in the source title. DONE: every source link on every locked track page has a working URL. DO NOT TOUCH: Batch 1 source links, audio playback. VERIFY: pnpm build passes.",
+      "steps": [
+        "Read lib/albums.ts — find all locked tracks with empty source URLs",
+        "For each empty URL, search mcp__lennysdata__search_content for the guest/topic",
+        "Update source URLs in lib/albums.ts",
+        "pnpm build passes"
+      ],
+      "files": ["lib/albums.ts"],
+      "passes": false
+    },
+    {
+      "id": 68,
+      "category": "feature",
+      "priority": 1,
+      "description": "Add individual OG images for each album page. Create app/album/[slug]/opengraph-image.tsx that generates a dynamic 1200x630 OG image per album using ImageResponse from next/og. The image should show the album title, subtitle, track count, and use the album's accentColor as the gradient background. For Coming Soon albums, include a 'Coming Soon' badge on the OG image. This way when someone shares an album link on social media, it shows a custom preview instead of the generic site OG image. DONE: sharing any album URL shows a custom OG image with that album's title and color. DO NOT TOUCH: audio playback, track data, page layouts. VERIFY: pnpm build passes, check /album/the-operators/opengraph-image returns a valid image.",
+      "steps": [
+        "Read existing app/opengraph-image.tsx for reference",
+        "Create app/album/[slug]/opengraph-image.tsx with dynamic album data",
+        "Use album accentColor for gradient, show title/subtitle/track count",
+        "Add Coming Soon badge for comingSoon albums",
+        "pnpm build passes"
+      ],
+      "files": ["app/album/[slug]/opengraph-image.tsx"],
+      "passes": false
+    },
+    {
+      "id": 69,
+      "category": "feature",
+      "priority": 1,
+      "description": "Add individual OG images for each track page. Create app/track/[slug]/opengraph-image.tsx that generates a dynamic 1200x630 OG image per track using ImageResponse from next/og. The image should show the track title, album name, a key quote if available (truncated to fit), and use the album's accentColor as background. For locked tracks, include a 'Coming Soon' indicator. DONE: sharing any track URL shows a custom OG image. DO NOT TOUCH: audio playback, page layouts. VERIFY: pnpm build passes.",
+      "steps": [
+        "Read existing app/opengraph-image.tsx for reference",
+        "Create app/track/[slug]/opengraph-image.tsx with dynamic track data",
+        "Show track title, album name, key quote snippet",
+        "Use album accentColor for gradient",
+        "pnpm build passes"
+      ],
+      "files": ["app/track/[slug]/opengraph-image.tsx"],
+      "passes": false
+    },
+    {
+      "id": 70,
+      "category": "feature",
+      "priority": 1,
+      "description": "Add a 'Share this album' button to album pages and a share modal for track pages. On album pages (AlbumPageClient.tsx), add a Share button next to the album title that opens a dropdown with: Copy link, Share to X (Twitter), Share to LinkedIn. The share text should be: 'Check out [Album Title] on Lenny's Greatest Hits — [album subtitle]' with the album URL. Only show for non-Coming-Soon albums (or show for Coming Soon albums too with 'Coming soon' in the share text). On track pages, ensure the existing share functionality works for both locked and unlocked tracks — locked tracks should share with 'Coming soon' messaging. DONE: album share button works, share links generate correct URLs and text. DO NOT TOUCH: audio playback. VERIFY: pnpm build passes, click share on an album page, verify link copies correctly.",
+      "steps": [
+        "Read AlbumPageClient.tsx for layout",
+        "Add Share button with dropdown (Copy link, X, LinkedIn)",
+        "Generate correct share text and URL for each album",
+        "Handle Coming Soon albums in share text",
+        "Verify track page share works for locked tracks",
+        "pnpm build passes"
+      ],
+      "files": ["app/album/[slug]/AlbumPageClient.tsx", "app/track/[slug]/TrackPageClient.tsx"],
+      "passes": false
+    },
+    {
+      "id": 71,
+      "category": "feature",
+      "priority": 2,
+      "description": "Add a 'Browse by topic' or tag cloud section to the homepage. Read all tags from all tracks (both Batch 1 and Batch 2) in lib/albums.ts. Create a section on the homepage below the album grid that shows all unique tags as clickable pill badges. Clicking a tag scrolls to or filters the album grid to show only albums containing tracks with that tag. Alternatively, clicking a tag navigates to a simple filtered view showing all tracks with that tag across all albums. Keep it simple — a horizontal scrollable row of tag pills with counts. DONE: homepage shows browsable tags, clicking a tag shows relevant tracks. DO NOT TOUCH: audio playback, album/track pages. VERIFY: pnpm build passes.",
+      "steps": [
+        "Read lib/albums.ts to collect all unique tags across all tracks",
+        "Add a tag cloud section to app/page.tsx below album grid",
+        "Make tags clickable — filter or navigate to show matching tracks",
+        "Style as horizontal scrollable pill badges",
+        "pnpm build passes"
+      ],
+      "files": ["app/page.tsx"],
+      "passes": false
+    },
+    {
+      "id": 72,
+      "category": "feature",
+      "priority": 2,
+      "description": "Add keyboard shortcuts for audio playback. In the audio context or a new hook, add global keyboard event listeners: Space = play/pause (only when not typing in an input), Left Arrow = seek back 10 seconds, Right Arrow = seek forward 10 seconds, N = next track, P = previous track. Show a small tooltip or hint somewhere on the track page indicating keyboard shortcuts are available (e.g., a small '?' icon that shows shortcuts on hover). DONE: keyboard shortcuts work for play/pause, seek, next/prev. DO NOT TOUCH: existing click-based controls, lyrics, track data. VERIFY: pnpm build passes, press Space to play/pause, arrow keys to seek.",
+      "steps": [
+        "Add useEffect with keydown listener in audio-context.tsx or a new hook",
+        "Implement Space=play/pause, arrows=seek, N=next, P=prev",
+        "Ignore keypresses when focus is on input/textarea elements",
+        "Add small keyboard shortcut hint on track page",
+        "pnpm build passes"
+      ],
+      "files": ["lib/audio-context.tsx", "app/track/[slug]/TrackPageClient.tsx"],
+      "passes": false
+    },
+    {
+      "id": 73,
+      "category": "feature",
+      "priority": 2,
+      "description": "Add a 'Shuffle All' button to the homepage that plays all unlocked tracks in random order. Add a button near the top of the homepage (below the hero, above the album grid) labeled 'Shuffle All' with a shuffle icon. When clicked, it collects all unlocked tracks from all albums, shuffles them randomly, sets the first as current track, and queues the rest. Navigate to the first track's page. Only include tracks where isLocked is not true and audioUrl is not empty. DONE: clicking Shuffle All starts playing a random unlocked track and queues all others in random order. DO NOT TOUCH: existing album playback, lyrics, track data. VERIFY: pnpm build passes, click Shuffle All, confirm random track plays and queue is shuffled.",
+      "steps": [
+        "Add shuffleAll function to audio-context.tsx",
+        "Collect all unlocked tracks, shuffle array, play first, queue rest",
+        "Add Shuffle All button to app/page.tsx",
+        "Navigate to first track page on click",
+        "pnpm build passes"
+      ],
+      "files": ["lib/audio-context.tsx", "app/page.tsx"],
+      "passes": false
     }
   ]
 }

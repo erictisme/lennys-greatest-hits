@@ -1,10 +1,2 @@
-# Ralph DEFAULT run Fri Mar 20 22:13:09 +08 2026
-Task 57: Added comingSoon?: boolean to Album type and isLocked?: boolean to Track type in lib/types.ts. Build passes.
-Task 58: Added 5 Coming Soon albums (The Operators, Growth Engine, The Startup Life, Career Moves, Frameworks) with 25 locked tracks to lib/albums.ts. All metadata populated from songwriting research files. Build passes.
-Task 59: Added 5 CSS gradient classes (operators=orange, growth-engine=yellow, startup-life=violet, career-moves=cyan, frameworks=indigo) to globals.css and updated gradient lookup maps in AlbumPageClient.tsx and TrackPageClient.tsx. Build passes.
-Task 60: Added locked track guards to audio-context.tsx — play() returns early for locked tracks, next/prev/onEnded skip locked tracks across album boundaries, playAlbum() filters locked tracks from queue. Build passes.
-Task 61: Added Coming Soon visual treatment to homepage album cards — gradient placeholders for empty coverImage, Coming Soon pill badge, updated track count text. Build passes.
-Task 62: Updated album page for Coming Soon albums — Lock icons instead of play buttons, concept description for locked tracks, hidden duration/share, EmailSignup CTA below track list. Build passes.
-Task 63: Updated track page for locked tracks — guarded playAlbum useEffect, replaced audio player with Coming Soon + EmailSignup, hidden lyrics/share, kept concept/quote/story visible. Build passes.
-Task 64: Added subtle footer credit links — "Built on Lenny's Data" and "Build with us on Code Riff" below existing credits, middot separator, very muted styling with hover states. Build passes.
-Task 65: Added welcome email via Resend — created /api/subscribe route that inserts into Supabase then sends warm welcome email, updated EmailSignup to call API route instead of direct Supabase. Build passes.
+# Ralph DEFAULT run Fri Mar 20 23:54:46 +08 2026
+Task 66: Audited all Coming Soon album/track links — all slugs, gradients, and lookups correct. No fixes needed.
