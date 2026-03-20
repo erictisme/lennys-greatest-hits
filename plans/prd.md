@@ -467,11 +467,11 @@ Use the unofficial Suno API. Set up a simple Node.js script at `scripts/generate
 - [x] `pnpm build` passes
 
 ### Task 24: Fix home page track count and album descriptions
-- [ ] Update app/page.tsx subtitle from "12 songs" to "10 songs"
-- [ ] Ensure album subtitles/descriptions in lib/albums.ts are human-readable JTBD (not production jargon)
-- [ ] Builders album description should acknowledge it has 2 tracks (batch 2 coming)
-- [ ] DO NOT change audio, lyrics, or track data
-- [ ] `pnpm build` passes
+- [x] Update app/page.tsx subtitle from "12 songs" to "10 songs"
+- [x] Ensure album subtitles/descriptions in lib/albums.ts are human-readable JTBD (not production jargon)
+- [x] Builders album description should acknowledge it has 2 tracks (batch 2 coming)
+- [x] DO NOT change audio, lyrics, or track data
+- [x] `pnpm build` passes
 
 ### Task 25: Add play count display using localStorage (no backend)
 - [ ] Create a simple play counter using localStorage — increment count per track slug when track starts playing (debounce: only count if played >5 seconds)

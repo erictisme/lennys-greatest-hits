@@ -277,7 +277,7 @@ function renderDefaultOG() {
             marginTop: "24px",
           }}
         >
-          12 songs &middot; 4 albums
+          10 songs &middot; 4 albums
         </div>
       </div>
     ),

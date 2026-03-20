@@ -59,7 +59,7 @@ Physically go to them
 [Outro]
 Go to your users
 Physically go to them`,
-    concept: "The greatest companies started with founders doing things no one thought were worth doing — going door to door, hand-writing thank you notes, manually onboarding every user.",
+    concept: "Based on Brian Chesky's founding story — going door to door photographing Airbnb listings. Plus DoorDash's $6 flyers at Stanford and Tinder going sorority to sorority at USC. From Lenny's series on how the biggest companies got their first users.",
     keyInsight: "Before you build the engine, light the flame. Every great company started with someone who refused to scale.",
     sources: [
       { title: "Brian Chesky on Airbnb's early days", type: "podcast", url: "", guest: "Brian Chesky" },
@@ -120,7 +120,7 @@ But you'll know
 It feels like the product is being pulled
 Right out of your hands
 You'll know`,
-    concept: "PMF isn't gradual — it hits you. Users are pulling the product from your hands. If you have to ask whether you have it, you don't.",
+    concept: "Based on Rahul Vohra's Superhuman episode. He ran the Sean Ellis test and scored 22%. Three years later, after segmenting to high-expectation customers, he hit 58%. The 40% threshold that changed how every founder measures PMF.",
     keyInsight: "The 40% very disappointed test — if fewer than 40% of users would be very disappointed without your product, you haven't found PMF.",
     sources: [
       { title: "Rahul Vohra on Superhuman's PMF engine", type: "podcast", url: "", guest: "Rahul Vohra" },
@@ -186,7 +186,7 @@ And the maze is how you find your way
 
 [Outro]
 The maze is how you find your way`,
-    concept: "Most startup ideas are tarpit ideas — they look great but trap you for years. The journey isn't a straight line, it's a maze.",
+    concept: "Based on Dalton Caldwell's episode — 10+ years at YC, 21 batches, 1,000+ startups. One in three B2B startups pivot. The median founder spends a full year on a tarpit idea before realizing it.",
     keyInsight: "If your idea is easy to explain at a dinner party, it's probably a tarpit. The maze IS the point.",
     sources: [
       { title: "Dalton Caldwell on tarpit ideas", type: "podcast", url: "", guest: "Dalton Caldwell" },
@@ -249,7 +249,7 @@ That's taste
 You know it when you see it
 But you feel it first
 That's taste`,
-    concept: "The indefinable quality that separates good PMs from great ones isn't process or data — it's taste.",
+    concept: "Based on Scott Belsky's episode on product sense. His rule: 'In the first 30 seconds, your user is lazy, vain, and selfish.' Taste is pattern recognition plus empathy — seeing what isn't there but needs to be.",
     keyInsight: "Product sense is pattern recognition plus empathy. Taste is the ability to say no to good ideas.",
     sources: [
       { title: "Shreyas Doshi on product sense", type: "podcast", url: "", guest: "Shreyas Doshi" },
@@ -305,7 +305,7 @@ Think ten stars further
 Then come back down to Earth
 With something worth the work
 Eleven stars`,
-    concept: "Don't think about making your product 10% better. Think about what an 11-star experience looks like — so extraordinary it's absurd — then work backwards.",
+    concept: "Based on Brian Chesky's episode — Lenny's most listened-to episode, which took him a full year to land. Chesky's 11-star framework: at 11 stars, Elon picks you up in a rocket. Dream absurd, then design the room.",
     keyInsight: "The last 10% is 90% of the magic. Start with an impossibly ambitious vision and work backwards to what's buildable.",
     sources: [
       { title: "Brian Chesky on the 11-star framework", type: "podcast", url: "", guest: "Brian Chesky" },
@@ -361,7 +361,7 @@ One conversation
 Can save you six months
 Talk to your users
 Go sit with them`,
-    concept: "The most basic, most ignored advice in all of tech. Did you actually talk to your users?",
+    concept: "Based on Teresa Torres' episode on continuous discovery habits — the #1 most recommended book in Lenny's Slack community. She's trained 11,000+ students. Her rule: one user interview per week, every week.",
     keyInsight: "One conversation can save you six months. You're not your user — go sit with them.",
     sources: [
       { title: "Teresa Torres on continuous discovery", type: "podcast", url: "", guest: "Teresa Torres" },
@@ -421,7 +421,7 @@ Stop planning
 Stop polishing
 Stop asking for one more review
 Ship it`,
-    concept: "Stop planning. Stop polishing. Ship the thing. Speed isn't reckless — it's respect for your users' time.",
+    concept: "Based on Ramp's episode with Geoff Charles. Ramp hit $100M ARR in 2 years — the fastest-growing SaaS ever — with fewer than 5 PMs and 50 engineers. Their mantra: 'Our culture is velocity.'",
     keyInsight: "Speed is a proxy for how much you care. If you're not embarrassed by v1, you shipped too late.",
     sources: [
       { title: "Keith Rabois on speed as competitive advantage", type: "podcast", url: "", guest: "Keith Rabois" },
@@ -477,7 +477,7 @@ Vibe coding
 Welcome to the era
 Where everyone can build
 Vibe coding`,
-    concept: "The rules changed. Non-coders are building real products. AI didn't replace programmers — it created a million new builders.",
+    concept: "Based on Lazar Jovanovic's episode — the first official 'vibe coding engineer' at Lovable. Lovable hit $200M ARR in under a year with fewer than 100 people. 500+ builders wrote to Lenny saying they shipped products without writing code.",
     keyInsight: "The best time to learn to code was 10 years ago. The second best time is never — just vibe code.",
     sources: [
       { title: "AI tools for PMs", type: "newsletter", url: "", guest: "Lenny Rachitsky" },
@@ -540,7 +540,7 @@ Day by day by day
 Your imposter syndrome is lying to you
 But I know that doesn't make it quiet
 Day by day by day`,
-    concept: "Everyone at the table thinks everyone else belongs more. The feeling never goes away — you just learn to work alongside it.",
+    concept: "Based on Julie Zhuo's episode — Episode 2 of Lenny's Podcast. She spent 13 years at Facebook, going from IC designer to VP of Design. Wrote 'The Making of a Manager' from the imposter syndrome she felt the entire way up.",
     keyInsight: "Imposter syndrome is universal in tech. The feeling never disappears, you just learn to coexist with it.",
     sources: [
       { title: "Lenny's newsletter on imposter syndrome", type: "newsletter", url: "", guest: "Lenny Rachitsky" },
@@ -595,7 +595,7 @@ When did I stop breathing?
 You can't pour from an empty cup
 But you can set it down
 You can set it down`,
-    concept: "Burnout isn't about working too hard — it's about working on the wrong things. The moment you realize you're optimizing for a game you don't want to win.",
+    concept: "Based on Andy Johns' episode. He spent 17 years at Facebook, Twitter, Wealthfront, and Quora before confronting burnout publicly on Lenny's show. Nearly 45% of tech workers report significant burnout.",
     keyInsight: "Burnout isn't about hours — it's about meaning. You can't pour from an empty cup, but you can set it down.",
     sources: [
       { title: "Mental health and work-life balance episodes", type: "podcast", url: "", guest: "Multiple guests" },
@@ -603,67 +603,7 @@ You can set it down`,
     keyQuote: "Burnout isn't working too much — it's working on the wrong things.",
     quoteSpeaker: "Multiple guests",
   },
-  {
-    slug: "the-ic-track",
-    title: "The IC Track",
-    albumSlug: "the-human-side",
-    trackNumber: 3,
-    duration: "3:28",
-    audioUrl: "/audio/the-ic-track.mp3",
-    genre: "Neo-Soul",
-    mood: "At 2am, which version of you is awake?",
-    lyrics: `[Verse 1]
-They offered me the title and the team
-Director-level, living someone's dream
-But two AM I'm staring at the wall
-Missing when I used to build it all
-The calendar is full, the code is gone
-I traded craft for meetings before dawn
-
-[Chorus]
-Management is not a promotion
-It's just a different road
-The best ICs create more value
-Than most VPs will ever know
-Choose the path that gives you energy
-Not the one that gives you status
-At two AM, which version of you
-Is still awake because they want to be?
-
-[Verse 2]
-She went back to IC after three hard years
-Leading teams and swallowing the fears
-Her manager said, "That's a step back, no?"
-She said, "It's the first step forward that I know"
-The title shrank, the joy came rushing in
-Building things again — she felt her skin
-Come alive with purpose, not with power
-And shipped more impact in a single hour
-
-[Chorus]
-Management is not a promotion
-It's just a different road
-The best ICs create more value
-Than most VPs will ever know
-Choose the path that gives you energy
-Not the one that gives you status
-At two AM, which version of you
-Is still awake because they want to be?
-
-[Outro]
-The fork in the road isn't up or down
-It's just two different kinds of ground
-Choose the one where your feet want to stay
-The IC track, the IC track`,
-    concept: "Management is not a promotion. The IC path is not 'less than.' Choose the work that gives you energy, not the title that gives you status.",
-    keyInsight: "At 2am, which version of you is still awake because they want to be? That's your answer.",
-    sources: [
-      { title: "Will Larson on career frameworks", type: "podcast", url: "", guest: "Will Larson" },
-      { title: "Ravi Mehta on career paths", type: "podcast", url: "", guest: "Ravi Mehta" },
-    ],
-    keyQuote: "Management is not a promotion.",
-    quoteSpeaker: "Will Larson",
-  },
+  // IC Track hidden until audio is generated — see content/suno-prompts/the-ic-track.json
 ];
 
 export const albums: Album[] = [
@@ -673,7 +613,7 @@ export const albums: Album[] = [
     subtitle: "For anyone who's knocked on doors and believed",
     description: "Songs about the early days — finding PMF, escaping tarpit ideas, and doing things that don't scale. Based on Brian Chesky, Rahul Vohra, and Dalton Caldwell's episodes.",
     coverImage: "/covers/founders.jpg",
-    accentColor: "#f59e0b",
+    accentColor: "#d97706",
     tracks: foundersTracks,
   },
   {
@@ -682,25 +622,25 @@ export const albums: Album[] = [
     subtitle: "For the ones who obsess over every pixel",
     description: "Songs about taste, the 11-star framework, and why one user conversation beats a thousand dashboards. Based on Scott Belsky, Brian Chesky, and Teresa Torres.",
     coverImage: "/covers/product.jpg",
-    accentColor: "#3b82f6",
+    accentColor: "#b45309",
     tracks: productTracks,
   },
   {
     slug: "builders",
     title: "Builders",
     subtitle: "For the ones who'd rather ship than plan",
-    description: "Songs about shipping velocity and the vibe coding revolution. Based on Ramp's story and the rise of AI-powered building.",
+    description: "Songs about shipping velocity and the vibe coding revolution. Based on Ramp's story and the rise of AI-powered building. More tracks coming soon.",
     coverImage: "/covers/builders.jpg",
-    accentColor: "#10b981",
+    accentColor: "#92400e",
     tracks: buildersTracks,
   },
   {
     slug: "the-human-side",
     title: "The Human Side",
     subtitle: "For anyone who's wondered if they belong",
-    description: "Songs about imposter syndrome, burnout, and choosing craft over title. Based on Julie Zhuo, Andy Johns, and Tal Raviv's stories.",
+    description: "Songs about imposter syndrome and burnout — the things nobody talks about in standups. Based on Julie Zhuo and Andy Johns' episodes. More tracks coming soon.",
     coverImage: "/covers/the-human-side.jpg",
-    accentColor: "#8b5cf6",
+    accentColor: "#78350f",
     tracks: humanSideTracks,
   },
 ];
