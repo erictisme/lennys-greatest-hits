@@ -23,6 +23,7 @@ export type Track = {
   sources: Source[];
   keyQuote: string;
   quoteSpeaker: string;
+  storyBehind?: string;
 };
 
 export type LyricLine = {

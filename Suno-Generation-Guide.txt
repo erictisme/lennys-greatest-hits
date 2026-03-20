@@ -1,0 +1,686 @@
+SUNO GENERATION GUIDE — 12 SONGS
+Settings: Advanced, v5, Manual lyrics
+Vocal gender: MALE unless noted FEMALE below
+
+========================================
+SONG 1: Do Things That Don't Scale
+========================================
+
+TITLE:
+Do Things That Don't Scale
+
+STYLES:
+vocal-forward, spacious, indie folk, warm and earnest, acoustic guitar fingerpicking plus subtle strings and soft piano, male vocal close-mic dry with gentle harmonies, studio quality polished mix, 108 BPM, key of G, reference Bon Iver intimacy, reference Iron and Wine warmth, reference Jonathan Ogden sincerity
+
+LYRICS:
+[Verse 1]
+I packed a camera and a carry-on
+Knocked on every door from dusk to dawn
+Took the photos, wrote the listing down
+Slept on strangers' couches cross the town
+They said it wouldn't work, too small to care
+But I was already climbing every stair
+
+[Chorus]
+Do things that don't scale
+Hand-write every letter, learn every name
+Do things that don't scale
+Before you build the engine, light the flame
+Go to them, go to them
+Physically go to them
+
+[Verse 2]
+Stripe boys at the laptop, wouldn't leave
+Installed it right there — "you won't believe
+How easy this could be, just let us try"
+No landing page, no funnel, eye to eye
+A hundred users loved by hand, not code
+That's how you find the long and winding road
+
+[Chorus]
+Do things that don't scale
+Hand-write every letter, learn every name
+Do things that don't scale
+Before you build the engine, light the flame
+Go to them, go to them
+Physically go to them
+
+[Bridge]
+Every great company started small
+With someone who would not accept the wall
+Between the builder and the ones they served
+Every single user was deserved
+
+[Chorus]
+Do things that don't scale
+Hand-write every letter, learn every name
+Do things that don't scale
+Before you build the engine, light the flame
+Go to them, go to them
+Physically go to them
+
+[Outro]
+Go to your users
+Physically go to them
+
+SAVE AS: do-things-that-dont-scale-v1.mp3
+
+========================================
+SONG 2: Product-Market Fit (You'll Know)
+========================================
+
+TITLE:
+Product-Market Fit (You'll Know)
+
+STYLES:
+vocal-forward, spacious, indie pop, building from quiet uncertainty to joyful release, acoustic guitar plus piano building to full band with driving drums and claps, male vocal earnest and hopeful with singalong chorus, studio quality polished mix, 120 BPM, key of D, reference Coldplay uplifting build, reference Holo Coves warmth
+
+LYRICS:
+[Verse 1]
+Dashboards flat and silence on the feed
+Refresh again like maybe that's the lead
+I read the thread, I ran the survey twice
+A hundred answers, none of them precise
+Am I close or am I chasing ghosts?
+The metric that I need, nobody knows
+
+[Pre-Chorus]
+But they say — oh, they say
+
+[Chorus]
+You'll know, you'll know
+When they're pulling it right from your hands
+You'll know, you'll know
+When the inbox can't keep up with plans
+Forty percent very disappointed
+If you lose this thing they built their life around it
+If you have to ask — you don't have it yet
+But you'll know
+
+[Verse 2]
+Superhuman ran the test one night
+"How would you feel if this was gone?" — the light
+Broke through the ceiling, forty percent said
+"I'd be lost without it" — that's the thread
+Not a graph or model, not a slide
+It's the pull you feel from the other side
+
+[Chorus]
+You'll know, you'll know
+When they're pulling it right from your hands
+You'll know, you'll know
+When the inbox can't keep up with plans
+Forty percent very disappointed
+If you lose this thing they built their life around it
+If you have to ask — you don't have it yet
+But you'll know
+
+[Outro]
+It feels like the product is being pulled
+Right out of your hands
+You'll know
+
+SAVE AS: product-market-fit-v1.mp3
+
+========================================
+SONG 3: The Maze
+========================================
+
+TITLE:
+The Maze
+
+STYLES:
+vocal-forward, spacious, dark indie folk, eerie and unsettling with hopeful resolution, fingerpicked acoustic guitar in minor key plus haunting cello and sparse ambient pads, male vocal intimate and hushed with ethereal falsetto, studio quality atmospheric mix, 92 BPM, key of Am, reference Bon Iver darkness, reference Jon Guerra contemplation
+
+LYRICS:
+[Verse 1]
+Had a pitch that everyone believed
+Friends at dinner nodding, "you should leave
+Your job tomorrow, this idea's gold"
+If it's easy to explain, I should've been told
+Easy sells at parties, sounds so bright
+But tarpits shine the hardest in the light
+
+[Chorus]
+You're not lost, you're in the maze
+Every wall's just another phase
+Most startup ideas are tarpit ideas
+Gleaming on the surface, sinking for years
+You're not lost, you're in the maze
+And the maze is how you find your way
+
+[Verse 2]
+Pivoted three times, the board went cold
+My cofounder says, "We do what we're told
+Or we do what's right — I can't do both"
+Six months in the dark, breaking every oath
+But every dead end taught me where to turn
+The only map worth having, you must earn
+
+[Chorus]
+You're not lost, you're in the maze
+Every wall's just another phase
+Most startup ideas are tarpit ideas
+Gleaming on the surface, sinking for years
+You're not lost, you're in the maze
+And the maze is how you find your way
+
+[Bridge]
+If your idea's easy at a dinner party
+It's probably a tarpit, gleaming, hearty
+The real ones make you sound a little crazy
+The real path forward's always hazy
+
+[Chorus]
+You're not lost, you're in the maze
+Every wall's just another phase
+Most startup ideas are tarpit ideas
+Gleaming on the surface, sinking for years
+You're not lost, you're in the maze
+And the maze is how you find your way
+
+[Outro]
+The maze is how you find your way
+
+SAVE AS: the-maze-v1.mp3
+
+========================================
+SONG 4: Taste
+========================================
+
+TITLE:
+Taste
+
+STYLES:
+vocal-forward, spacious, jazzy indie pop, sophisticated and warm late-night intimacy, Rhodes electric piano plus muted trumpet and upright bass and brushed drums, male vocal smooth and close-mic with jazz phrasing, studio quality warm analog mix, 96 BPM, key of Eb, reference Chet Baker cool, reference Jacob Collier sophistication, reference Jonathan Ogden warmth
+
+LYRICS:
+[Verse 1]
+The numbers say it's fine, the chart looks great
+Adoption's up, engagement's pulling weight
+But something in the corner of the screen
+Is half a pixel off from what I mean
+I couldn't tell you why — it just feels wrong
+Like hearing someone play the right note on the wrong song
+
+[Chorus]
+It's taste — can't put it in a deck
+It's taste — the thing you can't connect
+To frameworks or to data or OKRs
+It's knowing what the user never asks for
+Taste is saying no to good ideas
+And holding out through all the noise and fears
+The data told me no
+The user's face told me yes
+That's taste
+
+[Verse 2]
+She walked me through the prototype last night
+Said every interaction felt too tight
+I said, "But look, the metrics don't complain"
+She said, "The metrics miss the human pain"
+Pattern recognition plus the empathy
+To see the thing that isn't there but needs to be
+
+[Chorus]
+It's taste — can't put it in a deck
+It's taste — the thing you can't connect
+To frameworks or to data or OKRs
+It's knowing what the user never asks for
+Taste is saying no to good ideas
+And holding out through all the noise and fears
+The data told me no
+The user's face told me yes
+That's taste
+
+[Outro]
+You know it when you see it
+But you feel it first
+That's taste
+
+SAVE AS: taste-v1.mp3
+
+========================================
+SONG 5: Eleven Stars
+========================================
+
+TITLE:
+Eleven Stars
+
+STYLES:
+vocal-forward, spacious, warm indie folk building to orchestral, intimate start expanding to grand, acoustic guitar fingerpicking building to layered strings and horns and piano, male vocal tender and close-mic growing to full chest voice, studio quality cinematic mix, 104 BPM, key of C, reference Jon Guerra warmth, reference Holo Coves layering, reference Bon Iver build
+
+LYRICS:
+[Verse 1]
+A one-star stay is sleeping on the floor
+A three-star stay — you get a key and door
+A five-star night, the sheets are pressed and clean
+But what's a six? What does a seven mean?
+An eight, you've got a bottle and a note
+A nine, the host already learned your favorite coat
+
+[Chorus]
+What would eleven stars look like?
+What would eleven stars feel like?
+Elon picks you up in a rocket to the moon
+The last ten percent is ninety percent of the magic
+So dream absurd and then design the room
+Eleven stars, eleven stars
+
+[Verse 2]
+You start where gravity can't hold you down
+Imagining what can't exist in town
+Then work it backwards, what's the version here
+That keeps the wonder but removes the fear?
+Craft is caring 'bout the things they'll never
+Consciously notice, but they'll feel forever
+
+[Chorus]
+What would eleven stars look like?
+What would eleven stars feel like?
+Elon picks you up in a rocket to the moon
+The last ten percent is ninety percent of the magic
+So dream absurd and then design the room
+Eleven stars, eleven stars
+
+[Outro]
+Don't think ten percent better
+Think ten stars further
+Then come back down to Earth
+With something worth the work
+Eleven stars
+
+SAVE AS: eleven-stars-v1.mp3
+
+========================================
+SONG 6: Talk to Users
+========================================
+
+TITLE:
+Talk to Users
+
+STYLES:
+vocal-forward, spacious, acoustic pop, conversational and direct, acoustic guitar strumming plus soft percussion and warm bass and subtle keys, female vocal warm and conversational close-mic with singalong harmonies, studio quality clean mix, 112 BPM, key of D, reference Phoebe Bridgers directness, reference Iron and Wine intimacy
+
+VOCAL GENDER: FEMALE (Teresa Torres)
+
+LYRICS:
+[Verse 1]
+We built a survey, sent it to a list
+Analyzed the data, nothing we had missed
+Color-coded dashboards, segments, cohort views
+But somehow every launch still missed the cues
+There's a simpler answer, it's been here all along
+You're reading sheet music but you've never heard the song
+
+[Chorus]
+Talk to your users
+Sit with them, listen, watch them try
+Talk to your users
+One conversation saves you months of why
+You're not your user
+You're not your user
+Go sit with them
+
+[Verse 2]
+She watched him struggle on the second screen
+Clicking where the button should have been
+Five minutes told her more than months of charts
+The gap between the data and their hearts
+Continuous discovery, week by week
+The answers aren't in Slack, they're down the street
+
+[Chorus]
+Talk to your users
+Sit with them, listen, watch them try
+Talk to your users
+One conversation saves you months of why
+You're not your user
+You're not your user
+Go sit with them
+
+[Outro]
+One conversation
+Can save you six months
+Talk to your users
+Go sit with them
+
+SAVE AS: talk-to-users-v1.mp3
+
+========================================
+SONG 7: Ship It
+========================================
+
+TITLE:
+Ship It
+
+STYLES:
+vocal-forward, spacious, lo-fi hip-hop, urgent but not frantic driving beat, dusty vinyl drums plus deep bass and Rhodes chords and vinyl crackle, male vocal rhythmic and confident with half-sung half-rapped delivery, studio quality lo-fi polished mix, 90 BPM, key of Fm, reference Jacob Collier rhythmic complexity, reference lo-fi hip-hop production warmth
+
+LYRICS:
+[Verse 1]
+Another standup, another blocker filed
+Another sprint review where nothing's compiled
+The backlog's deep, the roadmap's three years wide
+But nothing's real until it's on the outside
+You polish, you refine, you hold it close
+Afraid the world might see the version that's the most
+Honest thing you've ever made — so let it go
+Speed is not reckless, speed is how you show you care
+
+[Chorus]
+Ship it, ship it, let it breathe
+If you're not embarrassed, you waited too long to leave
+Ship it, ship it, hit the key
+The best PMs ship — the rest make decks for free
+Ship it
+
+[Verse 2]
+Rabois said speed's a proxy for the love
+You push it out because the users' time's above
+Your ego and your fear of looking wrong
+A shipped experiment beats a perfect song
+That lives inside your laptop, never heard
+Velocity is just another word
+For giving people what they need today
+Not next quarter, not next year — ship it, no delay
+
+[Chorus]
+Ship it, ship it, let it breathe
+If you're not embarrassed, you waited too long to leave
+Ship it, ship it, hit the key
+The best PMs ship — the rest make decks for free
+Ship it
+
+[Outro]
+Stop planning
+Stop polishing
+Stop asking for one more review
+Ship it
+
+SAVE AS: ship-it-v1.mp3
+
+========================================
+SONG 8: Vibe Coding
+========================================
+
+TITLE:
+Vibe Coding
+
+STYLES:
+vocal-forward, spacious, lo-fi hip-hop with glitchy electronic elements, playful and futuristic, chopped synths plus glitchy beats and deep sub bass and digital textures, male vocal playful and rhythmic with vocoder accents, studio quality futuristic lo-fi mix, 95 BPM, key of Gm, reference Holo Coves electronic textures, reference Jacob Collier experimentalism
+
+LYRICS:
+[Verse 1]
+Never wrote a line of code before last spring
+Now I'm shipping features, building everything
+Prompt and pray and iterate and test
+Claude and Cursor doing all the rest
+The engineers are sweating, "that's not clean"
+But the users? They don't care what's behind the screen
+
+[Chorus]
+Vibe coding, vibe coding
+Don't read the code, just feel the flow
+Vibe coding, vibe coding
+Ship it before the model gets to know
+That you have no idea what you're doing
+But it works and that's the point
+Vibe coding
+
+[Verse 2]
+Best time to learn to code was years ago
+Second best time? Never — let the models go
+Designers building backends after lunch
+PMs shipping prototypes on a hunch
+Democratized the making, broke the gate
+A million new builders and they didn't have to wait
+
+[Chorus]
+Vibe coding, vibe coding
+Don't read the code, just feel the flow
+Vibe coding, vibe coding
+Ship it before the model gets to know
+That you have no idea what you're doing
+But it works and that's the point
+Vibe coding
+
+[Outro]
+Welcome to the era
+Where everyone can build
+Vibe coding
+
+SAVE AS: vibe-coding-v1.mp3
+
+========================================
+SONG 9: Feature Factory
+========================================
+
+TITLE:
+Feature Factory
+
+STYLES:
+vocal-forward, spacious, industrial-tinged lo-fi, mechanical and repetitive with rebellious breakdown, distorted drum machine plus grinding bass and metallic percussion and sparse dark synths, male vocal monotone verses building to passionate breakdown, studio quality gritty industrial mix, 88 BPM, key of Cm, reference Jon Guerra intensity, reference lo-fi production with industrial edge
+
+LYRICS:
+[Verse 1]
+Monday morning, Jira's full again
+Ticket in, feature out, ticket in
+No one asked if this should exist at all
+Just build the thing and ship it down the hall
+Roadmap set by stakeholders who don't use
+The product — but they've got opinions and reviews
+
+[Chorus]
+Feature factory, feature factory
+Tickets in and features out
+Feature factory, feature factory
+A product team owns the problem
+A feature team owns the doubt
+We're not building, we're just filling
+Jira tickets to the ceiling
+Feature factory never ends
+
+[Verse 2]
+Discovery's a word we say in docs
+But every sprint is predetermined blocks
+No autonomy, no room to think or test
+Just velocity metrics dressed up as the best
+The users send another bug report
+But we're heads-down on a feature no one bought
+
+[Chorus]
+Feature factory, feature factory
+Tickets in and features out
+Feature factory, feature factory
+A product team owns the problem
+A feature team owns the doubt
+We're not building, we're just filling
+Jira tickets to the ceiling
+Feature factory never ends
+
+[Bridge]
+What if we stopped the line?
+What if we asked why?
+What if we owned the outcome, not the output?
+What if we had the time?
+
+[Outro]
+Feature factory
+Is this what you signed up for?
+Feature factory
+Break the line
+
+SAVE AS: feature-factory-v1.mp3
+
+========================================
+SONG 10: Imposter
+========================================
+
+TITLE:
+Imposter
+
+STYLES:
+vocal-forward, spacious, ambient folk, vulnerable and raw, reverbed acoustic guitar plus ambient pads and sparse piano and breath sounds, female vocal raw and vulnerable close-mic with whispered doubles, studio quality intimate atmospheric mix, 82 BPM, key of Em, reference Phoebe Bridgers vulnerability, reference Bon Iver rawness, reference Billie Eilish intimacy
+
+VOCAL GENDER: FEMALE (Julie Zhuo)
+
+LYRICS:
+[Verse 1]
+Walked into the room and took a seat
+Looked around the table, felt the heat
+Everyone seemed certain, everyone belonged
+Everyone but me — I must be wrong
+Rehearsed my intro seven times last night
+Still convinced they'd see right through the light
+
+[Chorus]
+Everyone at the table
+Thinks everyone else belongs more
+Everyone at the table
+Is guarding the same locked door
+Imposter, imposter
+The feeling never goes away
+You just learn to work alongside it
+Day by day by day
+
+[Verse 2]
+She's a VP now, she runs the floor
+But every morning pauses at the door
+Wondering when they'll finally figure out
+She's been improvising — filled with doubt
+He shipped the product everyone admires
+But scrolls through LinkedIn questioning what inspires
+Anyone to think that he's the one
+Who earned the seat — the work is never done
+
+[Chorus]
+Everyone at the table
+Thinks everyone else belongs more
+Everyone at the table
+Is guarding the same locked door
+Imposter, imposter
+The feeling never goes away
+You just learn to work alongside it
+Day by day by day
+
+[Outro]
+Your imposter syndrome is lying to you
+But I know that doesn't make it quiet
+Day by day by day
+
+SAVE AS: imposter-v1.mp3
+
+========================================
+SONG 11: Burnout
+========================================
+
+TITLE:
+Burnout
+
+STYLES:
+vocal-forward, spacious, slow acoustic soul, heavy and tired but beautiful, nylon guitar plus warm cello and soft organ and muted percussion, male vocal weary and soulful close-mic with aching falsetto, studio quality warm soulful mix, 72 BPM, key of Bb, reference Bon Iver weariness, reference Chet Baker melancholy, reference Jon Guerra soul
+
+LYRICS:
+[Verse 1]
+Five AM alarm, the slack is lit
+Fourteen notifications, none of it
+Is what I signed up for back in the day
+When building things felt more like play
+I can't remember when the fire went cold
+Just woke up one morning feeling old
+
+[Chorus]
+Burnout isn't working too much
+It's working on the wrong things
+Pouring from a cup that's empty to the touch
+Optimizing for a game you don't want to win
+And the scoreboard's bright but the lights are wearing thin
+Burnout, burnout
+When did I stop breathing?
+
+[Verse 2]
+She said, "I realized at 2 AM
+I'm chasing someone else's dream again"
+The title, the comp, the logo on the chest
+None of it was worth this hollow rest
+It's not the hours, it's the hollow ache
+Of building castles for someone else's sake
+
+[Chorus]
+Burnout isn't working too much
+It's working on the wrong things
+Pouring from a cup that's empty to the touch
+Optimizing for a game you don't want to win
+And the scoreboard's bright but the lights are wearing thin
+Burnout, burnout
+When did I stop breathing?
+
+[Outro]
+You can't pour from an empty cup
+But you can set it down
+You can set it down
+
+SAVE AS: burnout-v1.mp3
+
+========================================
+SONG 12: The IC Track
+========================================
+
+TITLE:
+The IC Track
+
+STYLES:
+vocal-forward, spacious, neo-soul, introspective late-night career reflection, Rhodes electric piano plus warm bass and brushed drums and muted trumpet, male vocal smooth and introspective with soulful runs, studio quality warm neo-soul mix, 86 BPM, key of Ab, reference Chet Baker contemplation, reference Jacob Collier soul, reference Jonathan Ogden intimacy
+
+LYRICS:
+[Verse 1]
+They offered me the title and the team
+Director-level, living someone's dream
+But two AM I'm staring at the wall
+Missing when I used to build it all
+The calendar is full, the code is gone
+I traded craft for meetings before dawn
+
+[Chorus]
+Management is not a promotion
+It's just a different road
+The best ICs create more value
+Than most VPs will ever know
+Choose the path that gives you energy
+Not the one that gives you status
+At two AM, which version of you
+Is still awake because they want to be?
+
+[Verse 2]
+She went back to IC after three hard years
+Leading teams and swallowing the fears
+Her manager said, "That's a step back, no?"
+She said, "It's the first step forward that I know"
+The title shrank, the joy came rushing in
+Building things again — she felt her skin
+Come alive with purpose, not with power
+And shipped more impact in a single hour
+
+[Chorus]
+Management is not a promotion
+It's just a different road
+The best ICs create more value
+Than most VPs will ever know
+Choose the path that gives you energy
+Not the one that gives you status
+At two AM, which version of you
+Is still awake because they want to be?
+
+[Outro]
+The fork in the road isn't up or down
+It's just two different kinds of ground
+Choose the one where your feet want to stay
+The IC track, the IC track
+
+SAVE AS: the-ic-track-v1.mp3
+
+========================================
+DONE! Download best versions to:
+lenny-greatest-hits/public/audio/
+========================================

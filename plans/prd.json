@@ -1,0 +1,65 @@
+{
+  "features": [
+    {
+      "id": 1,
+      "category": "feature",
+      "priority": 2,
+      "description": "Add share buttons to track page and NowPlayingBar. DONE looks like: Each track page has Share to X, Share to LinkedIn, and Copy Link buttons. X share pre-fills: '🎵 [Song Title] — Lenny's Greatest Hits [URL]'. LinkedIn share pre-fills similarly. Copy link shows a 'Copied!' toast. NowPlayingBar gets a small share icon next to controls. DO NOT touch audio playback logic, lyrics component, or album data structure. VERIFY: pnpm build passes, click Share on track page and NowPlayingBar, confirm X/LinkedIn open with pre-filled text, confirm copy link works.",
+      "steps": [
+        "Update TrackPageClient.tsx share section — replace single Share button with 3 buttons: Share to X, Share to LinkedIn, Copy Link",
+        "X button opens twitter.com/intent/tweet with text and url params",
+        "LinkedIn button opens linkedin.com/sharing/share-offsite with url param",
+        "Copy Link button copies URL to clipboard and shows brief 'Copied!' feedback",
+        "Add share icon to NowPlayingBar.tsx next to play controls that opens same share options",
+        "pnpm build passes"
+      ],
+      "files": ["app/track/[slug]/TrackPageClient.tsx", "components/NowPlayingBar.tsx"],
+      "passes": false
+    },
+    {
+      "id": 2,
+      "category": "feature",
+      "priority": 2,
+      "description": "Auto-play next album when current album finishes. DONE looks like: When the last track of an album finishes playing, automatically start playing the first track of the next album in order (Founders → Product → Builders → The Human Side). After the last album, stop. DO NOT change the track data structure, album ordering in albums.ts, or modify the UI components. VERIFY: pnpm build passes, play the last track of Founders album, confirm it auto-starts Product album track 1 when it ends.",
+      "steps": [
+        "In lib/audio-context.tsx, find the onended handler for the audio element",
+        "When queue is exhausted (no next track), look up the current album, find the next album in the albums array, and set the queue to that album's tracks starting at index 0",
+        "Import albums from lib/albums and use the order defined there",
+        "If on the last album (The Human Side), stop playback",
+        "pnpm build passes"
+      ],
+      "files": ["lib/audio-context.tsx", "lib/albums.ts"],
+      "passes": false
+    },
+    {
+      "id": 3,
+      "category": "feature",
+      "priority": 2,
+      "description": "Add play count tracking using Vercel KV (free tier). DONE looks like: Each time a track starts playing, increment a counter in Vercel KV. Display play count next to each track on album pages (e.g. '142 plays'). Add a 'Most Played' sort option on the home page. DO NOT modify audio files, lyrics, or album data structure. DO NOT add Supabase. VERIFY: pnpm build passes, play a track and refresh — count increments, album page shows play counts, sort toggle works on home page.",
+      "steps": [
+        "Install @vercel/kv: pnpm add @vercel/kv",
+        "Create app/api/plays/route.ts — POST increments count for a slug, GET returns all counts",
+        "In audio-context.tsx, fire a POST to /api/plays when a track starts playing (debounce — only count if played >5 seconds)",
+        "Create a usePlayCounts hook that fetches counts on mount",
+        "Display play count in AlbumPageClient.tsx next to each track duration",
+        "Add sort toggle on home page: 'By Album' (default) vs 'Most Played' (flat list sorted by count)",
+        "pnpm build passes"
+      ],
+      "files": ["app/api/plays/route.ts", "lib/audio-context.tsx", "app/album/[slug]/AlbumPageClient.tsx", "app/page.tsx"],
+      "passes": false
+    },
+    {
+      "id": 4,
+      "category": "polish",
+      "priority": 3,
+      "description": "Update home page subtitle to show correct track count (10 not 12) and improve album descriptions to be more JTBD/human. DONE looks like: Home page says '10 songs from 638 episodes' not '12 songs'. Album subtitles are human-readable and describe the feeling, not production jargon. Builders album description acknowledges it only has 2 tracks. DO NOT change audio, lyrics, or track data. VERIFY: pnpm build passes, home page shows correct count, descriptions read naturally.",
+      "steps": [
+        "Update app/page.tsx subtitle from '12 songs' to '10 songs'",
+        "Review and update album subtitle/description in lib/albums.ts for each album to be human/JTBD focused",
+        "pnpm build passes"
+      ],
+      "files": ["app/page.tsx", "lib/albums.ts"],
+      "passes": false
+    }
+  ]
+}

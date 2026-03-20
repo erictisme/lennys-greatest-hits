@@ -1,13 +1,13 @@
 "use client";
 
 import Link from "next/link";
-import { ArrowLeft, Play, Pause, Clock } from "lucide-react";
-import { motion } from "framer-motion";
+import { ArrowLeft, Play, Pause, Clock, MoreHorizontal, Share2, Check } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
 import { getAlbumBySlug } from "@/lib/tracks";
 import { notFound } from "next/navigation";
 import { useAudio } from "@/lib/audio-context";
 import { trackEvent } from "@/lib/analytics";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 
 const gradientClass: Record<string, string> = {
   founders: "gradient-founders",
@@ -21,6 +21,49 @@ export default function AlbumPageClient({ slug }: { slug: string }) {
   const audio = useAudio();
 
   const [playCounts, setPlayCounts] = useState<Record<string, number>>({});
+  const [openMenu, setOpenMenu] = useState<string | null>(null);
+  const [copiedSlug, setCopiedSlug] = useState<string | null>(null);
+  const menuRef = useRef<HTMLDivElement>(null);
+
+  // Close menu on outside click
+  useEffect(() => {
+    const handleClick = (e: MouseEvent) => {
+      if (menuRef.current && !menuRef.current.contains(e.target as Node)) {
+        setOpenMenu(null);
+      }
+    };
+    if (openMenu) {
+      document.addEventListener("mousedown", handleClick);
+      return () => document.removeEventListener("mousedown", handleClick);
+    }
+  }, [openMenu]);
+
+  const getTrackUrl = (trackSlug: string) =>
+    typeof window !== "undefined" ? `${window.location.origin}/track/${trackSlug}` : "";
+
+  const handleShareX = (trackSlug: string, title: string) => {
+    const url = getTrackUrl(trackSlug);
+    const text = encodeURIComponent(`🎵 ${title} — Lenny's Greatest Hits`);
+    window.open(`https://twitter.com/intent/tweet?text=${text}&url=${encodeURIComponent(url)}`, "_blank");
+    trackEvent("share_clicked", { platform: "x", track: trackSlug, track_title: title });
+    setOpenMenu(null);
+  };
+
+  const handleShareLinkedIn = (trackSlug: string, title: string) => {
+    const url = getTrackUrl(trackSlug);
+    window.open(`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(url)}`, "_blank");
+    trackEvent("share_clicked", { platform: "linkedin", track: trackSlug, track_title: title });
+    setOpenMenu(null);
+  };
+
+  const handleCopyLink = async (trackSlug: string, title: string) => {
+    const url = getTrackUrl(trackSlug);
+    await navigator.clipboard.writeText(url);
+    setCopiedSlug(trackSlug);
+    setTimeout(() => setCopiedSlug(null), 2000);
+    trackEvent("share_clicked", { platform: "copy_link", track: trackSlug, track_title: title });
+    setOpenMenu(null);
+  };
 
   // Load play counts on mount and refresh periodically while playing
   useEffect(() => {
@@ -195,6 +238,58 @@ export default function AlbumPageClient({ slug }: { slug: string }) {
                       <Clock className="w-3 h-3" />
                       {track.duration}
                     </span>
+                  </div>
+
+                  {/* Share Menu */}
+                  <div className="relative" ref={openMenu === track.slug ? menuRef : undefined}>
+                    <button
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        setOpenMenu(openMenu === track.slug ? null : track.slug);
+                      }}
+                      className="opacity-0 group-hover:opacity-100 focus:opacity-100 transition-opacity p-1.5 rounded-md hover:bg-black/[0.06]"
+                      aria-label="Share options"
+                    >
+                      <MoreHorizontal className="w-4 h-4 text-muted-foreground/60" />
+                    </button>
+
+                    <AnimatePresence>
+                      {openMenu === track.slug && (
+                        <motion.div
+                          initial={{ opacity: 0, scale: 0.95, y: -4 }}
+                          animate={{ opacity: 1, scale: 1, y: 0 }}
+                          exit={{ opacity: 0, scale: 0.95, y: -4 }}
+                          transition={{ duration: 0.15 }}
+                          className="absolute right-0 top-full mt-1 z-50 bg-white rounded-lg shadow-lg border border-border/50 py-1 min-w-[160px]"
+                        >
+                          <button
+                            onClick={() => handleShareX(track.slug, track.title)}
+                            className="flex items-center gap-2.5 w-full px-3 py-2 text-sm text-foreground/80 hover:bg-black/[0.04] transition-colors"
+                          >
+                            <Share2 className="w-3.5 h-3.5" />
+                            Share to X
+                          </button>
+                          <button
+                            onClick={() => handleShareLinkedIn(track.slug, track.title)}
+                            className="flex items-center gap-2.5 w-full px-3 py-2 text-sm text-foreground/80 hover:bg-black/[0.04] transition-colors"
+                          >
+                            <Share2 className="w-3.5 h-3.5" />
+                            Share to LinkedIn
+                          </button>
+                          <button
+                            onClick={() => handleCopyLink(track.slug, track.title)}
+                            className="flex items-center gap-2.5 w-full px-3 py-2 text-sm text-foreground/80 hover:bg-black/[0.04] transition-colors"
+                          >
+                            {copiedSlug === track.slug ? (
+                              <Check className="w-3.5 h-3.5 text-green-600" />
+                            ) : (
+                              <Share2 className="w-3.5 h-3.5" />
+                            )}
+                            {copiedSlug === track.slug ? "Copied!" : "Copy Link"}
+                          </button>
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
                   </div>
                 </div>
 

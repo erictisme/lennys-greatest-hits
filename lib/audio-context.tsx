@@ -28,6 +28,7 @@ interface AudioState {
   prev: () => void;
   playAlbum: (albumSlug: string, startIndex?: number) => void;
   accentColor: string;
+  getPlayCount: (slug: string) => number;
 }
 
 const AudioContext = createContext<AudioState | null>(null);
@@ -132,6 +133,37 @@ export function AudioProvider({ children }: { children: ReactNode }) {
       audio.src = "";
     };
   }, []); // eslint-disable-line react-hooks/exhaustive-deps
+
+  // Play count tracking: increment after 5 seconds of playback
+  const playCountedRef = useRef<string | null>(null);
+  useEffect(() => {
+    if (!currentTrack) return;
+    // Reset when track changes
+    playCountedRef.current = null;
+  }, [currentTrack?.slug]); // eslint-disable-line react-hooks/exhaustive-deps
+
+  useEffect(() => {
+    if (!currentTrack || !isPlaying || currentTime < 5) return;
+    if (playCountedRef.current === currentTrack.slug) return;
+    playCountedRef.current = currentTrack.slug;
+    try {
+      const key = "lgh-play-counts";
+      const counts = JSON.parse(localStorage.getItem(key) || "{}");
+      counts[currentTrack.slug] = (counts[currentTrack.slug] || 0) + 1;
+      localStorage.setItem(key, JSON.stringify(counts));
+    } catch {
+      // ignore
+    }
+  }, [currentTrack, isPlaying, currentTime]);
+
+  const getPlayCount = useCallback((slug: string): number => {
+    try {
+      const counts = JSON.parse(localStorage.getItem("lgh-play-counts") || "{}");
+      return counts[slug] || 0;
+    } catch {
+      return 0;
+    }
+  }, []);
 
   // When queue changes and we're in auto-advance, update the ended handler
   const queueRef = useRef(queue);
@@ -278,6 +310,7 @@ export function AudioProvider({ children }: { children: ReactNode }) {
         prev,
         playAlbum,
         accentColor,
+        getPlayCount,
       }}
     >
       {children}

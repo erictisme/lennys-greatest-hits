@@ -54,44 +54,44 @@
 }
 
 :root {
-  --background: #0a0a0a;
-  --foreground: #fafafa;
-  --card: #141414;
-  --card-foreground: #fafafa;
-  --popover: #141414;
-  --popover-foreground: #fafafa;
-  --primary: #fafafa;
-  --primary-foreground: #0a0a0a;
-  --secondary: #1e1e1e;
-  --secondary-foreground: #fafafa;
-  --muted: #1e1e1e;
-  --muted-foreground: #a1a1aa;
-  --accent: #1e1e1e;
-  --accent-foreground: #fafafa;
+  --background: #ffffff;
+  --foreground: #1a1a2e;
+  --card: #ffffff;
+  --card-foreground: #1a1a2e;
+  --popover: #ffffff;
+  --popover-foreground: #1a1a2e;
+  --primary: #d97706;
+  --primary-foreground: #ffffff;
+  --secondary: #fef3c7;
+  --secondary-foreground: #92400e;
+  --muted: #f5f5f4;
+  --muted-foreground: #78716c;
+  --accent: #fffbeb;
+  --accent-foreground: #92400e;
   --destructive: #ef4444;
-  --border: rgba(255, 255, 255, 0.08);
-  --input: rgba(255, 255, 255, 0.12);
-  --ring: rgba(255, 255, 255, 0.2);
-  --chart-1: #3b82f6;
-  --chart-2: #10b981;
-  --chart-3: #f59e0b;
-  --chart-4: #8b5cf6;
-  --chart-5: #ef4444;
-  --radius: 0.75rem;
-  --sidebar: #141414;
-  --sidebar-foreground: #fafafa;
-  --sidebar-primary: #fafafa;
-  --sidebar-primary-foreground: #0a0a0a;
-  --sidebar-accent: #1e1e1e;
-  --sidebar-accent-foreground: #fafafa;
-  --sidebar-border: rgba(255, 255, 255, 0.08);
-  --sidebar-ring: rgba(255, 255, 255, 0.2);
+  --border: #e7e5e4;
+  --input: #d6d3d1;
+  --ring: #d97706;
+  --chart-1: #d97706;
+  --chart-2: #b45309;
+  --chart-3: #92400e;
+  --chart-4: #78350f;
+  --chart-5: #451a03;
+  --radius: 0.625rem;
+  --sidebar: #fef3c7;
+  --sidebar-foreground: #1a1a2e;
+  --sidebar-primary: #d97706;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #fffbeb;
+  --sidebar-accent-foreground: #92400e;
+  --sidebar-border: #e7e5e4;
+  --sidebar-ring: #d97706;
 
-  /* Album accent colors */
-  --album-founders: #f59e0b;
-  --album-product: #3b82f6;
-  --album-builders: #10b981;
-  --album-human: #8b5cf6;
+  /* Album accent colors — all warm Lenny orange family */
+  --album-founders: #d97706;
+  --album-product: #b45309;
+  --album-builders: #92400e;
+  --album-human: #78350f;
 }
 
 @layer base {
@@ -106,40 +106,37 @@
   }
 }
 
-/* Premium card glass effect */
+/* Premium card effect — light mode */
 .card-glass {
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.06);
-  backdrop-filter: blur(12px);
+  background: #ffffff;
+  border: 1px solid #e7e5e4;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
 }
 
 .card-glass:hover {
-  background: rgba(255, 255, 255, 0.05);
-  border-color: rgba(255, 255, 255, 0.1);
+  background: #fffbeb;
+  border-color: #d97706;
+  box-shadow: 0 4px 12px rgba(217, 119, 6, 0.12);
 }
 
-/* Album card glow on hover — set --glow-color via inline style */
+/* Album card glow on hover */
 .card-glow {
-  transition: box-shadow 0.3s ease;
+  transition: box-shadow 0.3s ease, border-color 0.3s ease;
 }
 
-.card-glow:hover {
-  box-shadow: 0 0 32px -8px var(--glow-color, rgba(255, 255, 255, 0.1));
-}
-
-/* Album gradient backgrounds */
+/* Album gradient backgrounds — warm Lenny tones */
 .gradient-founders {
-  background: linear-gradient(135deg, rgba(245, 158, 11, 0.15) 0%, rgba(245, 158, 11, 0.03) 100%);
+  background: linear-gradient(135deg, rgba(217, 119, 6, 0.08) 0%, rgba(254, 243, 199, 0.3) 100%);
 }
 
 .gradient-product {
-  background: linear-gradient(135deg, rgba(59, 130, 246, 0.15) 0%, rgba(59, 130, 246, 0.03) 100%);
+  background: linear-gradient(135deg, rgba(180, 83, 9, 0.08) 0%, rgba(254, 243, 199, 0.3) 100%);
 }
 
 .gradient-builders {
-  background: linear-gradient(135deg, rgba(16, 185, 129, 0.15) 0%, rgba(16, 185, 129, 0.03) 100%);
+  background: linear-gradient(135deg, rgba(146, 64, 14, 0.08) 0%, rgba(254, 243, 199, 0.3) 100%);
 }
 
 .gradient-human {
-  background: linear-gradient(135deg, rgba(139, 92, 246, 0.15) 0%, rgba(139, 92, 246, 0.03) 100%);
+  background: linear-gradient(135deg, rgba(120, 53, 15, 0.08) 0%, rgba(254, 243, 199, 0.3) 100%);
 }

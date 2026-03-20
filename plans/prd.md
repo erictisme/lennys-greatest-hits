@@ -525,3 +525,27 @@ Use the unofficial Suno API. Set up a simple Node.js script at `scripts/generate
 - [x] Format as: "Based on Lenny's episode with Brian Chesky" not "Brian Chesky on Airbnb's early days — Brian Chesky" (redundant guest name)
 - [x] DO NOT modify audio or lyrics
 - [x] `pnpm build` passes
+
+### Task 31: Research and add real source URLs for all "Inspired by" links
+- [ ] For EVERY source in lib/albums.ts that has `url: ""`, use the Lenny MCP tools to find the real URL
+- [ ] Use `mcp__lennysdata__search_content` with the guest name and topic to find the matching episode/newsletter
+- [ ] Use `mcp__lennysdata__read_content` to confirm it's the right piece and get the URL
+- [ ] Update each source's `url` field in lib/albums.ts with the real URL from the MCP results
+- [ ] There are ~15 sources across all tracks — research EVERY one, do not skip any
+- [ ] If the source wraps in an `<a>` tag when URL is present, verify the link renders correctly in TrackPageClient.tsx
+- [ ] If the component doesn't render links when URL is non-empty, update TrackPageClient.tsx to wrap sources with real URLs in clickable `<a>` tags (target="_blank", rel="noopener noreferrer") with the ExternalLink icon
+- [ ] DO NOT modify audio, lyrics, or album structure
+- [ ] DO NOT invent URLs — only use URLs returned by the MCP tools
+- [ ] `pnpm build` passes
+
+### Task 32: Display album art and track cover images on the site
+- [ ] Cover images have been extracted from MP3s and are in `public/covers/` — album covers at `founders.jpg`, `product.jpg`, `builders.jpg`, `the-human-side.jpg` and per-track covers at `{track-slug}.jpg`
+- [ ] On the HOME page (app/page.tsx): display album coverImage in each album card — show a small album art thumbnail (e.g., 48x48 or 64x64 rounded) alongside the album title/subtitle
+- [ ] On the ALBUM page (AlbumPageClient.tsx): display the album coverImage in the header section — a larger album art image (e.g., 200x200) positioned nicely with the album title/description
+- [ ] On the TRACK page (TrackPageClient.tsx): display the per-track cover image using `/covers/{track.slug}.jpg` — show it as a hero image or alongside the track title
+- [ ] Use Next.js `<Image>` component with proper width/height/alt attributes
+- [ ] Images should have rounded corners and a subtle shadow for the premium Spotify-like aesthetic
+- [ ] Add a `coverImage` field to the Track type in lib/types.ts (value: `/covers/{slug}.jpg`)
+- [ ] Populate the coverImage for each track in lib/albums.ts
+- [ ] DO NOT modify audio files or lyrics
+- [ ] `pnpm build` passes
