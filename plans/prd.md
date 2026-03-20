@@ -563,34 +563,49 @@ There are ~15 sources across all 10 tracks in lib/albums.ts, all with `url: ""`.
 - [ ] "Managing nerves, anxiety, and burnout" (Jonny Miller) - burnout
 
 - [ ] DO NOT modify audio, lyrics, or album structure
-- [ ] DO NOT invent URLs. If a source can't be found in the MCP, leave url as "" and move on
+- [ ] The goal is to find the Lenny Substack article (lennysnewsletter.com or lennyrachitsky.com) for each source. If no Lenny article exists for that source, you may link to the original source (e.g., Paul Graham's blog) but update the source `title` to indicate it's external (e.g., "Do Things That Don't Scale (paulgraham.com)")
+- [ ] DO NOT invent URLs. If a source can't be found anywhere, leave url as "" and move on
 - [ ] `pnpm build` passes
 
-### Task 32: Add album art and track cover images to the existing layout
+### Task 32: Spotify-style dark layout with album art (MAJOR UI OVERHAUL)
 
-Keep the current light Lenny-style theme. Do NOT switch to a dark theme. Just add cover art images to the existing pages.
+Redesign the entire site to match Spotify's layout. This needs to scale to 300+ songs across many albums. Dark theme throughout (bg-zinc-950/bg-black, white text). Cover images are in `public/covers/`.
 
-Cover images are already in `public/covers/`. Album covers: `founders.jpg`, `product.jpg`, `builders.jpg`, `the-human-side.jpg`. Per-track covers: `{track-slug}.jpg`.
+Reference the Spotify artist page and album detail page layouts exactly.
 
-**HOME PAGE (app/page.tsx):**
-- [ ] Add album cover art to each album card. Show a square thumbnail (~64x64, rounded-lg) to the left of the album title/subtitle
-- [ ] Keep the existing card layout and light theme, just add the image
+**HOME PAGE (app/page.tsx) - Spotify artist page style:**
+- [ ] Dark background (bg-zinc-950 or bg-black)
+- [ ] Hero section at top: large "Lenny's Greatest Hits" title in bold white, subtitle below in gray
+- [ ] Below hero: "Discography" section heading
+- [ ] Album grid: horizontal row of square album cover art cards (~160-180px wide)
+- [ ] Each card: square cover image (rounded-sm, ~4px radius like Spotify), album title below in white, track count in gray below that
+- [ ] Responsive: 2 cols mobile, 3-4 cols tablet, 4-6 cols desktop
+- [ ] Cards link to album page
+- [ ] All text white/gray on dark background
 
-**ALBUM PAGE (AlbumPageClient.tsx):**
-- [ ] Add album cover art in the header section, to the left of the album title/description (~140x140, rounded-lg)
-- [ ] In each track row, add a small cover art thumbnail (~40x40, rounded) between the track number and the track title, using `/covers/{track.slug}.jpg`
-- [ ] Keep all existing styling, gradients, and interactions
+**ALBUM PAGE (AlbumPageClient.tsx) - Spotify album detail style:**
+- [ ] Dark background throughout
+- [ ] Header: album cover art on left (~160x160, rounded-sm) with album title in large bold white text to the right, metadata line below ("Album . {track count} songs") in gray
+- [ ] Play All button (green circle with play icon, or use album accent color)
+- [ ] Tracklist header row: "#" | "Title" | clock icon for duration (small gray text)
+- [ ] Track rows: track number (gray) | small cover art thumbnail (~40x40, rounded-sm) | title in white + genre/mood in gray below | duration on far right in gray
+- [ ] Hover state on rows: subtle bg highlight (bg-white/5 or bg-white/10)
+- [ ] Keep existing play/pause and share menu functionality
+- [ ] Remove the gradient header backgrounds, use dark flat backgrounds instead
 
 **TRACK PAGE (TrackPageClient.tsx):**
-- [ ] Add the per-track cover image using `/covers/{track.slug}.jpg` near the track title in the header area (~160x160, rounded-lg with subtle shadow)
-- [ ] Keep the existing light theme and layout
+- [ ] Dark background throughout
+- [ ] Track cover image (~200x200, rounded-sm) near track title
+- [ ] All text colors updated: white for headings, gray for body, muted for metadata
+- [ ] Keep all existing sections (quote, story, lyrics, sources, share)
 
-**Data layer:**
-- [ ] Add a `coverImage` field to the Track type in lib/types.ts (value: `/covers/{slug}.jpg`)
+**Global changes:**
+- [ ] Update globals.css: dark background by default, remove light-theme gradients
+- [ ] Update NowPlayingBar for dark theme consistency
+- [ ] Add `coverImage` field to Track type in lib/types.ts (value: `/covers/{slug}.jpg`)
 - [ ] Populate coverImage for each track in lib/albums.ts
 - [ ] Use Next.js `<Image>` component with proper width/height/alt
 - [ ] DO NOT modify audio files or lyrics
-- [ ] DO NOT change the color theme or background colors
 - [ ] `pnpm build` passes
 
 ### Task 33: Remove em dashes from all user-facing text
