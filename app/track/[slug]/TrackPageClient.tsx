@@ -45,6 +45,19 @@ export default function TrackPageClient({ slug }: { slug: string }) {
     }
   }, [slug]); // eslint-disable-line react-hooks/exhaustive-deps
 
+  // Spacebar play/pause
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.code !== "Space") return;
+      const tag = (e.target as HTMLElement)?.tagName;
+      if (tag === "INPUT" || tag === "TEXTAREA" || (e.target as HTMLElement)?.isContentEditable) return;
+      e.preventDefault();
+      audio.togglePlay();
+    };
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [audio]);
+
   // Track listening depth milestones (25/50/75/100%)
   const milestonesHit = useRef<Set<number>>(new Set());
   useEffect(() => {

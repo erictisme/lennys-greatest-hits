@@ -2,3 +2,4 @@
 Task 25b: Added storyBehind liner notes to all 10 tracks in lib/albums.ts and displayed them on TrackPageClient.tsx between key quote and lyrics.
 Task 26: SKIPPED — deployment to Vercel requires user credentials and is a shared-state action.
 Task 27: Fact-checked all 10 tracks against Lenny MCP. Fixed: Ship It quote attribution (Keith Rabois→Reid Hoffman), Vibe Coding source (Karpathy not a podcast guest), The Maze B2B/B2C inconsistency, vague sources for Imposter and Burnout now reference actual episodes.
+Task 28: Added global keydown listener for spacebar play/pause on track page. Prevents default scroll, skips input/textarea/contentEditable elements.

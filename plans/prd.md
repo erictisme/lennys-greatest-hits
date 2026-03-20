@@ -504,11 +504,11 @@ Use the unofficial Suno API. Set up a simple Node.js script at `scripts/generate
 - [x] `pnpm build` passes
 
 ### Task 28: Fix spacebar play/pause on track page
-- [ ] Add a global keydown listener in TrackPageClient.tsx — when spacebar is pressed, toggle play/pause
-- [ ] Prevent default scroll behavior when spacebar is pressed (e.preventDefault())
-- [ ] Only activate when not focused on an input/textarea element
-- [ ] DO NOT modify audio-context internals, just call audio.togglePlay()
-- [ ] `pnpm build` passes
+- [x] Add a global keydown listener in TrackPageClient.tsx — when spacebar is pressed, toggle play/pause
+- [x] Prevent default scroll behavior when spacebar is pressed (e.preventDefault())
+- [x] Only activate when not focused on an input/textarea element
+- [x] DO NOT modify audio-context internals, just call audio.togglePlay()
+- [x] `pnpm build` passes
 
 ### Task 29: Fix share button — make it copy link by default with toast
 - [ ] On track page, the primary Share button should COPY THE LINK to clipboard immediately (not open native share dialog)
