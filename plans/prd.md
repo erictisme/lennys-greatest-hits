@@ -474,8 +474,8 @@ Use the unofficial Suno API. Set up a simple Node.js script at `scripts/generate
 - [x] `pnpm build` passes
 
 ### Task 25: Add play count display using localStorage (no backend)
-- [ ] Create a simple play counter using localStorage — increment count per track slug when track starts playing (debounce: only count if played >5 seconds)
-- [ ] Display play count next to each track on album pages (e.g. "3 plays") — only show if count > 0
-- [ ] This is a local-only counter (per browser) — no backend needed for now
-- [ ] DO NOT modify audio files, lyrics, or album data structure
-- [ ] `pnpm build` passes
+- [x] Create a simple play counter using localStorage — increment count per track slug when track starts playing (debounce: only count if played >5 seconds)
+- [x] Display play count next to each track on album pages (e.g. "3 plays") — only show if count > 0
+- [x] This is a local-only counter (per browser) — no backend needed for now
+- [x] DO NOT modify audio files, lyrics, or album data structure
+- [x] `pnpm build` passes

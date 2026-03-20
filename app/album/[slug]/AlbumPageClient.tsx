@@ -7,7 +7,7 @@ import { getAlbumBySlug } from "@/lib/tracks";
 import { notFound } from "next/navigation";
 import { useAudio } from "@/lib/audio-context";
 import { trackEvent } from "@/lib/analytics";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 const gradientClass: Record<string, string> = {
   founders: "gradient-founders",
@@ -19,6 +19,23 @@ const gradientClass: Record<string, string> = {
 export default function AlbumPageClient({ slug }: { slug: string }) {
   const album = getAlbumBySlug(slug);
   const audio = useAudio();
+
+  const [playCounts, setPlayCounts] = useState<Record<string, number>>({});
+
+  // Load play counts on mount and refresh periodically while playing
+  useEffect(() => {
+    const loadCounts = () => {
+      try {
+        const counts = JSON.parse(localStorage.getItem("lgh-play-counts") || "{}");
+        setPlayCounts(counts);
+      } catch {
+        // ignore
+      }
+    };
+    loadCounts();
+    const interval = setInterval(loadCounts, 3000);
+    return () => clearInterval(interval);
+  }, []);
 
   useEffect(() => {
     if (album) {
@@ -93,7 +110,7 @@ export default function AlbumPageClient({ slug }: { slug: string }) {
               className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-medium transition-colors"
               style={{
                 backgroundColor: album.accentColor,
-                color: "#0a0a0a",
+                color: "#ffffff",
               }}
             >
               <Play className="w-4 h-4" fill="currentColor" />
@@ -117,7 +134,7 @@ export default function AlbumPageClient({ slug }: { slug: string }) {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.35, delay: 0.15 + i * 0.08 }}
               >
-                <div className="group flex items-center gap-4 px-4 py-4 -mx-4 rounded-lg hover:bg-white/[0.04] transition-colors">
+                <div className="group flex items-center gap-4 px-4 py-4 -mx-4 rounded-lg hover:bg-black/[0.04] transition-colors">
                   {/* Track Number / Play Button */}
                   <button
                     onClick={() => {
@@ -167,10 +184,17 @@ export default function AlbumPageClient({ slug }: { slug: string }) {
                     </p>
                   </Link>
 
-                  {/* Duration */}
-                  <div className="flex items-center gap-1.5 text-xs text-muted-foreground/50">
-                    <Clock className="w-3 h-3" />
-                    {track.duration}
+                  {/* Play Count + Duration */}
+                  <div className="flex items-center gap-3 text-xs text-muted-foreground/50">
+                    {(playCounts[track.slug] || 0) > 0 && (
+                      <span className="tabular-nums">
+                        {playCounts[track.slug]} {playCounts[track.slug] === 1 ? "play" : "plays"}
+                      </span>
+                    )}
+                    <span className="flex items-center gap-1.5">
+                      <Clock className="w-3 h-3" />
+                      {track.duration}
+                    </span>
                   </div>
                 </div>
 
