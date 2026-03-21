@@ -125,7 +125,7 @@
         "Run pnpm build"
       ],
       "files": ["lib/albums.ts", "content/songs/batch3/new-mp3s/first-ten.mp3", "content/songs/batch3/new-mp3s/the-closer.mp3", "content/songs/batch3/new-mp3s/the-one-question.mp3", "content/songs/batch3/lyrics/first-ten.md", "content/songs/batch3/lyrics/the-closer.md", "content/songs/batch3/lyrics/the-one-question.md"],
-      "passes": false
+      "passes": true
     },
     {
       "id": 9,

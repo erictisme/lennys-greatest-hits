@@ -2426,6 +2426,324 @@ I did`,
 ];
 
 const theTalentSearchTracks: Track[] = [
+  {
+    slug: "first-ten",
+    title: "First Ten",
+    albumSlug: "the-talent-search",
+    trackNumber: 1,
+    duration: "3:30",
+    audioUrl: "/audio/first-ten.mp3",
+    coverImage: "/covers/first-ten.jpg",
+    genre: "Liturgical Folk",
+    mood: "Warm, congregational, founding anthem",
+    tags: ["early hires", "culture", "founding team"],
+    lyrics: `[Intro — acoustic guitar, fingerpicked, solo]
+
+[Verse 1]
+Empty room and a half-built plan
+Two years failing, still no traction
+Four guys nobody wants to bet on
+Making calls that no one's answering
+
+[Pre-Chorus]
+You're asking someone to risk it all
+Asking them to fall before the walls are up
+
+[Chorus]
+They weren't looking when you found them
+Slow and steady, six long months
+You didn't post the role, you wrote the letter
+One by one until you're ten
+
+[Verse 2]
+The first one builds the thing you can't
+The second checks your work for cracks
+The third one knows a fourth who knows a fifth
+The room fills up like that
+
+[Pre-Chorus]
+A hundred hours before each yes
+You earn the trust before you get the desk
+
+[Chorus]
+They weren't looking when you found them
+Slow and steady, six long months
+You didn't post the role, you wrote the letter
+One by one until you're ten
+
+[Bridge — full band enters, organ swells]
+Great people pull great people in
+You can't fake what's real to them
+Don't lower the bar for anyone
+The house becomes the first ten rooms
+
+[Final Chorus — full band, congregational feel]
+They weren't looking when you found them
+Slow and steady, six long months
+You didn't hire a team — you built a culture
+And it starts with the first ten
+
+[Outro — acoustic guitar returns, quiet]
+The first ten rooms you build
+Become the house`,
+    concept: "A founding hymn about the grueling, deeply personal process of hiring your first ten employees — the people who define everything that follows.",
+    keyInsight: "The best early hires aren't found on job boards — they come from personal networks, former colleagues, and relentless outreach. At Segment, the founders tried for months to recruit classmates but 'there was little appetite to join four crazy guys in a room who had been failing for two years straight.'",
+    keyQuote: "Believe it or not, there was little appetite to join four crazy guys in a room who had been failing for two years straight.",
+    quoteSpeaker: "Calvin French-Owen, co-founder of Segment",
+    sources: [
+      { title: "Hiring your early team", type: "newsletter" as const, url: "https://www.lennysnewsletter.com/p/hiring-your-early-team", guest: "Lenny Rachitsky" },
+    ],
+    storyBehind: "Lenny surveyed founders of 40+ iconic startups — Notion, Figma, Linear, Ramp, Segment — about how they hired their first employees. The overwhelming pattern: personal networks were the #1 channel, the best people were never actively looking, and Linear hired a dedicated recruiter at 15 people because 'the best and most sought-after people are often hard and slow to hire.'",
+    annotations: [
+      {
+        lyricText: "Four guys nobody wants to bet on",
+        note: "Segment's Calvin French-Owen told Lenny his founding team tried for months to recruit classmates but had 'pretty rotten luck.' His exact words: 'Believe it or not, there was little appetite to join four crazy guys in a room who had been failing for two years straight.' They eventually found their early hires through the YC network instead.",
+        sourceTitle: "Hiring your early team",
+        sourceUrl: "https://www.lennysnewsletter.com/p/hiring-your-early-team",
+      },
+      {
+        lyricText: "You didn't post the role, you wrote the letter",
+        note: "Across Lenny's survey of 40+ startup founders, hiring friends and former colleagues was 'by far the biggest channel' for early hires. Quote after quote confirmed it: 'All of our early hires were friends/ex-coworkers,' 'First hires were practically all former colleagues,' 'I thought about the hardest-working people I knew and reached out to them.'",
+        sourceTitle: "Hiring your early team",
+        sourceUrl: "https://www.lennysnewsletter.com/p/hiring-your-early-team",
+      },
+      {
+        lyricText: "The third one knows a fourth who knows a fifth",
+        note: "The second most effective hiring channel was tapping the networks of your earliest employees — not just the founders' networks. As one founder told Lenny: 'Many of our early hires were people from my network or the network of the very first employees.' Your second sales hire was often a former colleague of your first salesperson. The snowball effect is real.",
+        sourceTitle: "Hiring your early team",
+        sourceUrl: "https://www.lennysnewsletter.com/p/hiring-your-early-team",
+      },
+      {
+        lyricText: "Don't lower the bar for anyone",
+        note: "Linear's co-founder Jori Lallo explained why they hired a dedicated recruiter at just 15 people: 'We cared about hiring the best people, not about the first person who came knocking at our door.' They rejected external agencies because incentives were tied to closed hires, pushing speed over quality. Today Linear has a four-person recruiting function at a 50-person company.",
+        sourceTitle: "Hiring your early team",
+        sourceUrl: "https://www.lennysnewsletter.com/p/hiring-your-early-team",
+      },
+      {
+        lyricText: "You didn't hire a team — you built a culture",
+        note: "Recruiters became a 'surprisingly common' early hire across the most iconic startups Lenny studied — Linear, Figma, Ramp, and Coda all hired dedicated recruiting help early. The pattern: founders who treated hiring as culture-building (not just seat-filling) invested in recruiting infrastructure before it seemed necessary, and it paid off in team quality.",
+        sourceTitle: "Hiring your early team",
+        sourceUrl: "https://www.lennysnewsletter.com/p/hiring-your-early-team",
+      },
+    ],
+  },
+  {
+    slug: "the-closer",
+    title: "The Closer",
+    albumSlug: "the-talent-search",
+    trackNumber: 2,
+    duration: "3:30",
+    audioUrl: "/audio/the-closer.mp3",
+    coverImage: "/covers/the-closer.jpg",
+    genre: "Neo-Soul",
+    mood: "Smooth, confident, late-night groove",
+    tags: ["executive recruiting", "closing", "talent"],
+    lyrics: `[Verse 1 — smooth, laid-back delivery]
+I keep a list of names in ink
+The ones who built what others couldn't
+A calendar note beside each one
+The vest date, the conference, the call
+I never rush, I never chase
+I just show up where the good ones are
+
+[Pre-Chorus — building warmth]
+You won't find them on a job board
+They're not refreshing LinkedIn
+The best ones don't know they're looking
+Till somebody makes them feel it
+
+[Chorus 1 — confident groove]
+I know what good looks like
+Seven months to make you mine
+Coffee first, then ask you how you'd
+Build it if the whole thing was yours
+I know what good looks like
+And you're it
+
+[Verse 2 — storytelling, intimate]
+He built Prime Day from a whiteboard
+Then wired Snapchat's beating heart
+I called and he said, "Why would I leave?"
+I said, "Just grab a coffee, no strings"
+Four weeks after he signed on
+I walked through the same front door
+
+[Pre-Chorus — slight variation]
+The resume's the highlight reel
+The back channel tells the truth
+I want the one your old team misses
+Not the name, the proof
+
+[Chorus 2 — varied]
+I know what good looks like
+Seven months to make you stay
+I don't pitch, I just keep listening
+Till you tell me what you need
+I know what good looks like
+And it's you
+
+[Bridge — stripped, reflective]
+People aren't commodities
+They've got lives beyond the role
+The ones who close the hardest deals
+Remember that they're courting souls
+
+[Chorus 3 — final, triumphant]
+I know what good looks like
+Took me seven months this time
+You thought it was just conversation
+But I was building something real
+I know what good looks like
+Now you're home`,
+    concept: "A song from the perspective of a world-class executive recruiter, turning the long game of talent courtship into a smooth neo-soul groove.",
+    keyInsight: "The best candidates are never actively looking. Lauren Ipsen describes her approach as a 'seven month game of courtship' — bringing candidates in as advisors, asking how they'd structure the org, building real rapport before any formal interview process.",
+    keyQuote: "It was a seven month game of courtship.",
+    quoteSpeaker: "Lauren Ipsen",
+    sources: [
+      { title: "Lessons from one of the world's top executive recruiters", type: "podcast" as const, url: "https://www.lennyspodcast.com/lessons-from-one-of-the-worlds-top-executive-recruiters-lauren-ipsen/", guest: "Lauren Ipsen" },
+    ],
+    storyBehind: "Lauren Ipsen, who went from Daversa Partners to General Catalyst's talent team, told Lenny about landing a VP of Engineering through seven months of relationship-building — starting as an advisor, then collaborator, then finally teammate. No formal interview. No transactional process. Just trust built over time.",
+    annotations: [
+      {
+        lyricText: "Seven months to make you mine",
+        note: "Lauren Ipsen described to Lenny how she landed a VP of Engineering candidate: 'It was a seven month game of courtship, and let's bring him in to help out from an advising capacity, let's ask him how he would think about structuring this organization.' She explicitly avoided formal interviews because they 'feel transactional.' The result: 'magic can happen and you can land incredible people.'",
+        sourceTitle: "Lessons from one of the world's top executive recruiters",
+        sourceUrl: "https://www.lennyspodcast.com/lessons-from-one-of-the-worlds-top-executive-recruiters-lauren-ipsen/",
+      },
+      {
+        lyricText: "The best ones don't know they're looking",
+        note: "Ipsen told Lenny the biggest mistake founders make is being 'distracted by shiny objects' — chasing CPOs of Google or YouTube because of brand recognition. 'Oftentimes those individuals are pretty far from the work and have a great team of executors that are actually the ones in the weeds.' The real targets are the executors nobody's heard of.",
+        sourceTitle: "Lessons from one of the world's top executive recruiters",
+        sourceUrl: "https://www.lennyspodcast.com/lessons-from-one-of-the-worlds-top-executive-recruiters-lauren-ipsen/",
+      },
+      {
+        lyricText: "The back channel tells the truth",
+        note: "Ipsen explained to Lenny why she relies on her own network over LinkedIn: 'I'm not just blindly guessing on quantity, spending a ton of time on LinkedIn, and then having to call unknown entities and ask for back channel references when they also might not even feel comfortable sharing the dirt.' Her network referrals guarantee quality because great people 'would never put me in touch with someone that wasn't equally as qualified.'",
+        sourceTitle: "Lessons from one of the world's top executive recruiters",
+        sourceUrl: "https://www.lennyspodcast.com/lessons-from-one-of-the-worlds-top-executive-recruiters-lauren-ipsen/",
+      },
+      {
+        lyricText: "I know what good looks like",
+        note: "Ipsen told Lenny she tends to 'lean towards folks that have a chip on their shoulder or have something to prove and want to build.' She specifically warned against hiring senior leaders from big companies who are no longer hungry: the ones who already proved themselves at a YouTube 10-year success story. The signal she looks for is hunger, not pedigree.",
+        sourceTitle: "Lessons from one of the world's top executive recruiters",
+        sourceUrl: "https://www.lennyspodcast.com/lessons-from-one-of-the-worlds-top-executive-recruiters-lauren-ipsen/",
+      },
+      {
+        lyricText: "People aren't commodities",
+        note: "Ipsen started her career in broadcast journalism wanting to be on the news, then 'quickly realized I didn't necessarily want to be the face of sadness.' She pivoted to executive search — 'not really something that people major in college' — because she could use her communication skills to make impact 'with a little bit of a different angle.' Her human-first approach to recruiting comes from that journalism instinct: listen first, pitch never.",
+        sourceTitle: "Lessons from one of the world's top executive recruiters",
+        sourceUrl: "https://www.lennyspodcast.com/lessons-from-one-of-the-worlds-top-executive-recruiters-lauren-ipsen/",
+      },
+    ],
+  },
+  {
+    slug: "the-one-question",
+    title: "The One Question",
+    albumSlug: "the-talent-search",
+    trackNumber: 3,
+    duration: "3:45",
+    audioUrl: "/audio/the-one-question.mp3",
+    coverImage: "/covers/the-one-question.jpg",
+    genre: "Indie Folk-Pop",
+    mood: "Warm, earnest, quietly revelatory",
+    tags: ["interviewing", "authenticity", "hiring"],
+    lyrics: `[Verse 1]
+The room is small, the table bare
+You've practiced every answer well
+I've got forty-five minutes here
+To learn the things you'd never tell
+You've rehearsed the wins, the near misses
+The version you want me to see
+But I've been doing this a while now
+And I've got one question for free
+
+[Chorus]
+Tell me what hard means to you
+Watch your face before the words arrive
+Tell me what hard means to you
+That's when I know you're real inside
+Tell me what hard means to you
+
+[Verse 2]
+Something in your voice went quiet
+Like a breath you've held too long
+You picked the story that was hardest
+Told me everything that went wrong
+Not the version that ends golden
+Not the lesson wrapped up neat —
+Just the thing you had to live through
+And the part that felt like defeat
+
+[Chorus]
+Tell me what hard means to you
+I can hear the truth before you're through
+Tell me what hard means to you
+That's the only question worth pursuing
+Tell me what hard means to you
+
+[Bridge]
+I'm not looking for the right answer
+I'm not grading how you fail
+I just want to see the person
+Underneath the well-told tale
+What's the unfair thing you've learned?
+What's the question I should've asked?
+Let the interview fall away now
+I just want to see what lasts
+
+[Final Chorus]
+You told me what hard means to you
+Didn't flinch before the words came through
+You told me what hard means to you
+That's the only proof I ever need
+Tell me what hard means to you
+
+[Outro]
+Forty-five minutes
+One question asked
+You let me in`,
+    concept: "An intimate portrait of a job interview stripped down to the one question that reveals everything: 'What's the hardest thing you've ever done?'",
+    keyInsight: "Ramp's VP of Product Geoff Charles asks every candidate one question: 'What's the hardest thing you've ever done?' He's not looking for the right answer — he wants to understand what 'hard' means to them, and how much agency they had in overcoming it.",
+    keyQuote: "I want to understand what hard means for them. I want to understand why it was hard. I want to understand how they overcame that difficulty, how they worked with other people to overcome that difficulty, and how much agency they had in overcoming that.",
+    quoteSpeaker: "Geoff Charles, VP of Product at Ramp",
+    sources: [
+      { title: "How to learn the most about a candidate from a single interview question", type: "newsletter" as const, url: "https://www.lennysnewsletter.com/p/how-to-learn-the-most-about-a-candidate-from-a-single-interview-question", guest: "Lenny Rachitsky" },
+      { title: "Velocity over everything: How Ramp became the fastest-growing SaaS startup of all time", type: "podcast" as const, url: "https://www.lennyspodcast.com/velocity-over-everything-how-ramp-became-the-fastest-growing-saas-startup-of-all-time-geoff-charl/", guest: "Geoff Charles" },
+    ],
+    storyBehind: "Lenny collected the favorite interview questions of nearly 150 podcast guests and distilled them into 25 high-signal questions. Geoff Charles's 'What's the hardest thing you've ever done?' stood out because it tests for grit, self-awareness, and agency all at once. Annie Pearl (ex-CPO of Calendly) uses a similar approach: 'I look for people being brutally honest about how bad it was and why it failed.'",
+    annotations: [
+      {
+        lyricText: "I've got forty-five minutes here",
+        note: "Lenny frames the entire newsletter around this constraint: 'In most hiring processes, you're lucky if you get 45 minutes to chat with a candidate before you have to make a thumbs-up or thumbs-down decision. How do you use that precious time to get the most — and most important — information?' The 25 questions he collected are designed to maximize signal in minimal time.",
+        sourceTitle: "How to learn the most about a candidate from a single interview question",
+        sourceUrl: "https://www.lennysnewsletter.com/p/how-to-learn-the-most-about-a-candidate-from-a-single-interview-question",
+      },
+      {
+        lyricText: "Tell me what hard means to you",
+        note: "Geoff Charles (VP of Product at Ramp, the fastest-growing SaaS startup ever) told Lenny his go-to question is 'What's the hardest thing you've ever done?' His reasoning: 'I want to understand what hard means for them. I want to understand why it was hard. I want to understand how they overcame that difficulty, how they worked with other people to overcome that difficulty, and how much agency they had in overcoming that.'",
+        sourceTitle: "Velocity over everything: How Ramp became the fastest-growing SaaS startup of all time",
+        sourceUrl: "https://www.lennyspodcast.com/velocity-over-everything-how-ramp-became-the-fastest-growing-saas-startup-of-all-time-geoff-charl/",
+      },
+      {
+        lyricText: "Not the version that ends golden",
+        note: "Annie Pearl (corporate VP at Microsoft, ex-CPO of Calendly) told Lenny she uses a similar question and specifically looks for raw honesty: 'The rest of the interview, they're trying to tell you all the wonderful things they did and all the accomplishments they had. And so I think the rawer the answer in terms of how bad it was and why, the better.'",
+        sourceTitle: "How to learn the most about a candidate from a single interview question",
+        sourceUrl: "https://www.lennysnewsletter.com/p/how-to-learn-the-most-about-a-candidate-from-a-single-interview-question",
+      },
+      {
+        lyricText: "What's the unfair thing you've learned?",
+        note: "Noah Weiss, CPO of Slack, asks candidates: 'What's an unfair secret you've learned to improve a product team's velocity and energy level?' He told Lenny: 'When I say unfair or secret, I mean not something that you read on Medium. I'm looking for what you learned, how you learned it, how it works, and how you apply it.' The word 'unfair' forces candidates past rehearsed answers.",
+        sourceTitle: "How to learn the most about a candidate from a single interview question",
+        sourceUrl: "https://www.lennysnewsletter.com/p/how-to-learn-the-most-about-a-candidate-from-a-single-interview-question",
+      },
+      {
+        lyricText: "What's the question I should've asked?",
+        note: "Nikhyl Singhal (VP of Product at Meta) shared a meta-question with Lenny: asking candidates to flip the script and identify what conventional wisdom they'd bet against. 'You could do that for AI, you could do that for domains. You can do all kinds of things.' The best interview questions don't test knowledge — they reveal how candidates think when there's no right answer.",
+        sourceTitle: "How to learn the most about a candidate from a single interview question",
+        sourceUrl: "https://www.lennysnewsletter.com/p/how-to-learn-the-most-about-a-candidate-from-a-single-interview-question",
+      },
+    ],
+  },
 ];
 
 const theInterviewTracks: Track[] = [
