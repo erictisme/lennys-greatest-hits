@@ -97,7 +97,7 @@
         "Verify: all 30 output files exist"
       ],
       "files": ["content/songs/batch4/tasks.json", "content/songs/prompt-template.md"],
-      "passes": false
+      "passes": true
     }
   ]
 }

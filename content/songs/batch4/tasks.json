@@ -75,7 +75,7 @@
       "source_files": [
         "podcasts/matthew-dicks.md"
       ],
-      "complete": false
+      "complete": true
     },
     {
       "id": 7,
@@ -87,7 +87,7 @@
       "source_files": [
         "podcasts/jeanne-grosser.md"
       ],
-      "complete": false
+      "complete": true
     },
     {
       "id": 8,
@@ -100,7 +100,7 @@
         "newsletters/freemium-vs-trial.md",
         "newsletters/what-is-good-free-to-paid-conversion.md"
       ],
-      "complete": false
+      "complete": true
     },
     {
       "id": 9,
@@ -124,7 +124,7 @@
       "source_files": [
         "podcasts/mike-maples-jr.md"
       ],
-      "complete": false
+      "complete": true
     }
   ]
 }
