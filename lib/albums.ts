@@ -1074,14 +1074,56 @@ const careerMovesTracks: Track[] = [
     title: "State of the Me",
     albumSlug: "career-moves",
     trackNumber: 5,
-    duration: "",
-    audioUrl: "",
+    duration: "2:44",
+    audioUrl: "/audio/state-of-the-me.mp3",
     coverImage: "",
     genre: "Neo-Soul Pop",
     mood: "Confident, empowered, groovy",
     tags: ["managing up", "visibility", "career growth"],
-    lyrics: "",
-    isLocked: true,
+    lyrics: `[Verse 1]
+I've been staying late, nobody sees
+Twelve things on my plate, they know about three
+Boss walks in and asks about the brief
+Finished that last Tuesday — no relief
+I thought my silence meant I'm strong
+Turns out invisible is just gone
+
+[Chorus]
+State of the Me, every Monday morning
+Here's my world, here's what I need
+It ain't sucking up, it's just showing up
+Three short lines gonna set me free
+
+[Verse 2]
+Two weeks in, she knows what's on my list
+Knows the blockers 'fore I have to ask
+Used to say yes every single time
+Now I set the bar before I climb
+They can't reward the work they've never seen
+So I wrote it down and let it breathe
+
+[Chorus]
+State of the Me, every Monday morning
+Here's what I shipped, here's what's in my way
+It ain't sucking up, it's just showing up
+Two weeks in and something starts to change
+
+[Bridge]
+She said, "My boss won't let me breathe"
+I said, "Is anyone else on a leash?"
+The room went quiet, truth hit like a wall
+Maybe the leash is yours to break
+
+[Final Chorus]
+State of the Me, every Monday morning
+Here's what I built, here's where I'm heading
+It ain't sucking up, it's just showing up
+Trust goes up, the walls come down — I'm ready
+
+[Outro]
+The work won't speak for you
+It never did
+But you can`,
     concept: "The practice of 'managing up' — sending your boss a simple weekly update so your work becomes visible and trust compounds.",
     keyInsight: "They can't reward the work they've never seen. Visibility isn't sucking up — it's showing up.",
     keyQuote: "They can't reward the work they've never seen.",
@@ -1099,14 +1141,61 @@ const frameworksTracks: Track[] = [
     title: "Trace It Back",
     albumSlug: "frameworks",
     trackNumber: 1,
-    duration: "",
-    audioUrl: "",
+    duration: "2:49",
+    audioUrl: "/audio/trace-it-back.mp3",
     coverImage: "",
     genre: "Cinematic Neo-Soul",
     mood: "Cool, purposeful, clarifying",
     tags: ["strategy", "alignment", "purpose"],
-    lyrics: "",
-    isLocked: true,
+    lyrics: `[Verse 1]
+I shipped the button, closed the ticket out
+They asked me why — I couldn't spell it out
+A hundred Mondays sent to who-knows-where
+Plugged to a roadmap no one ever shares
+The mission's painted pretty on the wall
+But no one drew the line between it all
+
+[Chorus]
+Trace it back, trace it back
+From the task up to the mission
+Trace it back, trace it back
+Every step is a decision
+If you can't connect the dots
+You're moving fast but standing still
+
+[Verse 2]
+Danny Ocean didn't walk in blind
+He started with a reason, then designed
+The mission — rob three casinos cold
+The vision — Tess and more than he could hold
+Strategy through every coded door
+Eleven people, each one knew the score
+
+[Chorus]
+Trace it back, trace it back
+From the vault up to the vision
+Trace it back, trace it back
+Every heist needs one decision
+If you lose the thread somewhere
+You're pulling strings that come apart
+
+[Bridge]
+"Spread ideas" — two words, and TED was born
+One line from Tesla changed the road we're on
+The biggest missions fit inside your chest
+The smallest task should pass the same damn test
+
+[Final Chorus]
+Trace it back, trace it back
+From your desk up to the mission
+Trace it back, trace it back
+It was never just a ticket
+Now I see the line that runs
+From my hands to why I'm here
+
+[Outro]
+Mission, vision, strategy
+Goals, roadmap, then the task`,
     concept: "Lenny's Mission-Vision-Strategy-Goals-Roadmap-Task cascade — every task should trace back to the mission.",
     keyInsight: "If you can't trace your daily task back to the company mission, you're moving fast but standing still.",
     keyQuote: "The biggest missions fit inside your chest. The smallest task should pass the same damn test.",
@@ -1121,14 +1210,59 @@ const frameworksTracks: Track[] = [
     title: "The Disease",
     albumSlug: "frameworks",
     trackNumber: 2,
-    duration: "",
-    audioUrl: "",
+    duration: "2:54",
+    audioUrl: "/audio/the-disease.mp3",
     coverImage: "",
     genre: "Driving Indie Rock",
     mood: "Defiant, urgent, righteous",
     tags: ["product management", "empowered teams", "feature factories"],
-    lyrics: "",
-    isLocked: true,
+    lyrics: `[Verse 1]
+Monday morning, roadmap on my screen
+Fourteen features I have never seen
+"Just build it," says the corner suite
+He's never talked to users on the street
+Saw something shiny at a talk last week
+Now my whole quarter's planned before I speak
+
+[Chorus]
+It's the disease
+The idea man thinks he's ninety percent
+It's the disease
+The builders leave — nobody hears the door
+Nobody knows what they were building for
+
+[Verse 2]
+Jobs called it back in '95
+When companies get big, the craft won't thrive
+The sales floor gets promoted every round
+The ones who shaped the product can't be found
+You scale with leaders or you scale with rules
+The rules look safe — the leaders look like fools
+
+[Chorus]
+It's the disease
+Eighty percent won't ever make a dent
+It's the disease
+Who cares how fast you shipped what no one needs?
+Nobody knows what they were building for
+
+[Bridge]
+Give me one quarter
+One team, one problem, one real shot
+I'll sit with the ones who feel the pain
+And build what the roadmap forgot
+
+[Final Chorus, belted]
+Cure the disease
+The ones who feel it — let them find the way
+Cure the disease
+Give us problems — watch the builders stay
+Now they know what they were building for
+
+[Outro]
+You solve it or you don't
+Who cares about release?
+Cure the disease`,
     concept: "Marty Cagan's critique of 'feature factories' — companies where builders are told what to build rather than given problems to solve.",
     keyInsight: "When the 'idea person' thinks they're 90% of the work and builders are just implementers, the builders leave and nobody hears the door.",
     keyQuote: "Who cares how fast you shipped what no one needs?",
@@ -1143,14 +1277,58 @@ const frameworksTracks: Track[] = [
     title: "Test Everything",
     albumSlug: "frameworks",
     trackNumber: 3,
-    duration: "",
-    audioUrl: "",
+    duration: "2:39",
+    audioUrl: "/audio/test-everything.mp3",
     coverImage: "",
     genre: "Driving Indie Rock",
     mood: "Energetic, defiant, awestruck",
     tags: ["A/B testing", "experimentation", "humility"],
-    lyrics: "",
-    isLocked: true,
+    lyrics: `[Verse 1]
+Every meeting, same old scene
+Someone's selling us the dream
+"This one's different, watch it fly"
+Eighty-five percent will die
+A backlog full of brilliant plans
+Dying quiet in our hands
+
+[Chorus]
+Test everything, test everything
+Your best idea might not mean a thing
+The throwaway, the afterthought
+Could be the biggest win you've got
+Test everything
+
+[Verse 2]
+A tiny change sat on the list
+Move the ad text — easy to miss
+It gathered dust for half a year
+Till one engineer said "I'm building here"
+Two days to ship it, let it run
+The alarm went off — what had they done?
+
+[Chorus]
+Test everything, test everything
+"Too good to be true — go find the bug"
+But there was no bug, no mistake
+Just the biggest win they'd ever make
+Test everything
+
+[Bridge]
+A hundred million from a shrug
+From the change nobody loved enough
+If nine in ten are gonna break
+You're free to try the wildest take
+
+[Final Chorus]
+Test everything, test everything
+The one you'd cut could be the biggest thing
+Don't trust the room, don't trust your gut
+The data knows what you do not
+Test everything
+
+[Outro]
+We thought we knew
+We never do`,
     concept: "Ronny Kohavi's guide to A/B testing — the story of a tiny, ignored change at Bing that generated $100M in revenue.",
     keyInsight: "Your best idea might not mean a thing. The throwaway afterthought could be the biggest win. 85% of ideas fail.",
     keyQuote: "A hundred million from a shrug.",
@@ -1165,14 +1343,68 @@ const frameworksTracks: Track[] = [
     title: "What's the Job",
     albumSlug: "frameworks",
     trackNumber: 4,
-    duration: "",
-    audioUrl: "",
+    duration: "3:39",
+    audioUrl: "/audio/whats-the-job.mp3",
     coverImage: "",
     genre: "Acoustic Soul",
     mood: "Warm, revelatory, intimate",
     tags: ["JTBD", "customer empathy", "product strategy"],
-    lyrics: "",
-    isLocked: true,
+    lyrics: `[Verse 1]
+Two candy bars on the same damn shelf
+Same chocolate and caramel inside
+One gets grabbed when you've skipped your lunch
+The other when you need a place to hide
+One competes with a protein shake
+The other with a glass of wine
+Same aisle, different universe
+You'd never know just looking at the sign
+
+[Chorus]
+What's the job, what's the job
+It was never 'bout the thing
+What's the job, what's the job
+It's the struggle that they bring
+You gave them what they asked for
+And they walked away
+What's the job?
+
+[Verse 2]
+He built the condos for the empty nest
+They said, "We're done with dinner plates"
+So he cut the room, gave them the rest
+And six weeks later, no one stayed
+He sat them down and heard the truth
+The table held their holidays, their grace
+Every candle, every fight, every prayer
+They couldn't leave until it had a place
+
+[Chorus]
+What's the job, what's the job
+It was never what they said
+What's the job, what's the job
+It's the life inside their head
+You gave them what they asked for
+But they needed something else
+What's the job?
+
+[Bridge]
+He couldn't read a single page
+So he learned to read the room
+Not the feature, not the price tag
+But the weight behind the move
+
+[Final Chorus, building]
+What's the job, what's the job
+It was never 'bout the brand
+What's the job, what's the job
+There's a life that needs a hand
+Build it and they'll come, they said
+That was always just a lie
+What's the job?
+
+[Outro]
+He cut the bedroom for the table
+They moved the week they knew it'd fit`,
     concept: "Bob Moesta's Jobs to Be Done framework — people don't buy products, they hire them to make progress.",
     keyInsight: "People don't buy, they hire. What they say isn't what they do. The struggling moment is the clue.",
     keyQuote: "Same aisle, different universe.",
@@ -1187,14 +1419,64 @@ const frameworksTracks: Track[] = [
     title: "Good Enough",
     albumSlug: "frameworks",
     trackNumber: 5,
-    duration: "",
-    audioUrl: "",
+    duration: "2:43",
+    audioUrl: "/audio/good-enough.mp3",
     coverImage: "",
     genre: "Indie Pop",
     mood: "Urgent, liberating, cathartic",
     tags: ["prioritization", "perfectionism", "leverage"],
-    lyrics: "",
-    isLocked: true,
+    lyrics: `[Verse 1]
+Three years at Google, couldn't sleep
+The list grew longer every week
+Came home and told her every night
+"I worked all day and nothing's right"
+Spent an hour on notes nobody read
+Same fire for what moved and what was dead
+
+[Chorus]
+Good enough, good enough
+Not every task deserves my blood
+The list won't love me back
+No matter how I bleed for that
+L-N-O, now I know
+Where to pour and where to let go
+
+[Verse 2]
+Found a blog post, never found again
+But those words cut the noise inside my head
+Some work comes back at ten for one
+The rest is overhead — just get it done
+The notes that shape a CEO's next call?
+Two hours. But the standup? Send, that's all
+
+[Chorus 2]
+Good enough, good enough
+Not everything deserves my love
+The list won't love me back
+The overhead can have enough
+L-N-O, now I know
+Which to hold and which to let go
+
+[Bridge]
+"Next month I'll finally have the time"
+"Next month I'll work on what is mine"
+Next month showed up with fires of its own
+Same lie I told in a different tone
+I stopped asking "when"
+And started asking "which"
+
+[Final Chorus]
+Good enough, good enough
+I don't owe perfection every time
+The list won't love me back
+But the leverage work? That's where I shine
+L-N-O, now I go
+With the fire for what makes me grow
+
+[Outro]
+Not every task you own
+Deserves the you that can't sleep at night
+Good enough... is enough`,
     concept: "Shreyas Doshi's LNO Framework — categorizing tasks as Leverage, Neutral, or Overhead, and giving yourself permission to do overhead tasks at 'good enough.'",
     keyInsight: "Not every task deserves your best. The list won't love you back. Stop asking 'when will I have time?' and start asking 'which tasks deserve my full effort?'",
     keyQuote: "The list won't love me back.",
@@ -1291,6 +1573,5 @@ export const albums: Album[] = [
     coverImage: "",
     accentColor: "#4338ca",
     tracks: frameworksTracks,
-    comingSoon: true,
   },
 ];
