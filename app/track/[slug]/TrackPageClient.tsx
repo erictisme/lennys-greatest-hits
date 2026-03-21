@@ -10,6 +10,8 @@ import {
   SkipBack,
   SkipForward,
   ExternalLink,
+  Mic,
+  FileText,
 } from "lucide-react";
 import { getTrackBySlug, getAlbumForTrack, getAllTracks } from "@/lib/tracks";
 import { notFound } from "next/navigation";
@@ -355,36 +357,50 @@ export default function TrackPageClient({ slug }: { slug: string }) {
           </section>
         )}
 
-        {/* Source Attribution */}
+        {/* Based on */}
         {track.sources.length > 0 && (
           <section className="mb-10">
             <h2 className="text-xs font-medium uppercase tracking-widest text-muted-foreground/50 mb-3">
-              Inspired by
+              Based on
             </h2>
-            <div className="space-y-2">
-              {track.sources.map((source, i) => {
-                if (source.url) {
-                  return (
+            <div className="space-y-3">
+              {track.sources.map((source, i) => (
+                <div
+                  key={i}
+                  className="border-l-[3px] rounded-r-lg bg-white/5 dark:bg-white/5 bg-black/[0.02] px-4 py-3"
+                  style={{ borderColor: album.accentColor }}
+                >
+                  {source.url ? (
                     <a
-                      key={i}
                       href={source.url}
                       target="_blank"
                       rel="noopener noreferrer"
                       onClick={() => trackEvent("source_clicked", { source_title: source.title, guest: source.guest, track: slug })}
-                      className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors group"
+                      className="font-lenny text-sm text-foreground hover:underline inline-flex items-center gap-1.5"
                     >
-                      <ExternalLink className="w-3.5 h-3.5 opacity-50 group-hover:opacity-100" />
-                      <span>{source.title}</span>
+                      {source.title}
+                      <ExternalLink className="w-3 h-3 opacity-50" />
                     </a>
-                  );
-                }
-
-                return (
-                  <p key={i} className="text-sm text-muted-foreground/70">
-                    {source.title}
-                  </p>
-                );
-              })}
+                  ) : (
+                    <p className="font-lenny text-sm text-foreground">{source.title}</p>
+                  )}
+                  <div className="flex items-center gap-2 mt-1.5">
+                    {source.guest && (
+                      <span className="text-xs text-muted-foreground/70">{source.guest}</span>
+                    )}
+                    <span
+                      className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[10px] font-medium bg-muted text-muted-foreground"
+                    >
+                      {source.type === "podcast" ? (
+                        <Mic className="w-2.5 h-2.5" />
+                      ) : (
+                        <FileText className="w-2.5 h-2.5" />
+                      )}
+                      {source.type === "podcast" ? "Podcast" : "Newsletter"}
+                    </span>
+                  </div>
+                </div>
+              ))}
             </div>
           </section>
         )}
