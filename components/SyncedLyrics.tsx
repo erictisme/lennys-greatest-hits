@@ -1,9 +1,11 @@
 "use client";
 
 import { useRef, useMemo, useState } from "react";
-import { Share2 } from "lucide-react";
+import { Share2, BookOpen } from "lucide-react";
+import { AnimatePresence, motion } from "framer-motion";
 import { trackEvent } from "@/lib/analytics";
 import ShareLyricModal from "./ShareLyricModal";
+import type { LyricAnnotation } from "@/lib/types";
 
 interface SyncedLine {
   text: string;
@@ -23,6 +25,7 @@ interface SyncedLyricsProps {
   trackTitle: string;
   albumTitle: string;
   onSeek: (time: number) => void;
+  annotations?: LyricAnnotation[];
 }
 
 function parseLyrics(raw: string, duration: number): SyncedLine[] {
@@ -87,6 +90,15 @@ function parseLyrics(raw: string, duration: number): SyncedLine[] {
   return lines;
 }
 
+function findAnnotation(
+  lineText: string,
+  annotations: LyricAnnotation[] | undefined
+): LyricAnnotation | undefined {
+  if (!annotations || annotations.length === 0) return undefined;
+  const lower = lineText.toLowerCase();
+  return annotations.find((a) => lower.includes(a.lyricText.toLowerCase()));
+}
+
 export default function SyncedLyrics({
   lyrics,
   currentTime,
@@ -96,10 +108,12 @@ export default function SyncedLyrics({
   trackTitle,
   albumTitle,
   onSeek,
+  annotations,
 }: SyncedLyricsProps) {
   const containerRef = useRef<HTMLDivElement>(null);
   const lineRefs = useRef<(HTMLDivElement | null)[]>([]);
   const [shareLine, setShareLine] = useState<string | null>(null);
+  const [expandedAnnotationIndex, setExpandedAnnotationIndex] = useState<number | null>(null);
 
   const lines = useMemo(() => parseLyrics(lyrics, duration), [lyrics, duration]);
 
@@ -126,6 +140,8 @@ export default function SyncedLyrics({
           const isActive = i === activeIndex;
           const isNear = Math.abs(i - activeIndex) <= 2;
           const hasActiveState = activeIndex >= 0 && duration > 0;
+          const annotation = line.isSectionLabel ? undefined : findAnnotation(line.text, annotations);
+          const isAnnotationExpanded = expandedAnnotationIndex === i;
 
           let opacity = 1;
           if (hasActiveState) {
@@ -134,6 +150,11 @@ export default function SyncedLyrics({
             else opacity = 0.3;
           } else {
             opacity = 0.8;
+          }
+
+          // Annotated lines get slightly brighter when not active
+          if (annotation && hasActiveState && !isActive) {
+            opacity = Math.min(opacity + 0.15, 1);
           }
 
           if (line.isSectionLabel) {
@@ -152,38 +173,96 @@ export default function SyncedLyrics({
           }
 
           return (
-            <div
-              key={i}
-              ref={(el) => { lineRefs.current[i] = el; }}
-              className="group flex items-center gap-1 rounded hover:bg-black/5 transition-all duration-300"
-              style={{ opacity }}
-            >
-              <button
-                onClick={() => {
-                  if (duration > 0) onSeek(line.time);
-                }}
-                className="flex-1 text-left cursor-pointer px-2 py-0.5"
-                style={{
-                  color: isActive ? accentColor : undefined,
-                  fontSize: isActive ? "17px" : "15px",
-                  fontWeight: isActive ? 600 : 400,
-                  fontStyle: line.isQuote ? "italic" : undefined,
-                }}
+            <div key={i} ref={(el) => { lineRefs.current[i] = el; }}>
+              <div
+                className="group flex items-center gap-1 rounded hover:bg-black/5 transition-all duration-300"
+                style={{ opacity }}
               >
-                {line.text}
-                {line.isQuote && line.speaker && (
-                  <span className="text-xs text-muted-foreground/50 ml-2 not-italic">
-                    - {line.speaker}
-                  </span>
+                <button
+                  onClick={() => {
+                    if (duration > 0) onSeek(line.time);
+                  }}
+                  className="flex-1 text-left cursor-pointer px-2 py-0.5"
+                  style={{
+                    color: isActive ? accentColor : undefined,
+                    fontSize: isActive ? "17px" : "15px",
+                    fontWeight: isActive ? 600 : 400,
+                    fontStyle: line.isQuote ? "italic" : undefined,
+                    borderBottom: annotation ? "1px dotted currentColor" : undefined,
+                    paddingBottom: annotation ? "2px" : undefined,
+                  }}
+                >
+                  {line.text}
+                  {line.isQuote && line.speaker && (
+                    <span className="text-xs text-muted-foreground/50 ml-2 not-italic">
+                      - {line.speaker}
+                    </span>
+                  )}
+                </button>
+                {annotation && (
+                  <button
+                    onClick={() => {
+                      setExpandedAnnotationIndex(isAnnotationExpanded ? null : i);
+                      trackEvent("annotation_toggled", { lyric: line.text, track: trackTitle });
+                    }}
+                    className="p-1.5 rounded-full hover:bg-black/10 transition-all shrink-0"
+                    style={{
+                      opacity: isAnnotationExpanded ? 1 : 0.5,
+                      color: isAnnotationExpanded ? accentColor : undefined,
+                    }}
+                    aria-label={`${isAnnotationExpanded ? "Hide" : "Show"} annotation for: ${line.text}`}
+                  >
+                    <BookOpen className="w-3.5 h-3.5" />
+                  </button>
                 )}
-              </button>
-              <button
-                onClick={() => { trackEvent("lyric_shared", { lyric: line.text, track: trackTitle }); setShareLine(line.text); }}
-                className="opacity-0 group-hover:opacity-60 hover:!opacity-100 p-1.5 rounded-full hover:bg-black/10 transition-all shrink-0"
-                aria-label={`Share lyric: ${line.text}`}
-              >
-                <Share2 className="w-3.5 h-3.5" />
-              </button>
+                <button
+                  onClick={() => { trackEvent("lyric_shared", { lyric: line.text, track: trackTitle }); setShareLine(line.text); }}
+                  className="opacity-0 group-hover:opacity-60 hover:!opacity-100 p-1.5 rounded-full hover:bg-black/10 transition-all shrink-0"
+                  aria-label={`Share lyric: ${line.text}`}
+                >
+                  <Share2 className="w-3.5 h-3.5" />
+                </button>
+              </div>
+              <AnimatePresence>
+                {isAnnotationExpanded && annotation && (
+                  <motion.div
+                    initial={{ height: 0, opacity: 0 }}
+                    animate={{ height: "auto", opacity: 1 }}
+                    exit={{ height: 0, opacity: 0 }}
+                    transition={{ duration: 0.25, ease: "easeInOut" }}
+                    className="overflow-hidden"
+                  >
+                    <div
+                      className="font-lenny p-4 mx-2 my-1 rounded-sm"
+                      style={{
+                        borderLeft: `3px solid ${accentColor}`,
+                        background: "rgba(255,255,255,0.05)",
+                      }}
+                    >
+                      <p className="text-sm leading-relaxed text-foreground/90">
+                        {annotation.note}
+                      </p>
+                      {annotation.sourceTitle && (
+                        <p className="mt-2 text-xs text-muted-foreground/60">
+                          From{" "}
+                          {annotation.sourceUrl ? (
+                            <a
+                              href={annotation.sourceUrl}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="underline hover:text-foreground/80 transition-colors"
+                            >
+                              {annotation.sourceTitle}
+                            </a>
+                          ) : (
+                            <span>{annotation.sourceTitle}</span>
+                          )}
+                        </p>
+                      )}
+                    </div>
+                  </motion.div>
+                )}
+              </AnimatePresence>
             </div>
           );
         })}
