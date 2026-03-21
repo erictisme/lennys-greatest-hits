@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowLeft, Play, Pause, Clock, MoreHorizontal, Share2, Check, Lock, ChevronRight, Mic, FileText } from "lucide-react";
+import { ArrowLeft, Play, Pause, Clock, MoreHorizontal, Share2, Check, Lock, Mic, FileText } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { getAlbumBySlug } from "@/lib/tracks";
 import { notFound, useRouter } from "next/navigation";
@@ -290,11 +290,7 @@ export default function AlbumPageClient({ slug }: { slug: string }) {
                   className="group flex items-center gap-4 px-4 py-4 -mx-4 rounded-lg hover:bg-black/[0.04] transition-colors cursor-pointer"
                   onClick={() => {
                     if (locked) return;
-                    if (isCurrentTrack) {
-                      audio.togglePlay();
-                    } else {
-                      handlePlayTrack(i);
-                    }
+                    router.push(`/track/${track.slug}`);
                   }}
                 >
                   {/* Track Number / Play Icon / Lock Icon */}
@@ -303,7 +299,17 @@ export default function AlbumPageClient({ slug }: { slug: string }) {
                       <Lock className="w-4 h-4 text-muted-foreground/40" />
                     </div>
                   ) : (
-                    <div className="w-11 h-11 flex items-center justify-center shrink-0 -ml-2.5">
+                    <div
+                      className="w-11 h-11 flex items-center justify-center shrink-0 -ml-2.5"
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        if (isCurrentTrack) {
+                          audio.togglePlay();
+                        } else {
+                          handlePlayTrack(i);
+                        }
+                      }}
+                    >
                       {isPlaying ? (
                         <Pause
                           className="w-4 h-4"
@@ -452,19 +458,6 @@ export default function AlbumPageClient({ slug }: { slug: string }) {
                     </div>
                   )}
 
-                  {/* Navigate to track page */}
-                  {!locked && (
-                    <button
-                      onClick={(e) => {
-                        e.stopPropagation();
-                        router.push(`/track/${track.slug}`);
-                      }}
-                      className="opacity-0 group-hover:opacity-60 hover:!opacity-100 p-1.5 rounded-md hover:bg-black/[0.06] transition-all shrink-0"
-                      aria-label={`View ${track.title}`}
-                    >
-                      <ChevronRight className="w-4 h-4 text-muted-foreground/60" />
-                    </button>
-                  )}
                 </div>
 
                 {/* Divider (not after last) */}
