@@ -79,7 +79,7 @@
         "Run pnpm build"
       ],
       "files": ["lib/albums.ts", "content/songs/batch2/new-mp3s/find-your-north-star.mp3", "content/songs/batch2/new-mp3s/nobodys-coming.mp3", "content/songs/batch2/lyrics/07-north-star.md", "content/songs/batch2/lyrics/11-chicken-and-egg.md"],
-      "passes": false
+      "passes": true
     },
     {
       "id": 6,

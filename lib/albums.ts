@@ -1241,8 +1241,8 @@ Before this one stops`,
     duration: "3:41",
     audioUrl: "/audio/find-your-north-star.mp3",
     coverImage: "/covers/find-your-north-star.jpg",
-    genre: "Acoustic Folk",
-    mood: "Clarifying, urgent, contemplative",
+    genre: "Anthemic Indie Synth-Rock",
+    mood: "Driving, urgent, clarifying",
     tags: ["metrics", "focus", "strategy"],
     lyrics: `[Verse 1]
 Fourteen dashboards, Monday morning haze
@@ -2006,18 +2006,92 @@ The maze is how you find your way`,
     duration: "2:42",
     audioUrl: "/audio/nobodys-coming.mp3",
     coverImage: "/covers/nobodys-coming.jpg",
-    genre: "Garage Rock",
+    genre: "Garage Rock / Indie Punk",
     mood: "Scrappy, urgent, triumphant",
     tags: ["marketplaces", "cold start", "flywheel"],
-    lyrics: "",
+    lyrics: `[Verse 1]
+I launched to silence — no one came
+Two empty sides, both the same
+Can't get the riders without a ride
+Can't get the drivers to the other side
+So I packed a camera, caught a flight
+Rang the doorbell, stayed till midnight
+
+[Chorus]
+Nobody's coming till somebody's here
+So I went first through the door
+One knock, one room, one ride, one meal
+Then I came back for more
+
+[Verse 2]
+He dashed the food on his own date night
+Ran the elevator, held on tight
+She walked the craft fair, booth to booth
+Carried software, told them half the truth
+Forty bucks an hour just to drive
+The start was always awkward — but alive
+
+[Chorus]
+Nobody's coming till somebody's here
+So we showed up at the door
+One block, one street, one city on the line
+Then we came back for more
+
+[Bridge]
+Then one morning something changed
+Stickers in the windows we never placed
+The rider grabbed the wheel, became the ride
+I let go... and it didn't fall
+
+[Final Chorus]
+Everybody's here cause someone showed up first
+Someone went first through the door
+One knock, one room, and the whole thing turned
+Now they're all knocking back for more
+
+[Outro]
+Which came first?
+I did`,
     concept: "The marketplace cold-start problem: every great marketplace started by the founder doing tiny, unscalable things until the flywheel caught on its own.",
     keyInsight: "Nobody's coming till somebody's here. Every marketplace flywheel starts with the founder going first through the door.",
-    keyQuote: "Nobody's coming till somebody's here.",
-    quoteSpeaker: "Lenny Rachitsky",
+    keyQuote: "In the beginning it was me going door to door to convince restaurants to join. I don't think there was anything else that could be substituted for that.",
+    quoteSpeaker: "Tony Xu",
     sources: [
       { title: "How to Kickstart and Scale a Marketplace Business (8-part series)", type: "newsletter", url: "https://www.lennysnewsletter.com/p/how-to-kickstart-and-scale-a-marketplace", guest: "Lenny Rachitsky" },
     ],
     storyBehind: "A founder launches to silence: two empty sides of a marketplace. So they pack a camera, catch a flight, ring doorbells till midnight. Tony Xu dashed food on his own date night. Then one morning, stickers appeared in windows they never placed. The flywheel caught.",
+    annotations: [
+      {
+        lyricText: "So I packed a camera, caught a flight\nRang the doorbell, stayed till midnight",
+        note: "Airbnb co-founders Joe Gebbia and Brian Chesky literally flew to New York with cameras to photograph hosts' apartments themselves. Lenny's research across 17 major marketplaces found that direct sales — one-on-one, door to door — was the crucial early lever for about 60% of successful marketplaces, twice as common as the next biggest lever.",
+        sourceTitle: "How to Kickstart and Scale a Marketplace Business – Part 3: Cracking the Chicken-and-Egg Problem",
+        sourceUrl: "https://www.lennysnewsletter.com/p/how-to-kickstart-and-scale-a-marketplace",
+      },
+      {
+        lyricText: "He dashed the food on his own date night",
+        note: "Tony Xu, DoorDash's co-founder, personally delivered food in the early days. As he told Lenny: 'In the beginning it was me going door to door to convince restaurants to join. I don't think there was anything else that could be substituted for that.' DoorDash's early restaurant growth was 'pounding the pavement, inside and outside sales, people on phones, door to door sales.'",
+        sourceTitle: "How to Kickstart and Scale a Marketplace Business – Part 3: Cracking the Chicken-and-Egg Problem",
+        sourceUrl: "https://www.lennysnewsletter.com/p/how-to-kickstart-and-scale-a-marketplace",
+      },
+      {
+        lyricText: "She walked the craft fair, booth to booth\nCarried software, told them half the truth",
+        note: "Etsy's Dan McKinley told Lenny: 'The main thing that really worked was recruiting sellers in person at craft fairs. This was a small activity in terms of human effort, but it scaled beyond that since the sellers marketed themselves.' The genius was that each seller Etsy recruited became a marketer for the platform — supply driving its own demand.",
+        sourceTitle: "How to Kickstart and Scale a Marketplace Business – Part 3: Cracking the Chicken-and-Egg Problem",
+        sourceUrl: "https://www.lennysnewsletter.com/p/how-to-kickstart-and-scale-a-marketplace",
+      },
+      {
+        lyricText: "Stickers in the windows we never placed",
+        note: "DoorDash's Micah Moreau told Lenny: 'Restaurants did a lot of the marketing for us. They would actually print placards and stickers and put them up in the restaurant, without our help, and often without us knowing. Restaurant owners are enterprising entrepreneurs and are super creative at driving demand.' This supply-driving-demand phenomenon was effective for over 40% of marketplaces studied.",
+        sourceTitle: "How to Kickstart and Scale a Marketplace Business – Part 4: Cracking the Chicken-and-Egg Problem",
+        sourceUrl: "https://www.lennysnewsletter.com/p/how-to-kickstart-and-scale-a-marketplace",
+      },
+      {
+        lyricText: "Nobody's coming till somebody's here\nSo I went first through the door",
+        note: "Word-of-mouth was the most important early growth channel for over half of today's biggest marketplaces. Uber's Andrew Chen told Lenny early growth was '50-60% word of mouth.' But someone had to go first. Lyft's team 'literally went door to door to startups, giving away free cupcakes and donuts, along with coupons to take a free ride.' The paradox: organic growth only kicks in after someone does deeply unscalable work.",
+        sourceTitle: "How to Kickstart and Scale a Marketplace Business – Part 4: Cracking the Chicken-and-Egg Problem",
+        sourceUrl: "https://www.lennysnewsletter.com/p/how-to-kickstart-and-scale-a-marketplace",
+      },
+    ],
   },
   {
     slug: "not-venture-scale",
