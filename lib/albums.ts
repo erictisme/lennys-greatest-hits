@@ -1448,7 +1448,55 @@ We never do`,
     genre: "Uptempo Indie Pop",
     mood: "Scrappy, triumphant, energetic",
     tags: ["growth", "early users", "hustle"],
-    lyrics: "",
+    lyrics: `[Verse 1]
+Whitney ran from dorm to dorm
+Pitching Tinder after dark
+Evan at the mall with flyers high
+"Disappearing photos?" — "No"
+Ben changed every Apple Store display
+Stood in back — "This thing is blowing up"
+
+[Chorus]
+Show up before you blow up
+Nobody knows your name
+Every app you've ever loved
+Once looked every bit this lame
+You earn them one by one
+
+[Verse 2]
+Tony taped a menu to the wall
+Six-buck delivery, that was all
+Brian hot-glued cereal at his desk
+"Zuck was never doing this"
+A fake film buff on forums every night
+Planting seeds for Netflix, line by line
+
+[Chorus]
+Show up before you blow up
+Nobody owes you fame
+Every app you've ever loved
+Once looked every bit this lame
+You earn them one by one
+
+[Bridge]
+The flyers stop, the playbook dies
+What got you here won't get you there
+But somewhere in a dorm tonight
+Another founder starts the count
+Phone out, pitch ready, stomach tight
+Whispering, "just one more, I swear"
+
+[Final Chorus, belted]
+Show up before you blow up
+Someday they'll know the name
+Every app you've ever loved
+Once looked every bit this lame
+You earn them one by one
+One by one by one
+
+[Outro]
+A stranger said "yes"
+And that changed everything`,
     concept: "How the biggest consumer apps got their first 1,000 users through scrappy, unscalable, unglamorous hustle.",
     keyInsight: "Every app you've ever loved once looked lame. You earn your first users one by one through showing up, not through scale.",
     keyQuote: "Don't pay attention to what Facebook does today — pay attention to Facebook when they were getting their first thousand users.",
@@ -1469,7 +1517,54 @@ We never do`,
     genre: "Dark Electro-Pop",
     mood: "Electric, manic, cinematic",
     tags: ["virality", "consumer apps", "growth loops"],
-    lyrics: "",
+    lyrics: `[Verse 1]
+Fourteen tries and nothing hit
+Called my lawyer, ready to admit
+Then the number one across the States
+Written in a tongue I couldn't translate
+Couldn't read a line, but I read the room
+They'll download it broken — time to build it new
+
+[Chorus]
+Drop it in Georgia, watch it spread
+One school lit up, and then the next
+Eighty suits walk through the door —
+"This is it? This is number one in the store?"
+We lit the match and watched it run
+
+[Verse 2]
+Flipped the script — you can only praise
+Anonymous compliments, no one's name
+Forty percent before the final bell
+Servers crashed — the bill was all we had
+State by state, we held the gate
+Controlled the burn, controlled our fate
+
+[Chorus]
+Drop it in Georgia, watch it spread
+Eighteen hundred rent and number one
+Eighty suits walk through the door —
+"This is it? This is number one in the store?"
+We lit the match — it can't be undone
+
+[Bridge]
+Five years later, couldn't stop
+Boys won't touch an app called Crush
+Black flame icon, now it pops
+Three hours sleep and I would do it all again
+
+[Final Chorus]
+Drop it in Georgia, watch it spread
+One kid's phone lit up — then the rest
+Eighty suits walk through the door —
+"This is it? This is number one in the store?"
+We lit the match and watched it run
+Yeah, we lit the match and watched it run
+
+[Outro]
+Every tap's a miracle for you
+Find the thing they need
+And let it through`,
     concept: "Nikita Bier's story of building repeatedly viral consumer apps: 14 failures before a hit, reading the room instead of the language, controlled geographic rollouts.",
     keyInsight: "Virality comes from finding latent demand and controlling the burn: geographic rollout, school by school, state by state.",
     keyQuote: "With certainty, if you're good at your job, you can make an app grow and go viral.",
@@ -1490,7 +1585,49 @@ We never do`,
     genre: "Funky Pop-Soul",
     mood: "Confident, swaggering, liberating",
     tags: ["positioning", "go-to-market", "product identity"],
-    lyrics: "",
+    lyrics: `[Verse 1]
+She had a product nobody would buy
+Called it an "Access killer" — wondered why
+She called the list to see if they would care
+"Sorry, lady, we don't have that"
+Then twenty-one picked up and blew her mind
+"Your product made me hero of my team!"
+
+[Chorus]
+You ain't that — back it up, pitch it again
+You ain't that — but you could be everything
+You ain't what you called yourself
+You're something no one's seen
+
+[Verse 2]
+Forty percent won't choose your rival's name
+They chose the spreadsheet, chose the pen and pad
+"I get what you do, I just don't see
+Why I'd pay for what I get for free"
+Same code inside, she didn't change a thing
+Except the name — and then the phone would ring
+
+[Chorus]
+You ain't that — back it up, pitch it again
+You ain't that — but you could be everything
+You ain't what you thought you were
+You're better than you dreamed
+
+[Bridge]
+You're not broken, you're just badly introduced
+The right words set the right assumptions loose
+She pitched it once and everyone just nodded
+"Of course — that's what it is, what else?"
+
+[Final Chorus]
+You ain't that — back it up, one last time
+You ain't that — now they see you and they buy
+You found what you always were
+Now everybody sees
+
+[Outro]
+You don't know what you are
+Till you hear it from the outside`,
     isLocked: true,
     concept: "April Dunford's positioning framework: your product isn't broken, it's badly introduced. Same code, different name, and suddenly the phone rings.",
     keyInsight: "You're not broken, you're just badly introduced. The right positioning transforms a product nobody buys into something everyone needs.",
@@ -2163,7 +2300,58 @@ const theWeightTracks: Track[] = [
     genre: "Soulful Indie Folk",
     mood: "Intimate, devastating, redemptive",
     tags: ["firing", "leadership", "compassion"],
-    lyrics: "",
+    lyrics: `[Verse 1]
+Monday, nine AM, the door is closed
+Her coffee's getting cold across from mine
+I rehearsed this in the shower, lost the words
+Fear says wait — she'll come around in time
+
+But the team can feel the weight nobody names
+And the customer deserves the best we've got
+I've been holding her in place when she should fly
+By pretending she's a fit when she is not
+
+[Chorus]
+Fire with grace, tell them face to face
+Sit with the pain, don't look away
+Then walk them toward a better door
+That's what grace is for
+
+[Verse 2]
+I warned her first — "this will be hard to hear"
+One on one, no email, no surprise
+She was angry, then she cried, then something broke
+And I held it all without advice
+
+Then I picked the phone up, called in every name
+Not a reference — something more
+Two hours on the line to find her light
+Now she's building something she adores
+
+[Chorus]
+Fire with grace, hold them face to face
+Let them feel it — don't explain it away
+Be their agent walking out the door
+That's what grace is for
+
+[Bridge]
+The coach who teaches kings got quiet then
+Said, "Anger isn't real — it's just a wall
+Behind the wall is pain, behind the pain
+Is someone hoping to be heard at all"
+"I'm human," and his voice began to crack
+The hardest thing to hold is someone's weight
+
+[Final Chorus]
+Fire with grace — the conversation frees
+Everything that fear has locked away
+A hundred bets on courage — never lost
+Fear gives bad advice, and always has
+Fire with grace
+
+[Outro]
+Fear gives bad advice
+But grace... grace gets it right`,
     concept: "How to fire people with compassion. The most dreaded leadership task reframed as liberation.",
     keyInsight: "Firing someone with grace means being their agent on the way out, holding their weight, not explaining it away.",
     keyQuote: "The biggest marker between a botched layoff and a successful one: did they hear it from their manager, one-on-one?",
@@ -2612,7 +2800,57 @@ const careerMovesTracks: Track[] = [
     genre: "Funky Neo-Soul Pop",
     mood: "Groovy, confident, building",
     tags: ["career growth", "managing up", "compounding"],
-    lyrics: "",
+    lyrics: `[Verse 1]
+Showed up early, stayed here late
+Hit the deadlines, pulled the weight
+Corner office went to someone loud
+I just vanished in the crowd
+Dodged my boss like homework due
+Figured silence was the move
+
+[Chorus]
+What do you need?
+What can I do for you?
+Round and round the magic loop
+Doors are opening I never knew
+Discard a three, pick up a jack
+Give it out and get it back
+
+[Verse 2]
+Farm kid, Ohio, nothing grand
+First day in, he raised his hand
+"Where's the gap nobody wants to own?"
+Two years later, led the floor he'd grown
+Same loop spinning at the next job too
+Fifteen years — the loop was all he knew
+
+[Chorus]
+What do you need?
+What's keeping you awake?
+Round and round the magic loop
+Every turn, the hand upgrades
+Discard a three, pick up a jack
+One step forward, don't look back
+
+[Bridge]
+His mentee called and said, "I'm stuck —
+Not stuck down here, I'm stuck going up
+They won't stop handing me the keys"
+How do I turn this off?
+How do I turn this off?
+
+[Final Chorus]
+What do you need?
+The question changed my days
+Round and round the magic loop
+Raised my hand and found the way
+Discard a three, pick up a king
+Farm kid's running everything
+
+[Outro]
+It's in your hands — it always was
+Ask the question
+Start the loop`,
     concept: "Ethan Evans's 'Magic Loop' framework for rapid career growth: ask your boss what they need, deliver it, build trust, and compound your way up.",
     keyInsight: "Career growth isn't about working harder. It's about asking 'what do you need?' and creating a compounding loop of trust and opportunity.",
     keyQuote: "Not stuck down here, I'm stuck going up.",
@@ -3764,7 +4002,50 @@ I did`,
     genre: "Indie Folk-Rock",
     mood: "Defiant, bittersweet, warm",
     tags: ["bootstrapping", "independence", "founder identity"],
-    lyrics: "",
+    lyrics: `[Verse 1]
+She closed my deck at slide eleven
+Said, "Love the product, love the team"
+"But the market caps at fifty million
+And we write checks for bigger dreams"
+Walked me to the lobby, shook my hand
+Smiled like she was sorry for my plan
+
+[Chorus]
+Not venture-scale, not venture-scale
+That's what they stamped across my name
+But the users stayed, the revenue's real
+They want a unicorn — I built a home
+
+[Verse 2]
+My buddy took the money, popped champagne
+New floor, new title, everything looked great
+But every board meeting moved the line
+Now he builds for strangers, not for love
+Owns ten percent of what was once his own
+Golden treadmill, but it's not a home
+
+[Chorus]
+Not venture-scale, not venture-scale
+That's what they stamped across his name
+The freedom's gone, the pressure's always real
+He got his unicorn — and lost his home
+
+[Bridge]
+Patrick kept it all — two hundred mil
+Never raised a round, he owned the hill
+Sold the whole thing, sat back, felt the chill
+Whispered, "Left a billion on the table"
+Even winners wonder what they missed
+
+[Final Chorus]
+Not venture-scale, not venture-scale
+I know exactly what I am
+The users stayed, and every cent is mine
+They want a unicorn — I built a home
+
+[Outro]
+Not every fire needs to be the sun
+Some fires just keep you warm`,
     concept: "The case for building a business that's 'not venture-scale,' choosing independence and ownership over the unicorn treadmill.",
     keyInsight: "Not every fire needs to be the sun. You can build a real, profitable business that a VC would pass on and own every cent of it.",
     keyQuote: "They want a unicorn. I built a home.",
@@ -3785,7 +4066,45 @@ I did`,
     genre: "Piano-Driven Indie Folk",
     mood: "Intimate, building, bittersweet",
     tags: ["fundraising", "rejection", "founder loneliness"],
-    lyrics: "",
+    lyrics: `[Verse 1]
+Four weeks carving slides at two AM
+Pitching to the mirror, start again
+Eight months runway melting in your hands
+Six friends nod and smile — they're being kind
+
+[Chorus]
+They do this every Tuesday
+You do this once in your life
+Smile through the silence, play the part
+Sell the dream that's tearing you apart
+
+[Verse 2]
+Five pitches a day for two straight weeks
+Warm handshakes and then the silence creeps
+Can't tell the team the walls are closing in
+Rehearse the smile and walk back in
+
+[Chorus]
+They do this every Tuesday
+You do this once in your life
+Hold the line and tell them you're fine
+Pour your heart out one more time
+
+[Bridge]
+Then one leans in and asks about the dream
+Not the deck — the thing behind the screen
+They fight for you in rooms you'll never see
+The email drops — "We'd like to lead..."
+
+[Final Chorus]
+They did this every Tuesday
+Someone believed before you did
+Pop the cork and catch your breath
+The hard part starts again tonight
+
+[Outro]
+You celebrate, you breathe, you start the climb
+The fundraise never ends`,
     concept: "The brutal asymmetry of fundraising: VCs do this every Tuesday, founders do this once in their life.",
     keyInsight: "The power asymmetry of fundraising is devastating: they do this every Tuesday, you do this once in your life. But someone believing in you can change everything.",
     keyQuote: "Fundraising is incredibly opaque, asymmetrical, and is often the difference between having a company and not.",
@@ -3806,7 +4125,64 @@ I did`,
     genre: "Acoustic Indie Folk",
     mood: "Melancholic, raw, resolute",
     tags: ["failure", "traction", "founder delusion"],
-    lyrics: "",
+    lyrics: `[Verse 1]
+Five million raised, a team of ten
+Repeat founders — go again
+The incumbent's clunky, overpriced
+We'd build the modern thing, we'd build it right
+
+Every deal came through my name
+Demo day, the crowd all came
+They'd nod and smile and say, "You'll win"
+But no one switched their systems in
+
+[Chorus]
+We were pushing the car
+And calling it drive
+Had the road, had the crowd, had the sky
+But the moment that we stopped
+Not a wheel was alive
+We were pushing the car
+And calling it drive
+
+[Verse 2]
+They banged the door — "Just let us in!"
+So we tore it off and let them in
+The graph shot up, we popped champagne
+It looked like everything would change
+
+For every name that walked on in
+Another walked right out again
+We tore the walls down, scraped the floor
+And lost the ones we built it for
+
+[Chorus]
+We were pushing the gates
+And calling it growth
+Had the numbers, the hype, and the hope
+But the moment that we looked
+Not a soul felt at home
+We were pushing the car
+And calling it drive
+
+[Bridge]
+I let go on a quiet night
+It stopped beneath a yellow light
+The crowd was rooting for us, not the car
+That's the hardest thing to figure out
+
+[Final Chorus]
+Were you pushing the car
+Or was it alive?
+If it only moves for you
+Then it never was alive
+Let go — does it roll alone?
+That's the only thing to know
+Stop pushing the car
+
+[Outro]
+Some engines start when you walk away
+Some roads were never yours to take`,
     concept: "Two stories of startups that didn't make it: one that couldn't get real traction despite great credentials, and one that tore down its walls going freemium.",
     keyInsight: "If your product only moves when you're pushing it, it was never alive. The hardest thing is figuring out whether the crowd is rooting for you or for the car.",
     keyQuote: "Don't confuse people rooting for you with market signal.",
@@ -3827,7 +4203,67 @@ I did`,
     genre: "Indie Folk Anthem",
     mood: "Vulnerable, communal, defiant",
     tags: ["founder struggle", "vulnerability", "resilience"],
-    lyrics: "",
+    lyrics: `[Verse 1]
+Someone asks me how it's going
+I freeze up, then I smile
+Three AM I'm watching numbers
+That haven't moved in a while
+Wrote a thousand lines of code
+To dodge a single call
+'Cause hearing "no" from strangers
+Beats hearing nothing at all
+
+[Chorus]
+It's never going well
+Ask anyone in here
+It's never going well
+That much is crystal clear
+Every week a little further
+Every call I learn to listen
+It's never going well
+We build anyway
+
+[Verse 2]
+Laptops on the floor, phones down
+Six strangers in a ring
+Gustaf says forget your pitch
+Just tell us everything
+She goes first — her voice is shaking
+"No traction and we're out of cash"
+Something in my chest breaks open
+'Cause mine sounds just like that
+
+[Chorus]
+It's never going well
+We finally said it loud
+It's never going well
+But look around this crowd
+Every week a little further
+Every call a little braver
+It's never going well
+We build anyway
+
+[Bridge]
+"Mine is broken too" — those words set me free
+The worst part wasn't failing
+It was thinking it was only me
+I'd rather hear a hundred nos
+Than build in silence all my days
+
+[Final Chorus, belted]
+It's never going well
+And I've made peace with that
+It's never going well
+But I know where I'm at
+Every week a little further
+Every call worth more than comfort
+It's never going well
+We build anyway
+
+[Outro]
+How's it going?
+...It's never going well
+I'll be here next Tuesday though`,
     concept: "Gustaf Alstromer's lessons from 600+ YC startups: the universal founder experience of struggle, vulnerability, and building anyway.",
     keyInsight: "The worst part of struggling isn't failing. It's thinking it's only you. Shared vulnerability unlocks resilience.",
     keyQuote: "When you ask a founder 'how are things going?' — it's never going well. All founders, when they look each other in the eyes, know that's not the answer.",
@@ -4594,7 +5030,61 @@ const theInterviewTracks: Track[] = [
     genre: "Gospel-Soul Anthem",
     mood: "Defiant, empowering, swagger",
     tags: ["salary negotiation", "self-advocacy", "knowing your worth"],
-    lyrics: "",
+    lyrics: `[Verse 1]
+Rehearsed my lines out in the parking lot
+Walked in steady with my talking points
+She leaned across the table, smiled and said
+"So tell me — what's your number?"
+My mouth went dry, I heard myself speak
+Threw out a price just to end the week
+
+[Chorus]
+Don't give 'em your number
+Don't give 'em your price
+They'll take what you tell 'em
+And cut it twice
+Let the silence do the talking
+Let the quiet hold the room
+'Cause the first one who speaks
+Is the first one to lose
+
+[Verse 2]
+She ran the floor at the biggest name in tech
+Top of the ladder, earned every step
+But when the offer came, she froze just like you
+Five million more was hiding in plain view
+Someone said, "The game has rules — sit down"
+Watch what happens when you hold your ground
+
+[Chorus]
+Don't give 'em your number
+Don't show 'em your hand
+They'll match what you tell 'em
+As close as they can
+Let the silence do the talking
+Let the quiet hold the room
+'Cause the first one who speaks
+Is the first one to lose
+
+[Bridge]
+They want you nervous, want you grateful
+Small enough to say "that's great"
+They built this game to keep you quiet
+But you don't have to play it straight
+
+[Final Chorus, belted]
+Don't give 'em your number
+Don't give 'em your price
+They designed it to fool you
+But you're done being nice
+Let the silence do the talking
+Let the truth sit in the room
+'Cause the first one who speaks
+Is the first one to lose
+
+[Outro]
+Next time they ask your number...
+Smile, and let 'em wait`,
     concept: "The rules of salary negotiation: never give your number first, let silence do the talking, understand the game is designed to keep you quiet.",
     keyInsight: "The salary negotiation game has rules, and once you learn them, you stop leaving money on the table.",
     keyQuote: "Every recruiter will ask about your salary expectations. Do not — I repeat, do not — give them a number.",
@@ -5548,7 +6038,50 @@ You can set it down`,
     genre: "Cinematic Piano Ballad",
     mood: "Raw, breaking, cathartic",
     tags: ["burnout", "mental health", "identity"],
-    lyrics: "",
+    lyrics: `[Verse 1]
+Slipped out at ten, nobody saw
+Panic in the stairwell, clenched my jaw
+Twenty-eight and shaking on the floor
+Of a building I was dying for
+Ground my teeth to dust, rebuilt 'em twice
+Heart cracked open at thirty-five
+
+[Chorus]
+Enough, enough
+I won everything and lost
+The mountain doesn't care
+How much the climbing cost
+
+[Verse 2]
+Mama died when I was only ten
+I learned to win so they'd want me again
+Captain, straight A's, any goal I'd chase
+Love looked like a trophy on a shelf
+Seventeen years outrunning myself
+Six startups couldn't fill the space
+
+[Chorus]
+Enough, enough
+The thing that saved me then
+Became the thing that broke
+A boy of only ten
+
+[Bridge, building]
+Forty-five days in a quiet room
+I found the boy behind the noise
+He said, "You were enough before
+Before the gold, before the climb"
+
+[Final Chorus, soaring]
+Enough... enough
+I'm floating where the river goes
+The mountain's far behind
+The current's bringing me home
+
+[Outro]
+Stop climbing
+Let the water take you home
+You were always enough`,
     isLocked: true,
     concept: "Andy Johns's story of burnout, childhood wounds driving achievement, and learning that the mountain doesn't care how much the climbing cost.",
     keyInsight: "Your body's alarm - broken sleep, broken heart, broken teeth - is telling you something your ambition won't let you hear.",
