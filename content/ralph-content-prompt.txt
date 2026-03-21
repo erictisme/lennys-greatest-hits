@@ -1,5 +1,12 @@
-Please read plans/ralph-content-run.md and execute it as a Ralph content run. This is a 4-phase content evaluation and planning session for the Lenny's Greatest Hits contest entry.
+Please read plans/ralph-content-run.md and execute it as a Ralph content run. This is a 5-phase content and design session for the Lenny's Greatest Hits contest entry.
 
-Start by reading the plan, then work through each phase in order. Use the Lenny MCP tools to research source material when needed. Create all output files as specified in the plan.
+Phases:
+1. Write Genius-style annotations for all tracks with lyrics (use Lenny MCP to research real facts)
+2. Design the author attribution UX (make each song feel connected to its Lenny source article/podcast)
+3. Critique all 16 existing songs with lyrics
+4. Write lyrics for batch 2 tracks that have audio but no lyrics
+5. Review overall site structure and recommend changes
 
-This is NOT a coding run — it's a content critique and generation planning run. Focus on song quality, prioritization, and making the strongest possible contest entry by April 15.
+Start by reading the plan, then work through Phase 1 first — it's the highest impact. Use the Lenny MCP tools to research source material for annotations. Create all output files as specified in the plan.
+
+This is NOT a coding run — it's a content + design planning run. The only code changes are adding annotation data to lib/albums.ts.

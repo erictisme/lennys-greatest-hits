@@ -1,137 +1,116 @@
 {
   "features": [
     {
-      "id": 80,
-      "category": "feature",
+      "id": 1,
+      "category": "bugfix",
       "priority": 0,
-      "description": "Add LyricAnnotation type to the Track data model. In lib/types.ts, add a new exported type: LyricAnnotation = { lyricText: string; note: string; sourceUrl?: string; sourceTitle?: string }. Then add an optional 'annotations' field of type LyricAnnotation[] to the existing Track type. DONE: LyricAnnotation type is exported from lib/types.ts, Track type has 'annotations?: LyricAnnotation[]' field. DO NOT TOUCH: Any other types, any component files, lib/albums.ts. VERIFY: pnpm build passes, no type errors.",
+      "description": "Fix play/navigate behavior on album track rows. Current bug: clicking the track row (including the play triangle area) sometimes navigates to the track page instead of playing the song. Root cause: the Link component for the track title has stopPropagation but its clickable area is wider than visible text. Fix: Remove the <Link> element entirely from inside the track row. The track title should be a plain <p> tag. Add a small dedicated 'view track' icon button (ChevronRight from lucide-react, w-4 h-4) at the far right of the row (next to the share menu) that uses e.stopPropagation() then router.push(`/track/${track.slug}`). The outer div onClick already calls handlePlayTrack — keep it. Import useRouter from next/navigation. DONE: Clicking anywhere on a track row plays the song. There is NO <Link> tag inside the track row div. A small ChevronRight icon at the far right navigates to the track page. DO NOT TOUCH: NowPlayingBar, homepage, footer links. VERIFY: No <Link> tags inside album track rows. pnpm build passes.",
       "steps": [
-        "Add LyricAnnotation type export to lib/types.ts",
-        "Add annotations?: LyricAnnotation[] to Track type",
+        "Read app/album/[slug]/AlbumPageClient.tsx",
+        "Import useRouter from next/navigation, ChevronRight from lucide-react",
+        "Remove the <Link> element wrapping the track title (around line 344-351), replace with a plain <p> tag keeping same className and style",
+        "Add a ChevronRight icon button after the share menu button: onClick={(e) => { e.stopPropagation(); router.push(`/track/${track.slug}`); }, same opacity/hover pattern as share button",
+        "Verify zero <Link> tags inside the track .map() callback",
         "pnpm build passes"
       ],
-      "files": ["lib/types.ts"],
-      "passes": true
+      "files": ["app/album/[slug]/AlbumPageClient.tsx"],
+      "passes": false
     },
     {
-      "id": 81,
-      "category": "feature",
+      "id": 2,
+      "category": "bugfix",
       "priority": 0,
-      "description": "Add Google Font Spectral for annotation panels (the 'Lenny newsletter feel'). Using next/font/google, load Spectral with weights 400, 600 and subsets ['latin'], styles ['normal', 'italic']. Export the font variable and add a CSS class 'font-lenny' that applies it. The class should be available globally via the html element's className or via a CSS variable. DONE: A component or element with className including 'font-lenny' renders in Spectral serif. DO NOT TOUCH: existing font usage, global styles beyond adding the new font class, any component files. VERIFY: pnpm build passes. The font-lenny class is available (check layout.tsx or globals.css).",
+      "description": "Fix play/navigate on topics track list. app/topics/[tag]/page.tsx wraps entire track rows in a <Link>, making it impossible to play without navigating. Apply the same play-first pattern: row click plays the song, small icon for navigation. This is currently a server component — it needs to become a client component. Since generateStaticParams and generateMetadata cannot be in client components, split into page.tsx (server, keeps metadata/params) and a new TopicPageClient.tsx component. DONE: Clicking a track on /topics/[slug] plays the song. A small ChevronRight navigates to the track page. Locked tracks (no audioUrl) show but don't play on click. DO NOT TOUCH: /topics page itself, lib/ files. VERIFY: pnpm build passes. /topics/[tag] pages still generate statically.",
       "steps": [
-        "Import Spectral from next/font/google in app/layout.tsx",
-        "Configure weights [400, 600], styles ['normal', 'italic'], subsets ['latin']",
-        "Add the font's variable class to the html element className",
-        "Add a .font-lenny utility class in globals.css that applies the Spectral font-family",
+        "Read app/topics/[tag]/page.tsx",
+        "Create app/topics/[tag]/TopicPageClient.tsx as a 'use client' component",
+        "Move the track list rendering into TopicPageClient, accepting tracks and category as props",
+        "Import useAudio, useRouter in TopicPageClient",
+        "Replace Link wrappers with div onClick that calls audio.playTrack(track)",
+        "Add ChevronRight icon button for navigation with stopPropagation",
+        "Keep page.tsx as server component with generateStaticParams/generateMetadata, render TopicPageClient",
         "pnpm build passes"
       ],
-      "files": ["app/layout.tsx", "app/globals.css"],
-      "passes": true
+      "files": ["app/topics/[tag]/page.tsx", "app/topics/[tag]/TopicPageClient.tsx"],
+      "passes": false
     },
     {
-      "id": 82,
+      "id": 3,
       "category": "feature",
       "priority": 1,
-      "description": "Add Genius-style lyric annotations to SyncedLyrics component. Accept a new optional prop 'annotations' (LyricAnnotation[] from lib/types.ts) and 'accentColor' is already a prop. For each lyric line, check if any annotation's lyricText matches (case-insensitive substring match against line.text). Annotated lines get: (1) a subtle dotted underline (border-bottom: 1px dotted) and slightly brighter opacity, (2) a small annotation icon or indicator. On click/tap of an annotated line, toggle an expandable panel directly below it. The panel styling MUST feel like reading Lenny's newsletter: use font-lenny class (Spectral serif), left border (3px solid) in the accentColor, bg-white/5 background, p-4 padding, text-sm leading-relaxed for the note text. Include a source attribution line at the bottom: 'From [sourceTitle]' as a small muted link to sourceUrl if provided. Use framer-motion AnimatePresence for smooth expand/collapse. Only one annotation panel open at a time (clicking another closes the previous). DONE: Annotated lyric lines are visually distinct with dotted underline. Clicking expands a serif-font panel with the annotation. Panel has left accent border and source link. IMPORTANT: the existing lyric click-to-seek behavior should still work — add annotation toggle to a separate tap target (e.g., the annotation indicator icon) OR make the annotation expand on the SECOND tap (first tap seeks). DO NOT TOUCH: lyrics parsing logic, share lyric functionality, audio playback. VERIFY: pnpm build passes.",
+      "description": "Add author/source attribution to album track rows. Each track has a sources array with { title, type, url, guest }. Below the genre/mood line on unlocked tracks, add a new attribution line showing the primary source guest name and source type. Format: small icon (Mic icon for podcast, FileText icon for newsletter) + guest name + source title, all in muted styling. This connects each song to its Lenny source content. DONE: Every unlocked track row shows 'Based on [source title] with [guest]' with a type icon. Locked tracks show concept only (no change). DO NOT TOUCH: track pages, homepage, NowPlayingBar, lib/ files. VERIFY: All unlocked tracks display attribution. Icons correctly reflect source type (podcast vs newsletter). pnpm build passes.",
       "steps": [
-        "Import LyricAnnotation type from lib/types.ts",
-        "Add annotations?: LyricAnnotation[] to SyncedLyricsProps interface",
-        "Create a helper to match annotations to parsed lyric lines (case-insensitive substring)",
-        "Add state for which annotation index is currently expanded (null = none)",
-        "Render annotated lines with dotted underline styling and a small indicator icon",
-        "Add a clickable annotation indicator (separate from the seek button) that toggles the panel",
-        "Render the expandable annotation panel with font-lenny class, accent left border, source link",
-        "Use framer-motion AnimatePresence for smooth open/close",
-        "Ensure only one panel open at a time",
+        "Read app/album/[slug]/AlbumPageClient.tsx",
+        "Import Mic and FileText icons from lucide-react",
+        "After the genre/mood <p> tag and tags div in unlocked tracks, add a new attribution line",
+        "Use track.sources[0] for the primary source — show type icon + guest name",
+        "Style: text-[10px] text-muted-foreground/40 flex items-center gap-1 mt-1",
+        "Handle empty sources array gracefully (don't render attribution line)",
         "pnpm build passes"
       ],
-      "files": ["components/SyncedLyrics.tsx"],
-      "passes": true
+      "files": ["app/album/[slug]/AlbumPageClient.tsx"],
+      "passes": false
     },
     {
-      "id": 83,
+      "id": 4,
       "category": "feature",
       "priority": 1,
-      "description": "Wire annotations data from track to SyncedLyrics in TrackPageClient. Pass track.annotations to the SyncedLyrics component. The accentColor prop is already passed. This should be backwards-compatible: if track.annotations is undefined or empty, SyncedLyrics renders exactly as before. DONE: SyncedLyrics receives annotations prop from track data. DO NOT TOUCH: audio player, layout, other sections of track page. VERIFY: pnpm build passes. Track pages render without errors (annotations is undefined for all current tracks, so no visual change yet).",
+      "description": "Add 'Based on' attribution card to track detail pages. On TrackPageClient.tsx, after the lyrics/SyncedLyrics section, add a 'Based on' section that links to the original Lenny newsletter or podcast episode. For each source in track.sources, show: source title (as external link), guest name, type badge ('Newsletter' or 'Podcast' in a small pill), and the URL. Style the card like the existing annotation panels: accent color left border (3px solid), subtle background (bg-white/5 or bg-black/[0.02]), rounded, font-lenny for the title. If multiple sources exist, show all. DONE: Every track page has a 'Based on' section showing source articles/podcasts with links. DO NOT TOUCH: album pages, homepage, audio player. VERIFY: Card renders on all track pages. External links open in new tab. pnpm build passes.",
       "steps": [
-        "In TrackPageClient.tsx, add annotations={track.annotations} prop to the SyncedLyrics component",
+        "Read app/track/[slug]/TrackPageClient.tsx to find the right insertion point",
+        "After the SyncedLyrics component or lyrics section, add a 'Based on' heading and cards",
+        "For each source: render title as <a> link, guest name, type pill badge",
+        "Style with accent left border, subtle bg, font-lenny for title text",
+        "External links: target=_blank rel=noopener noreferrer",
         "pnpm build passes"
       ],
       "files": ["app/track/[slug]/TrackPageClient.tsx"],
-      "passes": true
+      "passes": false
     },
     {
-      "id": 84,
+      "id": 5,
       "category": "feature",
       "priority": 2,
-      "description": "Add sample annotations to one track for testing. Pick the track 'do-things-that-dont-scale' in lib/albums.ts (the first track in foundersTracks array). Add an annotations array with exactly 4 annotations connecting specific lyrics to Lenny insights. Use these annotations: (1) lyricText: 'Knocked on every door from dusk to dawn', note: 'Brian Chesky told Lenny he flew to New York and personally knocked on hosts\\' doors to photograph their apartments. This hands-on approach tripled conversion rates on listings with professional photos.', sourceTitle: 'Brian Chesky on Airbnb\\'s early days', sourceUrl: 'https://www.lennyspodcast.com/brian-cheskys-new-playbook/'. (2) lyricText: 'Stripe boys at the laptop, wouldn\\'t leave', note: 'The Collison brothers famously wouldn\\'t take \"I\\'ll sign up later\" for an answer. They\\'d ask \"can I see your laptop?\" and install Stripe right there. Lenny calls this the gold standard of unscalable acquisition.', sourceTitle: 'How the biggest companies got their first users', sourceUrl: ''. (3) lyricText: 'A hundred users loved by hand, not code', note: 'Paul Graham\\'s famous essay argues you need to \"recruit users one at a time\" and make each one love you before thinking about growth. Lenny featured this as the #1 lesson across 20+ first-user stories.', sourceTitle: 'Do Things That Don\\'t Scale', sourceUrl: 'https://paulgraham.com/ds.html'. (4) lyricText: 'Every great company started small', note: 'Lenny\\'s research across Airbnb, DoorDash, Tinder, Stripe, and Uber found the same pattern: the founders who won were the ones willing to do the work that wouldn\\'t scale, personally serving early users until they figured out what people really wanted.', sourceTitle: 'How the biggest companies got their first users', sourceUrl: ''. DONE: The do-things-that-dont-scale track has 4 annotations in lib/albums.ts. DO NOT TOUCH: any other tracks, any component files. VERIFY: pnpm build passes, no type errors on the annotations array.",
+      "description": "Add Genius-style annotations for all Founders album tracks (4 tracks). Currently only do-things-that-dont-scale has annotations. Add 3-5 annotations each to: product-market-fit, the-maze, taste, eleven-stars. Use each track's lyrics, concept, storyBehind, keyInsight, and sources to write factual annotations explaining what specific lyric lines reference. Each annotation object: { lyricText: string (must match a real line in the lyrics, case-insensitive partial match), note: string (the explanation — specific, factual, interesting), sourceTitle: string, sourceUrl: string }. DONE: All 5 Founders tracks have annotations arrays with 3-5 items each in lib/albums.ts. DO NOT TOUCH: component files, other album tracks. VERIFY: pnpm build passes. Each lyricText substring exists in that track's lyrics.",
       "steps": [
-        "Find the do-things-that-dont-scale track object in lib/albums.ts",
-        "Add the annotations array with the 4 specified annotations after the existing fields",
+        "Read lib/albums.ts foundersTracks section — focus on lyrics for each track",
+        "For product-market-fit: identify 3-5 lyric lines referencing Rahul Vohra, superhuman, PMF survey, etc. Write annotations.",
+        "For the-maze: identify lines referencing tarpit ideas, Dalton Caldwell advice, etc. Write annotations.",
+        "For taste: identify lines referencing Jony Ive, Dieter Rams, craft, etc. Write annotations.",
+        "For eleven-stars: identify lines referencing Chesky's 11-star framework. Write annotations.",
+        "Add annotations arrays to each track object in lib/albums.ts",
         "pnpm build passes"
       ],
       "files": ["lib/albums.ts"],
-      "passes": true
+      "passes": false
     },
     {
-      "id": 85,
+      "id": 6,
       "category": "feature",
       "priority": 2,
-      "description": "Build a /topics browse page showing all unique tags as a clickable grid. Create app/topics/page.tsx. Import getAllTracks from lib/tracks. Collect all unique tags from all non-locked tracks (track.tags array). Sort alphabetically. Display as a grid of pill-shaped buttons (similar to the existing tag styling on track pages but larger and clickable). Each pill links to /topics/[tag]. Page has a header 'Browse by Topic' and a back link to home. Use the app's existing dark theme styling. Layout: responsive grid, 2 cols on mobile, 3-4 on desktop. DONE: /topics page renders showing all tags as clickable pills linking to /topics/[tag]. DO NOT TOUCH: lib/albums.ts, existing components, other pages. VERIFY: pnpm build passes. The /topics route exists in the build output.",
+      "description": "Add Genius-style annotations for Product and Builders album tracks (5 tracks total). Add 3-5 annotations each to: talk-to-users, ship-it, vibe-coding (Product), imposter, burnout (Builders). Use each track's lyrics, concept, storyBehind, keyInsight to write factual annotations. Each annotation: { lyricText, note, sourceTitle, sourceUrl }. DONE: All 5 tracks have annotations arrays with 3-5 items each. DO NOT TOUCH: component files, other albums. VERIFY: pnpm build passes.",
       "steps": [
-        "Create app/topics/page.tsx",
-        "Import getAllTracks, collect unique tags from non-locked tracks",
-        "Sort tags alphabetically",
-        "Render responsive grid of pill links to /topics/[tag]",
-        "Add page header and back-to-home link",
+        "Read lib/albums.ts productTracks and buildersTracks — focus on lyrics",
+        "For each track: identify 3-5 lyric lines referencing real stories/concepts, write annotations",
+        "Add annotations arrays",
         "pnpm build passes"
       ],
-      "files": ["app/topics/page.tsx"],
-      "passes": true
+      "files": ["lib/albums.ts"],
+      "passes": false
     },
     {
-      "id": 86,
+      "id": 7,
       "category": "feature",
       "priority": 2,
-      "description": "Build a /topics/[tag] page showing all tracks matching a tag. Create app/topics/[tag]/page.tsx. Import getAllTracks from lib/tracks and getAllAlbums. Filter tracks where track.tags includes the tag parameter (case-insensitive). For each matching track, display: cover thumbnail (48x48), track title (links to /track/[slug]), album name, genre, duration. Use a vertical list layout. Page header shows the tag name. Include a back link to /topics. If no tracks match, show 'No tracks found for this topic.' Use generateStaticParams to pre-render all tag pages by collecting unique tags from all tracks. DONE: Visiting /topics/hustle shows all tracks tagged 'hustle' with links to each track. DO NOT TOUCH: lib/albums.ts, existing components, other pages. VERIFY: pnpm build passes. The /topics/[tag] routes exist in build output.",
+      "description": "Add Genius-style annotations for Frameworks and Career Moves tracks (6 tracks). Add 3-5 annotations each to: trace-it-back, the-disease, test-everything, whats-the-job, good-enough (Frameworks), state-of-the-me (Career Moves). Use each track's lyrics, concept, storyBehind to write factual annotations. Each annotation: { lyricText, note, sourceTitle, sourceUrl }. DONE: All 6 tracks have annotations arrays. DO NOT TOUCH: component files, other albums. VERIFY: pnpm build passes.",
       "steps": [
-        "Create app/topics/[tag]/page.tsx",
-        "Import getAllTracks and filter by tag parameter",
-        "Display matching tracks as a list with thumbnail, title link, album, genre, duration",
-        "Add generateStaticParams for all unique tags",
-        "Add page header with tag name and back link to /topics",
-        "Handle empty state",
+        "Read lib/albums.ts frameworksTracks and careerMovesTracks — focus on lyrics",
+        "For each track: identify 3-5 lyric lines referencing real stories/concepts, write annotations",
+        "Add annotations arrays",
         "pnpm build passes"
       ],
-      "files": ["app/topics/[tag]/page.tsx"],
-      "passes": true
-    },
-    {
-      "id": 87,
-      "category": "feature",
-      "priority": 3,
-      "description": "Make tags clickable on track pages. In TrackPageClient.tsx, find the section that renders track.tags as span elements (around line 193-203). Wrap each tag span in a Next.js Link component pointing to /topics/[tag]. Keep the existing visual styling (pill shape, border, muted text) but add hover:text-foreground and hover:border-foreground/40 transitions so they look interactive. DONE: Tags on track pages are clickable links to /topics/[tag] with hover feedback. DO NOT TOUCH: audio player, lyrics, other sections. VERIFY: pnpm build passes.",
-      "steps": [
-        "Import Link from next/link in TrackPageClient.tsx (already imported)",
-        "Wrap each tag span in <Link href={`/topics/${tag}`}>",
-        "Add hover styles for interactivity feedback",
-        "pnpm build passes"
-      ],
-      "files": ["app/track/[slug]/TrackPageClient.tsx"],
-      "passes": true
-    },
-    {
-      "id": 88,
-      "category": "feature",
-      "priority": 3,
-      "description": "Add a 'Browse by Topic' link to the homepage. In app/page.tsx, add a small text link below the album grid section (after the albums map) that reads 'Browse by Topic →' and links to /topics. Style it as a centered, muted text link with hover effect: text-sm text-muted-foreground hover:text-foreground transition-colors. Add some top margin (mt-6) to separate from the album grid. DONE: Homepage has a visible 'Browse by Topic →' link that navigates to /topics. DO NOT TOUCH: hero section, album grid layout, email signup, footer. VERIFY: pnpm build passes.",
-      "steps": [
-        "Add a Link component after the album grid in app/page.tsx",
-        "Style as centered muted text with hover effect",
-        "pnpm build passes"
-      ],
-      "files": ["app/page.tsx"],
-      "passes": true
+      "files": ["lib/albums.ts"],
+      "passes": false
     }
   ]
 }
