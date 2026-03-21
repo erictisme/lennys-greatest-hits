@@ -285,25 +285,24 @@ export default function AlbumPageClient({ slug }: { slug: string }) {
 
             return (
               <div key={track.slug}>
-                <div className="group flex items-center gap-4 px-4 py-4 -mx-4 rounded-lg hover:bg-black/[0.04] transition-colors">
-                  {/* Track Number / Play Button / Lock Icon */}
+                <div
+                  className="group flex items-center gap-4 px-4 py-4 -mx-4 rounded-lg hover:bg-black/[0.04] transition-colors cursor-pointer"
+                  onClick={() => {
+                    if (locked) return;
+                    if (isCurrentTrack) {
+                      audio.togglePlay();
+                    } else {
+                      handlePlayTrack(i);
+                    }
+                  }}
+                >
+                  {/* Track Number / Play Icon / Lock Icon */}
                   {locked ? (
                     <div className="w-11 h-11 flex items-center justify-center shrink-0 -ml-2.5">
                       <Lock className="w-4 h-4 text-muted-foreground/40" />
                     </div>
                   ) : (
-                    <button
-                      onClick={(e) => {
-                        e.stopPropagation();
-                        e.preventDefault();
-                        if (isCurrentTrack) {
-                          audio.togglePlay();
-                        } else {
-                          handlePlayTrack(i);
-                        }
-                      }}
-                      className="w-11 h-11 flex items-center justify-center shrink-0 -ml-2.5 rounded-full hover:bg-black/[0.06] transition-colors"
-                    >
+                    <div className="w-11 h-11 flex items-center justify-center shrink-0 -ml-2.5">
                       {isPlaying ? (
                         <Pause
                           className="w-4 h-4"
@@ -324,12 +323,12 @@ export default function AlbumPageClient({ slug }: { slug: string }) {
                           </span>
                         </>
                       )}
-                    </button>
+                    </div>
                   )}
 
                   {/* Track Thumbnail (hidden for locked) */}
                   {!locked && track.coverImage && (
-                    <Link href={`/track/${track.slug}`} className="shrink-0">
+                    <div className="shrink-0">
                       <Image
                         src={track.coverImage}
                         alt={track.title}
@@ -337,20 +336,19 @@ export default function AlbumPageClient({ slug }: { slug: string }) {
                         height={40}
                         className="rounded"
                       />
-                    </Link>
+                    </div>
                   )}
 
                   {/* Track Info */}
-                  <Link
-                    href={`/track/${track.slug}`}
-                    className="flex-1 min-w-0"
-                  >
-                    <p
-                      className="text-[15px] font-medium truncate transition-colors"
+                  <div className="flex-1 min-w-0">
+                    <Link
+                      href={`/track/${track.slug}`}
+                      onClick={(e) => e.stopPropagation()}
+                      className="text-[15px] font-medium truncate transition-colors hover:underline block"
                       style={isCurrentTrack ? { color: album.accentColor } : {}}
                     >
                       {track.title}
-                    </p>
+                    </Link>
                     {locked ? (
                       <p className="text-xs text-muted-foreground/60 truncate mt-0.5">
                         {track.concept}
@@ -374,7 +372,7 @@ export default function AlbumPageClient({ slug }: { slug: string }) {
                         )}
                       </>
                     )}
-                  </Link>
+                  </div>
 
                   {/* Play Count + Duration (hidden for locked) */}
                   {!locked && (
