@@ -3,3 +3,5 @@ Feature 1 DONE: Next/Prev buttons now navigate to new track page using useRouter
 Build passes.
 Feature 2 DONE: Auto-advance uses router.push callback instead of window.location.href. Audio continues uninterrupted.
 Build passes.
+Feature 3 DONE: Set all 11 album coverImage values to their first track's cover art.
+Build passes.
