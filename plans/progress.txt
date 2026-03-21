@@ -8,3 +8,4 @@ Content Task 2 DONE: Created batch3/tasks.json — 20 songs filling all gap albu
 Task 5: Added 4 annotations each to product-market-fit, the-maze, taste, eleven-stars in lib/albums.ts. Build passes.
 Content Task 3 DONE: Generated batch 3 songs 1-5 (The Numbers Don't Lie, The Unlock, Measure Twice, The One Question, First Ten). 15 files: 5 research briefs, 5 lyrics, 5 suno prompts. Tasks 1-5 marked complete in tasks.json.
 Task 6: Added 4 annotations each to talk-to-users, ship-it, vibe-coding, imposter, burnout in lib/albums.ts. Build passes.
+Task 7: Added 4 annotations each to trace-it-back, the-disease, test-everything, whats-the-job, good-enough (Frameworks) and state-of-the-me (Career Moves) in lib/albums.ts. Build passes.
