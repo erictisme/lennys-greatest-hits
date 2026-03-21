@@ -1,0 +1,253 @@
+{
+  "batch": 3,
+  "created": "2026-03-21",
+  "strategy": "Fill gap albums: By the Numbers (0 songs) and The Talent Search (0 songs) first, then Electric Dreams, The Interview, Deep Work, The Weight, Career Moves, The Human Side.",
+  "tasks": [
+    {
+      "id": 1,
+      "idea": "The Numbers Don't Lie",
+      "description": "Song about retention benchmarks — Lenny's most-shared content. The death tax of churn, the obsession with 'what is good,' the curves that separate winners from the dead. Read newsletters/what-is-good-retention.md for retention benchmarks across B2B/B2C/SaaS. Read newsletters/what-is-good-monthly-churn.md for churn as the silent killer of growth.",
+      "research_keywords": ["retention", "churn", "benchmark", "good retention rate"],
+      "output_file": "the-numbers-dont-lie",
+      "album": "By the Numbers",
+      "source_files": [
+        "newsletters/what-is-good-retention.md",
+        "newsletters/what-is-good-monthly-churn.md"
+      ],
+      "complete": false
+    },
+    {
+      "id": 2,
+      "idea": "The Unlock",
+      "description": "Song about activation metrics — the 'aha moment' that predicts everything. The three-step process to find the metric that tells you a user will stick. Read newsletters/how-to-determine-your-activation-metric.md for the framework. Read newsletters/what-is-a-good-activation-rate.md for activation benchmarks and common mistakes.",
+      "research_keywords": ["activation metric", "aha moment", "onboarding", "activation rate"],
+      "output_file": "the-unlock",
+      "album": "By the Numbers",
+      "source_files": [
+        "newsletters/how-to-determine-your-activation-metric.md",
+        "newsletters/what-is-a-good-activation-rate.md"
+      ],
+      "complete": false
+    },
+    {
+      "id": 3,
+      "idea": "Measure Twice",
+      "description": "Song about cohort retention — the art of reading retention curves, flattening the smile, understanding what the data is really telling you. Read newsletters/how-to-measure-cohort-retention.md for the technical framework. Read newsletters/how-to-increase-your-products-retention.md for tactics to move the curves.",
+      "research_keywords": ["cohort retention", "retention curve", "increase retention"],
+      "output_file": "measure-twice",
+      "album": "By the Numbers",
+      "source_files": [
+        "newsletters/how-to-measure-cohort-retention.md",
+        "newsletters/how-to-increase-your-products-retention.md"
+      ],
+      "complete": false
+    },
+    {
+      "id": 4,
+      "idea": "The One Question",
+      "description": "Song about the power of a single interview question to reveal everything about a candidate. 25 high-signal questions from 150+ podcast guests. Read newsletters/how-to-learn-the-most-about-a-candidate-from-a-single-interview-question.md for the full collection.",
+      "research_keywords": ["interview question", "hiring signal", "candidate assessment"],
+      "output_file": "the-one-question",
+      "album": "The Talent Search",
+      "source_files": [
+        "newsletters/how-to-learn-the-most-about-a-candidate-from-a-single-interview-question.md"
+      ],
+      "complete": false
+    },
+    {
+      "id": 5,
+      "idea": "First Ten",
+      "description": "Song about hiring your early team — the first 10 hires that define your culture forever. Where to find them, how to convince them, when to use a recruiter. Read newsletters/hiring-your-early-team.md for the comprehensive guide. Read newsletters/winning-at-early-stage-hiring.md for the 5 themes of hiring success.",
+      "research_keywords": ["early team", "first hires", "startup hiring", "recruiting"],
+      "output_file": "first-ten",
+      "album": "The Talent Search",
+      "source_files": [
+        "newsletters/hiring-your-early-team.md",
+        "newsletters/winning-at-early-stage-hiring.md"
+      ],
+      "complete": false
+    },
+    {
+      "id": 6,
+      "idea": "The Closer",
+      "description": "Song about the talent game from the perspective of a top executive recruiter. Finding, assessing, closing the best people. Read podcasts/lauren-ipsen.md for lessons from one of the world's top executive recruiters at Daversa Partners and General Catalyst.",
+      "research_keywords": ["recruiter", "executive search", "talent", "closing candidates"],
+      "output_file": "the-closer",
+      "album": "The Talent Search",
+      "source_files": [
+        "podcasts/lauren-ipsen.md"
+      ],
+      "complete": false
+    },
+    {
+      "id": 7,
+      "idea": "The New Stack",
+      "description": "Song about counterintuitive lessons from building AI products — non-determinism, thinking differently, the agency-control tradeoff. Read newsletters/counterintuitive-advice-for-building-ai-products.md for insights from 20+ AI product builders at Adobe, GitHub, Perplexity, Canva, Superhuman.",
+      "research_keywords": ["AI product", "counterintuitive", "non-determinism", "LLM"],
+      "output_file": "the-new-stack",
+      "album": "Electric Dreams",
+      "source_files": [
+        "newsletters/counterintuitive-advice-for-building-ai-products.md"
+      ],
+      "complete": false
+    },
+    {
+      "id": 8,
+      "idea": "Godmother",
+      "description": "Song about Dr. Fei-Fei Li — the godmother of AI. Her journey from ImageNet to spatial intelligence, the human story behind the AI revolution. Read podcasts/dr-fei-fei-li.md for her conversation with Lenny about jobs, robots, and world models.",
+      "research_keywords": ["Fei-Fei Li", "ImageNet", "AI revolution", "spatial intelligence"],
+      "output_file": "godmother",
+      "album": "Electric Dreams",
+      "source_files": [
+        "podcasts/dr-fei-fei-li.md"
+      ],
+      "complete": false
+    },
+    {
+      "id": 9,
+      "idea": "Ninety-Three Percent",
+      "description": "Song about passing first-round interviews — Lenny coached 200+ people with a 93% success rate. The employer's perspective, the MVIP framework, the art of the 45-minute window. Read newsletters/how-to-pass-any-first-round-interview-even-in-a-terrible-talent-market.md for the full guide.",
+      "research_keywords": ["first-round interview", "job search", "interview prep", "pass rate"],
+      "output_file": "ninety-three-percent",
+      "album": "The Interview",
+      "source_files": [
+        "newsletters/how-to-pass-any-first-round-interview-even-in-a-terrible-talent-market.md"
+      ],
+      "complete": false
+    },
+    {
+      "id": 10,
+      "idea": "Never Search Alone",
+      "description": "Song about Job Search Councils — Phyl Terry's method of putting 6-8 job seekers together to support each other. The product lens on career transitions. Read podcasts/phyl-terry.md for negotiation tactics, job search councils, and managing emotional energy during the search.",
+      "research_keywords": ["job search", "never search alone", "job search council", "career transition"],
+      "output_file": "never-search-alone",
+      "album": "The Interview",
+      "source_files": [
+        "podcasts/phyl-terry.md"
+      ],
+      "complete": false
+    },
+    {
+      "id": 11,
+      "idea": "Product Sense",
+      "description": "Song about the product sense interview — the most mysterious step in the PM interview loop. Structured thinking under pressure, the art of identifying user needs in real time. Read newsletters/the-definitive-guide-to-mastering-product-sense-interviews.md for the comprehensive framework.",
+      "research_keywords": ["product sense", "PM interview", "structured thinking", "user needs"],
+      "output_file": "product-sense",
+      "album": "The Interview",
+      "source_files": [
+        "newsletters/the-definitive-guide-to-mastering-product-sense-interviews.md"
+      ],
+      "complete": false
+    },
+    {
+      "id": 12,
+      "idea": "Protect the Block",
+      "description": "Song about deep work and time management — blocking time, defending it, killing distractions. Lenny's most popular post ever. Read newsletters/time-management-techniques-that-actually-work.md for the core tactics. Read newsletters/part-2-time-management-techniques-that-actually-work.md for 7 more tricks.",
+      "research_keywords": ["time management", "deep work", "focus", "productivity"],
+      "output_file": "protect-the-block",
+      "album": "Deep Work",
+      "source_files": [
+        "newsletters/time-management-techniques-that-actually-work.md",
+        "newsletters/part-2-time-management-techniques-that-actually-work.md"
+      ],
+      "complete": false
+    },
+    {
+      "id": 13,
+      "idea": "Indistractable",
+      "description": "Song about Nir Eyal's framework — the opposite of distraction is not focus, it's traction. Intent is the one word that separates them. Read podcasts/nir-eyal.md for strategies on becoming less distracted, why to-do lists are bad, and the Indistractable framework.",
+      "research_keywords": ["distraction", "traction", "Nir Eyal", "indistractable", "focus"],
+      "output_file": "indistractable",
+      "album": "Deep Work",
+      "source_files": [
+        "podcasts/nir-eyal.md"
+      ],
+      "complete": false
+    },
+    {
+      "id": 14,
+      "idea": "Make Time",
+      "description": "Song about the Make Time philosophy from Jake Knapp and John Zeratsky — centering on one thing per day, having tactics for energy, reflecting and reframing. Read podcasts/jake-knapp--john-zeratsky.md for the Sprint/Make Time authors on making time for what matters.",
+      "research_keywords": ["make time", "Jake Knapp", "highlight", "energy", "sprint"],
+      "output_file": "make-time",
+      "album": "Deep Work",
+      "source_files": [
+        "podcasts/jake-knapp--john-zeratsky.md"
+      ],
+      "complete": false
+    },
+    {
+      "id": 15,
+      "idea": "The Call",
+      "description": "Song about the hardest decisions leaders make — frameworks for deciding under uncertainty. SPADE, Coinbase framework, when to use consensus vs. authority. Read newsletters/my-favorite-decision-making-frameworks.md for battle-tested frameworks.",
+      "research_keywords": ["decision-making", "SPADE", "leadership decisions", "framework"],
+      "output_file": "the-call",
+      "album": "The Weight",
+      "source_files": [
+        "newsletters/my-favorite-decision-making-frameworks.md"
+      ],
+      "complete": false
+    },
+    {
+      "id": 16,
+      "idea": "The Plan",
+      "description": "Song about the planning process — the W Framework from Airbnb and Eventbrite. Context, plans, integration, buy-in. The art of aligning an entire company. Read newsletters/the-secret-to-a-great-planning-process---lessons-from-airbnb-and-eventbrite.md for the full framework.",
+      "research_keywords": ["planning process", "Airbnb", "Eventbrite", "W framework", "alignment"],
+      "output_file": "the-plan",
+      "album": "The Weight",
+      "source_files": [
+        "newsletters/the-secret-to-a-great-planning-process---lessons-from-airbnb-and-eventbrite.md"
+      ],
+      "complete": false
+    },
+    {
+      "id": 17,
+      "idea": "Bend the Room",
+      "description": "Song about influence without authority — the PM superpower. Five tactics from Slack, YouTube, and Gemini. Read newsletters/a-pms-guide-to-influence.md for the tactical guide. Read newsletters/how-to-get-better-at-influence.md for the Frodo Baggins framework.",
+      "research_keywords": ["influence", "stakeholder", "alignment", "PM leadership"],
+      "output_file": "bend-the-room",
+      "album": "Career Moves",
+      "source_files": [
+        "newsletters/a-pms-guide-to-influence.md",
+        "newsletters/how-to-get-better-at-influence.md"
+      ],
+      "complete": false
+    },
+    {
+      "id": 18,
+      "idea": "The Stack Rank",
+      "description": "Song about communicating tradeoffs so leaders will listen — the Ongoing Stack Rank method. Making hard choices visible, earning trust through transparency. Read newsletters/how-to-communicate-tradeoffs-so-leaders-will-listen.md for the full framework.",
+      "research_keywords": ["communicate tradeoffs", "stack rank", "executive communication", "prioritization"],
+      "output_file": "the-stack-rank",
+      "album": "Career Moves",
+      "source_files": [
+        "newsletters/how-to-communicate-tradeoffs-so-leaders-will-listen.md"
+      ],
+      "complete": false
+    },
+    {
+      "id": 19,
+      "idea": "Nervous System",
+      "description": "Song about managing nerves, anxiety, and burnout through nervous system mastery. Jonny Miller's toolkit for cultivating calm and upgrading resilience. Read podcasts/jonny-miller.md for tools on downshifting, interoception, and building capacity to hold stress.",
+      "research_keywords": ["nervous system", "anxiety", "burnout", "resilience", "calm"],
+      "output_file": "nervous-system",
+      "album": "The Human Side",
+      "source_files": [
+        "podcasts/jonny-miller.md"
+      ],
+      "complete": false
+    },
+    {
+      "id": 20,
+      "idea": "Ask for Help",
+      "description": "Song about the vulnerability of asking for help at work — navigating fear, making effective asks, the irony of carrying everything alone. Read newsletters/on-asking-for-help-even-when-you-really-dont-want-to.md for the toolkit and template scripts.",
+      "research_keywords": ["asking for help", "vulnerability", "leadership", "support"],
+      "output_file": "ask-for-help",
+      "album": "The Human Side",
+      "source_files": [
+        "newsletters/on-asking-for-help-even-when-you-really-dont-want-to.md"
+      ],
+      "complete": false
+    }
+  ]
+}

@@ -36,7 +36,7 @@
         "tasks.json is valid JSON with 15+ tasks"
       ],
       "files": ["content/songs/batch3/tasks.json", "content/songs/album-recategorization.md"],
-      "passes": false
+      "passes": true
     },
     {
       "id": 3,
