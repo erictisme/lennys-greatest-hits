@@ -1,8 +1,8 @@
 import Link from "next/link";
-import Image from "next/image";
 import { jtbdCategories } from "@/lib/jtbd";
 import { getAllTracks, getAlbumForTrack } from "@/lib/tracks";
 import { notFound } from "next/navigation";
+import TopicPageClient from "./TopicPageClient";
 
 export function generateStaticParams() {
   return jtbdCategories.map((cat) => ({ tag: cat.slug }));
@@ -22,8 +22,13 @@ export default async function TopicPage({ params }: { params: Promise<{ tag: str
 
   const allTracks = getAllTracks();
   const matchingTracks = category.trackSlugs
-    .map((slug) => allTracks.find((t) => t.slug === slug))
-    .filter(Boolean) as typeof allTracks;
+    .map((slug) => {
+      const track = allTracks.find((t) => t.slug === slug);
+      if (!track) return null;
+      const album = getAlbumForTrack(track.slug);
+      return { ...track, albumTitle: album?.title };
+    })
+    .filter(Boolean) as (typeof allTracks[number] & { albumTitle?: string })[];
 
   return (
     <main className="max-w-3xl mx-auto px-4 py-12">
@@ -38,43 +43,10 @@ export default async function TopicPage({ params }: { params: Promise<{ tag: str
       {matchingTracks.length === 0 ? (
         <p className="text-muted-foreground">No tracks found.</p>
       ) : (
-        <div className="space-y-3">
-          {matchingTracks.map((track) => {
-            const album = getAlbumForTrack(track.slug);
-            const hasImage = !!track.coverImage;
-            return (
-              <Link
-                key={track.slug}
-                href={`/track/${track.slug}`}
-                className="flex items-center gap-4 p-3 rounded-lg hover:bg-black/5 transition-colors"
-              >
-                {hasImage ? (
-                  <Image
-                    src={track.coverImage}
-                    alt={track.title}
-                    width={48}
-                    height={48}
-                    className="rounded object-cover"
-                  />
-                ) : (
-                  <div className="w-12 h-12 rounded bg-muted flex items-center justify-center shrink-0">
-                    <span className="text-lg opacity-30">🎵</span>
-                  </div>
-                )}
-                <div className="flex-1 min-w-0">
-                  <p className="font-medium text-sm truncate">{track.title}</p>
-                  <p className="text-xs text-muted-foreground truncate">
-                    {album?.title} &middot; {track.genre}
-                    {track.duration ? ` \u00B7 ${track.duration}` : ""}
-                  </p>
-                  {track.isLocked && (
-                    <span className="text-[10px] text-muted-foreground/50">Coming soon</span>
-                  )}
-                </div>
-              </Link>
-            );
-          })}
-        </div>
+        <TopicPageClient
+          category={{ label: category.label, description: category.description }}
+          tracks={matchingTracks}
+        />
       )}
     </main>
   );

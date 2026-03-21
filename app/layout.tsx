@@ -3,7 +3,7 @@ import { Inter, Geist_Mono, Spectral } from "next/font/google";
 import "./globals.css";
 import { AudioProvider } from "@/lib/audio-context";
 import NowPlayingBar from "@/components/NowPlayingBar";
-import TrackNavigator from "@/components/TrackNavigator";
+
 import { PostHogProvider } from "@/components/PostHogProvider";
 
 const inter = Inter({
@@ -75,7 +75,6 @@ export default function RootLayout({
           <AudioProvider>
             <div className="pb-[72px]">{children}</div>
             <NowPlayingBar />
-            <TrackNavigator />
           </AudioProvider>
         </PostHogProvider>
       </body>

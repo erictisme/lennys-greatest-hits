@@ -13,7 +13,7 @@
         "pnpm build passes"
       ],
       "files": ["components/TrackNavigator.tsx", "app/layout.tsx"],
-      "passes": false
+      "passes": true
     },
     {
       "id": 2,
@@ -32,7 +32,7 @@
         "pnpm build passes"
       ],
       "files": ["app/topics/[tag]/page.tsx", "app/topics/[tag]/TopicPageClient.tsx"],
-      "passes": false
+      "passes": true
     },
     {
       "id": 3,
