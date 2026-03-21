@@ -56,7 +56,7 @@
         "All 15 output files exist (5 research + 5 lyrics + 5 suno prompts)"
       ],
       "files": ["plans/ralph-songwriter.md", "content/songs/batch3/tasks.json"],
-      "passes": false
+      "passes": true
     },
     {
       "id": 4,

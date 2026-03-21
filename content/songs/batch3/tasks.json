@@ -14,7 +14,8 @@
         "newsletters/what-is-good-retention.md",
         "newsletters/what-is-good-monthly-churn.md"
       ],
-      "complete": false
+      "complete": true,
+      "completed_at": "2026-03-21T17:10:00+08:00"
     },
     {
       "id": 2,
@@ -27,7 +28,8 @@
         "newsletters/how-to-determine-your-activation-metric.md",
         "newsletters/what-is-a-good-activation-rate.md"
       ],
-      "complete": false
+      "complete": true,
+      "completed_at": "2026-03-21T17:10:00+08:00"
     },
     {
       "id": 3,
@@ -40,7 +42,8 @@
         "newsletters/how-to-measure-cohort-retention.md",
         "newsletters/how-to-increase-your-products-retention.md"
       ],
-      "complete": false
+      "complete": true,
+      "completed_at": "2026-03-21T17:10:00+08:00"
     },
     {
       "id": 4,
@@ -52,7 +55,8 @@
       "source_files": [
         "newsletters/how-to-learn-the-most-about-a-candidate-from-a-single-interview-question.md"
       ],
-      "complete": false
+      "complete": true,
+      "completed_at": "2026-03-21T17:10:00+08:00"
     },
     {
       "id": 5,
@@ -65,7 +69,8 @@
         "newsletters/hiring-your-early-team.md",
         "newsletters/winning-at-early-stage-hiring.md"
       ],
-      "complete": false
+      "complete": true,
+      "completed_at": "2026-03-21T17:10:00+08:00"
     },
     {
       "id": 6,

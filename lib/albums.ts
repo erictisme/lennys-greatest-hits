@@ -515,6 +515,32 @@ Go sit with them`,
     keyQuote: "One conversation can save you six months.",
     quoteSpeaker: "Teresa Torres",
     storyBehind: "Teresa Torres' book 'Continuous Discovery Habits' became the #1 most recommended book in Lenny's Slack community. On the podcast, she shared that she's trained over 11,000 product people, and the single most impactful habit is dead simple: one user interview per week, every week. Not quarterly research sprints, not annual surveys, just weekly conversations. Gustaf Alstromer from YC reinforced it: most product failures trace back to building in a vacuum. The answers aren't in your Slack channels, they're down the street.",
+    annotations: [
+      {
+        lyricText: "Color-coded dashboards, segments, cohort views",
+        note: "Teresa Torres argues that teams over-rely on quantitative data while skipping the qualitative discovery that reveals why users behave the way they do. Dashboards show what's happening, but only conversations reveal the 'why.'",
+        sourceTitle: "Teresa Torres on continuous discovery",
+        sourceUrl: "https://www.lennyspodcast.com/teresa-torres-on-how-to-interview-customers-automating-continuous-discovery-the-opportunity-solution-tree-framework-making-the-case-for-user-research-common-interviewing-mistakes-and-much-more/",
+      },
+      {
+        lyricText: "Five minutes told her more than months of charts",
+        note: "Torres' core teaching: watching a single user try to complete a task for five minutes reveals usability gaps that no amount of analytics can surface. She calls this the 'experience gap' between what teams think users do and what actually happens.",
+        sourceTitle: "Teresa Torres on continuous discovery",
+        sourceUrl: "https://www.lennyspodcast.com/teresa-torres-on-how-to-interview-customers-automating-continuous-discovery-the-opportunity-solution-tree-framework-making-the-case-for-user-research-common-interviewing-mistakes-and-much-more/",
+      },
+      {
+        lyricText: "Continuous discovery, week by week",
+        note: "Torres' signature framework: one user interview per week, every week, no exceptions. Not quarterly research sprints or annual surveys. She's trained over 11,000 product people on this habit, making it the #1 recommended practice in Lenny's Slack community.",
+        sourceTitle: "Teresa Torres on continuous discovery",
+        sourceUrl: "https://www.lennyspodcast.com/teresa-torres-on-how-to-interview-customers-automating-continuous-discovery-the-opportunity-solution-tree-framework-making-the-case-for-user-research-common-interviewing-mistakes-and-much-more/",
+      },
+      {
+        lyricText: "The answers aren't in Slack, they're down the street",
+        note: "Gustaf Alstromer from YC told Lenny that most product failures at YC startups trace back to building in a vacuum. Teams debate features in Slack channels instead of walking down the street to talk to actual users.",
+        sourceTitle: "Gustaf Alstromer on talking to users",
+        sourceUrl: "https://www.lennyspodcast.com/lessons-from-working-with-600-yc-startups-gustaf-alstromer-y-combinator-airbnb/",
+      },
+    ],
   },
 ];
 
@@ -578,6 +604,32 @@ Ship it`,
     keyQuote: "If you're not embarrassed by the first version, you shipped too late.",
     quoteSpeaker: "Reid Hoffman",
     storyBehind: "Ramp's story blew up on Lenny's podcast. They hit $100M ARR in just 2 years, making them the fastest-growing SaaS company ever, with fewer than 5 PMs and 50 engineers. Their internal mantra was 'our culture is velocity.' Keith Rabois added the framework that stuck: speed isn't reckless, it's a proxy for how much you care about your users' time. Every week you don't ship is a week your users are stuck with a worse version of the thing you already built.",
+    annotations: [
+      {
+        lyricText: "Rabois said speed's a proxy for the love",
+        note: "Keith Rabois shared on Lenny's podcast that shipping speed is the clearest signal of how much a team cares about its users. Every day you delay is a day users are stuck with an inferior experience. He used this principle to push teams at Square, Opendoor, and Ramp.",
+        sourceTitle: "Keith Rabois on speed as competitive advantage (via Ramp episode)",
+        sourceUrl: "https://www.lennysnewsletter.com/p/lessons-from-scaling-ramp-sri-batchu",
+      },
+      {
+        lyricText: "If you're not embarrassed, you waited too long to leave",
+        note: "Reid Hoffman's famous advice, frequently cited on Lenny's podcast: 'If you're not embarrassed by the first version of your product, you've launched too late.' The Ramp team embodied this — shipping fast, learning from users, and iterating in weeks instead of quarters.",
+        sourceTitle: "Velocity over everything: How Ramp became the fastest-growing SaaS startup",
+        sourceUrl: "https://www.lennyspodcast.com/velocity-over-everything-how-ramp-became-the-fastest-growing-saas-startup-of-all-time-geoff-charl/",
+      },
+      {
+        lyricText: "The best PMs ship — the rest make decks for free",
+        note: "Geoff Charles described Ramp's PM culture: fewer than 5 PMs for a $100M ARR company. Instead of roadmap presentations and stakeholder alignment decks, PMs were expected to ship working features. Their hiring filter: 'Can this person ship, or do they just present?'",
+        sourceTitle: "Velocity over everything: How Ramp became the fastest-growing SaaS startup",
+        sourceUrl: "https://www.lennyspodcast.com/velocity-over-everything-how-ramp-became-the-fastest-growing-saas-startup-of-all-time-geoff-charl/",
+      },
+      {
+        lyricText: "A shipped experiment beats a perfect song",
+        note: "Ramp hit $100M ARR in just 2 years with 50 engineers — the fastest-growing SaaS company ever. Their secret wasn't perfection; it was volume of shipped experiments. Geoff Charles told Lenny their culture was 'velocity over everything.'",
+        sourceTitle: "Velocity over everything: How Ramp became the fastest-growing SaaS startup",
+        sourceUrl: "https://www.lennyspodcast.com/velocity-over-everything-how-ramp-became-the-fastest-growing-saas-startup-of-all-time-geoff-charl/",
+      },
+    ],
   },
   {
     slug: "vibe-coding",
@@ -637,6 +689,32 @@ Vibe coding`,
     keyQuote: "I just mass mass accept everything. I don't even look at the diffs. It's not even coding. I just see things, say things, run things, and copy paste things.",
     quoteSpeaker: "Andrej Karpathy",
     storyBehind: "Lenny covered the vibe coding revolution as it was happening in real time. Lazar Jovanovic became the first official 'vibe coding engineer' at Lovable, a company that hit $200M ARR in under a year with fewer than 100 people. Over 500 builders wrote to Lenny saying they'd shipped real products without writing a single line of code. Andrej Karpathy coined the term 'vibe coding', fully giving in to the vibes, seeing things appear, and not really caring how the code works. It's the most polarizing topic in Lenny's archive.",
+    annotations: [
+      {
+        lyricText: "Claude and Cursor doing all the rest",
+        note: "Lenny's survey of 500+ vibe coders found Claude and Cursor were the two most-used tools for building without writing code. Builders described a workflow of prompting, previewing, and iterating — never reading the underlying code.",
+        sourceTitle: "What people are vibe coding (and actually using)",
+        sourceUrl: "https://www.lennysnewsletter.com/p/what-people-are-vibe-coding-and-actually",
+      },
+      {
+        lyricText: "Don't read the code, just feel the flow",
+        note: "Andrej Karpathy coined 'vibe coding' in a viral post: 'I just see things, say things, run things, and copy paste things. I don't even look at the diffs.' This became the defining ethos of the movement — trusting the output over understanding the implementation.",
+        sourceTitle: "The rise of the professional vibe coder",
+        sourceUrl: "https://www.lennysnewsletter.com/p/getting-paid-to-vibe-code",
+      },
+      {
+        lyricText: "Best time to learn to code was years ago",
+        note: "Lazar Jovanovic, the first official 'vibe coding engineer' at Lovable, told Lenny: 'The best time to learn to code was 10 years ago. The second best time is never.' Lovable hit $200M ARR in under a year with fewer than 100 people, many of them non-engineers.",
+        sourceTitle: "The rise of the professional vibe coder",
+        sourceUrl: "https://www.lennysnewsletter.com/p/getting-paid-to-vibe-code",
+      },
+      {
+        lyricText: "A million new builders and they didn't have to wait",
+        note: "Over 500 builders wrote to Lenny saying they'd shipped real products without writing code. Designers building backends, PMs shipping prototypes, founders launching MVPs — the gatekeeping of software creation collapsed almost overnight.",
+        sourceTitle: "What people are vibe coding (and actually using)",
+        sourceUrl: "https://www.lennysnewsletter.com/p/what-people-are-vibe-coding-and-actually",
+      },
+    ],
   },
 ];
 
@@ -702,6 +780,32 @@ Day by day by day`,
     keyQuote: "Everyone at the table thinks everyone else belongs more.",
     quoteSpeaker: "Multiple guests",
     storyBehind: "Julie Zhuo was Episode 2 of Lenny's Podcast. She spent 13 years at Facebook going from IC designer to VP of Design, leading teams of hundreds, and she felt like an imposter the entire way up. She wrote 'The Making of a Manager' partly to process that feeling. What made the episode resonate wasn't the advice; it was the raw honesty. Every VP, every founder, every senior IC who listened said the same thing: 'I thought it was just me.' It wasn't. It never is.",
+    annotations: [
+      {
+        lyricText: "Rehearsed my intro seven times last night",
+        note: "Julie Zhuo told Lenny she would rehearse what to say before every leadership meeting at Facebook, even as VP of Design. She described imposter syndrome not as a phase you outgrow, but as a constant companion that follows you up every rung of the ladder.",
+        sourceTitle: "Julie Zhuo on accelerating your career and impostor syndrome",
+        sourceUrl: "https://www.lennysnewsletter.com/p/episode-2-julie-zhuo",
+      },
+      {
+        lyricText: "She's a VP now, she runs the floor",
+        note: "Zhuo went from IC designer to VP of Design at Facebook over 13 years, leading teams of hundreds. Despite her seniority, she told Lenny she paused at the door before meetings, wondering when colleagues would realize she was 'making it up as she went.'",
+        sourceTitle: "Julie Zhuo on accelerating your career and impostor syndrome",
+        sourceUrl: "https://www.lennysnewsletter.com/p/episode-2-julie-zhuo",
+      },
+      {
+        lyricText: "Everyone at the table thinks everyone else belongs more",
+        note: "This was the universal reaction to Episode 2 of Lenny's Podcast. After Julie Zhuo shared her experience, VPs, founders, and senior ICs flooded the comments with the same response: 'I thought it was just me.' The episode proved imposter syndrome is the norm, not the exception, in tech leadership.",
+        sourceTitle: "Julie Zhuo on accelerating your career and impostor syndrome",
+        sourceUrl: "https://www.lennysnewsletter.com/p/episode-2-julie-zhuo",
+      },
+      {
+        lyricText: "You just learn to work alongside it",
+        note: "Zhuo's key insight from 'The Making of a Manager': imposter syndrome never goes away, and trying to eliminate it is the wrong goal. Instead, she advocates learning to coexist with the doubt — acknowledging it without letting it paralyze your decision-making.",
+        sourceTitle: "Julie Zhuo on accelerating your career and impostor syndrome",
+        sourceUrl: "https://www.lennysnewsletter.com/p/episode-2-julie-zhuo",
+      },
+    ],
   },
   {
     slug: "burnout",
@@ -761,6 +865,32 @@ You can set it down`,
     keyQuote: "Burnout isn't working too much. It's working on the wrong things.",
     quoteSpeaker: "Multiple guests",
     storyBehind: "Andy Johns spent 17 years at Facebook, Twitter, Wealthfront, and Quora, some of the highest-pressure companies in tech. On Lenny's show, he was raw about what burnout actually felt like: not dramatic collapse, but a slow hollowing out where the work that once lit you up starts feeling like someone else's dream. Nearly 45% of tech workers report significant burnout. Jonny Miller introduced the 'feather, brick, dump truck' framework on a separate episode. Your body sends warning signs as a feather first, then a brick, and if you ignore those, the dump truck arrives.",
+    annotations: [
+      {
+        lyricText: "I can't remember when the fire went cold",
+        note: "Andy Johns described burnout on Lenny's show not as a dramatic collapse, but as a slow hollowing out. After 17 years at Facebook, Twitter, Wealthfront, and Quora, the passion didn't vanish in a moment — it faded so gradually he couldn't pinpoint when it disappeared.",
+        sourceTitle: "When enough is enough",
+        sourceUrl: "https://www.lennyspodcast.com/when-enough-is-enough-andy-johns-ex-fb-twitter-quora/",
+      },
+      {
+        lyricText: "Burnout isn't working too much",
+        note: "Multiple guests on Lenny's podcast have reinforced this reframe: burnout isn't about hours logged, it's about meaning lost. Andy Johns worked grueling hours at Facebook and loved it — the burnout came later, when the work no longer felt like his own.",
+        sourceTitle: "When enough is enough",
+        sourceUrl: "https://www.lennyspodcast.com/when-enough-is-enough-andy-johns-ex-fb-twitter-quora/",
+      },
+      {
+        lyricText: "I'm chasing someone else's dream again",
+        note: "Johns told Lenny his 2 AM realization: the title, the comp, the logo on his chest were all someone else's scoreboard. The hollowness of burnout came from optimizing for a game he didn't actually want to win.",
+        sourceTitle: "When enough is enough",
+        sourceUrl: "https://www.lennyspodcast.com/when-enough-is-enough-andy-johns-ex-fb-twitter-quora/",
+      },
+      {
+        lyricText: "You can't pour from an empty cup",
+        note: "Jonny Miller introduced the 'feather, brick, dump truck' framework on Lenny's podcast: your body sends burnout warnings first as a feather (subtle fatigue), then a brick (chronic exhaustion), then the dump truck (full breakdown). Most people ignore the feather. The song's advice — 'you can set it down' — echoes Miller's core teaching.",
+        sourceTitle: "Managing nerves, anxiety, and burnout",
+        sourceUrl: "https://www.lennysnewsletter.com/p/managing-nerves-anxiety-and-burnout",
+      },
+    ],
   },
   // IC Track hidden until audio is generated — see content/suno-prompts/the-ic-track.json
 ];
