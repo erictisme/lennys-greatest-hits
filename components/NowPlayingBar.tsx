@@ -25,10 +25,19 @@ export default function NowPlayingBar() {
     upNextTrack,
     countdown,
     cancelCountdown,
+    setOnTrackChange,
   } = useAudio();
 
   const router = useRouter();
   const navigatingRef = useRef(false);
+
+  // Register router-based navigation for auto-advance
+  useEffect(() => {
+    setOnTrackChange((slug: string) => {
+      router.push(`/track/${slug}`);
+    });
+    return () => setOnTrackChange(null);
+  }, [router, setOnTrackChange]);
 
   useEffect(() => {
     if (navigatingRef.current && currentTrack) {

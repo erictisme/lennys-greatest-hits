@@ -19,6 +19,7 @@ interface AudioState {
   currentTime: number;
   duration: number;
   queue: Track[];
+  isBuffering: boolean;
   play: (track: Track) => void;
   pause: () => void;
   resume: () => void;
@@ -34,6 +35,7 @@ interface AudioState {
   upNextTrack: Track | null;
   countdown: number | null;
   cancelCountdown: () => void;
+  setOnTrackChange: (cb: ((slug: string) => void) | null) => void;
 }
 
 const AudioContext = createContext<AudioState | null>(null);
@@ -53,7 +55,13 @@ export function AudioProvider({ children }: { children: ReactNode }) {
   const [queue, setQueue] = useState<Track[]>([]);
   const [upNextTrack, setUpNextTrack] = useState<Track | null>(null);
   const [countdown, setCountdown] = useState<number | null>(null);
+  const [isBuffering, setIsBuffering] = useState(false);
   const countdownRef = useRef<ReturnType<typeof setInterval> | null>(null);
+  const onTrackChangeRef = useRef<((slug: string) => void) | null>(null);
+
+  const setOnTrackChange = useCallback((cb: ((slug: string) => void) | null) => {
+    onTrackChangeRef.current = cb;
+  }, []);
 
   // Restore last-played track from localStorage on mount
   useEffect(() => {
@@ -107,11 +115,18 @@ export function AudioProvider({ children }: { children: ReactNode }) {
       try { localStorage.setItem("lgh-volume", String(audio.volume)); } catch { /* ignore */ }
     };
 
+    const onWaiting = () => setIsBuffering(true);
+    const onCanPlay = () => setIsBuffering(false);
+    const onPlaying = () => setIsBuffering(false);
+
     audio.addEventListener("timeupdate", onTimeUpdate);
     audio.addEventListener("loadedmetadata", onLoadedMetadata);
     audio.addEventListener("play", onPlay);
     audio.addEventListener("pause", onPause);
     audio.addEventListener("volumechange", onVolumeChange);
+    audio.addEventListener("waiting", onWaiting);
+    audio.addEventListener("canplay", onCanPlay);
+    audio.addEventListener("playing", onPlaying);
 
     return () => {
       audio.removeEventListener("timeupdate", onTimeUpdate);
@@ -119,6 +134,9 @@ export function AudioProvider({ children }: { children: ReactNode }) {
       audio.removeEventListener("play", onPlay);
       audio.removeEventListener("pause", onPause);
       audio.removeEventListener("volumechange", onVolumeChange);
+      audio.removeEventListener("waiting", onWaiting);
+      audio.removeEventListener("canplay", onCanPlay);
+      audio.removeEventListener("playing", onPlaying);
       audio.pause();
       audio.src = "";
     };
@@ -187,6 +205,10 @@ export function AudioProvider({ children }: { children: ReactNode }) {
     setIsPlaying(true);
     setCurrentTrack(track);
     clearCountdown();
+    // Navigate to the new track's page via callback (avoids full page reload)
+    if (onTrackChangeRef.current) {
+      onTrackChangeRef.current(track.slug);
+    }
   }, [clearCountdown]);
 
   // Countdown tick effect
@@ -457,6 +479,7 @@ export function AudioProvider({ children }: { children: ReactNode }) {
       value={{
         currentTrack,
         isPlaying,
+        isBuffering,
         currentTime,
         duration,
         queue,
@@ -475,6 +498,7 @@ export function AudioProvider({ children }: { children: ReactNode }) {
         upNextTrack,
         countdown,
         cancelCountdown,
+        setOnTrackChange,
       }}
     >
       {children}

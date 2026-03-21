@@ -1,3 +1,5 @@
 # Ralph DEFAULT run Sat Mar 21 22:32:25 +08 2026
 Feature 1 DONE: Next/Prev buttons now navigate to new track page using useRouter + navigatingRef pattern in NowPlayingBar.tsx.
 Build passes.
+Feature 2 DONE: Auto-advance uses router.push callback instead of window.location.href. Audio continues uninterrupted.
+Build passes.
