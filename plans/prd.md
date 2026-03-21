@@ -541,32 +541,32 @@ Sources: "Brian Chesky on Airbnb's early days" (do-things-that-dont-scale), "Pau
 Add `coverImage: string` to Track type in lib/types.ts. For each track in lib/albums.ts, add `coverImage: "/covers/{slug}.jpg"`. DO NOT modify components, audio, or lyrics. `pnpm build` passes.
 
 ### Task 32b: Home page album cover art grid
-- [ ] Replace album cards with cover art grid on home page, build passes
+- [x] Replace album cards with cover art grid on home page, build passes
 
 Keep existing warm Lenny light theme. DO NOT switch to dark. Replace the current 2-column card grid in app/page.tsx with a responsive album cover art grid. Each card: square cover image on top (~160-180px, rounded-lg) using album.coverImage, album title below in bold, track count + subtitle in muted text. Responsive: 2 cols mobile, 3-4 cols tablet, 4-6 cols desktop. Use Next.js Image component. Keep light background and Lenny warm colors. DO NOT modify audio or lyrics. `pnpm build` passes.
 
 ### Task 32c: Album page cover art in header and track rows
-- [ ] Add album art to header and track thumbnails to tracklist rows, build passes
+- [x] Add album art to header and track thumbnails to tracklist rows, build passes
 
 Keep existing warm Lenny light theme, gradients, accent colors. DO NOT switch to dark. In album header (AlbumPageClient.tsx): add album cover art on left (~140-160px, rounded-lg) with title/subtitle/track count to the right, horizontally aligned. In each track row: add small cover art thumbnail (~40x40, rounded) between track number and title using track's coverImage. Use Next.js Image component. Keep existing gradient backgrounds, accent colors, play/pause, share menu. DO NOT modify audio or lyrics. `pnpm build` passes.
 
 ### Task 32d: Track page cover art
-- [ ] Add track cover image to track page header, build passes
+- [x] Add track cover image to track page header, build passes
 
 Keep existing warm Lenny light theme. DO NOT switch to dark. In TrackPageClient.tsx, add track cover image (~160-200px, rounded-lg with subtle shadow) in header area near track title. Use Next.js Image component. Keep all existing sections and styling. DO NOT modify audio or lyrics. `pnpm build` passes.
 
 ### Task 33: Remove em dashes from all user-facing text
-- [ ] Replace all em dashes in non-lyric user-facing text, build passes
+- [x] Replace all em dashes in non-lyric user-facing text, build passes
 
 Replace ALL em dashes with regular dashes, commas, periods, or natural rewrites. Check: lib/albums.ts (moods, descriptions, concepts, keyInsights, storyBehind, keyQuotes), app/page.tsx, app/layout.tsx, app/album/[slug]/page.tsx, app/track/[slug]/page.tsx, TrackPageClient.tsx, NowPlayingBar.tsx, ShareLyricModal.tsx. DO NOT touch em dashes in song lyrics. DO NOT touch code comments. DO NOT touch the regex in SyncedLyrics.tsx. For titles/share text use " | " or " - ". For moods/descriptions rewrite naturally. DO NOT modify audio. `pnpm build` passes.
 
 ### Task 34: Remove "Tech Culture Anthems" label
-- [ ] Remove "Tech Culture Anthems" from home page and OG image, build passes
+- [x] Remove "Tech Culture Anthems" from home page and OG image, build passes
 
 Remove the "Tech Culture Anthems" subtitle from home page hero (app/page.tsx ~line 30), remove entire div with Headphones icon and text. Remove from OG image alt text in app/layout.tsx (change to just "Lenny's Greatest Hits"). DO NOT modify audio or lyrics. `pnpm build` passes.
 
 ### Task 35: Add creator credit with LinkedIn link
-- [ ] Add "Built by Eric Tan" footer linking to LinkedIn, build passes
+- [x] Add "Built by Eric Tan" footer linking to LinkedIn, build passes
 
 Add footer/credit on home page (app/page.tsx): "Built by Eric Tan" linking to https://www.linkedin.com/in/erictisme/. Subtle, tasteful, small muted text. Also add to site footer in layout.tsx if one exists. target="_blank", rel="noopener noreferrer". DO NOT modify audio or lyrics. `pnpm build` passes.
 

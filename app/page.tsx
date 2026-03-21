@@ -82,7 +82,7 @@ export default function Home() {
                     {album.title}
                   </h2>
                   <p className="text-xs sm:text-sm text-muted-foreground truncate">
-                    {album.tracks.length} tracks{album.comingSoon ? " — Coming Soon" : ` · ${album.subtitle}`}
+                    {album.tracks.length} tracks{album.comingSoon ? " - Coming Soon" : ` · ${album.subtitle}`}
                   </p>
                 </Link>
               </div>

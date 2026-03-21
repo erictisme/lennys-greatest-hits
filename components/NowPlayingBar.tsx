@@ -69,7 +69,7 @@ export default function NowPlayingBar() {
         >
           <span className="text-muted-foreground">
             Up next: <span className="font-medium text-foreground">{upNextTrack.title}</span>
-            {" "}— playing in {countdown}…
+            {" "}- playing in {countdown}…
           </span>
           <button
             onClick={cancelCountdown}

@@ -41,7 +41,7 @@ export async function POST(req: NextRequest) {
           <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; max-width: 480px; margin: 0 auto; padding: 24px; color: #1a1a1a;">
             <p style="font-size: 16px; line-height: 1.6;">Hey!</p>
             <p style="font-size: 16px; line-height: 1.6;">
-              Thanks for signing up. I'm Eric — I'm turning Lenny Rachitsky's best newsletter and podcast insights into actual catchy songs. Think tech culture anthems, not Schoolhouse Rock.
+              Thanks for signing up. I'm Eric. I'm turning Lenny Rachitsky's best newsletter and podcast insights into actual catchy songs. Think tech culture anthems, not Schoolhouse Rock.
             </p>
             <p style="font-size: 16px; line-height: 1.6;">
               Right now there are 20 songs across 4 albums you can listen to, with 25 more on the way. I'll email you when new albums drop.

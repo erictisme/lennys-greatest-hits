@@ -173,7 +173,7 @@ export default function SyncedLyrics({
                 {line.text}
                 {line.isQuote && line.speaker && (
                   <span className="text-xs text-muted-foreground/50 ml-2 not-italic">
-                    — {line.speaker}
+                    - {line.speaker}
                   </span>
                 )}
               </button>

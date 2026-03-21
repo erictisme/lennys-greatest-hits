@@ -2,7 +2,7 @@ import { ImageResponse } from "next/og";
 import { getTrackBySlug, getAlbumForTrack } from "@/lib/tracks";
 
 export const runtime = "edge";
-export const alt = "Track — Lenny's Greatest Hits";
+export const alt = "Track | Lenny's Greatest Hits";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 

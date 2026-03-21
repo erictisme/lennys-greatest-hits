@@ -1,12 +1,4 @@
-# Ralph DEFAULT run Fri Mar 20 23:54:46 +08 2026
-Task 66: Audited all Coming Soon album/track links — all slugs, gradients, and lookups correct. No fixes needed.
-Task 67: Fixed 2 broken source URLs — racecar-growth-framework slug corrected, venture-scale article replaced with Jason Fried podcast. All other URLs verified.
-Task 68: Added app/album/[slug]/opengraph-image.tsx for per-album OG images with accent color gradients and Coming Soon badges. Updated page.tsx metadata to use file-based OG.
-Task 69: Added app/track/[slug]/opengraph-image.tsx for per-track OG images with key quotes and Coming Soon indicators. Updated page.tsx metadata.
-Task 70: Added album-level Share button (X, LinkedIn, Copy Link) next to Play All / Coming Soon badge on album pages.
-Task 71: Added Browse by Topic tag cloud above album grid — clickable pills filter albums by tag with counts.
-Task 72: Keyboard shortcuts already implemented in audio-context.tsx. Removed duplicate Space handler from TrackPageClient.tsx that caused double-toggle bug.
-Task 40: Superseded by Task 54 — auto-scroll was fully removed, so the toggle fix is moot.
-Task 41: Resolved by Tasks 51/60 — cross-album advancement and locked-track guards fix the looping bug.
-Task 42: Already working — AudioProvider wraps app in layout.tsx, audio element persists across navigation.
-Task 73: Added shuffleAll() to audio-context and Shuffle All button on homepage. Navigates to first shuffled track.
+# Ralph PROD run Sat Mar 21 11:37:56 +08 2026
+Task 32b/32c/32d: Already implemented (cover art on home, album, track pages). Marked done.
+Task 33: Replaced all em dashes in non-lyric user-facing text across albums.ts + 8 component/app files.
+Task 34/35: Already implemented (no Tech Culture Anthems label, Eric Tan credit present). Marked done.
