@@ -1,0 +1,46 @@
+{
+  "batch": 6,
+  "created": "2026-03-21",
+  "strategy": "Lovable mini-batch — 3 songs covering the AI vibe-coding revolution through the lens of the company Lenny is closest to. Fastest startup in Europe, professional vibe coding as a new job category, and the growth playbook rewritten for AI-native companies.",
+  "tasks": [
+    {
+      "id": 1,
+      "idea": "Minimum Lovable",
+      "description": "Song about Anton Osika and Lovable — $10M ARR in 60 days with 15 people. The fastest growing startup in Europe ever. 'The best word for a great product is that it's lovable.' Minimum lovable product → lovable product → absolutely lovable product. Building an AI software engineer that takes a prompt and gives you a working product. Read podcasts/anton-osika.md for the full conversation.",
+      "research_keywords": ["Anton Osika", "Lovable", "AI coding", "minimum lovable product", "fastest growing"],
+      "output_file": "minimum-lovable",
+      "album": "Electric Dreams",
+      "source_files": [
+        "podcasts/anton-osika.md"
+      ],
+      "complete": true,
+      "completed_at": "2026-03-21T23:30:00+08:00"
+    },
+    {
+      "id": 2,
+      "idea": "The Vibe Coder",
+      "description": "Song about Lazar Jovanovic — the world's first professional vibe coder. A new AI-era job that didn't exist a year ago. Building Chrome extensions, video generators, merch stores — all by prompting. 'Just press send.' The community that pushed what's possible past what engineers thought was impossible. Read podcasts/lazar-jovanovic.md for the full conversation.",
+      "research_keywords": ["Lazar Jovanovic", "vibe coding", "professional vibe coder", "Lovable", "prompting"],
+      "output_file": "the-vibe-coder",
+      "album": "Electric Dreams",
+      "source_files": [
+        "podcasts/lazar-jovanovic.md"
+      ],
+      "complete": true,
+      "completed_at": "2026-03-21T23:30:00+08:00"
+    },
+    {
+      "id": 3,
+      "idea": "Blow Their Socks Off",
+      "description": "Song about Elena Verna's growth lessons at Lovable — $200M ARR in under a year with fewer than 100 people. The growth playbook fundamentally changed for AI companies. Word of mouth is the only loop that matters. 'The only way to create a word of mouth loop is just to blow their socks off.' How product-market fit is no longer what it used to be. Read podcasts/elena-verna-40.md for the full conversation.",
+      "research_keywords": ["Elena Verna", "Lovable growth", "word of mouth", "AI growth", "200M ARR"],
+      "output_file": "blow-their-socks-off",
+      "album": "Growth Engine",
+      "source_files": [
+        "podcasts/elena-verna-40.md"
+      ],
+      "complete": true,
+      "completed_at": "2026-03-21T23:30:00+08:00"
+    }
+  ]
+}

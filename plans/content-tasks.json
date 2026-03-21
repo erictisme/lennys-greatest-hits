@@ -150,6 +150,27 @@
       ],
       "files": ["content/songs/batch5/tasks.json", "plans/ralph-songwriter-batch5.md"],
       "passes": true
+    },
+    {
+      "id": 10,
+      "category": "content",
+      "priority": 0,
+      "description": "GENERATE SONGS (BATCH 6, 3 SONGS): Execute the song pipeline for all 3 tasks in content/songs/batch6/tasks.json. For each song: Phase 1 (Research via Lenny MCP — use mcp__lennysdata__read_content with the source_files listed in the task, extract story/quotes/emotional core, rate, generate hooks, save research brief to content/songs/batch6/research/). Phase 2 (Songwriting — read research brief + ALL quality guides: content/lyric-craft-guide.md, content/brainstorm/lyric-principles.md, content/brainstorm/suno-lyric-tips.md, content/songs/artist-palette.md, content/songs/batch6/feedback.md. Write lyrics using Rick Rubin mode, critique, rewrite, create Suno prompt. Save lyrics to content/songs/batch6/lyrics/ and suno prompt to content/songs/batch6/suno-prompts/). CRITICAL: These 3 songs must NOT overlap with existing 'Vibe Coding' (batch 1) or 'Rise of Cursor' (batch 5). Focus on Lovable-specific stories. DONE: 3 research briefs, 3 lyric files, 3 suno prompts exist. Each task marked complete in tasks.json. NOT TOUCH: Do not modify any batch1-5 files, do not modify lib/albums.ts.",
+      "steps": [
+        "Read plans/ralph-songwriter-batch5.md for pipeline instructions (same process)",
+        "Read content/songs/batch6/feedback.md for batch-specific rules",
+        "Read content/lyric-craft-guide.md for lyric quality rules",
+        "Read content/brainstorm/lyric-principles.md for songwriting principles",
+        "Read content/brainstorm/suno-lyric-tips.md for Suno technical checklist",
+        "Read content/songs/artist-palette.md for genre/style guidance",
+        "For task 1 (Minimum Lovable): Phase 1 Research → Phase 2 Songwriting",
+        "For task 2 (The Vibe Coder): Phase 1 Research → Phase 2 Songwriting",
+        "For task 3 (Blow Their Socks Off): Phase 1 Research → Phase 2 Songwriting",
+        "Mark tasks 1-3 complete in content/songs/batch6/tasks.json",
+        "Verify: 9 output files exist (3 research + 3 lyrics + 3 suno prompts)"
+      ],
+      "files": ["content/songs/batch6/tasks.json", "plans/ralph-songwriter-batch5.md", "content/songs/batch6/feedback.md"],
+      "passes": true
     }
   ]
 }
