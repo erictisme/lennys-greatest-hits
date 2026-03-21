@@ -12,7 +12,7 @@
         "Verify pnpm build passes"
       ],
       "files": ["components/TrackRow.tsx", "lib/types.ts"],
-      "passes": false
+      "passes": true
     },
     {
       "id": 2,
