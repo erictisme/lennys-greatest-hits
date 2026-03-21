@@ -66,6 +66,10 @@ export default function TrackPageClient({ slug }: { slug: string }) {
     milestonesHit.current = new Set();
   }, [slug]);
 
+  const [imageLoaded, setImageLoaded] = useState(false);
+  const [hoverTime, setHoverTime] = useState<{ time: number; x: number } | null>(null);
+  const [copied, setCopied] = useState(false);
+
   if (!track || !album) {
     notFound();
   }
@@ -101,9 +105,6 @@ export default function TrackPageClient({ slug }: { slug: string }) {
     }
   };
 
-  const [imageLoaded, setImageLoaded] = useState(false);
-  const [hoverTime, setHoverTime] = useState<{ time: number; x: number } | null>(null);
-
   const seek = (e: React.MouseEvent<HTMLDivElement>) => {
     if (!duration) return;
     const rect = e.currentTarget.getBoundingClientRect();
@@ -124,10 +125,8 @@ export default function TrackPageClient({ slug }: { slug: string }) {
     return `${mins}:${secs.toString().padStart(2, "0")}`;
   };
 
-  const [copied, setCopied] = useState(false);
-
   const shareUrl = typeof window !== "undefined" ? window.location.href : "";
-  const shareText = `🎵 ${track.title} | Lenny's Greatest Hits`;
+  const shareText = `${track.title} | Lenny's Greatest Hits`;
 
   const handleShareX = () => {
     trackEvent("share_clicked", { platform: "x", track: slug, track_title: track.title });
