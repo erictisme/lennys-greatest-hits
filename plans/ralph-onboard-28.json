@@ -200,7 +200,7 @@
         "Run pnpm build"
       ],
       "files": ["lib/albums.ts", "content/songs/batch3/new-mp3s/the-call.mp3", "content/songs/batch3/new-mp3s/the-plan.mp3", "content/songs/batch3/lyrics/the-call.md", "content/songs/batch3/lyrics/the-plan.md"],
-      "passes": false
+      "passes": true
     },
     {
       "id": 14,

@@ -1863,6 +1863,213 @@ const theWeightTracks: Track[] = [
     ],
     storyBehind: "Monday 9AM, door closed, her coffee getting cold. By pretending she's a fit when she's not, he's holding her in place when she should fly. After the conversation, he picked up the phone and called in every name. Two hours on the line to find her light. Now she's building something she adores.",
   },
+  {
+    slug: "the-call",
+    title: "The Call",
+    albumSlug: "the-weight",
+    trackNumber: 2,
+    duration: "3:30",
+    audioUrl: "/audio/the-call.mp3",
+    coverImage: "/covers/the-call.jpg",
+    genre: "Atmospheric Folk",
+    mood: "Heavy, intimate, resolute",
+    tags: ["decision-making", "leadership", "accountability"],
+    lyrics: `[Verse 1, gentle fingerpicking]
+The whiteboard's full of arrows now
+Fourteen voices, one shared doubt
+We circled back since afternoon
+And nobody will leave the room
+They want permission, not a vote
+They want somebody's hand to hold
+
+[Chorus]
+Somebody's gotta make the call
+When every door looks like a wall
+I heard you all, I felt the weight
+Now watch me walk through anyway
+Somebody's gotta make the call
+
+[Verse 2]
+It's not the kombucha or the font
+It's the one you can't take back
+A hundred futures on the board
+And I'm the one who picks the road
+Not 'cause I'm right, I might be wrong
+But standing still has cost too long
+
+[Chorus]
+Somebody's gotta make the call
+When every door looks like a wall
+I heard you all, I felt the weight
+Now watch me walk through anyway
+Somebody's gotta make the call
+
+[Bridge, stripped back, breath]
+Consensus is a hiding place
+Where no one has to show their face
+But truth is not a social thing
+It cuts right through the gathering...
+
+[Final Chorus, full build]
+Somebody's gotta make the call
+One name beside it on the wall
+I heard you all — that was the point
+Now let me be the one who's joined
+To every consequence that falls
+Somebody's gotta make the call
+
+[Outro, fading]
+Make the call... make the call...`,
+    concept: "The loneliness and courage of making the hard decision when everyone else is hiding behind consensus. Based on Lenny's favorite decision-making frameworks.",
+    keyInsight: "Consensus feels safe but actually means no ownership. What matters isn't that everyone agrees — it's that everyone is heard, and then one person decides and owns the outcome.",
+    keyQuote: "What is important isn't that everyone agrees, it's that everyone is listened to. And then the right person makes a decision, communicates it clearly, and rallies everyone around it.",
+    quoteSpeaker: "Gokul Rajaram",
+    sources: [
+      { title: "My favorite decision-making frameworks", type: "newsletter" as const, url: "https://www.lennysnewsletter.com/p/my-favorite-decision-making-frameworks", guest: "Lenny Rachitsky" },
+    ],
+    storyBehind: "At Square, employees were surveyed about their number one frustration. The answer: decision-making. Not the decisions themselves — the lack of transparency around how decisions are made. Gokul Rajaram and colleagues created the SPADE framework as an alternative to consensus, built on accountability and clarity, where the person executing the decision is the one who decides.",
+    annotations: [
+      {
+        lyricText: "Fourteen voices, one shared doubt",
+        note: "Gokul Rajaram told Lenny that when he started at Square, the company surveyed employees about their number one frustration — it was decision-making. 'It's not the decisions themselves employees are frustrated with, it's the lack of transparency around how decisions are made. And employees crave transparency.' This led him to create the SPADE framework.",
+        sourceTitle: "My favorite decision-making frameworks",
+        sourceUrl: "https://www.lennysnewsletter.com/p/my-favorite-decision-making-frameworks",
+      },
+      {
+        lyricText: "It's not the kombucha or the font",
+        note: "Gokul Rajaram uses what Square called the 'kombucha scale' — a tongue-in-cheek way to evaluate decisions on importance and urgency. 'If the choice is as simple as selecting a flavor of kombucha, everyone can save the time and effort spent on a thorough decision-making process.' SPADE is reserved for big, one-way-door decisions with real consequences.",
+        sourceTitle: "My favorite decision-making frameworks",
+        sourceUrl: "https://www.lennysnewsletter.com/p/my-favorite-decision-making-frameworks",
+      },
+      {
+        lyricText: "Consensus is a hiding place",
+        note: "Gokul Rajaram was blunt about consensus: 'A lot of forward-thinking companies practice consensus. Google is famous for it. But consensus is impractical and ineffective for one clear reason: consensus means no ownership.' His SPADE framework specifically makes the person responsible for executing the decision be the one who decides.",
+        sourceTitle: "My favorite decision-making frameworks",
+        sourceUrl: "https://www.lennysnewsletter.com/p/my-favorite-decision-making-frameworks",
+      },
+      {
+        lyricText: "But truth is not a social thing",
+        note: "Lenny quotes Jeff Bezos from his Lex Fridman conversation: 'Humans are social animals. Not truth-seeking animals. Important truths can be uncomfortable and make people defensive. Any high-functioning organization has to have mechanisms and a culture that supports truth-telling.' Bezos argues that getting to truth requires deliberate energy and cultural investment.",
+        sourceTitle: "My favorite decision-making frameworks",
+        sourceUrl: "https://www.lennysnewsletter.com/p/my-favorite-decision-making-frameworks",
+      },
+      {
+        lyricText: "One name beside it on the wall",
+        note: "Brian Armstrong at Coinbase designed a decision-making framework with a unique feature: it allows you to give the decision an expiration date. He notes that 'the vast majority of decisions in a company are low-risk and should be made unilaterally by the owner of that area.' The framework only activates for higher-risk decisions where 'it can be costly to unwind if the wrong decision is made.'",
+        sourceTitle: "My favorite decision-making frameworks",
+        sourceUrl: "https://www.lennysnewsletter.com/p/my-favorite-decision-making-frameworks",
+      },
+    ],
+  },
+  {
+    slug: "the-plan",
+    title: "The Plan",
+    albumSlug: "the-weight",
+    trackNumber: 3,
+    duration: "3:30",
+    audioUrl: "/audio/the-plan.mp3",
+    coverImage: "/covers/the-plan.jpg",
+    genre: "Neo-Soul Groove",
+    mood: "Confident, warm, grounded",
+    tags: ["planning", "alignment", "W framework"],
+    lyrics: `[Verse 1, warm Rhodes groove]
+March and we're still drawing lines
+On a napkin from the fall
+Forty people, forty maps
+And none of them will match at all
+Somebody says "let's circle back"
+That's a white flag, not a plan
+
+[Pre-Chorus]
+Who does what and who goes when
+Say it once, then say it again
+
+[Chorus]
+Pass it down and build it up
+Draw the W before we run
+Every name knows where to stand
+Now we finally got a plan
+Not the paper — how we move
+Day one ready, nothing to prove
+
+[Verse 2, guitar fills]
+One team always beat the clock
+Bags were packed before the call
+While the rest of us were still
+Arguing the shade of wall
+They knew the shape before the paint
+Context first, then fill the frame
+
+[Pre-Chorus]
+Who does what and who goes when
+Clear enough to start again
+
+[Chorus 2]
+Pass it down and build it up
+Stitch the seams before we cut
+Every voice gets room to land
+Now we're moving with a plan
+Not the binder on the shelf
+The reason no one second-guessed
+
+[Bridge, half-time, intimate]
+Three months in, still writing goals
+That's the tax of flying blind
+But when the W comes clean
+Everybody hits the line —
+Shoulder next to shoulder
+
+[Final Chorus, full groove]
+Pass it down and build it back
+Close the loop, stay on the track
+Every hand knows where it lands
+Now we're standing with a plan
+Not the promise we forgot
+The way we move — and that's a lot
+
+[Outro, fading groove]
+That's the plan... that's the plan...`,
+    concept: "The W Framework for planning — how Airbnb and Eventbrite turned chaotic quarterly planning into a four-step process that gets everyone aligned and moving on day one.",
+    keyInsight: "The root cause of nearly all bad planning processes is a basic lack of understanding of roles — who is responsible for what, when. The W Framework solves this with four clear steps: Context, Plans, Integration, Buy-in.",
+    keyQuote: "You can't expect the organization to 'just know' how to pull together a quarterly plan. Working without an agreed-upon framework can often be a recipe for disaster.",
+    quoteSpeaker: "Lenny Rachitsky",
+    sources: [
+      { title: "The Secret to a Great Planning Process — Lessons from Airbnb and Eventbrite", type: "newsletter" as const, url: "https://www.lennysnewsletter.com/p/the-secret-to-a-great-planning-process---lessons-from-airbnb-and-eventbrite", guest: "Lenny Rachitsky" },
+    ],
+    storyBehind: "Lenny and Nels Gilbreth co-authored this piece after 10 years at Eventbrite and 7 years at Airbnb. They'd seen teams still working on their annual plan three months into the year, and half-assed plans rushed through approvals only to be abandoned after six months. But one team at Airbnb consistently stayed ahead of planning — always ready to rock and roll on day one — and delivered significantly more impact with higher morale than anyone else.",
+    annotations: [
+      {
+        lyricText: "March and we're still drawing lines",
+        note: "Lenny writes from direct experience: 'Sometimes we were still working on our annual plan — three months into the year. Other times a half-assed plan was rushed through approvals, only to be abandoned entirely after only six months.' After dozens of planning cycles across Airbnb and Eventbrite, he and Nels Gilbreth developed the W Framework to fix this.",
+        sourceTitle: "The Secret to a Great Planning Process — Lessons from Airbnb and Eventbrite",
+        sourceUrl: "https://www.lennysnewsletter.com/p/the-secret-to-a-great-planning-process---lessons-from-airbnb-and-eventbrite",
+      },
+      {
+        lyricText: "One team always beat the clock",
+        note: "Lenny describes a specific team at Airbnb that 'took it upon themselves to consistently stay ahead of planning. They were always ready to rock and roll on day one of the quarter, and as a result delivered significant impact more quickly (and with higher morale) than anyone else.' This team became the model for the W Framework.",
+        sourceTitle: "The Secret to a Great Planning Process — Lessons from Airbnb and Eventbrite",
+        sourceUrl: "https://www.lennysnewsletter.com/p/the-secret-to-a-great-planning-process---lessons-from-airbnb-and-eventbrite",
+      },
+      {
+        lyricText: "Draw the W before we run",
+        note: "The W Framework has four steps that zigzag between leadership and teams like the letter W: (1) Context — leadership shares high-level strategy, (2) Plans — teams respond with proposed plans, (3) Integration — leadership integrates into a single plan, (4) Buy-in — teams make final tweaks and get rolling. Gong's VP of Product confirmed they use this exact 'W shape' for annual planning.",
+        sourceTitle: "The Secret to a Great Planning Process — Lessons from Airbnb and Eventbrite",
+        sourceUrl: "https://www.lennysnewsletter.com/p/the-secret-to-a-great-planning-process---lessons-from-airbnb-and-eventbrite",
+      },
+      {
+        lyricText: "Context first, then fill the frame",
+        note: "Lenny identified the root cause of nearly all bad planning: 'a basic lack of understanding of roles — who is responsible for what, when. Who should have a say in the plan, and when? What exactly does each stakeholder need to deliver? Who sets the timelines? Who holds everyone accountable? Who makes the final call? These questions are too often left unanswered.'",
+        sourceTitle: "The Secret to a Great Planning Process — Lessons from Airbnb and Eventbrite",
+        sourceUrl: "https://www.lennysnewsletter.com/p/the-secret-to-a-great-planning-process---lessons-from-airbnb-and-eventbrite",
+      },
+      {
+        lyricText: "Three months in, still writing goals",
+        note: "Coda's head of product shared that planning should take no more than 10% of the execution time period — so quarterly planning should take less than 9 days. Ramp went further: 'Any second you spend planning is a second you don't spend doing. The moment you are aligned in a direction, you don't need a high level of accuracy.' They switched from quarterly to bi-annual OKR planning after realizing they were spending 33% of each quarter just planning.",
+        sourceTitle: "The Secret to a Great Planning Process — Lessons from Airbnb and Eventbrite",
+        sourceUrl: "https://www.lennysnewsletter.com/p/the-secret-to-a-great-planning-process---lessons-from-airbnb-and-eventbrite",
+      },
+    ],
+  },
 ];
 
 const careerMovesTracks: Track[] = [
