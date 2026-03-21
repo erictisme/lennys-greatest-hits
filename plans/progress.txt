@@ -3,3 +3,5 @@ Task 1: Created components/TrackRow.tsx — Spotify-style reusable track row wit
 Added equalizer keyframe animations to globals.css. Build passes.
 Task 2: Rewrote app/page.tsx to Spotify artist page layout — header with dynamic counts, green Shuffle Play button, debounced search bar with TrackRow results, Popular section (top 5 by play count), horizontal scrollable Discography, EmailSignup + footer.
 Build passes.
+Task 3: Created app/albums/page.tsx — continuous scroll discography with sticky header, album sections, TrackRow lists, comingSoon grayed with lock icon, staggered fade-in.
+Build passes.
