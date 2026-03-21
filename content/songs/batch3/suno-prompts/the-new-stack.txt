@@ -1,0 +1,52 @@
+TITLE: The New Stack
+
+STYLE: Lo-fi electronic synth-folk, Doris Club dreamy textures meets The 1975 soft synth-pop. Warm analog synth pads, gentle electronic pulse, brushed percussion with programmed beat underneath, close-mic breathy male vocal (Stephen Day warmth), nylon guitar layered with Rhodes keys, vinyl texture, room ambience. BPM ~95, key of Eb major. Mood: contemplative but forward-moving, the future feels warm not cold. Builds gently from sparse verse to full chorus with layered synths. Outro fades with reverb.
+
+SOURCE: Counterintuitive advice for building AI products (Lenny Rachitsky & Kyle Poyar, newsletter)
+
+---
+
+LYRICS:
+
+[Verse 1, gentle pulse]
+Plugged the model in at dawn
+Watched it write what I'd been working on
+Glowing screen, a hundred lines
+Demo day — the whole room shined
+
+[Pre-Chorus]
+But the tourists came and left by June
+Gorgeous trick, an empty room
+
+[Chorus]
+Same old work in a brand new stack
+The future's here but it's looking back
+Ship the chore, not the show
+That's the only way I know
+
+[Verse 2]
+Built a chatbot, called it smart
+Customers won't use the hardest part
+Smallest thing — pre-fill a name
+No one clapped, but no one left the page
+
+[Chorus]
+Same old work in a brand new stack
+The future's warm when you strip it back
+Find the chore, learn it slow
+That's the only way to grow
+
+[Bridge, building]
+Speed wins where the friction lives
+Prompt by prompt is all it is
+Every tool I've ever known
+Still comes down to hands on stone
+
+[Chorus, full]
+Same old work in a brand new stack
+The future's mine, I'm not looking back
+Ship the chore, let it show
+That's the only way I know
+
+[Outro, fading]
+Hands on stone... hands on stone

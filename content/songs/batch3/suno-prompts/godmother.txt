@@ -1,0 +1,59 @@
+TITLE: Godmother
+
+STYLE: atmospheric folk, cinematic indie, Bon Iver rawness, Hollow Coves warmth, intimate-to-sweeping build, solo piano intro, strings enter at bridge, close-mic breathy vocals on verses opening to full warm tenor on choruses, BPM 84, key F minor verses transitioning to F major choruses, reverb-heavy, analog warmth, room ambience, orchestral swell at final chorus, documentary-score feel, not overproduced
+
+SOURCE: The Godmother of AI on jobs, robots & why world models are next (Dr. Fei-Fei Li, podcast)
+
+---
+
+LYRICS:
+
+[Intro — solo piano, sparse, reverb-heavy]
+
+[Verse 1 — whispered, close-mic]
+Dry cleaner steam on a teenage hand
+Caltech winter, empty lab
+Everyone said the field was dead
+She walked in and unpacked
+
+[Pre-Chorus]
+The models weren't broken, they were blind
+Starving in the dark for what a child already finds
+
+[Chorus — opens warm, major key breath]
+She showed the machine the world
+Fifteen million open doors
+Every cat and chair and sky
+Until it learned to see like yours
+
+[Verse 2 — band fills in gently]
+Two grad students and a wild idea
+Label every photograph
+They called it delusional, she called it north
+And kept the camera on the path
+
+[Pre-Chorus]
+Two gaming GPUs in Toronto's hands
+Her patient harvest met the moment and the winter cracked
+
+[Chorus — Variation 2, fuller]
+She showed the machine the world
+Every object, every name
+The revolution didn't start with code
+It started with a frame
+
+[Bridge — strings enter, full cinematic swell]
+They said AI was a dirty word
+She stood in front of Congress and she said
+Nothing artificial here
+Just people all the way down to the end
+
+[Chorus — Variation 3, full orchestral, triumphant]
+She showed the machine the world
+Twenty watts beneath her skin
+The more she built the thinking thing
+The more she loved what's human
+
+[Outro — piano returns alone, gentle]
+Dimmer than a light bulb
+But she lit the whole room

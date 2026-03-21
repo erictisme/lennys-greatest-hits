@@ -82,7 +82,8 @@
       "source_files": [
         "podcasts/lauren-ipsen.md"
       ],
-      "complete": false
+      "complete": true,
+      "completed_at": "2026-03-21T21:00:00+08:00"
     },
     {
       "id": 7,
@@ -94,7 +95,8 @@
       "source_files": [
         "newsletters/counterintuitive-advice-for-building-ai-products.md"
       ],
-      "complete": false
+      "complete": true,
+      "completed_at": "2026-03-21T21:00:00+08:00"
     },
     {
       "id": 8,
@@ -106,7 +108,8 @@
       "source_files": [
         "podcasts/dr-fei-fei-li.md"
       ],
-      "complete": false
+      "complete": true,
+      "completed_at": "2026-03-21T21:00:00+08:00"
     },
     {
       "id": 9,
@@ -118,7 +121,8 @@
       "source_files": [
         "newsletters/how-to-pass-any-first-round-interview-even-in-a-terrible-talent-market.md"
       ],
-      "complete": false
+      "complete": true,
+      "completed_at": "2026-03-21T21:00:00+08:00"
     },
     {
       "id": 10,
@@ -130,7 +134,8 @@
       "source_files": [
         "podcasts/phyl-terry.md"
       ],
-      "complete": false
+      "complete": true,
+      "completed_at": "2026-03-21T21:00:00+08:00"
     },
     {
       "id": 11,
