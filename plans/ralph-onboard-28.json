@@ -110,7 +110,7 @@
         "Run pnpm build"
       ],
       "files": ["lib/albums.ts", "content/songs/batch3/new-mp3s/bend-the-room.mp3", "content/songs/batch3/new-mp3s/the-stack-rank.mp3", "content/songs/batch3/lyrics/bend-the-room.md", "content/songs/batch3/lyrics/the-stack-rank.md"],
-      "passes": false
+      "passes": true
     },
     {
       "id": 8,

@@ -1628,6 +1628,252 @@ But you can`,
       },
     ],
   },
+  {
+    slug: "bend-the-room",
+    title: "Bend the Room",
+    albumSlug: "career-moves",
+    trackNumber: 3,
+    duration: "3:28",
+    audioUrl: "/audio/bend-the-room.mp3",
+    coverImage: "/covers/bend-the-room.jpg",
+    genre: "Jazz-Pop Groove",
+    mood: "Smooth, knowing, conversational swagger",
+    tags: ["influence", "stakeholder management", "persuasion"],
+    lyrics: `[Intro, clean electric guitar with chorus effect]
+
+[Verse 1, warm and conversational]
+I kept my notebook open wide
+Wrote down every question that you asked
+Studied what you cared about
+Before I ever made my ask
+Coffee in the lobby, nothing formal
+Just a conversation, nothing more
+By the time I walked into your office
+I already knew what you were looking for
+
+[Pre-Chorus]
+Slow is fast when it's people
+Fast is slow every time
+
+[Chorus 1]
+Bend the room, not the table
+Read the eyes before the slide
+I learned to speak in your language first
+'Til my ask felt like your side
+Bend the room, gently, gently
+Not a single voice was raised
+Walked in scattered, walked out singing
+Funny how alignment plays
+
+[Verse 2, slightly more confident]
+She framed it all for the user
+Not a word about the revenue line
+CEO leaned in and listened
+Said, "Go try it — take your time"
+Twenty percent more teams were paying
+But the trick was what she didn't say
+She let him feel like he was choosing
+Something he already wanted anyway
+
+[Pre-Chorus]
+Slow is fast when it's people
+Fast is slow every time
+
+[Chorus 2]
+Bend the room, not the table
+Hear the fear behind the "no"
+I learned to speak in your language first
+'Til the walls began to fold
+Bend the room, softly, softly
+Not a single arm was crossed
+Fourteen meetings before the summit
+Wins are made before they're tossed
+
+[Bridge, Rhodes, intimate]
+You think the loudest voice will carry
+But the room remembers who listened
+Talk to someone about themselves
+They'll stay for hours — that's the mission
+
+[Chorus 3, full band warmth]
+Bend the room, bend the room now
+Play it back before you lead
+I learned to speak in your language first
+Now your yes is all I need
+Bend the room, slowly, slowly
+Every detractor's just a friend
+Who hasn't heard the version yet
+That helps them see around the bend
+
+[Outro, guitar fading]
+Bend the room...`,
+    concept: "Jules Walter's five tactics for PM influence — seek intel, reframe proposals from the stakeholder's POV, prime detractors in pre-meetings, secure progressive alignment, and manage the clock.",
+    keyInsight: "The best influencers don't argue louder — they learn what stakeholders care about and reframe proposals so the ask feels like the other person's idea.",
+    keyQuote: "I got better at influence — so much so that a respected Google leader once told me that I 'bend people to alignment.'",
+    quoteSpeaker: "Jules Walter",
+    sources: [
+      { title: "A PM's guide to influence", type: "newsletter", url: "https://www.lennysnewsletter.com/p/a-pms-guide-to-influence", guest: "Jules Walter" },
+      { title: "How to get better at influence", type: "newsletter", url: "https://www.lennysnewsletter.com/p/how-to-get-better-at-influence", guest: "Lenny Rachitsky" },
+    ],
+    storyBehind: "At Slack, Jules Walter needed to pitch a controversial monetization experiment to CEO Stewart Butterfield — who explicitly didn't want the company 'extracting value from users.' Jules reframed the entire proposal around user benefits instead of revenue. The CEO leaned in. Two iterations later, teams paying for Slack jumped 20%.",
+    annotations: [
+      {
+        lyricText: "Bend the room, not the table",
+        note: "The title comes from a compliment Jules Walter received from a senior Google leader who told him he 'bends people to alignment.' At Slack, YouTube, and Google Gemini, Jules developed five specific influence tactics over 10+ years — none of which involve raising your voice or pounding the table.",
+        sourceTitle: "A PM's guide to influence",
+        sourceUrl: "https://www.lennysnewsletter.com/p/a-pms-guide-to-influence",
+      },
+      {
+        lyricText: "She framed it all for the user",
+        note: "When Jules pitched Slack's new monetization experiment to CEO Stewart Butterfield, he knew Butterfield was intensely user-driven and didn't want the company 'extracting value.' So Jules anchored the entire proposal on user-centric insights: '10% of Slack purchases happen on day one' and 'paid users retain better — yet we make it hard to discover paid features.' The CEO greenlit the experiment without Jules ever mentioning revenue.",
+        sourceTitle: "A PM's guide to influence",
+        sourceUrl: "https://www.lennysnewsletter.com/p/a-pms-guide-to-influence",
+      },
+      {
+        lyricText: "Twenty percent more teams were paying",
+        note: "After two iterations of the monetization experiment Jules pitched at Slack, the result was a 20% increase in teams paying for Slack. The success shifted Slack's entire monetization strategy into a new direction — all because Jules framed it around users, not revenue.",
+        sourceTitle: "A PM's guide to influence",
+        sourceUrl: "https://www.lennysnewsletter.com/p/a-pms-guide-to-influence",
+      },
+      {
+        lyricText: "Fourteen meetings before the summit",
+        note: "Jules calls this 'the meeting before the meeting' — priming both detractors and champions before any big decision. He meets with detractors to steelman their arguments and prepare rebuttals, and with champions to arm them with talking points. His goal: walk into the room with a coalition already built, so the meeting is confirmation, not persuasion.",
+        sourceTitle: "A PM's guide to influence",
+        sourceUrl: "https://www.lennysnewsletter.com/p/a-pms-guide-to-influence",
+      },
+      {
+        lyricText: "Talk to someone about themselves",
+        note: "Jules's first influence tactic is 'seek intel on how each stakeholder makes decisions' — understanding what they value, who they consult, and what they're afraid of. He starts with informal one-on-ones, conveying he's seeking information, not trying to convince. He says: 'For people to share intel, they need to feel safe. They need to know I'm here to listen, not argue.'",
+        sourceTitle: "A PM's guide to influence",
+        sourceUrl: "https://www.lennysnewsletter.com/p/a-pms-guide-to-influence",
+      },
+    ],
+  },
+  {
+    slug: "the-stack-rank",
+    title: "The Stack Rank",
+    albumSlug: "career-moves",
+    trackNumber: 4,
+    duration: "3:45",
+    audioUrl: "/audio/the-stack-rank.mp3",
+    coverImage: "/covers/the-stack-rank.jpg",
+    genre: "Indie Rock",
+    mood: "Building from intimate to cathartic release",
+    tags: ["prioritization", "tradeoffs", "saying no"],
+    lyrics: `[Intro, soft synth pad with warm piano]
+
+[Verse 1, gentle and building]
+She stood up in the weekly sync
+With fifteen items on the board
+Said, "We can build the dashboard new
+Or ship the thing that matters more"
+They smiled and said, "Just do them both"
+Like midnight oil was free to burn
+She walked back to her tired team
+And wondered when they'd ever learn
+
+[Pre-Chorus]
+Something's gotta give tonight
+Draw the line or lose the fight
+
+[Chorus 1]
+Put it on the stack rank
+Name the one you'd let go
+Every yes you gave away
+Was someone's quiet no
+Put it on the stack rank
+Hold it up against the light
+If you can't say what you're cutting
+Then you haven't chosen right
+
+[Verse 2, warmer, more confident]
+He got the email — just a "?"
+About a screw you couldn't find
+He could have laughed it off and moved
+But something pulled him to the blind
+He dug through every search result
+And found the pattern underneath
+It wasn't screws — it was everything
+Without a name to hold its teeth
+
+[Pre-Chorus]
+Something's gotta give tonight
+Name the cost or lose the fight
+
+[Chorus 2]
+Put it on the stack rank
+What's above and what's below
+Every yes you gave away
+Was someone else's slow
+Put it on the stack rank
+Say it plain, don't dress it up
+"We can do this thing or that thing—
+Tell me which one fills your cup"
+
+[Bridge, intimate, stripped back]
+She wrote the features out as songs
+Mapped them to the Billboard charts
+"Metered billing-oh-na-na"
+Cringe — but no one forgot their parts
+Repetition doesn't spoil the prayer
+Say it 'til the hallways know
+The best PMs aren't the ones who build it all
+They're the ones who learn to let things go
+
+[Chorus 3, full arrangement, release]
+Put it on the stack rank
+Line by line, what matters most
+Every yes you gave away
+Was a future you let go
+Put it on the stack rank
+One more time before we close
+We only had to do the one thing—
+God, the freedom that it chose
+
+[Outro, piano and voice]
+Stack rank... stack rank...
+Name the one you'd let go`,
+    concept: "Tara Seshan's framework for communicating tradeoffs to leaders: stop inviting them to say 'do both' and start framing choices so they have to pick one.",
+    keyInsight: "The answer was always 'do both' because PMs were framing tradeoffs wrong. When you present choices correctly — 'we can do X or Y, which one?' — leaders are forced to actually decide.",
+    keyQuote: "We only had to do the one most important thing! This led to many fewer late nights at the computer for me and my team.",
+    quoteSpeaker: "Tara Seshan",
+    sources: [
+      { title: "How to communicate tradeoffs so leaders will listen", type: "newsletter", url: "https://www.lennysnewsletter.com/p/how-to-communicate-tradeoffs-so-leaders", guest: "Tara Seshan" },
+    ],
+    storyBehind: "Tara Seshan spent years watching her tradeoff presentations end with leaders saying 'just do both.' When she became a manager, she finally understood why: she'd been framing choices in ways that invited avoidance. She developed a framework for forcing real decisions — and the first time it worked, the relief of only doing the one thing was exhilarating.",
+    annotations: [
+      {
+        lyricText: "They smiled and said, \"Just do them both\"",
+        note: "Tara Seshan describes how she used to present tradeoffs with statements like 'We are thin on resources' or 'I have many things higher in my stack rank.' These statements are counterproductive — they actually invite leadership to avoid the choice. She writes: 'It's clear to me now why the answer to my tradeoff presentations was always to do both.'",
+        sourceTitle: "How to communicate tradeoffs so leaders will listen",
+        sourceUrl: "https://www.lennysnewsletter.com/p/how-to-communicate-tradeoffs-so-leaders",
+      },
+      {
+        lyricText: "Metered billing-oh-na-na",
+        note: "Tara mapped her team's top 10 features to the Billboard Top 10, turning each into song lyrics — 'Metered billing-oh-na-na' to the tune of Camila Cabello's 'Havana.' She admits it was 'unbelievably cringe' but says no one on the team ever forgot their priorities. The technique is part of her 'repetition doesn't spoil the prayer' principle, borrowed from former Google CEO Eric Schmidt.",
+        sourceTitle: "How to communicate tradeoffs so leaders will listen",
+        sourceUrl: "https://www.lennysnewsletter.com/p/how-to-communicate-tradeoffs-so-leaders",
+      },
+      {
+        lyricText: "Repetition doesn't spoil the prayer",
+        note: "This is a direct quote from former Google CEO Eric Schmidt. Tara Seshan uses it as the foundation of her first tradeoff technique: if leadership hasn't heard of your existing priorities, they'll happily pile on new ones. Her solution is an 'ongoing stack rank' (OSR) — a public document where every project is sequenced by priority, shared at every opportunity until 'the hallways know.'",
+        sourceTitle: "How to communicate tradeoffs so leaders will listen",
+        sourceUrl: "https://www.lennysnewsletter.com/p/how-to-communicate-tradeoffs-so-leaders",
+      },
+      {
+        lyricText: "We only had to do the one thing",
+        note: "Tara describes the moment her new framing technique first worked: 'The first time I pushed a tradeoff using the techniques below, it was exhilarating! We only had to do the one most important thing! This led to many fewer late nights at the computer for me and my team, which made me a much more popular PM.'",
+        sourceTitle: "How to communicate tradeoffs so leaders will listen",
+        sourceUrl: "https://www.lennysnewsletter.com/p/how-to-communicate-tradeoffs-so-leaders",
+      },
+      {
+        lyricText: "The best PMs aren't the ones who build it all",
+        note: "Tara's core thesis inverts the PM instinct to ship everything. The best PMs protect their teams by forcing leadership to choose. Her 'ongoing stack rank' technique puts the PM in the position of asking 'Do you agree that X is more important than Y?' instead of 'Why can't we do this one extra thing?' — shifting the burden of the decision to the people with the authority to make it.",
+        sourceTitle: "How to communicate tradeoffs so leaders will listen",
+        sourceUrl: "https://www.lennysnewsletter.com/p/how-to-communicate-tradeoffs-so-leaders",
+      },
+    ],
+  },
 ];
 
 const electricDreamsTracks: Track[] = [
