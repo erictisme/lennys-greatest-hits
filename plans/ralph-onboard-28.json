@@ -185,7 +185,7 @@
         "Run pnpm build"
       ],
       "files": ["lib/albums.ts", "content/songs/batch3/new-mp3s/measure-twice.mp3", "content/songs/batch3/new-mp3s/the-numbers-dont-lie.mp3", "content/songs/batch3/new-mp3s/the-unlock.mp3", "content/songs/batch3/lyrics/measure-twice.md", "content/songs/batch3/lyrics/the-numbers-dont-lie.md", "content/songs/batch3/lyrics/the-unlock.md"],
-      "passes": false
+      "passes": true
     },
     {
       "id": 13,

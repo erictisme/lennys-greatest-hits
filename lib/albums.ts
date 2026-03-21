@@ -1490,6 +1490,355 @@ We never do`,
 ];
 
 const byTheNumbersTracks: Track[] = [
+  {
+    slug: "measure-twice",
+    title: "Measure Twice",
+    albumSlug: "by-the-numbers",
+    trackNumber: 1,
+    duration: "3:30",
+    audioUrl: "/audio/measure-twice.mp3",
+    coverImage: "/covers/measure-twice.jpg",
+    genre: "Jazz-Pop",
+    mood: "Patient, cool, quietly devastating",
+    tags: ["retention", "cohort analysis", "metrics"],
+    lyrics: `[Verse 1]
+Color-coded, week by week
+Every column tells me what I seek
+The seventh day, the thirtieth
+I'm watching what the numbers give
+Each new cohort starts the same
+Falls away like leaves in the rain
+
+[Pre-Chorus]
+I've been calling things "active"
+That were never really there
+Six months of careful counting
+Just to find I measured air
+
+[Chorus]
+Read the curve
+Give it time
+Every falling line
+Will find its floor
+Read the curve
+Be sure
+You're not watching numbers go —
+You're watching people walk out the door
+
+[Verse 2]
+First mile matters more than most
+Get them to the thing they need the most
+Not faster than they're ready for
+Scott said: don't make them choose before
+Airbnb learned: pause, don't end
+The ones you almost lost — you can win them back again
+
+[Pre-Chorus]
+I've been solving for the wrong thing
+Sending emails, running ads
+While the experience was broken
+From the very start we had
+
+[Chorus]
+Read the curve
+Give it time
+Find the week
+The line holds still
+Read the curve
+Be sure —
+A flat line means someone stayed
+Against their will to leave — and they will
+
+[Bridge]
+It's the most important thing
+And the least understood
+We spend a year on features
+And call the baseline "good"
+But if you never flatten
+Nothing else you've done
+Will save the ship from sinking
+When the tide has come undone
+
+[Final Chorus]
+Read the curve
+Give it time
+Even flat at ten percent
+Is a sign
+Read the curve
+Hold still —
+A flat line means someone stayed
+That's the only proof you'll ever need
+
+[Outro]
+The curve doesn't lie
+It only takes its time`,
+    concept: "How to measure cohort retention and what the curves really mean. A jazz-pop meditation on the patience required to read retention data honestly — and the revelation that flattening, not spiking, is the signal you're looking for.",
+    keyInsight: "Retention is both the most important and the least understood metric at most companies. It takes up to six months to nail accurate retention reporting, and the most common mistake is defining 'active' too broadly.",
+    keyQuote: "Retention is both the most important and the least understood metric at most companies. In my experience, it takes up to six months to nail accurate retention reporting.",
+    quoteSpeaker: "Olga Berezovsky",
+    sources: [
+      { title: "How to measure cohort retention", type: "newsletter" as const, url: "https://www.lennysnewsletter.com/p/measuring-cohort-retention", guest: "Olga Berezovsky" },
+      { title: "How to increase your product's retention", type: "newsletter" as const, url: "https://www.lennysnewsletter.com/p/how-to-increase-your-retention-issue", guest: "" },
+    ],
+    storyBehind: "Olga Berezovsky, a data analyst with 10+ years of experience, wrote this guide for Lenny after being shocked that no comprehensive guide existed for measuring cohort retention. At Change.org, by monitoring Day 7 and Day 30 retention of petition starters, her team grew 'petition starters per day' by 450%. The post reveals how most companies define 'active' wrong — overcounting with visits and logins instead of tracking the main user action.",
+    annotations: [
+      {
+        lyricText: "I've been calling things \"active\"",
+        note: "Olga Berezovsky's guide for Lenny identifies five common ways companies define 'active' — visits, session starts, logins, page views, and main user actions — and explains why most are wrong. Using 'visits' overcounts by pulling in unauthenticated users. Using 'session starts' catches background app refreshes. Her recommendation: only count the main user action (e.g., logging an exercise, making a transaction) as the 'active' event.",
+        sourceTitle: "How to measure cohort retention",
+        sourceUrl: "https://www.lennysnewsletter.com/p/measuring-cohort-retention",
+      },
+      {
+        lyricText: "Six months of careful counting",
+        note: "Olga writes: 'In my experience, it takes up to six months to nail accurate retention reporting.' At every company across her 10+ year career, she continually reworked retention reporting. The common mistake she sees: SaaS companies reporting one 'blended' retention mixing free and paid users, which hides the true activity of free users and your 'pool of opportunity' to convert.",
+        sourceTitle: "How to measure cohort retention",
+        sourceUrl: "https://www.lennysnewsletter.com/p/measuring-cohort-retention",
+      },
+      {
+        lyricText: "It's the most important thing",
+        note: "Lenny calls retention 'the single most important growth metric for early-stage companies.' Brian Balfour, former VP Growth at HubSpot, puts it more bluntly: 'If you have poor retention, nothing else matters.' The bridge echoes Olga's observation that analysts, PMs, and founders are all 'intimidated by retention' — the graphs are hard to read, definitions vary by business type, and the SQL is complex.",
+        sourceTitle: "How to increase your product's retention",
+        sourceUrl: "https://www.lennysnewsletter.com/p/how-to-increase-your-retention-issue",
+      },
+      {
+        lyricText: "Each new cohort starts the same",
+        note: "Olga's post teaches the specific mechanics of cohort-based retention: bucket all users who joined during a certain month, then track how many are still active X months later. At Change.org, by slicing Day 7 and Day 30 retention of petition starters by cohort, her team grew their core KPI by 450%. Each new cohort's curve tells a fresh story — and the best practice is comparing them side by side.",
+        sourceTitle: "How to measure cohort retention",
+        sourceUrl: "https://www.lennysnewsletter.com/p/measuring-cohort-retention",
+      },
+      {
+        lyricText: "A flat line means someone stayed",
+        note: "The 'killer line' of the song captures what Lenny's retention series hammers home: a flattening cohort curve is the clearest sign of product-market fit. Casey Winters told Lenny: 'Great retention is THE scalable way to grow a product. It's the best indicator of product-market fit, the most important factor in a user's lifetime value, and high retention drives all of the best acquisition strategies.'",
+        sourceTitle: "What is good retention?",
+        sourceUrl: "https://www.lennysnewsletter.com/p/what-is-good-retention-issue-29",
+      },
+    ],
+  },
+  {
+    slug: "the-numbers-dont-lie",
+    title: "The Numbers Don't Lie",
+    albumSlug: "by-the-numbers",
+    trackNumber: 2,
+    duration: "3:45",
+    audioUrl: "/audio/the-numbers-dont-lie.mp3",
+    coverImage: "/covers/the-numbers-dont-lie.jpg",
+    genre: "Acoustic Folk / Fingerpicked Indie",
+    mood: "Contemplative, honest, quietly devastating",
+    tags: ["retention", "churn", "benchmarks"],
+    lyrics: `[Verse 1, intimate, fingerpicked]
+Three in the morning, the dashboard's awake
+The line keeps falling — what line do I take
+I shipped the feature, I ran the ad
+Two-thirds of January gone by grad
+The curve keeps moving, no place it stalls
+I tell the team it's just growing pains
+But the graph on the wall just explains
+
+[Pre-Chorus, slightly hushed]
+I've heard the pitch, I've done the math
+I've walked the growth and cleared the path
+But the data sits like a patient saint
+
+[Chorus]
+They don't come back
+And the numbers knew before you
+They don't come back
+No story you tell gets through
+The curve just falls —
+till the falling finally stops
+They don't come back
+
+[Verse 2, building slightly]
+Eight percent a month, it adds up clean
+Two-thirds of your people — gone by fourteen
+You can raise a round and fix the brand
+But forty-five retained — that's where the great ones land
+The curve will find the floor or find the fall
+No hack survives if they don't answer the call
+
+[Pre-Chorus 2]
+I rewrote the onboarding twice
+I cut the price and made it nice
+But the numbers hold a straighter line
+
+[Chorus 2]
+They don't come back
+You built the thing — they still left you
+They don't come back
+And the benchmarks told the truth
+The curve just falls —
+till it finds the place it stays
+They don't come back
+
+[Bridge, stripped to guitar + vocal only]
+There's a point where the line goes flat —
+that's the moment you've been building at
+Not the launch day, not the funding call
+That flat line — that's the thing that matters most of all
+
+[Final Chorus, full but still restrained]
+They don't come back
+But the ones who stay will carry you
+They don't come back
+So build for the ones who do
+The curve goes flat —
+and that flat line is the truth
+They don't come back
+
+[Outro, fading, repeated softly]
+The numbers knew
+The numbers knew
+Before you did —
+the numbers knew`,
+    concept: "What constitutes good retention and churn — the brutal math of monthly churn and what the benchmarks really say. A late-night reckoning with the data that won't lie, no matter how many features you ship.",
+    keyInsight: "With 8% monthly churn, you lose almost two-thirds of your users each year. For consumer social products, ~25% six-month retention is GOOD and ~45% is GREAT. The flat line in your retention curve isn't failure — it's the only signal that matters.",
+    keyQuote: "Great retention is THE scalable way to grow a product. It's the best indicator of product-market fit, it is the most important factor in a user's lifetime value, and high retention drives all of the best acquisition strategies.",
+    quoteSpeaker: "Casey Winters",
+    sources: [
+      { title: "What is good retention?", type: "newsletter" as const, url: "https://www.lennysnewsletter.com/p/what-is-good-retention-issue-29", guest: "Casey Winters" },
+      { title: "What is good monthly churn", type: "newsletter" as const, url: "https://www.lennysnewsletter.com/p/monthly-churn-benchmarks", guest: "Patrick Campbell" },
+    ],
+    storyBehind: "Lenny and Casey Winters (former head of growth at Pinterest and Grubhub) reached out to 20 of the most experienced growth practitioners to answer two questions: what's GOOD and GREAT user retention, and what's GOOD and GREAT net revenue retention? The companion churn post drew on Patrick Campbell's ProfitWell data from 13,000 anonymized SaaS companies to establish definitive benchmarks.",
+    annotations: [
+      {
+        lyricText: "Eight percent a month, it adds up clean",
+        note: "Lenny's churn benchmarks post reveals the devastating math: 'With an 8% monthly churn, you'll lose almost two-thirds of your users each year. Even with a 4% monthly churn, you're rebuilding a third of your user base year after year.' This is why SaaS businesses with negative churn (revenue expansion exceeding losses) are so sought-after.",
+        sourceTitle: "What is good monthly churn",
+        sourceUrl: "https://www.lennysnewsletter.com/p/monthly-churn-benchmarks",
+      },
+      {
+        lyricText: "forty-five retained — that's where the great ones land",
+        note: "Lenny and Casey Winters surveyed 20 top growth experts and found clear benchmarks for consumer social products: ~25% six-month retention is GOOD, ~45% is GREAT. Facebook achieves 60-70% six-month user retention. Instagram hits 50-60%. Twitter manages just 31% at three months. The gap between good and great is where the iconic companies live.",
+        sourceTitle: "What is good retention?",
+        sourceUrl: "https://www.lennysnewsletter.com/p/what-is-good-retention-issue-29",
+      },
+      {
+        lyricText: "the data sits like a patient saint",
+        note: "Casey Winters told Lenny: 'Great retention is THE scalable way to grow a product. It's the best indicator of product-market fit, it is the most important factor in a user's lifetime value, and high retention drives all of the best acquisition strategies. It's growth's equivalent of the triple word score.' The data doesn't argue — it waits.",
+        sourceTitle: "What is good retention?",
+        sourceUrl: "https://www.lennysnewsletter.com/p/what-is-good-retention-issue-29",
+      },
+      {
+        lyricText: "There's a point where the line goes flat",
+        note: "Lenny's retention series establishes the flattening cohort curve as the #1 sign of product-market fit. Fareed Mosavat, former growth lead at Shopify, told Lenny: 'Ultimately, what matters is that your retention supports sustained growth.' A flat retention curve — even at modest levels — that drives a scalable acquisition strategy is enough to keep a business alive.",
+        sourceTitle: "What is good retention?",
+        sourceUrl: "https://www.lennysnewsletter.com/p/what-is-good-retention-issue-29",
+      },
+      {
+        lyricText: "Two-thirds of January gone by grad",
+        note: "Patrick Campbell, founder of ProfitWell, dug into data from 13,000 anonymized SaaS companies for Lenny's benchmarks post. The clear answers that emerged: B2C SaaS monthly churn of 3-5% is GOOD, under 2% is GREAT. B2B Enterprise: 1-2% is GOOD, under 0.5% is GREAT. And churn is highly correlated with price point — the cheaper your product, the higher the expected churn.",
+        sourceTitle: "What is good monthly churn",
+        sourceUrl: "https://www.lennysnewsletter.com/p/monthly-churn-benchmarks",
+      },
+    ],
+  },
+  {
+    slug: "the-unlock",
+    title: "The Unlock",
+    albumSlug: "by-the-numbers",
+    trackNumber: 3,
+    duration: "3:15",
+    audioUrl: "/audio/the-unlock.mp3",
+    coverImage: "/covers/the-unlock.jpg",
+    genre: "Dream-Pop / Lo-fi",
+    mood: "Curious, warm, quietly obsessive",
+    tags: ["activation", "onboarding", "aha moment"],
+    lyrics: `[Verse 1]
+A hundred signals in the noise
+I've been watching all the wrong choice
+Someone signed up, clicked around
+Dropped their bag, left no sound
+Seven friends in ten whole days
+Facebook cracked the maze
+I've been measuring the exit door
+When I should've watched what came before
+
+[Chorus]
+Find the unlock, find the unlock
+The one thing before they walk
+Fifty messages, they stay
+Map the moment, find the way
+Find the unlock
+
+[Verse 2]
+Same file, two names on the screen
+Figma learned what the data means
+Fix a flaw in thirty days
+Snyk found theirs inside the haze
+Not too early, not too late
+Not the purchase — something straight
+A single action, run the test
+Two times the curve above the rest
+
+[Chorus]
+Find the unlock, find the unlock
+The one door before the clock
+Not the signup, not the sale
+Thread the needle past the veil
+Find the unlock
+
+[Bridge]
+Some teams never even look
+They ship the onboard by the book
+But somewhere in the first few days
+A habit forms behind the haze —
+That's the only thing that pays
+
+[Final Chorus]
+Found the unlock, found the unlock
+One small action, then they're locked
+Seven friends or a shared page
+Count the signal, read the age
+That's the unlock
+That's the unlock
+
+[Outro]
+You'll know it when you see it
+The line that bends the chart
+One thing before they leave you
+One action — that's the start`,
+    concept: "How to determine your activation metric — the single early action that predicts whether a user will stick around. A dream-pop detective story about finding the hidden moment where users form a habit.",
+    keyInsight: "The average activation rate across products is only 34% (median 25%). The best activation metrics are causal for retention, not just correlative — and they're user-level actions, not account-level aggregations.",
+    keyQuote: "Figma's core activation metric is collaboration in the same file with someone else within 24 hours — specifically, editing or commenting in a file after another user edits or comments in a file. Once this happens, we consider both users activated.",
+    quoteSpeaker: "Badrul Farooqi",
+    sources: [
+      { title: "How to determine your activation metric", type: "newsletter" as const, url: "https://www.lennysnewsletter.com/p/how-to-determine-your-activation", guest: "Hila Qu" },
+      { title: "What is a good activation rate", type: "newsletter" as const, url: "https://www.lennysnewsletter.com/p/what-is-a-good-activation-rate", guest: "" },
+    ],
+    storyBehind: "Lenny's two-part activation series surveyed over 500 companies — the largest survey of its kind — and enlisted growth leaders from Slack, Figma, Airtable, Linear, Snyk, and Asana to reveal their specific activation milestones. The post provides a three-step process: brainstorm potential aha moments, run regression analysis to find correlations with retention, then run experiments to prove causality.",
+    annotations: [
+      {
+        lyricText: "Seven friends in ten whole days",
+        note: "Facebook's famous activation metric — adding 7 friends in 10 days — became the canonical example of an 'aha moment' in growth circles. Lenny's activation post traces how this concept originated from Facebook's early growth strategy and shaped how an entire generation of growth teams think about onboarding. The number wasn't arbitrary — it was the inflection point where retention curves diverged dramatically.",
+        sourceTitle: "What is a good activation rate",
+        sourceUrl: "https://www.lennysnewsletter.com/p/what-is-a-good-activation-rate",
+      },
+      {
+        lyricText: "Same file, two names on the screen",
+        note: "Badrul Farooqi, first PM at Figma, told Lenny: 'Figma's core activation metric is collaboration in the same file with someone else within 24 hours — specifically, editing or commenting in a file after another user edits or comments in a file. Once this happens, we consider both users activated.' This let Figma focus on the customers they really wanted to win: designers who worked on teams.",
+        sourceTitle: "How to determine your activation metric",
+        sourceUrl: "https://www.lennysnewsletter.com/p/how-to-determine-your-activation",
+      },
+      {
+        lyricText: "Fix a flaw in thirty days",
+        note: "Ben Williams, VP of Product at Snyk, revealed their activation metric is abbreviated 'F30D' — 'fix in 30 days.' Teams that fix a security vulnerability using Snyk within the first 30 days have a very strong likelihood of being retained three months later, plus a higher propensity to purchase. The surprising finding: it takes just a single fix to establish the habit. Teams fixing more than once aren't significantly more likely to retain.",
+        sourceTitle: "How to determine your activation metric",
+        sourceUrl: "https://www.lennysnewsletter.com/p/how-to-determine-your-activation",
+      },
+      {
+        lyricText: "A hundred signals in the noise",
+        note: "Lenny's survey of 500+ companies found that the average activation rate is only 34%, with a median of 25%. For SaaS products specifically, the average is 36% with a median of 30%. The wide variance comes from milestone definition difficulty — a good activation metric must be both highly predictive of long-term retention AND highly actionable by the growth team.",
+        sourceTitle: "What is a good activation rate",
+        sourceUrl: "https://www.lennysnewsletter.com/p/what-is-a-good-activation-rate",
+      },
+      {
+        lyricText: "A habit forms behind the haze",
+        note: "Ben Williams distinguishes between two critical moments: the 'aha moment' (when a user first sees value) and the 'habit moment' (when they form a routine around the product). He warns that focusing only on the aha moment 'can be a trap' — the real activation signal is habit formation, which is 'significantly more likely to continue to realize value from your product in the long term.'",
+        sourceTitle: "How to determine your activation metric",
+        sourceUrl: "https://www.lennysnewsletter.com/p/how-to-determine-your-activation",
+      },
+    ],
+  },
 ];
 
 const theWeightTracks: Track[] = [
