@@ -3393,6 +3393,331 @@ Good enough... is enough`,
       },
     ],
   },
+  {
+    slug: "indistractable",
+    title: "Indistractable",
+    albumSlug: "deep-work",
+    trackNumber: 2,
+    duration: "3:15",
+    audioUrl: "/audio/indistractable.mp3",
+    coverImage: "/covers/indistractable.jpg",
+    genre: "Lo-fi Hip Hop",
+    mood: "Relaxed, knowing, gently confrontational",
+    tags: ["distraction", "focus", "emotion regulation"],
+    lyrics: `[Verse 1]
+Bought a flip phone off the web
+Stripped the apps, unplugged the thread
+Sat down at the desk to write
+Still reached for a book instead
+Cleaned the counter, checked the mail
+Took the trash out down the stairs
+Turns out silence has its own pull
+When the quiet gets too bare
+
+[Chorus]
+It's not the pings, it's not the dings
+It's something sitting under things
+Set the timer, ride it out
+Ten more minutes — I don't doubt
+This feeling fades
+
+[Verse 2, relaxed flow]
+Opened up the work I planned
+Felt the weight inside my hands
+"Let me just check one more thing"
+That's the oldest sleight of hand
+Ninety percent begins inside
+Boredom dressed in busy clothes
+Every wave will crest and break
+If you let it run its course
+
+[Chorus]
+It's not the screen, it's not the noise
+It's a feeling without a voice
+Set the timer, let it crest
+Ten more minutes — nothing less
+This feeling bends
+
+[Bridge, spoken]
+Traction pulls you closer
+Distraction pulls you out
+Same Latin root, same six letters
+A-C-T-I-O-N — no doubt
+You're not broken, nothing's wrong
+Just a wave that feels too long
+
+[Final Chorus]
+It's not the phone, it's not the feed
+It's the itch I didn't need
+Set the timer, breathe it through
+This is what it feels like getting through
+To something real
+
+[Outro, fading]
+Not yet... not never
+Not yet... just not right now
+The wave comes up, the wave goes down
+I'm still sitting at my desk somehow`,
+    concept: "Nir Eyal's framework from Indistractable: distraction isn't caused by technology but by our inability to deal with internal discomfort. The 10-minute rule and 'surfing the urge' let you ride emotional waves instead of fleeing them.",
+    keyInsight: "90% of distractions come from internal triggers — boredom, anxiety, restlessness — not from pings and notifications. The antidote isn't willpower or abstinence, it's learning to sit with discomfort for just 10 more minutes.",
+    keyQuote: "It's not the pings, dings, and rings. It's the feelings. But to me, that's incredibly empowering because once you realize, 'Wait a minute, it's just a feeling.' It's all it is, it's just an emotion.",
+    quoteSpeaker: "Nir Eyal",
+    sources: [
+      { title: "Strategies for becoming less distracted and improving focus | Nir Eyal", type: "podcast", url: "https://www.lennyspodcast.com/strategies-for-becoming-less-distracted-and-improving-focus-nir-eyal-author-of-indistractable-and/", guest: "Nir Eyal" },
+    ],
+    storyBehind: "Nir Eyal told Lenny about stripping his phone of apps, sitting at his desk to write — and still getting distracted. He'd clean his desk, take out the trash, reach for a book. That's when he realized: the problem was never the technology. It was the discomfort he was trying to escape. 90% of distraction starts inside.",
+    annotations: [
+      {
+        lyricText: "Bought a flip phone off the web",
+        note: "Nir Eyal described this exact trap on Lenny's podcast: 'I would sit down on my desk and I'd say, \"Oh, you know what? There's that book that I've been meaning to do some research in,\" or, \"Let me just clean off my desk real quick,\" or, \"You know what? I should take out the trash.\"' Even after removing all technology, he kept getting distracted — proving the problem isn't the device.",
+        sourceTitle: "Strategies for becoming less distracted and improving focus | Nir Eyal",
+        sourceUrl: "https://www.lennyspodcast.com/strategies-for-becoming-less-distracted-and-improving-focus-nir-eyal-author-of-indistractable-and/",
+      },
+      {
+        lyricText: "It's not the pings, it's not the dings",
+        note: "Nir Eyal's exact words to Lenny: 'It's not the pings, dings, and rings. It's the feelings.' He explained that identifying the internal trigger — the itch you're trying to escape — is the source of 90% of our distractions. Once you realize it's just an emotion, you can have 'arrows in your quiver ready to take out as soon as you feel that discomfort.'",
+        sourceTitle: "Strategies for becoming less distracted and improving focus | Nir Eyal",
+        sourceUrl: "https://www.lennyspodcast.com/strategies-for-becoming-less-distracted-and-improving-focus-nir-eyal-author-of-indistractable-and/",
+      },
+      {
+        lyricText: "Set the timer, ride it out",
+        note: "Eyal's '10-minute rule': whenever tempted to do something else, set a phone timer for 10 minutes. Your job is to either get back to the task or 'surf the urge.' He told Lenny: 'Surfing the urge acknowledges that these emotions are like waves. They crest and then they subside. Your job is to realize you can do just about anything for just 10 minutes.'",
+        sourceTitle: "Strategies for becoming less distracted and improving focus | Nir Eyal",
+        sourceUrl: "https://www.lennyspodcast.com/strategies-for-becoming-less-distracted-and-improving-focus-nir-eyal-author-of-indistractable-and/",
+      },
+      {
+        lyricText: "Ninety percent begins inside",
+        note: "Eyal's core thesis: 90% of distractions are caused by internal triggers, not external ones. He warned against the 'abstinence' approach — telling yourself 'don't do that, that's bad' — because it actually backfires psychologically. The healthier technique is to say 'not yet' rather than 'no,' which is why the outro repeats 'not yet... just not right now.'",
+        sourceTitle: "Strategies for becoming less distracted and improving focus | Nir Eyal",
+        sourceUrl: "https://www.lennyspodcast.com/strategies-for-becoming-less-distracted-and-improving-focus-nir-eyal-author-of-indistractable-and/",
+      },
+      {
+        lyricText: "Not yet... not never",
+        note: "Eyal's key distinction between abstinence and the 10-minute rule: 'You're not saying no, you're saying not yet.' This reframe is critical because research shows telling yourself you can't have something makes you want it more. The 10-minute delay lets the emotional wave pass naturally without triggering the psychological reactance of full denial.",
+        sourceTitle: "Strategies for becoming less distracted and improving focus | Nir Eyal",
+        sourceUrl: "https://www.lennyspodcast.com/strategies-for-becoming-less-distracted-and-improving-focus-nir-eyal-author-of-indistractable-and/",
+      },
+    ],
+  },
+  {
+    slug: "make-time",
+    title: "Make Time",
+    albumSlug: "deep-work",
+    trackNumber: 3,
+    duration: "3:30",
+    audioUrl: "/audio/make-time.mp3",
+    coverImage: "/covers/make-time.jpg",
+    genre: "Indie Folk-Pop",
+    mood: "Warm, earnest, tender, optimistic",
+    tags: ["productivity", "intention", "presence"],
+    lyrics: `[Verse 1]
+Sticky note beside the screen
+Three small words — what did I mean?
+The inbox pulled, the morning spun
+But I wrote it down before it won
+Sixty minutes, just for this
+Not the urgent, not the list
+Something stirring, half-begun
+The one thing I'd be proud I'd done
+
+[Chorus]
+What's the highlight of your day?
+Not the noise, not the display
+One good moment, that's enough
+Write it down on something rough
+That's the whole thing
+
+[Verse 2]
+His boy ran in, snow outside
+"One more run before it dies"
+The laptop warm, the focus deep
+But twelve years old won't always keep
+Down the hill with arms held tight
+Last run glowing in the light
+Some days the highlight shifts its shape
+The best ones catch you wide awake
+
+[Chorus]
+What's the highlight of your day?
+Not the score, not the grade
+One good moment you can name
+Even if the rest's a frame
+That's the whole thing
+
+[Bridge]
+They call it the busy bandwagon
+Everyone's running the same track
+Infinity pools keep refilling
+But you only need one moment back
+
+[Final Chorus, building]
+What's the highlight of your day?
+Was it chosen or conveyed?
+One good moment you can hold
+Worth the mess, worth the fold
+That's the whole thing
+That's the whole thing
+
+[Outro, gentle]
+Snow melts by morning
+The list will keep on growing
+But that ride down the hill —
+You'll remember without knowing`,
+    concept: "Jake Knapp and John Zeratsky's 'Make Time' framework: instead of optimizing for productivity, choose one 'highlight' each day — the one moment you'd be proud of — and protect it from the busy bandwagon and infinity pools.",
+    keyInsight: "It's not about productivity or time management. At any given day, you're lucky if you can have one great moment where you have your peak attention and use it well. Pick a highlight, protect it, and let the rest be a frame.",
+    keyQuote: "It's not really about productivity, it's not about time management. It's really just about, look, at any given day, we're lucky if we can have one great moment where we have our peak attention and we use it well.",
+    quoteSpeaker: "Jake Knapp",
+    sources: [
+      { title: "Making time for what matters | Jake Knapp and John Zeratsky", type: "podcast", url: "https://www.lennyspodcast.com/making-time-for-what-matters-jake-knapp-and-john-zeratsky/", guest: "Jake Knapp and John Zeratsky" },
+    ],
+    storyBehind: "Jake Knapp and John Zeratsky spent a decade at Google designing sprints. They noticed the same productivity hacks kept failing because they optimized for getting more done instead of doing what matters. Make Time flips the script: pick one highlight, protect it, and let everything else be the frame.",
+    annotations: [
+      {
+        lyricText: "Sticky note beside the screen",
+        note: "Lenny's own time management newsletter recommends this exact practice: 'Each morning, write down just 1-3 things you have to accomplish that day. Don't write more than three.' He calls it inspired by Matt Mochary's 'Top Goal' approach and Jake Knapp's 'highlight' concept from Make Time.",
+        sourceTitle: "Time management techniques that actually work",
+        sourceUrl: "https://www.lennysnewsletter.com/p/time-management-techniques-that-actually",
+      },
+      {
+        lyricText: "What's the highlight of your day?",
+        note: "Jake Knapp told Lenny: 'Imagine it's the end of the day. If someone asks you, \"What was the highlight of your day,\" what would you say? That's the anchor of everything. That's the core, that's the foundation. Things can sometimes be a mess outside of that, and you still feel really good about your days.'",
+        sourceTitle: "Making time for what matters | Jake Knapp and John Zeratsky",
+        sourceUrl: "https://www.lennyspodcast.com/making-time-for-what-matters-jake-knapp-and-john-zeratsky/",
+      },
+      {
+        lyricText: "They call it the busy bandwagon",
+        note: "Knapp explained to Lenny: 'The idea of the busy bandwagon is this expectation that everybody's busy. If you ask someone, \"Hey, how's it going?\" they'll be like, \"Oh man, I'm busy.\" It's kind of the default answer.' He argues this inner pressure — not actual workload — drives most of our stress and reactive behavior.",
+        sourceTitle: "Making time for what matters | Jake Knapp and John Zeratsky",
+        sourceUrl: "https://www.lennyspodcast.com/making-time-for-what-matters-jake-knapp-and-john-zeratsky/",
+      },
+      {
+        lyricText: "Infinity pools keep refilling",
+        note: "John Zeratsky coined 'infinity pools' for any app you can pull-to-refresh or that streams content endlessly. He told Lenny: 'When you put the busy bandwagon and the infinity pool together, you have this flywheel, but bad. You feel like you need to be on top of everything, and then you've got this whole collection of apps ready to pounce on that.' Email is the biggest infinity pool of all.",
+        sourceTitle: "Making time for what matters | Jake Knapp and John Zeratsky",
+        sourceUrl: "https://www.lennyspodcast.com/making-time-for-what-matters-jake-knapp-and-john-zeratsky/",
+      },
+      {
+        lyricText: "But twelve years old won't always keep",
+        note: "Knapp and Zeratsky told Lenny that people always know what they want to make time for — the problem is actually doing it. Zeratsky said: 'They usually know, but it's very hard to actually make time for those things.' The snow scene captures this: the highlight isn't always work. Sometimes it's the last sledding run with your kid before they outgrow it.",
+        sourceTitle: "Making time for what matters | Jake Knapp and John Zeratsky",
+        sourceUrl: "https://www.lennyspodcast.com/making-time-for-what-matters-jake-knapp-and-john-zeratsky/",
+      },
+    ],
+  },
+  {
+    slug: "protect-the-block",
+    title: "Protect the Block",
+    albumSlug: "deep-work",
+    trackNumber: 4,
+    duration: "3:20",
+    audioUrl: "/audio/protect-the-block.mp3",
+    coverImage: "/covers/protect-the-block.jpg",
+    genre: "Ambient Electronic",
+    mood: "Minimal, still, fiercely protective",
+    tags: ["time management", "deep work", "boundaries"],
+    lyrics: `[Intro, ambient synth pad]
+
+[Verse 1]
+Phone in the other room
+Notebook open, page is new
+Three things written, nothing more
+The morning knows what it's for
+Headphones on, the binaural hum
+Coffee warm, the screen goes numb
+Thirty minutes till the deep sets in
+Then the world outside gets thin
+
+[Chorus]
+Protect the block, protect the block
+This hour is not for sale
+Every yes you give away
+Is a no to something real
+Guard the morning, guard the space
+Let the inbox wait its turn
+The door is closed, the work is here
+This is how the good things burn
+
+[Verse 2]
+Sunday night, fifteen minutes
+Scan the week before it starts
+Slot the hard things in the gaps
+Tear the old page, fresh new marks
+Would you say yes if it's tomorrow?
+Feel the weight of that quick thought
+Half your days are someone else's
+Meetings built on things you bought
+
+[Chorus]
+Protect the block, protect the block
+This hour is not for sale
+Every yes you give away
+Is a no to something real
+Guard the morning, guard the space
+Let the inbox wait its turn
+The door is closed, the work is here
+This is how the good things burn
+
+[Bridge, whispered]
+It's not the meeting on its own
+It's the hour before you can't go deep
+And the hour after, rebuilding
+What you lost when you broke the keep
+
+[Final Chorus, building warmth]
+Protect the block, protect the block
+This hour is not for sale
+Every yes you give away
+Is a no to something real
+Guard the morning, guard the space
+Let the inbox wait its turn
+The door is closed, the work is here
+This is how the best things burn
+
+[Outro, gentle]
+Protect the block...
+The door is closed...`,
+    concept: "Lenny Rachitsky's personal time management system: fiercely protect deep work blocks, plan your week on Sunday evening, push meetings as late as possible, and use the 'would I say yes if it were tomorrow?' test to guard your calendar.",
+    keyInsight: "It takes 30-60 minutes to enter a deep work state. A single meeting doesn't just cost you that hour — it costs the hour before (when you can't go deep) and the hour after (rebuilding focus). Protecting the block means protecting three hours, not one.",
+    keyQuote: "I currently have a rule of no meetings before 3 p.m. It used to be 2 p.m., but I made it later. And it made my life so much better.",
+    quoteSpeaker: "Lenny Rachitsky",
+    sources: [
+      { title: "Time management techniques that actually work", type: "newsletter", url: "https://www.lennysnewsletter.com/p/time-management-techniques-that-actually", guest: "Lenny Rachitsky" },
+      { title: "Part 2: Time management techniques that actually work", type: "newsletter", url: "https://www.lennysnewsletter.com/p/part-2-time-management-techniques-that-actually-work", guest: "Lenny Rachitsky" },
+    ],
+    storyBehind: "Lenny's time management post became his most popular newsletter ever. He shared his personal system: schedule two-three deep work blocks weekly, no meetings before 3 PM, plan Sunday evening, and use binaural beats (Brain.fm) while writing. The calendar invite for his deep work blocks read: 'If you book time during this, I'll slap you.'",
+    annotations: [
+      {
+        lyricText: "Three things written, nothing more",
+        note: "Lenny's technique #4: 'Each morning, write down just 1-3 things you have to accomplish that day. Before you open up your to-do list — and definitely before you dive into your work — pick one to three things that, if you got done today (and if you did nothing else), would make it a great day.' He credits Matt Mochary's 'Top Goal' approach.",
+        sourceTitle: "Time management techniques that actually work",
+        sourceUrl: "https://www.lennysnewsletter.com/p/time-management-techniques-that-actually",
+      },
+      {
+        lyricText: "Thirty minutes till the deep sets in",
+        note: "Lenny wrote that it takes 30 to 60 minutes to get into a deep work state, and more importantly, you need to avoid distractions to stay in it. His solution: 'two to three recurring blocks each week dedicated to deep work time. Those were basically the only time I got real work done, and I treasured them.' His calendar invite title: 'If you book time during this, I'll slap you.'",
+        sourceTitle: "Time management techniques that actually work",
+        sourceUrl: "https://www.lennysnewsletter.com/p/time-management-techniques-that-actually",
+      },
+      {
+        lyricText: "Sunday night, fifteen minutes",
+        note: "From Lenny's newsletter: 'Sunday evening, plan out your week ahead by slotting your most important to-dos into your calendar.' This tactic comes from both Nir Eyal's Indistractable and Jake Knapp's Make Time — the idea that your calendar is your personal roadmap, and anything not on your roadmap doesn't get done.",
+        sourceTitle: "Time management techniques that actually work",
+        sourceUrl: "https://www.lennysnewsletter.com/p/time-management-techniques-that-actually",
+      },
+      {
+        lyricText: "Would you say yes if it's tomorrow?",
+        note: "From Part 2 of Lenny's time management series: when deciding whether to accept a meeting or commitment, ask 'would I say yes if it were tomorrow?' Most people say yes to things weeks away that they'd never accept tomorrow. And even after saying yes, Lenny says you can often still get out of it: 'It's almost always not a big deal to that person.'",
+        sourceTitle: "Part 2: Time management techniques that actually work",
+        sourceUrl: "https://www.lennysnewsletter.com/p/part-2-time-management-techniques-that-actually-work",
+      },
+      {
+        lyricText: "Headphones on, the binaural hum",
+        note: "Lenny specifically recommends binaural beats during deep work: 'Explore the power of binaural beats while in deep work time. I use Brain.fm religiously when I write.' He also suggests killing all distracting apps during deep work blocks and encouraging your company to have one meeting-free day per week.",
+        sourceTitle: "Time management techniques that actually work",
+        sourceUrl: "https://www.lennysnewsletter.com/p/time-management-techniques-that-actually",
+      },
+    ],
+  },
 ];
 
 const humanSideTracks: Track[] = [

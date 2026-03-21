@@ -170,7 +170,7 @@
         "Run pnpm build"
       ],
       "files": ["lib/albums.ts", "content/songs/batch3/new-mp3s/indistractable.mp3", "content/songs/batch3/new-mp3s/make-time.mp3", "content/songs/batch3/new-mp3s/protect-the-block.mp3", "content/songs/batch3/lyrics/indistractable.md", "content/songs/batch3/lyrics/make-time.md", "content/songs/batch3/lyrics/protect-the-block.md"],
-      "passes": false
+      "passes": true
     },
     {
       "id": 12,
