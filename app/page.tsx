@@ -193,40 +193,47 @@ export default function Home() {
                   Show all
                 </Link>
               </div>
-              <div className="flex gap-4 overflow-x-auto pb-4 -mx-4 px-4 scrollbar-hide">
-                {allAlbums.map((album) => (
-                  <Link
+              <div className="flex gap-4 overflow-x-auto pb-4 -mx-4 px-4 scrollbar-hide snap-x snap-mandatory" style={{ WebkitOverflowScrolling: "touch" }}>
+                {allAlbums.map((album, i) => (
+                  <motion.div
                     key={album.slug}
-                    href={`/album/${album.slug}`}
-                    className="shrink-0 group"
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.3, delay: i * 0.06 }}
+                    className="snap-start"
                   >
-                    <div className="w-40 sm:w-44">
-                      <div className="relative aspect-square w-full overflow-hidden rounded-lg mb-2 shadow-md transition-transform duration-300 group-hover:scale-[1.04]">
-                        {album.coverImage ? (
-                          <Image
-                            src={album.coverImage}
-                            alt={album.title}
-                            width={176}
-                            height={176}
-                            className="object-cover w-full h-full"
-                          />
-                        ) : (
-                          <div className="w-full h-full bg-white/[0.06] flex items-center justify-center">
-                            <span className="text-4xl opacity-30">🎵</span>
-                          </div>
-                        )}
-                        {album.comingSoon && (
-                          <span className="absolute top-2 right-2 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wide rounded-full bg-primary/80 text-primary-foreground">
-                            Coming Soon
-                          </span>
-                        )}
+                    <Link
+                      href={`/album/${album.slug}`}
+                      className="shrink-0 group block"
+                    >
+                      <div className="w-40 sm:w-44">
+                        <div className="relative aspect-square w-full overflow-hidden rounded-lg mb-2 shadow-md transition-transform duration-300 group-hover:scale-[1.04]">
+                          {album.coverImage ? (
+                            <Image
+                              src={album.coverImage}
+                              alt={album.title}
+                              width={176}
+                              height={176}
+                              className="object-cover w-full h-full"
+                            />
+                          ) : (
+                            <div className="w-full h-full bg-white/[0.06] flex items-center justify-center">
+                              <span className="text-4xl opacity-30">🎵</span>
+                            </div>
+                          )}
+                          {album.comingSoon && (
+                            <span className="absolute top-2 right-2 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wide rounded-full bg-primary/80 text-primary-foreground">
+                              Coming Soon
+                            </span>
+                          )}
+                        </div>
+                        <p className="text-sm font-semibold truncate">{album.title}</p>
+                        <p className="text-xs text-muted-foreground/60 truncate">
+                          {album.tracks.filter((t) => !t.isLocked).length} tracks
+                        </p>
                       </div>
-                      <p className="text-sm font-semibold truncate">{album.title}</p>
-                      <p className="text-xs text-muted-foreground/60 truncate">
-                        {album.tracks.filter((t) => !t.isLocked).length} tracks
-                      </p>
-                    </div>
-                  </Link>
+                    </Link>
+                  </motion.div>
                 ))}
               </div>
             </section>

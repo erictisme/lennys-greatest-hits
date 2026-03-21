@@ -78,7 +78,7 @@ export default function TrackRow({
       </div>
 
       {/* Duration */}
-      <span className="text-xs text-muted-foreground/50 tabular-nums shrink-0">
+      <span className="text-xs text-muted-foreground/50 tabular-nums shrink-0 hidden sm:inline">
         {track.duration}
       </span>
     </motion.div>

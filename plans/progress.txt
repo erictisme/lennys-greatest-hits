@@ -5,3 +5,5 @@ Task 2: Rewrote app/page.tsx to Spotify artist page layout — header with dynam
 Build passes.
 Task 3: Created app/albums/page.tsx — continuous scroll discography with sticky header, album sections, TrackRow lists, comingSoon grayed with lock icon, staggered fade-in.
 Build passes.
+Task 4: Polish pass — added snap-x + touch scrolling to discography cards, staggered fade-in on album cards, hidden duration on mobile in TrackRow. Verified NowPlayingBar pb-[72px] padding in layout.tsx.
+Build passes.
