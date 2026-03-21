@@ -138,20 +138,6 @@ export default function SyncedLyrics({
     }
   }, [lines, annotations]);
 
-  // Find current line index
-  const activeIndex = useMemo(() => {
-    if (duration <= 0 || lines.length === 0) return -1;
-    let idx = -1;
-    for (let i = 0; i < lines.length; i++) {
-      if (currentTime >= lines[i].time) {
-        idx = i;
-      } else {
-        break;
-      }
-    }
-    return idx;
-  }, [currentTime, duration, lines]);
-
   if (lines.length === 0) return null;
 
   return (
@@ -167,25 +153,8 @@ export default function SyncedLyrics({
       )}
       <div ref={containerRef} className="space-y-1">
         {lines.map((line, i) => {
-          const isActive = i === activeIndex;
-          const isNear = Math.abs(i - activeIndex) <= 2;
-          const hasActiveState = activeIndex >= 0 && duration > 0;
           const annotation = line.isSectionLabel ? undefined : findAnnotation(line.text, annotations);
           const isAnnotationExpanded = expandedAnnotationIndex === i;
-
-          let opacity = 1;
-          if (hasActiveState) {
-            if (isActive) opacity = 1;
-            else if (isNear) opacity = 0.5;
-            else opacity = 0.3;
-          } else {
-            opacity = 0.8;
-          }
-
-          // Annotated lines get slightly brighter when not active
-          if (annotation && hasActiveState && !isActive) {
-            opacity = Math.min(opacity + 0.15, 1);
-          }
 
           if (line.isSectionLabel) {
             return (
@@ -193,9 +162,8 @@ export default function SyncedLyrics({
                 key={i}
                 ref={(el) => { lineRefs.current[i] = el; }}
                 className="px-2 pt-4 pb-1"
-                style={{ opacity: hasActiveState ? 0.4 : 0.5 }}
               >
-                <span className="text-[10px] font-semibold uppercase tracking-[0.15em] text-muted-foreground/50">
+                <span className="text-xs font-semibold uppercase tracking-[0.15em] text-muted-foreground/70">
                   {line.text}
                 </span>
               </div>
@@ -206,17 +174,13 @@ export default function SyncedLyrics({
             <div key={i} ref={(el) => { lineRefs.current[i] = el; }}>
               <div
                 className="group flex items-center gap-1 rounded hover:bg-black/5 transition-all duration-300"
-                style={{ opacity }}
+                style={{ opacity: 0.8 }}
               >
-                <button
-                  onClick={() => {
-                    if (duration > 0) onSeek(line.time);
-                  }}
-                  className="flex-1 text-left cursor-pointer px-2 py-0.5"
+                <div
+                  className="flex-1 text-left px-2 py-0.5"
                   style={{
-                    color: isActive ? accentColor : undefined,
-                    fontSize: isActive ? "17px" : "15px",
-                    fontWeight: isActive ? 600 : 400,
+                    fontSize: "15px",
+                    fontWeight: 400,
                     fontStyle: line.isQuote ? "italic" : undefined,
                     borderBottom: annotation ? `1.5px solid ${accentColor}40` : undefined,
                     paddingBottom: annotation ? "2px" : undefined,
@@ -228,7 +192,7 @@ export default function SyncedLyrics({
                       - {line.speaker}
                     </span>
                   )}
-                </button>
+                </div>
                 {annotation && (
                   <button
                     onClick={() => {

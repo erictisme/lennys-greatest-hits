@@ -19,6 +19,7 @@ import { useAudio } from "@/lib/audio-context";
 import { trackEvent } from "@/lib/analytics";
 import SyncedLyrics from "@/components/SyncedLyrics";
 import EmailSignup from "@/components/EmailSignup";
+import VoteButtons from "@/components/VoteButtons";
 import { Lock } from "lucide-react";
 
 const gradientClass: Record<string, string> = {
@@ -100,6 +101,7 @@ export default function TrackPageClient({ slug }: { slug: string }) {
     }
   };
 
+  const [imageLoaded, setImageLoaded] = useState(false);
   const [hoverTime, setHoverTime] = useState<{ time: number; x: number } | null>(null);
 
   const seek = (e: React.MouseEvent<HTMLDivElement>) => {
@@ -171,13 +173,19 @@ export default function TrackPageClient({ slug }: { slug: string }) {
 
           <div className="flex items-start gap-5">
             {track.coverImage && (
-              <Image
-                src={track.coverImage}
-                alt={track.title}
-                width={176}
-                height={176}
-                className="w-36 h-36 sm:w-44 sm:h-44 rounded-lg shadow-md object-cover flex-shrink-0"
-              />
+              <div className="relative w-36 h-36 sm:w-44 sm:h-44 rounded-lg overflow-hidden flex-shrink-0 shadow-md">
+                {!imageLoaded && (
+                  <div className="absolute inset-0 animate-pulse bg-muted" />
+                )}
+                <Image
+                  src={track.coverImage}
+                  alt={track.title}
+                  width={176}
+                  height={176}
+                  className="w-full h-full object-cover"
+                  onLoad={() => setImageLoaded(true)}
+                />
+              </div>
             )}
             <div className="min-w-0">
               <p
@@ -405,9 +413,26 @@ export default function TrackPageClient({ slug }: { slug: string }) {
           </section>
         )}
 
-        {/* Share (hidden for locked tracks) */}
+        {/* Vote + Share (hidden for locked tracks) */}
         {!track.isLocked && (
-          <div className="flex items-center gap-3">
+          <div className="mb-6">
+            <VoteButtons trackSlug={track.slug} accentColor={album.accentColor} />
+          </div>
+        )}
+        {!track.isLocked && (
+          <div className="flex flex-wrap items-center gap-3">
+            {track.sunoId && (
+              <a
+                href={`https://suno.com/song/${track.sunoId}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => trackEvent("suno_link_clicked", { track: slug, track_title: track.title })}
+                className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium border border-border/50 text-muted-foreground hover:text-foreground hover:border-border transition-colors"
+              >
+                <ExternalLink className="w-3.5 h-3.5" />
+                Listen on Suno
+              </a>
+            )}
             <button
               onClick={handleCopyLink}
               className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium transition-colors"

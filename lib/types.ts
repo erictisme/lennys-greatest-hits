@@ -36,6 +36,8 @@ export type Track = {
   tags?: string[];
   annotations?: LyricAnnotation[];
   isLocked?: boolean;
+  releaseDate?: string;
+  sunoId?: string;
 };
 
 export type LyricLine = {

@@ -89,7 +89,14 @@ export default function Home() {
             );
           })}
         </div>
-        <div className="text-center mt-6">
+        <div className="text-center mt-6 flex items-center justify-center gap-4">
+          <Link
+            href="/songs"
+            className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+          >
+            All Songs &rarr;
+          </Link>
+          <span className="text-muted-foreground/30">|</span>
           <Link
             href="/topics"
             className="text-sm text-muted-foreground hover:text-foreground transition-colors"

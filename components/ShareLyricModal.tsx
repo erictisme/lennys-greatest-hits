@@ -52,7 +52,7 @@ export default function ShareLyricModal({
     }
   };
 
-  const shareText = `"${lyric}"\n\n${trackTitle} — ${albumTitle}\nLenny's Greatest Hits`;
+  const shareText = `"${lyric}"\n\n${trackTitle} - ${albumTitle}\nLenny's Greatest Hits`;
 
   const shareOnX = () => {
     trackEvent("share_clicked", { platform: "x", track: trackTitle, lyric });

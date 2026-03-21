@@ -31,3 +31,22 @@ export function getAlbumForTrack(trackSlug: string): Album | undefined {
     album.tracks.some((t) => t.slug === trackSlug)
   );
 }
+
+export type TrackSortBy = "newest" | "alphabetical" | "album";
+
+export function getAllTracksSorted(sortBy: TrackSortBy = "newest"): Track[] {
+  const tracks = getAllTracks().filter(t => !t.isLocked);
+  switch (sortBy) {
+    case "newest":
+      return [...tracks].sort((a, b) => {
+        if (!a.releaseDate) return 1;
+        if (!b.releaseDate) return -1;
+        return b.releaseDate.localeCompare(a.releaseDate);
+      });
+    case "alphabetical":
+      return [...tracks].sort((a, b) => a.title.localeCompare(b.title));
+    case "album":
+    default:
+      return tracks;
+  }
+}
