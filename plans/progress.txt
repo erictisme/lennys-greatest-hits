@@ -4,3 +4,4 @@ Task 2 DONE: Replaced dont-break-the-streak + im-in-the-room with new batch2 MP3
 Task 3 DONE: Replaced build-the-machine + doesnt-feel-right-yet with new batch2 MP3s, covers, updated genre/mood to match new styles. Annotations already high-quality (4 each). Build passes.
 Task 4 DONE: Replaced the-ramp-speed + the-racecar with new batch2 MP3s, covers, updated genre/mood to match new styles. Annotations already high-quality (5 each). Build passes.
 Task 5 DONE: Replaced find-your-north-star + nobodys-coming with batch2 MP3s/covers. Updated genre/mood, added full lyrics + 5 annotations for nobodys-coming. Build passes.
+Task 6 DONE: Added ask-for-help + nervous-system to the-human-side album. Extracted covers, copied MP3s, wrote 5 annotations each from Lenny MCP research. Build passes.

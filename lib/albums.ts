@@ -2503,6 +2503,202 @@ You can set it down`,
     ],
     storyBehind: "Andy's mother died when he was ten. He learned to win so people would want him. Captain, straight A's, six startups. At 28, shaking on the floor. Ground his teeth to dust, rebuilt them twice. Forty-five days in a quiet room, he found the boy behind the noise.",
   },
+  {
+    slug: "ask-for-help",
+    title: "Ask for Help",
+    albumSlug: "the-human-side",
+    trackNumber: 4,
+    duration: "3:38",
+    audioUrl: "/audio/ask-for-help.mp3",
+    coverImage: "/covers/ask-for-help.jpg",
+    genre: "Hymn-Like Folk",
+    mood: "Tender, vulnerable, building to congregational warmth",
+    tags: ["vulnerability", "leadership", "burnout"],
+    lyrics: `[Verse 1, gentle acoustic]
+Sat before the blank screen, five PM
+Everyone went home, I stayed again
+Chest got tight, crept up to my throat
+Couldn't write a single honest note
+
+[Verse 2]
+First one in and last one standing tall
+Answered every message, took each call
+Built my name on never needing rest
+Wore the weight and called it being blessed
+
+[Chorus]
+I don't have to carry this alone
+These arms were never meant for stone
+Open hands, three words, begin —
+Would you help me? Let me in
+
+[Verse 3]
+Worked ten times harder than the ask
+Would ever cost — just wore the mask
+The fear said weakness looks like death
+But silence stole my every breath
+
+[Chorus]
+I don't have to carry this alone
+These arms were never meant for stone
+Open hands, three words, begin —
+Would you help me? Let me in
+
+[Bridge, building warmth]
+They didn't see me as a burden
+They didn't think that I was small
+They leaned in closer when I wavered
+The bravest thing was just the call
+
+[Chorus, congregational]
+We don't have to carry this alone
+These arms were never meant for stone
+Open hands, three words, begin —
+Will you help us? Let us in
+
+[Outro, stripped back]
+Three words... that changed everything
+Three words... I'm still learning`,
+    concept: "The paradox that asking for help feels like weakness but is actually the biggest career unlock — told through the story of a product leader drowning in work she could have shared.",
+    keyInsight: "You're slowing your trajectory if you don't build the muscle of asking for help. Most leaders work 10x harder to avoid the vulnerability of a single ask.",
+    keyQuote: "Asking for help is a sign of weakness, and weakness is a sign of death.",
+    quoteSpeaker: "Natalie Rothfels's coaching client",
+    sources: [
+      { title: "On asking for help (even when you really don't want to)", type: "newsletter" as const, url: "https://www.lennysnewsletter.com/p/on-asking-for-help-even-when-you", guest: "Natalie Rothfels" },
+    ],
+    storyBehind: "Natalie Rothfels, an executive coach and former PM at Khan Academy and Quizlet, wrote this piece after her own breakdown from overwork. She'd been 'willing and able to work 10 times harder to avoid the vulnerability of asking.' When her body gave out, she lost joy for a job that was a perfect fit — and spent three years rebuilding around one skill: learning to ask.",
+    annotations: [
+      {
+        lyricText: "The fear said weakness looks like death",
+        note: "One of Natalie's coaching clients said this exact line in a session: 'Asking for help is a sign of weakness, and weakness is a sign of death.' Rothfels calls it the most visceral expression of the fear she's encountered — the belief that needing others is existentially dangerous.",
+        sourceTitle: "On asking for help (even when you really don't want to)",
+        sourceUrl: "https://www.lennysnewsletter.com/p/on-asking-for-help-even-when-you",
+      },
+      {
+        lyricText: "Worked ten times harder than the ask",
+        note: "Rothfels writes from personal experience: 'I was willing and able to work 10 times harder to avoid the vulnerability of asking for the help I needed and deserved. When my body and my brain gave up, I lost joy for a job that was otherwise a perfect fit.' The math of avoidance is always worse than the ask.",
+        sourceTitle: "On asking for help (even when you really don't want to)",
+        sourceUrl: "https://www.lennysnewsletter.com/p/on-asking-for-help-even-when-you",
+      },
+      {
+        lyricText: "Sat before the blank screen, five PM",
+        note: "Based on Rothfels's client Meena (pseudonym), a Group PM with 10 years of experience at a 300-person Series C SaaS startup. Meena was a player-coach managing PMs, doing IC growth work, and handling hiring — all while on the brink of burnout because she couldn't bring herself to ask for help with any of it.",
+        sourceTitle: "On asking for help (even when you really don't want to)",
+        sourceUrl: "https://www.lennysnewsletter.com/p/on-asking-for-help-even-when-you",
+      },
+      {
+        lyricText: "They didn't see me as a burden",
+        note: "Meena's breakthrough quote: 'The exhaustion of subconsciously assuming I have to do everything on my own robbed me of agency, joy, and so much energy in my work. Shifting this has been radical for me in terms of my relationship to myself and to my work.' The people she asked didn't judge — they leaned in.",
+        sourceTitle: "On asking for help (even when you really don't want to)",
+        sourceUrl: "https://www.lennysnewsletter.com/p/on-asking-for-help-even-when-you",
+      },
+      {
+        lyricText: "Three words... that changed everything",
+        note: "Lenny's intro frames it plainly: 'Every successful person you know became successful because they were skilled at asking for help.' Rothfels provides actual script templates in the article — literal three-word asks ('Can you help?') that her clients use to break the pattern of silent overwork.",
+        sourceTitle: "On asking for help (even when you really don't want to)",
+        sourceUrl: "https://www.lennysnewsletter.com/p/on-asking-for-help-even-when-you",
+      },
+    ],
+  },
+  {
+    slug: "nervous-system",
+    title: "Nervous System",
+    albumSlug: "the-human-side",
+    trackNumber: 5,
+    duration: "2:33",
+    audioUrl: "/audio/nervous-system.mp3",
+    coverImage: "/covers/nervous-system.jpg",
+    genre: "Intimate Chamber Folk",
+    mood: "Hushed, devastating, meditative",
+    tags: ["burnout", "anxiety", "breathwork"],
+    lyrics: `[Verse 1, close-mic, whispered]
+Woke up tired for the third straight week
+Jaw clenched tight, couldn't even speak
+Checked my phone before my feet hit floor
+Held my breath through every unopened door
+
+[Pre-Chorus]
+The feather landed soft, I didn't see
+The brick came next, it came for me
+
+[Chorus]
+My body knew before my mind
+A thousand signals I declined
+Breathe out slow, twice as long
+The calm was here, I had it wrong
+
+[Verse 2]
+Sat through meetings, stomach like a stone
+Smiled and nodded, swallowed every groan
+Built a wall of coffee and control
+Numb from neck down, running on the scroll
+
+[Pre-Chorus]
+The feather landed months ago
+The dump truck's pulling up below
+
+[Chorus]
+My body knew before my brain
+It kept the score of every strain
+Breathe out slow, find the floor
+The still was waiting at the door
+
+[Bridge, falsetto]
+Four seconds in and four to hold
+Eight seconds out — release the cold
+State over story, feel your feet
+The ground still holds beneath the heat
+
+[Chorus, building]
+My body knew before I did
+It spoke in aches I kept well-hid
+Breathe out slow, let it leave
+The feather's falling — I believe
+
+[Outro, barely audible]
+Breathe out... longer than you breathe in
+Breathe out... let the calm begin`,
+    concept: "Your nervous system sends burnout signals long before your mind catches up — first as a feather, then a brick, then a dump truck. The cure starts with one exhale.",
+    keyInsight: "When your exhale is twice as long as your inhale, it activates the parasympathetic nervous system and shifts your body from fight-or-flight to calm. The fix is physiological, not psychological.",
+    keyQuote: "Ideally, you want to notice when it's the feather and then make adjustments, and not have to wait until you experience the full-blown pain of the dump truck.",
+    quoteSpeaker: "Jonny Miller",
+    sources: [
+      { title: "Managing nerves, anxiety, and burnout", type: "podcast" as const, url: "https://www.lennyspodcast.com/managing-nerves-anxiety-and-burnout-jonny-miller-nervous-system-mastery/", guest: "Jonny Miller" },
+    ],
+    storyBehind: "Jonny Miller coaches tech professionals on what he calls 'Nervous System Mastery.' On Lenny's podcast, he explained that burnout follows a predictable escalation — feather, brick, dump truck — and that most people don't notice until the dump truck arrives. He taught Lenny a live 4-4-8 breathing exercise that left Lenny saying 'I feel extremely calm. I should do this every podcast episode.'",
+    annotations: [
+      {
+        lyricText: "The feather landed soft, I didn't see",
+        note: "Miller's 'feather, brick, dump truck' framework: burnout starts with subtle signals (a feather — waking up tired, mild exhaustion), escalates to a brick (a fight, losing your cool, chronic frustration), then the dump truck (health crisis, getting fired, full breakdown). Most people only notice at the dump truck stage.",
+        sourceTitle: "Managing nerves, anxiety, and burnout",
+        sourceUrl: "https://www.lennyspodcast.com/managing-nerves-anxiety-and-burnout-jonny-miller-nervous-system-mastery/",
+      },
+      {
+        lyricText: "Breathe out slow, twice as long",
+        note: "Miller taught a specific technique on the show: inhale for 4 seconds, hold for 4, exhale for 8. Scientists have discovered that when the exhale is twice as long as the inhale, it activates the parasympathetic nervous system — a calming effect. The reverse (longer inhale) is activating. Miller calls it 'an up or down lever on the nervous system.'",
+        sourceTitle: "Managing nerves, anxiety, and burnout",
+        sourceUrl: "https://www.lennyspodcast.com/managing-nerves-anxiety-and-burnout-jonny-miller-nervous-system-mastery/",
+      },
+      {
+        lyricText: "Four seconds in and four to hold",
+        note: "Miller led Lenny through this exact 4-4-8 breathing exercise live on the podcast. After one round, Lenny said: 'I feel extremely calm. I should do this every podcast episode before we start.' Miller added that humming on the exhale releases nitric oxide, a vasodilator that stimulates the vagus nerve and deepens the calming effect.",
+        sourceTitle: "Managing nerves, anxiety, and burnout",
+        sourceUrl: "https://www.lennyspodcast.com/managing-nerves-anxiety-and-burnout-jonny-miller-nervous-system-mastery/",
+      },
+      {
+        lyricText: "State over story, feel your feet",
+        note: "Miller's core concept: most people try to solve anxiety at the level of 'story' — rationalizing, analyzing, talking it through. 'State over story' means addressing the physiological state first (breath, gaze, grounding) before engaging with the narrative. Change the body's state and the mind follows.",
+        sourceTitle: "Managing nerves, anxiety, and burnout",
+        sourceUrl: "https://www.lennyspodcast.com/managing-nerves-anxiety-and-burnout-jonny-miller-nervous-system-mastery/",
+      },
+      {
+        lyricText: "My body knew before my mind",
+        note: "Miller explains there's a part of the brain called the insular cortex that constantly monitors breathing patterns. When you breathe shallow and rapid into your upper chest, it registers danger and activates the endocrine system's stress response — before your conscious mind has any idea what's happening. Your body literally knows before you do.",
+        sourceTitle: "Managing nerves, anxiety, and burnout",
+        sourceUrl: "https://www.lennyspodcast.com/managing-nerves-anxiety-and-burnout-jonny-miller-nervous-system-mastery/",
+      },
+    ],
+  },
 ];
 
 export const albums: Album[] = [

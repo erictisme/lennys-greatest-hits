@@ -95,7 +95,7 @@
         "Run pnpm build"
       ],
       "files": ["lib/albums.ts", "content/songs/batch3/new-mp3s/ask-for-help.mp3", "content/songs/batch3/new-mp3s/nervous-system.mp3", "content/songs/batch3/lyrics/ask-for-help.md", "content/songs/batch3/lyrics/nervous-system.md"],
-      "passes": false
+      "passes": true
     },
     {
       "id": 7,
