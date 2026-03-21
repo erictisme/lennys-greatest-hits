@@ -31,7 +31,7 @@
         "Run pnpm build"
       ],
       "files": ["lib/albums.ts", "content/songs/batch2/new-mp3s/dont-break-the-streak.mp3", "content/songs/batch2/new-mp3s/im-in-the-room.mp3", "content/songs/batch2/lyrics/01-duolingo-streak.md", "content/songs/batch2/lyrics/02-founder-mode.md"],
-      "passes": false
+      "passes": true
     },
     {
       "id": 3,

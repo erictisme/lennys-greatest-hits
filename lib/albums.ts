@@ -354,8 +354,8 @@ Ship it`,
     duration: "3:19",
     audioUrl: "/audio/im-in-the-room.mp3",
     coverImage: "/covers/im-in-the-room.jpg",
-    genre: "Intimate Acoustic Folk",
-    mood: "Determined, bittersweet, building to conviction",
+    genre: "Driving Indie Rock / Anthemic Alt-Rock",
+    mood: "Urgent, defiant, bittersweet",
     tags: ["founder mode", "leadership", "detail obsession"],
     lyrics: `[Verse 1]
 I hired every name the board approved
@@ -1038,8 +1038,8 @@ const growthEngineTracks: Track[] = [
     duration: "2:57",
     audioUrl: "/audio/dont-break-the-streak.mp3",
     coverImage: "/covers/dont-break-the-streak.jpg",
-    genre: "Acoustic Folk-Pop",
-    mood: "Uplifting, playful, warm urgency",
+    genre: "Synth-Pop / Indie Electropop",
+    mood: "Urgent, anthemic, playful",
     tags: ["gamification", "retention", "compounding growth"],
     lyrics: `[Verse 1]
 Biggest app in the world, but the line went flat
