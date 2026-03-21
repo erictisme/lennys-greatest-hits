@@ -454,8 +454,8 @@ Then prayed to process till it lost its heart`,
     duration: "3:07",
     audioUrl: "/audio/build-the-machine.mp3",
     coverImage: "/covers/build-the-machine.jpg",
-    genre: "Neo-Soul",
-    mood: "Determined, quietly proud, sophisticated",
+    genre: "Anthemic Indie Rock / Power-Pop",
+    mood: "Driving, determined, bittersweet pride",
     tags: ["scaling", "operations", "invisible leadership"],
     lyrics: `[Verse 1]
 She ran the numbers, morning two
@@ -546,8 +546,8 @@ While the rest just talk about the view`,
     duration: "3:14",
     audioUrl: "/audio/doesnt-feel-right-yet.mp3",
     coverImage: "/covers/doesnt-feel-right-yet.jpg",
-    genre: "Indie Folk-Pop",
-    mood: "Precise, cathartic, dreamy conviction",
+    genre: "Indie Rock / Alternative",
+    mood: "Defiant, precise, cathartic",
     tags: ["craft", "taste", "product quality"],
     lyrics: `[Verse 1]
 Every tool I touched was made by strangers

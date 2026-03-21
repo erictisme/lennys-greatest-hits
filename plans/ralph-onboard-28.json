@@ -47,7 +47,7 @@
         "Run pnpm build"
       ],
       "files": ["lib/albums.ts", "content/songs/batch2/new-mp3s/build-the-machine.mp3", "content/songs/batch2/new-mp3s/doesnt-feel-right-yet.mp3", "content/songs/batch2/lyrics/03-scaling-stripe.md", "content/songs/batch2/lyrics/04-linears-way.md"],
-      "passes": false
+      "passes": true
     },
     {
       "id": 4,

@@ -1,3 +1,4 @@
 # Ralph DEFAULT run Sat Mar 21 18:56:07 +08 2026
 Task 1 DONE: Restructured 9 albums → 11 JTBD albums. Moved 35 tracks to correct arrays, updated all albumSlug fields, removed old album definitions (founders, product, builders, the-operators, frameworks). Build passes.
 Task 2 DONE: Replaced dont-break-the-streak + im-in-the-room with new batch2 MP3s, covers, updated genre/mood. Annotations already high-quality. Build passes.
+Task 3 DONE: Replaced build-the-machine + doesnt-feel-right-yet with new batch2 MP3s, covers, updated genre/mood to match new styles. Annotations already high-quality (4 each). Build passes.
