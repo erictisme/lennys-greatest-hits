@@ -1494,7 +1494,7 @@ export const albums: Album[] = [
     title: "Frameworks",
     subtitle: "The mental models that run tech",
     description: "The intellectual tools and thinking patterns that define modern product work. Mission cascades, empowered teams, A/B testing, JTBD, and the LNO Framework.",
-    coverImage: "",
+    coverImage: "/covers/frameworks.jpg",
     accentColor: "#4338ca",
     tracks: frameworksTracks,
   },
