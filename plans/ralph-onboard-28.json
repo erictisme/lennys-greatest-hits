@@ -63,7 +63,7 @@
         "Run pnpm build"
       ],
       "files": ["lib/albums.ts", "content/songs/batch2/new-mp3s/the-ramp-speed.mp3", "content/songs/batch2/new-mp3s/the-racecar.mp3", "content/songs/batch2/lyrics/05-ramp-speed.md", "content/songs/batch2/lyrics/06-the-racecar.md"],
-      "passes": false
+      "passes": true
     },
     {
       "id": 5,

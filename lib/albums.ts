@@ -643,8 +643,8 @@ The more the design matters`,
     duration: "2:42",
     audioUrl: "/audio/the-ramp-speed.mp3",
     coverImage: "/covers/the-ramp-speed.jpg",
-    genre: "Lo-Fi Hip-Hop",
-    mood: "Exhilarating, playful, swagger",
+    genre: "High-Energy Indie Rock / Synth-Pop",
+    mood: "Exhilarating, urgent, triumphant",
     tags: ["velocity", "shipping culture", "small teams"],
     lyrics: `[Verse 1]
 Eight of us, a whiteboard and a dare
@@ -1142,8 +1142,8 @@ One more day`,
     duration: "3:07",
     audioUrl: "/audio/the-racecar.mp3",
     coverImage: "/covers/the-racecar.jpg",
-    genre: "Warm Folk-Rock",
-    mood: "Anthemic, revelatory, building energy",
+    genre: "Driving Alternative Rock / Electronic",
+    mood: "Energetic, anthemic, revelatory",
     tags: ["growth", "frameworks", "loops"],
     lyrics: `[Verse 1]
 We built the thing and no one came
