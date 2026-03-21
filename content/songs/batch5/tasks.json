@@ -1,0 +1,378 @@
+{
+  "batch": 5,
+  "created": "2026-03-21",
+  "strategy": "Fill the remaining iconic gaps \u2014 these are Lenny's most legendary episodes and frameworks that STILL have no song after 67 tracks. PLG, strategy, Superhuman, Radical Candor, OKRs, onboarding, presentations, marketplace growth, category design, resilience. Every one of these is a topic Lenny's audience would be shocked NOT to see represented.",
+  "tasks": [
+    {
+      "id": 1,
+      "idea": "PLG",
+      "description": "Song about product-led growth \u2014 the motion that changed how B2B companies grow. Elena Verna's 'you don't need to be a PLG purist.' PLG is fundamentally DLG \u2014 data-led growth. When you give away free product, you get data in exchange. The tension between PLG and sales-led. Read podcasts/elena-verna-30.md for how B2B growth is changing.",
+      "research_keywords": [
+        "product-led growth",
+        "PLG",
+        "Elena Verna",
+        "self-serve",
+        "freemium"
+      ],
+      "output_file": "plg",
+      "album": "Growth Engine",
+      "source_files": [
+        "podcasts/elena-verna-30.md"
+      ],
+      "complete": true,
+      "completed_at": "2026-03-21"
+    },
+    {
+      "id": 2,
+      "idea": "Playing to Win",
+      "description": "Song about Roger Martin's strategy choice cascade \u2014 the 5 questions every strategist must answer. 'What's your winning aspiration? Where to play? How to win?' The world's #1 management thinker says great strategists aren't born \u2014 they just practice. 'It's intellectually challenging and emotionally intimidating.' Read podcasts/roger-martin.md for the full conversation.",
+      "research_keywords": [
+        "Roger Martin",
+        "Playing to Win",
+        "strategy cascade",
+        "where to play",
+        "how to win"
+      ],
+      "output_file": "playing-to-win",
+      "album": "The Startup Life",
+      "source_files": [
+        "podcasts/roger-martin.md"
+      ],
+      "complete": true,
+      "completed_at": "2026-03-21"
+    },
+    {
+      "id": 3,
+      "idea": "The Rise of Cursor",
+      "description": "Song about Michael Truell and Cursor \u2014 the AI code editor that went from 0 to phenomenon. Building the tool that lets developers think in natural language. The bet that AI wouldn't replace programmers but would make them 10x. When the future of coding arrived overnight. Read podcasts/michael-truell.md for the full conversation.",
+      "research_keywords": [
+        "Michael Truell",
+        "Cursor",
+        "AI coding",
+        "code editor",
+        "developer tools"
+      ],
+      "output_file": "the-rise-of-cursor",
+      "album": "Electric Dreams",
+      "source_files": [
+        "podcasts/michael-truell.md"
+      ],
+      "complete": true,
+      "completed_at": "2026-03-21"
+    },
+    {
+      "id": 4,
+      "idea": "Radical Candor",
+      "description": "Song about Kim Scott's Radical Candor \u2014 care personally AND challenge directly. The 2x2 that redefined feedback: ruinous empathy, obnoxious aggression, manipulative insincerity. 1M+ copies sold, most referenced leadership book on Lenny's podcast. Read podcasts/kim-scott.md for the full conversation.",
+      "research_keywords": [
+        "Radical Candor",
+        "Kim Scott",
+        "feedback",
+        "care personally",
+        "challenge directly"
+      ],
+      "output_file": "radical-candor",
+      "album": "The Weight",
+      "source_files": [
+        "podcasts/kim-scott.md"
+      ],
+      "complete": true,
+      "completed_at": "2026-03-21"
+    },
+    {
+      "id": 5,
+      "idea": "The OKR",
+      "description": "Song about OKRs \u2014 Christina Wodtke's framework that Google, Intel, and every top tech company runs on. Objectives are qualitative and inspiring, Key Results are measurable. The cadence of setting, checking, and scoring. 'If you measure everything, you measure nothing.' Read podcasts/christina-wodtke.md for the queen of OKRs.",
+      "research_keywords": [
+        "OKRs",
+        "Christina Wodtke",
+        "objectives",
+        "key results",
+        "goal setting"
+      ],
+      "output_file": "the-okr",
+      "album": "The Weight",
+      "source_files": [
+        "podcasts/christina-wodtke.md"
+      ],
+      "complete": true,
+      "completed_at": "2026-03-21"
+    },
+    {
+      "id": 6,
+      "idea": "The First Mile",
+      "description": "Song about Scott Belsky's First Mile \u2014 'your users are lazy, vain, and selfish in the first 30 seconds.' The make-or-break onboarding moment. The default effect, the hook, reducing friction to zero. Every product dies or thrives in the first mile. Read podcasts/scott-belsky.md for the full conversation.",
+      "research_keywords": [
+        "Scott Belsky",
+        "first mile",
+        "onboarding",
+        "lazy vain selfish",
+        "activation"
+      ],
+      "output_file": "the-first-mile",
+      "album": "The Craft",
+      "source_files": [
+        "podcasts/scott-belsky.md"
+      ],
+      "complete": true,
+      "completed_at": "2026-03-21"
+    },
+    {
+      "id": 7,
+      "idea": "Make Me Care",
+      "description": "Song about Nancy Duarte's storytelling through presentations \u2014 the audience is the hero, not you. The 'what is' vs 'what could be' structure. Every great presentation is a story of transformation. The sparkline that maps the emotional journey. Read podcasts/nancy-duarte.md for the full conversation on crafting compelling presentations.",
+      "research_keywords": [
+        "Nancy Duarte",
+        "presentations",
+        "storytelling",
+        "audience",
+        "what could be"
+      ],
+      "output_file": "make-me-care",
+      "album": "Career Moves",
+      "source_files": [
+        "podcasts/nancy-duarte.md"
+      ],
+      "complete": true,
+      "completed_at": "2026-03-21"
+    },
+    {
+      "id": 8,
+      "idea": "Good Strategy",
+      "description": "Song about Richard Rumelt's Good Strategy Bad Strategy \u2014 strategy is a design for overcoming a high-stakes challenge. The kernel: diagnosis, guiding policy, coherent action. David and Goliath as the ultimate strategy story \u2014 discovered strength. 'Bad strategy is not the absence of strategy, it's an active avoidance of hard choices.' Read podcasts/richard-rumelt.md for the full conversation.",
+      "research_keywords": [
+        "Richard Rumelt",
+        "Good Strategy Bad Strategy",
+        "the kernel",
+        "diagnosis",
+        "guiding policy"
+      ],
+      "output_file": "good-strategy",
+      "album": "The Startup Life",
+      "source_files": [
+        "podcasts/richard-rumelt.md"
+      ],
+      "complete": true,
+      "completed_at": "2026-03-21"
+    },
+    {
+      "id": 9,
+      "idea": "The Hierarchy",
+      "description": "Song about Sarah Tavel's Hierarchy of Engagement \u2014 the framework for building consumer products that win. Growing engaged users, retaining them, creating self-perpetuating loops. The flywheel that spins faster and faster. From Pinterest to Benchmark. Read podcasts/sarah-tavel.md for the hierarchy of engagement.",
+      "research_keywords": [
+        "Sarah Tavel",
+        "hierarchy of engagement",
+        "consumer products",
+        "retention loops",
+        "flywheel"
+      ],
+      "output_file": "the-hierarchy",
+      "album": "Growth Engine",
+      "source_files": [
+        "podcasts/sarah-tavel.md"
+      ],
+      "complete": true,
+      "completed_at": "2026-03-21"
+    },
+    {
+      "id": 10,
+      "idea": "Level Three",
+      "description": "Song about Rachel Lockett's three levels of listening \u2014 Level 1 (internal), Level 2 (focused), Level 3 (global). Great leaders operate at Level 3: hearing what's communicated beneath the words. The GROW model for powerful questions. Designing a life you love by tracking what gives you energy. Read podcasts/rachel-lockett.md for the full conversation.",
+      "research_keywords": [
+        "Rachel Lockett",
+        "listening",
+        "difficult conversations",
+        "coaching",
+        "GROW model"
+      ],
+      "output_file": "level-three",
+      "album": "The Weight",
+      "source_files": [
+        "podcasts/rachel-lockett.md"
+      ],
+      "complete": true,
+      "completed_at": "2026-03-21"
+    },
+    {
+      "id": 11,
+      "idea": "Beautiful Things",
+      "description": "Song about Katie Dill's philosophy of building beautiful products \u2014 design as a differentiator at Stripe, Airbnb, and Lyft. 'Everyone can bring more care and intentionality.' Dogfooding: using your own product to feel the pain firsthand. It's easier to teach tools than taste. Read podcasts/katie-dill.md for the full conversation.",
+      "research_keywords": [
+        "Katie Dill",
+        "design",
+        "Stripe",
+        "craft",
+        "beautiful products"
+      ],
+      "output_file": "beautiful-things",
+      "album": "The Craft",
+      "source_files": [
+        "podcasts/katie-dill.md"
+      ],
+      "complete": false
+    },
+    {
+      "id": 12,
+      "idea": "Elegant Puzzle",
+      "description": "Song about Will Larson's engineering management philosophy \u2014 an elegant puzzle of systems thinking applied to people. Sizing teams, managing technical debt, succession planning. The CTO of Calm who wrote the book every engineering leader reads. 'Good process is evolved, not designed.' Read podcasts/will-larson.md for the full conversation.",
+      "research_keywords": [
+        "Will Larson",
+        "engineering management",
+        "Elegant Puzzle",
+        "tech debt",
+        "systems thinking"
+      ],
+      "output_file": "elegant-puzzle",
+      "album": "Deep Work",
+      "source_files": [
+        "podcasts/will-larson.md"
+      ],
+      "complete": false
+    },
+    {
+      "id": 13,
+      "idea": "Resilience Over Happiness",
+      "description": "Song about Dr. Becky Kennedy's child psychology applied to leadership \u2014 resilience over happiness, the power of repair, becoming sturdy. 'This is hard and I can do hard things.' The most generous interpretation. Using parenting frameworks to become a better leader. Read podcasts/dr-becky-kennedy.md for the full conversation.",
+      "research_keywords": [
+        "Dr. Becky Kennedy",
+        "resilience",
+        "repair",
+        "parenting",
+        "sturdy leader"
+      ],
+      "output_file": "resilience-over-happiness",
+      "album": "The Human Side",
+      "source_files": [
+        "podcasts/dr-becky-kennedy.md"
+      ],
+      "complete": false
+    },
+    {
+      "id": 14,
+      "idea": "The Intuition",
+      "description": "Song about Dylan Field and Figma \u2014 intuition as a hypothesis generator, simplicity as the ultimate sophistication. Building the tool that changed how designers work. At Config, the future of design meets AI. 'Intuition is like a hypothesis generator and you validate with data.' Read podcasts/dylan-field.md for the full conversation.",
+      "research_keywords": [
+        "Dylan Field",
+        "Figma",
+        "intuition",
+        "simplicity",
+        "design tools"
+      ],
+      "output_file": "the-intuition",
+      "album": "The Craft",
+      "source_files": [
+        "podcasts/dylan-field.md"
+      ],
+      "complete": false
+    },
+    {
+      "id": 15,
+      "idea": "The Liquidity",
+      "description": "Song about marketplace growth \u2014 Benjamin Lauzier's lessons from Lyft (1% of US workers driving every month). Liquidity is the lifeblood. Focus on core value proposition before building flywheels. 'Running a marketplace is like being a gardener \u2014 you have a very light touch.' Read podcasts/benjamin-lauzier.md for how marketplaces win.",
+      "research_keywords": [
+        "marketplace",
+        "liquidity",
+        "Benjamin Lauzier",
+        "Lyft",
+        "two-sided"
+      ],
+      "output_file": "the-liquidity",
+      "album": "Growth Engine",
+      "source_files": [
+        "podcasts/benjamin-lauzier.md"
+      ],
+      "complete": false
+    },
+    {
+      "id": 16,
+      "idea": "Ikigai",
+      "description": "Song about Tom Conrad's billion dollar failures and lessons \u2014 Pets.com, Pandora, Quibi. The Japanese concept of ikigai: what you love, what you're good at, what the world needs, what you can be paid for. Finding meaning after spectacular failure. 'The right people matter more than the right idea.' Read podcasts/tom-conrad.md for the full conversation.",
+      "research_keywords": [
+        "Tom Conrad",
+        "ikigai",
+        "Quibi",
+        "Pandora",
+        "failure",
+        "billion dollar"
+      ],
+      "output_file": "ikigai",
+      "album": "The Human Side",
+      "source_files": [
+        "podcasts/tom-conrad.md"
+      ],
+      "complete": false
+    },
+    {
+      "id": 17,
+      "idea": "Category Pirate",
+      "description": "Song about Christopher Lochhead's category design \u2014 'positioning is for losers.' Don't compete in someone else's category, create your own. The category queen earns 76% of the economics. Frame, claim, and name the problem. 'Be the only, not the best.' Read podcasts/christopher-lochhead.md for how to become a category pirate.",
+      "research_keywords": [
+        "Christopher Lochhead",
+        "category design",
+        "Play Bigger",
+        "category pirate",
+        "category queen"
+      ],
+      "output_file": "category-pirate",
+      "album": "The Startup Life",
+      "source_files": [
+        "podcasts/christopher-lochhead.md"
+      ],
+      "complete": false
+    },
+    {
+      "id": 18,
+      "idea": "The Power",
+      "description": "Song about Jeffrey Pfeffer's research on organizational power \u2014 why nice guys finish last in corporate politics, the gap between what companies say and do, why performance alone doesn't get you promoted. 'Power is the ability to get things done despite resistance.' The Stanford professor who tells uncomfortable truths about how careers really work. Read podcasts/jeffrey-pfeffer.md for the full conversation.",
+      "research_keywords": [
+        "Jeffrey Pfeffer",
+        "power",
+        "organizational politics",
+        "career advancement",
+        "Stanford"
+      ],
+      "output_file": "the-power",
+      "album": "Career Moves",
+      "source_files": [
+        "podcasts/jeffrey-pfeffer.md"
+      ],
+      "complete": false
+    },
+    {
+      "id": 19,
+      "idea": "The Rituals",
+      "description": "Song about Shishir Mehrotra's rituals of great teams \u2014 the operating rhythms that make teams hum. From YouTube to Coda. Decision-making rituals, communication rituals, planning rituals. 'Great teams don't just happen \u2014 they have rituals.' Read podcasts/shishir-mehrotra.md for the full conversation.",
+      "research_keywords": [
+        "Shishir Mehrotra",
+        "rituals",
+        "Coda",
+        "YouTube",
+        "team rituals"
+      ],
+      "output_file": "the-rituals",
+      "album": "The Weight",
+      "source_files": [
+        "podcasts/shishir-mehrotra.md"
+      ],
+      "complete": false
+    },
+    {
+      "id": 20,
+      "idea": "Thirty-Five Years",
+      "description": "Song about Bob Baxley's 35 years of product design wisdom \u2014 from Apple to Pinterest to ThoughtSpot. 'It's your moral obligation to build great products.' Design is there at the founding or it's never there. Lunar Orbit Rendezvous as a metaphor for elegant design. 'I've never seen a company graft design on after the founding.' Read podcasts/bob-baxley.md for the full conversation.",
+      "research_keywords": [
+        "Bob Baxley",
+        "Apple",
+        "design wisdom",
+        "product design",
+        "35 years"
+      ],
+      "output_file": "thirty-five-years",
+      "album": "The Craft",
+      "source_files": [
+        "podcasts/bob-baxley.md"
+      ],
+      "complete": false
+    }
+  ]
+}

@@ -98,6 +98,58 @@
       ],
       "files": ["content/songs/batch4/tasks.json", "content/songs/prompt-template.md"],
       "passes": true
+    },
+    {
+      "id": 8,
+      "category": "content",
+      "priority": 0,
+      "description": "GENERATE SONGS (BATCH 5, FIRST 10): Execute the song pipeline for tasks 1-10 in content/songs/batch5/tasks.json. For each song: Phase 1 (Research via Lenny MCP — use mcp__lennysdata__read_content with the source_files listed in the task, extract story/quotes/emotional core, rate, generate hooks, save research brief to content/songs/batch5/research/). Phase 2 (Songwriting — read research brief + ALL quality guides: content/lyric-craft-guide.md, content/brainstorm/lyric-principles.md, content/brainstorm/suno-lyric-tips.md, content/songs/artist-palette.md, content/songs/batch5/feedback.md. Write lyrics using Rick Rubin mode, critique, rewrite, create Suno prompt. Save lyrics to content/songs/batch5/lyrics/ and suno prompt to content/songs/batch5/suno-prompts/). DONE: 10 research briefs, 10 lyric files, 10 suno prompts exist. Each task marked complete in tasks.json. NOT TOUCH: Do not modify any batch1/batch2/batch3/batch4 files, do not modify lib/albums.ts.",
+      "steps": [
+        "Read plans/ralph-songwriter-batch5.md for the full loop instructions",
+        "Read content/songs/batch5/feedback.md for batch-specific rules",
+        "Read content/lyric-craft-guide.md for lyric quality rules",
+        "Read content/brainstorm/lyric-principles.md for songwriting principles",
+        "Read content/brainstorm/suno-lyric-tips.md for Suno technical checklist",
+        "Read content/songs/artist-palette.md for genre/style guidance",
+        "For task 1 (PLG): Phase 1 Research → Phase 2 Songwriting",
+        "For task 2 (Playing to Win): Phase 1 Research → Phase 2 Songwriting",
+        "For task 3 (The Rise of Cursor): Phase 1 Research → Phase 2 Songwriting",
+        "For task 4 (Radical Candor): Phase 1 Research → Phase 2 Songwriting",
+        "For task 5 (The OKR): Phase 1 Research → Phase 2 Songwriting",
+        "For task 6 (The First Mile): Phase 1 Research → Phase 2 Songwriting",
+        "For task 7 (Make Me Care): Phase 1 Research → Phase 2 Songwriting",
+        "For task 8 (Good Strategy): Phase 1 Research → Phase 2 Songwriting",
+        "For task 9 (The Hierarchy): Phase 1 Research → Phase 2 Songwriting",
+        "For task 10 (Level Three): Phase 1 Research → Phase 2 Songwriting",
+        "Mark tasks 1-10 complete in content/songs/batch5/tasks.json",
+        "Verify: 30 output files exist (10 research + 10 lyrics + 10 suno prompts)"
+      ],
+      "files": ["content/songs/batch5/tasks.json", "plans/ralph-songwriter-batch5.md", "content/songs/batch5/feedback.md"],
+      "passes": true
+    },
+    {
+      "id": 9,
+      "category": "content",
+      "priority": 1,
+      "description": "GENERATE SONGS (BATCH 5, REMAINING 10): Execute the song pipeline for tasks 11-20 in content/songs/batch5/tasks.json. Same process as task 8. Check batch mix — ensure genre variety across all 20 songs. DONE: All 20 tasks marked complete. All 60 output files exist (20 research + 20 lyrics + 20 suno prompts). NOT TOUCH: batch1/batch2/batch3/batch4 files, lib/albums.ts.",
+      "steps": [
+        "Read existing batch 5 outputs to check genre mix",
+        "Read all quality guide files again for freshness",
+        "For task 11 (Beautiful Things): Phase 1 Research → Phase 2 Songwriting",
+        "For task 12 (Elegant Puzzle): Phase 1 Research → Phase 2 Songwriting",
+        "For task 13 (Resilience Over Happiness): Phase 1 Research → Phase 2 Songwriting",
+        "For task 14 (The Intuition): Phase 1 Research → Phase 2 Songwriting",
+        "For task 15 (The Liquidity): Phase 1 Research → Phase 2 Songwriting",
+        "For task 16 (Ikigai): Phase 1 Research → Phase 2 Songwriting",
+        "For task 17 (Category Pirate): Phase 1 Research → Phase 2 Songwriting",
+        "For task 18 (The Power): Phase 1 Research → Phase 2 Songwriting",
+        "For task 19 (The Rituals): Phase 1 Research → Phase 2 Songwriting",
+        "For task 20 (Thirty-Five Years): Phase 1 Research → Phase 2 Songwriting",
+        "Mark tasks 11-20 complete in content/songs/batch5/tasks.json",
+        "Verify: all 60 output files exist"
+      ],
+      "files": ["content/songs/batch5/tasks.json", "plans/ralph-songwriter-batch5.md"],
+      "passes": false
     }
   ]
 }
