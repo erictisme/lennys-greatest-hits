@@ -30,6 +30,8 @@ export default function NowPlayingBar() {
 
   const router = useRouter();
   const navigatingRef = useRef(false);
+  const [hoverTime, setHoverTime] = useState<{ time: number; x: number } | null>(null);
+  const [copied, setCopied] = useState(false);
 
   // Register router-based navigation for auto-advance
   useEffect(() => {
@@ -62,9 +64,6 @@ export default function NowPlayingBar() {
     const secs = Math.floor(s % 60);
     return `${mins}:${secs.toString().padStart(2, "0")}`;
   };
-
-  const [hoverTime, setHoverTime] = useState<{ time: number; x: number } | null>(null);
-  const [copied, setCopied] = useState(false);
 
   const handleSeek = (e: React.MouseEvent<HTMLDivElement>) => {
     if (!duration) return;
@@ -133,13 +132,22 @@ export default function NowPlayingBar() {
           href={`/track/${currentTrack.slug}`}
           className="flex items-center gap-3 min-w-0 flex-1 group/link rounded-md -mx-1.5 px-1.5 hover:bg-white/[0.06] transition-colors"
         >
-          <Image
-            src={currentTrack.coverImage}
-            alt={currentTrack.title}
-            width={40}
-            height={40}
-            className="w-8 h-8 sm:w-10 sm:h-10 rounded flex-shrink-0 object-cover"
-          />
+          {currentTrack.coverImage ? (
+            <Image
+              src={currentTrack.coverImage}
+              alt={currentTrack.title}
+              width={40}
+              height={40}
+              className="w-8 h-8 sm:w-10 sm:h-10 rounded flex-shrink-0 object-cover"
+            />
+          ) : (
+            <div
+              className="w-8 h-8 sm:w-10 sm:h-10 rounded flex-shrink-0 flex items-center justify-center text-white/60 text-lg"
+              style={{ backgroundColor: accentColor }}
+            >
+              ♪
+            </div>
+          )}
           <div className="min-w-0">
             <p className="text-xs sm:text-sm font-medium truncate group-hover/link:underline">{currentTrack.title}</p>
             <p className="text-[11px] sm:text-xs text-muted-foreground/60 truncate">
