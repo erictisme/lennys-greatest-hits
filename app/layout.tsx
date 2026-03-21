@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, Geist_Mono } from "next/font/google";
+import { Inter, Geist_Mono, Spectral } from "next/font/google";
 import "./globals.css";
 import { AudioProvider } from "@/lib/audio-context";
 import NowPlayingBar from "@/components/NowPlayingBar";
@@ -8,6 +8,13 @@ import { PostHogProvider } from "@/components/PostHogProvider";
 
 const inter = Inter({
   variable: "--font-sans",
+  subsets: ["latin"],
+});
+
+const spectral = Spectral({
+  variable: "--font-lenny",
+  weight: ["400", "600"],
+  style: ["normal", "italic"],
   subsets: ["latin"],
 });
 
@@ -46,7 +53,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${inter.variable} ${geistMono.variable} dark h-full antialiased`}
+      className={`${inter.variable} ${geistMono.variable} ${spectral.variable} dark h-full antialiased`}
     >
       <body className="min-h-full flex flex-col bg-background text-foreground overflow-x-hidden">
         <script

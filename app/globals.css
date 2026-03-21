@@ -106,6 +106,10 @@
   }
 }
 
+.font-lenny {
+  font-family: var(--font-lenny), serif;
+}
+
 /* Premium card effect — light mode */
 .card-glass {
   background: #ffffff;

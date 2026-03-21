@@ -1,2 +1,3 @@
 # Ralph PROD run Sat Mar 21 12:09:04 +08 2026
 Task 80: Added LyricAnnotation type and annotations field to Track type in lib/types.ts. Build passes.
+Task 81: Added Spectral font via next/font/google with .font-lenny CSS class in layout.tsx and globals.css.
