@@ -1,0 +1,62 @@
+{
+  "features": [
+    {
+      "id": 1,
+      "category": "bugfix",
+      "priority": 0,
+      "description": "Fix: Next/Prev buttons in NowPlayingBar should navigate to the new track's page. Currently audio.next() and audio.prev() change the audio but don't navigate the browser. In components/NowPlayingBar.tsx, import useRouter from next/navigation. After the next() call on line ~134, add router.push(`/track/${nextTrackSlug}`). Same for prev(). The challenge: next() and prev() are audio context functions that don't return the new track. Solution: use the audio context's currentTrack AFTER the state updates via a useEffect. Add a useEffect that watches currentTrack and navigates when it changes due to next/prev (but NOT when it changes due to normal page navigation). Use a ref to track whether navigation was triggered by a button click. Set ref true on button click, check ref in useEffect, reset ref after navigating. Do NOT touch lib/audio-context.tsx. Only modify components/NowPlayingBar.tsx. Done: clicking next/prev in NowPlayingBar navigates to the new track page. Verify: pnpm build passes, no TypeScript errors.",
+      "steps": [
+        "Read components/NowPlayingBar.tsx",
+        "Add useRouter import from next/navigation",
+        "Add a navigatingRef = useRef(false)",
+        "On next button click: set navigatingRef.current = true, then call next()",
+        "On prev button click: set navigatingRef.current = true, then call prev()",
+        "Add useEffect watching currentTrack: if navigatingRef.current is true and currentTrack exists, router.push to /track/${currentTrack.slug} and reset ref",
+        "pnpm build passes"
+      ],
+      "files": ["components/NowPlayingBar.tsx"],
+      "passes": true
+    },
+    {
+      "id": 2,
+      "category": "bugfix",
+      "priority": 0,
+      "description": "Fix: Auto-advance after countdown should navigate to new track page. The code in lib/audio-context.tsx line 204 has window.location.href which causes a full page reload — this breaks the audio because the Audio element is destroyed and recreated. Replace with a different approach: expose a 'navigateToTrack' callback that can be set by a component with router access. In lib/audio-context.tsx: (1) Add onTrackChange?: (slug: string) => void to AudioState, (2) Add a ref for the callback, (3) Add setOnTrackChange function to set the ref, (4) In playUpNext, call the ref callback instead of window.location.href, (5) Remove the window.location.href line. In components/NowPlayingBar.tsx (or a new wrapper): useEffect to register the callback using router.push. Done: after countdown finishes and next song starts, page navigates WITHOUT full reload. Audio continues uninterrupted. Do NOT break existing playback. Verify: pnpm build passes.",
+      "steps": [
+        "Read lib/audio-context.tsx",
+        "Add onTrackChange callback ref and setter to AudioState and provider",
+        "In playUpNext, replace window.location.href with callback invocation",
+        "In NowPlayingBar.tsx, register the callback on mount using useRouter",
+        "pnpm build passes"
+      ],
+      "files": ["lib/audio-context.tsx", "components/NowPlayingBar.tsx"],
+      "passes": false
+    },
+    {
+      "id": 3,
+      "category": "enhancement",
+      "priority": 1,
+      "description": "Fix: Set album cover images. Every album in lib/albums.ts has coverImage: '' which shows a music note placeholder on the home page. Set each album's coverImage to its first track's cover image. Exact mapping: the-craft -> /covers/taste.jpg, growth-engine -> /covers/dont-break-the-streak.jpg, by-the-numbers -> /covers/measure-twice.jpg, the-weight -> /covers/fire-with-grace.jpg, career-moves -> /covers/the-magic-loop.jpg, electric-dreams -> /covers/vibe-coding.jpg, the-startup-life -> /covers/do-things-that-dont-scale.jpg, the-talent-search -> /covers/first-ten.jpg, the-interview -> /covers/dont-give-em-your-number.jpg, deep-work -> /covers/good-enough.jpg, the-human-side -> /covers/imposter.jpg. Only change the coverImage field in the albums array at the bottom of lib/albums.ts (around lines 4727-4827). Do NOT modify any track data. Verify: pnpm build passes, all 11 coverImage values are non-empty strings.",
+      "steps": [
+        "Read lib/albums.ts around lines 4727-4827",
+        "Update each album's coverImage to its first track's cover",
+        "pnpm build passes"
+      ],
+      "files": ["lib/albums.ts"],
+      "passes": false
+    },
+    {
+      "id": 4,
+      "category": "bugfix",
+      "priority": 1,
+      "description": "Fix: NowPlayingBar crashes when coverImage is empty string. The Image component on line 116-121 of NowPlayingBar.tsx renders with src={currentTrack.coverImage}. If coverImage is empty string, Next.js Image throws an error. Add a conditional: if coverImage is empty or falsy, show a colored div placeholder instead of the Image. Same fix needed in app/page.tsx album grid — the Image component at line 63-68 will also break if album.coverImage is empty. The album grid already has a fallback (lines 70-73) but the NowPlayingBar doesn't. Only fix NowPlayingBar.tsx. Do NOT touch lib/albums.ts. Verify: pnpm build passes.",
+      "steps": [
+        "Read components/NowPlayingBar.tsx",
+        "Add conditional rendering for empty coverImage",
+        "pnpm build passes"
+      ],
+      "files": ["components/NowPlayingBar.tsx"],
+      "passes": false
+    }
+  ]
+}

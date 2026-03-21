@@ -1,9 +1,10 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
+import { useRouter } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
-import { Play, Pause, SkipBack, SkipForward, Share2 } from "lucide-react";
+import { Play, Pause, SkipBack, SkipForward, Share2, Loader2 } from "lucide-react";
 import { useAudio } from "@/lib/audio-context";
 import { getAlbumForTrack, getAllTracks } from "@/lib/tracks";
 import { trackEvent } from "@/lib/analytics";
@@ -12,6 +13,7 @@ export default function NowPlayingBar() {
   const {
     currentTrack,
     isPlaying,
+    isBuffering,
     currentTime,
     duration,
     togglePlay,
@@ -24,6 +26,16 @@ export default function NowPlayingBar() {
     countdown,
     cancelCountdown,
   } = useAudio();
+
+  const router = useRouter();
+  const navigatingRef = useRef(false);
+
+  useEffect(() => {
+    if (navigatingRef.current && currentTrack) {
+      router.push(`/track/${currentTrack.slug}`);
+      navigatingRef.current = false;
+    }
+  }, [currentTrack, router]);
 
   if (!currentTrack) return null;
 
@@ -130,7 +142,7 @@ export default function NowPlayingBar() {
         {/* Controls */}
         <div className="flex items-center gap-3">
           <button
-            onClick={prev}
+            onClick={() => { navigatingRef.current = true; prev(); }}
             className={`hidden sm:block ${hasPrev ? "text-muted-foreground hover:text-foreground" : "text-muted-foreground/30"} transition-colors`}
             disabled={!hasPrev}
           >
@@ -142,7 +154,9 @@ export default function NowPlayingBar() {
             className="w-9 h-9 rounded-full flex items-center justify-center transition-colors"
             style={{ backgroundColor: accentColor, color: "#ffffff" }}
           >
-            {isPlaying ? (
+            {isBuffering ? (
+              <Loader2 className="w-4 h-4 animate-spin" />
+            ) : isPlaying ? (
               <Pause className="w-4 h-4" fill="currentColor" />
             ) : (
               <Play className="w-4 h-4 ml-0.5" fill="currentColor" />
@@ -150,7 +164,7 @@ export default function NowPlayingBar() {
           </button>
 
           <button
-            onClick={next}
+            onClick={() => { navigatingRef.current = true; next(); }}
             className={`hidden sm:block ${hasNext ? "text-muted-foreground hover:text-foreground" : "text-muted-foreground/30"} transition-colors`}
             disabled={!hasNext}
           >
