@@ -2,10 +2,10 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowLeft, Play, Pause, Clock, MoreHorizontal, Share2, Check, Lock } from "lucide-react";
+import { ArrowLeft, Play, Pause, Clock, MoreHorizontal, Share2, Check, Lock, ChevronRight } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { getAlbumBySlug } from "@/lib/tracks";
-import { notFound } from "next/navigation";
+import { notFound, useRouter } from "next/navigation";
 import { useAudio } from "@/lib/audio-context";
 import { trackEvent } from "@/lib/analytics";
 import { useEffect, useState, useRef } from "react";
@@ -26,6 +26,7 @@ const gradientClass: Record<string, string> = {
 export default function AlbumPageClient({ slug }: { slug: string }) {
   const album = getAlbumBySlug(slug);
   const audio = useAudio();
+  const router = useRouter();
 
   const [playCounts, setPlayCounts] = useState<Record<string, number>>({});
   const [openMenu, setOpenMenu] = useState<string | null>(null);
@@ -341,14 +342,12 @@ export default function AlbumPageClient({ slug }: { slug: string }) {
 
                   {/* Track Info */}
                   <div className="flex-1 min-w-0">
-                    <Link
-                      href={`/track/${track.slug}`}
-                      onClick={(e) => e.stopPropagation()}
-                      className="text-[15px] font-medium truncate transition-colors hover:underline block"
+                    <p
+                      className="text-[15px] font-medium truncate transition-colors"
                       style={isCurrentTrack ? { color: album.accentColor } : {}}
                     >
                       {track.title}
-                    </Link>
+                    </p>
                     {locked ? (
                       <p className="text-xs text-muted-foreground/60 truncate mt-0.5">
                         {track.concept}
@@ -441,6 +440,20 @@ export default function AlbumPageClient({ slug }: { slug: string }) {
                         )}
                       </AnimatePresence>
                     </div>
+                  )}
+
+                  {/* Navigate to track page */}
+                  {!locked && (
+                    <button
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        router.push(`/track/${track.slug}`);
+                      }}
+                      className="opacity-0 group-hover:opacity-60 hover:!opacity-100 p-1.5 rounded-md hover:bg-black/[0.06] transition-all shrink-0"
+                      aria-label={`View ${track.title}`}
+                    >
+                      <ChevronRight className="w-4 h-4 text-muted-foreground/60" />
+                    </button>
                   )}
                 </div>
 
