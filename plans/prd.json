@@ -87,7 +87,7 @@
         "pnpm build passes"
       ],
       "files": ["app/topics/page.tsx"],
-      "passes": false
+      "passes": true
     },
     {
       "id": 86,
@@ -104,7 +104,7 @@
         "pnpm build passes"
       ],
       "files": ["app/topics/[tag]/page.tsx"],
-      "passes": false
+      "passes": true
     },
     {
       "id": 87,
@@ -118,7 +118,7 @@
         "pnpm build passes"
       ],
       "files": ["app/track/[slug]/TrackPageClient.tsx"],
-      "passes": false
+      "passes": true
     },
     {
       "id": 88,
@@ -131,7 +131,7 @@
         "pnpm build passes"
       ],
       "files": ["app/page.tsx"],
-      "passes": false
+      "passes": true
     }
   ]
 }

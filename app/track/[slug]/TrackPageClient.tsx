@@ -193,12 +193,13 @@ export default function TrackPageClient({ slug }: { slug: string }) {
               {track.tags && track.tags.length > 0 && (
                 <div className="flex flex-wrap gap-1.5 mt-2">
                   {track.tags.map((tag) => (
-                    <span
+                    <Link
                       key={tag}
-                      className="px-2 py-0.5 text-[11px] font-medium rounded-full border border-border/40 text-muted-foreground/70"
+                      href={`/topics/${tag}`}
+                      className="px-2 py-0.5 text-[11px] font-medium rounded-full border border-border/40 text-muted-foreground/70 hover:text-foreground hover:border-foreground/40 transition-colors"
                     >
                       {tag}
-                    </span>
+                    </Link>
                   ))}
                 </div>
               )}

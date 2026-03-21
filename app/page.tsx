@@ -89,6 +89,14 @@ export default function Home() {
             );
           })}
         </div>
+        <div className="text-center mt-6">
+          <Link
+            href="/topics"
+            className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+          >
+            Browse by Topic &rarr;
+          </Link>
+        </div>
       </main>
 
       {/* Email Signup */}

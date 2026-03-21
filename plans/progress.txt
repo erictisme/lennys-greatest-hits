@@ -4,3 +4,6 @@ Task 81: Added Spectral font via next/font/google with .font-lenny CSS class in 
 Task 82: Added Genius-style lyric annotations to SyncedLyrics with expandable panels, dotted underlines, and framer-motion animations.
 Task 83: Wired track.annotations prop to SyncedLyrics in TrackPageClient.tsx.
 Task 84: Added 4 sample annotations to do-things-that-dont-scale track in lib/albums.ts.
+Task 86: Verified /topics/[tag] page already existed and build passes. Marked done.
+Task 87: Made tags clickable on track pages — replaced spans with Links to /topics/[tag] with hover styles.
+Task 88: Added "Browse by Topic →" link to homepage after album grid.
