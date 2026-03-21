@@ -2,3 +2,4 @@
 Task 32b/32c/32d: Already implemented (cover art on home, album, track pages). Marked done.
 Task 33: Replaced all em dashes in non-lyric user-facing text across albums.ts + 8 component/app files.
 Task 34/35: Already implemented (no Tech Culture Anthems label, Eric Tan credit present). Marked done.
+Task 36: Deployed to Vercel production. Live at https://lennys-greatest-hits.vercel.app

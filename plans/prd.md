@@ -571,6 +571,6 @@ Remove the "Tech Culture Anthems" subtitle from home page hero (app/page.tsx ~li
 Add footer/credit on home page (app/page.tsx): "Built by Eric Tan" linking to https://www.linkedin.com/in/erictisme/. Subtle, tasteful, small muted text. Also add to site footer in layout.tsx if one exists. target="_blank", rel="noopener noreferrer". DO NOT modify audio or lyrics. `pnpm build` passes.
 
 ### Task 36: Deploy to Vercel
-- [ ] Run vercel --prod, confirm deployment succeeds, build passes
+- [x] Run vercel --prod, confirm deployment succeeds, build passes
 
 Run `vercel --prod` and confirm deployment succeeds. Verify build output shows no errors. `pnpm build` passes.
