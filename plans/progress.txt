@@ -1,3 +1,4 @@
 # Ralph DEFAULT run Sat Mar 21 16:59:43 +08 2026
 Task 0: Deleted TrackNavigator.tsx, removed import/usage from layout.tsx. Build passes.
 Task 2: Split topics/[tag] into server page.tsx + TopicPageClient.tsx. Click plays track, ChevronRight navigates.
+Content Task 1 DONE: Album recategorization — validated 11 JTBD categories, named albums, recategorized 36 songs, gap analysis. Output: content/songs/album-recategorization.md (226 lines).
