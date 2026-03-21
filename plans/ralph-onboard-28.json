@@ -140,7 +140,7 @@
         "Run pnpm build"
       ],
       "files": ["lib/albums.ts", "content/songs/batch3/new-mp3s/never-search-alone.mp3", "content/songs/batch3/new-mp3s/ninety-three-percent.mp3", "content/songs/batch3/new-mp3s/product-sense.mp3", "content/songs/batch3/lyrics/never-search-alone.md", "content/songs/batch3/lyrics/ninety-three-percent.md", "content/songs/batch3/lyrics/product-sense.md"],
-      "passes": false
+      "passes": true
     },
     {
       "id": 10,

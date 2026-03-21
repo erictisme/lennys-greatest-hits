@@ -2768,6 +2768,325 @@ const theInterviewTracks: Track[] = [
     ],
     storyBehind: "Rehearsed lines in the parking lot, walked in steady, then she leaned across the table and asked 'what's your number?' Mouth went dry. The system is built to keep you quiet, grateful, and small enough to say 'that's great.'",
   },
+  {
+    slug: "never-search-alone",
+    title: "Never Search Alone",
+    albumSlug: "the-interview",
+    trackNumber: 2,
+    duration: "3:24",
+    audioUrl: "/audio/never-search-alone.mp3",
+    coverImage: "/covers/never-search-alone.jpg",
+    genre: "Acoustic Soul",
+    mood: "Warm, intimate, communal and hopeful",
+    tags: ["job search", "community", "vulnerability"],
+    lyrics: `[Verse 1, warm and intimate]
+Kitchen table, six worn chairs
+Strangers pouring coffee, no one stares
+Hands still trembling from the news
+Résumé open, nothing left to lose
+
+[Pre-Chorus]
+We all showed up with the same quiet ache
+The one we swallow at the school-yard gate
+
+[Chorus, soulful lift]
+You don't have to carry this alone
+Set it down, somebody's got the weight
+You don't have to know the road ahead
+Just show up — that's enough today
+
+[Verse 2]
+San Fernando, summer, sixty
+Teachers circled up with tea
+Fifty years they kept that room alive
+Through the seasons no one else survived
+
+[Pre-Chorus]
+Her son grew up and brought it to the coast
+Gave away the thing that mattered most
+
+[Chorus]
+You don't have to carry this alone
+Set it down, somebody's got the weight
+You don't have to know the road ahead
+Just show up — that's enough today
+
+[Bridge, stripped back]
+Six chairs around a borrowed table
+Strangers learning how to ask
+We slow down so we can move
+Spear in hand, we're throwing back the net
+
+[Chorus, full build]
+We don't have to carry this alone
+Set it down, we've all got the weight
+We don't have to walk the road alone
+Just show up — that's enough, that's enough
+
+[Outro, fading]
+Ohhh, show up... that's enough`,
+    concept: "The power of searching for a job together instead of alone — how a support group of six strangers transforms fear into hope, accountability, and confidence.",
+    keyInsight: "Putting anxious job seekers together in a small group and asking them to be open and vulnerable actually flips the anxiety into hope, motivation, and confidence.",
+    keyQuote: "Everyone, no matter who they are, feels insecure and anxious in the job search. And if you do it alone, it magnifies that.",
+    quoteSpeaker: "Phyl Terry",
+    sources: [
+      { title: "Land your dream job in today's market: negotiation tactics, job search councils, and more", type: "podcast", url: "https://www.lennysnewsletter.com/p/land-your-dream-job-in-todays-market", guest: "Phyl Terry" },
+    ],
+    storyBehind: "Phyl Terry's mother formed a council of teachers in 1960 in the San Fernando Valley. That group met for 50 years until the year she died. When Phyl grew up, he brought the same idea to Silicon Valley job seekers — and has now launched over 2,000 free Job Search Councils.",
+    annotations: [
+      {
+        lyricText: "Kitchen table, six worn chairs",
+        note: "Phyl Terry's Job Search Councils are groups of exactly six to eight job seekers who commit to supporting each other through the search. Terry told Lenny: 'If you put anxious people together and ask them to be open and vulnerable and to ask for help, it actually flips the anxiety and the fear into hope, into motivation, into accountability and confidence.' Over 2,000 councils have been launched — all completely free and volunteer-driven.",
+        sourceTitle: "Land your dream job in today's market: negotiation tactics, job search councils, and more",
+        sourceUrl: "https://www.lennysnewsletter.com/p/land-your-dream-job-in-todays-market",
+      },
+      {
+        lyricText: "San Fernando, summer, sixty",
+        note: "In 1960 in the San Fernando Valley, Phyl Terry's mother — a newly-minted elementary school teacher — put together a council of teachers. That group met for 50 years until the year she died. When her husband left in 1976, she had to start over as an entry-level teacher, but her council held her hand through it. Terry dedicates the book to her.",
+        sourceTitle: "Land your dream job in today's market: negotiation tactics, job search councils, and more",
+        sourceUrl: "https://www.lennysnewsletter.com/p/land-your-dream-job-in-todays-market",
+      },
+      {
+        lyricText: "Strangers learning how to ask",
+        note: "Terry's methodology centers on 'candidate market fit' — applying product thinking to your job search. Instead of spraying and praying, he asks people to think about what they want and don't want. 'Most people don't do that,' he told Lenny. 'When they get laid off, they spray and pray.' The councils teach people to play to win, not 'not to lose.'",
+        sourceTitle: "Land your dream job in today's market: negotiation tactics, job search councils, and more",
+        sourceUrl: "https://www.lennysnewsletter.com/p/land-your-dream-job-in-todays-market",
+      },
+      {
+        lyricText: "We slow down so we can move",
+        note: "Councils meet twice a week for fast seekers (those actively unemployed) and once a week for slow seekers (those employed but looking). The first meeting — called 'meeting zero' — is entirely about being open and vulnerable, sharing life stories to build trust. Terry's team has invested over 20,000 hours of volunteer work into the program.",
+        sourceTitle: "Land your dream job in today's market: negotiation tactics, job search councils, and more",
+        sourceUrl: "https://www.lennysnewsletter.com/p/land-your-dream-job-in-todays-market",
+      },
+      {
+        lyricText: "Spear in hand, we're throwing back the net",
+        note: "Terry contrasts 'spear fishing' (targeted, strategic outreach) with 'spray and pray' (mass-applying to every opening). Lenny noted the parallel: 'This is very much like a product person thinks about new product.' Terry agreed — the entire Never Search Alone methodology brings a product lens to reinventing the job search.",
+        sourceTitle: "Land your dream job in today's market: negotiation tactics, job search councils, and more",
+        sourceUrl: "https://www.lennysnewsletter.com/p/land-your-dream-job-in-todays-market",
+      },
+    ],
+  },
+  {
+    slug: "ninety-three-percent",
+    title: "Ninety-Three Percent",
+    albumSlug: "the-interview",
+    trackNumber: 3,
+    duration: "3:18",
+    audioUrl: "/audio/ninety-three-percent.mp3",
+    coverImage: "/covers/ninety-three-percent.jpg",
+    genre: "Boom-Bap Hip Hop",
+    mood: "Confident, late-night prep energy turning into swagger",
+    tags: ["interview prep", "behavioral interviews", "STAR method"],
+    lyrics: `[Verse 1, spoken flow]
+Ironed shirt on the doorknob
+Coffee cold, haven't touched it
+Three a.m. and I'm pacing
+Through the launch that almost broke me
+Pulled up five old projects
+Every detail, every stumble
+Wrote the wins, wrote the losses
+Wrote the parts that kept me humble
+
+[Pre-Chorus, whispered]
+They don't want a perfect stranger
+They want proof that you were there
+
+[Chorus, call-and-response]
+Walk it back, walk it back
+Ninety-three percent on track
+Know your name, know your lane
+Walk that memory lane
+
+[Verse 2, relaxed flow]
+Mirror practice, Tuesday evening
+Use their words like they're my own
+Map the job to what I've carried
+One good reason stands alone
+Not a hundred scripted answers
+Just the work beneath my hands
+Every question is a doorway
+Back to where I know I'll land
+
+[Pre-Chorus, whispered]
+They don't want a clean rehearsal
+They want someone who was there
+
+[Chorus, call-and-response]
+Walk it back, walk it back
+Ninety-three, I know the track
+Speak your truth, show the proof
+Walk that memory lane
+
+[Bridge, stripped]
+You're not learning lines
+You're remembering who you are
+Situation, task, and action
+Then the part that left a scar
+
+[Chorus, building]
+Walk it back, walk it back
+Ninety-three — no looking back
+Took my time, did the work
+Walked that memory lane
+
+[Outro, fading]
+Ninety-three... ninety-three...
+I know my story cold`,
+    concept: "The art of interview prep: not memorizing scripts, but deeply remembering your own story — the projects, the stumbles, and the scars that prove you were there.",
+    keyInsight: "Instead of preparing answers to hundreds of behavioral questions, pick three to five major projects and remember every detail about them. Your brain will naturally pull from these stories.",
+    keyQuote: "93% percent of them landed jobs at Google, Meta, Uber, Airbnb, Stripe, or a similar top-tier tech company — without burning themselves to the ground endlessly preparing, or winging it and hoping for the best.",
+    quoteSpeaker: "Coach Erika",
+    sources: [
+      { title: "How to pass any first-round interview (even in a terrible talent market)", type: "newsletter", url: "https://www.lennysnewsletter.com/p/how-to-pass-any-first-round-interview", guest: "Coach Erika" },
+    ],
+    storyBehind: "Coach Erika is an engineer-turned-CPO who moonlights as a career coach. Since 2020 she's coached over 200 people through tech job searches. Her Minimum Viable Interview Prep (MVIP) process strips away the noise and focuses on what actually works: know your stories cold, use their language, and let your real experience do the talking.",
+    annotations: [
+      {
+        lyricText: "Pulled up five old projects",
+        note: "Coach Erika's core prep method: instead of scripting answers to hundreds of behavioral questions, pick three to five recent major projects and remember every single detail about them. 'Writing all of this down will help you reference the details before future interviews,' she writes. 'When you are asked about past work experiences, your brain will more easily pull from one of these projects.'",
+        sourceTitle: "How to pass any first-round interview (even in a terrible talent market)",
+        sourceUrl: "https://www.lennysnewsletter.com/p/how-to-pass-any-first-round-interview",
+      },
+      {
+        lyricText: "Use their words like they're my own",
+        note: "Coach Erika's 'mirroring' technique: paste the job description into a doc, highlight keywords, then map each keyword to your own experience. In the interview, use their language to describe what you did. 'The more familiar the interviewer is with the job description and the role requirements, the more effective this technique will be at subconsciously reinforcing your fit for the role.'",
+        sourceTitle: "How to pass any first-round interview (even in a terrible talent market)",
+        sourceUrl: "https://www.lennysnewsletter.com/p/how-to-pass-any-first-round-interview",
+      },
+      {
+        lyricText: "Ninety-three percent on track",
+        note: "The number is real: Coach Erika has coached over 200 people in tech job searches, and 93% of them landed jobs at Google, Meta, Uber, Airbnb, Stripe, or similar top-tier companies. She's not a recruiter — she's an engineer and product manager who landed her first Big Tech job at Google in 2013 and now moonlights as a career coach.",
+        sourceTitle: "How to pass any first-round interview (even in a terrible talent market)",
+        sourceUrl: "https://www.lennysnewsletter.com/p/how-to-pass-any-first-round-interview",
+      },
+      {
+        lyricText: "Situation, task, and action",
+        note: "The STAR method (Situation, Task, Action, Result) was invented in the 1970s. Studies found behavioral questions were 55% more effective at predicting on-the-job performance than prevailing techniques. Coach Erika teaches an evolved version she calls 'STAR++': after Result, add what you learned, then how you evolved your approach in a future situation.",
+        sourceTitle: "How to pass any first-round interview (even in a terrible talent market)",
+        sourceUrl: "https://www.lennysnewsletter.com/p/how-to-pass-any-first-round-interview",
+      },
+      {
+        lyricText: "They don't want a perfect stranger",
+        note: "First-round interviews are designed to filter, not to comprehensively assess. Coach Erika breaks down the typical 45-minute structure: 10% intro (3-5 min), 70% questions from the interviewer (35 min), 20% your questions (5-7 min). The singular goal from the employer's perspective is to determine if they want to invest in additional interviews with you.",
+        sourceTitle: "How to pass any first-round interview (even in a terrible talent market)",
+        sourceUrl: "https://www.lennysnewsletter.com/p/how-to-pass-any-first-round-interview",
+      },
+    ],
+  },
+  {
+    slug: "product-sense",
+    title: "Product Sense",
+    albumSlug: "the-interview",
+    trackNumber: 4,
+    duration: "3:32",
+    audioUrl: "/audio/product-sense.mp3",
+    coverImage: "/covers/product-sense.jpg",
+    genre: "Jazz-Pop",
+    mood: "Reflective, intimate, gently building",
+    tags: ["product sense", "PM interviews", "empathy"],
+    lyrics: `[Intro, gentle jazz guitar]
+
+[Verse 1]
+Four weeks in my apartment
+Mock interviews on the screen
+I memorized the template
+But something sat between
+The rubric and the real thing
+The score sheet and the soul
+I could list their pain points
+But I couldn't feel the pull
+
+[Chorus]
+You're reading sheet music
+But you never heard the song
+See the person, not the deck
+Feel where the shoe goes wrong
+Sit where they've been sitting
+Walk their quiet halls
+That's the sense you can't rehearse
+It answers when it calls
+
+[Verse 2]
+Fifty faces in that chair
+Some came armed with slides
+Perfect structure, every box
+But hollow on the inside
+Then someone paused and asked me
+"Who's the one that's stuck?"
+Not a segment, not a chart
+Just a mother out of luck
+
+[Chorus 2]
+You're reading sheet music
+But you never heard the song
+See the person, not the pitch
+Feel where the day goes wrong
+Sit where they've been hurting
+Name what they can't say
+That's the sense you can't rehearse
+You live it every day
+
+[Bridge, softer]
+It's not the mission statement
+Or the North Star on a slide
+It's the moment someone tells you
+What they're too ashamed to hide
+
+[Chorus 3, building]
+Stop reading sheet music
+Go and listen to the song
+See the person, not the data
+Feel where the hope goes wrong
+Ask the question underneath
+The one they swallow down
+That's the sense you can't rehearse
+That's how the lost get found
+
+[Outro, fading]
+See the person...
+See the person...`,
+    concept: "Product sense isn't a framework you memorize — it's learning to see the real person behind the data, the user behind the segment, the pain behind the feature request.",
+    keyInsight: "The best product sense interview answers come from genuine empathy, not templates. The candidates who win are the ones who can describe a specific person's specific problem.",
+    keyQuote: "Product sense is the skill of consistently being able to craft products that have the intended impact on their users. It relies on empathy to discover meaningful user needs and creativity to come up with solutions.",
+    quoteSpeaker: "Jules Walter",
+    sources: [
+      { title: "The definitive guide to mastering product sense interviews", type: "newsletter", url: "https://www.lennysnewsletter.com/p/the-definitive-guide-to-mastering", guest: "Ben Erez" },
+      { title: "How to develop product sense", type: "newsletter", url: "https://www.lennysnewsletter.com/p/how-to-develop-product-sense", guest: "Jules Walter" },
+    ],
+    storyBehind: "Ben Erez spent four intense weeks in 2020 preparing for a PM role at Facebook. He watched every mock interview on YouTube, drafted templates from the patterns he noticed, and landed the offer. Then he interviewed over 50 candidates from the other side of the table — and realized the ones who won weren't the most structured. They were the ones who could feel the user's actual pain.",
+    annotations: [
+      {
+        lyricText: "Four weeks in my apartment",
+        note: "Ben Erez describes his exact preparation journey: 'Over the course of four intense weeks, I spent countless hours watching every mock interview I could find on YouTube and picking the brains of PMs in my network who passed these interviews.' He drafted paper templates from the patterns, practiced with them, and landed the offer at Facebook.",
+        sourceTitle: "The definitive guide to mastering product sense interviews",
+        sourceUrl: "https://www.lennysnewsletter.com/p/the-definitive-guide-to-mastering",
+      },
+      {
+        lyricText: "Fifty faces in that chair",
+        note: "During his time at Facebook, Ben Erez interviewed over 50 candidates, which gave him a deeper understanding of the interviewer's perspective. He later coached hundreds more. Through coaching, his frameworks helped dozens of candidates land total comp packages upward of $600,000.",
+        sourceTitle: "The definitive guide to mastering product sense interviews",
+        sourceUrl: "https://www.lennysnewsletter.com/p/the-definitive-guide-to-mastering",
+      },
+      {
+        lyricText: "The rubric and the real thing",
+        note: "Product sense interviews assess five specific dimensions: clear communication, product motivation, segmentation, problem identification, and solution development. Ben Erez's key insight: 'Excellence in one area can't compensate for weakness in another. But you don't need perfect scores across the board; a solid score for each dimension is sufficient to pass.'",
+        sourceTitle: "The definitive guide to mastering product sense interviews",
+        sourceUrl: "https://www.lennysnewsletter.com/p/the-definitive-guide-to-mastering",
+      },
+      {
+        lyricText: "Not a segment, not a chart",
+        note: "Jules Walter, a longtime PM at Slack and YouTube, defines product sense as 'the skill of consistently being able to craft products that have the intended impact on their users.' It relies on two things: empathy to discover meaningful user needs, and creativity to come up with solutions. Lenny's survey of ~1,000 PMs ranked it as one of the most important — and most vague — PM skills.",
+        sourceTitle: "How to develop product sense",
+        sourceUrl: "https://www.lennysnewsletter.com/p/how-to-develop-product-sense",
+      },
+      {
+        lyricText: "You're reading sheet music",
+        note: "Ben Erez's framework coaching begins with what he calls 'waypointing': before each section, candidates should pause for 1-2 minutes to think, then walk the interviewer through their response. 'This is music to the ears of the interviewer,' he writes. 'It assures them that the candidate is prepared and has a plan to generate the signals they're looking for.'",
+        sourceTitle: "The definitive guide to mastering product sense interviews",
+        sourceUrl: "https://www.lennysnewsletter.com/p/the-definitive-guide-to-mastering",
+      },
+    ],
+  },
 ];
 
 const deepWorkTracks: Track[] = [

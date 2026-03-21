@@ -7,3 +7,4 @@ Task 5 DONE: Replaced find-your-north-star + nobodys-coming with batch2 MP3s/cov
 Task 6 DONE: Added ask-for-help + nervous-system to the-human-side album. Extracted covers, copied MP3s, wrote 5 annotations each from Lenny MCP research. Build passes.
 Task 7 DONE: Added bend-the-room + the-stack-rank to career-moves album. Extracted covers, copied MP3s, wrote 5 annotations each from Jules Walter (influence) and Tara Seshan (tradeoffs) sources. Build passes.
 Task 8 DONE: Added first-ten + the-closer + the-one-question to the-talent-search album. Extracted covers, copied MP3s, wrote 5 annotations each from hiring-your-early-team, Lauren Ipsen podcast, and interview questions newsletter. Build passes.
+Task 9 DONE: Added never-search-alone + ninety-three-percent + product-sense to the-interview album. Extracted covers, copied MP3s, wrote 5 annotations each from Phyl Terry podcast, Coach Erika newsletter, and Ben Erez/Jules Walter product sense guides. Build passes.
