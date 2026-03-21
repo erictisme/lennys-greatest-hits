@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowLeft, Play, Pause, Clock, MoreHorizontal, Share2, Check, Lock, ChevronRight } from "lucide-react";
+import { ArrowLeft, Play, Pause, Clock, MoreHorizontal, Share2, Check, Lock, ChevronRight, Mic, FileText } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { getAlbumBySlug } from "@/lib/tracks";
 import { notFound, useRouter } from "next/navigation";
@@ -368,6 +368,16 @@ export default function AlbumPageClient({ slug }: { slug: string }) {
                               </span>
                             ))}
                           </div>
+                        )}
+                        {track.sources && track.sources.length > 0 && track.sources[0].guest && (
+                          <p className="text-[10px] text-muted-foreground/40 flex items-center gap-1 mt-1">
+                            {track.sources[0].type === "podcast" ? (
+                              <Mic className="w-3 h-3" />
+                            ) : (
+                              <FileText className="w-3 h-3" />
+                            )}
+                            {track.sources[0].guest}
+                          </p>
                         )}
                       </>
                     )}

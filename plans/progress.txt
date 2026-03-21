@@ -2,3 +2,4 @@
 Task 0: Deleted TrackNavigator.tsx, removed import/usage from layout.tsx. Build passes.
 Task 2: Split topics/[tag] into server page.tsx + TopicPageClient.tsx. Click plays track, ChevronRight navigates.
 Content Task 1 DONE: Album recategorization — validated 11 JTBD categories, named albums, recategorized 36 songs, gap analysis. Output: content/songs/album-recategorization.md (226 lines).
+Task 3: Added author/source attribution (Mic/FileText icon + guest name) below tags on unlocked album track rows.
