@@ -1,0 +1,62 @@
+{
+  "features": [
+    {
+      "id": 1,
+      "category": "coding",
+      "priority": 0,
+      "description": "Create a reusable TrackRow component at components/TrackRow.tsx. This is a Spotify-style track row used across the homepage Popular section, /albums continuous scroll, and search results. Props: track (Track type from lib/types.ts), index (number), showAlbum (boolean, show album name as subtitle), onPlay callback, isCurrentTrack, isPlaying. Renders: track number on left (becomes play icon on hover), cover thumbnail 40x40, title + subtitle (album or genre), duration on right. Currently playing state: title in green, animated equalizer bars replace number. Hover: subtle bg highlight. Use framer-motion for hover animation. Match the existing app's color scheme and styling (bg-background, text-foreground, text-muted-foreground). Import Track type from lib/types.ts. DONE: component exists, exports default, accepts all listed props, renders all listed elements. DO NOT touch any existing files. VERIFY: pnpm build passes.",
+      "steps": [
+        "Read lib/types.ts for Track type definition",
+        "Read app/album/[slug]/AlbumPageClient.tsx for existing track row pattern to match style",
+        "Create components/TrackRow.tsx with all props and rendering described above",
+        "Verify pnpm build passes"
+      ],
+      "files": ["components/TrackRow.tsx", "lib/types.ts"],
+      "passes": false
+    },
+    {
+      "id": 2,
+      "category": "coding",
+      "priority": 1,
+      "description": "Rewrite app/page.tsx to a Spotify artist page layout. KEEP the dark theme, existing color scheme, and all existing imports that are needed. Structure: (1) Artist header: large bold 'Lenny's Greatest Hits' title left-aligned, subtitle '88 songs · 8 albums' with dynamic counts from getAllTracks().length and getAllAlbums().length, Shuffle Play button (green pill, uses audio.shuffleAll()). (2) Search bar: full-width input with Search icon from lucide-react, filters tracks client-side by title/genre/tags/album, debounced 300ms, shows filtered TrackRow results when typing, X button to clear. (3) Popular section: heading 'Popular' with 'Show all' link to /songs, show top 5 tracks using TrackRow component - sort by localStorage play counts (key 'lgh-play-counts') falling back to newest by releaseDate. Each TrackRow click calls audio.play(track) and navigates to /track/[slug]. (4) Discography section: heading 'Discography' with 'Show all' link to /albums, horizontal scrollable row of album cards (cover image ~160px square, title below, track count subtitle), click navigates to /album/[slug], hover scale effect. (5) Footer: keep EmailSignup component and attribution footer from current page. Use 'use client' directive. Import from lib/tracks.ts (getAllAlbums, getAllTracks, getAlbumForTrack), lib/audio-context.tsx (useAudio), components/TrackRow, components/EmailSignup, framer-motion, next/link, next/image. DONE: homepage renders all 5 sections, search filters work, Popular shows 5 tracks, Discography shows album cards horizontally. DO NOT touch NowPlayingBar, layout.tsx, audio-context.tsx, any album/track pages. VERIFY: pnpm build passes, homepage loads at /.",
+      "steps": [
+        "Read current app/page.tsx to understand existing structure and imports to preserve",
+        "Read components/TrackRow.tsx (created in task 1)",
+        "Read lib/tracks.ts for available data functions",
+        "Rewrite app/page.tsx with all 5 sections described above",
+        "Verify pnpm build passes"
+      ],
+      "files": ["app/page.tsx", "components/TrackRow.tsx", "lib/tracks.ts"],
+      "passes": false
+    },
+    {
+      "id": 3,
+      "category": "coding",
+      "priority": 2,
+      "description": "Create app/albums/page.tsx - a continuous scroll discography view (like Spotify 'Show all' albums). This is a NEW route at /albums. Structure: (1) Sticky header at top with back arrow (ArrowLeft from lucide-react) linking to /, and 'Lenny's Greatest Hits' text. (2) For each album from getAllAlbums(), render: album header row with cover image (80x80), album title, subtitle, track count badge, then full track list below using TrackRow component. (3) Each TrackRow click plays the track via audio.play(track). (4) Subtle border-b divider between albums. (5) Skip albums where comingSoon is true OR show them grayed out with lock icon. Use 'use client' directive. Import from lib/tracks.ts, lib/audio-context.tsx, components/TrackRow, framer-motion, next/link, next/image. Match the existing app's color scheme and styling. DONE: /albums route renders all albums with full track lists, tracks are playable, back button works. DO NOT touch any existing routes or components. VERIFY: pnpm build passes, /albums loads.",
+      "steps": [
+        "Read lib/tracks.ts for getAllAlbums and related functions",
+        "Read components/TrackRow.tsx for component API",
+        "Create app/albums/page.tsx with continuous scroll layout",
+        "Verify pnpm build passes"
+      ],
+      "files": ["app/albums/page.tsx", "components/TrackRow.tsx", "lib/tracks.ts"],
+      "passes": false
+    },
+    {
+      "id": 4,
+      "category": "coding",
+      "priority": 3,
+      "description": "Polish and mobile responsiveness pass. (1) Verify search bar on homepage works on mobile - full width, no overflow. (2) Discography album cards on homepage should horizontally scroll with -webkit-overflow-scrolling touch and snap-x snap-mandatory. (3) On /albums page, ensure track rows don't overflow on small screens - hide duration on mobile if needed. (4) Add framer-motion fade/slide transitions: Popular section fades to search results when searching, album cards have staggered fade-in on load. (5) Ensure NowPlayingBar doesn't overlap any content (pb-[72px] should already be in layout.tsx but verify). (6) Test that all navigation works: homepage → /album/[slug], homepage → /albums, homepage → /songs, /albums → /, track clicks → play. DONE: All pages render correctly on mobile (320px+) and desktop, animations are smooth, no content hidden behind NowPlayingBar. DO NOT touch lib/ files, NowPlayingBar, audio-context. VERIFY: pnpm build passes.",
+      "steps": [
+        "Read app/page.tsx for mobile responsiveness issues",
+        "Read app/albums/page.tsx for mobile responsiveness issues",
+        "Fix any overflow, spacing, or responsive layout issues found",
+        "Add framer-motion transitions where described",
+        "Verify pnpm build passes"
+      ],
+      "files": ["app/page.tsx", "app/albums/page.tsx", "components/TrackRow.tsx"],
+      "passes": false
+    }
+  ]
+}

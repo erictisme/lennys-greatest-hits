@@ -1035,6 +1035,326 @@ They moved the week they knew it'd fit`,
       },
     ],
   },
+  {
+    slug: "the-first-mile",
+    title: "The First Mile",
+    albumSlug: "the-craft",
+    trackNumber: 12,
+    duration: "2:29",
+    audioUrl: "/audio/the-first-mile.mp3",
+    coverImage: "/covers/the-first-mile.jpg",
+    genre: "Dream-Pop / Lo-Fi",
+    mood: "Playful, self-aware, breathy and warm",
+    tags: ["onboarding", "user experience", "first impressions"],
+    lyrics: `[Intro, finger snaps + soft hand claps]
+
+[Verse 1, breathy and playful]
+I opened up your door today
+Gave you half a glance
+Three buttons and a loading screen
+You never stood a chance
+I swiped before I read the words
+I judged you by the font
+Don't take it personal, it's just
+I only want what I want
+
+[Chorus, dreamy and warm]
+I'm lazy, vain, and selfish
+In the first thirty seconds flat
+Show me something beautiful
+Or I'm never coming back
+I'm lazy, vain, and selfish
+That's the only truth you need
+Meet me where I am right now
+Not where you want me to be
+
+[Verse 2, slightly more knowing]
+You built it over eighteen months
+I gave it half a breath
+You thought I'd read instructions first
+That's optimistic at best
+The ones who get it strip it down
+One page where there were ten
+A presumptuous default beats
+Asking me to choose again
+
+[Chorus, dreamy and warm]
+I'm lazy, vain, and selfish
+In the first thirty seconds flat
+Show me something beautiful
+Or I'm never coming back
+I'm lazy, vain, and selfish
+That's the only truth you need
+Meet me where I am right now
+Not where you want me to be
+
+[Bridge, pulled back, intimate]
+It's not that I don't care
+It's that I haven't learned to yet
+You get the worst of me up front
+The best comes after trust is set
+
+[Final Chorus, dreamy and warm]
+I'm lazy, vain, and selfish
+In the first thirty seconds flat
+Show me something beautiful
+Or I'm never coming back
+I'm lazy, vain, and selfish
+That's the only truth you need
+Meet me where I am right now
+And I might just stay for free
+
+[Outro, finger snaps fade]`,
+    concept: "A love letter from the laziest, most impatient user to the product that finally got onboarding right. Based on Scott Belsky's 'lazy, vain, and selfish' framework.",
+    keyInsight: "Users are lazy, vain, and selfish in their first interaction with your product. Design for that truth instead of fighting it.",
+    keyQuote: "Your users are lazy, vain, and selfish. And that's not a bad thing — it's just the truth of the first mile.",
+    quoteSpeaker: "Scott Belsky",
+    sources: [
+      { title: "Lessons on building product sense, navigating AI, optimizing the first mile", type: "podcast" as const, url: "https://www.lennyspodcast.com/lessons-on-building-product-sense-navigating-ai-optimizing-the-first-mile-scott-belsky-adobe-benchmark/", guest: "Scott Belsky" },
+    ],
+    storyBehind: "Scott Belsky, CPO of Adobe and founder of Behance, told Lenny that the biggest mistake product teams make is designing onboarding for the engaged user. First-time users are lazy (won't read instructions), vain (judge by appearance), and selfish (only care about their own needs). The best products use 'presumptuous defaults' — making choices for users instead of asking them to configure everything.",
+    annotations: [
+      { lyricText: "Lazy, vain, and selfish too", note: "Scott Belsky told Lenny that 'in the first 30 seconds of using a new product, you are lazy, vain, and selfish.' You want it done quickly, you want to look good to colleagues, and you want to feel successful immediately — no tours, no reading, zero learning curve.", sourceTitle: "Lessons on building product sense, navigating AI, optimizing the first mile, and making it through the messy middle | Scott Belsky (Adobe, Behance)", sourceUrl: "https://www.lennyspodcast.com/lessons-on-building-product-sense-navigating-ai-optimizing-the-first-mile-and-making-it-through-the-messy-middle-scott-belsky-adobe-behance/" },
+      { lyricText: "Presumptuous defaults set the mood", note: "Belsky described the first mile as three things: onboarding, orientation, and defaults. He argued that most teams 'spend the final mile of their time building the product, considering the first mile of the customer's experience' — and that nailing defaults is where world-class teams differentiate.", sourceTitle: "Lessons on building product sense, navigating AI, optimizing the first mile, and making it through the messy middle | Scott Belsky (Adobe, Behance)", sourceUrl: "https://www.lennyspodcast.com/lessons-on-building-product-sense-navigating-ai-optimizing-the-first-mile-and-making-it-through-the-messy-middle-scott-belsky-adobe-behance/" },
+      { lyricText: "I spent a year on every flow", note: "Belsky emphasized that the first mile must be reimagined for every new customer cohort. Early adopters are more forgiving, but later 'pragmatist customers' are more skeptical, less forgiving, and less tolerant of friction — so the onboarding process needs to be rebuilt over and over.", sourceTitle: "Lessons on building product sense, navigating AI, optimizing the first mile, and making it through the messy middle | Scott Belsky (Adobe, Behance)", sourceUrl: "https://www.lennyspodcast.com/lessons-on-building-product-sense-navigating-ai-optimizing-the-first-mile-and-making-it-through-the-messy-middle-scott-belsky-adobe-behance/" },
+      { lyricText: "The billboard test", note: "Belsky built his product sense philosophy at Adobe and Behance. He told Lenny the biggest mistake teams make is becoming 'very passionate about a solution' instead of developing empathy for the customer suffering the problem. He advocates being shoulder to shoulder with customers, watching them go about their day — not just use your product.", sourceTitle: "Lessons on building product sense, navigating AI, optimizing the first mile, and making it through the messy middle | Scott Belsky (Adobe, Behance)", sourceUrl: "https://www.lennyspodcast.com/lessons-on-building-product-sense-navigating-ai-optimizing-the-first-mile-and-making-it-through-the-messy-middle-scott-belsky-adobe-behance/" },
+    ],
+    releaseDate: "2026-03-22",
+  },
+  {
+    slug: "beautiful-things",
+    title: "Beautiful Things",
+    albumSlug: "the-craft",
+    trackNumber: 13,
+    duration: "3:43",
+    audioUrl: "/audio/beautiful-things.mp3",
+    coverImage: "/covers/beautiful-things.jpg",
+    genre: "Piano-Driven Elegant Pop",
+    mood: "Tender, quietly proud, detail-obsessed",
+    tags: ["design", "beauty", "craft", "trust"],
+    lyrics: `[Intro, piano and violin, gentle]
+
+[Verse 1, intimate, close-mic]
+White walls and a gray flat table
+Five chairs pulled tight around the room
+They read from papers, took their turns
+And told me everything I'd burned
+I came in swinging, full of plans
+But no one knew where I would land
+
+[Pre-Chorus, building slowly]
+So I stopped talking, finally heard
+
+[Chorus, warm bloom, violin enters]
+Beautiful things take time to grow
+Every line and every curve you chose
+They trust the things they'll never see
+Because you cared enough for me
+Beautiful things
+
+[Verse 2, gentle momentum]
+They say that function's all that counts
+The word for beauty's fading out
+But Penn Station makes you curse the rain
+Grand Central makes you feel again
+A checkout page, a single seam
+The ten percent no one could dream
+
+[Pre-Chorus, building]
+The pull is always toward the gray
+
+[Chorus, warm bloom]
+Beautiful things take time to grow
+Every line and every curve you chose
+They trust the things they'll never see
+Because you cared enough for me
+Beautiful things
+
+[Bridge, stripped to piano only, vulnerable]
+One workout won't change your life
+But skipping one makes two feel right
+Tomorrow is today, she said
+A Post-It note beside her bed
+
+[Final Chorus, full arrangement, violin soars]
+Beautiful things take time to grow
+Every line and every curve you chose
+They trust the things they'll never see
+Because you showed me how to breathe
+Beautiful things
+
+[Outro, piano fading]
+Beautiful things`,
+    concept: "The quiet courage of caring about beauty and details in a world that says 'just ship it.' Inspired by Katie Dill's philosophy at Stripe.",
+    keyInsight: "Beauty in product isn't decoration — it's a trust signal. Penn Station and Grand Central serve the same function, but Grand Central makes you feel something. That feeling IS the product.",
+    keyQuote: "People trust the things they'll never see.",
+    quoteSpeaker: "Katie Dill",
+    sources: [
+      { title: "Building beautiful products with Stripe's Head of Design", type: "podcast" as const, url: "https://www.lennyspodcast.com/building-beautiful-products-with-stripes-head-of-design-katie-dill-stripe-airbnb-lyft/", guest: "Katie Dill" },
+    ],
+    storyBehind: "Katie Dill arrived at Stripe planning to make bold changes. Instead, her first 90 days became an intervention — five designers telling her everything she'd gotten wrong. Her Penn Station vs. Grand Central comparison became famous: identical function, but Grand Central makes you feel something. She keeps a Post-It note by her bed that says 'Tomorrow is today' — a reminder that craft compounds daily.",
+    annotations: [
+      { lyricText: "Penn Station or the Grand Central light", note: "Katie Dill cited a study from the book 'Beauty' that analyzed tweets from travelers at Penn Station versus Grand Central. People tweeting from Penn Station were significantly more negative, while those at Grand Central were more positive and optimistic — proving that beautiful environments directly shape how people feel and behave.", sourceTitle: "Building beautiful products with Stripe's Head of Design | Katie Dill (Stripe, Airbnb, Lyft)", sourceUrl: "https://www.lennyspodcast.com/building-beautiful-products-with-stripes-head-of-design-katie-dill-stripe-airbnb-lyft/" },
+      { lyricText: "The quality you'll never see", note: "Dill told Lenny: 'Things that are more beautiful increase trust. You see that we've put painstaking detail into this, and we care about the details of how something works, and that gives you assurance that we care about other details that you can't see too.' Beauty signals invisible quality.", sourceTitle: "Building beautiful products with Stripe's Head of Design | Katie Dill (Stripe, Airbnb, Lyft)", sourceUrl: "https://www.lennyspodcast.com/building-beautiful-products-with-stripes-head-of-design-katie-dill-stripe-airbnb-lyft/" },
+      { lyricText: "Five designers in a grey-walled room", note: "At Airbnb, just one month into her role leading the 10-person design team, Katie got a meeting with five designers and an HR partner in a plain room with white walls and a gray table. They took turns reading from papers listing everything she was doing wrong — an intervention that became 'the biggest learning experience of my leadership career.'", sourceTitle: "Building beautiful products with Stripe's Head of Design | Katie Dill (Stripe, Airbnb, Lyft)", sourceUrl: "https://www.lennyspodcast.com/building-beautiful-products-with-stripes-head-of-design-katie-dill-stripe-airbnb-lyft/" },
+      { lyricText: "beautiful things", note: "Dill pointed out that the word 'beauty' in digitized books has decreased dramatically over time, aligned with the belief that 'functionality is king.' She argued this is a false dichotomy: 'Beauty enhances functionality because it makes things easier to use, more approachable, more compelling to use.'", sourceTitle: "Building beautiful products with Stripe's Head of Design | Katie Dill (Stripe, Airbnb, Lyft)", sourceUrl: "https://www.lennyspodcast.com/building-beautiful-products-with-stripes-head-of-design-katie-dill-stripe-airbnb-lyft/" },
+    ],
+    releaseDate: "2026-03-22",
+  },
+  {
+    slug: "the-intuition",
+    title: "The Intuition",
+    albumSlug: "the-craft",
+    trackNumber: 14,
+    duration: "2:41",
+    audioUrl: "/audio/the-intuition.mp3",
+    coverImage: "/covers/the-intuition.jpg",
+    genre: "Jazz-Pop Groove",
+    mood: "Warm, sophisticated, confident",
+    tags: ["design", "intuition", "Figma", "taste"],
+    lyrics: `[Intro, clean electric guitar with shimmer delay, Rhodes pad]
+
+[Verse 1, warm male tenor, conversational]
+Traced the icons on a borrowed screen
+Bought a stranger coffee, called it research
+Scraped the network just to find the names
+Of the ones who made him stop and stare
+
+[Verse 2]
+Three and a half years before the door
+Turned the car around — the wifi's down
+Built a thing the world forgot to ask for
+Shipped it when the silence got too loud
+
+[Chorus, open, confident groove]
+Call it intuition, call it taste
+Something you can feel but never say
+Strip it down until the simple stays
+That's the art that won't erase
+
+[Verse 3]
+One and one is sometimes one and a half
+Every button costs you something clean
+Furrows in his brow say "there is less"
+Something beautiful that breathes between
+
+[Chorus]
+Call it intuition, call it taste
+Something you can feel but never say
+Strip it down until the simple stays
+That's the art that won't erase
+
+[Bridge, stripped to guitar and voice, intimate]
+I've been tracing your lines
+Since before we ever met
+Every icon was a window
+I just hadn't opened yet
+
+[Final Chorus, full band, Rhodes swells]
+Call it intuition, call it taste
+Something you can feel but never prove
+Strip it down until the simple stays
+That's the art — and it's enough
+
+[Outro, guitar shimmer delay fading, single Rhodes chord ring]`,
+    concept: "Dylan Field's journey from obsessively tracing icons to building Figma — and the belief that taste can't be explained, only felt.",
+    keyInsight: "Great product intuition comes from obsessive pattern recognition. Dylan Field traced icons on screens before he could code, building the visual vocabulary that later defined Figma's design language.",
+    keyQuote: "One plus one should equal one and a half.",
+    quoteSpeaker: "Dylan Field",
+    sources: [
+      { title: "Building Figma, and a new satisfying satisfying satisfying product", type: "podcast" as const, url: "https://www.lennyspodcast.com/building-figma-and-the-future-of-design-dylan-field/", guest: "Dylan Field" },
+    ],
+    storyBehind: "Dylan Field spent his teenage years tracing app icons and UI patterns. He co-founded Figma while still at Brown, working three and a half years before launch. His design philosophy — that adding a feature should make the product feel simpler ('one plus one equals one and a half') — became Figma's core principle.",
+    annotations: [
+      { lyricText: "Tracing icons on the screen", note: "Dylan Field told Lenny he reads every tweet and online mention of Figma, sharing them in an internal Slack channel. He said he's 'always trying to understand' by looking 'everywhere' — Twitter/X, support channels, and across the internet — constantly ingesting information to refine his product sense.", sourceTitle: "Dylan Field live at Config: Intuition, simplicity, and the future of design", sourceUrl: "https://www.lennyspodcast.com/dylan-field-live-at-config-intuition-simplicity-and-the-future-of-design/" },
+      { lyricText: "One plus one should equal less", note: "Field described his philosophy of keeping Figma simple: 'Keep the simple things simple. Make the complex things possible.' He warned that 'it's really easy to make the simple things complex, unfortunately' — meaning every new feature risks making the whole product worse if it adds cognitive load.", sourceTitle: "Dylan Field live at Config: Intuition, simplicity, and the future of design", sourceUrl: "https://www.lennyspodcast.com/dylan-field-live-at-config-intuition-simplicity-and-the-future-of-design/" },
+      { lyricText: "Three and a half years before the door", note: "Lenny revealed that it took three and a half years to launch Figma from when Dylan started working on it, and roughly five years to get the first paying customer. When asked 'what the hell were you doing all that time,' Dylan's immediate response was: 'Way too long, don't do that.'", sourceTitle: "Dylan Field live at Config: Intuition, simplicity, and the future of design", sourceUrl: "https://www.lennyspodcast.com/dylan-field-live-at-config-intuition-simplicity-and-the-future-of-design/" },
+      { lyricText: "the intuition", note: "Field defined intuition as 'a hypothesis generator — you're constantly generating these hypotheses and others are generating hypotheses as well. You then take these hypotheses and debate them, try to find data to support them or negate them, and winnow it down into your working hypothesis.' It's pattern recognition, not magic.", sourceTitle: "Dylan Field live at Config: Intuition, simplicity, and the future of design", sourceUrl: "https://www.lennyspodcast.com/dylan-field-live-at-config-intuition-simplicity-and-the-future-of-design/" },
+    ],
+    releaseDate: "2026-03-22",
+  },
+  {
+    slug: "thirty-five-years",
+    title: "Thirty-Five Years",
+    albumSlug: "the-craft",
+    trackNumber: 15,
+    duration: "3:41",
+    audioUrl: "/audio/thirty-five-years.mp3",
+    coverImage: "/covers/thirty-five-years.jpg",
+    genre: "Warm Reflective Waltz",
+    mood: "Golden hour, retrospective, sage-like",
+    tags: ["design", "career", "Apple", "craft"],
+    lyrics: `[Verse 1]
+I took photographs at sixteen
+Tried to make the movies at twenty-one
+Played piano in a rented room
+Before the song had found its name
+
+[Verse 2]
+At twenty-seven found a glowing screen
+And something in me finally clicked
+The future waiting to be drawn
+A maker hunting for his medium
+
+[Chorus]
+Thirty-five years on the other side
+Of the glass where the people are
+Every line I drew, I drew it blind
+For someone I would never meet
+Thirty-five years... learning how to care
+
+[Verse 3]
+Six of us designed a store
+That ran in thirty countries wide
+We reinvented pizza boxes too
+The whole place asking, "How's it better?"
+
+[Verse 4]
+Then I left on Friday, started Monday
+Bounced right off the culture like a stone
+Lost my mother in the middle of it all
+Your career is not your life
+
+[Chorus]
+Thirty-five years on the other side
+Of the glass where the people are
+Every line I drew, I drew it blind
+For someone I would never meet
+Thirty-five years... learning how to care
+
+[Bridge]
+A grandmother in Ohio picks the check up
+The waiter hands the screen across the table
+Will she look like a hero to her grandsons
+Or fumble while they grab it from her hands?
+You're at the table every time
+
+[Final Chorus]
+Thirty-five years on the other side
+Of the glass where the people are
+Every line I drew, I drew it for
+Someone I would finally see
+Thirty-five years... learning how to care
+
+[Outro]
+I was hunting for my medium
+I found it in the care`,
+    concept: "A 35-year career arc from photography at 16 to leading design at Apple and Pinterest — and the realization that the craft was always about caring for someone you'd never meet.",
+    keyInsight: "Your career is not your life. Bob Baxley spent 35 years designing for people on the other side of the glass, and the real discovery was that the medium was always care.",
+    keyQuote: "Your career is not your life.",
+    quoteSpeaker: "Bob Baxley",
+    sources: [
+      { title: "35 years of product design wisdom from Apple, Disney, Pinterest, and beyond", type: "podcast" as const, url: "https://www.lennyspodcast.com/35-years-of-product-design-wisdom-from-apple-disney-pinterest-and-beyond-bob-baxley/", guest: "Bob Baxley" },
+    ],
+    storyBehind: "Bob Baxley tried photography, filmmaking, and piano before discovering design at 27 when he first saw a Macintosh. He led design at Apple (where six people designed the Apple Store for 30 countries), then Pinterest. When he left Apple for Yahoo, he 'bounced right off the culture like a stone.' His mother's death during that period crystallized his belief that your career is not your life.",
+    annotations: [
+      { lyricText: "Six of us designed a store", note: "Bob Baxley revealed that the Apple online store — running in 30+ countries with 12,500 instances doing billions in revenue — was designed by just six people. He said any other company would have had 60 or more, but Apple's clarity of vision lets them 'operate with much smaller staff' and create products that feel like a single whole.", sourceTitle: "35 years of product design wisdom from Apple, Disney, Pinterest, and beyond | Bob Baxley", sourceUrl: "https://www.lennyspodcast.com/35-years-of-product-design-wisdom-from-apple-disney-pinterest-and-beyond-bob-baxley/" },
+      { lyricText: "Bounced right off the culture", note: "Baxley admitted his stint at Pinterest 'wasn't successful' — he 'just bounced off the culture.' He went straight from Apple on a Friday to Pinterest on a Monday without recalibrating. He said he 'came in thinking I was supposed to behave the way I behaved at Apple, which is very direct, fighting hard' — but Pinterest's culture operated completely differently.", sourceTitle: "35 years of product design wisdom from Apple, Disney, Pinterest, and beyond | Bob Baxley", sourceUrl: "https://www.lennyspodcast.com/35-years-of-product-design-wisdom-from-apple-disney-pinterest-and-beyond-bob-baxley/" },
+      { lyricText: "Your career is not your life", note: "Baxley's career spans over three decades across Apple, Pinterest, Yahoo, Disney, and ThoughtSpot. He told Lenny he 'seeks out opportunities to witness history' and that design means 'trying to imagine the future you want to live in and then take the steps to make it real.' His perspective comes from seeing companies from the inside at pivotal moments.", sourceTitle: "35 years of product design wisdom from Apple, Disney, Pinterest, and beyond | Bob Baxley", sourceUrl: "https://www.lennyspodcast.com/35-years-of-product-design-wisdom-from-apple-disney-pinterest-and-beyond-bob-baxley/" },
+      { lyricText: "Sixteen with a camera", note: "Baxley argued that 'almost everyone living in a modern economy now is going to have hundreds of interactions with a phone or with a computer. And unfortunately, a lot of those interactions are not going to be great. We have an obligation as product people to put that emotional energy back into people's lives.' Design is a moral obligation, not decoration.", sourceTitle: "35 years of product design wisdom from Apple, Disney, Pinterest, and beyond | Bob Baxley", sourceUrl: "https://www.lennyspodcast.com/35-years-of-product-design-wisdom-from-apple-disney-pinterest-and-beyond-bob-baxley/" },
+    ],
+    releaseDate: "2026-03-22",
+  },
 ];
 
 const growthEngineTracks: Track[] = [
@@ -1829,6 +2149,320 @@ Make it real — make it all`,
     ],
     releaseDate: "2026-03-21",
     sunoId: "23e20b22-e542-4eb9-b9bb-b1e0f388ce59",
+  },
+  {
+    slug: "plg",
+    title: "PLG (Product-Led Growth)",
+    albumSlug: "growth-engine",
+    trackNumber: 10,
+    duration: "2:43",
+    audioUrl: "/audio/plg.mp3",
+    coverImage: "/covers/plg.jpg",
+    genre: "Jazz-Pop Groove",
+    mood: "Cool confidence, a knowing smile",
+    tags: ["PLG", "product-led growth", "B2B", "growth"],
+    lyrics: `[Verse 1, smooth groove]
+Cold calls at nine, the list is thin
+Another deck, another spin
+You're buying every pair of eyes
+And watching margins slowly die
+
+[Pre-Chorus, building]
+But what if you could stop the chase
+
+[Chorus, warm and open]
+Let it grow while you sleep
+Give it free, let them keep
+You built a door that opens from the inside
+One by one, they're walking through
+
+[Verse 2]
+No clock, no wall, no trial date
+Just let them in and let them stay
+They share the board, they send the link
+They're sold before you even think
+
+[Pre-Chorus, building]
+You stopped the push and felt the pull
+
+[Chorus, warm and open]
+Let it grow while you sleep
+Give it free, let them keep
+You built a door that opens from the inside
+One by one, they're walking through
+
+[Bridge, stripped, intimate]
+They found you on their own
+Already warm before the phone
+You didn't kill the sale
+You let the product tell the tale
+
+[Final Chorus, full band]
+Let it grow while you sleep
+Give it free, let them keep
+You built a door that opens from the inside
+One by one, we're walking through`,
+    concept: "The shift from sales-led to product-led growth — where the product itself becomes the primary acquisition, conversion, and expansion engine. Based on Elena Verna's framework for B2B PLG.",
+    keyInsight: "In product-led growth, users are 'already warm before the phone' — they've experienced the value before ever talking to sales. The product IS the marketing.",
+    keyQuote: "You built a door that opens from the inside.",
+    quoteSpeaker: "Elena Verna",
+    sources: [
+      { title: "How B2B growth is changing | Elena Verna", type: "podcast" as const, url: "https://www.lennyspodcast.com/how-b2b-growth-is-changing-elena-verna-amplitude-miro-mongodb-surveymonkey/", guest: "Elena Verna" },
+    ],
+    storyBehind: "Elena Verna, growth advisor to companies like Amplitude, Miro, and MongoDB, told Lenny that the fundamental shift in B2B is from 'pushing' products through sales to 'pulling' users through product value. She argues that PLG isn't about eliminating sales — it's about making sales conversations happen with users who already love the product.",
+    annotations: [
+      { lyricText: "Cold calls at nine, the list is thin", note: "Elena Verna told Lenny that 'every single company has to first focus on being product-led and retention, period.' She argued that without habitual product usage, there are fewer opportunities to create product-led acquisition — so companies fall back on expensive sales-led and marketing-led growth.", sourceTitle: "Elena Verna on how B2B growth is changing", sourceUrl: "https://www.lennyspodcast.com/how-b2b-growth-is-changing-elena-verna-amplitude-miro-mongodb-surveymonkey/" },
+      { lyricText: "Give it free, let them keep", note: "Verna is a strong advocate for freemium over trials. She told Lenny that if you're starting with self-serve monetization, 'growth hire should be frankly first before sales.' Your sales conversations become more opportunistic — happening with users who already love the product instead of cold prospects.", sourceTitle: "Elena Verna on how B2B growth is changing", sourceUrl: "https://www.lennyspodcast.com/how-b2b-growth-is-changing-elena-verna-amplitude-miro-mongodb-surveymonkey/" },
+      { lyricText: "You built a door that opens from the inside", note: "Verna warned against hiring a growth leader too early: 'A founder and the founding team have to figure out how to make it grow to the first million, 5 million, 10 million in ARR.' She said some companies don't even create growth teams until $100-200M ARR because 'it's not something that you can outsource to somebody with a shiny resume.'", sourceTitle: "Elena Verna on how B2B growth is changing", sourceUrl: "https://www.lennyspodcast.com/how-b2b-growth-is-changing-elena-verna-amplitude-miro-mongodb-surveymonkey/" },
+      { lyricText: "They found you on their own", note: "Verna told Lenny that PLG isn't about eliminating sales, it's about overlaying 'product-led growth on top of your sales motion' so users arrive already warm and converted before they ever speak to a rep.", sourceTitle: "Elena Verna on how B2B growth is changing", sourceUrl: "https://www.lennyspodcast.com/how-b2b-growth-is-changing-elena-verna-amplitude-miro-mongodb-surveymonkey/" },
+    ],
+    releaseDate: "2026-03-22",
+  },
+  {
+    slug: "the-hierarchy",
+    title: "The Hierarchy",
+    albumSlug: "growth-engine",
+    trackNumber: 11,
+    duration: "4:14",
+    audioUrl: "/audio/the-hierarchy.mp3",
+    coverImage: "/covers/the-hierarchy.jpg",
+    genre: "Liturgical Folk Hymn",
+    mood: "Congregational, building, reverent",
+    tags: ["engagement", "retention", "flywheel", "Pinterest"],
+    lyrics: `[Intro, soft fingerpicked acoustic, single voice]
+
+[Verse 1]
+One pin saved at midnight
+One board with no name
+She watches the numbers
+But nothing sustains
+The graphs all point upward
+The users don't stay
+A pebble inside her shoe
+Won't go away
+
+[Pre-Chorus, building]
+What if the question isn't how many came
+But who came back again?
+
+[Chorus, layered vocals join — two voices]
+Build it so it holds you
+Build it so it grows
+Every hand that turns the wheel
+Makes the wheel remember
+Something worth the keeping
+Something you can't leave
+Now it's spinning on its own
+Spinning on its own
+
+[Verse 2]
+She charts every action
+The clicks and the scrolls
+But pinning lights different
+It changes the soul
+You save what you love here
+Your recipes, your plans
+And leaving means losing
+The life in your hands
+
+[Pre-Chorus]
+What if the question isn't how many came
+But who came back again?
+
+[Chorus, three voices now]
+Build it so it holds you
+Build it so it grows
+Every hand that turns the wheel
+Makes the wheel remember
+Something worth the keeping
+Something you can't leave
+Now it's spinning on its own
+Spinning on its own
+
+[Bridge, stripped to single voice, intimate]
+Clubhouse grew like summer fire
+Burning bright but burning down
+Evernote held everything
+But couldn't pull the next one in
+The ones that last, the ones that stay
+Turn your motion into mine
+
+[Final Chorus, full congregation — four or five voices, swelling]
+Build it so it holds you
+Build it so it grows
+Every hand that turns the wheel
+Makes the wheel remember
+Something worth the keeping
+Something we can't leave
+Now it's spinning on its own
+Spinning on its own
+
+[Outro, voices fading one by one]
+Spinning on its own`,
+    concept: "Sarah Tavel's hierarchy of engagement: core action → accruing benefit → self-perpetuating flywheel. The products that last are the ones where every use makes leaving harder.",
+    keyInsight: "The question isn't how many users you acquire — it's who comes back. Pinterest discovered that pinning (not browsing) was the core action that predicted retention, because saved content creates accruing value.",
+    keyQuote: "Every hand that turns the wheel makes the wheel remember.",
+    quoteSpeaker: "Sarah Tavel",
+    sources: [
+      { title: "The hierarchy of engagement | Sarah Tavel", type: "podcast" as const, url: "https://www.lennyspodcast.com/the-hierarchy-of-engagement-sarah-tavel-benchmark-pinterest/", guest: "Sarah Tavel" },
+    ],
+    storyBehind: "Sarah Tavel developed the hierarchy of engagement framework while at Pinterest, where she observed that users who pinned (saved content) retained at dramatically higher rates than those who just browsed. The framework has three levels: find the core action, make it accrue benefits over time, and create a self-perpetuating flywheel. The bridge references Clubhouse (viral but no retention) and Evernote (stored value but no network effects) as cautionary tales.",
+    annotations: [
+      { lyricText: "One pin saved at midnight", note: "Sarah Tavel was the first product manager at Pinterest, where she led the discovery team responsible for the home feed, search, and recommendations. She discovered that 'pinning' — not browsing — was the core action that predicted whether a user would retain. If they weren't pinning, they weren't really a user at all.", sourceTitle: "The hierarchy of engagement | Sarah Tavel (Benchmark, Greylock, Pinterest)", sourceUrl: "https://www.lennyspodcast.com/the-hierarchy-of-engagement-sarah-tavel-benchmark-pinterest/" },
+      { lyricText: "But who came back again?", note: "Tavel developed an 'allergic reaction to vanity metrics.' She saw founders with up-and-to-the-right graphs of signups, downloads, or MAUs, but realized those metrics meant nothing. The real question was whether users were completing the core action — and whether they kept coming back to do it again.", sourceTitle: "The hierarchy of engagement | Sarah Tavel (Benchmark, Greylock, Pinterest)", sourceUrl: "https://www.lennyspodcast.com/the-hierarchy-of-engagement-sarah-tavel-benchmark-pinterest/" },
+      { lyricText: "Every hand that turns the wheel", note: "Tavel described Level 3 of her hierarchy as making the product 'self-perpetuating.' She told Lenny to think of every user click or tap as kinetic energy: 'Your job with a great product is to take that energy and, as much as possible, convert it back to the experience.' Network effects are the biggest lever — each user's activity makes the product better for everyone.", sourceTitle: "The hierarchy of engagement | Sarah Tavel (Benchmark, Greylock, Pinterest)", sourceUrl: "https://www.lennyspodcast.com/the-hierarchy-of-engagement-sarah-tavel-benchmark-pinterest/" },
+      { lyricText: "Clubhouse grew like summer fire", note: "Tavel's Level 2 is 'accruing benefit' — the product should get better the more you use it, and you should have more to lose by leaving. For Pinterest, saved pins created a personalized 'picked for you' feed. Evernote stored your notes (accruing value) but lacked network effects to pull in the next user — illustrating why Level 2 alone isn't enough.", sourceTitle: "The hierarchy of engagement | Sarah Tavel (Benchmark, Greylock, Pinterest)", sourceUrl: "https://www.lennyspodcast.com/the-hierarchy-of-engagement-sarah-tavel-benchmark-pinterest/" },
+    ],
+    releaseDate: "2026-03-22",
+  },
+  {
+    slug: "the-liquidity",
+    title: "The Liquidity",
+    albumSlug: "growth-engine",
+    trackNumber: 12,
+    duration: "3:18",
+    audioUrl: "/audio/the-liquidity.mp3",
+    coverImage: "/covers/the-liquidity.jpg",
+    genre: "Acoustic Soul",
+    mood: "Flowing, soulful, warm",
+    tags: ["marketplace", "liquidity", "Lyft", "growth"],
+    lyrics: `[Verse 1, gentle, flowing]
+Employee thirty, no name on the door
+Thirty times smaller than the ones before
+A waitlist growing, riders on the line
+And half the city couldn't even drive
+
+[Pre-Chorus, swelling slightly]
+We read the numbers from our tower high
+But numbers never told us why
+
+[Chorus, warm and open]
+Let it flow, let it flow
+Every river finds the sea
+The river doesn't push, it pulls you in
+Two minutes and they stay with me
+
+[Verse 2, storytelling]
+We paid our best to teach the new
+Thirty-five dollars, peer to peer
+They said forget the corporate mail
+Just text me Tuesday, I'll be here
+
+[Pre-Chorus]
+We read the numbers from our tower high
+But numbers never told us why
+
+[Chorus, warm and open]
+Let it flow, let it flow
+Every river finds the sea
+The river doesn't push, it pulls you in
+Two minutes and they stay with me
+
+[Bridge, stripped, intimate]
+They liked the thrill of the sale
+They liked the phone call and the chase
+You can't control the human heart
+You give it room, you give it space
+
+[Final Chorus, full warmth]
+Let it flow, let it flow
+Every river finds the sea
+The river doesn't push, it pulls you in
+Two minutes and they stay with me
+
+[Outro, fading]
+Let it flow... let it flow...
+The water knows the way`,
+    concept: "How marketplaces achieve liquidity — the moment supply and demand flow naturally. Based on Benjamin Lauzier's experience scaling Lyft from employee #30.",
+    keyInsight: "Marketplace liquidity isn't about more supply or more demand — it's about reducing the time between wanting something and getting it. At Lyft, getting pickup time under two minutes was the tipping point.",
+    keyQuote: "The river doesn't push, it pulls you in.",
+    quoteSpeaker: "Benjamin Lauzier",
+    sources: [
+      { title: "How marketplaces win: Liquidity, growth levers, quality, and more", type: "podcast" as const, url: "https://www.lennyspodcast.com/how-marketplaces-win-liquidity-growth-levers-quality-and-more-benjamin-lauzier-lyft-thumbtack-uber/", guest: "Benjamin Lauzier" },
+    ],
+    storyBehind: "Benjamin Lauzier joined Lyft as employee #30 when they were 30x smaller than Uber. He discovered that marketplace liquidity isn't about spreadsheets — it's about human behavior. Lyft's mentor program paid experienced drivers $35 to train new ones peer-to-peer, and the mentors preferred texting ('text me Tuesday, I'll be here') over corporate email. The Thumbtack story in the bridge shows professionals who loved the thrill of closing sales — you can't engineer that away.",
+    annotations: [
+      { lyricText: "Employee thirty, no name on the door", note: "Benjamin Lauzier was employee number 30 at Lyft, where he spent over six years leading product and growth for the driver side. At one point, 1% of all U.S. workers were driving for Lyft every month. When he joined, Uber was roughly 30x Lyft's size in revenue, people, and liquidity.", sourceTitle: "How marketplaces win: Liquidity, growth levers, quality, and more | Benjamin Lauzier (Lyft, Thumbtack, Reforge)", sourceUrl: "https://www.lennyspodcast.com/how-marketplaces-win-liquidity-growth-levers-quality-and-more-benjamin-lauzier-lyft-thumbtack-uber/" },
+      { lyricText: "We read the numbers from our tower high", note: "Lauzier admitted: 'When you're running a marketplace, you tend to sit in your ivory tower a little bit, looking at stats and thinking if only we could get people to do X.' He said that misses the point — 'we're humans, and sometimes we act in ways that are non-deterministic or counterintuitive.'", sourceTitle: "How marketplaces win: Liquidity, growth levers, quality, and more | Benjamin Lauzier (Lyft, Thumbtack, Reforge)", sourceUrl: "https://www.lennyspodcast.com/how-marketplaces-win-liquidity-growth-levers-quality-and-more-benjamin-lauzier-lyft-thumbtack-uber/" },
+      { lyricText: "Thirty-five dollars, peer to peer", note: "Lyft paid its best drivers $35 per mentor session to onboard new drivers — replacing the corporate DMV-style process. Mentors shared personal tips, their contact info ('text me Tuesday, I'll tell you where the good spot is'), and created social proof that was far more powerful than any marketing email the 'brightest minds in the company' could write.", sourceTitle: "How marketplaces win: Liquidity, growth levers, quality, and more | Benjamin Lauzier (Lyft, Thumbtack, Reforge)", sourceUrl: "https://www.lennyspodcast.com/how-marketplaces-win-liquidity-growth-levers-quality-and-more-benjamin-lauzier-lyft-thumbtack-uber/" },
+      { lyricText: "Two minutes and they stay with me", note: "The mentor program let Lyft match most of Uber's geographic footprint with a 10th to 20th of the resources. Top drivers who did two mentor sessions per hour could make $70/hour, and the 'promotion' feeling dramatically improved retention of Lyft's very best drivers — an unexpected benefit that became a strategic advantage.", sourceTitle: "How marketplaces win: Liquidity, growth levers, quality, and more | Benjamin Lauzier (Lyft, Thumbtack, Reforge)", sourceUrl: "https://www.lennyspodcast.com/how-marketplaces-win-liquidity-growth-levers-quality-and-more-benjamin-lauzier-lyft-thumbtack-uber/" },
+      { lyricText: "They liked the thrill of the sale", note: "After Lyft, Lauzier was VP of Product and Growth at Thumbtack, where he rebuilt the product team, re-architected the revenue model, and helped 3x Thumbtack's growth in three years. His approach to marketplace quality: 'Provide guardrails for what a good experience is, set a clear bar for quality, and provide the right coaching and tools — then take a step back.'", sourceTitle: "How marketplaces win: Liquidity, growth levers, quality, and more | Benjamin Lauzier (Lyft, Thumbtack, Reforge)", sourceUrl: "https://www.lennyspodcast.com/how-marketplaces-win-liquidity-growth-levers-quality-and-more-benjamin-lauzier-lyft-thumbtack-uber/" },
+    ],
+    releaseDate: "2026-03-22",
+  },
+  {
+    slug: "blow-their-socks-off",
+    title: "Blow Their Socks Off",
+    albumSlug: "growth-engine",
+    trackNumber: 13,
+    duration: "3:02",
+    audioUrl: "/audio/blow-their-socks-off.mp3",
+    coverImage: "/covers/blow-their-socks-off.jpg",
+    genre: "Neo-Soul Folk-Rock Build",
+    mood: "Explosive, accelerating, triumphant",
+    tags: ["growth", "product", "word of mouth", "Cursor"],
+    lyrics: `[Verse 1, half-time feel]
+I spent fifteen years learning every dial
+Optimize the funnel, smooth the trial
+Came in with my frameworks, neat and clean
+Then the numbers hit and shattered every screen
+
+[Pre-Chorus]
+Two hundred million in a single year
+The maps I brought don't work out here
+
+[Chorus, building]
+Blow their socks off — that's the only play
+Make it so good they give the words away
+Threw the playbook in the fire — flying free
+Word of mouth is all you'll ever need
+Blow their socks off
+
+[Verse 2]
+Ninety-five percent inventing on the fly
+Only five percent on what I used to try
+Growth team shipping features, not a slide
+Gave the product out to everyone outside
+
+[Pre-Chorus]
+Every three months we start from scratch again
+Product-market fit — you gotta earn it, friend
+
+[Chorus, building]
+Blow their socks off — that's the only play
+Make it so good they give the words away
+Threw the playbook in the fire — flying free
+Word of mouth is all you'll ever need
+Blow their socks off
+
+[Bridge, stripped back]
+Not optimization of the problem now
+Reinvention of the answer — show 'em how
+Eight million came to see what we could do
+Hanging on and hoping that the rocket holds us through
+
+[Final Chorus, full band + trumpet]
+Blow their socks off — that's the only play
+Make it so good they give the words away
+Threw the playbook in the fire — flying free
+Word of mouth is all we'll ever need
+Blow their socks off — blow their socks off`,
+    concept: "When growth is so explosive that traditional playbooks break. Elena Verna's experience at Cursor, where 15 years of growth expertise became irrelevant and the only strategy was making the product so good people couldn't stop talking about it.",
+    keyInsight: "At Cursor's growth rate ($200M+ ARR in a single year), traditional growth optimization is only 5% of the work. 95% is inventing new approaches because nothing at this scale has been done before.",
+    keyQuote: "Blow their socks off — that's the only play.",
+    quoteSpeaker: "Elena Verna",
+    sources: [
+      { title: "Elena Verna 4.0", type: "podcast" as const, url: "https://www.lennyspodcast.com/elena-verna-40-cursors-explosive-growth-ai-and-the-future-of-product-led-growth/", guest: "Elena Verna" },
+    ],
+    storyBehind: "Elena Verna joined Cursor after 15 years as a growth expert and immediately realized her entire playbook was useless. Cursor hit $200M+ in ARR in a single year — growth so fast that 95% of her job was inventing new approaches. Her revelation: at this velocity, the only real strategy is making the product so good that word of mouth does all the work. Product-market fit isn't a one-time achievement — you have to re-earn it every quarter.",
+    annotations: [
+      { lyricText: "Two hundred million in a single year", note: "Elena Verna told Lenny that Lovable hit over $200 million in ARR in under one year after launching, with fewer than 100 people — making it one of the fastest ramps to $200M ARR in history. They also raised a Series B at a $6 billion valuation, and growth was still accelerating.", sourceTitle: "Elena Verna 4.0", sourceUrl: "https://www.lennyspodcast.com/elena-verna-40-cursors-explosive-growth-ai-and-the-future-of-product-led-growth/" },
+      { lyricText: "Ninety-five percent inventing on the fly", note: "Verna said: 'I usually spend maybe 5% innovating on growth in my previous roles. Right now I'm spending 95% innovating on growth, and only 5% on optimization.' At Lovable's velocity, traditional growth optimization barely matters — it's almost entirely about inventing new approaches that have never existed.", sourceTitle: "Elena Verna 4.0", sourceUrl: "https://www.lennyspodcast.com/elena-verna-40-cursors-explosive-growth-ai-and-the-future-of-product-led-growth/" },
+      { lyricText: "Blow their socks off — that's the only play", note: "When Lenny asked what's actually moving the needle, Verna said: 'The only way to create a word of mouth loop is just to blow their socks off.' She said their biggest growth strategies are building in public, founder-led socials, and giving the product away generously — if a user wants to host a hackathon, 'we're like, take it, how much do you need?'", sourceTitle: "Elena Verna 4.0", sourceUrl: "https://www.lennyspodcast.com/elena-verna-40-cursors-explosive-growth-ai-and-the-future-of-product-led-growth/" },
+      { lyricText: "Threw the playbook in the fire — flying free", note: "Verna admitted that 'only 30 to 40% of what I've learned in the last 15 to 20 years of being in growth transfers here.' She said the key insight is: 'To be ahead of them is not optimization of the problem, it's reinvention of the solution' — a fundamental shift from her entire previous career in growth.", sourceTitle: "Elena Verna 4.0", sourceUrl: "https://www.lennyspodcast.com/elena-verna-40-cursors-explosive-growth-ai-and-the-future-of-product-led-growth/" },
+      { lyricText: "Product-market fit — you gotta earn it, friend", note: "Lenny noted that Verna's experience shows 'product market fit as a concept is no longer what it used to be — every company basically has to recapture product market fit every three months.' At Lovable's pace, what worked last quarter may be irrelevant this quarter as the competitive landscape shifts constantly.", sourceTitle: "Elena Verna 4.0", sourceUrl: "https://www.lennyspodcast.com/elena-verna-40-cursors-explosive-growth-ai-and-the-future-of-product-led-growth/" },
+    ],
+    releaseDate: "2026-03-22",
   },
 ];
 
@@ -2786,6 +3420,305 @@ It's yours to keep — you've earned it`,
     releaseDate: "2026-03-21",
     sunoId: "fb3eb2a4-5d61-49c4-8fc6-6751c7e9fdc6",
   },
+  {
+    slug: "radical-candor",
+    title: "Radical Candor",
+    albumSlug: "the-weight",
+    trackNumber: 6,
+    duration: "3:39",
+    audioUrl: "/audio/radical-candor.mp3",
+    coverImage: "/covers/radical-candor.jpg",
+    genre: "Intimate Acoustic Soul",
+    mood: "Confessional, tender, gut-punch honest",
+    tags: ["feedback", "leadership", "management", "honesty"],
+    lyrics: `[Verse 1, gentle]
+He'd bring the right candy at the right time
+Knew every name and every room he'd light
+His work came in with something wrong inside
+But I said, "Great start" — watched shame fill his eyes
+
+[Verse 2]
+Ten months of mornings, ten months of praise
+Every gentle nothing let the damage stay
+I was so careful, keeping the peace
+While the best ones packed their things to leave
+
+[Chorus]
+It's not mean, it's clear
+Say the thing you're swallowing here
+The kindest cut's the one you fear
+It's not mean, it's clear
+
+[Verse 3]
+She pulled me aside after the room
+Said I mumbled through every word I used
+Two tries I brushed her off and laughed
+Till she found the words that finally cracked
+
+[Chorus]
+It's not mean, it's clear
+Say the thing you're swallowing here
+The kindest cut's the one you fear
+It's not mean, it's clear
+
+[Bridge, stripped, cello enters]
+He pushed the chair back, looked me in the eye
+Said, "Why didn't you tell me?
+I thought you were on my side"
+And I had no answer — not a single word
+All my quiet kindness was the cruelest thing he'd heard
+
+[Final Chorus, building]
+It's not mean, it's clear
+Say the thing you're swallowing here
+The kindest cut's the one you fear
+It's not mean — it's lo-ove
+
+[Outro, whispered]
+It's not mean... it's clear`,
+    concept: "The devastating cost of silence disguised as kindness. Kim Scott's story of failing to give honest feedback for ten months — and the moment her employee asked 'Why didn't you tell me?'",
+    keyInsight: "Ruinous empathy — being so careful with people's feelings that you withhold critical feedback — is the most common and most damaging management failure. Silence isn't kindness.",
+    keyQuote: "Why didn't you tell me? I thought you were on my side.",
+    quoteSpeaker: "Kim Scott",
+    sources: [
+      { title: "Radical Candor | Kim Scott", type: "podcast" as const, url: "https://www.lennyspodcast.com/radical-candor-kim-scott/", guest: "Kim Scott" },
+    ],
+    storyBehind: "Kim Scott spent ten months praising an employee's work while knowing it wasn't good enough. When she finally had to let him go, he looked her in the eye and said 'Why didn't you tell me? I thought you were on my side.' That moment — the realization that her 'kindness' was actually cruelty — became the origin of Radical Candor. The song's Verse 3 references Sheryl Sandberg's feedback to Kim about mumbling in presentations.",
+    annotations: [
+      { lyricText: "Ten months of mornings, ten months of praise", note: "Kim Scott told Lenny about an employee she called 'Bob' who did terrible work for 10 straight months. She kept saying 'Great start, you're so awesome' instead of giving honest feedback. She later realized her best performers were about to quit because Bob's late deliverables held the whole team back.", sourceTitle: "Radical Candor: From theory to practice with author Kim Scott", sourceUrl: "https://www.lennyspodcast.com/radical-candor-from-theory-to-practice-with-author-kim-scott/" },
+      { lyricText: "He pushed the chair back, looked me in the eye", note: "When Kim finally had to fire Bob, he asked her directly why she hadn't told him his work wasn't good enough. She had no answer. She later learned he'd been smoking pot in the bathroom three times a day — something she might have discovered earlier if she'd had honest conversations instead of empty praise.", sourceTitle: "Radical Candor: From theory to practice with author Kim Scott", sourceUrl: "https://www.lennyspodcast.com/radical-candor-from-theory-to-practice-with-author-kim-scott/" },
+      { lyricText: "She pulled me aside after the room", note: "After Kim gave a presentation to Google's founders and CEO, her boss pulled her aside and told her she said 'um' every third word. Kim brushed it off twice. Her boss finally said: 'When you say um every third word, it makes you sound stupid.' Kim calls this the kindest thing anyone did for her career.", sourceTitle: "Radical Candor: From theory to practice with author Kim Scott", sourceUrl: "https://www.lennyspodcast.com/radical-candor-from-theory-to-practice-with-author-kim-scott/" },
+      { lyricText: "All my quiet kindness was the cruelest thing he'd heard", note: "Kim Scott estimates that 90% of management mistakes fall into the 'ruinous empathy' quadrant — caring personally but failing to challenge directly. Radical Candor is the single most recommended book on Lenny's podcast, mentioned more than any other book by guests across hundreds of episodes.", sourceTitle: "Radical Candor: From theory to practice with author Kim Scott", sourceUrl: "https://www.lennyspodcast.com/radical-candor-from-theory-to-practice-with-author-kim-scott/" },
+      { lyricText: "It's not mean, it's clear", note: "The Radical Candor framework has two axes: care personally and challenge directly. Kim's boss at Google modeled both — when Kim's father was diagnosed with late-stage cancer, she said 'Go to the airport, fly home. Your team and I will write your coverage plan.' That same care gave her the standing to deliver brutally honest feedback.", sourceTitle: "Radical Candor: From theory to practice with author Kim Scott", sourceUrl: "https://www.lennyspodcast.com/radical-candor-from-theory-to-practice-with-author-kim-scott/" },
+    ],
+    releaseDate: "2026-03-22",
+  },
+  {
+    slug: "the-okr",
+    title: "The OKR",
+    albumSlug: "the-weight",
+    trackNumber: 7,
+    duration: "3:39",
+    audioUrl: "/audio/the-okr.mp3",
+    coverImage: "/covers/the-okr.jpg",
+    genre: "Indie Folk-Pop Waltz",
+    mood: "Contemplative, ritualistic, earnest",
+    tags: ["OKR", "goals", "management", "rituals"],
+    lyrics: `[Intro, metronome clicks, soft piano]
+
+[Verse 1, gentle waltz, fingerpicked guitar]
+I built the spreadsheet column-wide
+Tracked every metric, every slide
+The numbers climbed but something died
+I couldn't name the reason why
+
+[Verse 2]
+She said the framework's not the cure
+It's not a medicine, be sure
+It's just a vitamin, that's all
+To catch you right before you fall
+
+[Chorus, building, warm strings enter]
+So what did I do this week
+To close the distance that I seek?
+Monday I commit, and Friday I celebrate
+One question asked before it's late
+What did I do this week?
+
+[Verse 3, lighter, more intimate]
+Three women met for half a decade
+Every Monday, plans were laid
+The sharpest tracker burned away
+The wanderer found her place to stay
+
+[Chorus]
+So what did I do this week
+To close the distance that I seek?
+Monday I commit, and Friday I celebrate
+One question asked before it's late
+What did I do this week?
+
+[Bridge, stripped to piano and clock]
+A good goal leaves you uncomfortable
+But not doomed
+Raise your head above the noise
+And find the room
+You don't need the perfect number
+You just need to start
+The cadence is the product
+Not the chart
+
+[Final Chorus, full arrangement, cello enters]
+So what did I do this week
+To close the distance that I seek?
+Monday we commit, and Friday we celebrate
+One question asked before it's late
+What did we do this week?
+
+[Outro, metronome fading]`,
+    concept: "The power of OKRs isn't in the measurement — it's in the weekly ritual of stopping to ask what matters. Based on Christina Wodtke's guide to making OKRs actually work.",
+    keyInsight: "OKRs are a vitamin, not a medicine. They don't cure dysfunction — they maintain healthy focus. The real power is in the cadence: Monday commitments and Friday celebrations.",
+    keyQuote: "A good goal leaves you uncomfortable but not doomed.",
+    quoteSpeaker: "Christina Wodtke",
+    sources: [
+      { title: "The ultimate guide to OKRs | Christina Wodtke", type: "podcast" as const, url: "https://www.lennyspodcast.com/the-ultimate-guide-to-okrs-christina-wodtke/", guest: "Christina Wodtke" },
+    ],
+    storyBehind: "Christina Wodtke told Lenny that most teams fail with OKRs because they treat them as a measurement tool instead of a practice. Her 'Monday commitments, Friday celebrations' cadence turns goal-setting into a weekly ritual. She shared the story of three women who met every Monday for five years — the accountability group that transformed each of their careers.",
+    annotations: [
+      { lyricText: "It's just a vitamin, that's all", note: "Christina Wodtke told Lenny that OKRs are 'more of a vitamin, not a medicine.' They won't fix a dysfunctional company — they'll just reveal everything that's wrong. But if a company already has strategy, empowered teams, and psychological safety, OKRs supercharge performance.", sourceTitle: "The ultimate guide to OKRs | Christina Wodtke (Stanford)", sourceUrl: "https://www.lennyspodcast.com/the-ultimate-guide-to-okrs-christina-wodtke-stanford/" },
+      { lyricText: "Monday I commit, and Friday I celebrate", note: "Wodtke's OKR cadence is Monday commitments and Friday celebrations. She shared that CEOs who started Friday celebrations before even implementing full OKRs saw immediate culture improvements. 'The simple act of getting together and saying what was the most awesome thing that happened this week makes people feel like they're part of something really special.'", sourceTitle: "The ultimate guide to OKRs | Christina Wodtke (Stanford)", sourceUrl: "https://www.lennyspodcast.com/the-ultimate-guide-to-okrs-christina-wodtke-stanford/" },
+      { lyricText: "A good goal leaves you uncomfortable", note: "Wodtke teaches at Stanford and has coached OKRs for over a decade. She insists that a well-set objective should make you nervous but not hopeless — 'uncomfortable but not doomed.' If you're confident you'll hit it, the goal isn't ambitious enough. If it feels impossible, you'll disengage.", sourceTitle: "The ultimate guide to OKRs | Christina Wodtke (Stanford)", sourceUrl: "https://www.lennyspodcast.com/the-ultimate-guide-to-okrs-christina-wodtke-stanford/" },
+      { lyricText: "The cadence is the product", note: "Wodtke has run her own life on OKRs for eight to ten years, reviewing them every Monday to decide where to put her attention. She's ADHD and says the weekly ritual — not the goals themselves — is what changed her. The practice of asking 'what did I do this week?' is more powerful than any individual metric.", sourceTitle: "The ultimate guide to OKRs | Christina Wodtke (Stanford)", sourceUrl: "https://www.lennyspodcast.com/the-ultimate-guide-to-okrs-christina-wodtke-stanford/" },
+      { lyricText: "I built the spreadsheet column-wide", note: "Wodtke warns that the most common OKR failure is treating them as a tracking spreadsheet instead of a focusing practice. She told Lenny the first step is picking one objective — the 'big thing that's going to happen this quarter' — and moving it, rather than trying to measure everything at once.", sourceTitle: "The ultimate guide to OKRs | Christina Wodtke (Stanford)", sourceUrl: "https://www.lennyspodcast.com/the-ultimate-guide-to-okrs-christina-wodtke-stanford/" },
+    ],
+    releaseDate: "2026-03-22",
+  },
+  {
+    slug: "level-three",
+    title: "Level Three",
+    albumSlug: "the-weight",
+    trackNumber: 8,
+    duration: "2:54",
+    audioUrl: "/audio/level-three.mp3",
+    coverImage: "/covers/level-three.jpg",
+    genre: "Atmospheric Intimate Folk",
+    mood: "Whispered, vulnerable, barely there",
+    tags: ["listening", "leadership", "conversations", "trust"],
+    lyrics: `[Intro, ambient room tone, single breath]
+
+[Verse 1, whispered]
+You nod along, you hold the space
+Your hands are still, your mind's a race
+You're building answers while I speak
+Rehearsing lines before I'm weak
+
+[Verse 2]
+You catch the words but miss the weight
+The tremble underneath the straight
+I shift my eyes, I hold my breath
+You're solving me inside your head
+
+[Chorus, close-mic warmth]
+Level three, level three
+Hear the quiet underneath
+I don't need you to fix the ache
+I just need you here — awake
+
+[Verse 3]
+She asked him once, what's it like
+To be a father late at night
+He laughed, he squirmed, he looked away
+She heard the joy he couldn't say
+
+[Chorus]
+Level three, level three
+Hear the quiet underneath
+I don't need you to fix the ache
+I just need you here — awake
+
+[Bridge, barely audible]
+We go through years, we go through rooms
+Waiting for our turn to speak
+But the cave you fear, the words you hold
+That's where the treasure lives
+
+[Final Chorus, voice opens slightly]
+Level three, level three
+Hear the quiet underneath
+I don't need you to fix the ache
+I just need you here — alive
+
+[Outro, breath fading]`,
+    concept: "Most people listen at Level 1 (waiting to speak) or Level 2 (hearing words). Level 3 is listening to what's underneath — the emotion behind the sentence. Based on Rachel Lockett's guide to difficult conversations.",
+    keyInsight: "Level 3 listening means hearing the feeling underneath the words. Most leaders are solving the person inside their head instead of being present with what's actually being said.",
+    keyQuote: "I just need you here — awake.",
+    quoteSpeaker: "Rachel Lockett",
+    sources: [
+      { title: "A guide to difficult conversations, building high-trust teams, and designing a life you love", type: "podcast" as const, url: "https://www.lennyspodcast.com/a-guide-to-difficult-conversations-building-high-trust-teams-and-designing-a-life-you-love-rachel-lockett/", guest: "Rachel Lockett" },
+    ],
+    storyBehind: "Rachel Lockett shared a moment from Lenny's own life on the podcast: she asked him what it was like to be a father late at night, and he laughed and squirmed and looked away — but she heard the joy he couldn't articulate. That moment of Level 3 listening — hearing the emotion underneath the deflection — became the heart of this song.",
+    annotations: [
+      { lyricText: "You're building answers while I speak", note: "Rachel Lockett told Lenny that most leaders in tech default to 'solving mode' — building answers in their head while someone is still talking. She coaches leaders to shift from solving every problem to asking powerful questions, which she says makes teams move faster and feel more empowered.", sourceTitle: "A guide to difficult conversations, building high-trust teams, and designing a life you love | Rachel Lockett", sourceUrl: "https://www.lennyspodcast.com/a-guide-to-difficult-conversations-building-high-trust-teams-and-designing-a-life-you-love-rachel-lockett/" },
+      { lyricText: "I don't need you to fix the ache", note: "Lockett's core insight is that the goal of any conflict is to create mutual understanding — not to convince the other person they're wrong. She told Lenny: 'People come in ready to prove their point. There's a misguided view that the goal is to convince the other person that what they're doing is wrong.'", sourceTitle: "A guide to difficult conversations, building high-trust teams, and designing a life you love | Rachel Lockett", sourceUrl: "https://www.lennyspodcast.com/a-guide-to-difficult-conversations-building-high-trust-teams-and-designing-a-life-you-love-rachel-lockett/" },
+      { lyricText: "She asked him once, what's it like", note: "On the podcast, Lockett demonstrated Level 3 listening live with Lenny — asking him personal questions and hearing the emotion underneath his deflections. This moment became the heart of the song, showing that Level 3 listening means catching joy, fear, or pride that the speaker themselves can't articulate.", sourceTitle: "A guide to difficult conversations, building high-trust teams, and designing a life you love | Rachel Lockett", sourceUrl: "https://www.lennyspodcast.com/a-guide-to-difficult-conversations-building-high-trust-teams-and-designing-a-life-you-love-rachel-lockett/" },
+      { lyricText: "the cave you fear, the words you hold", note: "Lenny quoted the saying 'The cave you fear contains the treasure you seek' on the podcast with Lockett, connecting it to her advice about difficult conversations. Lockett agreed, adding that when leaders avoid a conversation, the right question is: 'What's important here? What do I have to learn?'", sourceTitle: "A guide to difficult conversations, building high-trust teams, and designing a life you love | Rachel Lockett", sourceUrl: "https://www.lennyspodcast.com/a-guide-to-difficult-conversations-building-high-trust-teams-and-designing-a-life-you-love-rachel-lockett/" },
+      { lyricText: "It's completely emotional", note: "Lockett challenged the assumption that tech work is purely logical: 'We operate in tech. We're supposed to give all of ourselves, all of our time, all of our energy, and it's purely logical. That's not at all true. It's completely emotional. Professionals have feelings.'", sourceTitle: "A guide to difficult conversations, building high-trust teams, and designing a life you love | Rachel Lockett", sourceUrl: "https://www.lennyspodcast.com/a-guide-to-difficult-conversations-building-high-trust-teams-and-designing-a-life-you-love-rachel-lockett/" },
+    ],
+    releaseDate: "2026-03-22",
+  },
+  {
+    slug: "the-rituals",
+    title: "The Rituals",
+    albumSlug: "the-weight",
+    trackNumber: 9,
+    duration: "3:09",
+    audioUrl: "/audio/the-rituals.mp3",
+    coverImage: "/covers/the-rituals.jpg",
+    genre: "Percussive World-Folk Groove",
+    mood: "Rhythmic, congregational, chant-like",
+    tags: ["culture", "rituals", "management", "teams"],
+    lyrics: `[Intro, layered hand percussion building — finger snaps, then shaker, then cajón]
+
+[Verse 1, warm male vocal, rhythmic and steady]
+Monday morning, same old room
+Coffee rings on every page
+Someone asks the hardest question
+No one cares about the rank
+
+[Verse 2]
+Write it down before you speak
+Hide the answers till you're done
+When the room reveals together
+Every voice becomes the one
+
+[Chorus, chant-like, full hand percussion, choral harmonies]
+Name it — teach it — pass it on
+Name it — teach it — pass it on
+Golden ritual, golden thread
+By your first Friday, it's in your bones
+
+[Verse 3, djembe enters, groove deepens]
+New kid walks in, second day
+Asks a question, outvotes the chief
+Strangers call you for the offer
+Every hand says "welcome here"
+
+[Chorus]
+Name it — teach it — pass it on
+Name it — teach it — pass it on
+Golden ritual, golden thread
+By your first Friday, it's in your bones
+
+[Bridge, stripped to finger snaps and voice, intimate]
+Culture's not the poster on the wall
+It's Monday morning, nine o'clock
+It's the rhythm underneath it all
+It's the thing you never stop
+
+[Final Chorus, full percussion, choral voices swelling]
+Name it — teach it — pass it on
+Name it — teach it — pass it on
+Golden ritual, golden thread
+By your last Friday, it's who you've become
+
+[Outro, percussion layers dropping one by one — djembe stops, cajón stops, shaker stops, finger snaps alone, then silence]`,
+    concept: "Culture isn't values on a poster — it's the rituals teams do every Monday morning. Based on Shishir Mehrotra's framework for building culture through named, teachable, repeatable practices.",
+    keyInsight: "The best company cultures have named rituals that any employee can teach to a new hire. If you can't name it, teach it, and pass it on, it's not culture — it's luck.",
+    keyQuote: "Culture's not the poster on the wall — it's Monday morning, nine o'clock.",
+    quoteSpeaker: "Shishir Mehrotra",
+    sources: [
+      { title: "Rituals for hypergrowth | Shishir Mehrotra", type: "podcast" as const, url: "https://www.lennyspodcast.com/rituals-for-hypergrowth-shishir-mehrotra-coda-youtube/", guest: "Shishir Mehrotra" },
+    ],
+    storyBehind: "Shishir Mehrotra, CEO of Coda and former YouTube VP, told Lenny that culture breaks down when it can't be transmitted. His three-part test — can you name the ritual, teach it to someone new, and have them pass it on? — came from watching YouTube scale from a small team to thousands. At Coda, new employees participate in rituals by their first Friday. At Gusto, strangers call new hires to welcome them during the offer stage.",
+    annotations: [
+      { lyricText: "Name it — teach it — pass it on", note: "Shishir Mehrotra's three-part test for whether something is a real cultural ritual: it must be named, every new employee should know it by their first Friday, and it should have a template so anyone can teach it. He developed this framework while scaling YouTube's product team at Google and later at Coda.", sourceTitle: "The rituals of great teams | Shishir Mehrotra of Coda, YouTube, Microsoft", sourceUrl: "https://www.lennyspodcast.com/the-rituals-of-great-teams-shishir-mehrotra-coda-youtube-microsoft/" },
+      { lyricText: "Write it down before you speak", note: "Coda's 'Dory and Pulse' ritual — named after the fish in Finding Nemo who asks all the questions — has people write down questions and vote silently before revealing answers together. This prevents groupthink and ensures junior voices carry as much weight as senior ones. Dozens of companies have adopted it.", sourceTitle: "The rituals of great teams | Shishir Mehrotra of Coda, YouTube, Microsoft", sourceUrl: "https://www.lennyspodcast.com/the-rituals-of-great-teams-shishir-mehrotra-coda-youtube-microsoft/" },
+      { lyricText: "Culture's not the poster on the wall", note: "Shishir was the first CEO Lenny ever had on his podcast — he broke his own 'no founders or CEOs' rule for this episode. Shishir spent six years as VP of Product and Engineering at YouTube, six years at Microsoft, and serves on Spotify's board. He argues culture fails when it can't be transmitted person to person.", sourceTitle: "The rituals of great teams | Shishir Mehrotra of Coda, YouTube, Microsoft", sourceUrl: "https://www.lennyspodcast.com/the-rituals-of-great-teams-shishir-mehrotra-coda-youtube-microsoft/" },
+      { lyricText: "New kid walks in, second day", note: "At Coda, Shishir's rituals are so embedded that new employees participate in them by their first Friday. Lenny later wrote a deep-dive newsletter calling Coda's product development process 'the most well-thought-out and executed I've never seen' — driven by named rituals like two-way writeups and Dory and Pulse.", sourceTitle: "How Coda builds product", sourceUrl: "https://www.lennysnewsletter.com/p/how-coda-builds-product" },
+      { lyricText: "Every hand says \"welcome here\"", note: "Shishir shared examples of rituals from other companies on the podcast. At Coinbase, a decision-making ritual called 'Rapids' uses subtle nudges to prevent bias. Multiple companies have created named decision-making rituals — at Square, Jack Dorsey called them 'Spades.' The pattern is the same: name it, template it, teach it.", sourceTitle: "The rituals of great teams | Shishir Mehrotra of Coda, YouTube, Microsoft", sourceUrl: "https://www.lennyspodcast.com/the-rituals-of-great-teams-shishir-mehrotra-coda-youtube-microsoft/" },
+    ],
+    releaseDate: "2026-03-22",
+  },
 ];
 
 const careerMovesTracks: Track[] = [
@@ -3317,6 +4250,169 @@ Hmm... now it is`,
     releaseDate: "2026-03-21",
     sunoId: "3957841b-db6f-49b0-b9be-fb5bf2e577df",
   },
+  {
+    slug: "make-me-care",
+    title: "Make Me Care",
+    albumSlug: "career-moves",
+    trackNumber: 6,
+    duration: "3:27",
+    audioUrl: "/audio/make-me-care.mp3",
+    coverImage: "/covers/make-me-care.jpg",
+    genre: "Cinematic Folk-Pop Ballad",
+    mood: "Sweeping, orchestral, emotionally building",
+    tags: ["storytelling", "presentations", "communication"],
+    lyrics: `[Intro, strings swell slowly, piano enters]
+
+[Verse 1, intimate, close-mic]
+You cleared your throat, the room went cold
+Thirty faces, arms are crossed
+You built the deck, rehearsed the bold
+But every word just gets lost
+
+[Pre-Chorus, building]
+You think you're center stage tonight
+But that was never yours to hold
+
+[Chorus, full strings enter, 6/8 waltz feel]
+Make me care
+Show me what could be
+Paint the world I've never seen
+And I'll follow where you lead
+Make me care
+
+[Verse 2, warmer, more confident]
+She took a graph, drew it by hand
+Mapped the speeches, found the thread
+A rise, a fall, across the land
+From what is to what's ahead
+
+[Pre-Chorus, building]
+The torch won't light the whole way through
+Five feet of dark is all you need
+
+[Chorus]
+Make me care
+Show me what could be
+Paint the world I've never seen
+And I'll follow where you lead
+Make me care
+
+[Bridge, stripped to piano and cello]
+You're reading from the slides
+But no one's reading you
+The hero's in the chairs
+Not standing at the front
+Come down, come close, come through
+
+[Chorus, final — strings at full swell, one line changed]
+Make me care
+Show me what could be
+Paint the world I've never seen
+And I will follow where you lead
+We care
+
+[Outro, strings fade, piano alone]`,
+    concept: "The art of presentation isn't about the presenter — it's about making the audience the hero. Based on Nancy Duarte's framework that the presenter is the mentor, not the protagonist.",
+    keyInsight: "The presenter is not the hero of the story — the audience is. Your job is to paint a vision of what could be and make them long for it.",
+    keyQuote: "You're reading from the slides but no one's reading you.",
+    quoteSpeaker: "Nancy Duarte",
+    sources: [
+      { title: "Storytelling with Nancy Duarte", type: "podcast" as const, url: "https://www.lennyspodcast.com/storytelling-with-nancy-duarte/", guest: "Nancy Duarte" },
+    ],
+    storyBehind: "Nancy Duarte analyzed hundreds of great speeches and discovered they all follow the same pattern: a rhythmic alternation between 'what is' and 'what could be,' building tension until the audience yearns for the new reality. Her 'torch' metaphor — that you only need to illuminate five feet ahead, not the whole path — became one of Lenny's most-quoted frameworks.",
+    annotations: [
+      { lyricText: "Show me what could be", note: "Nancy Duarte's core framework is the rhythmic contrast between 'what is' and 'what could be.' She told Lenny she even uses it at home: 'I can get my husband to do chores for me on the weekends with a real quick what is, what could be, new bliss.' The pattern works in any format — meetings, phone calls, any moment of influence.", sourceTitle: "Storytelling with Nancy Duarte: How to craft compelling presentations and tell a story that sticks", sourceUrl: "https://www.lennyspodcast.com/storytelling-with-nancy-duarte/" },
+      { lyricText: "The hero's in the chairs", note: "When Lenny asked for three bullet points to remember before any presentation, Duarte's first answer was: 'Your audience is the hero.' The presenter is the mentor — like Yoda, not Luke Skywalker. This reframe from her 2011 TED talk has become one of the most-referenced ideas on Lenny's podcast.", sourceTitle: "Storytelling with Nancy Duarte: How to craft compelling presentations and tell a story that sticks", sourceUrl: "https://www.lennyspodcast.com/storytelling-with-nancy-duarte/" },
+      { lyricText: "She took a graph, drew it by hand", note: "Duarte's firm has helped craft over 250,000 presentations in 35 years, including Al Gore's An Inconvenient Truth — which she called the most impactful. Her team worked with Gore for five years before the film, and she has the archives of Silicon Valley's rise and fall in presentation decks.", sourceTitle: "Storytelling with Nancy Duarte: How to craft compelling presentations and tell a story that sticks", sourceUrl: "https://www.lennyspodcast.com/storytelling-with-nancy-duarte/" },
+      { lyricText: "The torch won't light the whole way through", note: "Duarte's book 'Illuminate' introduced the torchbearer metaphor — leaders don't need to illuminate the entire path, just the next five feet of darkness ahead. Every great presentation is part of a larger movement where you're trying to move people toward a future they can't fully see yet.", sourceTitle: "Storytelling with Nancy Duarte: How to craft compelling presentations and tell a story that sticks", sourceUrl: "https://www.lennyspodcast.com/storytelling-with-nancy-duarte/" },
+      { lyricText: "You're reading from the slides", note: "Duarte's three tips for any presentation: (1) your audience is the hero, (2) infuse your talk with story, and (3) ask yourself 'can they see what I'm saying?' She emphasizes that empathy is the foundation — understanding what your audience fears, wants, and needs before you ever open a slide deck.", sourceTitle: "Storytelling with Nancy Duarte: How to craft compelling presentations and tell a story that sticks", sourceUrl: "https://www.lennyspodcast.com/storytelling-with-nancy-duarte/" },
+    ],
+    releaseDate: "2026-03-22",
+  },
+  {
+    slug: "the-power",
+    title: "The Power",
+    albumSlug: "career-moves",
+    trackNumber: 7,
+    duration: "3:24",
+    audioUrl: "/audio/the-power.mp3",
+    coverImage: "/covers/the-power.jpg",
+    genre: "Dark Cool Jazz",
+    mood: "Noir, knowing, late-night confessional",
+    tags: ["power", "career", "politics", "leadership"],
+    lyrics: `[Intro, muted trumpet solo over walking bass]
+
+[Verse 1, cool and knowing, almost spoken]
+Five-foot-two at the podium
+No notes, just his name
+The whole room leaned a little close
+He felt taller than the frame
+First day of class, nobody breathes
+Hands gripping the chair
+He smiled and said sit down, sit down
+This is how the world runs, yeah
+
+[Chorus, low and steady]
+Nobody told you how it works
+Nobody drew the map
+The room already chose its king
+Before you raised your hand
+Forgiven, forgotten, or both
+
+[Verse 2, groovier, walking bass prominent]
+She showed up six-foot-one in heels
+At dinners no one threw
+He quit his desk and worked the halls
+'Til every name he knew
+Employee number eleven
+The phone rang, are you in?
+They asked around for one good name —
+His was on every list
+
+[Chorus, low and steady]
+Nobody told you how it works
+Nobody drew the map
+The room already chose its king
+Before you raised your hand
+Forgiven, forgotten, or both
+
+[Bridge, stripped to bass and muted trumpet]
+The dean can't leave the building
+His wife is fading fast
+Every hour on his calendar
+Belongs to someone's ask
+You trade your time for the corner seat
+Your schedule's not your own
+Power or your freedom, love —
+You only get to choose one
+
+[Final Chorus, one line change]
+Nobody told you how it works
+Nobody drew the map
+The room already chose its king
+Now you understand
+Forgiven, forgotten, or both
+
+[Outro, trumpet trailing off]
+Not a sin — it's just a skill
+The lights go low`,
+    concept: "The uncomfortable truth about how power actually works — it's not given to the deserving, it's taken by the strategic. Based on Jeffrey Pfeffer's Stanford course on the paths to power.",
+    keyInsight: "Power isn't dirty or noble — it's a skill. The people who get it are the ones who show up at dinners no one threw, work the halls, and make sure their name is on every list.",
+    keyQuote: "The room already chose its king before you raised your hand.",
+    quoteSpeaker: "Jeffrey Pfeffer",
+    sources: [
+      { title: "The paths to power | Jeffrey Pfeffer", type: "podcast" as const, url: "https://www.lennyspodcast.com/the-paths-to-power-jeffrey-pfeffer-stanford/", guest: "Jeffrey Pfeffer" },
+    ],
+    storyBehind: "Jeffrey Pfeffer's Stanford course on power is one of the most popular and controversial in the university's history. His first-day-of-class move — walking in at five-foot-two and commanding the room with just his name — became legendary. The bridge explores the price of power: a dean who can't leave work while his wife is dying, because every hour belongs to someone else's ask.",
+    annotations: [
+      { lyricText: "Five-foot-two at the podium", note: "Jeffrey Pfeffer teaches one of the two most popular and oversubscribed courses at Stanford's Graduate School of Business, called 'Paths to Power.' One student described it as 'the cod liver oil of the Graduate School of Business — you know it's good for you, but you feel a little nervous about it.'", sourceTitle: "The paths to power | Jeffrey Pfeffer (Stanford)", sourceUrl: "https://www.lennyspodcast.com/the-paths-to-power-jeffrey-pfeffer-stanford/" },
+      { lyricText: "Nobody told you how it works", note: "Pfeffer's Seven Rules of Power: get out of your own way, break the rules, show up in a powerful fashion, create a powerful brand, network relentlessly, use your power, and understand that once you've acquired power, what you did to get there will be forgiven, forgotten, or both.", sourceTitle: "The paths to power | Jeffrey Pfeffer (Stanford)", sourceUrl: "https://www.lennyspodcast.com/the-paths-to-power-jeffrey-pfeffer-stanford/" },
+      { lyricText: "Forgiven, forgotten, or both", note: "Pfeffer's research shows that political skill is empirically correlated with higher salary, faster promotion, career happiness, and lower stress. He told Lenny: 'You're not describing how the world should work. This is just how it is.' Pfeffer replied: 'Not only is, but how it was and how it will be.'", sourceTitle: "The paths to power | Jeffrey Pfeffer (Stanford)", sourceUrl: "https://www.lennyspodcast.com/the-paths-to-power-jeffrey-pfeffer-stanford/" },
+      { lyricText: "Not a sin — it's just a skill", note: "Pfeffer deliberately takes students from denial ('I don't believe this') through anger ('I believe this and I'm angry') to acceptance. He told Lenny: 'If I think power is dirty, the first thing that's going to happen is I'm not going to do what I need to do to be successful.' His opening quote: 'If you want power to be used for good, more good people need to have power.'", sourceTitle: "The paths to power | Jeffrey Pfeffer (Stanford)", sourceUrl: "https://www.lennyspodcast.com/the-paths-to-power-jeffrey-pfeffer-stanford/" },
+      { lyricText: "He quit his desk and worked the halls", note: "In 1993, a doctor named Laura Esserman took Pfeffer's class while simultaneously getting her MBA, having her first child, and practicing medicine full-time. She claims publicly it was the only Stanford class for which she did all the reading. Pfeffer uses her story as proof that the principles work across every domain — not just business.", sourceTitle: "The paths to power | Jeffrey Pfeffer (Stanford)", sourceUrl: "https://www.lennyspodcast.com/the-paths-to-power-jeffrey-pfeffer-stanford/" },
+    ],
+    releaseDate: "2026-03-22",
+  },
 ];
 
 const electricDreamsTracks: Track[] = [
@@ -3613,6 +4709,235 @@ Hands on stone... hands on stone`,
     ],
     releaseDate: "2026-03-21",
     sunoId: "bcd26f46-27d1-4997-a360-410760e75bd1",
+  },
+  {
+    slug: "the-rise-of-cursor",
+    title: "The Rise of Cursor",
+    albumSlug: "electric-dreams",
+    trackNumber: 4,
+    duration: "3:14",
+    audioUrl: "/audio/the-rise-of-cursor.mp3",
+    coverImage: "/covers/the-rise-of-cursor.jpg",
+    genre: "Synth Dream-Pop",
+    mood: "Luminous, forward-looking, transcendent",
+    tags: ["AI", "coding", "Cursor", "future of work"],
+    lyrics: `[Intro, glitchy processed piano, building synth pad]
+
+[Verse 1, warm male vocal, intimate]
+We were drawing gears we didn't love
+Four kids chasing something close enough
+Then the screen lit up one afternoon
+And the model spoke — we left the room
+
+[Verse 2]
+Built it from the ground in thirty days
+Threw away the old and learned to stay
+Felt like pushing water up a wall
+Exponential starts out feeling small
+
+[Chorus, layered vocals, synth swell]
+After code, after code
+Where the thought becomes the thing
+No translation, no waiting
+Just the world imagining
+After code, after code
+We're designing what we mean
+Every line is disappearing
+Into something we've never seen
+
+[Verse 3]
+Sixty people, three hundred million deep
+Every keystroke, models never sleep
+Three hundred milliseconds to decide
+The gap between your mind and what's inside
+
+[Chorus, layered vocals, synth swell]
+After code, after code
+Where the thought becomes the thing
+No translation, no waiting
+Just the world imagining
+After code, after code
+We're designing what we mean
+Every line is disappearing
+Into something we've never seen
+
+[Bridge, stripped back, just piano and voice]
+We're so far from where we're going
+But the road has never shone this bright
+Taste will matter more than syntax
+And the builders own the light
+
+[Chorus, final, full production, add "we" shift]
+After code, after code
+Where the thought becomes the thing
+No translation, no waiting
+Just the world imagining
+After code, after code
+We're designing what we dream
+Every line is disappearing
+Into something we've never seen
+
+[Outro, fading glitch textures, processed piano decay]`,
+    concept: "The story of four MIT students who pivoted from mechanical engineering to build Cursor — and a vision of the 'after code' era where taste matters more than syntax.",
+    keyInsight: "Exponential starts out feeling small. Cursor went from four founders to sixty people and $300M+ in revenue by closing the gap between thought and creation to 300 milliseconds.",
+    keyQuote: "Taste will matter more than syntax.",
+    quoteSpeaker: "Michael Truell",
+    sources: [
+      { title: "The rise of Cursor", type: "podcast" as const, url: "https://www.lennyspodcast.com/the-rise-of-cursor-michael-truell/", guest: "Michael Truell" },
+    ],
+    storyBehind: "Michael Truell and three MIT classmates were studying mechanical engineering when GPT models arrived. They pivoted overnight, built their first AI coding tool in 30 days, and threw away their previous work entirely. Cursor grew to 60 employees and over $300 million in annualized revenue, with a core belief that the future of programming is about taste and intent, not syntax.",
+    annotations: [
+      { lyricText: "Four kids chasing something close enough", note: "Michael Truell and three co-founders studied computer science and math at MIT. Truell had been working on AI for 10 years and did AI research at both MIT and Google before co-founding Anysphere, the company behind Cursor.", sourceTitle: "The rise of Cursor: The $300M ARR AI tool that engineers can't stop using | Michael Truell", sourceUrl: "https://www.lennyspodcast.com/the-rise-of-cursor-michael-truell/" },
+      { lyricText: "Exponential starts out feeling small", note: "Truell told Lenny: 'The growth has been fairly just consistent on an exponential. And exponential to begin with feels fairly slow when the numbers are really low, and it didn't really feel off to the races to begin with.' Cursor hit $100M ARR in 20 months and $300M ARR in just two years.", sourceTitle: "The rise of Cursor: The $300M ARR AI tool that engineers can't stop using | Michael Truell", sourceUrl: "https://www.lennyspodcast.com/the-rise-of-cursor-michael-truell/" },
+      { lyricText: "Where the thought becomes the thing", note: "Truell described Cursor's vision as 'a world kind of after code' where programming is 'distilled down into you describing the intent to the computer for what you want in the most concise way possible.' The goal is software building reduced to pure intent specification.", sourceTitle: "The rise of Cursor: The $300M ARR AI tool that engineers can't stop using | Michael Truell", sourceUrl: "https://www.lennyspodcast.com/the-rise-of-cursor-michael-truell/" },
+      { lyricText: "Taste will matter more than syntax", note: "When asked what skills will be most valuable after code, Truell said: 'I think taste will be increasingly more valuable.' He clarified that taste isn't just visual design -- it's also 'the logic of it, and how the thing works.' Both halves of defining software matter.", sourceTitle: "The rise of Cursor: The $300M ARR AI tool that engineers can't stop using | Michael Truell", sourceUrl: "https://www.lennyspodcast.com/the-rise-of-cursor-michael-truell/" },
+      { lyricText: "Every line is disappearing", note: "Truell envisions code evolving toward pseudocode: 'It won't be the impenetrable millions of lines of code, it'll instead be something that's much terser, and easier to understand, easier to navigate.' The human stays in the driver's seat with a fast iteration loop, not slow background agents.", sourceTitle: "The rise of Cursor: The $300M ARR AI tool that engineers can't stop using | Michael Truell", sourceUrl: "https://www.lennyspodcast.com/the-rise-of-cursor-michael-truell/" },
+    ],
+    releaseDate: "2026-03-22",
+  },
+  {
+    slug: "minimum-lovable",
+    title: "Minimum Lovable",
+    albumSlug: "electric-dreams",
+    trackNumber: 5,
+    duration: "3:37",
+    audioUrl: "/audio/minimum-lovable.mp3",
+    coverImage: "/covers/minimum-lovable.jpg",
+    genre: "Intimate Acoustic Folk",
+    mood: "Wonder-struck, intimate, hopeful",
+    tags: ["AI", "vibe coding", "product", "Lovable"],
+    lyrics: `[Verse 1, whispered]
+My friends kept asking for a hand
+Someone to turn the sketch to sand
+They'd dream in colors, build in grey
+And watch the good ideas fade away
+
+[Verse 2]
+So I wrote a lamp for anyone
+You whisper what you want — it's done
+Two words and thirty seconds flat
+The thing you always dreamed of, right like that
+
+[Chorus]
+Minimum lovable, that's the start
+Built from the pieces of your heart
+Describe the dream and press send
+Minimum lovable — begin again
+
+[Verse 3]
+Three hundred thousand came to see
+What thirty seconds sets you free
+Fifteen of us and growing fast
+The door was locked — now anyone can pass
+
+[Chorus]
+Minimum lovable, that's the start
+Built from the pieces of your heart
+Describe the dream and press send
+Minimum lovable — begin again
+
+[Bridge, building]
+Two words and thirty seconds — there's your door
+You don't need permission anymore
+The last piece of software we will write
+Is the one that builds the rest to life
+
+[Chorus, with cello]
+Minimum lovable, that's the start
+Built from the pieces of your heart
+Describe the dream and press send
+Minimum lovable — begin again
+Minimum lovable — we begin`,
+    concept: "The story of Lovable — an AI tool that lets anyone build software by describing what they want. Founded because Anton Osika's friends kept asking for help turning ideas into products.",
+    keyInsight: "Lovable hit $10M ARR in 60 days with just 15 people. Their thesis: the last piece of software humans write will be the one that builds everything else.",
+    keyQuote: "Two words and thirty seconds — there's your door.",
+    quoteSpeaker: "Anton Osika",
+    sources: [
+      { title: "Building Lovable: $10M ARR in 60 days with 15 people", type: "podcast" as const, url: "https://www.lennyspodcast.com/building-lovable-10m-arr-in-60-days-with-15-people-anton-osika/", guest: "Anton Osika" },
+    ],
+    storyBehind: "Anton Osika built Lovable because his non-technical friends kept asking him to build their app ideas. He created a tool where you describe what you want in natural language and get a working product in seconds. 300,000 people showed up to try it, and the company hit $10M in annual recurring revenue in just 60 days — with only 15 employees.",
+    annotations: [
+      { lyricText: "My friends kept asking for a hand", note: "Anton Osika told Lenny that 'almost all my friends throughout my life reached out for help. Like, \"Anton, I need to build something. How do I find a great software engineer?\"' Lovable was built for the 99% of the population who don't write code.", sourceTitle: "Building Lovable: $10M ARR in 60 days with 15 people | Anton Osika", sourceUrl: "https://www.lennyspodcast.com/building-lovable-10m-arr-in-60-days-with-15-people-anton-osika/" },
+      { lyricText: "Two words and thirty seconds flat", note: "Osika described Lovable as 'your personal AI software engineer. You describe an idea and then you get a fully working product.' The tool takes an English prompt and codes a product for you in minutes, turning sketches into working software.", sourceTitle: "Building Lovable: $10M ARR in 60 days with 15 people | Anton Osika", sourceUrl: "https://www.lennyspodcast.com/building-lovable-10m-arr-in-60-days-with-15-people-anton-osika/" },
+      { lyricText: "Minimum lovable, that's the start", note: "Osika named the company after his product philosophy: 'The best word for a great product is that it's lovable. A lot of jargon that I like to use is building a minimum lovable product and then building a lovable product and then building an absolutely lovable product.'", sourceTitle: "Building Lovable: $10M ARR in 60 days with 15 people | Anton Osika", sourceUrl: "https://www.lennyspodcast.com/building-lovable-10m-arr-in-60-days-with-15-people-anton-osika/" },
+      { lyricText: "Fifteen of us and growing fast", note: "Lovable hit $4M ARR in its first four weeks and $10M ARR in two months with just 15 employees — making it the fastest growing startup in all of Europe. When Lenny asked what enabled this, Osika simply said: 'People love the product. That's the driver of the growth.'", sourceTitle: "Building Lovable: $10M ARR in 60 days with 15 people | Anton Osika", sourceUrl: "https://www.lennyspodcast.com/building-lovable-10m-arr-in-60-days-with-15-people-anton-osika/" },
+      { lyricText: "The last piece of software we will write", note: "Lenny described Lovable's thesis: 'Their goal for Lovable is for it to be the last piece of software that anybody has to write because it'll be able to create all future products for us.' By late 2025, Lovable had crossed $100M ARR — faster than even Cursor.", sourceTitle: "Building Lovable: $10M ARR in 60 days with 15 people | Anton Osika", sourceUrl: "https://www.lennyspodcast.com/building-lovable-10m-arr-in-60-days-with-15-people-anton-osika/" },
+    ],
+    releaseDate: "2026-03-22",
+  },
+  {
+    slug: "the-vibe-coder",
+    title: "The Vibe Coder",
+    albumSlug: "electric-dreams",
+    trackNumber: 6,
+    duration: "2:12",
+    audioUrl: "/audio/the-vibe-coder.mp3",
+    coverImage: "/covers/the-vibe-coder.jpg",
+    genre: "Dream-Pop / Lo-Fi Electronic",
+    mood: "Playful, futuristic, confident",
+    tags: ["AI", "vibe coding", "no-code", "future"],
+    lyrics: `[Verse 1]
+Never touched a line of code
+Don't plan to, don't need to know
+Rub the lamp, describe the wish
+Be specific — watch it click
+
+[Pre-Chorus]
+Eighty percent is thinking clear
+Twenty percent is, "Build it here"
+
+[Chorus]
+I'm a vibe coder, just press send
+Don't read the code, I write the dream
+Positively delusional, my friend
+Everything is possible — just press send
+
+[Verse 2]
+They said extensions couldn't fly
+Didn't know that, so I tried
+Merch stores, dashboards, anything
+If you can say it, you can bring
+
+[Pre-Chorus]
+Garbage in means garbage fast
+Good judgment is the thing that lasts
+
+[Chorus]
+I'm a vibe coder, just press send
+Don't read the code, I write the dream
+Positively delusional, my friend
+Everything is possible — just press send
+
+[Bridge]
+Coding's gonna be like calligraphy
+A beautiful lost art for all to see
+The future's not in syntax on the screen
+It's clarity — and taste — and what you mean
+
+[Chorus]
+I'm a vibe coder, just press send
+Don't read the code, I write the dream
+Positively delusional, my friend
+Everything is possible — just press send
+
+[Outro, fading]
+Just press send... just press send...`,
+    concept: "The rise of the professional vibe coder — people who build real products without ever reading a line of code, using AI tools and good judgment instead of technical skill.",
+    keyInsight: "Vibe coding is 80% thinking clearly about what you want and 20% telling the AI to build it. The skill isn't coding — it's clarity and taste.",
+    keyQuote: "Coding's gonna be like calligraphy — a beautiful lost art.",
+    quoteSpeaker: "Lazar Jovanovic",
+    sources: [
+      { title: "The rise of the professional vibe coder", type: "podcast" as const, url: "https://www.lennyspodcast.com/the-rise-of-the-professional-vibe-coder-lazar-jovanovic/", guest: "Lazar Jovanovic" },
+    ],
+    storyBehind: "Lazar Jovanovic has never written a line of code but built multiple products using AI coding tools. He calls himself 'positively delusional' — his ignorance of what's supposed to be impossible lets him try things experienced developers wouldn't. His prediction that coding will become like calligraphy — beautiful but unnecessary — became one of Lenny's most viral clips.",
+    annotations: [
+      { lyricText: "Rub the lamp, describe the wish", note: "Lazar uses the Aladdin and the Genie analogy: 'You rub the lamp, a genie comes out, \"I'll grant you three wishes.\" The first wish is, \"I want to be taller.\" Genie makes me 13 feet tall because I was not specific.' The lesson: AI doesn't understand 'you know what I mean' — you must be precise.", sourceTitle: "The rise of the professional vibe coder | Lazar Jovanovic", sourceUrl: "https://www.lennyspodcast.com/the-rise-of-the-professional-vibe-coder-lazar-jovanovic/" },
+      { lyricText: "Positively delusional, my friend", note: "Lazar said: 'You have to come with this delusion that absolutely everything is possible until proven wrong.' His community manager once prompted Lovable to generate a video inside the app — before that was even a feature. 'Even I thought it was impossible. I never tried it.'", sourceTitle: "The rise of the professional vibe coder | Lazar Jovanovic", sourceUrl: "https://www.lennyspodcast.com/the-rise-of-the-professional-vibe-coder-lazar-jovanovic/" },
+      { lyricText: "Coding's gonna be like calligraphy", note: "Lazar predicted: 'Coding is going to be like calligraphy. People be like, \"Oh, my God, you wrote that code? That's so amazing.\" It's going to be so rare that it's going to become an art.' This line became one of Lenny's most viral clips from the episode.", sourceTitle: "The rise of the professional vibe coder | Lazar Jovanovic", sourceUrl: "https://www.lennyspodcast.com/the-rise-of-the-professional-vibe-coder-lazar-jovanovic/" },
+      { lyricText: "Garbage in means garbage fast", note: "Lazar warned: 'AI, regardless of your background, is an amplifier. If you don't know what you're doing, you're just going to produce garbage faster.' He spends 100% of his time optimizing for 'good judgment, clarity, quality, taste' — not learning to code.", sourceTitle: "The rise of the professional vibe coder | Lazar Jovanovic", sourceUrl: "https://www.lennyspodcast.com/the-rise-of-the-professional-vibe-coder-lazar-jovanovic/" },
+      { lyricText: "Never touched a line of code", note: "Lazar is the first official vibe coding engineer at Lovable. He was previously a chief of staff with no technical background. Elena Verna (Lovable's head of growth) hired him as a full-time vibe coder — a brand new job role that Lenny called 'a really important glimpse into where things are heading for tech roles.'", sourceTitle: "The rise of the professional vibe coder | Lazar Jovanovic", sourceUrl: "https://www.lennyspodcast.com/the-rise-of-the-professional-vibe-coder-lazar-jovanovic/" },
+    ],
+    releaseDate: "2026-03-22",
   },
 ];
 
@@ -4688,6 +6013,281 @@ The world finally caught up to it`,
     ],
     releaseDate: "2026-03-21",
     sunoId: "8845b6cf-9f55-40b2-afef-dd64530f878f",
+  },
+  {
+    slug: "playing-to-win",
+    title: "Playing to Win",
+    albumSlug: "the-startup-life",
+    trackNumber: 13,
+    duration: "3:17",
+    audioUrl: "/audio/playing-to-win.mp3",
+    coverImage: "/covers/playing-to-win.jpg",
+    genre: "Contemplative Acoustic Waltz",
+    mood: "Reflective, unhurried, quietly resolute",
+    tags: ["strategy", "choices", "focus", "leadership"],
+    lyrics: `[Intro, gentle fingerpicked nylon guitar, 3/4 waltz feel]
+
+[Verse 1, intimate, close-mic]
+You drew the map with every road still open
+Told yourself you'd choose when the time was right
+But the time kept passing, nothing spoken
+And the compass spun another night
+
+[Pre-Chorus, building warmth]
+It's not the thinking that's the hardest part
+It's the cut you have to make
+
+[Chorus, warm acoustic build, open vowels]
+Are you playing to win
+Or just playing the game?
+Every road you won't take
+Is a road you can name
+Let the water find its way
+Through the choices that remain
+Are you playing to win
+Or just playing the game?
+
+[Verse 2, steady, grounded]
+She built a castle where the tide came in
+Said the walls were strong enough to hold
+But the morning found it thin as skin
+And the shore reclaimed what it was owed
+
+[Pre-Chorus]
+It's not the thinking that's the hardest part
+It's the cut you have to make
+
+[Chorus]
+Are you playing to win
+Or just playing the game?
+Every road you won't take
+Is a road you can name
+Let the water find its way
+Through the choices that remain
+Are you playing to win
+Or just playing the game?
+
+[Bridge, stripped to voice and cello, slower]
+No one's born with this
+There's no natural gift
+Just the next gap closed
+And the weight you lift
+The best way to win
+Is to never have to fight
+
+[Chorus, final, cello swells underneath]
+Are you playing to win
+Or just playing the game?
+Every road you won't take
+Is a road you can name
+Let the water find its way
+Through the choices that remain
+Are you playing to win
+Or just playing the game?
+
+[Outro, fingerpicked guitar fading, whispered]
+Let the water find its way`,
+    concept: "The hardest part of strategy isn't thinking — it's choosing what NOT to do. Based on Roger Martin's 'Playing to Win' framework of five essential strategic questions.",
+    keyInsight: "Strategy isn't about keeping your options open — it's about making irreversible choices about where to play and how to win. The best way to win is to never have to fight.",
+    keyQuote: "The best way to win is to never have to fight.",
+    quoteSpeaker: "Roger Martin",
+    sources: [
+      { title: "5 essential questions to craft a winning strategy", type: "podcast" as const, url: "https://www.lennyspodcast.com/5-essential-questions-to-craft-a-winning-strategy-roger-martin/", guest: "Roger Martin" },
+    ],
+    storyBehind: "Roger Martin, former dean of the Rotman School and advisor to P&G's CEO, argues that most companies confuse strategy with planning. Real strategy requires making uncomfortable, irreversible choices about where to play and how to win — not keeping every option open. His five-question cascade became one of Lenny's most-referenced frameworks.",
+    annotations: [
+      { lyricText: "Are you playing to win", note: "Roger Martin is professor emeritus at the Rotman School of Management, was named Global Dean of the Year in 2013, and was ranked the world's number one management thinker by Thinkers50 in 2017. His 'Playing to Win' framework with P&G CEO A.G. Lafley is one of the most-referenced strategy frameworks on Lenny's podcast.", sourceTitle: "5 essential questions to craft a winning strategy | Roger Martin", sourceUrl: "https://www.lennyspodcast.com/5-essential-questions-to-craft-a-winning-strategy-roger-martin/" },
+      { lyricText: "Every road you won't take", note: "Martin's Strategy Choice Cascade requires answers to five questions: (1) What's your winning aspiration? (2) Where to play? (3) How can you win? (4) What capabilities must you have that competitors don't? (5) What enabling management systems must you put in place?", sourceTitle: "5 essential questions to craft a winning strategy | Roger Martin", sourceUrl: "https://www.lennyspodcast.com/5-essential-questions-to-craft-a-winning-strategy-roger-martin/" },
+      { lyricText: "It's not the thinking that's the hardest part", note: "Martin told Lenny that strategy is hard for three reasons: it's intellectually challenging because it requires integrating answers to multiple questions, it's emotionally intimidating because it forces irreversible choices, and business schools teach useless theory instead of practical strategy. 'What's taught now in business schools generally sucks.'", sourceTitle: "5 essential questions to craft a winning strategy | Roger Martin", sourceUrl: "https://www.lennyspodcast.com/5-essential-questions-to-craft-a-winning-strategy-roger-martin/" },
+      { lyricText: "No one's born with this", note: "Martin told Lenny: 'I have never met this mythical beast called a great natural strategist. Great strategists have all one thing in common — they just practice.' Strategy isn't a talent you're born with; it's a skill built through repetition and reflection.", sourceTitle: "5 essential questions to craft a winning strategy | Roger Martin", sourceUrl: "https://www.lennyspodcast.com/5-essential-questions-to-craft-a-winning-strategy-roger-martin/" },
+      { lyricText: "Let the water find its way", note: "Martin insists there are only two ways to win: be differentiated or be low cost. 'There's no way to protect yourself if you're not one of those two.' Most companies fail at strategy because they try to keep every option open instead of making the uncomfortable cut of choosing where to play.", sourceTitle: "5 essential questions to craft a winning strategy | Roger Martin", sourceUrl: "https://www.lennyspodcast.com/5-essential-questions-to-craft-a-winning-strategy-roger-martin/" },
+    ],
+    releaseDate: "2026-03-22",
+  },
+  {
+    slug: "good-strategy",
+    title: "Good Strategy",
+    albumSlug: "the-startup-life",
+    trackNumber: 14,
+    duration: "3:07",
+    audioUrl: "/audio/good-strategy.mp3",
+    coverImage: "/covers/good-strategy.jpg",
+    genre: "Neo-Soul Jazz-Pop",
+    mood: "Confident, groovy, decisive",
+    tags: ["strategy", "focus", "leadership", "execution"],
+    lyrics: `[Intro, Rhodes piano groove]
+
+[Verse 1, warm and low]
+Seventeen things on the wall
+Every voice gets a line
+We clap and we call it vision
+But nothing's on the line
+The room feels good, the slide deck glows
+We leave with nothing changed
+A hundred goals, a thousand words
+And not one rearranged
+
+[Pre-Chorus, building]
+You're holding every door wide open
+Wonder why the wind won't blow
+
+[Chorus, confident groove]
+Burn the thread, burn the thread
+Focus the light on what's ahead
+Every yes you give away
+Is a no you owe yourself
+Burn the thread
+
+[Verse 2, groovier]
+David didn't match the armor
+Didn't play the giant's game
+He found the stone, he found the angle
+Called the problem by its name
+The crux is where the climb gets honest
+Where your grip meets the wall
+You solve the hardest move or don't —
+But you don't skip it, no
+
+[Pre-Chorus, building]
+You're holding every door wide open
+Wonder why the wind won't blow
+
+[Chorus, confident groove]
+Burn the thread, burn the thread
+Focus the light on what's ahead
+Every yes you give away
+Is a no you owe yourself
+Burn the thread
+
+[Bridge, stripped to bass and keys]
+Not the mission on the website
+Not the words that fill the air
+What you'll do when morning comes —
+That's the only thing that's there
+Magnifying glass and sunlight
+One black thread begins to glow
+
+[Chorus, final — one line change]
+Burn the thread, burn the thread
+Focus the light on what's ahead
+Every yes you give away
+Is a no you owe yourself
+Burn it down, burn the thread
+
+[Outro, Rhodes fading]`,
+    concept: "Most strategies fail because they're just wish lists. Real strategy means identifying the crux — the single hardest problem — and focusing all energy there. Based on Richard Rumelt's 'Good Strategy Bad Strategy.'",
+    keyInsight: "A good strategy has three parts: a diagnosis of the challenge, a guiding policy, and coherent action. Most companies skip the diagnosis and jump to a list of goals they call 'strategy.'",
+    keyQuote: "Every yes you give away is a no you owe yourself.",
+    quoteSpeaker: "Richard Rumelt",
+    sources: [
+      { title: "Good Strategy, Bad Strategy | Richard Rumelt", type: "podcast" as const, url: "https://www.lennyspodcast.com/good-strategy-bad-strategy-richard-rumelt/", guest: "Richard Rumelt" },
+    ],
+    storyBehind: "Richard Rumelt, UCLA professor and author of 'Good Strategy Bad Strategy,' told Lenny that most strategic plans are just lists of things people want — 'blue sky' goals with no diagnosis of the actual challenge. His 'crux' concept (borrowed from rock climbing) says you must identify the single hardest move and solve that first. David vs. Goliath wasn't courage — it was strategy: David refused to play the giant's game.",
+    annotations: [
+      { lyricText: "Seventeen things on the wall", note: "Richard Rumelt told Lenny that the standard bad strategy is 'a set of profit goals or performance goals' — a wish list masquerading as strategy. When he wrote Good Strategy Bad Strategy, readers flooded his inbox saying: 'Thank goodness someone finally said that these long and terminal meetings I sit through are not actually strategy.'", sourceTitle: "Good Strategy, Bad Strategy | Richard Rumelt", sourceUrl: "https://www.lennyspodcast.com/good-strategy-bad-strategy-richard-rumelt/" },
+      { lyricText: "David didn't match the armor", note: "The first chapter Rumelt wrote for Good Strategy Bad Strategy was about David and Goliath. His point: David's victory wasn't courage — it was strategy. David refused to play the giant's game, found a different angle, and exploited discovered strength.", sourceTitle: "Good Strategy, Bad Strategy | Richard Rumelt", sourceUrl: "https://www.lennyspodcast.com/good-strategy-bad-strategy-richard-rumelt/" },
+      { lyricText: "The crux is where the climb gets honest", note: "Rumelt's second book, The Crux, borrows from rock climbing: the crux is the single hardest move on a route. He told Lenny to 'identify the one or two key challenges that can actually be addressed and what are we going to do about it.' Lenny called it 'an absolute legend' moment — he's gifted the book to dozens of people.", sourceTitle: "Good Strategy, Bad Strategy | Richard Rumelt", sourceUrl: "https://www.lennyspodcast.com/good-strategy-bad-strategy-richard-rumelt/" },
+      { lyricText: "Burn the thread, burn the thread", note: "Good Strategy Bad Strategy is the most referenced strategy book across Lenny's entire archive. Guests including Will Larson (Carta, Stripe), Jag Duggal (Nubank), and Benjamin Mann (Anthropic) have all cited it as essential reading. Rumelt defines strategy as 'a design for overcoming a high-stakes challenge' — not a list of aspirations.", sourceTitle: "Good Strategy, Bad Strategy | Richard Rumelt", sourceUrl: "https://www.lennyspodcast.com/good-strategy-bad-strategy-richard-rumelt/" },
+      { lyricText: "Every yes you give away", note: "Rumelt identifies two main sources of bad strategy: lacking a real diagnosis of the challenge, and mistaking goals for strategy. A good strategy has three parts: a diagnosis, a guiding policy, and coherent action.", sourceTitle: "Good Strategy, Bad Strategy | Richard Rumelt", sourceUrl: "https://www.lennyspodcast.com/good-strategy-bad-strategy-richard-rumelt/" },
+    ],
+    releaseDate: "2026-03-22",
+  },
+  {
+    slug: "category-pirate",
+    title: "Category Pirate",
+    albumSlug: "the-startup-life",
+    trackNumber: 15,
+    duration: "2:45",
+    audioUrl: "/audio/category-pirate.mp3",
+    coverImage: "/covers/category-pirate.jpg",
+    genre: "Bold Indie Folk-Rock",
+    mood: "Anthemic, stomping, pirate energy",
+    tags: ["category design", "positioning", "startups", "strategy"],
+    lyrics: `[Intro, stomps and claps, acoustic guitar kicks in]
+
+[Verse 1, confident and driving]
+They built a better mousetrap
+Polished up the chrome
+Set it on the table
+Watched the room stay cold
+Feature list a mile long
+Every box got checked
+But nobody was looking
+Nobody showed up yet
+
+[Pre-Chorus, building]
+You're playing someone else's game
+And calling it your own
+
+[Chorus, anthemic — stomps and claps loud]
+Sail where no one's sailing
+Burn the chart they drew
+Plant the flag where no one's standing
+Name the ground beneath you
+Don't storm the gates they're guarding
+Don't wait in their line
+Sail where no one's sailing
+Make the water yours
+
+[Verse 2, grittier]
+He called it vertical railway
+Gave an old word wings
+Now they're stacking floors to heaven
+On a thing no one had seen
+You thought you wanted this —
+But what you really need
+Is a question no one's asking
+And an island no one sees
+
+[Pre-Chorus, building]
+You're playing someone else's game
+And calling it your own
+
+[Chorus, anthemic — stomps and claps loud]
+Sail where no one's sailing
+Burn the chart they drew
+Plant the flag where no one's standing
+Name the ground beneath you
+Don't storm the gates they're guarding
+Don't wait in their line
+Sail where no one's sailing
+Make the water yours
+
+[Bridge, stripped — just stomp and voice]
+Seventy-six goes to the queen
+Who drew the map before the race
+Not the ones who ran there faster
+Not the ones who found second place
+So dam the river, change the current
+Let them fight the flood you left
+
+[Chorus, final — one line change]
+Sail where no one's sailing
+Burn the chart they drew
+Plant the flag where no one's standing
+Name the ground beneath you
+Don't storm the gates they're guarding
+Don't wait in their line
+Sail where no one's sailing
+Make the water ours
+
+[Outro, stomps fading, acoustic rings out]`,
+    concept: "Don't build a better mousetrap — create a new category where you're the only option. Based on Christopher Lochhead's category design philosophy.",
+    keyInsight: "76% of the economics in any category go to the company that defined the category, not the one that competes best within it. Category creators don't fight for the throne — they build a new one.",
+    keyQuote: "Plant the flag where no one's standing.",
+    quoteSpeaker: "Christopher Lochhead",
+    sources: [
+      { title: "How to become a category pirate | Christopher Lochhead", type: "podcast" as const, url: "https://www.lennyspodcast.com/how-to-become-a-category-pirate-christopher-lochhead/", guest: "Christopher Lochhead" },
+    ],
+    storyBehind: "Christopher Lochhead argues that competing in someone else's category is a losing game. He points to Elisha Otis, who didn't call his invention a 'vertical people mover' — he called it an elevator, creating an entirely new category. Lochhead's data shows that 76 cents of every dollar in a category goes to the company that defined the category itself.",
+    annotations: [
+      { lyricText: "They built a better mousetrap", note: "Lochhead argues most entrepreneurs make 'an unquestioned, unconsidered, undialogued decision that they don't know they made: I am going to compete in a market with demand, with a better product.' He points out that of roughly 100,000 marketing books on Amazon, virtually all teach how to compete and win — not how to create.", sourceTitle: "How to become a category pirate | Christopher Lochhead", sourceUrl: "https://www.lennyspodcast.com/how-to-become-a-category-pirate-christopher-lochhead/" },
+      { lyricText: "Seventy-six goes to the queen", note: "Lochhead's research, peer-reviewed and published in Harvard Business Review, found that in tech categories, one company earns 76% of the total value created (measured by market cap). 'When we make the decision to compete, we have unwittingly said we're going to fight for the 24%.'", sourceTitle: "How to become a category pirate | Christopher Lochhead", sourceUrl: "https://www.lennyspodcast.com/how-to-become-a-category-pirate-christopher-lochhead/" },
+      { lyricText: "You're playing someone else's game", note: "Lochhead told Lenny: 'Nobody legendary ever did that. Not a one. We all know who Bob Marley is. We don't know who the 17th greatest reggae musician is. We all know who Pablo Picasso is. We don't know who the fifth greatest cubist artist is.' Category creators, not competitors, become legends.", sourceTitle: "How to become a category pirate | Christopher Lochhead", sourceUrl: "https://www.lennyspodcast.com/how-to-become-a-category-pirate-christopher-lochhead/" },
+      { lyricText: "He called it vertical railway", note: "Lochhead uses the example of Gojo Industries, whose founder reimagined hand-washing not as 'how do I wash my hands' but 'how do I wash my hands without a disgusting bar of soap?' — creating the category of liquid soap and later hand sanitizer (Purell). The company that defines the problem wins.", sourceTitle: "How to become a category pirate | Christopher Lochhead", sourceUrl: "https://www.lennyspodcast.com/how-to-become-a-category-pirate-christopher-lochhead/" },
+      { lyricText: "Name the ground beneath you", note: "Lochhead distinguishes between creating demand and capturing demand: 'The company that designs the space and gets it to tip at scale — specifically gets a meaningful percentage of the world to agree with their definition of a problem set, which then leads to their definition of a solution set — wins.'", sourceTitle: "How to become a category pirate | Christopher Lochhead", sourceUrl: "https://www.lennyspodcast.com/how-to-become-a-category-pirate-christopher-lochhead/" },
+    ],
+    releaseDate: "2026-03-22",
   },
 ];
 
@@ -5851,6 +7451,83 @@ The door is closed...`,
     releaseDate: "2026-03-21",
     sunoId: "392b2f8d-015c-4281-811a-88c7984985f5",
   },
+  {
+    slug: "elegant-puzzle",
+    title: "Elegant Puzzle",
+    albumSlug: "deep-work",
+    trackNumber: 5,
+    duration: "2:57",
+    audioUrl: "/audio/elegant-puzzle.mp3",
+    coverImage: "/covers/elegant-puzzle.jpg",
+    genre: "Lo-Fi Hip Hop Groove",
+    mood: "Conversational, clockwork, unhurried",
+    tags: ["engineering management", "systems thinking", "strategy"],
+    lyrics: `[Intro, lo-fi beat with ticking clock]
+
+[Verse 1, conversational]
+Servers restart every twelve
+Nobody remembers why
+Built a model, clean on paper
+But the numbers start to lie
+Measured twice and then a third time
+Then a tenth, then lost the thread
+Dashboard full of perfect data
+Nothing actually gets fed
+
+[Chorus, relaxed hook]
+Tick, tick — no way around
+Tick, tick — just through
+Tick, tick — keep turning the dial
+Till the pieces pull through
+
+[Verse 2, cinematic]
+Champagne flutes and sushi platters
+Launch night, and the whole site's down
+Five of us still in the building
+Thirty days to bring it 'round
+Python bug, a default value
+Simple thing nobody caught
+I became the one who stayed here
+Only fool who held the thought
+
+[Chorus, relaxed hook]
+Tick, tick — no way around
+Tick, tick — just through
+Tick, tick — keep turning the dial
+Till the pieces pull through
+
+[Bridge, stripped to clock and bass]
+Use the tools you already own
+Boring strategy that works
+Every shiny thing you chase
+Is a system left in the dirt
+The model breaks, the real world speaks
+Fix the gap, then go again
+
+[Chorus, final — one line change]
+Tick, tick — no way around
+Tick, tick — just through
+Tick, tick — keep turning the dial
+Till the whole thing pulls through
+
+[Outro, clock fading to silence]`,
+    concept: "The messy, unglamorous reality of engineering management — where servers restart for unknown reasons, launches crash, and the real work is staying through the boring parts. Based on Will Larson's systems-thinking approach.",
+    keyInsight: "The best engineering leaders use boring strategies that work rather than chasing shiny new tools. The real skill is staying with the problem long enough to find the simple fix.",
+    keyQuote: "There's no way around. There's only through.",
+    quoteSpeaker: "Will Larson",
+    sources: [
+      { title: "The engineering mindset | Will Larson", type: "podcast" as const, url: "https://www.lennyspodcast.com/the-engineering-mindset-will-larson-carta-stripe-uber-calm/", guest: "Will Larson" },
+    ],
+    storyBehind: "Will Larson spent years at companies like Uber, Stripe, and Calm learning that engineering management is mostly unglamorous problem-solving. His book 'An Elegant Puzzle' argues that systems thinking — understanding how pieces interact — matters more than heroic individual effort. The Digg V4 launch story (champagne and sushi while the site crashed) became a defining moment in his career.",
+    annotations: [
+      { lyricText: "Tick, tick — no way around", note: "Will Larson is CTO at Carta and former engineering leader at Stripe, Uber, and Calm. His book 'An Elegant Puzzle' is considered essential reading for engineering leaders. He told Lenny he advocates for treating engineers 'like adults' rather than coddling them from hard problems.", sourceTitle: "The engineering mindset | Will Larson", sourceUrl: "https://www.lennyspodcast.com/the-engineering-mindset-will-larson-carta-stripe-uber-calm/" },
+      { lyricText: "Built a model, clean on paper", note: "Larson warned that systems thinking has a major pitfall: 'The least successful but smartest people I've worked with were really strong systems thinking advocates.' The danger is when people find their model and reality in conflict and conclude 'reality is wrong.'", sourceTitle: "The engineering mindset | Will Larson", sourceUrl: "https://www.lennyspodcast.com/the-engineering-mindset-will-larson-carta-stripe-uber-calm/" },
+      { lyricText: "Champagne flutes and sushi platters", note: "The Digg V4 launch is a defining story from Larson's early career. After a heroic engineering stretch to get the site working, the company still went to zero. A new CEO came in, did layoffs, and the team dropped from about 100 people to 30 within nine months.", sourceTitle: "The engineering mindset | Will Larson", sourceUrl: "https://www.lennyspodcast.com/the-engineering-mindset-will-larson-carta-stripe-uber-calm/" },
+      { lyricText: "I became the one who stayed here", note: "Larson became an engineering manager just two and a half years into his career at Digg, basically running the entire engineering team 'because everyone who had a lick of sense quit or got laid off.' He says companies having a rough time can be the best learning environments early in your career.", sourceTitle: "The engineering mindset | Will Larson", sourceUrl: "https://www.lennyspodcast.com/the-engineering-mindset-will-larson-carta-stripe-uber-calm/" },
+      { lyricText: "Use the tools you already own", note: "Larson told Lenny: 'We often treat engineers a little bit like children instead of giving them the responsibilities and ability to actually thrive as adults.' His philosophy: don't shelter engineers from real problems — that's 'how they're going to get the opportunity to grow.'", sourceTitle: "The engineering mindset | Will Larson", sourceUrl: "https://www.lennyspodcast.com/the-engineering-mindset-will-larson-carta-stripe-uber-calm/" },
+    ],
+    releaseDate: "2026-03-22",
+  },
 ];
 
 const humanSideTracks: Track[] = [
@@ -6291,6 +7968,169 @@ Breathe out... let the calm begin`,
     ],
     releaseDate: "2026-03-21",
     sunoId: "f95aa5cb-688d-44ff-86cf-c085a318b7be",
+  },
+  {
+    slug: "resilience-over-happiness",
+    title: "Resilience Over Happiness",
+    albumSlug: "the-human-side",
+    trackNumber: 6,
+    duration: "3:47",
+    audioUrl: "/audio/resilience-over-happiness.mp3",
+    coverImage: "/covers/resilience-over-happiness.jpg",
+    genre: "Bare Intimate Folk",
+    mood: "Vulnerable, tender, stripped-back",
+    tags: ["parenting", "leadership", "resilience", "boundaries"],
+    lyrics: `[Intro, nylon guitar fingerpicked]
+
+[Verse 1, gentle and close]
+She's three years old, the puzzle's wrong
+The pieces scattered on the floor
+She's crying "do it, do it for me"
+And I'm still kneeling by the door
+My hands could fix it in a breath
+Could wipe her tears before they fall
+But something deeper holds me here
+Just sitting with her through it all
+
+[Chorus, bare — voice and cello]
+This is hard
+And I can do hard things
+This is hard
+Let the morning come
+
+[Verse 2, cello enters]
+He's twenty-six, first week as lead
+The project bleeding through the seams
+He calls at ten and says "I'm lost"
+And I remember what that means
+I want to carry him to shore
+I want to say "I'll take the wheel"
+But I stay quiet on the line
+And let him find what's truly real
+
+[Chorus]
+This is hard
+And I can do hard things
+This is hard
+Let the morning come
+
+[Bridge, stripped to cello alone]
+I believe you — yes, it hurts
+I believe in you — you'll learn
+One foot down inside the hole
+One foot standing on the firm
+Not the fixing, not the saving
+Just the staying when it burns
+
+[Verse 3, most intimate]
+Perfect's creepy, that's what she said
+Only the living get it wrong
+You don't repair what isn't broken
+Repair is where you both grow strong
+I held my daughter through the screaming
+I held the phone through silent tears
+I will not take that feeling from you —
+The one that builds across the years
+
+[Chorus — final, one word changed]
+This is hard
+And we can do hard things
+This is hard
+Let the morning come
+
+[Outro, cello fading alone]`,
+    concept: "The courage to let someone you love struggle — whether a three-year-old with a puzzle or a first-time manager drowning in their new role. Based on Dr. Becky Kennedy's philosophy that building resilience matters more than preventing discomfort.",
+    keyInsight: "The most loving thing you can do as a parent or leader isn't fixing the problem — it's staying present while someone learns to fix it themselves.",
+    keyQuote: "I will not take that feeling away from you.",
+    quoteSpeaker: "Dr. Becky Kennedy",
+    sources: [
+      { title: "A child psychologist's guide to working with difficult adults", type: "podcast" as const, url: "https://www.lennyspodcast.com/a-child-psychologists-guide-to-working-with-difficult-adults-dr-becky-kennedy-good-inside/", guest: "Dr. Becky Kennedy" },
+    ],
+    storyBehind: "Dr. Becky Kennedy's episode with Lenny became one of his most-shared ever. Her framework — that children (and adults) need someone who believes them ('yes, it hurts') AND believes in them ('you'll learn') — resonated deeply with leaders who saw parallels to managing struggling team members. Her phrase 'perfect is creepy' became a viral moment.",
+    annotations: [
+      { lyricText: "This is hard", note: "Dr. Becky Kennedy told Lenny: 'Our whole parenting philosophy is resilience over happiness. When we're thinking about a resilient work culture, we want people who can say, \"This is hard and I can do hard things.\"' She's a clinical psychologist and CEO of Good Inside.", sourceTitle: "A child psychologist's guide to working with difficult adults | Dr. Becky Kennedy", sourceUrl: "https://www.lennyspodcast.com/a-child-psychologists-guide-to-working-with-difficult-adults-dr-becky-kennedy-good-inside/" },
+      { lyricText: "Perfect's creepy, that's what she said", note: "Dr. Becky says at home and at work: 'Perfect is creepy. You don't even want to be perfect. Only non-humans can ever be perfect.' She learned in clinical psych grad school that what differentiates secure attachment isn't the absence of mistakes — it's the presence of repair.", sourceTitle: "A child psychologist's guide to working with difficult adults | Dr. Becky Kennedy", sourceUrl: "https://www.lennyspodcast.com/a-child-psychologists-guide-to-working-with-difficult-adults-dr-becky-kennedy-good-inside/" },
+      { lyricText: "I believe you — yes, it hurts", note: "Dr. Becky's framework for sturdy leadership: believe people ('yes, it hurts') AND believe in them ('you'll learn'). She compared it to a good sports coach: 'You're a good player. Something's going on. Let's get in the gym tomorrow. I believe in you.'", sourceTitle: "A child psychologist's guide to working with difficult adults | Dr. Becky Kennedy", sourceUrl: "https://www.lennyspodcast.com/a-child-psychologists-guide-to-working-with-difficult-adults-dr-becky-kennedy-good-inside/" },
+      { lyricText: "Not the fixing, not the saving", note: "Dr. Becky defines boundaries as 'what you tell someone else you will do, and it requires the other person to do nothing. Making a request — that's not a boundary.' The same principle applies to parenting and managing: don't fix, stay present.", sourceTitle: "A child psychologist's guide to working with difficult adults | Dr. Becky Kennedy", sourceUrl: "https://www.lennyspodcast.com/a-child-psychologists-guide-to-working-with-difficult-adults-dr-becky-kennedy-good-inside/" },
+      { lyricText: "You don't repair what isn't broken", note: "Dr. Becky's core insight: 'The idea of being good inside inherently requires us to separate behavior and identity. Someone's late to work a lot — \"Oh, that person's lazy.\" The quickest way to have an unproductive conversation is to lose sight of the fact that someone's good inside.'", sourceTitle: "A child psychologist's guide to working with difficult adults | Dr. Becky Kennedy", sourceUrl: "https://www.lennyspodcast.com/a-child-psychologists-guide-to-working-with-difficult-adults-dr-becky-kennedy-good-inside/" },
+    ],
+    releaseDate: "2026-03-22",
+  },
+  {
+    slug: "ikigai",
+    title: "Ikigai",
+    albumSlug: "the-human-side",
+    trackNumber: 7,
+    duration: "3:19",
+    audioUrl: "/audio/ikigai.mp3",
+    coverImage: "/covers/ikigai.jpg",
+    genre: "Atmospheric Folk Waltz",
+    mood: "Reflective, contemplative, redemptive",
+    tags: ["career", "failure", "purpose", "resilience"],
+    lyrics: `[Verse 1, whispered]
+Drove his daddy's Pontiac west
+To trace the names inside a case
+Nineteen months was all it took
+From front page news to no one's face
+Gave the money back, walked out
+The winter came and stayed for years
+Found a song inside the static
+Pressed his ear against the speakers
+
+[Chorus, building]
+What gets you out of bed
+When everything you built has burned?
+What gets you out of bed
+Is something money never earned
+
+[Verse 2]
+They said come build a TV for your hand
+Two billion couldn't buy a second chance
+He'd said he'd be a pastry chef instead
+But two days turned to six, he couldn't stand
+To let a good team build without him there
+It died before the year was done
+He said I'm embarrassed, and I'm grateful
+Both of those are true at once
+
+[Chorus]
+What gets you out of bed
+When everything you built has burned?
+What gets you out of bed
+Is something money never earned
+
+[Bridge, strings enter]
+Every door he walked through
+Opened from the wreck
+Pets.com led to Pandora
+Pandora — eighty million ears
+Pressed against the same song
+He'd been chasing all those years
+
+[Final Chorus, full arrangement]
+What gets you out of bed
+When everything you built has burned?
+What gets you out of bed
+Is something only wreckage learns
+
+[Outro, piano alone]
+Ohhhh... what gets you out of bed`,
+    concept: "Tom Conrad's career through Pets.com, Pandora, and Quibi — billion-dollar failures that each led somewhere better. The song never names ikigai but embodies it: the thing that gets you out of bed isn't success, it's the love of building.",
+    keyInsight: "Every door Tom Conrad walked through opened from the wreck of what came before. Pets.com led to Pandora, Quibi's failure led to deeper self-knowledge. Failure isn't the obstacle — it's the mechanism.",
+    keyQuote: "I'm embarrassed, and I'm grateful. Both of those are true at once.",
+    quoteSpeaker: "Tom Conrad",
+    sources: [
+      { title: "Billion dollar failures, and billion dollar success", type: "podcast" as const, url: "https://www.lennyspodcast.com/billion-dollar-failures-and-billion-dollar-success-tom-conrad-quibi-pandora-zero/", guest: "Tom Conrad" },
+    ],
+    storyBehind: "Tom Conrad drove his father's Pontiac from Michigan to Silicon Valley as a teenager, inspired by the names signed inside a Macintosh case. He joined Pets.com (which lasted 19 months and became the poster child of the dot-com bust), then found his way to Pandora where he helped build music streaming for 80 million listeners. When Quibi burned through $2 billion and died, he told Lenny he was both embarrassed and grateful — because every failure had led to something he loved more.",
+    annotations: [
+      { lyricText: "What gets you out of bed", note: "Tom Conrad told Lenny that the thing that gets you out of bed — 'the acclaim of your peers, financial reward, outside impact on culture, whatever it is — you can achieve that in collaboration with others. You don't have to be the person that raises the seed round.'", sourceTitle: "Billion dollar failures, and billion dollar success | Tom Conrad", sourceUrl: "https://www.lennyspodcast.com/billion-dollar-failures-and-billion-dollar-success-tom-conrad-quibi-pandora-zero/" },
+      { lyricText: "Nineteen months was all it took", note: "Pets.com lasted roughly 19 months and became the poster child of the dot-com bust. Conrad said there were three overfunded pet e-commerce sites, each raising over $50 million. They all thought it was zero-sum and spent each other into oblivion on promotions.", sourceTitle: "Billion dollar failures, and billion dollar success | Tom Conrad", sourceUrl: "https://www.lennyspodcast.com/billion-dollar-failures-and-billion-dollar-success-tom-conrad-quibi-pandora-zero/" },
+      { lyricText: "He said I'm embarrassed, and I'm grateful", note: "About Quibi, Conrad told Lenny: 'I'm embarrassed about some of what happened with Quibi for sure, but I'm super grateful for the experience. I just really fell in love with the industry again, and was reminded of just how rewarding it can be to build something even if you stumble pretty mightily along the way.'", sourceTitle: "Billion dollar failures, and billion dollar success | Tom Conrad", sourceUrl: "https://www.lennyspodcast.com/billion-dollar-failures-and-billion-dollar-success-tom-conrad-quibi-pandora-zero/" },
+      { lyricText: "Pandora — eighty million ears", note: "Conrad was CTO of Pandora and helped take it from zero to 80 million users. He was also VP of Product at Snap (right-hand man to Evan Spiegel for two years) and has been on the Board of Sonos for over seven years. His career spans both billion-dollar failures and billion-dollar successes.", sourceTitle: "Billion dollar failures, and billion dollar success | Tom Conrad", sourceUrl: "https://www.lennyspodcast.com/billion-dollar-failures-and-billion-dollar-success-tom-conrad-quibi-pandora-zero/" },
+      { lyricText: "Two billion couldn't buy a second chance", note: "Quibi raised over $2 billion and died less than a year after launch. Conrad said the biggest lesson from both Pets.com and Quibi is: 'These things make you better. They became dominoes that opened doors for me in my own professional life that maybe just wouldn't have opened at all.'", sourceTitle: "Billion dollar failures, and billion dollar success | Tom Conrad", sourceUrl: "https://www.lennyspodcast.com/billion-dollar-failures-and-billion-dollar-success-tom-conrad-quibi-pandora-zero/" },
+    ],
+    releaseDate: "2026-03-22",
   },
 ];
 
