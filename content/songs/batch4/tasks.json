@@ -1,0 +1,130 @@
+{
+  "batch": 4,
+  "created": "2026-03-21",
+  "strategy": "Fill iconic gaps — these are Lenny's most legendary episodes and newsletter posts that have NO song yet. Pricing, strategy, storytelling, culture, sales, GTM. Every one of these is a topic Lenny's audience would expect to see represented.",
+  "tasks": [
+    {
+      "id": 1,
+      "idea": "Name Your Price",
+      "description": "Song about SaaS pricing — the most neglected growth lever. Value metrics, willingness to pay, the quarterly pricing habit. Patrick Campbell's 'monetization sits at the nexus of uncomfortable and long-term.' Naomi Ionita's three biggest pricing mistakes: waiting too long, underpricing, set-it-and-forget-it. Read podcasts/patrick-campbell.md for 10 lessons on bootstrapping including pricing mastery. Read podcasts/naomi-ionita.md for how to price your product. Read newsletters/pricing-your-saas-product.md for the SaaS pricing playbook.",
+      "research_keywords": ["pricing", "monetization", "value metric", "SaaS pricing", "Patrick Campbell", "Naomi Ionita"],
+      "output_file": "name-your-price",
+      "album": "Growth Engine",
+      "source_files": [
+        "podcasts/patrick-campbell.md",
+        "podcasts/naomi-ionita.md",
+        "newsletters/pricing-your-saas-product.md"
+      ],
+      "complete": true
+    },
+    {
+      "id": 2,
+      "idea": "Seven Powers",
+      "description": "Song about Hamilton Helmer's 7 Powers framework — the only strategy book every top founder recommends. Power requires a benefit AND a barrier. Warren Buffett's 'economic castles protected by unbreachable moats.' The path to power is where the rubber meets the road. Read podcasts/hamilton-helmer.md for the full conversation on business strategy.",
+      "research_keywords": ["seven powers", "Hamilton Helmer", "moat", "competitive advantage", "strategy"],
+      "output_file": "seven-powers",
+      "album": "The Startup Life",
+      "source_files": [
+        "podcasts/hamilton-helmer.md"
+      ],
+      "complete": true
+    },
+    {
+      "id": 3,
+      "idea": "Tell the Story",
+      "description": "Song about Andy Raskin's strategic narrative — the story that aligns your entire company. Not a pitch deck, not a tagline — a narrative that makes people understand why they need you. He went from failed startup to discovering that 'we didn't change the product, just how we talked about it.' Read podcasts/andy-raskin-.md for the full conversation on strategic narrative.",
+      "research_keywords": ["strategic narrative", "Andy Raskin", "storytelling", "pitch", "alignment"],
+      "output_file": "tell-the-story",
+      "album": "Career Moves",
+      "source_files": [
+        "podcasts/andy-raskin-.md"
+      ],
+      "complete": true
+    },
+    {
+      "id": 4,
+      "idea": "Culture Code",
+      "description": "Song about Netflix's culture of excellence — talent density, radical candor, freedom and responsibility. Elizabeth Stone's journey as CTO, the 360 feedback culture, 'the keeper test.' The culture deck that blew everyone's minds. Read podcasts/elizabeth-stone.md for how Netflix builds a culture of excellence.",
+      "research_keywords": ["Netflix culture", "talent density", "radical candor", "keeper test", "Elizabeth Stone"],
+      "output_file": "culture-code",
+      "album": "The Weight",
+      "source_files": [
+        "podcasts/elizabeth-stone.md"
+      ],
+      "complete": true
+    },
+    {
+      "id": 5,
+      "idea": "Founding Sales",
+      "description": "Song about founder-led sales — the most uncomfortable skill every technical founder must learn. Pete Kazanjy's journey from PM to accidental sales leader. 'This isn't rocket surgery, anyone can learn this.' Modern sales is not old sales. The book he wished he had. Read podcasts/pete-kazanjy.md for the full conversation on founder-led sales.",
+      "research_keywords": ["founder-led sales", "Pete Kazanjy", "B2B sales", "selling", "startup sales"],
+      "output_file": "founding-sales",
+      "album": "The Startup Life",
+      "source_files": [
+        "podcasts/pete-kazanjy.md"
+      ],
+      "complete": true
+    },
+    {
+      "id": 6,
+      "idea": "Storyworthy",
+      "description": "Song about Matthew Dicks' storytelling philosophy applied to business — every story is about a 5-second moment of transformation. The Tuesday night anecdote that changed how Slack pitched against Microsoft. 'People don't want to hear statistics, they want to hear stories.' Read podcasts/matthew-dicks.md for how to tell better stories.",
+      "research_keywords": ["Matthew Dicks", "Storyworthy", "storytelling", "business narrative", "transformation"],
+      "output_file": "storyworthy",
+      "album": "The Weight",
+      "source_files": [
+        "podcasts/matthew-dicks.md"
+      ],
+      "complete": false
+    },
+    {
+      "id": 7,
+      "idea": "The GTM",
+      "description": "Song about go-to-market strategy — the playbook every startup needs. Jeanne DeWitt Grosser's experience at Stripe, Google, and Vercel. GTM is not just sales — it's every function that touches a customer or makes a dollar. The AI-powered GTM engineering revolution. Read podcasts/jeanne-grosser.md for what world-class GTM looks like.",
+      "research_keywords": ["go to market", "GTM", "sales strategy", "Jeanne DeWitt Grosser", "revenue"],
+      "output_file": "the-gtm",
+      "album": "Growth Engine",
+      "source_files": [
+        "podcasts/jeanne-grosser.md"
+      ],
+      "complete": false
+    },
+    {
+      "id": 8,
+      "idea": "Free to Paid",
+      "description": "Song about the freemium vs trial decision — making free work for you. 90% of freemium products also offer trials. Reverse trials convert at 2x the rate of classic freemium. The full funnel from sign-up through activation to monetization. Read newsletters/freemium-vs-trial.md for the framework. Read newsletters/what-is-good-free-to-paid-conversion.md for the benchmarks and tactics.",
+      "research_keywords": ["freemium", "free trial", "conversion", "PLG", "free-to-paid"],
+      "output_file": "free-to-paid",
+      "album": "By the Numbers",
+      "source_files": [
+        "newsletters/freemium-vs-trial.md",
+        "newsletters/what-is-good-free-to-paid-conversion.md"
+      ],
+      "complete": false
+    },
+    {
+      "id": 9,
+      "idea": "The Lean",
+      "description": "Song about Lean Startup — Eric Ries' build-measure-learn loop that changed how startups work. Reflections on the movement 15 years later: what worked, what was misunderstood, and what's next. The MVP that launched a methodology. Read podcasts/eric-ries.md for reflections on a movement.",
+      "research_keywords": ["lean startup", "Eric Ries", "build measure learn", "MVP", "validated learning"],
+      "output_file": "the-lean",
+      "album": "The Startup Life",
+      "source_files": [
+        "podcasts/eric-ries.md"
+      ],
+      "complete": false
+    },
+    {
+      "id": 10,
+      "idea": "Pattern Breaker",
+      "description": "Song about finding breakthrough startup ideas — Mike Maples Jr's framework for pattern-breaking. 'Don't be the best, be the only.' Inflections, living in the future, non-consensus insights. A startup is a different type of capitalist — there's nothing to compound yet. Read podcasts/mike-maples-jr.md for how to find a breakthrough startup idea.",
+      "research_keywords": ["pattern breaker", "Mike Maples", "breakthrough idea", "inflection", "non-consensus"],
+      "output_file": "pattern-breaker",
+      "album": "The Startup Life",
+      "source_files": [
+        "podcasts/mike-maples-jr.md"
+      ],
+      "complete": false
+    }
+  ]
+}

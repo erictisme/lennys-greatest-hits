@@ -1,15 +1,3 @@
-# Ralph DEFAULT run Sat Mar 21 18:56:07 +08 2026
-Task 1 DONE: Restructured 9 albums → 11 JTBD albums. Moved 35 tracks to correct arrays, updated all albumSlug fields, removed old album definitions (founders, product, builders, the-operators, frameworks). Build passes.
-Task 2 DONE: Replaced dont-break-the-streak + im-in-the-room with new batch2 MP3s, covers, updated genre/mood. Annotations already high-quality. Build passes.
-Task 3 DONE: Replaced build-the-machine + doesnt-feel-right-yet with new batch2 MP3s, covers, updated genre/mood to match new styles. Annotations already high-quality (4 each). Build passes.
-Task 4 DONE: Replaced the-ramp-speed + the-racecar with new batch2 MP3s, covers, updated genre/mood to match new styles. Annotations already high-quality (5 each). Build passes.
-Task 5 DONE: Replaced find-your-north-star + nobodys-coming with batch2 MP3s/covers. Updated genre/mood, added full lyrics + 5 annotations for nobodys-coming. Build passes.
-Task 6 DONE: Added ask-for-help + nervous-system to the-human-side album. Extracted covers, copied MP3s, wrote 5 annotations each from Lenny MCP research. Build passes.
-Task 7 DONE: Added bend-the-room + the-stack-rank to career-moves album. Extracted covers, copied MP3s, wrote 5 annotations each from Jules Walter (influence) and Tara Seshan (tradeoffs) sources. Build passes.
-Task 8 DONE: Added first-ten + the-closer + the-one-question to the-talent-search album. Extracted covers, copied MP3s, wrote 5 annotations each from hiring-your-early-team, Lauren Ipsen podcast, and interview questions newsletter. Build passes.
-Task 9 DONE: Added never-search-alone + ninety-three-percent + product-sense to the-interview album. Extracted covers, copied MP3s, wrote 5 annotations each from Phyl Terry podcast, Coach Erika newsletter, and Ben Erez/Jules Walter product sense guides. Build passes.
-Task 10 DONE: Added godmother + the-new-stack to electric-dreams album. Extracted covers, copied MP3s, wrote 5 annotations each from Dr. Fei-Fei Li podcast and counterintuitive AI products newsletter. Build passes.
-Task 11 DONE: Added indistractable + make-time + protect-the-block to deep-work album. Extracted covers, copied MP3s, wrote 5 annotations each from Nir Eyal podcast, Jake Knapp podcast, and Lenny's time management newsletters. Build passes.
-Task 12 DONE: Added measure-twice + the-numbers-dont-lie + the-unlock to by-the-numbers album. Extracted covers, copied MP3s, wrote 5 annotations each from cohort retention (Olga Berezovsky), churn benchmarks (Patrick Campbell), and activation metrics (Hila Qu/Badrul Farooqi) newsletters. Build passes.
-Task 13 DONE: Added the-call + the-plan to the-weight album. Extracted covers, copied MP3s, wrote 5 annotations each from decision-making frameworks (Gokul Rajaram/SPADE) and W Framework planning (Airbnb/Eventbrite) newsletters. Build passes.
-Task 14 DONE: Final verification — 55 tracks across 11 albums, all track numbers sequential, no duplicate slugs, all MP3s and covers present. TypeScript + build pass clean.
+# Ralph DEFAULT run Sat Mar 21 20:02:14 +08 2026
+Task 6: Generated batch 4 songs 1-5 (Name Your Price, Seven Powers, Tell the Story, Culture Code, Founding Sales). 15 files: 5 research briefs, 5 lyrics, 5 suno prompts.
+Batch mix: jazz-pop/Bb, anthemic folk 6/8/D, acoustic folk/G, piano waltz/Eb, lo-fi neo-soul/F#m. Female vocal on song 5, violin on song 2, cello on songs 3+4, muted trumpet on song 5.

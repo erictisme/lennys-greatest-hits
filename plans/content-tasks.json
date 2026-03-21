@@ -25,68 +25,79 @@
       "id": 2,
       "category": "content",
       "priority": 1,
-      "description": "CREATE BATCH 3 TASKS: Based on the album recategorization from task 1, read content/songs/album-recategorization.md and create content/songs/batch3/tasks.json with the highest-priority songs to generate next. Pick 15-25 songs that fill the biggest gaps across the 11 albums. Each task must include: idea name, description with MCP filenames to read, research_keywords for fallback search, output_file slug, album assignment. DONE: content/songs/batch3/tasks.json exists with 15-25 tasks, each with complete MCP filenames. NOT TOUCH: Do not modify existing batch1 or batch2 files. VERIFY: tasks.json is valid JSON, has 15+ tasks, each task has id/idea/description/research_keywords/output_file/album/complete fields.",
-      "steps": [
-        "Read content/songs/album-recategorization.md for gap analysis and batch 3 priorities",
-        "Read content/songs/artist-palette.md for genre guidance",
-        "For each gap album, use mcp__lennysdata__search_content to find the best source articles/podcasts",
-        "Create content/songs/batch3/tasks.json with 15-25 songs",
-        "Each task has: id, idea, description (with MCP filenames), research_keywords, output_file, album, complete: false",
-        "Prioritize: albums with 0-1 songs get filled first, then albums with 2 songs",
-        "tasks.json is valid JSON with 15+ tasks"
-      ],
-      "files": ["content/songs/batch3/tasks.json", "content/songs/album-recategorization.md"],
+      "description": "CREATE BATCH 3 TASKS — COMPLETED",
+      "steps": [],
+      "files": ["content/songs/batch3/tasks.json"],
       "passes": true
     },
     {
       "id": 3,
       "category": "content",
       "priority": 1,
-      "description": "GENERATE SONGS (BATCH 3, FIRST 5): Read plans/ralph-songwriter.md and execute it for the first 5 tasks in content/songs/batch3/tasks.json. For each song: Phase 1 (Research via Lenny MCP — read full source, extract story/quotes/emotional core, rate, generate hooks, save research brief). Phase 2 (Songwriting — write lyrics following ALL rules in lyric-craft-guide.md and lyric-principles.md, critique draft using Rick Rubin mode, rewrite, create Suno prompt referencing artist-palette.md, save lyrics and suno prompt). DONE: 5 research briefs in content/songs/batch3/research/, 5 lyric files in content/songs/batch3/lyrics/, 5 suno prompts in content/songs/batch3/suno-prompts/. NOT TOUCH: Do not modify any batch1 or batch2 files, do not modify lib/albums.ts. VERIFY: All 15 output files exist. Each lyric file has >30 lines. Each suno prompt has TITLE/STYLE/SOURCE/LYRICS sections. First 5 tasks marked complete in tasks.json.",
-      "steps": [
-        "Read plans/ralph-songwriter.md for full loop instructions",
-        "Read ALL context files listed in 'Before You Start' section",
-        "Create directories: content/songs/batch3/research/ content/songs/batch3/lyrics/ content/songs/batch3/suno-prompts/",
-        "For task 1: Phase 1 Research then Phase 2 Songwriting",
-        "For task 2: Phase 1 Research then Phase 2 Songwriting",
-        "For task 3: Phase 1 Research then Phase 2 Songwriting",
-        "For task 4: Phase 1 Research then Phase 2 Songwriting",
-        "For task 5: Phase 1 Research then Phase 2 Songwriting",
-        "Mark first 5 tasks complete in tasks.json",
-        "All 15 output files exist (5 research + 5 lyrics + 5 suno prompts)"
-      ],
-      "files": ["plans/ralph-songwriter.md", "content/songs/batch3/tasks.json"],
+      "description": "GENERATE SONGS (BATCH 3) — ALL COMPLETED",
+      "steps": [],
+      "files": ["content/songs/batch3/tasks.json"],
       "passes": true
     },
     {
       "id": 4,
       "category": "content",
       "priority": 1,
-      "description": "GENERATE SONGS (BATCH 3, NEXT 5): Continue plans/ralph-songwriter.md for tasks 6-10 in content/songs/batch3/tasks.json. Same process as task 3. Check batch mix — if first 5 songs are sonically similar, push these in different genre directions. DONE: 5 more research briefs, lyrics, and suno prompts (10 total). NOT TOUCH: batch1, batch2, lib/albums.ts. VERIFY: 10 research briefs, 10 lyric files, 10 suno prompts exist. Tasks 6-10 marked complete.",
-      "steps": [
-        "Read existing batch 3 outputs to check genre mix",
-        "For tasks 6-10: Phase 1 Research then Phase 2 Songwriting each",
-        "Ensure genre variety — if first 5 were mostly folk, push these toward neo-soul/lo-fi/jazz",
-        "Mark tasks 6-10 complete in tasks.json",
-        "All 30 output files exist (10 research + 10 lyrics + 10 suno prompts)"
-      ],
-      "files": ["plans/ralph-songwriter.md", "content/songs/batch3/tasks.json"],
+      "description": "GENERATE SONGS (BATCH 3) — ALL COMPLETED",
+      "steps": [],
+      "files": ["content/songs/batch3/tasks.json"],
       "passes": true
     },
     {
       "id": 5,
       "category": "content",
       "priority": 1,
-      "description": "GENERATE SONGS (BATCH 3, REMAINING): Continue plans/ralph-songwriter.md for all remaining incomplete tasks in content/songs/batch3/tasks.json. Same process. Check batch mix. DONE: All tasks in tasks.json marked complete. All research/lyrics/suno-prompts files exist. NOT TOUCH: batch1, batch2, lib/albums.ts. VERIFY: All tasks marked complete. Output file count matches task count x 3.",
-      "steps": [
-        "Read existing batch 3 outputs to check genre mix",
-        "For each remaining task: Phase 1 Research then Phase 2 Songwriting",
-        "Ensure genre variety across full batch",
-        "Mark all tasks complete in tasks.json",
-        "All output files exist"
-      ],
-      "files": ["plans/ralph-songwriter.md", "content/songs/batch3/tasks.json"],
+      "description": "GENERATE SONGS (BATCH 3) — ALL COMPLETED",
+      "steps": [],
+      "files": ["content/songs/batch3/tasks.json"],
       "passes": true
+    },
+    {
+      "id": 6,
+      "category": "content",
+      "priority": 0,
+      "description": "GENERATE SONGS (BATCH 4, FIRST 5): Execute the song pipeline for tasks 1-5 in content/songs/batch4/tasks.json. For each song: Phase 1 (Research via Lenny MCP — use mcp__lennysdata__read_content with the source_files listed in the task, extract story/quotes/emotional core, rate, generate hooks, save research brief to content/songs/batch4/research/). Phase 2 (Songwriting — read research brief + ALL quality guides: content/lyric-craft-guide.md, content/brainstorm/lyric-principles.md, content/brainstorm/suno-lyric-tips.md, content/songs/artist-palette.md, content/songs/batch4/feedback.md. Write lyrics using Rick Rubin mode, critique, rewrite, create Suno prompt. Save lyrics to content/songs/batch4/lyrics/ and suno prompt to content/songs/batch4/suno-prompts/). DONE: 5 research briefs, 5 lyric files, 5 suno prompts exist. Each task marked complete in tasks.json. NOT TOUCH: Do not modify any batch1/batch2/batch3 files, do not modify lib/albums.ts.",
+      "steps": [
+        "Read content/songs/prompt-template.md for the full pipeline instructions",
+        "Read content/songs/batch4/feedback.md for batch-specific rules",
+        "Read content/lyric-craft-guide.md for lyric quality rules",
+        "Read content/brainstorm/lyric-principles.md for songwriting principles",
+        "Read content/brainstorm/suno-lyric-tips.md for Suno technical checklist",
+        "Read content/songs/artist-palette.md for genre/style guidance",
+        "For task 1 (Name Your Price): Phase 1 Research → Phase 2 Songwriting",
+        "For task 2 (Seven Powers): Phase 1 Research → Phase 2 Songwriting",
+        "For task 3 (Tell the Story): Phase 1 Research → Phase 2 Songwriting",
+        "For task 4 (Culture Code): Phase 1 Research → Phase 2 Songwriting",
+        "For task 5 (Founding Sales): Phase 1 Research → Phase 2 Songwriting",
+        "Mark tasks 1-5 complete in content/songs/batch4/tasks.json",
+        "Verify: 15 output files exist (5 research + 5 lyrics + 5 suno prompts)"
+      ],
+      "files": ["content/songs/batch4/tasks.json", "content/songs/prompt-template.md", "content/songs/batch4/feedback.md"],
+      "passes": true
+    },
+    {
+      "id": 7,
+      "category": "content",
+      "priority": 1,
+      "description": "GENERATE SONGS (BATCH 4, REMAINING 5): Execute the song pipeline for tasks 6-10 in content/songs/batch4/tasks.json. Same process as task 6. Check batch mix — ensure genre variety across all 10 songs. If first 5 are acoustic-heavy, push these toward neo-soul/lo-fi/electronic. DONE: All 10 tasks marked complete. All 30 output files exist (10 research + 10 lyrics + 10 suno prompts). NOT TOUCH: batch1/batch2/batch3 files, lib/albums.ts.",
+      "steps": [
+        "Read existing batch 4 outputs to check genre mix",
+        "Read all quality guide files again for freshness",
+        "For task 6 (Storyworthy): Phase 1 Research → Phase 2 Songwriting",
+        "For task 7 (The GTM): Phase 1 Research → Phase 2 Songwriting",
+        "For task 8 (Free to Paid): Phase 1 Research → Phase 2 Songwriting",
+        "For task 9 (The Lean): Phase 1 Research → Phase 2 Songwriting",
+        "For task 10 (Pattern Breaker): Phase 1 Research → Phase 2 Songwriting",
+        "Mark tasks 6-10 complete in content/songs/batch4/tasks.json",
+        "Verify: all 30 output files exist"
+      ],
+      "files": ["content/songs/batch4/tasks.json", "content/songs/prompt-template.md"],
+      "passes": false
     }
   ]
 }
