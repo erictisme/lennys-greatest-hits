@@ -19,6 +19,10 @@ interface VoteState {
   userVote: VoteType;
 }
 
+const circleBtn =
+  "w-10 h-10 rounded-full flex items-center justify-center transition-colors";
+const glassBg = "bg-white/10 hover:bg-white/20";
+
 export default function VoteButtons({
   trackSlug,
   accentColor = "#22c55e",
@@ -31,7 +35,6 @@ export default function VoteButtons({
   const [animating, setAnimating] = useState<VoteType>(null);
   const [copied, setCopied] = useState(false);
 
-  // Fetch existing vote counts + user vote on mount
   useEffect(() => {
     const sessionId = getSessionId();
     if (!sessionId) return;
@@ -58,7 +61,6 @@ export default function VoteButtons({
       const newVote: VoteType =
         state.userVote === voteType ? null : voteType;
 
-      // Optimistic update
       setState((prev) => {
         let { upCount, downCount } = prev;
         if (prev.userVote === "up") upCount--;
@@ -103,71 +105,52 @@ export default function VoteButtons({
     setTimeout(() => setCopied(false), 2000);
   };
 
+  const inactiveColor = "hsl(var(--muted-foreground) / 0.5)";
+
   return (
-    <div className="flex items-center gap-1">
-      {/* Thumbs Up */}
+    <div className="flex items-center gap-2">
       <motion.button
         onClick={() => handleVote("up")}
-        animate={animating === "up" ? { scale: [1, 1.25, 1] } : { scale: 1 }}
+        animate={animating === "up" ? { scale: [1, 1.2, 1] } : { scale: 1 }}
         transition={{ duration: 0.2 }}
-        className="flex items-center gap-1 px-3 py-2 rounded-full hover:bg-white/10 transition-colors"
+        className={`${circleBtn} ${glassBg}`}
         aria-label="Vote up"
       >
         <ThumbsUp
-          className="w-5 h-5 transition-colors"
+          className="w-4 h-4"
           style={{
-            color: state.userVote === "up" ? accentColor : "hsl(var(--muted-foreground) / 0.6)",
+            color: state.userVote === "up" ? accentColor : inactiveColor,
             fill: state.userVote === "up" ? accentColor : "transparent",
           }}
         />
-        {state.upCount > 0 && (
-          <span
-            className="text-xs font-medium tabular-nums"
-            style={{
-              color: state.userVote === "up" ? accentColor : "hsl(var(--muted-foreground) / 0.6)",
-            }}
-          >
-            {state.upCount}
-          </span>
-        )}
       </motion.button>
 
-      {/* Thumbs Down */}
       <motion.button
         onClick={() => handleVote("down")}
-        animate={animating === "down" ? { scale: [1, 1.25, 1] } : { scale: 1 }}
+        animate={animating === "down" ? { scale: [1, 1.2, 1] } : { scale: 1 }}
         transition={{ duration: 0.2 }}
-        className="flex items-center gap-1 px-3 py-2 rounded-full hover:bg-white/10 transition-colors"
+        className={`${circleBtn} ${glassBg}`}
         aria-label="Vote down"
       >
         <ThumbsDown
-          className="w-5 h-5 transition-colors"
+          className="w-4 h-4"
           style={{
-            color: state.userVote === "down" ? accentColor : "hsl(var(--muted-foreground) / 0.6)",
+            color: state.userVote === "down" ? accentColor : inactiveColor,
             fill: state.userVote === "down" ? accentColor : "transparent",
           }}
         />
-        {state.downCount > 0 && (
-          <span
-            className="text-xs font-medium tabular-nums"
-            style={{
-              color: state.userVote === "down" ? accentColor : "hsl(var(--muted-foreground) / 0.6)",
-            }}
-          >
-            {state.downCount}
-          </span>
-        )}
       </motion.button>
 
-      {/* Share (copy link) */}
       <div className="relative">
         <button
           onClick={handleShare}
-          className="flex items-center px-3 py-2 rounded-full hover:bg-white/10 transition-colors"
-          style={{ color: copied ? accentColor : "hsl(var(--muted-foreground) / 0.6)" }}
+          className={`${circleBtn} ${glassBg}`}
           aria-label="Copy link"
         >
-          <Share2 className="w-5 h-5" />
+          <Share2
+            className="w-4 h-4"
+            style={{ color: copied ? accentColor : inactiveColor }}
+          />
         </button>
         {copied && (
           <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-2 py-1 bg-foreground text-background text-xs rounded whitespace-nowrap pointer-events-none">

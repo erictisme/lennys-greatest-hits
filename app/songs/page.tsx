@@ -135,10 +135,17 @@ export default function SongsPage() {
                 </p>
               </div>
 
-              {/* Duration */}
-              <span className="text-xs text-muted-foreground tabular-nums flex-shrink-0">
-                {track.duration}
-              </span>
+              {/* Release date + Duration */}
+              <div className="flex items-center gap-3 flex-shrink-0">
+                {track.releaseDate && (
+                  <span className="hidden sm:inline text-xs text-muted-foreground/50 tabular-nums">
+                    {new Date(track.releaseDate).toLocaleDateString("en-US", { month: "short", day: "numeric" })}
+                  </span>
+                )}
+                <span className="text-xs text-muted-foreground tabular-nums">
+                  {track.duration}
+                </span>
+              </div>
             </motion.div>
           );
         })}
