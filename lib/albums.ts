@@ -1962,6 +1962,211 @@ Vibe coding`,
       },
     ],
   },
+  {
+    slug: "godmother",
+    title: "Godmother",
+    albumSlug: "electric-dreams",
+    trackNumber: 2,
+    duration: "4:12",
+    audioUrl: "/audio/godmother.mp3",
+    coverImage: "/covers/godmother.jpg",
+    genre: "Atmospheric Folk / Cinematic Indie",
+    mood: "Intimate to sweeping, quiet conviction building to cinematic triumph",
+    tags: ["AI", "biography", "inspiration"],
+    lyrics: `[Intro — solo piano, sparse, reverb-heavy]
+
+[Verse 1 — whispered, close-mic]
+Dry cleaner steam on a teenage hand
+Caltech winter, empty lab
+Everyone said the field was dead
+She walked in and unpacked
+
+[Pre-Chorus]
+The models weren't broken, they were blind
+Starving in the dark for what a child already finds
+
+[Chorus — opens to F major, breath enters]
+She showed the machine the world
+Fifteen million open doors
+Every cat and chair and sky
+Until it learned to see like yours
+
+[Verse 2 — band begins to fill in]
+Two grad students and a wild idea
+Label every photograph
+They called it delusional, she called it north
+And kept the camera on the path
+
+[Pre-Chorus]
+Two gaming GPUs in Toronto's hands
+Her patient harvest met the moment and the winter cracked
+
+[Chorus — Variation 2, fuller]
+She showed the machine the world
+Every object, every name
+The revolution didn't start with code
+It started with a frame
+
+[Bridge — strings enter, full cinematic swell]
+They said AI was a dirty word
+She stood in front of Congress and she said
+Nothing artificial here
+Just people all the way down to the end
+
+[Chorus — Variation 3, full orchestra feel, triumphant]
+She showed the machine the world
+Twenty watts beneath her skin
+The more she built the thinking thing
+The more she loved what's human
+
+[Outro — piano returns alone, gentle]
+Dimmer than a light bulb
+But she lit the whole room`,
+    concept: "The story of Dr. Fei-Fei Li — from dry cleaner teenager to the Godmother of AI. How ImageNet's 15 million labeled images broke the AI winter and sparked the deep learning revolution.",
+    keyInsight: "The AI revolution didn't start with code — it started with data. Fei-Fei Li's insight was that machines needed to see millions of examples, the way a child learns by seeing the world.",
+    sources: [
+      {
+        title: "The Godmother of AI on jobs, robots & why world models are next",
+        type: "podcast" as const,
+        url: "https://www.lennyspodcast.com/the-godmother-of-ai-on-jobs-robots-why-world-models-are-next-dr-fei-fei-li/",
+        guest: "Dr. Fei-Fei Li",
+      },
+    ],
+    keyQuote: "There's nothing artificial about AI. It's inspired by people. It's created by people, and most importantly, it impacts people.",
+    quoteSpeaker: "Dr. Fei-Fei Li",
+    storyBehind: "Fei-Fei Li arrived in the US as a teenager and worked in her family's dry cleaner while studying physics. She entered AI research when the field was considered a dead end — as late as 2015-2016, tech companies avoided using the word 'AI' because they weren't sure if it was a dirty word. Her breakthrough was realizing that machines needed massive, cleanly-labeled datasets to learn visual intelligence, leading her to create ImageNet with its 15 million labeled images.",
+    annotations: [
+      {
+        lyricText: "Dry cleaner steam on a teenage hand",
+        note: "Fei-Fei Li told Lenny she 'started a dry cleaner when I was 19' — running her family's business as a teenage immigrant while pursuing her studies. She went from that dry cleaner to founding Google Cloud AI and Stanford's Human-Centered AI Institute, a journey spanning about 30 years.",
+        sourceTitle: "The Godmother of AI on jobs, robots & why world models are next",
+        sourceUrl: "https://www.lennyspodcast.com/the-godmother-of-ai-on-jobs-robots-why-world-models-are-next-dr-fei-fei-li/",
+      },
+      {
+        lyricText: "Everyone said the field was dead",
+        note: "Fei-Fei Li told Lenny that as late as 'the middle of 2015, middle of 2016, some tech companies avoid using the word AI because they were not sure if AI was a dirty word.' She entered the field during a period people call the 'AI winter' when most researchers had given up, and her work on ImageNet was the spark that ended it.",
+        sourceTitle: "The Godmother of AI on jobs, robots & why world models are next",
+        sourceUrl: "https://www.lennyspodcast.com/the-godmother-of-ai-on-jobs-robots-why-world-models-are-next-dr-fei-fei-li/",
+      },
+      {
+        lyricText: "Fifteen million open doors",
+        note: "ImageNet contained roughly 15 million labeled images spanning tens of thousands of object categories. Fei-Fei's breakthrough insight was that 'in order to train computers with tens and thousands of object concepts, you really need to show it millions of examples' — the same way a child learns by seeing the world. Lenny called it 'the spark that brought us out of AI winter.'",
+        sourceTitle: "The Godmother of AI on jobs, robots & why world models are next",
+        sourceUrl: "https://www.lennyspodcast.com/the-godmother-of-ai-on-jobs-robots-why-world-models-are-next-dr-fei-fei-li/",
+      },
+      {
+        lyricText: "Two gaming GPUs in Toronto's hands",
+        note: "The 2012 AlexNet breakthrough that proved ImageNet's value ran on just two gaming GPUs — the kind people used for playing video games. Lenny reacted: 'I love that it was two GPUs was the first... And now it's hundreds of thousands.' Fei-Fei noted the three ingredients of modern AI — internet-scale data, neural network architecture, and GPUs — are still the same core ingredients today, just massively scaled up.",
+        sourceTitle: "The Godmother of AI on jobs, robots & why world models are next",
+        sourceUrl: "https://www.lennyspodcast.com/the-godmother-of-ai-on-jobs-robots-why-world-models-are-next-dr-fei-fei-li/",
+      },
+      {
+        lyricText: "She stood in front of Congress and she said",
+        note: "Fei-Fei Li testified before Congress with the now-famous line: 'There's nothing artificial about AI. It's inspired by people. It's created by people, and most importantly, it impacts people.' She believes technology is 'a net positive for humanity, but every technology is a double-edged sword. If we're not doing the right thing as a society, we can screw this up.'",
+        sourceTitle: "The Godmother of AI on jobs, robots & why world models are next",
+        sourceUrl: "https://www.lennyspodcast.com/the-godmother-of-ai-on-jobs-robots-why-world-models-are-next-dr-fei-fei-li/",
+      },
+    ],
+  },
+  {
+    slug: "the-new-stack",
+    title: "The New Stack",
+    albumSlug: "electric-dreams",
+    trackNumber: 3,
+    duration: "3:28",
+    audioUrl: "/audio/the-new-stack.mp3",
+    coverImage: "/covers/the-new-stack.jpg",
+    genre: "Lo-fi Electronic Synth-Folk",
+    mood: "Contemplative but forward-moving, warm analog meets digital",
+    tags: ["AI", "product", "building"],
+    lyrics: `[Verse 1, gentle pulse]
+Plugged the model in at dawn
+Watched it write what I'd been working on
+Glowing screen, a hundred lines
+Demo day — the whole room shined
+
+[Pre-Chorus]
+But the tourists came and left by June
+Gorgeous trick, an empty room
+
+[Chorus]
+Same old work in a brand new stack
+The future's here but it's looking back
+Ship the chore, not the show
+That's the only way I know
+
+[Verse 2]
+Built a chatbot, called it smart
+Customers won't use the hardest part
+Smallest thing — pre-fill a name
+No one clapped, but no one left the page
+
+[Chorus]
+Same old work in a brand new stack
+The future's warm when you strip it back
+Find the chore, learn it slow
+That's the only way to grow
+
+[Bridge, building]
+Speed wins where the friction lives
+Prompt by prompt is all it is
+Every tool I've ever known
+Still comes down to hands on stone
+
+[Chorus, full]
+Same old work in a brand new stack
+The future's mine, I'm not looking back
+Ship the chore, let it show
+That's the only way I know
+
+[Outro, fading]
+Hands on stone... hands on stone`,
+    concept: "The counterintuitive truth about building AI products: the winners don't chase 'wow' demos — they automate boring chores. Based on interviews with 20+ AI product builders.",
+    keyInsight: "Most early AI apps have a 'tourist' problem — they get traction quickly but have shockingly low retention. The fix is targeting boring, repetitive workflows, not impressive demos.",
+    sources: [
+      {
+        title: "Counterintuitive advice for building AI products",
+        type: "newsletter" as const,
+        url: "https://www.lennysnewsletter.com/p/counterintuitive-advice-for-building-ai-products",
+        guest: "Kyle Poyar",
+      },
+    ],
+    keyQuote: "The smallest (and almost invisible) features are usually the fan favorites. Things like pre-filling names, tiny bits of UI magic, simple data transformations often have a bigger impact than the Big AI Features.",
+    quoteSpeaker: "Claire Vo",
+    storyBehind: "Lenny and Kyle Poyar interviewed more than 20 successful AI builders and founders and found a surprising pattern: 60% of companies had already integrated generative AI into their products, but two in five gen AI products still hadn't made a single dollar despite companies spending millions to build them. The insight was that AI products with staying power target boring chores, not flashy demos.",
+    annotations: [
+      {
+        lyricText: "But the tourists came and left by June",
+        note: "Lenny and Kyle Poyar found that most early AI apps have a 'tourist' problem: they get a lot of traction quickly but have 'shockingly low retention and engagement.' According to an Emergence Capital survey, two in five gen AI products still hadn't made a single dollar despite companies spending millions or even billions to build them.",
+        sourceTitle: "Counterintuitive advice for building AI products",
+        sourceUrl: "https://www.lennysnewsletter.com/p/counterintuitive-advice-for-building-ai-products",
+      },
+      {
+        lyricText: "Ship the chore, not the show",
+        note: "Paige Costello, head of AI at Asana, told Lenny: 'Start with a core workflow that feels like a chore where the promise-to-payoff is high if you get it right. You want to select a place where the upfront user effort yields a big reward and invites repeat use.' The winning AI products automate tedious tasks, not impressive-looking ones.",
+        sourceTitle: "Counterintuitive advice for building AI products",
+        sourceUrl: "https://www.lennysnewsletter.com/p/counterintuitive-advice-for-building-ai-products",
+      },
+      {
+        lyricText: "Smallest thing — pre-fill a name",
+        note: "Claire Vo, CPO at LaunchDarkly, told Lenny: 'The smallest (and almost invisible) features are usually the fan favorites. Things like pre-filling names, tiny bits of UI magic, simple data transformations often have a bigger impact and more customer adoption than the Big AI Features like chatbots or complex agents.' You don't need a big idea to ship useful AI.",
+        sourceTitle: "Counterintuitive advice for building AI products",
+        sourceUrl: "https://www.lennysnewsletter.com/p/counterintuitive-advice-for-building-ai-products",
+      },
+      {
+        lyricText: "The future's here but it's looking back",
+        note: "Elad Gil observed that 'AI mandates at larger companies create a window for startups to gain customers faster than they could pre-AI' — but the first-pass product is often a bolt-on. He warned that 'the high-value experience is a deeper rethink once you have played with the technology.' The future isn't about adding AI to old products — it's rethinking the product entirely.",
+        sourceTitle: "Counterintuitive advice for building AI products",
+        sourceUrl: "https://www.lennysnewsletter.com/p/counterintuitive-advice-for-building-ai-products",
+      },
+      {
+        lyricText: "Still comes down to hands on stone",
+        note: "Across all 20+ interviews, the consistent theme was that AI doesn't replace product fundamentals — it amplifies them. James Evans, co-founder of CommandBar, found that when companies brand their chatbot as AI-powered, 'more users use it, and they also use it better.' The technology changes, but the craft of understanding users and solving real problems remains the same.",
+        sourceTitle: "Counterintuitive advice for building AI products",
+        sourceUrl: "https://www.lennysnewsletter.com/p/counterintuitive-advice-for-building-ai-products",
+      },
+    ],
+  },
 ];
 
 const startupLifeTracks: Track[] = [

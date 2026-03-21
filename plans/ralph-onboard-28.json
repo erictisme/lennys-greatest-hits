@@ -155,7 +155,7 @@
         "Run pnpm build"
       ],
       "files": ["lib/albums.ts", "content/songs/batch3/new-mp3s/godmother.mp3", "content/songs/batch3/new-mp3s/the-new-stack.mp3", "content/songs/batch3/lyrics/godmother.md", "content/songs/batch3/lyrics/the-new-stack.md"],
-      "passes": false
+      "passes": true
     },
     {
       "id": 11,
