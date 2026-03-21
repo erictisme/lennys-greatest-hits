@@ -1,32 +1,32 @@
 {
   "features": [
     {
-      "id": 1,
+      "id": 0,
       "category": "bugfix",
       "priority": 0,
-      "description": "Fix play/navigate behavior on album track rows. Current bug: clicking the track row (including the play triangle area) sometimes navigates to the track page instead of playing the song. Root cause: the Link component for the track title has stopPropagation but its clickable area is wider than visible text. Fix: Remove the <Link> element entirely from inside the track row. The track title should be a plain <p> tag. Add a small dedicated 'view track' icon button (ChevronRight from lucide-react, w-4 h-4) at the far right of the row (next to the share menu) that uses e.stopPropagation() then router.push(`/track/${track.slug}`). The outer div onClick already calls handlePlayTrack — keep it. Import useRouter from next/navigation. DONE: Clicking anywhere on a track row plays the song. There is NO <Link> tag inside the track row div. A small ChevronRight icon at the far right navigates to the track page. DO NOT TOUCH: NowPlayingBar, homepage, footer links. VERIFY: No <Link> tags inside album track rows. pnpm build passes.",
+      "description": "CRITICAL: Remove TrackNavigator auto-navigation component. components/TrackNavigator.tsx is mounted in app/layout.tsx (line 78). It has a useEffect that watches currentTrack.slug and isPlaying — whenever a NEW track starts playing, it does router.push(`/track/${slug}`), which navigates the user away from the album page to the track page. This is the ROOT CAUSE of the play-then-navigate bug. The user clicks a track on the album page expecting it to play in-place, but TrackNavigator forces navigation to /track/[slug]. Fix: Delete components/TrackNavigator.tsx entirely. Remove the import and <TrackNavigator /> from app/layout.tsx (around line 6 and line 78). Users should stay on whatever page they're on when they play a song — they can navigate to the track page by clicking the ChevronRight icon or the NowPlayingBar. DONE: TrackNavigator.tsx is deleted. No import or usage in layout.tsx. Playing a song from the album page does NOT navigate away. DO NOT TOUCH: NowPlayingBar (it has a Link and that's fine — user explicitly clicks it). VERIFY: pnpm build passes. No references to TrackNavigator in any file.",
       "steps": [
-        "Read app/album/[slug]/AlbumPageClient.tsx",
-        "Import useRouter from next/navigation, ChevronRight from lucide-react",
-        "Remove the <Link> element wrapping the track title (around line 344-351), replace with a plain <p> tag keeping same className and style",
-        "Add a ChevronRight icon button after the share menu button: onClick={(e) => { e.stopPropagation(); router.push(`/track/${track.slug}`); }, same opacity/hover pattern as share button",
-        "Verify zero <Link> tags inside the track .map() callback",
+        "Delete components/TrackNavigator.tsx",
+        "Remove import TrackNavigator from app/layout.tsx",
+        "Remove <TrackNavigator /> JSX from app/layout.tsx",
+        "Verify no remaining references: grep -r TrackNavigator in the project",
         "pnpm build passes"
       ],
-      "files": ["app/album/[slug]/AlbumPageClient.tsx"],
-      "passes": true
+      "files": ["components/TrackNavigator.tsx", "app/layout.tsx"],
+      "passes": false
     },
     {
       "id": 2,
       "category": "bugfix",
       "priority": 0,
-      "description": "Fix play/navigate on topics track list. app/topics/[tag]/page.tsx wraps entire track rows in a <Link>, making it impossible to play without navigating. Apply the same play-first pattern: row click plays the song, small icon for navigation. This is currently a server component — it needs to become a client component. Since generateStaticParams and generateMetadata cannot be in client components, split into page.tsx (server, keeps metadata/params) and a new TopicPageClient.tsx component. DONE: Clicking a track on /topics/[slug] plays the song. A small ChevronRight navigates to the track page. Locked tracks (no audioUrl) show but don't play on click. DO NOT TOUCH: /topics page itself, lib/ files. VERIFY: pnpm build passes. /topics/[tag] pages still generate statically.",
+      "description": "Fix play/navigate on topics track list. app/topics/[tag]/page.tsx wraps entire track rows in a <Link>, making it impossible to play without navigating. Apply the same play-first pattern: row click plays the song, small icon for navigation. This is currently a server component — it needs to become a client component. Since generateStaticParams and generateMetadata cannot be in client components, split into page.tsx (server, keeps metadata/params) and a new TopicPageClient.tsx component. The audio context has a playTrack method — use it. Check lib/audio-context.tsx for the correct method name to play a single track by its data. If no direct playTrack method exists, use playAlbum(track.albumSlug, trackIndex) to play. DONE: Clicking a track on /topics/[slug] plays the song. A small ChevronRight navigates to the track page. Locked tracks (no audioUrl) show but don't play on click. DO NOT TOUCH: /topics page itself, lib/ files. VERIFY: pnpm build passes. /topics/[tag] pages still generate statically.",
       "steps": [
         "Read app/topics/[tag]/page.tsx",
+        "Read lib/audio-context.tsx to find the correct play method",
         "Create app/topics/[tag]/TopicPageClient.tsx as a 'use client' component",
         "Move the track list rendering into TopicPageClient, accepting tracks and category as props",
         "Import useAudio, useRouter in TopicPageClient",
-        "Replace Link wrappers with div onClick that calls audio.playTrack(track)",
+        "Replace Link wrappers with div onClick that plays the track using audio context",
         "Add ChevronRight icon button for navigation with stopPropagation",
         "Keep page.tsx as server component with generateStaticParams/generateMetadata, render TopicPageClient",
         "pnpm build passes"
@@ -38,7 +38,7 @@
       "id": 3,
       "category": "feature",
       "priority": 1,
-      "description": "Add author/source attribution to album track rows. Each track has a sources array with { title, type, url, guest }. Below the genre/mood line on unlocked tracks, add a new attribution line showing the primary source guest name and source type. Format: small icon (Mic icon for podcast, FileText icon for newsletter) + guest name + source title, all in muted styling. This connects each song to its Lenny source content. DONE: Every unlocked track row shows 'Based on [source title] with [guest]' with a type icon. Locked tracks show concept only (no change). DO NOT TOUCH: track pages, homepage, NowPlayingBar, lib/ files. VERIFY: All unlocked tracks display attribution. Icons correctly reflect source type (podcast vs newsletter). pnpm build passes.",
+      "description": "Add author/source attribution to album track rows. Each track has a sources array with { title, type, url, guest }. Below the genre/mood line on unlocked tracks, add a new attribution line showing the primary source guest name and source type. Format: small icon (Mic icon for podcast, FileText icon for newsletter) + guest name, all in muted styling. This connects each song to its Lenny source content. DONE: Every unlocked track row shows guest name with a type icon below the genre line. Locked tracks show concept only (no change). DO NOT TOUCH: track pages, homepage, NowPlayingBar, lib/ files. VERIFY: All unlocked tracks display attribution. Icons correctly reflect source type (podcast vs newsletter). pnpm build passes.",
       "steps": [
         "Read app/album/[slug]/AlbumPageClient.tsx",
         "Import Mic and FileText icons from lucide-react",
