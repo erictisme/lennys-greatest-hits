@@ -1490,6 +1490,15 @@ Good enough... is enough`,
 
 export const albums: Album[] = [
   {
+    slug: "frameworks",
+    title: "Frameworks",
+    subtitle: "The mental models that run tech",
+    description: "The intellectual tools and thinking patterns that define modern product work. Mission cascades, empowered teams, A/B testing, JTBD, and the LNO Framework.",
+    coverImage: "",
+    accentColor: "#4338ca",
+    tracks: frameworksTracks,
+  },
+  {
     slug: "founders",
     title: "Founders",
     subtitle: "For anyone who's knocked on doors and believed",
@@ -1564,14 +1573,5 @@ export const albums: Album[] = [
     accentColor: "#0e7490",
     tracks: careerMovesTracks,
     comingSoon: true,
-  },
-  {
-    slug: "frameworks",
-    title: "Frameworks",
-    subtitle: "The mental models that run tech",
-    description: "The intellectual tools and thinking patterns that define modern product work. Mission cascades, empowered teams, A/B testing, JTBD, and the LNO Framework.",
-    coverImage: "",
-    accentColor: "#4338ca",
-    tracks: frameworksTracks,
   },
 ];
