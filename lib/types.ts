@@ -9,6 +9,13 @@ export type Album = {
   comingSoon?: boolean;
 };
 
+export type LyricAnnotation = {
+  lyricText: string;
+  note: string;
+  sourceUrl?: string;
+  sourceTitle?: string;
+};
+
 export type Track = {
   slug: string;
   title: string;
@@ -27,6 +34,7 @@ export type Track = {
   coverImage: string;
   storyBehind?: string;
   tags?: string[];
+  annotations?: LyricAnnotation[];
   isLocked?: boolean;
 };
 

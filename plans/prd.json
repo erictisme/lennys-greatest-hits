@@ -1,511 +1,136 @@
 {
   "features": [
     {
-      "id": 40,
-      "category": "bugfix",
-      "priority": 0,
-      "description": "Fix lyrics auto-scroll hijacking the page. Currently in SyncedLyrics.tsx, scrollIntoView fires on every active line change, which yanks the page away from wherever the user scrolled to (e.g., reading the backstory). Add a toggle button above the lyrics section labeled 'Follow lyrics' (on by default). When ON, lyrics auto-scroll to the active line. When OFF, no auto-scrolling happens and the user can freely scroll. Store the toggle state so it persists during the session. DONE: a visible toggle button exists above lyrics, clicking it disables auto-scroll, user can read backstory without the page jumping. DO NOT TOUCH: audio playback, lyrics content, track data. VERIFY: pnpm build passes, play a song, scroll to backstory, confirm page does not jump when toggle is off.",
-      "steps": [
-        "Add a follow/unfollow toggle state to SyncedLyrics.tsx",
-        "Only call scrollIntoView when toggle is ON",
-        "Render a small toggle button above the lyrics section",
-        "pnpm build passes"
-      ],
-      "files": ["components/SyncedLyrics.tsx", "app/track/[slug]/TrackPageClient.tsx"],
-      "passes": true
-    },
-    {
-      "id": 41,
-      "category": "bugfix",
-      "priority": 0,
-      "description": "Fix album looping instead of advancing to next album. The auto-play next album logic exists in audio-context.tsx but users report the album loops back to track 1 instead of moving to the next album. Debug the onended handler: check if the queue is being reset to the same album's tracks instead of the next album. The code at the 'Queue exhausted' comment should advance to the next album, but something is preventing it. DONE: when the last track of Founders finishes, Product album starts. When last album (The Human Side) finishes, playback stops. DO NOT TOUCH: audio files, lyrics, UI components. VERIFY: pnpm build passes, play the last track of any album and confirm next album starts automatically.",
-      "steps": [
-        "Read audio-context.tsx and trace the onended flow",
-        "Find why album loops instead of advancing",
-        "Fix the queue logic so next album plays",
-        "Test: last track of album -> next album starts",
-        "pnpm build passes"
-      ],
-      "files": ["lib/audio-context.tsx"],
-      "passes": true
-    },
-    {
-      "id": 42,
-      "category": "bugfix",
-      "priority": 0,
-      "description": "Ensure audio plays continuously across page navigation. When a user clicks into a track page while a song is playing, the audio should keep playing without interruption. The audio context uses React context which should persist across client-side navigation, but users report the song stops or has trouble playing when navigating to a track page from the album page. Debug and fix. DONE: click a track on album page while another song plays, navigate to track detail page, audio never stops or glitches. DO NOT TOUCH: lyrics, track data, album structure. VERIFY: pnpm build passes, start playing a song on album page, click into a different track's detail page, confirm audio keeps playing.",
-      "steps": [
-        "Read audio-context.tsx provider setup",
-        "Check if AudioProvider wraps the app in layout.tsx",
-        "Ensure audio element is not destroyed on route change",
-        "Fix any issues found",
-        "pnpm build passes"
-      ],
-      "files": ["lib/audio-context.tsx", "app/layout.tsx"],
-      "passes": true
-    },
-    {
-      "id": 43,
-      "category": "feature",
-      "priority": 1,
-      "description": "Show verse/chorus/bridge section labels in lyrics display. The lyrics in lib/albums.ts already have structure tags like [Verse 1], [Chorus], [Bridge], [Outro] embedded in the lyric text. These should render as visible section headers in the lyrics display, styled differently from lyric lines (e.g., smaller, muted, uppercase). Currently SyncedLyrics.tsx may be hiding or not styling these. DONE: section labels like 'Verse 1', 'Chorus', 'Bridge' appear as styled headers between lyric lines. DO NOT TOUCH: audio files, the actual lyric text content, track data structure. VERIFY: pnpm build passes, open any track page and see section labels displayed in the lyrics.",
-      "steps": [
-        "Check how SyncedLyrics.tsx handles [Verse 1] etc tags",
-        "Render them as styled section headers (small, muted, uppercase)",
-        "pnpm build passes"
-      ],
-      "files": ["components/SyncedLyrics.tsx"],
-      "passes": true
-    },
-    {
-      "id": 44,
-      "category": "feature",
-      "priority": 1,
-      "description": "Add 'Up Next' countdown when a song ends. When the current track finishes and there is a next track in the queue, show a countdown overlay or banner: 'Up next: [Song Title] — playing in 5...' counting down from 5 to 1. Include a 'Cancel' button that stops the countdown and pauses playback. If countdown reaches 0, the next track plays. Show this on the track page (TrackPageClient.tsx) and optionally in the NowPlayingBar. DONE: countdown appears when song ends, shows next track title, counts down 5 seconds, Cancel button works. DO NOT TOUCH: audio files, lyrics, album data. VERIFY: pnpm build passes, play a song to the end, see countdown with cancel button, confirm next song plays after 5 seconds or stops on cancel.",
-      "steps": [
-        "Add a countdown state to audio-context or TrackPageClient",
-        "When track ends and next exists, start 5-second countdown",
-        "Show countdown UI with next track name and Cancel button",
-        "Cancel stops countdown and pauses, countdown end plays next",
-        "pnpm build passes"
-      ],
-      "files": ["lib/audio-context.tsx", "app/track/[slug]/TrackPageClient.tsx", "components/NowPlayingBar.tsx"],
-      "passes": true
-    },
-    {
-      "id": 45,
-      "category": "feature",
-      "priority": 1,
-      "description": "Add cover art thumbnail to the NowPlayingBar. The NowPlayingBar currently shows track title and album name but no cover image. Add a small cover art thumbnail (~36x36 or ~40x40, rounded) to the left of the track info in the NowPlayingBar. Use the track's coverImage field. DONE: NowPlayingBar shows small album art next to track title. DO NOT TOUCH: audio playback logic, lyrics, track data. VERIFY: pnpm build passes, play any track and see cover art in the bottom bar.",
-      "steps": [
-        "Import Image from next/image in NowPlayingBar.tsx",
-        "Add cover art thumbnail to the left of track title",
-        "pnpm build passes"
-      ],
-      "files": ["components/NowPlayingBar.tsx"],
-      "passes": true
-    },
-    {
-      "id": 46,
-      "category": "feature",
-      "priority": 1,
-      "description": "Add genre/mood tags to tracks. Add a 'tags' field to each track in lib/albums.ts with relevant descriptive tags (e.g., vibe-coding gets ['satire', 'comedy'], ship-it gets ['motivation', 'velocity'], imposter gets ['vulnerability', 'real talk']). Display tags on the track page as small pill badges below the genre/mood line. Also show tags on album page track rows. Choose 1-3 tags per song that capture the tone/vibe. DONE: each track has tags, visible as pills on track page and album page. DO NOT TOUCH: audio files, lyrics content. VERIFY: pnpm build passes, open vibe-coding track page and see 'satire' tag.",
-      "steps": [
-        "Add tags: string[] to Track type in lib/types.ts",
-        "Add tags to each track in lib/albums.ts (1-3 per song)",
-        "Display as pill badges on TrackPageClient.tsx",
-        "Optionally show on album page track rows",
-        "pnpm build passes"
-      ],
-      "files": ["lib/types.ts", "lib/albums.ts", "app/track/[slug]/TrackPageClient.tsx", "app/album/[slug]/AlbumPageClient.tsx"],
-      "passes": true
-    },
-    {
-      "id": 47,
-      "category": "bugfix",
-      "priority": 0,
-      "description": "Fix broken source links. Many 'Inspired by' source links on track pages are still not working or point to wrong URLs. Re-verify ALL source URLs in lib/albums.ts by: (1) calling mcp__lennysdata__search_content for each source's guest name, (2) finding the exact matching Lenny Substack article, (3) calling mcp__lennysdata__read_content to confirm. Specifically fix vibe-coding sources to link to Lenny's podcast episode with Lazar Jovanovic (the Lovable vibe coder). For any source where no Lenny article exists, link to the original external source and update the title to indicate it (e.g., 'paulgraham.com'). DONE: every source link that has a URL opens a real, working page. DO NOT TOUCH: audio files, lyrics, UI components. VERIFY: pnpm build passes, click every source link on every track page and confirm they all load real pages.",
-      "steps": [
-        "Read all source URLs from lib/albums.ts",
-        "Test each URL - identify broken ones",
-        "Re-research broken URLs using Lenny MCP tools",
-        "Update lib/albums.ts with correct URLs",
-        "pnpm build passes"
-      ],
-      "files": ["lib/albums.ts"],
-      "passes": true
-    },
-    {
-      "id": 48,
-      "category": "feature",
-      "priority": 2,
-      "description": "Add a subtle affordance to NowPlayingBar so users know they can click to view the playing song's detail page. Add a small clickable area or visual cue (e.g., the track title is a link, or a small chevron/arrow icon, or the entire left section of the bar is clickable and navigates to /track/{slug}). Make it subtle but discoverable. DONE: clicking the track title/info area in NowPlayingBar navigates to that track's detail page. DO NOT TOUCH: audio playback, lyrics, track data. VERIFY: pnpm build passes, click the track title in the NowPlayingBar and confirm it navigates to the track page without stopping playback.",
-      "steps": [
-        "Wrap track title/info in NowPlayingBar with a Link to /track/{slug}",
-        "Add subtle hover style to indicate clickability",
-        "pnpm build passes"
-      ],
-      "files": ["components/NowPlayingBar.tsx"],
-      "passes": true
-    },
-    {
-      "id": 49,
-      "category": "feature",
-      "priority": 2,
-      "description": "Navigate to the track page when a new song starts playing. When the audio context switches to a new track (from auto-play, queue, or 'up next' countdown), automatically navigate the browser to /track/{new-track-slug} so the user sees the lyrics and details for the song they're hearing. Use Next.js router.push(). Only navigate if the user is NOT already on that track's page. DONE: when a new song starts (from any source), the page navigates to that track's detail page. DO NOT TOUCH: audio playback continuity, lyrics, track data. VERIFY: pnpm build passes, let a song end and auto-play next, confirm page navigates to the new track page.",
-      "steps": [
-        "In audio-context.tsx or a wrapper, detect when currentTrack changes",
-        "Call router.push to navigate to the new track page",
-        "Skip if already on that track page",
-        "pnpm build passes"
-      ],
-      "files": ["lib/audio-context.tsx", "app/track/[slug]/TrackPageClient.tsx"],
-      "passes": true
-    },
-    {
-      "id": 50,
-      "category": "bugfix",
-      "priority": 0,
-      "description": "Make the progress/seek bar thicker and easier to click. The time progress bar on the track page (TrackPageClient.tsx) and in the NowPlayingBar is too thin and hard to click/tap, especially on mobile. Increase the bar height to at least 6-8px (from current ~2-4px). Make the hover state even thicker (~10-12px) so it's easy to grab. Also ensure the clickable/draggable area extends beyond the visual bar (add padding to the hit target). DONE: progress bar is visually thicker and easy to click on both desktop and mobile. DO NOT TOUCH: audio playback logic, lyrics, track data. VERIFY: pnpm build passes, open track page and confirm progress bar is thicker and easy to click.",
-      "steps": [
-        "Find progress bar styling in TrackPageClient.tsx and NowPlayingBar.tsx",
-        "Increase bar height to 6-8px default, 10-12px on hover",
-        "Add padding to increase click target area",
-        "pnpm build passes"
-      ],
-      "files": ["app/track/[slug]/TrackPageClient.tsx", "components/NowPlayingBar.tsx"],
-      "passes": true
-    },
-    {
-      "id": 51,
-      "category": "bugfix",
-      "priority": 0,
-      "description": "Fix next/previous track buttons to navigate across albums. Currently clicking next track on the last song of an album does not advance to the first song of the next album. The next button should work across album boundaries: last track of Founders -> first track of Product, etc. Same for previous: first track of Product -> last track of Founders. When on the very last track of the last album, next should be disabled. When on the very first track of the first album, previous should be disabled. DONE: next/prev buttons work across album boundaries. DO NOT TOUCH: audio files, lyrics, UI styling. VERIFY: pnpm build passes, play last track of Founders, click next, confirm Product album first track plays.",
-      "steps": [
-        "Read audio-context.tsx next/previous track logic",
-        "Update to handle cross-album navigation",
-        "Disable buttons at absolute start/end",
-        "pnpm build passes"
-      ],
-      "files": ["lib/audio-context.tsx"],
-      "passes": true
-    },
-    {
-      "id": 52,
+      "id": 80,
       "category": "feature",
       "priority": 0,
-      "description": "Add email signup form to the homepage. Create a Supabase client utility at lib/supabase.ts that reads NEXT_PUBLIC_SUPABASE_URL and NEXT_PUBLIC_SUPABASE_ANON_KEY from environment. Add an email capture section near the bottom of the homepage (app/page.tsx) with a heading like 'More songs coming — get notified', a single email input field, and a submit button. On submit, insert the email into the 'email_subscribers' table in Supabase (columns: id uuid auto, email text unique, created_at timestamptz auto). Show a success message after insert. Handle duplicate emails gracefully (show 'You're already subscribed!' instead of an error). Style it to match the existing site aesthetic — warm Lenny theme, not dark Spotify. Keep it simple: no auth, no confirmation email, just capture the email. DONE: email input on homepage, submitting stores email in Supabase, success/duplicate messages work. DO NOT TOUCH: audio playback, lyrics, track data, album pages. VERIFY: pnpm build passes, enter an email on homepage, check Supabase table has the row, enter same email again and see 'already subscribed' message.",
+      "description": "Add LyricAnnotation type to the Track data model. In lib/types.ts, add a new exported type: LyricAnnotation = { lyricText: string; note: string; sourceUrl?: string; sourceTitle?: string }. Then add an optional 'annotations' field of type LyricAnnotation[] to the existing Track type. DONE: LyricAnnotation type is exported from lib/types.ts, Track type has 'annotations?: LyricAnnotation[]' field. DO NOT TOUCH: Any other types, any component files, lib/albums.ts. VERIFY: pnpm build passes, no type errors.",
       "steps": [
-        "Create lib/supabase.ts with createClient using env vars",
-        "Add EmailSignup client component in components/EmailSignup.tsx",
-        "Add EmailSignup to homepage app/page.tsx near bottom",
-        "Handle submit: insert into email_subscribers, show success",
-        "Handle duplicate: catch unique constraint, show already subscribed",
-        "pnpm build passes"
-      ],
-      "files": ["lib/supabase.ts", "components/EmailSignup.tsx", "app/page.tsx"],
-      "passes": true
-    },
-    {
-      "id": 53,
-      "category": "bugfix",
-      "priority": 0,
-      "description": "Fix progress/seek bar: clickable area must match visible bar thickness, and fill must animate smoothly. Currently the bar was made thicker visually but the actual clickable/draggable hit target is still the old thin size, so users miss clicks. Also the progress fill updates in jerky steps instead of smooth animation. Fix both issues in TrackPageClient.tsx and NowPlayingBar.tsx: (1) make the clickable hit target at least as wide/tall as the visible bar by ensuring the input range or click handler div covers the full visual area, (2) use CSS transition on the fill width (e.g., transition: width 0.3s linear) so it fills smoothly between updates instead of jumping. DONE: clicking anywhere on the visible bar works to seek, and the fill animates smoothly during playback. DO NOT TOUCH: audio playback logic, lyrics, track data. VERIFY: pnpm build passes, click various spots on the progress bar and confirm they all register, watch the fill move smoothly during playback.",
-      "steps": [
-        "Read current progress bar implementation in TrackPageClient.tsx and NowPlayingBar.tsx",
-        "Ensure clickable area matches or exceeds visible bar size",
-        "Add CSS transition to progress fill for smooth animation",
-        "pnpm build passes"
-      ],
-      "files": ["app/track/[slug]/TrackPageClient.tsx", "components/NowPlayingBar.tsx"],
-      "passes": true
-    },
-    {
-      "id": 54,
-      "category": "bugfix",
-      "priority": 0,
-      "description": "Remove the 'Follow lyrics' toggle and all auto-scroll behavior from the lyrics display. The current implementation is buggy and distracting — it either scrolls when you don't want it to or doesn't work properly. Remove the toggle button entirely from SyncedLyrics.tsx. Remove all scrollIntoView calls related to lyrics auto-scrolling. The lyrics should simply be static text that the user scrolls manually. Keep the active line highlighting (current line styled differently) but do NOT auto-scroll to it. DONE: no toggle button visible, no auto-scrolling happens at any time, active line is still highlighted, user scrolls lyrics manually. DO NOT TOUCH: audio playback, track data, lyrics content. VERIFY: pnpm build passes, play a song, confirm no auto-scrolling happens and no toggle button exists, confirm active line is still highlighted.",
-      "steps": [
-        "Remove follow/unfollow toggle state and UI from SyncedLyrics.tsx",
-        "Remove all scrollIntoView calls for lyrics",
-        "Keep active line highlighting CSS",
-        "pnpm build passes"
-      ],
-      "files": ["components/SyncedLyrics.tsx"],
-      "passes": true
-    },
-    {
-      "id": 55,
-      "category": "feature",
-      "priority": 0,
-      "description": "Fix SEO, Open Graph image, and favicon. The current link preview when sharing on LinkedIn/Twitter/iMessage is ugly — it shows a generic Next.js placeholder. Fix this: (1) Create an OG image using Next.js built-in opengraph-image route (app/opengraph-image.tsx) that generates a 1200x630 image with the site title 'Lenny's Greatest Hits', subtitle 'Lenny Rachitsky's best insights turned into actual songs', and a warm gradient background matching the site's color scheme. Use ImageResponse from next/og. (2) Replace the default favicon.ico in app/ with a music-note emoji favicon generated via an app/icon.tsx route using ImageResponse — render a musical note emoji on a warm-toned circle background. (3) Update metadata in app/layout.tsx to include the OG image reference and ensure all meta tags are complete (og:type as 'website', og:site_name, twitter:card as 'summary_large_image'). (4) Add structured data (JSON-LD) in layout.tsx for MusicAlbum or WebApplication schema. DONE: sharing the URL on any platform shows a polished 1200x630 preview image with the site name, and the browser tab shows a music-note favicon instead of the default Next.js icon. DO NOT TOUCH: audio playback, lyrics, track data, page layouts. VERIFY: pnpm build passes, check /opengraph-image returns a 1200x630 image, check /icon returns a favicon, inspect page source for complete meta tags.",
-      "steps": [
-        "Create app/opengraph-image.tsx using ImageResponse with warm gradient + title",
-        "Create app/icon.tsx using ImageResponse with music note emoji",
-        "Delete old app/favicon.ico",
-        "Update metadata in app/layout.tsx with og:type, og:site_name, twitter:card",
-        "Add JSON-LD structured data in layout.tsx",
-        "pnpm build passes"
-      ],
-      "files": ["app/opengraph-image.tsx", "app/icon.tsx", "app/layout.tsx", "app/favicon.ico"],
-      "passes": true
-    },
-    {
-      "id": 56,
-      "category": "bugfix",
-      "priority": 0,
-      "description": "Remove all fade-up / fade-in / slide-in text animations from the entire app. These are vibe-cody AI-generated animation patterns that look cheap and unpolished. Search all .tsx files for any framer-motion 'motion.' components that animate opacity, translateY, y, or similar entrance animations on text, headings, paragraphs, or cards. Remove the motion wrapper and render the element as a plain HTML element instead. Keep framer-motion ONLY for functional animations like the audio visualizer or progress bar — remove it from all decorative text entrance effects. DONE: no text fades in or slides up when loading any page. All text appears instantly. DO NOT TOUCH: audio playback, lyrics content, track data, audio visualizer animations. VERIFY: pnpm build passes, load homepage and album pages and confirm all text appears immediately with no fade/slide animations.",
-      "steps": [
-        "Search all .tsx files for motion.div, motion.h1, motion.p, motion.span etc with opacity/y animations",
-        "Replace motion elements with plain HTML equivalents",
-        "Remove unused framer-motion imports if no motion elements remain in file",
-        "pnpm build passes"
-      ],
-      "files": ["app/page.tsx", "app/album/[slug]/AlbumPageClient.tsx", "app/track/[slug]/TrackPageClient.tsx", "components/EmailSignup.tsx"],
-      "passes": true
-    },
-    {
-      "id": 57,
-      "category": "feature",
-      "priority": 0,
-      "description": "Add comingSoon and isLocked fields to the type system. In lib/types.ts, add 'comingSoon?: boolean' to the Album type and 'isLocked?: boolean' to the Track type. These are optional booleans so existing Batch 1 albums don't need any changes. Locked tracks will use audioUrl: '' (empty string). DONE: types compile, no existing code breaks, pnpm build passes. DO NOT TOUCH: any file other than lib/types.ts. VERIFY: pnpm build passes with no type errors.",
-      "steps": [
-        "Read lib/types.ts",
-        "Add comingSoon?: boolean to Album type",
-        "Add isLocked?: boolean to Track type",
+        "Add LyricAnnotation type export to lib/types.ts",
+        "Add annotations?: LyricAnnotation[] to Track type",
         "pnpm build passes"
       ],
       "files": ["lib/types.ts"],
       "passes": true
     },
     {
-      "id": 58,
+      "id": 81,
       "category": "feature",
       "priority": 0,
-      "description": "Add 5 Coming Soon albums with 25 locked tracks to lib/albums.ts. Read content/brainstorm/batch2/00b-album-map.md for album structure and song titles. Read the songwriting files in content/brainstorm/batch2/songwriting/ (e.g. 01-duolingo-streak.md, 02-founder-mode.md, etc.) for each track's concept, keyInsight, keyQuote, quoteSpeaker, and sources. The 5 albums are: 'The Operators' (slug: the-operators, 5 tracks: Duolingo Streak, Founder Mode, Scaling Stripe, Linear's Way, The Ramp Speed), 'Growth Engine' (slug: growth-engine, 5 tracks: The Racecar, North Star, First Thousand, Go Viral, Positioning), 'The Startup Life' (slug: the-startup-life, 5 tracks: Chicken and Egg, Not Venture-Scale, The Fundraise, Lessons from Failure, YC Lessons), 'Career Moves' (slug: career-moves, 5 tracks: The Magic Loop, Ten Commandments, Fire with Grace, When Enough Is Enough, Managing Up), 'Frameworks' (slug: frameworks, 5 tracks: Mission to Task, The Nature of Product, A/B Test Everything, Jobs to Be Done, The LNO Framework). Each album gets comingSoon: true, coverImage: '' (empty, will use gradient placeholder), a unique accentColor (pick warm/amber tones different from existing 4 albums). Each track gets isLocked: true, audioUrl: '', lyrics: '', duration: '', and populate concept, keyInsight, keyQuote, quoteSpeaker, sources from the songwriting research files. Add appropriate genre, mood, and tags for each track based on content. DONE: getAllAlbums() returns 9 albums, all Batch 2 tracks have isLocked: true. DO NOT TOUCH: existing Batch 1 album data. VERIFY: pnpm build passes.",
+      "description": "Add Google Font Spectral for annotation panels (the 'Lenny newsletter feel'). Using next/font/google, load Spectral with weights 400, 600 and subsets ['latin'], styles ['normal', 'italic']. Export the font variable and add a CSS class 'font-lenny' that applies it. The class should be available globally via the html element's className or via a CSS variable. DONE: A component or element with className including 'font-lenny' renders in Spectral serif. DO NOT TOUCH: existing font usage, global styles beyond adding the new font class, any component files. VERIFY: pnpm build passes. The font-lenny class is available (check layout.tsx or globals.css).",
       "steps": [
-        "Read content/brainstorm/batch2/00b-album-map.md for album structure",
-        "Read songwriting files in content/brainstorm/batch2/songwriting/ for track metadata",
-        "Add 5 new albums with 25 tracks to lib/albums.ts",
-        "Each album: comingSoon: true, each track: isLocked: true, audioUrl: '', lyrics: ''",
-        "Populate concept, keyInsight, keyQuote, sources from research files",
+        "Import Spectral from next/font/google in app/layout.tsx",
+        "Configure weights [400, 600], styles ['normal', 'italic'], subsets ['latin']",
+        "Add the font's variable class to the html element className",
+        "Add a .font-lenny utility class in globals.css that applies the Spectral font-family",
         "pnpm build passes"
       ],
-      "files": ["lib/albums.ts"],
-      "passes": true
+      "files": ["app/layout.tsx", "app/globals.css"],
+      "passes": false
     },
     {
-      "id": 59,
+      "id": 82,
       "category": "feature",
-      "priority": 0,
-      "description": "Add CSS gradient classes for the 5 new albums and update gradient lookup maps. Add 5 new gradient classes to app/globals.css: gradient-the-operators, gradient-growth-engine, gradient-the-startup-life, gradient-career-moves, gradient-frameworks. Use warm tones that complement but differ from existing gradients (founders=amber, product=blue, builders=emerald, human=rose). Suggested: operators=orange, growth-engine=yellow, startup-life=violet, career-moves=cyan, frameworks=indigo. Update the gradientClass lookup objects in both AlbumPageClient.tsx and TrackPageClient.tsx to include the new album slugs mapping to their gradient classes. DONE: new album pages render with distinct gradient backgrounds. DO NOT TOUCH: existing gradient classes or album data. VERIFY: pnpm build passes.",
+      "priority": 1,
+      "description": "Add Genius-style lyric annotations to SyncedLyrics component. Accept a new optional prop 'annotations' (LyricAnnotation[] from lib/types.ts) and 'accentColor' is already a prop. For each lyric line, check if any annotation's lyricText matches (case-insensitive substring match against line.text). Annotated lines get: (1) a subtle dotted underline (border-bottom: 1px dotted) and slightly brighter opacity, (2) a small annotation icon or indicator. On click/tap of an annotated line, toggle an expandable panel directly below it. The panel styling MUST feel like reading Lenny's newsletter: use font-lenny class (Spectral serif), left border (3px solid) in the accentColor, bg-white/5 background, p-4 padding, text-sm leading-relaxed for the note text. Include a source attribution line at the bottom: 'From [sourceTitle]' as a small muted link to sourceUrl if provided. Use framer-motion AnimatePresence for smooth expand/collapse. Only one annotation panel open at a time (clicking another closes the previous). DONE: Annotated lyric lines are visually distinct with dotted underline. Clicking expands a serif-font panel with the annotation. Panel has left accent border and source link. IMPORTANT: the existing lyric click-to-seek behavior should still work — add annotation toggle to a separate tap target (e.g., the annotation indicator icon) OR make the annotation expand on the SECOND tap (first tap seeks). DO NOT TOUCH: lyrics parsing logic, share lyric functionality, audio playback. VERIFY: pnpm build passes.",
       "steps": [
-        "Read app/globals.css for existing gradient pattern",
-        "Add 5 new gradient classes",
-        "Update gradientClass map in AlbumPageClient.tsx",
-        "Update gradientClass map in TrackPageClient.tsx",
+        "Import LyricAnnotation type from lib/types.ts",
+        "Add annotations?: LyricAnnotation[] to SyncedLyricsProps interface",
+        "Create a helper to match annotations to parsed lyric lines (case-insensitive substring)",
+        "Add state for which annotation index is currently expanded (null = none)",
+        "Render annotated lines with dotted underline styling and a small indicator icon",
+        "Add a clickable annotation indicator (separate from the seek button) that toggles the panel",
+        "Render the expandable annotation panel with font-lenny class, accent left border, source link",
+        "Use framer-motion AnimatePresence for smooth open/close",
+        "Ensure only one panel open at a time",
         "pnpm build passes"
       ],
-      "files": ["app/globals.css", "app/album/[slug]/AlbumPageClient.tsx", "app/track/[slug]/TrackPageClient.tsx"],
-      "passes": true
+      "files": ["components/SyncedLyrics.tsx"],
+      "passes": false
     },
     {
-      "id": 60,
+      "id": 83,
       "category": "feature",
-      "priority": 0,
-      "description": "Add audio context guards to prevent playing locked tracks. In lib/audio-context.tsx: (1) In the play() function, add an early return if track.isLocked is true. (2) In next(), when advancing through the queue, skip any tracks where isLocked is true. If all remaining tracks are locked, try the next album. If next album is all locked too, stop playback. (3) Same skip logic in prev() going backwards. (4) In the onEnded handler, skip locked tracks when auto-advancing. (5) In playAlbum(), filter out locked tracks from the queue so they never enter the play queue. This prevents the auto-advance feature from trying to play empty audioUrls after the last Batch 1 song. DONE: playing through all Batch 1 tracks and auto-advancing never attempts to play a locked track. DO NOT TOUCH: existing playback behavior for unlocked tracks. VERIFY: pnpm build passes.",
+      "priority": 1,
+      "description": "Wire annotations data from track to SyncedLyrics in TrackPageClient. Pass track.annotations to the SyncedLyrics component. The accentColor prop is already passed. This should be backwards-compatible: if track.annotations is undefined or empty, SyncedLyrics renders exactly as before. DONE: SyncedLyrics receives annotations prop from track data. DO NOT TOUCH: audio player, layout, other sections of track page. VERIFY: pnpm build passes. Track pages render without errors (annotations is undefined for all current tracks, so no visual change yet).",
       "steps": [
-        "Read lib/audio-context.tsx",
-        "Add early return in play() for locked tracks",
-        "Add skip logic in next() and prev() for locked tracks",
-        "Filter locked tracks in playAlbum() queue",
-        "Guard onEnded handler",
-        "pnpm build passes"
-      ],
-      "files": ["lib/audio-context.tsx"],
-      "passes": true
-    },
-    {
-      "id": 61,
-      "category": "feature",
-      "priority": 0,
-      "description": "Add Coming Soon visual treatment to album cards on the homepage. In app/page.tsx, when rendering an album with comingSoon: true: (1) Show a small 'Coming Soon' pill badge overlaid on the top-right corner of the album cover (use absolute positioning, small rounded pill with bg-primary/80 or similar). (2) If the album has no coverImage (empty string), render a gradient placeholder div using the album's accentColor instead of an <Image> tag. (3) Change the track count text to show '5 tracks - Coming Soon' instead of just '5 tracks'. Albums are still clickable, linking to their album page as normal. DONE: homepage shows 9 albums, Batch 2 albums have visible Coming Soon badges and gradient placeholders, clicking them navigates to album page. DO NOT TOUCH: Batch 1 album card rendering, audio playback. VERIFY: pnpm build passes, homepage shows 9 album cards.",
-      "steps": [
-        "Read app/page.tsx album grid rendering",
-        "Add Coming Soon pill badge for comingSoon albums",
-        "Add gradient placeholder for albums with empty coverImage",
-        "Update track count text for coming soon albums",
-        "pnpm build passes"
-      ],
-      "files": ["app/page.tsx"],
-      "passes": true
-    },
-    {
-      "id": 62,
-      "category": "feature",
-      "priority": 0,
-      "description": "Update album page to handle Coming Soon albums with lock icons and email CTA. In app/album/[slug]/AlbumPageClient.tsx: (1) When album.comingSoon is true, hide the 'Play All' button and show a 'Coming Soon' badge instead. (2) For locked tracks in the track list: replace the play button/track number with a Lock icon from lucide-react, show the track title and concept as a 1-line description below the title, hide duration and play count columns, hide the share menu. Locked tracks are still clickable links to their track pages. (3) After the track list, add the existing EmailSignup component (import from components/EmailSignup.tsx) with modified heading text: 'Get notified when this album drops'. DONE: coming soon album pages show lock icons instead of play buttons, no play controls, email signup CTA below track list. DO NOT TOUCH: Batch 1 album page rendering, audio playback. VERIFY: pnpm build passes, navigate to a coming soon album and see lock icons and email CTA.",
-      "steps": [
-        "Read AlbumPageClient.tsx",
-        "Hide Play All button for comingSoon albums, show Coming Soon badge",
-        "Replace play buttons with Lock icon for locked tracks",
-        "Show concept description for locked tracks",
-        "Hide duration, play count, share menu for locked tracks",
-        "Add EmailSignup component below track list for coming soon albums",
-        "pnpm build passes"
-      ],
-      "files": ["app/album/[slug]/AlbumPageClient.tsx"],
-      "passes": true
-    },
-    {
-      "id": 63,
-      "category": "feature",
-      "priority": 0,
-      "description": "Update track page to handle locked tracks with concept preview and email CTA. In app/track/[slug]/TrackPageClient.tsx, when track.isLocked is true: (1) Hide the entire audio player section (controls + progress bar) and replace with a 'Coming Soon' message and the EmailSignup component (import from components/EmailSignup.tsx). (2) Show concept, keyQuote, quoteSpeaker, storyBehind, and sources sections as normal — this is teaser content. (3) Hide the lyrics section entirely or show 'Lyrics coming soon...' placeholder. (4) Hide share buttons. (5) Guard the useEffect that calls audio.playAlbum — add early return if track.isLocked is true to prevent trying to load an empty audio URL. DONE: locked track pages show concept/quote/story but no audio player or lyrics, email signup is prominent, no console errors. DO NOT TOUCH: Batch 1 track page rendering. VERIFY: pnpm build passes, navigate to a locked track page, confirm no audio player and no console errors.",
-      "steps": [
-        "Read TrackPageClient.tsx",
-        "Guard useEffect to skip playAlbum for locked tracks",
-        "Hide audio player, show Coming Soon + EmailSignup instead",
-        "Keep concept, keyQuote, storyBehind, sources visible",
-        "Hide lyrics section or show placeholder",
-        "Hide share buttons for locked tracks",
+        "In TrackPageClient.tsx, add annotations={track.annotations} prop to the SyncedLyrics component",
         "pnpm build passes"
       ],
       "files": ["app/track/[slug]/TrackPageClient.tsx"],
-      "passes": true
+      "passes": false
     },
     {
-      "id": 64,
+      "id": 84,
       "category": "feature",
-      "priority": 0,
-      "description": "Add subtle footer credit links to the homepage. In app/page.tsx, in the existing footer section (below the 'Built by Eric Tan' credit line), add two subtle links on the same line separated by a middot character: 'Built on Lenny's Data' linking to https://www.lennysdata.com/ and 'Build with us on Code Riff' linking to https://www.youtube.com/@CodeRiffAI. Style both very subtly: use text-xs and text-muted-foreground/30 (even more muted than the Eric Tan credit). Links should open in new tabs (target='_blank' rel='noopener noreferrer') and have subtle hover states (hover:text-foreground/50). These should be quiet credits, not promotional. DONE: homepage footer shows 'Built on Lenny's Data' and 'Build with us on Code Riff' links below existing credits. DO NOT TOUCH: anything else on the page. VERIFY: pnpm build passes, scroll to footer, see both links, clicking them opens correct URLs.",
+      "priority": 2,
+      "description": "Add sample annotations to one track for testing. Pick the track 'do-things-that-dont-scale' in lib/albums.ts (the first track in foundersTracks array). Add an annotations array with exactly 4 annotations connecting specific lyrics to Lenny insights. Use these annotations: (1) lyricText: 'Knocked on every door from dusk to dawn', note: 'Brian Chesky told Lenny he flew to New York and personally knocked on hosts\\' doors to photograph their apartments. This hands-on approach tripled conversion rates on listings with professional photos.', sourceTitle: 'Brian Chesky on Airbnb\\'s early days', sourceUrl: 'https://www.lennyspodcast.com/brian-cheskys-new-playbook/'. (2) lyricText: 'Stripe boys at the laptop, wouldn\\'t leave', note: 'The Collison brothers famously wouldn\\'t take \"I\\'ll sign up later\" for an answer. They\\'d ask \"can I see your laptop?\" and install Stripe right there. Lenny calls this the gold standard of unscalable acquisition.', sourceTitle: 'How the biggest companies got their first users', sourceUrl: ''. (3) lyricText: 'A hundred users loved by hand, not code', note: 'Paul Graham\\'s famous essay argues you need to \"recruit users one at a time\" and make each one love you before thinking about growth. Lenny featured this as the #1 lesson across 20+ first-user stories.', sourceTitle: 'Do Things That Don\\'t Scale', sourceUrl: 'https://paulgraham.com/ds.html'. (4) lyricText: 'Every great company started small', note: 'Lenny\\'s research across Airbnb, DoorDash, Tinder, Stripe, and Uber found the same pattern: the founders who won were the ones willing to do the work that wouldn\\'t scale, personally serving early users until they figured out what people really wanted.', sourceTitle: 'How the biggest companies got their first users', sourceUrl: ''. DONE: The do-things-that-dont-scale track has 4 annotations in lib/albums.ts. DO NOT TOUCH: any other tracks, any component files. VERIFY: pnpm build passes, no type errors on the annotations array.",
       "steps": [
-        "Read app/page.tsx footer section",
-        "Add 'Built on Lenny's Data' link to https://www.lennysdata.com/",
-        "Add 'Build with us on Code Riff' link to https://www.youtube.com/@CodeRiffAI",
-        "Same line, middot separator, text-xs text-muted-foreground/30",
-        "pnpm build passes"
-      ],
-      "files": ["app/page.tsx"],
-      "passes": true
-    },
-    {
-      "id": 65,
-      "category": "feature",
-      "priority": 0,
-      "description": "Add a welcome email sent via Resend when someone subscribes. Install resend package: run 'pnpm add resend'. Create an API route at app/api/subscribe/route.ts that: (1) Accepts POST with { email } body, (2) Inserts into Supabase email_subscribers table (reuse lib/supabase.ts client), (3) Sends a welcome email via Resend using the RESEND_API_KEY env var. The email should be from 'Eric from Lenny's Greatest Hits <onboarding@resend.dev>' (use resend.dev sender for now since no custom domain). Subject: 'You're in! More songs are coming'. Email body should be warm, genuine HTML email in Eric's voice — casual, direct, no corporate tone. Something like: 'Hey! Thanks for signing up. I'm Eric — I'm turning Lenny Rachitsky's best newsletter and podcast insights into actual catchy songs. Right now there are [X] songs you can listen to, with [Y] more on the way. I'll email you when new albums drop. In the meantime, go play some tracks: [link to site]. Cheers, Eric'. Keep the HTML simple — no fancy template, just clean text with a link. Handle errors gracefully: if Resend fails, still save the email to Supabase (email capture is more important than the welcome email). (4) Update components/EmailSignup.tsx to POST to /api/subscribe instead of inserting directly into Supabase from the client. The API route handles both the DB insert and the email send. DONE: subscribing triggers a welcome email, email is saved to Supabase, duplicate emails show 'already subscribed'. DO NOT TOUCH: audio playback, lyrics, track data. VERIFY: pnpm build passes, test the subscribe flow end to end.",
-      "steps": [
-        "Run pnpm add resend",
-        "Create app/api/subscribe/route.ts with POST handler",
-        "Insert email into Supabase email_subscribers",
-        "Send welcome email via Resend with warm casual copy",
-        "Handle duplicates and errors gracefully",
-        "Update EmailSignup.tsx to call /api/subscribe instead of direct Supabase insert",
-        "pnpm build passes"
-      ],
-      "files": ["app/api/subscribe/route.ts", "components/EmailSignup.tsx"],
-      "passes": true
-    },
-    {
-      "id": 66,
-      "category": "bugfix",
-      "priority": 0,
-      "description": "Fix all broken internal links for Coming Soon albums and locked tracks. The Coming Soon albums and locked tracks were just added but some links may be broken — album slugs not matching route params, track slugs not matching, or pages returning 404. Read lib/albums.ts and check every Coming Soon album slug and every locked track slug. Then verify that: (1) The homepage album card links use the correct href /album/{album.slug}, (2) Album page track links use the correct href /track/{track.slug}, (3) The getAlbumBySlug and getTrackBySlug functions in lib/tracks.ts correctly find Coming Soon albums and locked tracks, (4) AlbumPageClient and TrackPageClient handle the new album slugs in their gradient lookups without errors. Fix any mismatches. Also check that clicking album cards on the homepage navigates correctly and that clicking track rows on album pages navigates correctly. DONE: every Coming Soon album and locked track is reachable via its link — no 404s, no broken navigation. DO NOT TOUCH: audio playback, Batch 1 album data. VERIFY: pnpm build passes, manually trace every Coming Soon album slug and track slug to confirm they resolve.",
-      "steps": [
-        "Read lib/albums.ts — list all Coming Soon album slugs and track slugs",
-        "Read lib/tracks.ts — verify getAlbumBySlug and getTrackBySlug work for new slugs",
-        "Check homepage links in app/page.tsx",
-        "Check album page track links in AlbumPageClient.tsx",
-        "Check gradient lookups for new album slugs",
-        "Fix any slug mismatches or broken references",
-        "pnpm build passes"
-      ],
-      "files": ["lib/albums.ts", "lib/tracks.ts", "app/page.tsx", "app/album/[slug]/AlbumPageClient.tsx", "app/track/[slug]/TrackPageClient.tsx"],
-      "passes": true
-    },
-    {
-      "id": 67,
-      "category": "bugfix",
-      "priority": 0,
-      "description": "Fix all source links for Batch 2 locked tracks. Many locked tracks in lib/albums.ts may have empty or placeholder source URLs. For each of the 25 locked tracks, check the sources array. If any source has an empty url field, search for the correct Lenny URL using mcp__lennysdata__search_content with the guest name or topic. For podcast sources, the URL pattern is typically https://www.lennysnewsletter.com/p/[slug]. For newsletter sources, same pattern. Update every empty source URL with the correct Lenny article/podcast URL. If a source genuinely has no Lenny URL (external content), use the original external URL and note it in the source title. DONE: every source link on every locked track page has a working URL. DO NOT TOUCH: Batch 1 source links, audio playback. VERIFY: pnpm build passes.",
-      "steps": [
-        "Read lib/albums.ts — find all locked tracks with empty source URLs",
-        "For each empty URL, search mcp__lennysdata__search_content for the guest/topic",
-        "Update source URLs in lib/albums.ts",
+        "Find the do-things-that-dont-scale track object in lib/albums.ts",
+        "Add the annotations array with the 4 specified annotations after the existing fields",
         "pnpm build passes"
       ],
       "files": ["lib/albums.ts"],
-      "passes": true
+      "passes": false
     },
     {
-      "id": 68,
-      "category": "feature",
-      "priority": 1,
-      "description": "Add individual OG images for each album page. Create app/album/[slug]/opengraph-image.tsx that generates a dynamic 1200x630 OG image per album using ImageResponse from next/og. The image should show the album title, subtitle, track count, and use the album's accentColor as the gradient background. For Coming Soon albums, include a 'Coming Soon' badge on the OG image. This way when someone shares an album link on social media, it shows a custom preview instead of the generic site OG image. DONE: sharing any album URL shows a custom OG image with that album's title and color. DO NOT TOUCH: audio playback, track data, page layouts. VERIFY: pnpm build passes, check /album/the-operators/opengraph-image returns a valid image.",
-      "steps": [
-        "Read existing app/opengraph-image.tsx for reference",
-        "Create app/album/[slug]/opengraph-image.tsx with dynamic album data",
-        "Use album accentColor for gradient, show title/subtitle/track count",
-        "Add Coming Soon badge for comingSoon albums",
-        "pnpm build passes"
-      ],
-      "files": ["app/album/[slug]/opengraph-image.tsx"],
-      "passes": true
-    },
-    {
-      "id": 69,
-      "category": "feature",
-      "priority": 1,
-      "description": "Add individual OG images for each track page. Create app/track/[slug]/opengraph-image.tsx that generates a dynamic 1200x630 OG image per track using ImageResponse from next/og. The image should show the track title, album name, a key quote if available (truncated to fit), and use the album's accentColor as background. For locked tracks, include a 'Coming Soon' indicator. DONE: sharing any track URL shows a custom OG image. DO NOT TOUCH: audio playback, page layouts. VERIFY: pnpm build passes.",
-      "steps": [
-        "Read existing app/opengraph-image.tsx for reference",
-        "Create app/track/[slug]/opengraph-image.tsx with dynamic track data",
-        "Show track title, album name, key quote snippet",
-        "Use album accentColor for gradient",
-        "pnpm build passes"
-      ],
-      "files": ["app/track/[slug]/opengraph-image.tsx"],
-      "passes": true
-    },
-    {
-      "id": 70,
-      "category": "feature",
-      "priority": 1,
-      "description": "Add a 'Share this album' button to album pages and a share modal for track pages. On album pages (AlbumPageClient.tsx), add a Share button next to the album title that opens a dropdown with: Copy link, Share to X (Twitter), Share to LinkedIn. The share text should be: 'Check out [Album Title] on Lenny's Greatest Hits — [album subtitle]' with the album URL. Only show for non-Coming-Soon albums (or show for Coming Soon albums too with 'Coming soon' in the share text). On track pages, ensure the existing share functionality works for both locked and unlocked tracks — locked tracks should share with 'Coming soon' messaging. DONE: album share button works, share links generate correct URLs and text. DO NOT TOUCH: audio playback. VERIFY: pnpm build passes, click share on an album page, verify link copies correctly.",
-      "steps": [
-        "Read AlbumPageClient.tsx for layout",
-        "Add Share button with dropdown (Copy link, X, LinkedIn)",
-        "Generate correct share text and URL for each album",
-        "Handle Coming Soon albums in share text",
-        "Verify track page share works for locked tracks",
-        "pnpm build passes"
-      ],
-      "files": ["app/album/[slug]/AlbumPageClient.tsx", "app/track/[slug]/TrackPageClient.tsx"],
-      "passes": true
-    },
-    {
-      "id": 71,
+      "id": 85,
       "category": "feature",
       "priority": 2,
-      "description": "Add a 'Browse by topic' or tag cloud section to the homepage. Read all tags from all tracks (both Batch 1 and Batch 2) in lib/albums.ts. Create a section on the homepage below the album grid that shows all unique tags as clickable pill badges. Clicking a tag scrolls to or filters the album grid to show only albums containing tracks with that tag. Alternatively, clicking a tag navigates to a simple filtered view showing all tracks with that tag across all albums. Keep it simple — a horizontal scrollable row of tag pills with counts. DONE: homepage shows browsable tags, clicking a tag shows relevant tracks. DO NOT TOUCH: audio playback, album/track pages. VERIFY: pnpm build passes.",
+      "description": "Build a /topics browse page showing all unique tags as a clickable grid. Create app/topics/page.tsx. Import getAllTracks from lib/tracks. Collect all unique tags from all non-locked tracks (track.tags array). Sort alphabetically. Display as a grid of pill-shaped buttons (similar to the existing tag styling on track pages but larger and clickable). Each pill links to /topics/[tag]. Page has a header 'Browse by Topic' and a back link to home. Use the app's existing dark theme styling. Layout: responsive grid, 2 cols on mobile, 3-4 on desktop. DONE: /topics page renders showing all tags as clickable pills linking to /topics/[tag]. DO NOT TOUCH: lib/albums.ts, existing components, other pages. VERIFY: pnpm build passes. The /topics route exists in the build output.",
       "steps": [
-        "Read lib/albums.ts to collect all unique tags across all tracks",
-        "Add a tag cloud section to app/page.tsx below album grid",
-        "Make tags clickable — filter or navigate to show matching tracks",
-        "Style as horizontal scrollable pill badges",
+        "Create app/topics/page.tsx",
+        "Import getAllTracks, collect unique tags from non-locked tracks",
+        "Sort tags alphabetically",
+        "Render responsive grid of pill links to /topics/[tag]",
+        "Add page header and back-to-home link",
+        "pnpm build passes"
+      ],
+      "files": ["app/topics/page.tsx"],
+      "passes": false
+    },
+    {
+      "id": 86,
+      "category": "feature",
+      "priority": 2,
+      "description": "Build a /topics/[tag] page showing all tracks matching a tag. Create app/topics/[tag]/page.tsx. Import getAllTracks from lib/tracks and getAllAlbums. Filter tracks where track.tags includes the tag parameter (case-insensitive). For each matching track, display: cover thumbnail (48x48), track title (links to /track/[slug]), album name, genre, duration. Use a vertical list layout. Page header shows the tag name. Include a back link to /topics. If no tracks match, show 'No tracks found for this topic.' Use generateStaticParams to pre-render all tag pages by collecting unique tags from all tracks. DONE: Visiting /topics/hustle shows all tracks tagged 'hustle' with links to each track. DO NOT TOUCH: lib/albums.ts, existing components, other pages. VERIFY: pnpm build passes. The /topics/[tag] routes exist in build output.",
+      "steps": [
+        "Create app/topics/[tag]/page.tsx",
+        "Import getAllTracks and filter by tag parameter",
+        "Display matching tracks as a list with thumbnail, title link, album, genre, duration",
+        "Add generateStaticParams for all unique tags",
+        "Add page header with tag name and back link to /topics",
+        "Handle empty state",
+        "pnpm build passes"
+      ],
+      "files": ["app/topics/[tag]/page.tsx"],
+      "passes": false
+    },
+    {
+      "id": 87,
+      "category": "feature",
+      "priority": 3,
+      "description": "Make tags clickable on track pages. In TrackPageClient.tsx, find the section that renders track.tags as span elements (around line 193-203). Wrap each tag span in a Next.js Link component pointing to /topics/[tag]. Keep the existing visual styling (pill shape, border, muted text) but add hover:text-foreground and hover:border-foreground/40 transitions so they look interactive. DONE: Tags on track pages are clickable links to /topics/[tag] with hover feedback. DO NOT TOUCH: audio player, lyrics, other sections. VERIFY: pnpm build passes.",
+      "steps": [
+        "Import Link from next/link in TrackPageClient.tsx (already imported)",
+        "Wrap each tag span in <Link href={`/topics/${tag}`}>",
+        "Add hover styles for interactivity feedback",
+        "pnpm build passes"
+      ],
+      "files": ["app/track/[slug]/TrackPageClient.tsx"],
+      "passes": false
+    },
+    {
+      "id": 88,
+      "category": "feature",
+      "priority": 3,
+      "description": "Add a 'Browse by Topic' link to the homepage. In app/page.tsx, add a small text link below the album grid section (after the albums map) that reads 'Browse by Topic →' and links to /topics. Style it as a centered, muted text link with hover effect: text-sm text-muted-foreground hover:text-foreground transition-colors. Add some top margin (mt-6) to separate from the album grid. DONE: Homepage has a visible 'Browse by Topic →' link that navigates to /topics. DO NOT TOUCH: hero section, album grid layout, email signup, footer. VERIFY: pnpm build passes.",
+      "steps": [
+        "Add a Link component after the album grid in app/page.tsx",
+        "Style as centered muted text with hover effect",
         "pnpm build passes"
       ],
       "files": ["app/page.tsx"],
-      "passes": true
-    },
-    {
-      "id": 72,
-      "category": "feature",
-      "priority": 2,
-      "description": "Add keyboard shortcuts for audio playback. In the audio context or a new hook, add global keyboard event listeners: Space = play/pause (only when not typing in an input), Left Arrow = seek back 10 seconds, Right Arrow = seek forward 10 seconds, N = next track, P = previous track. Show a small tooltip or hint somewhere on the track page indicating keyboard shortcuts are available (e.g., a small '?' icon that shows shortcuts on hover). DONE: keyboard shortcuts work for play/pause, seek, next/prev. DO NOT TOUCH: existing click-based controls, lyrics, track data. VERIFY: pnpm build passes, press Space to play/pause, arrow keys to seek.",
-      "steps": [
-        "Add useEffect with keydown listener in audio-context.tsx or a new hook",
-        "Implement Space=play/pause, arrows=seek, N=next, P=prev",
-        "Ignore keypresses when focus is on input/textarea elements",
-        "Add small keyboard shortcut hint on track page",
-        "pnpm build passes"
-      ],
-      "files": ["lib/audio-context.tsx", "app/track/[slug]/TrackPageClient.tsx"],
-      "passes": true
-    },
-    {
-      "id": 73,
-      "category": "feature",
-      "priority": 2,
-      "description": "Add a 'Shuffle All' button to the homepage that plays all unlocked tracks in random order. Add a button near the top of the homepage (below the hero, above the album grid) labeled 'Shuffle All' with a shuffle icon. When clicked, it collects all unlocked tracks from all albums, shuffles them randomly, sets the first as current track, and queues the rest. Navigate to the first track's page. Only include tracks where isLocked is not true and audioUrl is not empty. DONE: clicking Shuffle All starts playing a random unlocked track and queues all others in random order. DO NOT TOUCH: existing album playback, lyrics, track data. VERIFY: pnpm build passes, click Shuffle All, confirm random track plays and queue is shuffled.",
-      "steps": [
-        "Add shuffleAll function to audio-context.tsx",
-        "Collect all unlocked tracks, shuffle array, play first, queue rest",
-        "Add Shuffle All button to app/page.tsx",
-        "Navigate to first track page on click",
-        "pnpm build passes"
-      ],
-      "files": ["lib/audio-context.tsx", "app/page.tsx"],
       "passes": false
     }
   ]

@@ -1,5 +1,2 @@
-# Ralph PROD run Sat Mar 21 11:37:56 +08 2026
-Task 32b/32c/32d: Already implemented (cover art on home, album, track pages). Marked done.
-Task 33: Replaced all em dashes in non-lyric user-facing text across albums.ts + 8 component/app files.
-Task 34/35: Already implemented (no Tech Culture Anthems label, Eric Tan credit present). Marked done.
-Task 36: Deployed to Vercel production. Live at https://lennys-greatest-hits.vercel.app
+# Ralph PROD run Sat Mar 21 12:09:04 +08 2026
+Task 80: Added LyricAnnotation type and annotations field to Track type in lib/types.ts. Build passes.
