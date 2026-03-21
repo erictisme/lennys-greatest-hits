@@ -36,12 +36,12 @@ And I'm the one who picks the road
 Not 'cause I'm right, I might be wrong
 But standing still has cost too long
 
-[Chorus 2]
+[Chorus]
 Somebody's gotta make the call
-Not everyone agrees, that's all
-I heard you all, I held the doubt
-Now clear the room, I'm writing out
-Somebody's gotta own the fall
+When every door looks like a wall
+I heard you all, I felt the weight
+Now watch me walk through anyway
+Somebody's gotta make the call
 
 [Bridge, stripped back, breath]
 Consensus is a hiding place

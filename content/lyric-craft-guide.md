@@ -18,11 +18,17 @@ Bad: "Continuous discovery" (closed consonant clusters) → Good: "One honest qu
 Surround it with atmosphere. Not every line is a thesis. Aim for one line people quote after one listen.
 Example: "You're reading sheet music but you've never heard the song"
 
+**6. End-Stopped Lines — No Run-On Lyrics**
+Each line = one complete thought. Lyrics aren't poetry — they need to work with breath, melody, and natural phrasing. A singer needs to breathe. A listener needs to catch each line on first listen.
+Bad: "Afraid the world might see the version that's the most / Honest thing you've ever made — so let it go" (thought spills across lines, "the most" dangles)
+Good: "The most honest thing you've made / Let the world see it today" (each line stands alone)
+Run-on is OK if it's intentional and rare (hip-hop flow, building tension). But default to end-stopped. After drafting, read each line as if singing it — if a listener can't understand the line on its own, rewrite it.
+
 ## Genre Tips
 
 **Indie Folk** — Conversational tone, 7–9 syl/line, fingerpicked acoustic, intimate male vocal. Think Guerra: honest > clever, let space carry weight. Slant rhymes over perfect.
 
-**Jazz Pop** — More syllable variation OK, lean into syncopation, sultry female vocal, brushed drums. Room for dry humor (Bridgers style). Vary chorus lyrics across repetitions.
+**Jazz Pop** — More syllable variation OK, lean into syncopation, sultry female vocal, brushed drums. Room for dry humor (Bridgers style). Jazz/narrative songs can vary chorus lyrics across repetitions, but keep the hook line identical.
 
 **Lo-Fi Hip Hop** — Short lines (5–8 syl), repetitive hooks, relaxed flow, vinyl crackle. Keep it conversational. Call-and-response hooks work well.
 
@@ -44,7 +50,7 @@ Example: "You're reading sheet music but you've never heard the song"
 ## Batch 1 Mistakes to Avoid
 
 1. **No thesis-statement lyrics** — "X isn't Y, it's Z" is a blog post, not a song
-2. **Vary choruses** — change a word or line on 2nd/3rd repetition
+2. **Chorus repetition is power** — the DEFAULT is to repeat the chorus IDENTICALLY each time. That's what makes it singable and memorable. Only change a word or line on the FINAL chorus as an emotional payoff (e.g., "I" becomes "We"). Never vary more than one line. Narrative/story songs (jazz, spoken word) can vary more, but anthems, hymns, and hook-driven songs MUST repeat.
 3. **No stat-stuffing** — if a number breaks the 12-syl limit, cut it or split the line
 4. **No insider jargon** — "feather, brick, dump truck" and URLs won't land outside the community
 5. **No filler rhymes** — "no fears," "that's the key," "go take a look" exist only to complete a rhyme
@@ -57,7 +63,8 @@ Example: "You're reading sheet music but you've never heard the song"
 - [ ] Chorus shorter than verse
 - [ ] One killer quotable line identified
 - [ ] No thesis-statement definitions
-- [ ] Read aloud — does it flow naturally?
+- [ ] **Sing test: read each line aloud as if performing. Can a listener catch it on first listen? Would it be easy to sing along?**
+- [ ] **End-stopped lines: each line is a complete phrase. No dangling thoughts across line breaks.**
 - [ ] Style prompt includes vocal character + mood + instruments
-- [ ] Chorus lyrics vary across repetitions
+- [ ] Chorus repeats identically (only final chorus may vary 1 line for emotional payoff)
 - [ ] No insider references that need context to understand

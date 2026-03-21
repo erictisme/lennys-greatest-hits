@@ -32,11 +32,11 @@ Would ever cost — just wore the mask
 The fear said weakness looks like death
 But silence stole my every breath
 
-[Chorus 2]
-I don't have to prove it on my own
-The wall I built is not my home
-Shaking voice, dry mouth, and then —
-Could you help me? I'll begin
+[Chorus]
+I don't have to carry this alone
+These arms were never meant for stone
+Open hands, three words, begin —
+Would you help me? Let me in
 
 [Bridge, building warmth]
 They didn't see me as a burden
@@ -44,11 +44,11 @@ They didn't think that I was small
 They leaned in closer when I wavered
 The bravest thing was just the call
 
-[Chorus 3, congregational, full band]
+[Chorus, congregational, full band]
 We don't have to carry this alone
-No fortress made of flesh and bone
-Open doors where walls have been —
-Will you help me? Come on in
+These arms were never meant for stone
+Open hands, three words, begin —
+Will you help us? Let us in
 
 [Outro, stripped back]
 Three words... that changed everything

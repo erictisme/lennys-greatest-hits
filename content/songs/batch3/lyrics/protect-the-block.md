@@ -43,15 +43,15 @@ Feel the weight of that quick thought (8)
 Half your days are someone else's (8)
 Meetings built on things you bought (7)
 
-[Chorus 2]
+[Chorus]
 Protect the block, protect the block (8)
 This hour is not for sale (7)
 Every yes you give away (7)
-Is a no you'll always feel (7)
-Guard the silence, guard the depth (7)
-Let the calendar hold firm (7)
-The door is closed, the flow is here (8)
-This is where the best things turn (8)
+Is a no to something real (7)
+Guard the morning, guard the space (7)
+Let the inbox wait its turn (7)
+The door is closed, the work is here (8)
+This is how the good things burn (8)
 
 [Bridge, whispered]
 It's not the meeting on its own (8)
@@ -59,15 +59,15 @@ It's the hour before you can't go deep (9)
 And the hour after, rebuilding (8)
 What you lost when you broke the keep (8)
 
-[Chorus 3, building warmth]
+[Final Chorus, building warmth]
 Protect the block, protect the block (8)
-Your time is not for sale (6)
-Every no becomes a gift (7)
-To the work that tips the scale (7)
-Guard the morning, guard the craft (7)
-Let the rest of it go still (7)
-The door is closed, the pen is down (8)
-And the best work always will (7)
+This hour is not for sale (7)
+Every yes you give away (7)
+Is a no to something real (7)
+Guard the morning, guard the space (7)
+Let the inbox wait its turn (7)
+The door is closed, the work is here (8)
+This is how the best things burn (8)
 
 [Outro, gentle]
 Protect the block... (4)

@@ -1,0 +1,502 @@
+=== 8 REWRITTEN SUNO PROMPTS ===
+Copy each section into Suno separately. Generate 3 versions per song.
+
+========================================
+
+TITLE: Don't Break the Streak
+
+STYLE: Warm acoustic folk-pop, Hollow Coves warmth, fingerpicked acoustic guitar, warm male vocal with slightly breathless urgency, light percussion with shaker, gentle piano, 108 BPM, key of Bb major, reference Hollow Coves warm acoustic builds, reference Stephen Day indie folk-pop energy, uplifting playful mood
+
+SOURCE: How Duolingo reignited user growth (Jorge Mazal, newsletter)
+
+---
+
+LYRICS:
+
+[Verse 1]
+Biggest app in the world, but the line went flat
+Stole a trick from a game — nothing came from that
+Tried referrals next, the Uber play
+Three percent and the doubters had their day
+Two big swings and nothing left to show
+The boardroom's faith was running low
+But somewhere in the numbers, buried deep
+Was a secret only data keeps
+
+[Chorus]
+Don't break the streak, don't let it slip
+One more day and you're in the grip
+Yesterday's you is keeping score
+Come back tomorrow, just once more
+Don't break the streak
+
+[Verse 2]
+They found the number everyone had missed
+Current users — top of every list
+Five times the pull, the model made it clear
+Keep who comes back, year to year to year
+A leaderboard, a buzz at ten PM
+A nudge that says, "This isn't working" — then
+You smile, you swipe, one lesson and that's that
+And tomorrow night it pulls you right back
+
+[Chorus]
+Don't break the streak, don't let it slip
+Day after day, a tighter grip
+The chain gets stronger every time
+Come back tomorrow, you'll be fine
+Don't break the streak
+
+[Bridge]
+It started as a number on a screen
+Now it's four years, no days in between
+Each day you come back, you care a little more
+That's the math they never taught before
+
+[Final Chorus, belted]
+Don't break the streak, don't let it go
+Day fourteen hundred, still in the flow
+Tomorrow's you is counting on today
+Don't walk away, don't walk away
+Don't break the streak
+
+[Outro]
+One more day
+That's all it takes
+One more day
+
+
+========================================
+
+TITLE: I'm in the Room
+
+STYLE: Intimate acoustic folk building to emotional peak, Jon Guerra contemplative intensity, close-mic warm male vocal restrained verse building to passionate chorus, fingerpicked nylon guitar, subtle Rhodes piano, brushed drums building to full kit, 100 BPM, key of E minor, reference Jon Guerra honest conviction, reference Bon Iver atmospheric builds, determined and bittersweet mood
+
+SOURCE: Brian Chesky's new playbook (Brian Chesky, podcast)
+
+---
+
+LYRICS:
+
+[Verse 1]
+I hired every name the board approved
+Gave them keys and gave them room to move
+The roadmap grew, the product lost its soul
+My name was on it but I'd lost control
+"Step back," they said, "that's what good leaders do"
+I trusted — and I watched the vision blur
+
+[Chorus]
+I'm in the room, I'm in the room
+Touch every pixel, read every page
+Call it control — I call it care
+If my name's on the building, I'll be there
+I'm in the room
+
+[Verse 2]
+Then March hit like a hammer on the glass
+The bottom fell — we're bleeding, bleeding fast
+I cut a quarter of the names I'd hired
+Burned the five-year plan, dissolved the tiers
+And in the wreckage, something old came through
+The voice I'd buried said I know what to do
+
+[Chorus]
+I'm in the room, I'm in the room
+Know every detail, own every stage
+Call it obsession — I don't care
+If my name's on the building, I'll be there
+I'm in the room
+
+[Bridge]
+Ten PM, the product review runs late
+My team can't sleep — they're prepping for my weight
+It's great to be in founder mode, they say
+Not as great for those who walk beside me
+But you can't hand off the thing only you feel
+So I'll carry the cost to keep it real
+
+[Final Chorus, belted]
+I'm in the room, I'm in the room
+Not stepping back, not leaving soon
+Tore their playbook down and wrote my own
+If my name's on the building, I'm not gone
+I'm in the room
+
+[Outro]
+They built a church around the thing I'd start
+Then prayed to process till it lost its heart
+
+
+========================================
+
+TITLE: Build the Machine
+
+STYLE: Neo-soul with sophistication, Jacob Collier harmonic movement, warm male vocal with understated confidence, Rhodes/Wurlitzer piano, jazz guitar chord voicings, upright bass, brushed drums with tasteful fills, 96 BPM, key of Ab major, reference Jacob Collier harmonic sophistication, reference Tom Misch jazzy grooves, determined and quietly proud mood
+
+SOURCE: Lessons from scaling Stripe (Claire Hughes Johnson, podcast)
+
+---
+
+LYRICS:
+
+[Verse 1]
+She ran the numbers, morning two
+Tickets piled like dishes in the sink
+"We need twice the people on this floor"
+The room went quiet — no one liked the score
+
+She'd ridden rockets once before
+Knew the sound before the engine roars
+
+[Chorus]
+Build the machine that builds the dream
+Hold the line that no one ever sees
+Write it down, and don't get stuck
+If you don't know who decides — it's you
+
+[Verse 2]
+She called around — "When'd you add the levels?"
+One said "bloodbath." One said "way too late"
+Spun a wheel, a random team stood up
+No rehearsal — show us what you've made
+Progress, impact, momentum on the wall
+A hundred small decisions before nightfall
+
+[Chorus]
+Build the machine that builds the dream
+She built the engine while they built the name
+Write it down, and don't get stuck
+Progress, impact, momentum — us
+
+[Bridge]
+They celebrate the product and the name
+The headline and the billion-dollar fame
+But someone poured the foundation in the dark
+Someone wired the walls before the spark
+John said, "We need Claire in a box"
+She laughed — then wrote the book
+
+[Final Chorus]
+Build the machine that builds the dream
+Seven thousand strong and still it's clean
+Write it down, and don't get stuck
+The decision-maker's always us
+
+[Outro]
+Someone's gotta build the house
+While the rest just talk about the view
+
+
+========================================
+
+TITLE: Doesn't Feel Right Yet
+
+STYLE: Indie folk-pop with dream-pop textures, Stephen Day and Doris Club warmth, warm male vocal with earnest delivery, clean electric guitar with reverb, acoustic guitar foundation, warm analog synth pad, light brushed drums, 104 BPM, key of D major, reference Stephen Day warm indie folk-pop, reference Doris Club dreamy textures, precise and cathartic mood
+
+SOURCE: How Linear builds product / Inside Linear (Karri Saarinen, newsletter + podcast)
+
+---
+
+LYRICS:
+
+[Verse 1]
+Every tool I touched was made by strangers
+Built by people who would never use the thing
+Fourteen menus deep to move a ticket
+Dashboards glowing, nobody was listening
+A designer staring at a broken system
+Said "I'm done pretending this is fine"
+
+[Chorus]
+Doesn't feel right yet — hold the launch
+Doesn't feel right yet — take it back
+No one's gonna tell me when it's done
+I'll know it when the last detail feels won
+Doesn't feel right yet
+And that's fine
+
+[Verse 2]
+Fifty people, two have ever left us
+More cash in the bank than the VCs gave
+No one translates the vision into tickets
+The builders and the dreamers are the same
+They said "you need a roadmap and a process"
+We said "we need a window and some taste"
+
+[Chorus]
+Doesn't feel right yet — hold the launch
+Doesn't feel right yet — bring it back
+The fastest teams in tech all found our door
+Not 'cause we were loud — 'cause we were sure
+Doesn't feel right yet
+Now it does
+
+[Bridge]
+They use the data like a safety net
+Afraid to make the call, afraid to bet
+On what their hands can feel, on what they know
+So they hide behind the chart and let it go
+Craft is pushing out and coming back
+Shipping fast and fixing every crack
+
+[Final Chorus]
+Doesn't feel right yet — hold the launch
+Doesn't feel right yet — one more pass
+Fewer people, sharper eye, no compromise
+Build it till the last pixel satisfies
+This one feels right now
+Let it fly
+
+[Outro]
+The more it matters
+The more the design matters
+
+
+========================================
+
+TITLE: The Ramp Speed
+
+STYLE: Lo-fi hip-hop with playful energy, vinyl crackle texture, warm male vocal with conversational swagger delivery, lo-fi beats with crisp snare, jazz guitar sample, warm bass, subtle piano, 95 BPM, key of G minor, reference Tom Misch groovy sophistication, reference Doris Club lo-fi warmth, exhilarating and playful mood
+
+SOURCE: How Ramp builds product / Velocity over everything (Geoff Charles, newsletter + podcast)
+
+---
+
+LYRICS:
+
+[Verse 1]
+Eight of us, a whiteboard and a dare
+Beat the giants — give us ninety days
+No one writes a roadmap, no one waits
+Every bug gets killed before it stays
+Six months later, dropped another one
+Fifty people, and we'd just begun
+
+[Chorus]
+Move — don't stop to draw the map
+Ship — and if it breaks, come back
+Three months, not a three-year plan
+Doing beats the diagram
+This is how the small ones win it back
+
+[Verse 2]
+Five people and a ninety-day clock
+Build the thing that giants couldn't block
+Billions flowing through it — watch it run
+No burndown charts, no points — just "is it done?"
+Did you ship the thing you said you would?
+That's the only score that's understood
+
+[Chorus]
+Move — don't stop to draw the map
+Ship — the wreckage teaches fast
+Hundred million, two years flat
+Doing beats the diagram
+Giants never saw us coming back
+
+[Bridge]
+Found our best engineer in Fortnite
+Gratitude's the loudest room we've got
+Named the channel "couscous" — who knows why
+Speed looks different from the inside —
+Someone fixed a bug that wasn't theirs last night
+That's the kind of fast that feels right
+
+[Final Chorus]
+Move — don't stop to draw the map
+Ship — and if it breaks, come back
+Speed's the cheapest way to learn
+Doing beats the diagram
+This is how the small ones take their turn
+
+[Outro]
+Doing beats the diagram
+Always did
+Move
+
+
+========================================
+
+TITLE: The Racecar
+
+STYLE: Warm folk-rock with building energy, Hollow Coves cinematic crescendo, warm male vocal starting gentle building to belted chorus, acoustic guitar foundation with electric guitar builds, warm bass, drums building from brushed to full, tambourine, 108 BPM, key of A major, reference Hollow Coves warm folk builds, reference CityAlight congregational energy, anthemic and revelatory mood
+
+SOURCE: The Racecar Growth Framework — expanded and illustrated (Dan Hockenmaier, newsletter)
+
+---
+
+LYRICS:
+
+[Verse 1]
+We built the thing and no one came
+Every dashboard flat, each chart the same
+So I knocked on doors and slept on floors
+Showed the app in bars and campus stores
+Loaded up my car and drove at night
+The whole city was my demo site
+Hands on the hood, just push and pray
+Kickstart fades by end of day
+
+[Chorus]
+Build the engine, pour the fuel
+Feel it catch and start to move
+Output feeding input back —
+Find the loop and cut it loose
+
+[Verse 2]
+The engine caught — now watch it spin
+Money goes out, comes right back in
+Friend tells friend, the searches grow
+Every exit feeds the flow
+A headline hits, the traffic spikes
+Gone by morning — that's the ride
+Half the riders left the track
+Grease the gears to bring them back
+
+[Chorus]
+Build the engine, pour the fuel
+Every mile compounds the proof
+Output feeding input back —
+Find the loop and cut it loose
+
+[Bridge]
+Pouring fuel with no engine built
+Wondering why the car stood still
+Not the speed and not the size —
+It's the loop that multiplies
+
+[Final Chorus]
+Build the engine, pour the fuel
+Now the car knows what to do
+Output feeding input back —
+Find the loop and cut it loose
+
+[Outro]
+Build the next one
+Before this one stops
+
+
+========================================
+
+TITLE: Find Your North Star
+
+STYLE: Acoustic folk with conviction, Jon Guerra warmth and directness, close-mic warm male vocal with quiet intensity, fingerpicked acoustic guitar, subtle piano, minimal percussion building to gentle drums, 100 BPM, key of C major, reference Jon Guerra contemplative intensity, reference Jonathan Ogden intimate warmth, clarifying and urgent mood
+
+SOURCE: Choosing Your North Star Metric (Lenny Rachitsky + Sean Ellis, newsletter + podcast)
+
+---
+
+LYRICS:
+
+[Verse 1]
+Fourteen dashboards, Monday morning haze
+Every number pulling different ways
+Revenue is up, the users leave
+The boardroom cheers — I still can't breathe
+A sky of scattered light above my desk
+A thousand stars — I can't tell which one's best
+
+[Chorus]
+Find your north star
+One number in the dark
+What you measure is what you become
+What you chase is what you are
+Not the revenue — the value
+Find your north star
+
+[Verse 2]
+Nights booked, rides taken, messages sent
+Every company found what winning meant
+Facebook counted monthly — doing fine
+Switched to daily, everything realigned
+"Bring them back" became the battle cry
+The product bent to match a single "why"
+
+[Chorus]
+Find your north star
+One signal through the noise
+What you measure is what you become
+Every metric was a choice
+Not the revenue — the value
+Find your north star
+
+[Bridge]
+But careful what you choose, it cuts both ways
+Facebook brought them back — they couldn't leave
+Congress called, the papers filled for days
+The metric worked — that's the thing you grieve
+What gets measured gets managed, that's the deal
+Be sure you want the world your number builds
+
+[Final Chorus]
+Find your north star
+One number in the dark
+What you measure is what you become
+What you build is what you are
+Not the revenue — the value you deliver
+Find your north star
+
+[Outro]
+You only need one light to find your way
+Pick the one that matters
+Start today
+
+
+========================================
+
+TITLE: Nobody's Coming
+
+STYLE: Gentle indie rock with forward motion, The 1975 soft synth-pop energy not the heavy stuff, warm male vocal with urgency, clean electric guitar with chorus effect, warm bass, electronic drums with real feel, subtle synth pad, 112 BPM, key of E major, reference The 1975 "Somebody Else" soft energy, reference JVKE emotional builds, scrappy and triumphant mood
+
+SOURCE: How to Kickstart and Scale a Marketplace Business (8-part series) (Lenny Rachitsky + 25 marketplace leaders, newsletter)
+
+---
+
+LYRICS:
+
+[Verse 1]
+I launched to silence — no one came
+Two empty sides, both the same
+Can't get the riders without a ride
+Can't get the drivers to the other side
+So I packed a camera, caught a flight
+Rang the doorbell, stayed till midnight
+
+[Chorus]
+Nobody's coming till somebody's here
+So I went first through the door
+One knock, one room, one ride, one meal
+Then I came back for more
+
+[Verse 2]
+He dashed the food on his own date night
+Ran the elevator, held on tight
+She walked the craft fair, booth to booth
+Carried software, told them half the truth
+Forty bucks an hour just to drive
+The start was always awkward — but alive
+
+[Chorus]
+Nobody's coming till somebody's here
+So we showed up at the door
+One block, one street, one city on the line
+Then we came back for more
+
+[Bridge]
+Then one morning something changed
+Stickers in the windows we never placed
+The rider grabbed the wheel, became the ride
+I let go... and it didn't fall
+
+[Final Chorus, belted]
+Everybody's here cause someone showed up first
+Someone went first through the door
+One knock, one room, and the whole thing turned
+Now they're all knocking back for more
+
+[Outro]
+Which came first?
+I did
+
+

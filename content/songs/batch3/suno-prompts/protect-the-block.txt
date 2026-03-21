@@ -1,6 +1,6 @@
 TITLE: Protect the Block
 
-STYLE: Acoustic folk, Jon Guerra contemplative intensity. Fingerpicked acoustic guitar, gentle shaker percussion, warm upright bass. Warm male baritone vocal, intimate and reflective, close-mic with room ambience. BPM ~84, key of G major. Honest and unhurried, like a quiet morning before the world wakes up. Lo-fi warmth, vinyl texture.
+STYLE: Minimal ambient electronic. Warm analog synth pad, gentle programmed beat (not acoustic drums), soft side-chain pulse. NO acoustic guitar. Warm male vocal, half-whispered, close-mic. Clean electric piano (not Rhodes — think Nils Frahm felt piano). BPM ~90, key of F# major. Subtle bass synth, barely there. Verse 1 is voice + synth pad only. Beat enters at chorus. Bridge drops to pure ambient texture + whisper. Final chorus: full arrangement with layered vocal harmonies. Think James Blake gentle side meets Bon Iver "22, A Million" warmth. The stillness IS the production.
 
 SOURCE: "Time management techniques that actually work" Parts 1 & 2 (Lenny's Newsletter)
 
@@ -8,7 +8,7 @@ SOURCE: "Time management techniques that actually work" Parts 1 & 2 (Lenny's New
 
 LYRICS:
 
-[Intro, fingerpicked acoustic]
+[Intro, ambient synth pad]
 
 [Verse 1]
 Phone in the other room
@@ -44,11 +44,11 @@ Meetings built on things you bought
 Protect the block, protect the block
 This hour is not for sale
 Every yes you give away
-Is a no you'll always feel
-Guard the silence, guard the depth
-Let the calendar hold firm
-The door is closed, the flow is here
-This is where the best things turn
+Is a no to something real
+Guard the morning, guard the space
+Let the inbox wait its turn
+The door is closed, the work is here
+This is how the good things burn
 
 [Bridge, whispered]
 It's not the meeting on its own
@@ -56,15 +56,15 @@ It's the hour before you can't go deep
 And the hour after, rebuilding
 What you lost when you broke the keep
 
-[Chorus, building warmth]
+[Final Chorus, building warmth]
 Protect the block, protect the block
-Your time is not for sale
-Every no becomes a gift
-To the work that tips the scale
-Guard the morning, guard the craft
-Let the rest of it go still
-The door is closed, the pen is down
-And the best work always will
+This hour is not for sale
+Every yes you give away
+Is a no to something real
+Guard the morning, guard the space
+Let the inbox wait its turn
+The door is closed, the work is here
+This is how the best things burn
 
 [Outro, gentle]
 Protect the block...

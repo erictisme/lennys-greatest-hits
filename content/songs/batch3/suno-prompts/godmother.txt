@@ -1,6 +1,6 @@
 TITLE: Godmother
 
-STYLE: atmospheric folk, cinematic indie, Bon Iver rawness, Hollow Coves warmth, intimate-to-sweeping build, solo piano intro, strings enter at bridge, close-mic breathy vocals on verses opening to full warm tenor on choruses, BPM 84, key F minor verses transitioning to F major choruses, reverb-heavy, analog warmth, room ambience, orchestral swell at final chorus, documentary-score feel, not overproduced
+STYLE: atmospheric folk, cinematic indie, Bon Iver rawness, Hollow Coves warmth, intimate-to-sweeping build, solo piano intro, strings enter at bridge, close-mic breathy vocals on verses opening to full warm tenor on choruses, 6/8 time, BPM 84, key F minor verses transitioning to F major choruses, reverb-heavy, analog warmth, room ambience, orchestral swell at final chorus, documentary-score feel, not overproduced
 
 SOURCE: The Godmother of AI on jobs, robots & why world models are next (Dr. Fei-Fei Li, podcast)
 

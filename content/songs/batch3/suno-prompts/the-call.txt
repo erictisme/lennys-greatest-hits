@@ -1,6 +1,6 @@
 TITLE: The Call
 
-STYLE: Atmospheric folk with cinematic build. Bon Iver raw vulnerability meets Hollow Coves warmth. Gentle fingerpicked acoustic guitar opening, swelling into full band with brushed drums and subtle strings. Close-mic warm male vocal, breathy and intimate in verses, building to open-chested delivery in final chorus. Falsetto touches on bridge. BPM ~80, key of Am. Jon Guerra contemplative weight, space between notes carries meaning. Lo-fi warmth, room ambience, analog feel.
+STYLE: Folk-rock with stomp-clap rhythm and building strings. 12/8 shuffle feel, BPM ~96, key of Bbm. Opens with hand claps and foot stomps setting the rhythm — urgent, like a heartbeat. Acoustic guitar enters with driving strum pattern (not fingerpicked). Warm male vocal, starting controlled, building to commanding delivery. Chorus: full band with driving drums (not brushed — full kit, purposeful), electric guitar with edge, violin adding urgency. Bridge: everything drops to voice alone, whispered. Then STRINGS build from silence — cello first, then violin, then full arrangement crashes back for final chorus. Congregational energy in final chorus — room of voices. Hollow Coves cinematic build meets Mumford & Sons rhythmic drive. This song is about making the hard call — it should FEEL like stepping forward.
 
 SOURCE: "My favorite decision-making frameworks" (Lenny's Newsletter)
 
@@ -31,12 +31,12 @@ And I'm the one who picks the road
 Not 'cause I'm right, I might be wrong
 But standing still has cost too long
 
-[Chorus 2]
+[Chorus]
 Somebody's gotta make the call
-Not everyone agrees, that's all
-I heard you all, I held the doubt
-Now clear the room, I'm writing out
-Somebody's gotta own the fall
+When every door looks like a wall
+I heard you all, I felt the weight
+Now watch me walk through anyway
+Somebody's gotta make the call
 
 [Bridge, stripped back, breath]
 Consensus is a hiding place

@@ -1,0 +1,229 @@
+{
+  "tasks": [
+    {
+      "id": 1,
+      "idea": "Duolingo Streak",
+      "description": "Write a song about the Duolingo growth story. Research brief at content/brainstorm/batch2/01-duolingo-streak.md. Album: The Operators. This is Lenny's #1 post ever — the song must be a banger.",
+      "research_keywords": "duolingo streak gamification growth",
+      "output_file": "01-duolingo-streak.md",
+      "complete": true,
+      "completed_at": "2026-03-20T11:45:26.420Z"
+    },
+    {
+      "id": 2,
+      "idea": "Founder Mode",
+      "description": "Write a song about Brian Chesky's radical approach to running Airbnb. Research brief at content/brainstorm/batch2/02-founder-mode.md. Album: The Operators. This is Lenny's #1 podcast ever.",
+      "research_keywords": "brian chesky founder mode airbnb",
+      "output_file": "02-founder-mode.md",
+      "complete": true,
+      "completed_at": "2026-03-20T11:45:26.420Z"
+    },
+    {
+      "id": 3,
+      "idea": "Scaling Stripe",
+      "description": "Write a song about Claire Hughes Johnson scaling Stripe. Research brief at content/brainstorm/batch2/03-scaling-stripe.md. Album: The Operators.",
+      "research_keywords": "claire hughes johnson stripe scaling",
+      "output_file": "03-scaling-stripe.md",
+      "complete": true,
+      "completed_at": "2026-03-20T11:45:26.420Z"
+    },
+    {
+      "id": 4,
+      "idea": "Linear's Way",
+      "description": "Write a song about Linear's taste-over-metrics approach. Research brief at content/brainstorm/batch2/04-linears-way.md. Album: The Operators.",
+      "research_keywords": "linear taste craft focus product",
+      "output_file": "04-linears-way.md",
+      "complete": true,
+      "completed_at": "2026-03-20T11:45:26.420Z"
+    },
+    {
+      "id": 5,
+      "idea": "The Ramp Speed",
+      "description": "Write a song about Ramp's velocity culture. Research brief at content/brainstorm/batch2/05-ramp-speed.md. Album: The Operators.",
+      "research_keywords": "ramp velocity fastest growing saas",
+      "output_file": "05-ramp-speed.md",
+      "complete": true,
+      "completed_at": "2026-03-20T11:45:26.420Z"
+    },
+    {
+      "id": 6,
+      "idea": "The Racecar",
+      "description": "Write a song about growth as a racecar. Research brief at content/brainstorm/batch2/06-the-racecar.md. Album: Growth Engine. The racecar metaphor is perfect for a song — engines, turbo boosts, fuel.",
+      "research_keywords": "racecar growth framework engine turbo",
+      "output_file": "06-the-racecar.md",
+      "complete": true,
+      "completed_at": "2026-03-20T11:45:26.420Z"
+    },
+    {
+      "id": 7,
+      "idea": "North Star",
+      "description": "Write a song about choosing your North Star metric. Research brief at content/brainstorm/batch2/07-north-star.md. Album: Growth Engine.",
+      "research_keywords": "north star metric strategy focus",
+      "output_file": "07-north-star.md",
+      "complete": true,
+      "completed_at": "2026-03-20T11:45:26.420Z"
+    },
+    {
+      "id": 8,
+      "idea": "First Thousand",
+      "description": "Write a song about how the biggest apps got their first 1,000 users. Research brief at content/brainstorm/batch2/08-first-thousand.md. Album: Growth Engine. Origin stories of Tinder, Uber, etc.",
+      "research_keywords": "first thousand users consumer apps origin",
+      "output_file": "08-first-thousand.md",
+      "complete": true,
+      "completed_at": "2026-03-20T11:45:26.420Z"
+    },
+    {
+      "id": 9,
+      "idea": "Go Viral",
+      "description": "Write a song about Nikita Bier's playbook for going viral. Research brief at content/brainstorm/batch2/09-go-viral.md. Album: Growth Engine.",
+      "research_keywords": "nikita bier viral consumer apps",
+      "output_file": "09-go-viral.md",
+      "complete": true,
+      "completed_at": "2026-03-20T11:45:26.420Z"
+    },
+    {
+      "id": 10,
+      "idea": "Positioning",
+      "description": "Write a song about April Dunford's positioning framework. Research brief at content/brainstorm/batch2/10-positioning.md. Album: Growth Engine.",
+      "research_keywords": "april dunford positioning competitive",
+      "output_file": "10-positioning.md",
+      "complete": true,
+      "completed_at": "2026-03-20T11:45:26.420Z"
+    },
+    {
+      "id": 11,
+      "idea": "Chicken and Egg",
+      "description": "Write a song about the marketplace cold start problem. Research brief at content/brainstorm/batch2/11-chicken-and-egg.md. Album: The Startup Life.",
+      "research_keywords": "marketplace chicken egg cold start",
+      "output_file": "11-chicken-and-egg.md",
+      "complete": true,
+      "completed_at": "2026-03-20T11:45:26.420Z"
+    },
+    {
+      "id": 12,
+      "idea": "Not Venture-Scale",
+      "description": "Write a song about building a great business that isn't a unicorn. Research brief at content/brainstorm/batch2/12-not-venture-scale.md. Album: The Startup Life.",
+      "research_keywords": "venture scale bootstrap unicorn okay",
+      "output_file": "12-not-venture-scale.md",
+      "complete": true,
+      "completed_at": "2026-03-20T11:45:26.420Z"
+    },
+    {
+      "id": 13,
+      "idea": "The Fundraise",
+      "description": "Write a song about the emotional rollercoaster of fundraising. Research brief at content/brainstorm/batch2/13-the-fundraise.md. Album: The Startup Life.",
+      "research_keywords": "fundraising pitch deck term sheet",
+      "output_file": "13-the-fundraise.md",
+      "complete": true,
+      "completed_at": "2026-03-20T11:45:26.420Z"
+    },
+    {
+      "id": 14,
+      "idea": "Lessons from Failure",
+      "description": "Write a song about the startup that didn't make it. Research brief at content/brainstorm/batch2/14-lessons-from-failure.md. Album: The Startup Life.",
+      "research_keywords": "failure startup lessons post-mortem",
+      "output_file": "14-lessons-from-failure.md",
+      "complete": true,
+      "completed_at": "2026-03-20T11:45:26.420Z"
+    },
+    {
+      "id": 15,
+      "idea": "YC Lessons",
+      "description": "Write a song about Gustaf Alstromer's lessons from 600+ YC startups. Research brief at content/brainstorm/batch2/15-yc-lessons.md. Album: The Startup Life.",
+      "research_keywords": "gustaf alstromer yc startups pivot",
+      "output_file": "15-yc-lessons.md",
+      "complete": true,
+      "completed_at": "2026-03-20T11:45:26.420Z"
+    },
+    {
+      "id": 16,
+      "idea": "The Magic Loop",
+      "description": "Write a song about the Magic Loop career growth framework. Research brief at content/brainstorm/batch2/16-the-magic-loop.md. Album: Career Moves.",
+      "research_keywords": "magic loop career growth promoted",
+      "output_file": "16-the-magic-loop.md",
+      "complete": true,
+      "completed_at": "2026-03-20T11:45:26.420Z"
+    },
+    {
+      "id": 17,
+      "idea": "Ten Commandments",
+      "description": "Write a song about the 10 commandments of salary negotiation. Research brief at content/brainstorm/batch2/17-ten-commandments.md. Album: Career Moves.",
+      "research_keywords": "salary negotiation commandments comp",
+      "output_file": "17-ten-commandments.md",
+      "complete": true,
+      "completed_at": "2026-03-20T11:45:26.420Z"
+    },
+    {
+      "id": 18,
+      "idea": "Fire with Grace",
+      "description": "Write a song about Matt Mochary on firing people with compassion. Research brief at content/brainstorm/batch2/18-fire-with-grace.md. Album: Career Moves. Heavy emotional topic — handle with care.",
+      "research_keywords": "matt mochary fire grace layoff leadership",
+      "output_file": "18-fire-with-grace.md",
+      "complete": true,
+      "completed_at": "2026-03-20T11:45:26.420Z"
+    },
+    {
+      "id": 19,
+      "idea": "When Enough Is Enough",
+      "description": "Write a song about Andy Johns leaving tech behind. Research brief at content/brainstorm/batch2/19-when-enough-is-enough.md. Album: Career Moves. Deeply emotional — the breaking point.",
+      "research_keywords": "andy johns enough leaving tech growth",
+      "output_file": "19-when-enough-is-enough.md",
+      "complete": true,
+      "completed_at": "2026-03-20T11:45:26.420Z"
+    },
+    {
+      "id": 20,
+      "idea": "Managing Up",
+      "description": "Write a song about managing up — the skill nobody teaches. Research brief at content/brainstorm/batch2/20-managing-up.md. Album: Career Moves.",
+      "research_keywords": "managing up manager workplace career",
+      "output_file": "20-managing-up.md",
+      "complete": true,
+      "completed_at": "2026-03-20T11:45:26.420Z"
+    },
+    {
+      "id": 21,
+      "idea": "Mission to Task",
+      "description": "Write a song about the cascade from mission to task. Research brief at content/brainstorm/batch2/21-mission-to-task.md. Album: Frameworks.",
+      "research_keywords": "mission vision strategy goals roadmap task",
+      "output_file": "21-mission-to-task.md",
+      "complete": true,
+      "completed_at": "2026-03-20T11:45:26.420Z"
+    },
+    {
+      "id": 22,
+      "idea": "The Nature of Product",
+      "description": "Write a song about Marty Cagan's vision for what product should be. Research brief at content/brainstorm/batch2/22-nature-of-product.md. Album: Frameworks.",
+      "research_keywords": "marty cagan product teams feature teams",
+      "output_file": "22-nature-of-product.md",
+      "complete": true,
+      "completed_at": "2026-03-20T11:45:26.420Z"
+    },
+    {
+      "id": 23,
+      "idea": "A/B Test Everything",
+      "description": "Write a song about Ronny Kohavi and the science of experimentation. Research brief at content/brainstorm/batch2/23-ab-test-everything.md. Album: Frameworks.",
+      "research_keywords": "ronny kohavi ab testing experimentation",
+      "output_file": "23-ab-test-everything.md",
+      "complete": true,
+      "completed_at": "2026-03-20T11:45:26.420Z"
+    },
+    {
+      "id": 24,
+      "idea": "Jobs to Be Done",
+      "description": "Write a song about Bob Moesta's JTBD framework. Research brief at content/brainstorm/batch2/24-jobs-to-be-done.md. Album: Frameworks.",
+      "research_keywords": "bob moesta jtbd hire product milkshake",
+      "output_file": "24-jobs-to-be-done.md",
+      "complete": true,
+      "completed_at": "2026-03-20T11:49:18.138Z"
+    },
+    {
+      "id": 25,
+      "idea": "The LNO Framework",
+      "description": "Write a song about Shreyas Doshi's LNO framework. Research brief at content/brainstorm/batch2/25-lno-framework.md. Album: Frameworks.",
+      "research_keywords": "shreyas doshi LNO leverage neutral overhead",
+      "output_file": "25-lno-framework.md",
+      "complete": true,
+      "completed_at": "2026-03-20T11:52:25.574Z"
+    }
+  ]
+}

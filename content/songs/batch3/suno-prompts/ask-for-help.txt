@@ -1,6 +1,6 @@
 TITLE: Ask for Help
 
-STYLE: CityAlight hymn-like simplicity meets Hollow Coves cinematic folk warmth. BPM ~82, key of G major. Warm male vocal, earnest and tender, slight crack on emotional lines. Fingerpicked acoustic guitar, warm piano (Rhodes in bridge), brushed drums entering at chorus 1, building to full gentle band by final chorus. Congregational feel in final chorus — like a room singing together. Close-mic intimacy in verses, opens up with room reverb in choruses. Upright bass, light shaker. No synths. Stripped back outro — voice and guitar only.
+STYLE: Hymn-like folk with cello and strings building to congregational swell. 6/8 time, BPM ~82, key of Bb major. Warm male vocal, earnest and tender, slight crack on emotional lines. Fingerpicked acoustic guitar, warm piano. Verse 1: guitar + voice only. Verse 2: add warm cello bowing long notes underneath. Chorus 1: brushed drums enter, cello continues. Bridge: CELLO FEATURED — playing the melody while voice cracks with emotion, Rhodes piano underneath. Final chorus: full string section (cello + violin) swelling with congregational vocal feel — like a room of people singing together with an orchestra behind them. CityAlight simplicity meets cinematic string arrangement. Stripped back outro — voice and single cello note fading.
 
 SOURCE: "On asking for help (even when you really don't want to)" — Lenny's Newsletter
 
@@ -33,10 +33,10 @@ The fear said weakness looks like death
 But silence stole my every breath
 
 [Chorus]
-I don't have to prove it on my own
-The wall I built is not my home
-Shaking voice, dry mouth, and then —
-Could you help me? I'll begin
+I don't have to carry this alone
+These arms were never meant for stone
+Open hands, three words, begin —
+Would you help me? Let me in
 
 [Bridge, building warmth]
 They didn't see me as a burden
@@ -46,9 +46,9 @@ The bravest thing was just the call
 
 [Chorus, congregational]
 We don't have to carry this alone
-No fortress made of flesh and bone
-Open doors where walls have been —
-Will you help me? Come on in
+These arms were never meant for stone
+Open hands, three words, begin —
+Will you help us? Let us in
 
 [Outro, stripped back]
 Three words... that changed everything

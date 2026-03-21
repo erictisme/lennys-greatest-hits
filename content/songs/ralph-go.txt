@@ -1,0 +1,15 @@
+Please read plans/ralph-songwriter.md and execute it as a Ralph songwriter loop.
+
+Start by reading ALL the required context files listed in the "Before You Start" section. Then work through each incomplete task in the current batch's tasks.json, executing Phase 1 (Research) then Phase 2 (Songwriting) for each song.
+
+This is a SONG GENERATION run. For each song:
+1. Research the source material via Lenny MCP
+2. Extract story, quotes, emotional core
+3. Write lyrics with critique and rewrite steps
+4. Create a Suno-ready prompt with style from artist-palette.md
+5. Save all outputs to the batch folder
+
+Take your time. Quality over speed. Every song should be something you'd add to a playlist.
+
+Current batch: batch3
+Tasks file: content/songs/batch3/tasks.json

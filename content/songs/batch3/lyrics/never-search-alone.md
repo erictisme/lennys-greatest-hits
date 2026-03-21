@@ -34,10 +34,10 @@ Through the seasons no one else survived
 Her son grew up and brought it to the coast
 Gave away the thing that mattered most
 
-[Chorus, slight variation]
+[Chorus]
 You don't have to carry this alone
 Set it down, somebody's got the weight
-You don't have to prove what you are worth
+You don't have to know the road ahead
 Just show up — that's enough today
 
 [Bridge, stripped back]

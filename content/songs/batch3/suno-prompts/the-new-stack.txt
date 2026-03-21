@@ -1,6 +1,6 @@
 TITLE: The New Stack
 
-STYLE: Lo-fi electronic synth-folk, Doris Club dreamy textures meets The 1975 soft synth-pop. Warm analog synth pads, gentle electronic pulse, brushed percussion with programmed beat underneath, close-mic breathy male vocal (Stephen Day warmth), nylon guitar layered with Rhodes keys, vinyl texture, room ambience. BPM ~95, key of Eb major. Mood: contemplative but forward-moving, the future feels warm not cold. Builds gently from sparse verse to full chorus with layered synths. Outro fades with reverb.
+STYLE: Lo-fi electronic synth-folk with VOCODER vocal texture on bridge — the AI theme made sonic. Doris Club dreamy textures meets The 1975 soft synth-pop. Warm analog synth pads, gentle electronic pulse, programmed beat. BPM ~95, key of G# minor. Close-mic breathy male vocal (Stephen Day warmth), nylon guitar layered with Rhodes keys. Bridge: voice runs through warm vocoder/harmonizer creating layered harmony — the "machine" singing with the human. Final chorus: human voice returns clean, triumphant over the synths. Vinyl texture, contemplative but forward-moving.
 
 SOURCE: Counterintuitive advice for building AI products (Lenny Rachitsky & Kyle Poyar, newsletter)
 

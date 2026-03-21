@@ -58,15 +58,15 @@ A hundred hours before each yes
 Bm                  G
 You earn the trust before you get the desk
 
-[Chorus — Variation 2]
+[Chorus]
 G               D
 They weren't looking when you found them
 A                   D
 Slow and steady, six long months
 G               D
-You know you've got the pitch exactly right
+You didn't post the role, you wrote the letter
 A                   D
-When they offer to invest
+One by one until you're ten
 
 [Bridge]
 Bm              G
@@ -78,7 +78,7 @@ Don't lower the bar for anyone
 D               A
 The house becomes the first ten rooms
 
-[Chorus — Variation 3 — full band, organ swells]
+[Final Chorus — full band, organ swells]
 G               D
 They weren't looking when you found them
 A                   D

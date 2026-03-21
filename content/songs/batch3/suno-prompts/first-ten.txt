@@ -1,11 +1,6 @@
 TITLE: First Ten
-STYLE: liturgical folk, hymn, acoustic indie, CityAlight, Hollow Coves, warm congregational, intimate
-MOOD: founding anthem, earnest, warm, slow build, communal
-BPM: 92
-KEY: D major
-INSTRUMENTS: acoustic fingerpicked guitar, light organ pads, brushed snare, warm bass enters verse 2, full band swells at bridge
-VOCALS: warm male tenor, close-mic, intimate delivery, breathy on verses, full open tone on choruses
-PRODUCTION: lo-fi warmth, room ambience, analog feel, gentle reverb, not overproduced
+
+STYLE: Liturgical folk anthem with warm organ. Fingerpicked acoustic guitar, warm Hammond organ pads (the organ is the signature — not Rhodes, actual organ). Warm male tenor, close-mic, intimate on verses, full open congregational tone on choruses. BPM 92, key of D major. Verse 1: guitar + voice only. Verse 2: organ swells in gently, upright bass enters. Bridge: organ takes the lead — full swell, founding-anthem energy. Final chorus: layered vocals like a room singing together, organ sustaining underneath. Brushed snare, light shaker. CityAlight hymn simplicity. Lo-fi warmth, room ambience. The organ makes this feel like a chapel, not a coffee shop.
 
 ---
 
@@ -37,11 +32,11 @@ The room fills up like that
 A hundred hours before each yes
 You earn the trust before you get the desk
 
-[Chorus — Variation 2]
+[Chorus]
 They weren't looking when you found them
 Slow and steady, six long months
-You know you've got the pitch exactly right
-When they offer to invest
+You didn't post the role, you wrote the letter
+One by one until you're ten
 
 [Bridge — full band enters, organ swells]
 Great people pull great people in
@@ -49,7 +44,7 @@ You can't fake what's real to them
 Don't lower the bar for anyone
 The house becomes the first ten rooms
 
-[Chorus — Variation 3 — full band, congregational feel]
+[Final Chorus — full band, congregational feel]
 They weren't looking when you found them
 Slow and steady, six long months
 You didn't hire a team — you built a culture

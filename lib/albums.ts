@@ -1501,6 +1501,198 @@ We never do`,
     ],
     storyBehind: "April had a product she called an 'Access killer.' She called her customer list and heard 'Sorry, lady, we don't have that.' But 21 customers picked up and said 'Your product made me hero of my team!' Same code, no changes - except the name and positioning. The phone started ringing.",
   },
+  {
+    slug: "name-your-price",
+    title: "Name Your Price",
+    albumSlug: "growth-engine",
+    trackNumber: 8,
+    duration: "2:58",
+    audioUrl: "/audio/name-your-price.mp3",
+    coverImage: "/covers/name-your-price.jpg",
+    genre: "Jazz-Pop / Neo-Soul",
+    mood: "Uncomfortable avoidance turning to quiet confidence",
+    tags: ["pricing", "monetization", "SaaS"],
+    lyrics: `[Verse 1]
+You polished every pixel twice
+Stayed up late to get it right
+But when they asked you what it costs
+You looked away and dropped the price
+Three levers hanging on the wall
+You only ever pull two
+The one that makes you nervous
+Is the one that's overdue
+
+[Chorus]
+Name your price, name your price
+Don't pluck it from the air tonight
+Your price is just the exchange rate
+On the world you made — so name your price
+
+[Verse 2]
+They used it every single day
+But never opened up their wallets
+You thought that free meant they would stay
+You cheapened what you built in silence
+Revenue per customer — that line
+Should be climbing every quarter
+But you set it once and walked away
+Like pricing didn't matter
+
+[Chorus]
+Name your price, name your price
+Don't pluck it from the air tonight
+Your price is just the exchange rate
+On the world you made — so name your price
+
+[Bridge]
+Uncomfortable and long-term
+That's where the money lives
+The thing you keep avoiding
+Is the thing that finally gives
+
+[Final Chorus]
+Name your price, name your price
+Don't pluck it from the air tonight
+Your price is just the exchange rate
+On the world you made — now name your price
+
+[Outro]
+Name your price...`,
+    concept: "Pricing is the neglected growth lever. Founders obsess over acquisition and retention but avoid the uncomfortable conversation about what their product is worth.",
+    keyInsight: "A 1% improvement in monetization has 4X the bottom-line impact of a 1% improvement in acquisition, yet most companies never touch their pricing after launch.",
+    keyQuote: "Your price is the exchange rate on the value you're creating in the world.",
+    quoteSpeaker: "Patrick Campbell",
+    sources: [
+      { title: "Pricing your SaaS product", type: "newsletter", url: "https://www.lennysnewsletter.com/p/saas-pricing-strategy", guest: "Patrick Campbell" },
+      { title: "How to price your product | Naomi Ionita (Menlo Ventures)", type: "podcast", url: "https://www.lennyspodcast.com/how-to-price-your-product-naomi-ionita-menlo-ventures/", guest: "Naomi Ionita" },
+    ],
+    storyBehind: "Patrick Campbell bootstrapped ProfitWell to a $200M exit by helping SaaS companies fix their pricing. His data across 20,000+ subscription companies showed that the most successful companies optimize monetization every quarter — not by changing the price tag, but by experimenting with segments, packaging, and value metrics.",
+    annotations: [
+      {
+        lyricText: "Three levers hanging on the wall",
+        note: "Elena Verna's growth model defines exactly three growth levers: acquisition, retention, and monetization. ProfitWell surveyed 500+ SaaS companies and found that a 1% improvement in monetization had 4X the bottom-line impact of a 1% improvement in acquisition. As Naomi Ionita (Menlo Ventures) says: 'This idea of how can you efficiently improve your business monetization is really underappreciated as a growth lever.'",
+        sourceTitle: "How to price your product | Naomi Ionita (Menlo Ventures)",
+        sourceUrl: "https://www.lennyspodcast.com/how-to-price-your-product-naomi-ionita-menlo-ventures/",
+      },
+      {
+        lyricText: "Revenue per customer — that line",
+        note: "Patrick Campbell's data across 20,000+ subscription companies shows that the most successful companies 'optimize monetization in some manner every quarter.' He doesn't mean changing the price tag — he means experimenting with segments, packaging, value metrics, positioning, or localization. More frequent pricing changes correlate directly with increasing revenue per customer.",
+        sourceTitle: "Pricing your SaaS product",
+        sourceUrl: "https://www.lennysnewsletter.com/p/saas-pricing-strategy",
+      },
+      {
+        lyricText: "Your price is just the exchange rate",
+        note: "Patrick Campbell coined this exact framing in Lenny's Newsletter: 'Your price is the exchange rate on the value you're creating in the world.' Madhavan Ramanujam (Simon-Kucher, 250+ companies advised including Uber and DoorDash) expands: 'When we think about price, we think about it as a measure. Like liter is a measure of volume, price is a measure of value.' If your price doesn't move as your value grows, the instrument is broken.",
+        sourceTitle: "Pricing your SaaS product",
+        sourceUrl: "https://www.lennysnewsletter.com/p/saas-pricing-strategy",
+      },
+      {
+        lyricText: "Uncomfortable and long-term",
+        note: "Naomi Ionita told Lenny that pricing work is inherently uncomfortable because it requires understanding the long-term implications on 'churn, user growth, retention, ARPU. All of these are different levers that you want to optimize over time.' Patrick Campbell adds that most founders set pricing once and never revisit it — treating the most impactful growth lever as a one-time decision rather than an ongoing experiment.",
+        sourceTitle: "How to price your product | Naomi Ionita (Menlo Ventures)",
+        sourceUrl: "https://www.lennyspodcast.com/how-to-price-your-product-naomi-ionita-menlo-ventures/",
+      },
+    ],
+    releaseDate: "2026-03-21",
+    sunoId: "f9ce455a-4b42-4853-a623-1d3aeb2047f6",
+  },
+  {
+    slug: "the-gtm",
+    title: "The GTM",
+    albumSlug: "growth-engine",
+    trackNumber: 9,
+    duration: "2:13",
+    audioUrl: "/audio/the-gtm.mp3",
+    coverImage: "/covers/the-gtm.jpg",
+    genre: "Indie Folk-Rock",
+    mood: "Forward motion, confident, purposeful",
+    tags: ["go-to-market", "sales", "AI"],
+    lyrics: `[Verse 1]
+April of two thousand four
+Gmail had a one-year lead
+Before the gap began to shrink —
+That's when I planted this seed
+
+[Pre-Chorus]
+When the product stops being the edge —
+Every sale becomes the pledge
+
+[Chorus]
+Touch a customer, make a dollar —
+That's the game, that's the call
+Don't hand them a transaction —
+Make it mean something at all
+
+[Verse 2]
+I drew the map in seventeen —
+A universe on every screen
+The engine wasn't ready yet —
+Eight years to come back and reset
+
+[Pre-Chorus]
+Six weeks later — same design —
+One man rebuilt the whole line
+
+[Chorus]
+Touch a customer, make a dollar —
+That's the game, that's the call
+Don't hand them a transaction —
+Make it mean something at all
+
+[Bridge]
+Yeses are great — nos are great —
+Maybes will kill you
+Get back up, don't hesitate —
+Dive the same dive through
+
+[Final Chorus]
+Touch a customer, make a dollar —
+That's the game, that's the call
+Don't hand them a transaction —
+Make it real — make it all`,
+    concept: "World-class go-to-market strategy isn't about features — it's about making every customer interaction meaningful. When products commoditize, the buying experience becomes the differentiator.",
+    keyInsight: "At Vercel, one AI-assisted GTM engineer replaced the output of 10 SDRs in six weeks, matching human conversion rates while reducing touches needed.",
+    keyQuote: "Yeses are great, nos are great, maybes will kill you.",
+    quoteSpeaker: "Jeanne DeWitt Grosser",
+    sources: [
+      { title: "What world-class GTM looks like in 2026 | Jeanne DeWitt Grosser", type: "podcast", url: "https://www.lennyspodcast.com/what-world-class-gtm-looks-like-in-2026-jeanne-dewitt-grosser-vercel-stripe-google/", guest: "Jeanne DeWitt Grosser" },
+    ],
+    storyBehind: "Jeanne joined Gmail in 2004, two months after launch. Gmail had a full year of technical lead before Yahoo Mail caught up. That experience taught her that product advantages erode — and when they do, how you sell becomes everything. At Stripe in 2017, she tried to build an AI-powered sales universe mapper called Project Rosland. It failed. Eight years later at Vercel, the same vision was rebuilt in six weeks by a single engineer.",
+    annotations: [
+      {
+        lyricText: "Gmail had a one-year lead",
+        note: "Jeanne's first job out of college was at Gmail in 2004 — she joined June 1st, two months after Gmail launched. Gmail was a massive JavaScript application with a full gigabyte of storage. She recalls: 'It was a full year before Yahoo Mail caught up and even longer before Hotmail and others did.' A decade later, cloud computing narrowed that gap entirely. This realization became the foundation of her GTM philosophy: when products converge, the buying experience becomes the differentiator.",
+        sourceTitle: "What world-class GTM looks like in 2026 | Jeanne DeWitt Grosser",
+        sourceUrl: "https://www.lennyspodcast.com/what-world-class-gtm-looks-like-in-2026-jeanne-dewitt-grosser-vercel-stripe-google/",
+      },
+      {
+        lyricText: "Touch a customer, make a dollar",
+        note: "When Lenny asks 'what does go-to-market even mean?', Jeanne answers: 'Any function that is going to touch a customer or make a dollar.' At Vercel, that means marketing, sales, all technical sales roles, customer success, support, and partnerships. She argues these functions typically run overlapping but misaligned strategies — her solution is unifying them all under one umbrella.",
+        sourceTitle: "What world-class GTM looks like in 2026 | Jeanne DeWitt Grosser",
+        sourceUrl: "https://www.lennyspodcast.com/what-world-class-gtm-looks-like-in-2026-jeanne-dewitt-grosser-vercel-stripe-google/",
+      },
+      {
+        lyricText: "I drew the map in seventeen",
+        note: "At Stripe in 2017, Jeanne launched 'Project Rosland' — named after the scientist who originally mapped DNA. It was a massive database: 'Every row was a different company on the planet and every column was an attribute about that company.' The goal was auto-generated outbound emails. But without AI, 'the false positive rate never really got there.' Some of the Rosland team members now work at OpenAI and Anthropic.",
+        sourceTitle: "What world-class GTM looks like in 2026 | Jeanne DeWitt Grosser",
+        sourceUrl: "https://www.lennyspodcast.com/what-world-class-gtm-looks-like-in-2026-jeanne-dewitt-grosser-vercel-stripe-google/",
+      },
+      {
+        lyricText: "Six weeks later — same design",
+        note: "At Vercel, one GTM engineer rebuilt the Rosland concept with AI. The striking detail: 'He spent maybe 25-30% of his time on this. It was six weeks before we felt confident going from 10 to one.' One AI-assisted person replaced 10 SDRs. They tracked all standard KPIs and held the conversion rate flat — the agent matched human performance while condensing the number of touches needed.",
+        sourceTitle: "What world-class GTM looks like in 2026 | Jeanne DeWitt Grosser",
+        sourceUrl: "https://www.lennyspodcast.com/what-world-class-gtm-looks-like-in-2026-jeanne-dewitt-grosser-vercel-stripe-google/",
+      },
+      {
+        lyricText: "Yeses are great — nos are great",
+        note: "Jeanne connects her background as a competitive diver to sales resilience: 'When you land flat on your back, welts are forming on it, you always 100% of the time will be forced to immediately get back on the diving board and do that exact same dive again.' She then quotes a sales trainer: 'Yeses are great, nos are great, maybes will kill you. How do you get really comfortable that no is a great thing and that just gave you data?'",
+        sourceTitle: "What world-class GTM looks like in 2026 | Jeanne DeWitt Grosser",
+        sourceUrl: "https://www.lennyspodcast.com/what-world-class-gtm-looks-like-in-2026-jeanne-dewitt-grosser-vercel-stripe-google/",
+      },
+    ],
+    releaseDate: "2026-03-21",
+    sunoId: "23e20b22-e542-4eb9-b9bb-b1e0f388ce59",
+  },
 ];
 
 const byTheNumbersTracks: Track[] = [
@@ -1859,6 +2051,104 @@ One action — that's the start`,
     releaseDate: "2026-03-21",
     sunoId: "1e91c560-262a-40bd-b4cc-52e0f9c72938",
   },
+  {
+    slug: "free-to-paid",
+    title: "Free to Paid",
+    albumSlug: "by-the-numbers",
+    trackNumber: 4,
+    duration: "2:46",
+    audioUrl: "/audio/free-to-paid.mp3",
+    coverImage: "/covers/free-to-paid.jpg",
+    genre: "Dream-Pop / Lo-Fi",
+    mood: "Playful and knowing, wry",
+    tags: ["freemium", "conversion", "pricing"],
+    lyrics: `[Verse 1]
+Dashboard lit up overnight
+All those zeros burning bright
+Thousand doors, two stay and pay
+Free is just the price you play
+
+[Pre-Chorus]
+Three percent — I raise my cup
+Good enough, or giving up?
+
+[Chorus]
+Free is the door — you still need a room
+Give 'em the whole sky, watch 'em swoon
+Flip the trial, show the ceiling first
+Let 'em feel the loss before the thirst
+
+[Verse 2]
+Forty percent won't come back
+Day one gone and that's a fact
+Give 'em everything up front
+Fourteen days before the drop
+
+[Pre-Chorus]
+Five percent — they raise the bar
+You could double where you are
+
+[Chorus]
+Free is the door — you still need a room
+Give 'em the whole sky, watch 'em swoon
+Flip the trial, show the ceiling first
+Let 'em feel the loss before the thirst
+
+[Bridge]
+Let them taste the top floor first
+Shimmering glass, the whole thing theirs
+Then it fades — and now they know
+What it cost to let it go
+
+[Chorus]
+Free is the door — you still need a room
+Give 'em the whole sky, watch 'em swoon
+Flip the trial, show the ceiling first
+Let 'em choose — and now they're asking you`,
+    concept: "Free is an acquisition strategy, not a business model. The reverse trial — giving users premium access first, then downgrading — converts at twice the rate of classic freemium.",
+    keyInsight: "3-5% is a good free-to-paid conversion rate for freemium. Reverse-trial businesses convert at twice the rate while maintaining similar signup rates.",
+    keyQuote: "40-60% of new users never return to the product after the first day.",
+    quoteSpeaker: "Kyle Poyar",
+    sources: [
+      { title: "What is good free-to-paid conversion", type: "newsletter", url: "https://www.lennysnewsletter.com/p/what-is-good-free-to-paid-conversion", guest: "Kyle Poyar" },
+      { title: "Freemium vs. trial", type: "newsletter", url: "https://www.lennysnewsletter.com/p/freemium-trials-or-paywall-how-to", guest: "Elena Verna" },
+    ],
+    storyBehind: "Kyle Poyar (OpenView) and Lenny surveyed 1,000+ products to build the most comprehensive free-to-paid conversion benchmarks ever published. They found that most freemium products convert between 2.5% and 5%. Elena Verna championed the reverse trial — giving users premium access first, then downgrading — which converts at twice the rate of classic freemium.",
+    annotations: [
+      {
+        lyricText: "Thousand doors, two stay and pay",
+        note: "In the landmark survey of 1,000+ products by Kyle Poyar and Lenny, a fifth of freemium products see conversion rates below 2.5%. The most common bucket — about a third of all freemium products — converts between 2.5% and 5%. As Poyar writes: 'It's not uncommon for one freemium business to see free-to-paid conversion rates below 1%, while another is able to get to closer to 20%.'",
+        sourceTitle: "What is good free-to-paid conversion",
+        sourceUrl: "https://www.lennysnewsletter.com/p/what-is-good-free-to-paid-conversion",
+      },
+      {
+        lyricText: "Three percent — I raise my cup",
+        note: "According to the benchmarking survey, '3%-5% is a GOOD conversion rate for a freemium self-serve product, and 6%-8% is GREAT.' This includes products like Canva, Trello, and Typeform. Free trial products convert higher (8%-12% is GOOD) because they attract users more ready to buy. So hitting 3% on a pure freemium product means you're right in the sweet spot.",
+        sourceTitle: "What is good free-to-paid conversion",
+        sourceUrl: "https://www.lennysnewsletter.com/p/what-is-good-free-to-paid-conversion",
+      },
+      {
+        lyricText: "Forty percent won't come back",
+        note: "Kyle Poyar writes: 'The first-day experience is the most critical part of the user journey and represents your best shot at moving the needle on activation. I'll typically find that 40%-60% of new users never return to the product after the first day.' This is why onboarding is the single highest-leverage area for growth teams.",
+        sourceTitle: "What is good free-to-paid conversion",
+        sourceUrl: "https://www.lennysnewsletter.com/p/what-is-good-free-to-paid-conversion",
+      },
+      {
+        lyricText: "Flip the trial, show the ceiling first",
+        note: "The reverse trial was popularized by Elena Verna: 'Reverse trials give new users access to a free trial of the premium product, then downgrade users to the fully free version if they choose not to upgrade.' Only 5% of products use reverse trials, but early data is striking: 'Reverse-trial businesses convert at twice the rate of classic freemium while maintaining a similar sign-up rate.' At Grammarly, Albert Cheng ran a variation — interspersing paid suggestions among free ones — and 'upgrade rates nearly doubled.'",
+        sourceTitle: "What is good free-to-paid conversion",
+        sourceUrl: "https://www.lennysnewsletter.com/p/what-is-good-free-to-paid-conversion",
+      },
+      {
+        lyricText: "Free is the door — you still need a room",
+        note: "Elena Verna's core philosophy across multiple Lenny appearances: free is an acquisition strategy, not a business model. Naomi Ionita (Menlo Ventures) adds the critical flip side: 'If it gets you to the aha moment, that path to habit formation, that has to be free. That's the core utility of your product.' Free gets people in the door, but the room — the premium value, the habit, the team features — is what you charge for.",
+        sourceTitle: "Elena Verna on how B2B growth is changing",
+        sourceUrl: "https://www.lennyspodcast.com/elena-verna-on-how-b2b-growth-is-changing/",
+      },
+    ],
+    releaseDate: "2026-03-21",
+    sunoId: "6ddd046d-b4d7-4b00-855a-66accbbf34b0",
+  },
 ];
 
 const theWeightTracks: Track[] = [
@@ -2093,6 +2383,220 @@ That's the plan... that's the plan...`,
     ],
     releaseDate: "2026-03-21",
     sunoId: "3ba47972-7253-4576-8e00-8cef2b677270",
+  },
+  {
+    slug: "culture-code",
+    title: "Culture Code",
+    albumSlug: "the-weight",
+    trackNumber: 4,
+    duration: "3:33",
+    audioUrl: "/audio/culture-code.mp3",
+    coverImage: "/covers/culture-code.jpg",
+    genre: "Neo-Soul Waltz",
+    mood: "Intimate, principled, quietly devastating",
+    tags: ["culture", "leadership", "Netflix"],
+    lyrics: `[Verse 1]
+Five AM, the coffee's turning cold
+A name I've circled twice in red
+Three hundred voices in my ear
+But one thing hasn't yet been said
+
+The last five percent is where it matters
+And nobody wants to stay
+You sit across from someone good
+And find the words to not look away
+
+[Chorus]
+Would I fight to keep you here?
+Would I fight to keep you near?
+That's the only question left
+That's the culture code
+
+[Verse 2]
+I send the notes from every room
+No wall between the floor and me
+If I won't hold myself to this
+Then who am I to ask it of you?
+
+The document is fine, not great
+Let's stay another hour and see
+I'll sit beside you till it shines
+That's how I learned it — watch and lead
+
+[Chorus]
+Would I fight to keep you here?
+Would I fight to keep you near?
+That's the only question left
+That's the culture code
+
+[Bridge]
+It doesn't feel like nature
+To love someone with the truth
+But every scar from honest words
+Became the thing that made me proof
+
+[Final Chorus]
+Would I fight to keep you here?
+Would I fight to keep us near?
+That's the only answer left
+That's the culture code
+
+[Outro]
+Something good happens every day
+Something good happens every day
+Something good...`,
+    concept: "Netflix's culture of excellence — the Keeper Test, radical candor, and talent density — told from the inside. Building a culture where the hardest conversations are also the most caring ones.",
+    keyInsight: "Netflix's Keeper Test: 'If this person came to me and said they're leaving, would I do everything I could to keep them? If not, I should be having that tough conversation.'",
+    keyQuote: "No one comes to Netflix as a perfect human being. We all have ways that we could grow and improve.",
+    quoteSpeaker: "Elizabeth Stone",
+    sources: [
+      { title: "How Netflix builds a culture of excellence | Elizabeth Stone (CTO)", type: "podcast", url: "https://www.lennyspodcast.com/how-netflix-builds-a-culture-of-excellence-elizabeth-stone-cto/", guest: "Elizabeth Stone" },
+    ],
+    storyBehind: "Elizabeth Stone, Netflix CTO, describes a culture where employees regularly ask their managers 'Am I passing your keeper test?' — creating a lightness around conversations that most companies avoid entirely. Until 2022, Netflix had no IC levels at all — all engineers were just 'senior engineers.' The Keeper Test isn't a formal review; it's an ongoing mental exercise.",
+    annotations: [
+      {
+        lyricText: "Would I fight to keep you here?",
+        note: "Netflix's Keeper Test is the central mental model for every manager. Elizabeth Stone describes it: 'If this person came to me and said I'm leaving today, would I do everything I could to keep them at Netflix? If not, then I should be having that tough conversation.' Employees regularly ask their managers 'Am I passing your keeper test?' which Stone says 'creates a lightness around being able to have that conversation regularly.'",
+        sourceTitle: "How Netflix builds a culture of excellence | Elizabeth Stone (CTO)",
+        sourceUrl: "https://www.lennyspodcast.com/how-netflix-builds-a-culture-of-excellence-elizabeth-stone-cto/",
+      },
+      {
+        lyricText: "The last five percent is where it matters",
+        note: "Stone describes how Netflix requires 'an uncomfortable amount of candor and feedback in order to keep that bar high.' The hard conversations are the ones most people avoid. She says: 'In order to keep that bar high, you have to be willing to have those types of very uncomfortable conversations' — telling someone they're not the right fit, or that a document is 'okay, not great.' Most people leave that last 5% unsaid. Netflix doesn't.",
+        sourceTitle: "How Netflix builds a culture of excellence | Elizabeth Stone (CTO)",
+        sourceUrl: "https://www.lennyspodcast.com/how-netflix-builds-a-culture-of-excellence-elizabeth-stone-cto/",
+      },
+      {
+        lyricText: "No wall between the floor and me",
+        note: "Netflix practices radical transparency. Stone says: 'I am generally a transparent leader, meaning I share information freely and openly.' She takes notes in leadership meetings and shares them with her entire organization — including 'candor around reflections on things that aren't going well.' Until 2022, Netflix had no IC levels at all — 'all engineers were just senior engineers.' The culture is explicitly 'not a top down do A, then B, then C.'",
+        sourceTitle: "How Netflix builds a culture of excellence | Elizabeth Stone (CTO)",
+        sourceUrl: "https://www.lennyspodcast.com/how-netflix-builds-a-culture-of-excellence-elizabeth-stone-cto/",
+      },
+      {
+        lyricText: "The document is fine, not great",
+        note: "Stone gives this exact scenario: 'A document is okay, it's not great, it's not going to be easy for people to follow, it's not as crisp as it could be.' Her framework: (1) set the expectation that the bar is high, (2) give specific feedback on where the gap is, (3) help them fill it by jumping in yourself. She says this has 'probably happened a thousand times in my career where I jump in with both feet because something needs to be better.'",
+        sourceTitle: "How Netflix builds a culture of excellence | Elizabeth Stone (CTO)",
+        sourceUrl: "https://www.lennyspodcast.com/how-netflix-builds-a-culture-of-excellence-elizabeth-stone-cto/",
+      },
+      {
+        lyricText: "Something good happens every day",
+        note: "Reed Hastings believed 'there could be a different approach to building a company that would make it a place that people thrived in and loved being.' Stone frames talent density not as the end but 'the means to the end' — the end being that people experience something genuinely great at work every day. Fulfillment isn't a perk; it's the natural byproduct of surrounding yourself with exceptional people operating at a high bar.",
+        sourceTitle: "How Netflix builds a culture of excellence | Elizabeth Stone (CTO)",
+        sourceUrl: "https://www.lennyspodcast.com/how-netflix-builds-a-culture-of-excellence-elizabeth-stone-cto/",
+      },
+    ],
+    releaseDate: "2026-03-21",
+    sunoId: "ed3166d9-0b55-4bca-a413-ff02711efa23",
+  },
+  {
+    slug: "storyworthy",
+    title: "Storyworthy",
+    albumSlug: "the-weight",
+    trackNumber: 5,
+    duration: "4:52",
+    audioUrl: "/audio/storyworthy.mp3",
+    coverImage: "/covers/storyworthy.jpg",
+    genre: "Atmospheric Folk",
+    mood: "Intimate, reflective, time-slowing",
+    tags: ["storytelling", "communication", "personal growth"],
+    lyrics: `[Verse 1]
+We sat outside in May that year
+Three couples on the lawn
+I didn't know they'd come apart
+I smiled and moved along
+
+I gave the safe and rounded answers
+The ones that cost you nothing
+The kind that float and disappear
+Before they're even something
+
+[Pre-Chorus]
+Round and white and flavorless —
+Safe and hidden in the crowd
+But the life you left unaccounted
+Never comes back out
+
+[Chorus]
+Five seconds — everything changes
+A door, a crack, a turn
+Write it down — or lose the day
+It's yours to keep or burn
+
+[Verse 2]
+I started writing one line down
+Each night before I slept
+The days I thought were ordinary
+Were the ones I almost kept
+
+Time doesn't fly — it goes unaccounted
+You only keep what you name
+Twelve years in and I've slowed right down
+The days don't feel the same
+
+[Pre-Chorus]
+Round and white and flavorless —
+Safe and hidden in the crowd
+But the life you left unaccounted
+Never comes back out
+
+[Chorus]
+Five seconds — everything changes
+A door, a crack, a turn
+Write it down — or lose the day
+It's yours to keep or burn
+
+[Bridge]
+She looked up across the classroom
+Said, I don't like that smile
+Three years of silence — then one sentence
+Crossed the longest mile
+
+Not the year — just that one heartbeat
+Not the lesson — just the light
+She'd been carrying it for years
+And now she let it shine
+
+[Final Chorus]
+Five seconds — everything changes
+A door, a crack, a turn
+Write it down — or lose the day
+It's yours to keep — you've earned it`,
+    concept: "Every story is a five-second moment of change. The days you don't name are the days you lose. Matthew Dicks' 'Homework for Life' practice of writing down one moment each day literally slows down time.",
+    keyInsight: "In Year 1 of Homework for Life, Dicks found 1.8 meaningful moments per day. After 12+ years, he finds 7.6 — not because his life got more interesting, but because he developed a better lens.",
+    keyQuote: "People say that time flies and it doesn't. What happens is it goes by unaccounted.",
+    quoteSpeaker: "Matthew Dicks",
+    sources: [
+      { title: "How to tell better stories | Matthew Dicks (Storyworthy)", type: "podcast", url: "https://www.lennyspodcast.com/how-to-tell-better-stories-matthew-dicks-storyworthy/", guest: "Matthew Dicks" },
+    ],
+    storyBehind: "Matthew Dicks is a 61-time Moth StorySLAM champion, 10-time GrandSLAM champion, and elementary school teacher. He told Lenny that his 'Homework for Life' practice — writing down one meaningful moment per day — started when he realized he could only remember 89 days out of 365. After 12+ years of the practice, he says his kids 'feel 14 and 11 to me. They don't feel like they were just born yesterday.'",
+    annotations: [
+      {
+        lyricText: "Five seconds — everything changes",
+        note: "Matthew Dicks' core insight: 'Every story is about a singular moment. I call it five seconds. It can be one second honestly. It's a moment of either transformation — I'm telling you a story about how I once used to be one kind of person and now I'm a new kind of person. Or more common is realization.' Lenny called this 'maybe the most mind-expanding takeaway' from the book.",
+        sourceTitle: "How to tell better stories | Matthew Dicks (Storyworthy)",
+        sourceUrl: "https://www.lennyspodcast.com/how-to-tell-better-stories-matthew-dicks-storyworthy/",
+      },
+      {
+        lyricText: "Time doesn't fly — it goes unaccounted",
+        note: "A near-direct Dicks quote: 'People say that time flies and it doesn't. What happens is it goes by unaccounted. If you can only remember 89 days of 365 in a year, of course time flies. Because you had 365 and you only remember 89. It's going to feel like it went by quickly. It's not going by quickly, you're just failing to account for each day.' This is the core argument behind Homework for Life.",
+        sourceTitle: "How to tell better stories | Matthew Dicks (Storyworthy)",
+        sourceUrl: "https://www.lennyspodcast.com/how-to-tell-better-stories-matthew-dicks-storyworthy/",
+      },
+      {
+        lyricText: "She looked up across the classroom",
+        note: "Dicks told Lenny a story from that recording day about his student Eileen. He'd worked all year to build her confidence but was afraid to call her to the board. When he finally asked if she was ready, she fired back: 'First of all, I don't like that cheeky smile of yours.' That quip was his five-second moment — he realized she trusted him enough to be herself. Dicks has been an elementary school teacher for 25 years.",
+        sourceTitle: "How to tell better stories | Matthew Dicks (Storyworthy)",
+        sourceUrl: "https://www.lennyspodcast.com/how-to-tell-better-stories-matthew-dicks-storyworthy/",
+      },
+      {
+        lyricText: "Twelve years in and I've slowed right down",
+        note: "Dicks has been doing Homework for Life for over 12 years. His stats: in Year 1 he found 1.8 meaningful moments per day. After 12+ years, he finds 7.6 moments per day. 'It's not because my life is more interesting. It's because I have a better lens.' On the time-slowing effect: 'My kids are 14 and 11. Thank goodness I started Homework for Life just about when Clara was first born. Because they feel 14 and 11 to me.'",
+        sourceTitle: "How to tell better stories | Matthew Dicks (Storyworthy)",
+        sourceUrl: "https://www.lennyspodcast.com/how-to-tell-better-stories-matthew-dicks-storyworthy/",
+      },
+    ],
+    releaseDate: "2026-03-21",
+    sunoId: "fb3eb2a4-5d61-49c4-8fc6-6751c7e9fdc6",
   },
 ];
 
@@ -2457,6 +2961,123 @@ Name the one you'd let go`,
     ],
     releaseDate: "2026-03-21",
     sunoId: "8827f075-79e0-4fbc-ae05-a81dc6818526",
+  },
+  {
+    slug: "tell-the-story",
+    title: "Tell the Story",
+    albumSlug: "career-moves",
+    trackNumber: 5,
+    duration: "3:59",
+    audioUrl: "/audio/tell-the-story.mp3",
+    coverImage: "/covers/tell-the-story.jpg",
+    genre: "Acoustic Folk",
+    mood: "Conversational, intimate, revelatory",
+    tags: ["storytelling", "narrative", "pitching"],
+    lyrics: `[Verse 1]
+Typed it up in Times New Roman
+Mailed it off and held our breath
+Red ink came back on the margins
+"One out of ten" — he meant the worst
+Lower down, three words in cursive
+Cut me open at the chest
+"Not a compelling story"
+And the man was not wrong yet
+
+[Chorus]
+Tell the story, tell the story
+Nothing changed except the words
+We never changed the product —
+Just the way we let it breathe
+Tell the story, tell the story
+Watch the whole room lean in close
+Same old pitch, but now it's living
+Now they hear what no one heard
+
+[Verse 2]
+Walked into a Barnes and Noble
+Sign said "learn to tell it right"
+Pointed to the screenwriting shelves
+I stood there half the night
+Star Wars is a pitch, I figured —
+Trust the Force and choose the good
+So I stripped the deck to nothing
+Built it back the way a movie would
+
+[Chorus]
+Tell the story, tell the story
+Nothing changed except the words
+We never changed the product —
+Just the way we let it breathe
+Tell the story, tell the story
+Watch the whole room lean in close
+Same old pitch, but now it's living
+Now they hear what no one heard
+
+[Bridge]
+Benioff said "software is over —
+Welcome to the cloud"
+Didn't list a single feature
+Just described the higher ground
+There's an old game and a new one
+And you choose which side you're on
+You were reading off the spec sheet
+But you never sang the song
+
+[Final Chorus]
+Tell the story, tell the story
+Nothing changed except the words
+We never changed the product —
+Just the way we let it breathe
+Tell the story, tell the story
+Watch the whole world lean in close
+Same old dream, but now it's moving
+Now they hear what no one heard
+
+[Outro]
+Not a compelling story...
+Hmm... now it is`,
+    concept: "The power of strategic narrative — same product, different story, different results. Andy Raskin's journey from a devastating 1/10 pitch rating to becoming Silicon Valley's go-to strategic narrative consultant.",
+    keyInsight: "Strategic narrative isn't about features — it's about defining a shift from an old game to a new game, then helping your audience see which side they're on.",
+    keyQuote: "Not a compelling story.",
+    quoteSpeaker: "Anonymous VC (to Andy Raskin)",
+    sources: [
+      { title: "The power of strategic narrative | Andy Raskin", type: "podcast", url: "https://www.lennyspodcast.com/the-power-of-strategic-narrative-andy-raskin/", guest: "Andy Raskin" },
+    ],
+    storyBehind: "Andy Raskin started as a coder during the dot-com era. When a VC rated his pitch 1/10 and wrote 'Not a compelling story' in the margins, it redirected his entire career. Walking past a Barnes & Noble, he saw a sign pointing to screenwriting books and realized movies are structured fundamentally differently from business pitches. That chance encounter became the foundation of his strategic narrative framework.",
+    annotations: [
+      {
+        lyricText: "One out of ten",
+        note: "Andy Raskin started as a coder. During the dot-com era, he and a friend built a Windows app prototype. Since Raskin spoke fluent English, he wrote the investor pitch. One VC wrote back: 'I rate every plan I get on a scale of 1 to 10, and yours is a 1' — and next to the 1, he wrote '(Worst)' in parentheses, in case they thought 1 might be the top of his scale.",
+        sourceTitle: "The power of strategic narrative | Andy Raskin",
+        sourceUrl: "https://www.lennyspodcast.com/the-power-of-strategic-narrative-andy-raskin/",
+      },
+      {
+        lyricText: "Pointed to the screenwriting shelves",
+        note: "A few weeks after the devastating pitch rejection, Raskin was walking past a Barnes & Noble and saw a sign: 'For anyone who wants to tell a compelling story' — with an arrow pointing to screenwriting books. He had no background in screenwriting but started reading them, and realized the structure of how movies are built was fundamentally different from business pitches. That chance bookstore encounter became the foundation of his entire strategic narrative framework.",
+        sourceTitle: "The power of strategic narrative | Andy Raskin",
+        sourceUrl: "https://www.lennyspodcast.com/the-power-of-strategic-narrative-andy-raskin/",
+      },
+      {
+        lyricText: "Star Wars is a pitch, I figured",
+        note: "While reading those screenwriting books, Raskin had an insight: 'A movie is a pitch. What is Star Wars a pitch for? It's a pitch for be good, care about people, trust The Force.' But he recognized the constraint: 'I don't have a couple hours. I'm pitching a business.' Every movie starts with a shift in the world — Raskin calls this 'the shift from the old game to a new game.' That became the core of his framework.",
+        sourceTitle: "The power of strategic narrative | Andy Raskin",
+        sourceUrl: "https://www.lennyspodcast.com/the-power-of-strategic-narrative-andy-raskin/",
+      },
+      {
+        lyricText: "Benioff said \"software is over",
+        note: "Raskin calls Salesforce's Marc Benioff 'the archetypal example' of strategic narrative. Instead of pitching Salesforce as a better CRM, Benioff declared a shift: 'Software is over and there's this new world called the cloud.' As Raskin puts it: 'This structure is about defining a movement, and that's very different from solving your problem.' Tien Tzuo, employee #11 at Salesforce, learned this playbook from Benioff and used the same structure to pitch the subscription economy at Zuora.",
+        sourceTitle: "The power of strategic narrative | Andy Raskin",
+        sourceUrl: "https://www.lennyspodcast.com/the-power-of-strategic-narrative-andy-raskin/",
+      },
+      {
+        lyricText: "We never changed the product",
+        note: "Raskin's Medium post 'The Greatest Sales Deck I've Ever Seen' (about Zuora) got around 2 million views worldwide and launched his consulting career. He helped Gong build their strategic narrative around 'Goodbye opinions, hello reality.' Gong's CEO told Raskin at Series B: 'We're going to be a huge company. The question is how huge.' Raskin describes the traditional pitch as 'the arrogant doctor' — strategic narrative replaces it with: the world is shifting, and we'll help you get there.",
+        sourceTitle: "The power of strategic narrative | Andy Raskin",
+        sourceUrl: "https://www.lennyspodcast.com/the-power-of-strategic-narrative-andy-raskin/",
+      },
+    ],
+    releaseDate: "2026-03-21",
+    sunoId: "3957841b-db6f-49b0-b9be-fb5bf2e577df",
   },
 ];
 
@@ -3215,6 +3836,422 @@ I did`,
       { title: "Lessons from 600+ YC startups", type: "podcast", url: "https://www.lennyspodcast.com/lessons-from-working-with-600-yc-startups-gustaf-alstromer-y-combinator-airbnb/", guest: "Gustaf Alstromer" },
     ],
     storyBehind: "Someone asks how it's going. You freeze, then smile. In a YC group session, Gustaf says forget your pitch, just tell us everything. She goes first, voice shaking: 'No traction and we're out of cash.' Something in your chest breaks open, because yours sounds just like that.",
+  },
+  {
+    slug: "seven-powers",
+    title: "Seven Powers",
+    albumSlug: "the-startup-life",
+    trackNumber: 9,
+    duration: "4:22",
+    audioUrl: "/audio/seven-powers.mp3",
+    coverImage: "/covers/seven-powers.jpg",
+    genre: "Anthemic Indie Folk",
+    mood: "Sweeping, building, reassuring",
+    tags: ["strategy", "moats", "competitive advantage"],
+    lyrics: `[Verse 1]
+I was running every morning,
+Chasing numbers down the hall,
+Shipping fast and hiring faster,
+Swore I'd never hit a wall.
+But the treadmill kept on spinning,
+And the ground beneath me stayed —
+Everything I built by sundown,
+Someone else had built by May.
+
+[Chorus]
+Lay the stone and dig the moat,
+Build a castle, not a shack.
+It's not the speed that keeps you standing,
+It's what they can never take back.
+Lay the stone and dig the moat,
+Build a castle, not a shack.
+You're not slow — you're building something,
+Something no one else can match.
+
+[Verse 2]
+I watched the giants stumble sideways,
+Couldn't follow where I'd gone.
+What I carried they couldn't carry —
+Cost too much to change their song.
+Then the people started staying,
+Every wall grew tall with time.
+Not because I ran the fastest,
+But because I changed the climb.
+
+[Chorus]
+Lay the stone and dig the moat,
+Build a castle, not a shack.
+It's not the speed that keeps you standing,
+It's what they can never take back.
+Lay the stone and dig the moat,
+Build a castle, not a shack.
+You're not slow — you're building something,
+Something no one else can match.
+
+[Bridge]
+Seven walls around this ground,
+Every one a different door.
+I don't need to run forever —
+Just need something worth defending,
+Something worth defending... more.
+
+[Final Chorus]
+Lay the stone and dig the moat,
+Build a castle, not a shack.
+It's not the speed that keeps you standing,
+It's what they can never take back.
+Lay the stone and dig the moat,
+Build a castle, not a shack.
+You're not slow — you're building something real,
+Something no one else can match.
+
+[Outro]
+Lay the stone... dig the moat...
+Lay the stone...`,
+    concept: "Hamilton Helmer's 7 Powers framework — the seven types of strategic advantage that let companies win and last. Speed alone is a treadmill; durable power requires both a castle (benefit) and a moat (barrier).",
+    keyInsight: "Power requires a benefit AND a barrier. You can have a moat around undesirable property and it won't help. Patrick Collison, Reed Hastings, Peter Thiel, and Daniel Ek all credit 7 Powers.",
+    keyQuote: "You're on a treadmill and if you stop running on that treadmill, you get creamed, but it's not power. The things that drive operational excellence can be mimicked.",
+    quoteSpeaker: "Hamilton Helmer",
+    sources: [
+      { title: "Business strategy with Hamilton Helmer (author of 7 Powers)", type: "podcast", url: "https://www.lennyspodcast.com/business-strategy-with-hamilton-helmer-author-of-7-powers/", guest: "Hamilton Helmer" },
+    ],
+    storyBehind: "Hamilton Helmer spent decades studying why some companies achieve lasting success while others flame out. His book 7 Powers identified seven types of strategic advantage: scale economies, network economies, counter-positioning, switching costs, branding, cornered resource, and process power. Patrick Collison credited it with helping build Stripe.",
+    annotations: [
+      {
+        lyricText: "Everything I built by sundown",
+        note: "Hamilton Helmer told Lenny that most startups are delusional about the power they actually have. Lenny observed: 'Every startup deck has here's our moats, here's how we're going to have barriers to entry, and they're all delusional.' Helmer's response: 'You're on a treadmill and if you stop running, you get creamed, but it's not power. The things that drive operational excellence can be mimicked.' Without power, everything you build can be replicated.",
+        sourceTitle: "Business strategy with Hamilton Helmer (author of 7 Powers)",
+        sourceUrl: "https://www.lennyspodcast.com/business-strategy-with-hamilton-helmer-author-of-7-powers/",
+      },
+      {
+        lyricText: "Lay the stone and dig the moat",
+        note: "The episode opens with Warren Buffett's quote: 'I look for economic castles protected by unbreachable moats.' Helmer sharpens it: 'Power requires a benefit and a barrier, so he's taking care of the benefit part by saying a castle — you have to have a pretty good understanding of why it's a castle and not a shack. You can have a moat around a very undesirable piece of property and it wouldn't get you far.' Power = castle (benefit) + moat (barrier).",
+        sourceTitle: "Business strategy with Hamilton Helmer (author of 7 Powers)",
+        sourceUrl: "https://www.lennyspodcast.com/business-strategy-with-hamilton-helmer-author-of-7-powers/",
+      },
+      {
+        lyricText: "What I carried they couldn't carry",
+        note: "Helmer explains counter-positioning: 'Almost every startup you want to deal with starts with counter-positioning because product market fit is primarily a substitution. You are coming up with a way to satisfy an existing need in a novel way that creates more value.' Counter-positioning protects you from incumbents because adopting your model would damage their existing business.",
+        sourceTitle: "Business strategy with Hamilton Helmer (author of 7 Powers)",
+        sourceUrl: "https://www.lennyspodcast.com/business-strategy-with-hamilton-helmer-author-of-7-powers/",
+      },
+      {
+        lyricText: "Seven walls around this ground",
+        note: "The seven powers are: scale economies (cost advantages from size), network economies (value increases with users), counter-positioning (new model incumbents can't copy), switching costs (locked in), branding (earned trust), cornered resource (exclusive access), and process power (embedded organizational capability). Helmer says most startups achieve power through counter-positioning first, then layer additional powers over time.",
+        sourceTitle: "Business strategy with Hamilton Helmer (author of 7 Powers)",
+        sourceUrl: "https://www.lennyspodcast.com/business-strategy-with-hamilton-helmer-author-of-7-powers/",
+      },
+      {
+        lyricText: "the people started staying",
+        note: "This captures network effects and switching costs — two of the seven powers. Helmer describes network effects as the most powerful moat: each new user makes the product more valuable for all existing users. Switching costs compound over time as users invest more data, workflows, and habits into the product. 'Every wall grew tall with time' is the key insight — these powers don't appear at launch, they accumulate.",
+        sourceTitle: "Business strategy with Hamilton Helmer (author of 7 Powers)",
+        sourceUrl: "https://www.lennyspodcast.com/business-strategy-with-hamilton-helmer-author-of-7-powers/",
+      },
+    ],
+    releaseDate: "2026-03-21",
+    sunoId: "9db6fc22-9c4c-4cfe-931e-7ed61cc0fd89",
+  },
+  {
+    slug: "founding-sales",
+    title: "Founding Sales",
+    albumSlug: "the-startup-life",
+    trackNumber: 10,
+    duration: "2:36",
+    audioUrl: "/audio/founding-sales.mp3",
+    coverImage: "/covers/founding-sales.jpg",
+    genre: "Lo-Fi Neo-Soul / Jazz-Pop",
+    mood: "Warm, conversational, gaining confidence",
+    tags: ["sales", "founder-led", "B2B"],
+    lyrics: `[Verse 1]
+Staring at the phone like it might bite
+Built the whole thing but I can't describe it right
+Palms against the desk, rehearsing lines
+Funny how the builder's scared to say "it's mine"
+
+[Chorus]
+Pick up the phone, don't overthink it
+Nobody's born knowing how to close
+It's not rocket surgery, darling
+Run the loop again — that's founding sales
+
+[Verse 2]
+First ten calls they told me "not right now"
+Fifteenth she said "show me, walk me through it"
+Tripped across the demo, lost my slide
+But she leaned in anyway — I felt the tide
+
+[Chorus]
+Pick up the phone, don't overthink it
+Nobody's born knowing how to close
+It's not rocket surgery, darling
+Run the loop again — that's founding sales
+
+[Bridge]
+You're debugging people now — it's the same game
+Every no just patches up the code
+Are we getting second dates? That's all you're asking
+Ship it from your local to the road
+
+[Final Chorus]
+Pick up the phone, don't overthink it
+Nobody's born knowing how to close
+It's not rocket surgery, darling
+Run the loop again — now watch it grow
+
+[Outro]
+Run the loop... run the loop...
+That's founding sales`,
+    concept: "Learning to sell as a technical founder. Pete Kazanjy's journey from product marketer to reluctant seller to writing the definitive book on founder-led sales.",
+    keyInsight: "Sales is debugging people. Every objection is a bug report you can fix. The same analytical mindset that builds products can close deals.",
+    keyQuote: "Man, this isn't rocket surgery, anyone can learn this. If I can learn this, other people can learn this.",
+    quoteSpeaker: "Pete Kazanjy",
+    sources: [
+      { title: "Founder-led sales | Pete Kazanjy (Founding Sales, Atrium)", type: "podcast", url: "https://www.lennyspodcast.com/founder-led-sales-pete-kazanjy-founding-sales-atrium/", guest: "Pete Kazanjy" },
+    ],
+    storyBehind: "Pete Kazanjy had zero sales background — his career started in product marketing at VMware. When his B2B recruiting software TalentBin 'didn't sell itself,' he had to become the first seller, sales manager, and sales leader all at once. That experience became his book Founding Sales, which Lenny calls 'the book I give every founder trying to figure out sales.'",
+    annotations: [
+      {
+        lyricText: "the builder's scared to say \"it's mine\"",
+        note: "Pete opens his Lenny's Podcast appearance with this exact problem: 'Just don't be afraid of sales. There's a lot of people out there who would love to tell you it's magical or like you've got to be a born seller, and it's really not.' Founders' only experience with sales is 'Glengarry Glen Ross or movies with a sleazy used car salesman,' which creates an 'Ew, sales, ugh' reaction. Every founder Lenny interviewed started with founder-led sales.",
+        sourceTitle: "Founder-led sales | Pete Kazanjy (Founding Sales, Atrium)",
+        sourceUrl: "https://www.lennyspodcast.com/founder-led-sales-pete-kazanjy-founding-sales-atrium/",
+      },
+      {
+        lyricText: "It's not rocket surgery, darling",
+        note: "A direct Pete Kazanjy quote. Describing how he went from product marketing to being TalentBin's first seller: 'Man, this isn't rocket surgery, anyone can learn this.' The deliberate malapropism ('rocket surgery' instead of 'rocket science') is his signature way of demystifying sales. He had zero sales background but when his B2B software 'didn't sell itself,' he had to learn from scratch.",
+        sourceTitle: "Founder-led sales | Pete Kazanjy (Founding Sales, Atrium)",
+        sourceUrl: "https://www.lennyspodcast.com/founder-led-sales-pete-kazanjy-founding-sales-atrium/",
+      },
+      {
+        lyricText: "You're debugging people now",
+        note: "Pete uses engineering metaphors to reframe sales for technical founders. He describes a sales motion as 'kind of like software' where 'what you want to be doing is constantly updating it.' When a prospect raises an objection: 'I should make a slide that handles that objection, and then I'm going to update the source code. Now, my sales motion has been updated.' He also frames hiring your first salesperson in code terms: 'It's like when it runs on your local, now it's time to see if it reproduces over here.'",
+        sourceTitle: "Founder-led sales | Pete Kazanjy (Founding Sales, Atrium)",
+        sourceUrl: "https://www.lennyspodcast.com/founder-led-sales-pete-kazanjy-founding-sales-atrium/",
+      },
+      {
+        lyricText: "Are we getting second dates?",
+        note: "Pete frames early sales as dating: 'For every cohort of ten first meetings, are you closing 1, 1.5, 2, or 2.5?' He coaches founders to think in small batches: 'Let's have 10 prospects and try to get 10 first meetings,' then watch whether those convert to second meetings. If the prospect says 'I would love to introduce you to my boss' — that's a second date. A healthy win rate is 15-25% of first meetings turning into customers.",
+        sourceTitle: "Founder-led sales | Pete Kazanjy (Founding Sales, Atrium)",
+        sourceUrl: "https://www.lennyspodcast.com/founder-led-sales-pete-kazanjy-founding-sales-atrium/",
+      },
+    ],
+    releaseDate: "2026-03-21",
+    sunoId: "9bc52b3a-afe1-49b1-b71c-f7f35f18ae0b",
+  },
+  {
+    slug: "the-lean",
+    title: "The Lean",
+    albumSlug: "the-startup-life",
+    trackNumber: 11,
+    duration: "4:04",
+    audioUrl: "/audio/the-lean.mp3",
+    coverImage: "/covers/the-lean.jpg",
+    genre: "Liturgical Folk / Hymn",
+    mood: "Confessional, communal, bittersweet",
+    tags: ["lean startup", "MVP", "methodology"],
+    lyrics: `[Verse 1]
+I wrote it where no one would look
+With no name on the page
+Shipping fifty times a day
+Before it was the rage
+
+[Verse 2]
+We named it with a borrowed word
+We called the failure small
+We drew the loop upon the board
+And taped it to the wall
+
+[Pre-Chorus]
+It went from fight to obvious
+From radical to plain
+The ones who swore we'd never work
+Now say they felt the same
+
+[Chorus]
+If you can't fail, you cannot learn
+That's what I used to say
+We built the loop, we took our turn
+And gave the map away
+
+[Verse 3]
+I walked into a meeting room
+And saw my writing there
+The words had traveled on their own
+To places past repair
+
+[Verse 4]
+A friend walked out with millions made
+And still couldn't find the door
+We gave the world a way to fail
+We never asked what for
+
+[Pre-Chorus]
+It went from fight to obvious
+From radical to plain
+The ones who swore we'd never work
+Now say they felt the same
+
+[Chorus]
+If you can't fail, you cannot learn
+That's what I used to say
+We built the loop, we took our turn
+And gave the map away
+
+[Bridge]
+I wrote "change the world" — forgot
+To add "for better" there
+I thought it was obvious
+I thought we all would care
+
+[Gang Vocal]
+Ohhhh, I thought we all would care
+
+[Final Chorus]
+If you can't fail, you cannot learn
+That's what I used to say
+We built the loop, we took our turn
+Now build it right this day
+
+[Outro]
+Nothing real can be threatened here
+Nothing unreal remains`,
+    concept: "Eric Ries reflecting on the lean startup movement — pride in what it built, regret about what it enabled. The man who taught the world to fail fast couldn't control where his words traveled.",
+    keyInsight: "Ries coined more terms that became default startup language than anyone — MVP, pivot, continuous deployment — but regrets writing 'change the world' without adding 'for the better.'",
+    keyQuote: "I thought it was obvious. I thought we all agreed.",
+    quoteSpeaker: "Eric Ries",
+    sources: [
+      { title: "Reflections on a movement | Eric Ries (creator of the Lean Startup methodology)", type: "podcast", url: "https://www.lennyspodcast.com/reflections-on-a-movement-eric-ries-creator-of-the-lean-startup-methodology/", guest: "Eric Ries" },
+    ],
+    storyBehind: "Eric Ries co-founded IMVU in 2004, where the team deployed code 50 times a day when most companies shipped monthly. When he described this to other companies, people literally yelled at him in meetings. The lean startup methodology went from radical insurgency to default playbook — but Ries watched his ideas get misapplied everywhere, and TechCrunch called it 'overhyped' without ever explaining what it was.",
+    annotations: [
+      {
+        lyricText: "Shipping fifty times a day",
+        note: "At IMVU, Ries' team deployed to production 50 times per day on average — at a time when most companies shipped monthly or annually. Ries recalls: 'We at IMVU shipped product 50 times a day on average at a time when people were lucky to be doing it monthly if they were really advanced. Remember, it wasn't that long ago that we put the year the product came out in the name of the product.' When he described this practice to other companies, people 'would get yelled at. In fact, I would be asked not very kindly to leave.'",
+        sourceTitle: "Reflections on a movement | Eric Ries",
+        sourceUrl: "https://www.lennyspodcast.com/reflections-on-a-movement-eric-ries-creator-of-the-lean-startup-methodology/",
+      },
+      {
+        lyricText: "We named it with a borrowed word",
+        note: "Ries coined or popularized an extraordinary number of terms: MVP, pivot, continuous deployment, vanity metrics. Lenny told him directly: 'He coined more terms and concepts that are part of the tech culture than anyone I could think of.' On 'pivot,' Ries says: 'I'm not telling you that you should pivot. I'm just saying that is what it's called when you change the strategy but try to have fidelity to the vision. It needs a name because we do it all the time.' Someone writes to him at least once a year saying they should have used a different term for MVP. He replies: 'Please tell me the better term and popularize it and I'll use it.'",
+        sourceTitle: "Reflections on a movement | Eric Ries",
+        sourceUrl: "https://www.lennyspodcast.com/reflections-on-a-movement-eric-ries-creator-of-the-lean-startup-methodology/",
+      },
+      {
+        lyricText: "The words had traveled on their own",
+        note: "Ries describes being gaslit by critics misrepresenting his ideas: 'Could you at least learn to use the word pivot correctly and then criticize it for being overhyped?' He wrote an article listing top misconceptions ('Lean means cheap,' 'Lean is opposed to having a vision') and says: 'They're all still prevalent, nothing's changed.' He was so gaslit that 'I actually went back and cracked open a copy of The Lean Startup, and I was like, on what page do I address this? It was like on page nine in the introduction.'",
+        sourceTitle: "Reflections on a movement | Eric Ries",
+        sourceUrl: "https://www.lennyspodcast.com/reflections-on-a-movement-eric-ries-creator-of-the-lean-startup-methodology/",
+      },
+      {
+        lyricText: "I wrote \"change the world\" — forgot",
+        note: "Nearly a direct quote. Ries references the Anakin Skywalker meme: 'I'm going to change the world for the better... For the better, right?' He confesses: 'Right in the introduction of Lean Startup, one of the throwaway lines: This is the technique that will give entrepreneurs the tools they need to change the world. And I'm like, No, I should have said for the better. I didn't know I had to say it. I thought it was obvious. I thought we all agreed.' He calls it a 'major oversight' with 'catastrophic consequences.'",
+        sourceTitle: "Reflections on a movement | Eric Ries",
+        sourceUrl: "https://www.lennyspodcast.com/reflections-on-a-movement-eric-ries-creator-of-the-lean-startup-methodology/",
+      },
+    ],
+    releaseDate: "2026-03-21",
+    sunoId: "59a049de-4e0d-48b7-8a35-cbe8b647e239",
+  },
+  {
+    slug: "pattern-breaker",
+    title: "Pattern Breaker",
+    albumSlug: "the-startup-life",
+    trackNumber: 12,
+    duration: "2:39",
+    audioUrl: "/audio/pattern-breaker.mp3",
+    coverImage: "/covers/pattern-breaker.jpg",
+    genre: "Soft Synth-Pop with Folk Undertones",
+    mood: "Defiant, visionary, lonely then vindicated",
+    tags: ["startups", "breakthrough ideas", "strategy"],
+    lyrics: `[Verse 1]
+Everyone is building better apples
+I'm after something you have never seen
+They say the map is drawn, the roads are settled
+I'm walking ground between the lines of green
+
+[Pre-Chorus]
+I don't need a head start
+I need a different race
+Not fighting on your ground
+I'm finding my own place
+
+[Chorus]
+Don't be the best, be the only
+The coin that can't lose — can't win big
+Live in the future, stay lonely
+'Til the world catches up to it
+
+[Verse 2]
+The rock was not the weapon that won the battle
+The slingshot was the part they couldn't see
+I watched a pivot turn to ninety million
+And barely knew that I was holding keys
+
+[Pre-Chorus]
+You don't find it thinking
+You find it living through
+You notice what is missing
+Then you build what no one knew
+
+[Chorus]
+Don't be the best, be the only
+The coin that can't lose — can't win big
+Live in the future, stay lonely
+'Til the world catches up to it
+
+[Bridge]
+They'll call you crazy till the day they call you right
+Consensus means you're in someone else's fight
+Force a choice — not a comparison
+Be the world's first banana
+
+[Final Chorus]
+Don't be the best, be the only
+The coin that can't lose — can't win big
+Live in the future — not lonely
+The world finally caught up to it`,
+    concept: "Mike Maples Jr.'s thesis on finding breakthrough startup ideas: don't be the best, be the only. Consensus ideas are safe bets that can't produce breakthroughs. The best founders backcast from a radically different future.",
+    keyInsight: "80% of Floodgate's exit profits came from pivots — companies that succeeded didn't follow conventional best practices. They broke patterns.",
+    keyQuote: "If everybody likes your startup idea, it means it's too similar to what they already know.",
+    quoteSpeaker: "Mike Maples Jr.",
+    sources: [
+      { title: "Pattern Breakers: How to find a breakthrough startup idea | Mike Maples, Jr.", type: "podcast", url: "https://www.lennyspodcast.com/pattern-breakers-how-to-find-a-breakthrough-startup-idea-mike-maples-jr/", guest: "Mike Maples Jr." },
+    ],
+    storyBehind: "Mike Maples Jr. invested in Justin.tv — a lifecasting platform. It morphed into Twitch, which Amazon acquired for $970 million. Maples had actually forgotten he was a shareholder and had to explain to his LPs why it wasn't in his financial statements. That experience triggered his research into pattern breaking, where he discovered that 80% of his exit profits came from pivots.",
+    annotations: [
+      {
+        lyricText: "Don't be the best, be the only",
+        note: "A direct Mike Maples quote. In Lenny's newsletter 'Evaluating a business idea,' it appears as a guiding principle: 'Don't be the best. Be the only.' The idea is that defensibility comes not from being incrementally better but from creating something so different that comparison is impossible. The real moat is being uncategorizable.",
+        sourceTitle: "Pattern Breakers: How to find a breakthrough startup idea | Mike Maples, Jr.",
+        sourceUrl: "https://www.lennyspodcast.com/pattern-breakers-how-to-find-a-breakthrough-startup-idea-mike-maples-jr/",
+      },
+      {
+        lyricText: "The coin that can't lose — can't win big",
+        note: "Maples explains: 'The insight needs to be non-consensus and right, not just right. If it's consensus, it's probably not radical enough. Human beings are conditioned to like things, and so, if everybody likes your startup idea, it means it's too similar to what they already know.' An idea that is 'right but consensus' — the safe bet that can't lose — also can't produce a breakthrough outcome. The best ideas make most people hostile, but a small subset falls 'irrationally in love.'",
+        sourceTitle: "Pattern Breakers: How to find a breakthrough startup idea | Mike Maples, Jr.",
+        sourceUrl: "https://www.lennyspodcast.com/pattern-breakers-how-to-find-a-breakthrough-startup-idea-mike-maples-jr/",
+      },
+      {
+        lyricText: "Force a choice — not a comparison",
+        note: "A direct Maples quote: 'You want to force a choice and not a comparison. If everybody's selling apples, I can't be a 10 times better apple. I want to be the world's first banana. And I want to say to people, you may not want bananas, but if you value banana-ness, I'm the only person that's got it.' He uses the Tesla Cybertruck as an example: 'Nobody looks at the Cybertruck and says, how does that compare to Ford F-150? You may hate the Cybertruck, but nobody's neutral about it.'",
+        sourceTitle: "Pattern Breakers: How to find a breakthrough startup idea | Mike Maples, Jr.",
+        sourceUrl: "https://www.lennyspodcast.com/pattern-breakers-how-to-find-a-breakthrough-startup-idea-mike-maples-jr/",
+      },
+      {
+        lyricText: "Live in the future, stay lonely",
+        note: "Maples describes how breakthrough founders 'backcast' instead of forecast: 'Great founders say, it's a given that the future has to be radically different for me to be a big winner. Now I'm out in this different future, but right now, I'm all alone.' He calls these 'earned secrets' — founders so deep in the future they frustrate people: 'They'll be at a party and everybody's talking about the basketball game and somehow that reminds them of the fact that they want to test prices for textbook rentals.'",
+        sourceTitle: "Pattern Breakers: How to find a breakthrough startup idea | Mike Maples, Jr.",
+        sourceUrl: "https://www.lennyspodcast.com/pattern-breakers-how-to-find-a-breakthrough-startup-idea-mike-maples-jr/",
+      },
+      {
+        lyricText: "I watched a pivot turn to ninety million",
+        note: "Maples invested in Justin.tv — a lifecasting platform that morphed into Twitch. Amazon acquired Twitch for $970 million, and Floodgate made roughly 85x their money. Maples had actually forgotten he was a shareholder: 'I had to go to my LPs and explain to them, hey, I'm sorry I don't have this in my financial statements.' This triggered his research into pattern breaking, where he discovered that '80% of my exit profits had gone from pivot.' The lyric says 'ninety million' for singability; the actual acquisition was $970M.",
+        sourceTitle: "Pattern Breakers: How to find a breakthrough startup idea | Mike Maples, Jr.",
+        sourceUrl: "https://www.lennyspodcast.com/pattern-breakers-how-to-find-a-breakthrough-startup-idea-mike-maples-jr/",
+      },
+    ],
+    releaseDate: "2026-03-21",
+    sunoId: "8845b6cf-9f55-40b2-afef-dd64530f878f",
   },
 ];
 

@@ -1,10 +1,17 @@
 import type { Metadata } from "next";
-import { getAlbumBySlug } from "@/lib/tracks";
+import { getAlbumBySlug, getAllTracks } from "@/lib/tracks";
+import { albums } from "@/lib/albums";
 import AlbumPageClient from "./AlbumPageClient";
 
 type Props = {
   params: Promise<{ slug: string }>;
 };
+
+export async function generateStaticParams() {
+  return albums.map((a) => ({ slug: a.slug }));
+}
+
+export const dynamicParams = false;
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;

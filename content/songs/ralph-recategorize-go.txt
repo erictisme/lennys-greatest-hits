@@ -1,0 +1,9 @@
+Please read plans/ralph-recategorize.md and execute it as a Ralph research run.
+
+This is a RESEARCH run, not a coding run. Your job is to:
+1. Validate whether Lenny's 11 JTBD categories cover all 638 pieces of content
+2. Name each album with catchy Spotify-worthy titles
+3. Recategorize all 36 existing songs into the new 11-album structure
+4. Identify gaps and priorities for batch 3 song generation
+
+Use the Lenny MCP tools to search and read source material. Save all output to content/songs/album-recategorization.md.

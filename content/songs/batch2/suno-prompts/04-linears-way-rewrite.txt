@@ -1,0 +1,61 @@
+TITLE: Doesn't Feel Right Yet
+
+STYLE: Indie folk-pop with dream-pop textures, Stephen Day and Doris Club warmth, warm male vocal with earnest delivery, clean electric guitar with reverb, acoustic guitar foundation, warm analog synth pad, light brushed drums, 104 BPM, key of D major, reference Stephen Day warm indie folk-pop, reference Doris Club dreamy textures, precise and cathartic mood
+
+SOURCE: How Linear builds product / Inside Linear (Karri Saarinen, newsletter + podcast)
+
+---
+
+LYRICS:
+
+[Verse 1]
+Every tool I touched was made by strangers
+Built by people who would never use the thing
+Fourteen menus deep to move a ticket
+Dashboards glowing, nobody was listening
+A designer staring at a broken system
+Said "I'm done pretending this is fine"
+
+[Chorus]
+Doesn't feel right yet — hold the launch
+Doesn't feel right yet — take it back
+No one's gonna tell me when it's done
+I'll know it when the last detail feels won
+Doesn't feel right yet
+And that's fine
+
+[Verse 2]
+Fifty people, two have ever left us
+More cash in the bank than the VCs gave
+No one translates the vision into tickets
+The builders and the dreamers are the same
+They said "you need a roadmap and a process"
+We said "we need a window and some taste"
+
+[Chorus]
+Doesn't feel right yet — hold the launch
+Doesn't feel right yet — bring it back
+The fastest teams in tech all found our door
+Not 'cause we were loud — 'cause we were sure
+Doesn't feel right yet
+Now it does
+
+[Bridge]
+They use the data like a safety net
+Afraid to make the call, afraid to bet
+On what their hands can feel, on what they know
+So they hide behind the chart and let it go
+Craft is pushing out and coming back
+Shipping fast and fixing every crack
+
+[Final Chorus]
+Doesn't feel right yet — hold the launch
+Doesn't feel right yet — one more pass
+Fewer people, sharper eye, no compromise
+Build it till the last pixel satisfies
+This one feels right now
+Let it fly
+
+[Outro]
+The more it matters
+The more the design matters

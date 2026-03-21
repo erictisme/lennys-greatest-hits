@@ -3,11 +3,15 @@ import { createClient } from "@supabase/supabase-js";
 import { Resend } from "resend";
 
 const supabase = createClient(
-  process.env.NEXT_PUBLIC_SUPABASE_URL!,
-  process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
+  process.env.NEXT_PUBLIC_SUPABASE_URL ?? "",
+  process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY ?? ""
 );
 
-const resend = new Resend(process.env.RESEND_API_KEY);
+function getResend() {
+  const key = process.env.RESEND_API_KEY;
+  if (!key) return null;
+  return new Resend(key);
+}
 
 export async function POST(req: NextRequest) {
   try {
@@ -33,7 +37,8 @@ export async function POST(req: NextRequest) {
 
     // Send welcome email via Resend — best effort, don't fail the request if this breaks
     try {
-      await resend.emails.send({
+      const resend = getResend();
+      if (resend) await resend.emails.send({
         from: "Eric from Lenny's Greatest Hits <onboarding@resend.dev>",
         to: normalizedEmail,
         subject: "You're in! More songs are coming",
