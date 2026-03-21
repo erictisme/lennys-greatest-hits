@@ -2,3 +2,4 @@
 Task 80: Added LyricAnnotation type and annotations field to Track type in lib/types.ts. Build passes.
 Task 81: Added Spectral font via next/font/google with .font-lenny CSS class in layout.tsx and globals.css.
 Task 82: Added Genius-style lyric annotations to SyncedLyrics with expandable panels, dotted underlines, and framer-motion animations.
+Task 83: Wired track.annotations prop to SyncedLyrics in TrackPageClient.tsx.

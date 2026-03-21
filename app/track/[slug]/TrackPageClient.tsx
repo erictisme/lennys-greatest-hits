@@ -341,6 +341,7 @@ export default function TrackPageClient({ slug }: { slug: string }) {
               trackTitle={track.title}
               albumTitle={album.title}
               onSeek={(time) => audio.seek(time)}
+              annotations={track.annotations}
             />
           </section>
         )}
