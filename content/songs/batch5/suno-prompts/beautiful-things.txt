@@ -1,0 +1,63 @@
+TITLE: Beautiful Things
+
+STYLE: Piano-driven elegant pop in F# major, 86 BPM, 4/4 time. Stephen Day warmth meets Jacob Collier harmonic sophistication. Grand piano as the foundation — warm, resonant, slightly reverbed — with a featured violin melody that weaves through the song like a silver thread, entering in the chorus and soaring in the final chorus. NO guitar. Breathy female vocal, close-mic, intimate and tender — think Phoebe Bridgers' restraint with Norah Jones' warmth. Subtle programmed drums enter in verse 2 — brushed snare, soft kick on 1 and 3, light hi-hat. Strings pad underneath choruses, swelling gently. Bridge strips to piano only — naked, vulnerable. Final chorus blooms with full string arrangement and violin taking a melodic counter-line above the vocal. Mood: quiet pride, the tenderness of someone who cares deeply about details in a world that tells them not to bother.
+
+SOURCE: Building beautiful products with Stripe's Head of Design | Katie Dill (Stripe, Airbnb, Lyft)
+
+---
+
+LYRICS:
+
+[Intro, piano and violin, gentle]
+
+[Verse 1, intimate, close-mic]
+White walls and a gray flat table
+Five chairs pulled tight around the room
+They read from papers, took their turns
+And told me everything I'd burned
+I came in swinging, full of plans
+But no one knew where I would land
+
+[Pre-Chorus, building slowly]
+So I stopped talking, finally heard
+
+[Chorus, warm bloom, violin enters]
+Beautiful things take time to grow
+Every line and every curve you chose
+They trust the things they'll never see
+Because you cared enough for me
+Beautiful things
+
+[Verse 2, gentle momentum]
+They say that function's all that counts
+The word for beauty's fading out
+But Penn Station makes you curse the rain
+Grand Central makes you feel again
+A checkout page, a single seam
+The ten percent no one could dream
+
+[Pre-Chorus, building]
+The pull is always toward the gray
+
+[Chorus, warm bloom]
+Beautiful things take time to grow
+Every line and every curve you chose
+They trust the things they'll never see
+Because you cared enough for me
+Beautiful things
+
+[Bridge, stripped to piano only, vulnerable]
+One workout won't change your life
+But skipping one makes two feel right
+Tomorrow is today, she said
+A Post-It note beside her bed
+
+[Final Chorus, full arrangement, violin soars]
+Beautiful things take time to grow
+Every line and every curve you chose
+They trust the things they'll never see
+Because you showed me how to breathe
+Beautiful things
+
+[Outro, piano fading]
+Beautiful things

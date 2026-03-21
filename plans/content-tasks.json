@@ -149,7 +149,7 @@
         "Verify: all 60 output files exist"
       ],
       "files": ["content/songs/batch5/tasks.json", "plans/ralph-songwriter-batch5.md"],
-      "passes": false
+      "passes": true
     }
   ]
 }

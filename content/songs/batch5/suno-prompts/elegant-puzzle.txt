@@ -1,0 +1,59 @@
+TITLE: Elegant Puzzle
+
+STYLE: Lo-fi hip hop groove, E major, 78 BPM, 4/4 straight time. Ticking clock sample as rhythmic backbone layered under dusty boom-bap drum pattern. Vinyl crackle and tape hiss throughout. Warm Rhodes electric piano with jazzy voicings (Emaj7 — C#m9 — Amaj7 — B7add13). Muted electric guitar picking on offbeats, Tom Misch style. Deep sub-bass, felt not heard. Warm male vocal, conversational and unhurried — half-sung half-spoken delivery, Doris Club lo-fi warmth meets Tom Misch ease. Close-mic, analog warmth. Bridge strips to just ticking clock and upright bass. Final chorus adds subtle lo-fi pad swell. No live drums — programmed lo-fi beats only. No synths. No aggressive energy.
+
+SOURCE: The engineering mindset | Will Larson (Carta, Stripe, Uber, Calm, Digg)
+
+---
+
+LYRICS:
+
+[Intro, lo-fi beat with ticking clock]
+
+[Verse 1, conversational]
+Servers restart every twelve
+Nobody remembers why
+Built a model, clean on paper
+But the numbers start to lie
+Measured twice and then a third time
+Then a tenth, then lost the thread
+Dashboard full of perfect data
+Nothing actually gets fed
+
+[Chorus, relaxed hook]
+Tick, tick — no way around
+Tick, tick — just through
+Tick, tick — keep turning the dial
+Till the pieces pull through
+
+[Verse 2, cinematic]
+Champagne flutes and sushi platters
+Launch night, and the whole site's down
+Five of us still in the building
+Thirty days to bring it 'round
+Python bug, a default value
+Simple thing nobody caught
+I became the one who stayed here
+Only fool who held the thought
+
+[Chorus, relaxed hook]
+Tick, tick — no way around
+Tick, tick — just through
+Tick, tick — keep turning the dial
+Till the pieces pull through
+
+[Bridge, stripped to clock and bass]
+Use the tools you already own
+Boring strategy that works
+Every shiny thing you chase
+Is a system left in the dirt
+The model breaks, the real world speaks
+Fix the gap, then go again
+
+[Chorus, relaxed hook]
+Tick, tick — no way around
+Tick, tick — just through
+Tick, tick — keep turning the dial
+Till the whole thing pulls through
+
+[Outro, clock fading to silence]
