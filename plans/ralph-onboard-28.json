@@ -216,7 +216,7 @@
         "Final pnpm build"
       ],
       "files": ["lib/albums.ts"],
-      "passes": false
+      "passes": true
     }
   ]
 }
