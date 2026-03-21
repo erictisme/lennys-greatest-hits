@@ -114,8 +114,29 @@ export default function SyncedLyrics({
   const lineRefs = useRef<(HTMLDivElement | null)[]>([]);
   const [shareLine, setShareLine] = useState<string | null>(null);
   const [expandedAnnotationIndex, setExpandedAnnotationIndex] = useState<number | null>(null);
+  const hasAutoExpanded = useRef(false);
 
   const lines = useMemo(() => parseLyrics(lyrics, duration), [lyrics, duration]);
+
+  // Count annotations for the hint banner
+  const annotationCount = useMemo(() => {
+    if (!annotations || annotations.length === 0) return 0;
+    return lines.filter(
+      (line) => !line.isSectionLabel && findAnnotation(line.text, annotations)
+    ).length;
+  }, [lines, annotations]);
+
+  // Auto-expand the first annotated line on mount
+  useMemo(() => {
+    if (hasAutoExpanded.current || !annotations || annotations.length === 0) return;
+    for (let i = 0; i < lines.length; i++) {
+      if (!lines[i].isSectionLabel && findAnnotation(lines[i].text, annotations)) {
+        setExpandedAnnotationIndex(i);
+        hasAutoExpanded.current = true;
+        break;
+      }
+    }
+  }, [lines, annotations]);
 
   // Find current line index
   const activeIndex = useMemo(() => {
@@ -135,6 +156,15 @@ export default function SyncedLyrics({
 
   return (
     <>
+      {annotationCount > 0 && (
+        <div
+          className="flex items-center gap-2 px-3 py-2 mb-3 rounded-md text-xs"
+          style={{ background: `${accentColor}15`, color: accentColor }}
+        >
+          <BookOpen className="w-3.5 h-3.5 shrink-0" />
+          <span>{annotationCount} insight{annotationCount === 1 ? "" : "s"} hidden in these lyrics — tap the icons to explore</span>
+        </div>
+      )}
       <div ref={containerRef} className="space-y-1">
         {lines.map((line, i) => {
           const isActive = i === activeIndex;
@@ -188,7 +218,7 @@ export default function SyncedLyrics({
                     fontSize: isActive ? "17px" : "15px",
                     fontWeight: isActive ? 600 : 400,
                     fontStyle: line.isQuote ? "italic" : undefined,
-                    borderBottom: annotation ? "1px dotted currentColor" : undefined,
+                    borderBottom: annotation ? `1.5px solid ${accentColor}40` : undefined,
                     paddingBottom: annotation ? "2px" : undefined,
                   }}
                 >
@@ -207,8 +237,8 @@ export default function SyncedLyrics({
                     }}
                     className="p-1.5 rounded-full hover:bg-black/10 transition-all shrink-0"
                     style={{
-                      opacity: isAnnotationExpanded ? 1 : 0.5,
-                      color: isAnnotationExpanded ? accentColor : undefined,
+                      opacity: isAnnotationExpanded ? 1 : 0.7,
+                      color: accentColor,
                     }}
                     aria-label={`${isAnnotationExpanded ? "Hide" : "Show"} annotation for: ${line.text}`}
                   >

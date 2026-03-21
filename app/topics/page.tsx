@@ -1,23 +1,12 @@
 import Link from "next/link";
-import { getAllTracks } from "@/lib/tracks";
+import { jtbdCategories } from "@/lib/jtbd";
 
 export const metadata = {
-  title: "Browse by Topic - Lenny's Greatest Hits",
-  description: "Explore songs by topic - from hustle and growth to leadership and strategy.",
+  title: "What Do You Need? - Lenny's Greatest Hits",
+  description: "Browse songs by what you're trying to accomplish — from getting first users to surviving the founder journey.",
 };
 
 export default function TopicsPage() {
-  const tracks = getAllTracks().filter((t) => !t.isLocked);
-  const tagSet = new Set<string>();
-  for (const track of tracks) {
-    if (track.tags) {
-      for (const tag of track.tags) {
-        tagSet.add(tag);
-      }
-    }
-  }
-  const tags = Array.from(tagSet).sort((a, b) => a.localeCompare(b));
-
   return (
     <main className="max-w-3xl mx-auto px-4 py-12">
       <Link
@@ -26,15 +15,26 @@ export default function TopicsPage() {
       >
         &larr; Back to home
       </Link>
-      <h1 className="text-2xl font-bold mb-8">Browse by Topic</h1>
-      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3">
-        {tags.map((tag) => (
+      <h1 className="text-2xl font-bold mb-2">What do you need?</h1>
+      <p className="text-muted-foreground mb-8">
+        Find the right song for where you are right now.
+      </p>
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        {jtbdCategories.map((cat) => (
           <Link
-            key={tag}
-            href={`/topics/${tag}`}
-            className="rounded-full border border-border px-4 py-2 text-sm text-center text-muted-foreground hover:text-foreground hover:border-foreground/40 transition-colors"
+            key={cat.slug}
+            href={`/topics/${cat.slug}`}
+            className="group rounded-xl border border-border/50 p-5 hover:border-foreground/30 hover:bg-black/[0.02] transition-all"
           >
-            {tag}
+            <p className="font-medium text-[15px] group-hover:text-foreground transition-colors">
+              {cat.label}
+            </p>
+            <p className="text-xs text-muted-foreground/60 mt-1">
+              {cat.description}
+            </p>
+            <p className="text-[10px] text-muted-foreground/40 mt-2">
+              {cat.trackSlugs.length} tracks
+            </p>
           </Link>
         ))}
       </div>

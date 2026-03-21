@@ -288,19 +288,21 @@ export default function AlbumPageClient({ slug }: { slug: string }) {
                 <div className="group flex items-center gap-4 px-4 py-4 -mx-4 rounded-lg hover:bg-black/[0.04] transition-colors">
                   {/* Track Number / Play Button / Lock Icon */}
                   {locked ? (
-                    <div className="w-6 flex items-center justify-center">
+                    <div className="w-11 h-11 flex items-center justify-center shrink-0 -ml-2.5">
                       <Lock className="w-4 h-4 text-muted-foreground/40" />
                     </div>
                   ) : (
                     <button
-                      onClick={() => {
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        e.preventDefault();
                         if (isCurrentTrack) {
                           audio.togglePlay();
                         } else {
                           handlePlayTrack(i);
                         }
                       }}
-                      className="w-6 flex items-center justify-center"
+                      className="w-11 h-11 flex items-center justify-center shrink-0 -ml-2.5 rounded-full hover:bg-black/[0.06] transition-colors"
                     >
                       {isPlaying ? (
                         <Pause
