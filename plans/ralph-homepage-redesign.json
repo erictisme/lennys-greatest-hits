@@ -27,7 +27,7 @@
         "Verify pnpm build passes"
       ],
       "files": ["app/page.tsx", "components/TrackRow.tsx", "lib/tracks.ts"],
-      "passes": false
+      "passes": true
     },
     {
       "id": 3,
