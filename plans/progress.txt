@@ -1,13 +1,2 @@
-# Ralph DEFAULT run Sat Mar 21 16:59:43 +08 2026
-Task 0: Deleted TrackNavigator.tsx, removed import/usage from layout.tsx. Build passes.
-Task 2: Split topics/[tag] into server page.tsx + TopicPageClient.tsx. Click plays track, ChevronRight navigates.
-Content Task 1 DONE: Album recategorization — validated 11 JTBD categories, named albums, recategorized 36 songs, gap analysis. Output: content/songs/album-recategorization.md (226 lines).
-Task 3: Added author/source attribution (Mic/FileText icon + guest name) below tags on unlocked album track rows.
-Task 4: Replaced "Inspired by" section on track pages with styled "Based on" cards — accent left border, font-lenny title, guest name, type pill badge, external links.
-Content Task 2 DONE: Created batch3/tasks.json — 20 songs filling all gap albums (By the Numbers 3, Talent Search 3, Electric Dreams 2, Interview 3, Deep Work 3, Weight 2, Career Moves 2, Human Side 2). Each task has MCP filenames, research_keywords, album, output_file.
-Task 5: Added 4 annotations each to product-market-fit, the-maze, taste, eleven-stars in lib/albums.ts. Build passes.
-Content Task 3 DONE: Generated batch 3 songs 1-5 (The Numbers Don't Lie, The Unlock, Measure Twice, The One Question, First Ten). 15 files: 5 research briefs, 5 lyrics, 5 suno prompts. Tasks 1-5 marked complete in tasks.json.
-Task 6: Added 4 annotations each to talk-to-users, ship-it, vibe-coding, imposter, burnout in lib/albums.ts. Build passes.
-Task 7: Added 4 annotations each to trace-it-back, the-disease, test-everything, whats-the-job, good-enough (Frameworks) and state-of-the-me (Career Moves) in lib/albums.ts. Build passes.
-Content Task 4 DONE: Generated batch 3 songs 6-10 (The Closer, The New Stack, Godmother, Ninety-Three Percent, Never Search Alone). 15 files: 5 research briefs, 5 lyrics, 5 suno prompts. Tasks 6-10 marked complete. Genre variety: neo-soul, synth-folk, atmospheric cinematic, lo-fi hip hop, acoustic soul.
-Content Task 5 DONE: Generated batch 3 songs 11-20 (Product Sense, Protect the Block, Indistractable, Make Time, The Call, The Plan, Bend the Room, The Stack Rank, Nervous System, Ask for Help). 30 files: 10 research + 10 lyrics + 10 suno prompts. All 20 tasks complete. Genre variety: jazz-pop, acoustic folk, lo-fi hip hop, indie folk-pop, atmospheric folk, neo-soul, synth-pop, hymn-folk.
+# Ralph DEFAULT run Sat Mar 21 18:56:07 +08 2026
+Task 1 DONE: Restructured 9 albums → 11 JTBD albums. Moved 35 tracks to correct arrays, updated all albumSlug fields, removed old album definitions (founders, product, builders, the-operators, frameworks). Build passes.

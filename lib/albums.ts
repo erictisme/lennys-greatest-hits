@@ -1,10 +1,1728 @@
 import { Album, Track } from "./types";
 
-const foundersTracks: Track[] = [
+const theCraftTracks: Track[] = [
+  {
+    slug: "taste",
+    title: "Taste",
+    albumSlug: "the-craft",
+    trackNumber: 1,
+    duration: "3:18",
+    audioUrl: "/audio/taste.mp3",
+    coverImage: "/covers/taste.jpg",
+    genre: "Jazz Pop",
+    mood: "When you know something's off but can't explain why",
+    tags: ["craft", "design intuition"],
+    lyrics: `[Verse 1]
+The numbers say it's fine, the chart looks great
+Adoption's up, engagement's pulling weight
+But something in the corner of the screen
+Is half a pixel off from what I mean
+I couldn't tell you why — it just feels wrong
+Like hearing someone play the right note on the wrong song
+
+[Chorus]
+It's taste — can't put it in a deck
+It's taste — the thing you can't connect
+To frameworks or to data or OKRs
+It's knowing what the user never asks for
+Taste is saying no to good ideas
+And holding out through all the noise and fears
+The data told me no
+The user's face told me yes
+That's taste
+
+[Verse 2]
+She walked me through the prototype last night
+Said every interaction felt too tight
+I said, "But look, the metrics don't complain"
+She said, "The metrics miss the human pain"
+Pattern recognition plus the empathy
+To see the thing that isn't there but needs to be
+
+[Chorus]
+It's taste — can't put it in a deck
+It's taste — the thing you can't connect
+To frameworks or to data or OKRs
+It's knowing what the user never asks for
+Taste is saying no to good ideas
+And holding out through all the noise and fears
+The data told me no
+The user's face told me yes
+That's taste
+
+[Outro]
+You know it when you see it
+But you feel it first
+That's taste`,
+    concept: "Based on Shreyas Doshi's episode on product sense and taste. Scott Belsky's rule: 'In the first 30 seconds, your user is lazy, vain, and selfish.' Taste is pattern recognition plus empathy: seeing what isn't there but needs to be.",
+    keyInsight: "Product sense is pattern recognition plus empathy. Taste is the ability to say no to good ideas.",
+    sources: [
+      { title: "Shreyas Doshi on product sense", type: "podcast", url: "https://www.lennysnewsletter.com/p/episode-3-shreyas-doshi", guest: "Shreyas Doshi" },
+      { title: "Brian Chesky on detail obsession", type: "podcast", url: "https://www.lennyspodcast.com/brian-cheskys-new-playbook/", guest: "Brian Chesky" },
+    ],
+    keyQuote: "Taste is saying no to good ideas.",
+    quoteSpeaker: "Shreyas Doshi",
+    storyBehind: "Shreyas Doshi's conversation with Lenny about product sense became one of the most-shared episodes in the archive. He argued that taste isn't some mystical gift. It's pattern recognition plus empathy, built through thousands of hours of watching real users struggle. Scott Belsky added another layer: 'In the first 30 seconds, your user is lazy, vain, and selfish.' The best product people aren't the ones with the most data. They're the ones who can feel when something's off before anyone can explain why.",
+    annotations: [
+      {
+        lyricText: "Is half a pixel off from what I mean",
+        note: "Brian Chesky told Lenny he obsesses over details down to individual pixels. He reviews every screen personally and has been known to send designers back to fix sub-pixel alignment issues that most people would never notice.",
+        sourceTitle: "Brian Chesky on detail obsession",
+        sourceUrl: "https://www.lennyspodcast.com/brian-cheskys-new-playbook/",
+      },
+      {
+        lyricText: "Pattern recognition plus the empathy",
+        note: "Shreyas Doshi defined product sense on Lenny's podcast as 'pattern recognition plus empathy.' It's not intuition — it's thousands of hours of watching real users struggle, compressed into a feeling that fires before conscious analysis.",
+        sourceTitle: "Shreyas Doshi on product sense",
+        sourceUrl: "https://www.lennysnewsletter.com/p/episode-3-shreyas-doshi",
+      },
+      {
+        lyricText: "Taste is saying no to good ideas",
+        note: "Shreyas argued that the hardest part of taste is rejection. Most ideas that cross your desk are good. Taste is knowing which good ideas to say no to, so you can say yes to the great ones.",
+        sourceTitle: "Shreyas Doshi on product sense",
+        sourceUrl: "https://www.lennysnewsletter.com/p/episode-3-shreyas-doshi",
+      },
+      {
+        lyricText: "The metrics miss the human pain",
+        note: "A core theme across Lenny's archive: metrics capture behavior but miss emotion. Shreyas Doshi warns that over-indexing on data leads to products that are technically successful but emotionally empty.",
+        sourceTitle: "Shreyas Doshi on product sense",
+        sourceUrl: "https://www.lennysnewsletter.com/p/episode-3-shreyas-doshi",
+      },
+    ],
+  },
+  {
+    slug: "eleven-stars",
+    title: "Eleven Stars",
+    albumSlug: "the-craft",
+    trackNumber: 2,
+    duration: "3:12",
+    audioUrl: "/audio/eleven-stars.mp3",
+    coverImage: "/covers/eleven-stars.jpg",
+    genre: "Cinematic Folk",
+    mood: "Dream absurd, then design the room",
+    tags: ["ambition", "vision", "inspiration"],
+    lyrics: `[Verse 1]
+A one-star stay is sleeping on the floor
+A three-star stay — you get a key and door
+A five-star night, the sheets are pressed and clean
+But what's a six? What does a seven mean?
+An eight, you've got a bottle and a note
+A nine, the host already learned your favorite coat
+
+[Chorus]
+What would eleven stars look like?
+What would eleven stars feel like?
+Elon picks you up in a rocket to the moon
+The last ten percent is ninety percent of the magic
+So dream absurd and then design the room
+Eleven stars, eleven stars
+
+[Verse 2]
+You start where gravity can't hold you down
+Imagining what can't exist in town
+Then work it backwards, what's the version here
+That keeps the wonder but removes the fear?
+Craft is caring 'bout the things they'll never
+Consciously notice, but they'll feel forever
+
+[Chorus]
+What would eleven stars look like?
+What would eleven stars feel like?
+Elon picks you up in a rocket to the moon
+The last ten percent is ninety percent of the magic
+So dream absurd and then design the room
+Eleven stars, eleven stars
+
+[Outro]
+Don't think ten percent better
+Think ten stars further
+Then come back down to Earth
+With something worth the work
+Eleven stars`,
+    concept: "Based on Brian Chesky's episode, Lenny's most listened-to episode, which took him a full year to land. Chesky's 11-star framework: at 11 stars, Elon picks you up in a rocket. Dream absurd, then design the room.",
+    keyInsight: "The last 10% is 90% of the magic. Start with an impossibly ambitious vision and work backwards to what's buildable.",
+    sources: [
+      { title: "Brian Chesky on the 11-star framework", type: "podcast", url: "https://www.lennyspodcast.com/brian-cheskys-new-playbook/", guest: "Brian Chesky" },
+    ],
+    keyQuote: "What would a 10-star experience look like? Now what about 11?",
+    quoteSpeaker: "Brian Chesky",
+    storyBehind: "It took Lenny a full year to land the Brian Chesky interview, and it became his most-listened-to episode ever. Chesky walked through the 11-star framework live: a 1-star Airbnb stay is sleeping on the floor, 5 stars is a nice clean place, and by 11 stars, Elon Musk picks you up in a rocket to the moon. The genius is that you're not supposed to build the 11-star version. You're supposed to dream absurd so that when you come back down to a 6 or 7, it still feels magical. 'The last 10% is 90% of the magic.'",
+    annotations: [
+      {
+        lyricText: "Elon picks you up in a rocket to the moon",
+        note: "Chesky's actual example on Lenny's podcast: at 11 stars, Elon Musk personally picks you up in a rocket and takes you to the moon. The point is to dream so absurdly big that when you scale back to a 6 or 7, it still feels magical.",
+        sourceTitle: "Brian Chesky on the 11-star framework",
+        sourceUrl: "https://www.lennyspodcast.com/brian-cheskys-new-playbook/",
+      },
+      {
+        lyricText: "The last ten percent is ninety percent of the magic",
+        note: "One of Chesky's most quoted lines from the episode. Most teams ship at 90% done. Chesky argues the final 10% — the polish, the details, the delight — is where 90% of the magic lives.",
+        sourceTitle: "Brian Chesky on the 11-star framework",
+        sourceUrl: "https://www.lennyspodcast.com/brian-cheskys-new-playbook/",
+      },
+      {
+        lyricText: "A one-star stay is sleeping on the floor",
+        note: "Chesky walked Lenny through the framework step by step: 1 star is sleeping on the floor, 3 stars is a key and a door, 5 stars is a great hotel experience. Then he kept going — what's 6? 7? 8? Each level forced more creative thinking.",
+        sourceTitle: "Brian Chesky on the 11-star framework",
+        sourceUrl: "https://www.lennyspodcast.com/brian-cheskys-new-playbook/",
+      },
+      {
+        lyricText: "Craft is caring 'bout the things they'll never",
+        note: "Chesky believes great products are built by people who care about details users will never consciously notice — but will feel. This philosophy drove Airbnb's design-led culture and its obsessive attention to host and guest experience.",
+        sourceTitle: "Brian Chesky on the 11-star framework",
+        sourceUrl: "https://www.lennyspodcast.com/brian-cheskys-new-playbook/",
+      },
+    ],
+  },
+  {
+    slug: "talk-to-users",
+    title: "Talk to Users",
+    albumSlug: "the-craft",
+    trackNumber: 3,
+    duration: "3:05",
+    audioUrl: "/audio/talk-to-users.mp3",
+    coverImage: "/covers/talk-to-users.jpg",
+    genre: "Acoustic Pop",
+    mood: "One conversation can save you six months",
+    tags: ["customer discovery", "empathy"],
+    lyrics: `[Verse 1]
+We built a survey, sent it to a list
+Analyzed the data, nothing we had missed
+Color-coded dashboards, segments, cohort views
+But somehow every launch still missed the cues
+There's a simpler answer, it's been here all along
+You're reading sheet music but you've never heard the song
+
+[Chorus]
+Talk to your users
+Sit with them, listen, watch them try
+Talk to your users
+One conversation saves you months of why
+You're not your user
+You're not your user
+Go sit with them
+
+[Verse 2]
+She watched him struggle on the second screen
+Clicking where the button should have been
+Five minutes told her more than months of charts
+The gap between the data and their hearts
+Continuous discovery, week by week
+The answers aren't in Slack, they're down the street
+
+[Chorus]
+Talk to your users
+Sit with them, listen, watch them try
+Talk to your users
+One conversation saves you months of why
+You're not your user
+You're not your user
+Go sit with them
+
+[Outro]
+One conversation
+Can save you six months
+Talk to your users
+Go sit with them`,
+    concept: "Based on Teresa Torres' episode on continuous discovery habits, the #1 most recommended book in Lenny's Slack community. She's trained 11,000+ students. Her rule: one user interview per week, every week.",
+    keyInsight: "One conversation can save you six months. You're not your user. Go sit with them.",
+    sources: [
+      { title: "Teresa Torres on continuous discovery", type: "podcast", url: "https://www.lennyspodcast.com/teresa-torres-on-how-to-interview-customers-automating-continuous-discovery-the-opportunity-solution-tree-framework-making-the-case-for-user-research-common-interviewing-mistakes-and-much-more/", guest: "Teresa Torres" },
+      { title: "Gustaf Alstromer on talking to users", type: "podcast", url: "https://www.lennyspodcast.com/lessons-from-working-with-600-yc-startups-gustaf-alstromer-y-combinator-airbnb/", guest: "Gustaf Alstromer" },
+    ],
+    keyQuote: "One conversation can save you six months.",
+    quoteSpeaker: "Teresa Torres",
+    storyBehind: "Teresa Torres' book 'Continuous Discovery Habits' became the #1 most recommended book in Lenny's Slack community. On the podcast, she shared that she's trained over 11,000 product people, and the single most impactful habit is dead simple: one user interview per week, every week. Not quarterly research sprints, not annual surveys, just weekly conversations. Gustaf Alstromer from YC reinforced it: most product failures trace back to building in a vacuum. The answers aren't in your Slack channels, they're down the street.",
+    annotations: [
+      {
+        lyricText: "Color-coded dashboards, segments, cohort views",
+        note: "Teresa Torres argues that teams over-rely on quantitative data while skipping the qualitative discovery that reveals why users behave the way they do. Dashboards show what's happening, but only conversations reveal the 'why.'",
+        sourceTitle: "Teresa Torres on continuous discovery",
+        sourceUrl: "https://www.lennyspodcast.com/teresa-torres-on-how-to-interview-customers-automating-continuous-discovery-the-opportunity-solution-tree-framework-making-the-case-for-user-research-common-interviewing-mistakes-and-much-more/",
+      },
+      {
+        lyricText: "Five minutes told her more than months of charts",
+        note: "Torres' core teaching: watching a single user try to complete a task for five minutes reveals usability gaps that no amount of analytics can surface. She calls this the 'experience gap' between what teams think users do and what actually happens.",
+        sourceTitle: "Teresa Torres on continuous discovery",
+        sourceUrl: "https://www.lennyspodcast.com/teresa-torres-on-how-to-interview-customers-automating-continuous-discovery-the-opportunity-solution-tree-framework-making-the-case-for-user-research-common-interviewing-mistakes-and-much-more/",
+      },
+      {
+        lyricText: "Continuous discovery, week by week",
+        note: "Torres' signature framework: one user interview per week, every week, no exceptions. Not quarterly research sprints or annual surveys. She's trained over 11,000 product people on this habit, making it the #1 recommended practice in Lenny's Slack community.",
+        sourceTitle: "Teresa Torres on continuous discovery",
+        sourceUrl: "https://www.lennyspodcast.com/teresa-torres-on-how-to-interview-customers-automating-continuous-discovery-the-opportunity-solution-tree-framework-making-the-case-for-user-research-common-interviewing-mistakes-and-much-more/",
+      },
+      {
+        lyricText: "The answers aren't in Slack, they're down the street",
+        note: "Gustaf Alstromer from YC told Lenny that most product failures at YC startups trace back to building in a vacuum. Teams debate features in Slack channels instead of walking down the street to talk to actual users.",
+        sourceTitle: "Gustaf Alstromer on talking to users",
+        sourceUrl: "https://www.lennyspodcast.com/lessons-from-working-with-600-yc-startups-gustaf-alstromer-y-combinator-airbnb/",
+      },
+    ],
+  },
+  {
+    slug: "ship-it",
+    title: "Ship It",
+    albumSlug: "the-craft",
+    trackNumber: 4,
+    duration: "3:30",
+    audioUrl: "/audio/ship-it.mp3",
+    coverImage: "/covers/ship-it.jpg",
+    genre: "Lo-Fi Hip Hop",
+    mood: "Stop planning. Start shipping.",
+    tags: ["motivation", "velocity"],
+    lyrics: `[Verse 1]
+Another standup, another blocker filed
+Another sprint review where nothing's compiled
+The backlog's deep, the roadmap's three years wide
+But nothing's real until it's on the outside
+You polish, you refine, you hold it close
+Afraid the world might see the version that's the most
+Honest thing you've ever made — so let it go
+Speed is not reckless, speed is how you show you care
+
+[Chorus]
+Ship it, ship it, let it breathe
+If you're not embarrassed, you waited too long to leave
+Ship it, ship it, hit the key
+The best PMs ship — the rest make decks for free
+Ship it
+
+[Verse 2]
+Rabois said speed's a proxy for the love
+You push it out because the users' time's above
+Your ego and your fear of looking wrong
+A shipped experiment beats a perfect song
+That lives inside your laptop, never heard
+Velocity is just another word
+For giving people what they need today
+Not next quarter, not next year — ship it, no delay
+
+[Chorus]
+Ship it, ship it, let it breathe
+If you're not embarrassed, you waited too long to leave
+Ship it, ship it, hit the key
+The best PMs ship — the rest make decks for free
+Ship it
+
+[Outro]
+Stop planning
+Stop polishing
+Stop asking for one more review
+Ship it`,
+    concept: "Based on Ramp's episode with Geoff Charles. Ramp hit $100M ARR in 2 years, the fastest-growing SaaS ever, with fewer than 5 PMs and 50 engineers. Their mantra: 'Our culture is velocity.'",
+    keyInsight: "Speed is a proxy for how much you care. If you're not embarrassed by v1, you shipped too late.",
+    sources: [
+      { title: "Keith Rabois on speed as competitive advantage (via Ramp episode)", type: "podcast", url: "https://www.lennysnewsletter.com/p/lessons-from-scaling-ramp-sri-batchu", guest: "Keith Rabois" },
+      { title: "Velocity over everything: How Ramp became the fastest-growing SaaS startup", type: "podcast", url: "https://www.lennyspodcast.com/velocity-over-everything-how-ramp-became-the-fastest-growing-saas-startup-of-all-time-geoff-charl/", guest: "Geoff Charles" },
+    ],
+    keyQuote: "If you're not embarrassed by the first version, you shipped too late.",
+    quoteSpeaker: "Reid Hoffman",
+    storyBehind: "Ramp's story blew up on Lenny's podcast. They hit $100M ARR in just 2 years, making them the fastest-growing SaaS company ever, with fewer than 5 PMs and 50 engineers. Their internal mantra was 'our culture is velocity.' Keith Rabois added the framework that stuck: speed isn't reckless, it's a proxy for how much you care about your users' time. Every week you don't ship is a week your users are stuck with a worse version of the thing you already built.",
+    annotations: [
+      {
+        lyricText: "Rabois said speed's a proxy for the love",
+        note: "Keith Rabois shared on Lenny's podcast that shipping speed is the clearest signal of how much a team cares about its users. Every day you delay is a day users are stuck with an inferior experience. He used this principle to push teams at Square, Opendoor, and Ramp.",
+        sourceTitle: "Keith Rabois on speed as competitive advantage (via Ramp episode)",
+        sourceUrl: "https://www.lennysnewsletter.com/p/lessons-from-scaling-ramp-sri-batchu",
+      },
+      {
+        lyricText: "If you're not embarrassed, you waited too long to leave",
+        note: "Reid Hoffman's famous advice, frequently cited on Lenny's podcast: 'If you're not embarrassed by the first version of your product, you've launched too late.' The Ramp team embodied this — shipping fast, learning from users, and iterating in weeks instead of quarters.",
+        sourceTitle: "Velocity over everything: How Ramp became the fastest-growing SaaS startup",
+        sourceUrl: "https://www.lennyspodcast.com/velocity-over-everything-how-ramp-became-the-fastest-growing-saas-startup-of-all-time-geoff-charl/",
+      },
+      {
+        lyricText: "The best PMs ship — the rest make decks for free",
+        note: "Geoff Charles described Ramp's PM culture: fewer than 5 PMs for a $100M ARR company. Instead of roadmap presentations and stakeholder alignment decks, PMs were expected to ship working features. Their hiring filter: 'Can this person ship, or do they just present?'",
+        sourceTitle: "Velocity over everything: How Ramp became the fastest-growing SaaS startup",
+        sourceUrl: "https://www.lennyspodcast.com/velocity-over-everything-how-ramp-became-the-fastest-growing-saas-startup-of-all-time-geoff-charl/",
+      },
+      {
+        lyricText: "A shipped experiment beats a perfect song",
+        note: "Ramp hit $100M ARR in just 2 years with 50 engineers — the fastest-growing SaaS company ever. Their secret wasn't perfection; it was volume of shipped experiments. Geoff Charles told Lenny their culture was 'velocity over everything.'",
+        sourceTitle: "Velocity over everything: How Ramp became the fastest-growing SaaS startup",
+        sourceUrl: "https://www.lennyspodcast.com/velocity-over-everything-how-ramp-became-the-fastest-growing-saas-startup-of-all-time-geoff-charl/",
+      },
+    ],
+  },
+  {
+    slug: "im-in-the-room",
+    title: "I'm in the Room",
+    albumSlug: "the-craft",
+    trackNumber: 5,
+    duration: "3:19",
+    audioUrl: "/audio/im-in-the-room.mp3",
+    coverImage: "/covers/im-in-the-room.jpg",
+    genre: "Intimate Acoustic Folk",
+    mood: "Determined, bittersweet, building to conviction",
+    tags: ["founder mode", "leadership", "detail obsession"],
+    lyrics: `[Verse 1]
+I hired every name the board approved
+Gave them keys and gave them room to move
+The roadmap grew, the product lost its soul
+My name was on it but I'd lost control
+"Step back," they said, "that's what good leaders do"
+I trusted — and I watched the vision blur
+
+[Chorus]
+I'm in the room, I'm in the room
+Touch every pixel, read every page
+Call it control — I call it care
+If my name's on the building, I'll be there
+I'm in the room
+
+[Verse 2]
+Then March hit like a hammer on the glass
+The bottom fell — we're bleeding, bleeding fast
+I cut a quarter of the names I'd hired
+Burned the five-year plan, dissolved the tiers
+And in the wreckage, something old came through
+The voice I'd buried said I know what to do
+
+[Chorus]
+I'm in the room, I'm in the room
+Know every detail, own every stage
+Call it obsession — I don't care
+If my name's on the building, I'll be there
+I'm in the room
+
+[Bridge]
+Ten PM, the product review runs late
+My team can't sleep — they're prepping for my weight
+It's great to be in founder mode, they say
+Not as great for those who walk beside me
+But you can't hand off the thing only you feel
+So I'll carry the cost to keep it real
+
+[Final Chorus, belted]
+I'm in the room, I'm in the room
+Not stepping back, not leaving soon
+Tore their playbook down and wrote my own
+If my name's on the building, I'm not gone
+I'm in the room
+
+[Outro]
+They built a church around the thing I'd start
+Then prayed to process till it lost its heart`,
+    concept: "Brian Chesky's journey from delegating to professional managers (and losing the soul of Airbnb) to reclaiming 'founder mode': being deeply involved in every detail.",
+    keyInsight: "You can't hand off the thing only you feel. Embodied knowledge can't be delegated.",
+    keyQuote: "We religiously focused on making sure customers loved us.",
+    quoteSpeaker: "Brian Chesky",
+    sources: [
+      { title: "Brian Chesky's new playbook", type: "podcast", url: "https://www.lennyspodcast.com/brian-cheskys-new-playbook/", guest: "Brian Chesky" },
+    ],
+    storyBehind: "Chesky hired professional managers on the board's advice and stepped back. The product lost its soul. When COVID hit and Airbnb lost 80% of revenue, he cut a quarter of the company, dissolved the layers, and went back to being in every room, but the song also acknowledges the cost to the people around him.",
+    annotations: [
+      {
+        lyricText: "I hired every name the board approved",
+        note: "Chesky followed the conventional Silicon Valley playbook: hire experienced executives, delegate authority, build management layers, and step back. Ben Horowitz later told Lenny: 'He had screwed every one of those things up — hired LT and all this stuff — and these are very senior people and he wanted to defer to them, but you can't defer as the CEO because you know what Airbnb should be doing.'",
+        sourceTitle: "Brian Chesky's new playbook (via Ben Horowitz, Sanchan Saxena)",
+        sourceUrl: "https://www.lennyspodcast.com/sanchan-saxena/",
+      },
+      {
+        lyricText: "Then March hit like a hammer on the glass",
+        note: "In March 2020, global travel stopped overnight. Sanchan Saxena (then VP of Product at Airbnb) describes the moment on Lenny's Podcast: 'We start predicting that our revenue will be 7, 10, some ridiculous very small percent of last year's. There's panic.' Every day a new country would close its borders.",
+        sourceTitle: "Sanchan Saxena on the inside story of how Airbnb made it through Covid",
+        sourceUrl: "https://www.lennyspodcast.com/sanchan-saxena/",
+      },
+      {
+        lyricText: "I cut a quarter of the names I'd hired\nBurned the five-year plan, dissolved the tiers",
+        note: "Airbnb laid off roughly 25% of its workforce during COVID. All sub-teams were dissolved, long-term roadmaps were scrapped, and the company moved to two-week planning cycles. Greg Greeley described the pivot: 'Can't plan for a year, can't plan for a quarter. We're going to plan every two weeks.' Chesky studied the Apple/Steve Jobs playbook and restructured around founder-led, design-driven product reviews.",
+        sourceTitle: "Sanchan Saxena on Airbnb through COVID",
+        sourceUrl: "https://www.lennyspodcast.com/sanchan-saxena/",
+      },
+      {
+        lyricText: "Ten PM, the product review runs late",
+        note: "Chip Conley — Chesky's mentor who joined Airbnb at age 52 — described what it was like: 'Brian assumed everybody else was going to work at the same pace and duration. His point of view is like, \"Hey, we're having a meeting in the office tonight at 10 o'clock, be there.\"' He adds that people 'wouldn't sleep in anticipation' of product reviews with Brian.",
+        sourceTitle: "Brian Chesky's secret mentor | Chip Conley",
+        sourceUrl: "https://www.lennyspodcast.com/chip-conley/",
+      },
+      {
+        lyricText: "They built a church around the thing I'd start\nThen prayed to process till it lost its heart",
+        note: "This couplet crystallizes Chesky's core diagnosis: as Airbnb scaled, process replaced passion. Lenny Rachitsky, who worked at Airbnb for seven years, observed this firsthand. He later summarized the tension: 'It's great to be in founder mode. It's not as great to be working for someone in founder mode.' Chesky's talk at a YC retreat about reclaiming control coined the term 'founder mode.'",
+        sourceTitle: "Brian Chesky's new playbook",
+        sourceUrl: "https://www.lennyspodcast.com/chip-conley/",
+      },
+    ],
+  },
+  {
+    slug: "build-the-machine",
+    title: "Build the Machine",
+    albumSlug: "the-craft",
+    trackNumber: 6,
+    duration: "3:07",
+    audioUrl: "/audio/build-the-machine.mp3",
+    coverImage: "/covers/build-the-machine.jpg",
+    genre: "Neo-Soul",
+    mood: "Determined, quietly proud, sophisticated",
+    tags: ["scaling", "operations", "invisible leadership"],
+    lyrics: `[Verse 1]
+She ran the numbers, morning two
+Tickets piled like dishes in the sink
+"We need twice the people on this floor"
+The room went quiet — no one liked the score
+
+She'd ridden rockets once before
+Knew the sound before the engine roars
+
+[Chorus]
+Build the machine that builds the dream
+Hold the line that no one ever sees
+Write it down, and don't get stuck
+If you don't know who decides — it's you
+
+[Verse 2]
+She called around — "When'd you add the levels?"
+One said "bloodbath." One said "way too late"
+Spun a wheel, a random team stood up
+No rehearsal — show us what you've made
+Progress, impact, momentum on the wall
+A hundred small decisions before nightfall
+
+[Chorus]
+Build the machine that builds the dream
+She built the engine while they built the name
+Write it down, and don't get stuck
+Progress, impact, momentum — us
+
+[Bridge]
+They celebrate the product and the name
+The headline and the billion-dollar fame
+But someone poured the foundation in the dark
+Someone wired the walls before the spark
+John said, "We need Claire in a box"
+She laughed — then wrote the book
+
+[Final Chorus]
+Build the machine that builds the dream
+Seven thousand strong and still it's clean
+Write it down, and don't get stuck
+The decision-maker's always us
+
+[Outro]
+Someone's gotta build the house
+While the rest just talk about the view`,
+    concept: "Claire Hughes Johnson's invisible, indispensable work scaling Stripe from early stage to 7,000 people: the operator who builds the infrastructure while founders get the headlines.",
+    keyInsight: "Behind every celebrated product is someone who poured the foundation in the dark. The decision-maker is always the person who steps up.",
+    keyQuote: "Product-market fit is just the product. That is not a company, and that will not scale.",
+    quoteSpeaker: "Claire Hughes Johnson",
+    sources: [
+      { title: "Lessons from scaling Stripe", type: "podcast", url: "https://www.lennyspodcast.com/lessons-from-scaling-stripe-claire-hughes-johnson/", guest: "Claire Hughes Johnson" },
+    ],
+    storyBehind: "Claire walked into Stripe, assessed the chaos, and built the machine - systems, processes, decision frameworks - that allowed Stripe to scale from 160 to 7,000 people. John Collison said 'We need Claire in a box.' She laughed, then wrote the book.",
+    annotations: [
+      {
+        lyricText: "She'd ridden rockets once before",
+        note: "Claire spent nearly 11 years at Google, joining when it was ~1,800 people pre-IPO and leaving at 60,000. She held eight different jobs there — VP of self-driving cars, VP of global online sales, director of ops for Gmail, YouTube, and AdWords. As she tells Lenny: 'I had eight different jobs while I was there.' She joined Stripe at about 160 people.",
+        sourceTitle: "Lessons from scaling Stripe | Claire Hughes Johnson",
+        sourceUrl: "https://www.lennyspodcast.com/lessons-from-scaling-stripe-claire-hughes-johnson-ex-coo-of-stripe/",
+      },
+      {
+        lyricText: "She called around — 'When'd you add the levels?'",
+        note: "When Stripe needed job levels and career ladders, Claire called other companies. One person said it was a 'bloodbath,' another said 'I'm so impressed that you're doing that so early. We waited too long.' One company waited until 800 people and regretted it. Claire tells Lenny: 'Putting in levels and ladders felt like ripping the band-aid off, honestly, but I was glad.'",
+        sourceTitle: "Lessons from scaling Stripe | Claire Hughes Johnson",
+        sourceUrl: "https://www.lennyspodcast.com/lessons-from-scaling-stripe-claire-hughes-johnson-ex-coo-of-stripe/",
+      },
+      {
+        lyricText: "John said, 'We need Claire in a box'\nShe laughed — then wrote the book",
+        note: "This is a real quote. John Collison would travel to meet customers and founders who constantly asked how Stripe scaled. He'd joke to Claire: 'We need Claire in a box.' Her book Scaling People is literally that box. Patrick Collison separately pushed her toward it after a chapter she wrote for Elad Gil's High Growth Handbook gained unexpected traction. Lenny calls it 'incredible' and says it 'should be and likely will be on every founder's bookshelf.'",
+        sourceTitle: "Lessons from scaling Stripe | Claire Hughes Johnson",
+        sourceUrl: "https://www.lennyspodcast.com/lessons-from-scaling-stripe-claire-hughes-johnson-ex-coo-of-stripe/",
+      },
+      {
+        lyricText: "Seven thousand strong and still it's clean",
+        note: "Claire joined Stripe at ~160 people and helped scale it past 7,000. She tells Lenny: 'What's crystallized is how much work it is to build a company.' Her opening line on the podcast captures her philosophy: 'If you're not sure who the decision maker is, it's probably you. I'd rather you act that way than not, because you're going to slow the whole company down.'",
+        sourceTitle: "Lessons from scaling Stripe | Claire Hughes Johnson",
+        sourceUrl: "https://www.lennyspodcast.com/lessons-from-scaling-stripe-claire-hughes-johnson-ex-coo-of-stripe/",
+      },
+    ],
+  },
+  {
+    slug: "doesnt-feel-right-yet",
+    title: "Doesn't Feel Right Yet",
+    albumSlug: "the-craft",
+    trackNumber: 7,
+    duration: "3:14",
+    audioUrl: "/audio/doesnt-feel-right-yet.mp3",
+    coverImage: "/covers/doesnt-feel-right-yet.jpg",
+    genre: "Indie Folk-Pop",
+    mood: "Precise, cathartic, dreamy conviction",
+    tags: ["craft", "taste", "product quality"],
+    lyrics: `[Verse 1]
+Every tool I touched was made by strangers
+Built by people who would never use the thing
+Fourteen menus deep to move a ticket
+Dashboards glowing, nobody was listening
+A designer staring at a broken system
+Said "I'm done pretending this is fine"
+
+[Chorus]
+Doesn't feel right yet — hold the launch
+Doesn't feel right yet — take it back
+No one's gonna tell me when it's done
+I'll know it when the last detail feels won
+Doesn't feel right yet
+And that's fine
+
+[Verse 2]
+Fifty people, two have ever left us
+More cash in the bank than the VCs gave
+No one translates the vision into tickets
+The builders and the dreamers are the same
+They said "you need a roadmap and a process"
+We said "we need a window and some taste"
+
+[Chorus]
+Doesn't feel right yet — hold the launch
+Doesn't feel right yet — bring it back
+The fastest teams in tech all found our door
+Not 'cause we were loud — 'cause we were sure
+Doesn't feel right yet
+Now it does
+
+[Bridge]
+They use the data like a safety net
+Afraid to make the call, afraid to bet
+On what their hands can feel, on what they know
+So they hide behind the chart and let it go
+Craft is pushing out and coming back
+Shipping fast and fixing every crack
+
+[Final Chorus]
+Doesn't feel right yet — hold the launch
+Doesn't feel right yet — one more pass
+Fewer people, sharper eye, no compromise
+Build it till the last pixel satisfies
+This one feels right now
+Let it fly
+
+[Outro]
+The more it matters
+The more the design matters`,
+    concept: "Linear's philosophy of trusting taste over metrics, building opinionated software with a tiny team that refuses to ship until it feels right.",
+    keyInsight: "Trust your taste over your metrics. The best products come from people who care enough to say 'this doesn't feel right yet.'",
+    keyQuote: "Productivity software should be opinionated. We provide good defaults so you can focus on the work you do.",
+    quoteSpeaker: "Karri Saarinen",
+    sources: [
+      { title: "How Linear builds product", type: "newsletter", url: "https://www.lennysnewsletter.com/p/how-linear-builds-product", guest: "Karri Saarinen" },
+    ],
+    storyBehind: "Karri Saarinen was a designer frustrated by bloated project management tools built by people who never used them. He founded Linear with a tiny team (50 people, 2 have ever left), more cash than VCs gave them, and a relentless commitment to craft over speed.",
+    annotations: [
+      {
+        lyricText: "Fifty people, two have ever left us\nMore cash in the bank than the VCs gave",
+        note: "These are real numbers from Lenny's newsletter. At the time, Linear had ~50 employees, had only ever lost two team members, had more cash in the bank than they'd raised in total VC funding, and had been profitable for 2+ years. They'd spent a grand total of $35,000 on paid marketing in the entire history of the company.",
+        sourceTitle: "How Linear builds product",
+        sourceUrl: "https://www.lennysnewsletter.com/p/how-linear-builds-product",
+      },
+      {
+        lyricText: "No one translates the vision into tickets\nThe builders and the dreamers are the same",
+        note: "Linear has no product managers — just a single head of product. PM duties are distributed across engineering and design. There are no durable cross-functional teams either; teams assemble around a project and disperse when it's done. Lenny's newsletter summary: 'No product managers, just a head of product. PM duties are distributed across engineering and design.'",
+        sourceTitle: "How Linear builds product",
+        sourceUrl: "https://www.lennysnewsletter.com/p/how-linear-builds-product",
+      },
+      {
+        lyricText: "They said 'you need a roadmap and a process'\nWe said 'we need a window and some taste'",
+        note: "Linear operates with no metrics-based goals, no A/B tests, and decisions based explicitly on taste. Lenny directly contrasts this with Ramp's approach on the podcast: 'Ramp is all about velocity, shipping all the time, metrics, measuring everything. And your approach is almost the opposite.' Both are among the fastest-growing tools in their space — proof there's more than one way to win.",
+        sourceTitle: "Inside Linear: Building with taste, craft, and focus | Karri Saarinen",
+        sourceUrl: "https://www.lennyspodcast.com/inside-linear-building-with-taste-craft-and-focus-karri-saarinen/",
+      },
+      {
+        lyricText: "The fastest teams in tech all found our door",
+        note: "Karri names Linear's customer list on the podcast: Block, Vercel, Ramp, Retool, Mercury — plus thousands more from fresh YC graduates to public companies. The irony: Ramp, the fastest-shipping SaaS company of all time (another track on this album), uses Linear to manage their work. Linear became the tool of choice for teams that embody speed and craft, without any traditional sales motion.",
+        sourceTitle: "Inside Linear: Building with taste, craft, and focus | Karri Saarinen",
+        sourceUrl: "https://www.lennyspodcast.com/inside-linear-building-with-taste-craft-and-focus-karri-saarinen/",
+      },
+    ],
+  },
+  {
+    slug: "the-ramp-speed",
+    title: "The Ramp Speed",
+    albumSlug: "the-craft",
+    trackNumber: 8,
+    duration: "2:42",
+    audioUrl: "/audio/the-ramp-speed.mp3",
+    coverImage: "/covers/the-ramp-speed.jpg",
+    genre: "Lo-Fi Hip-Hop",
+    mood: "Exhilarating, playful, swagger",
+    tags: ["velocity", "shipping culture", "small teams"],
+    lyrics: `[Verse 1]
+Eight of us, a whiteboard and a dare
+Beat the giants — give us ninety days
+No one writes a roadmap, no one waits
+Every bug gets killed before it stays
+Six months later, dropped another one
+Fifty people, and we'd just begun
+
+[Chorus]
+Move — don't stop to draw the map
+Ship — and if it breaks, come back
+Three months, not a three-year plan
+Doing beats the diagram
+This is how the small ones win it back
+
+[Verse 2]
+Five people and a ninety-day clock
+Build the thing that giants couldn't block
+Billions flowing through it — watch it run
+No burndown charts, no points — just "is it done?"
+Did you ship the thing you said you would?
+That's the only score that's understood
+
+[Chorus]
+Move — don't stop to draw the map
+Ship — the wreckage teaches fast
+Hundred million, two years flat
+Doing beats the diagram
+Giants never saw us coming back
+
+[Bridge]
+Found our best engineer in Fortnite
+Gratitude's the loudest room we've got
+Named the channel "couscous" — who knows why
+Speed looks different from the inside —
+Someone fixed a bug that wasn't theirs last night
+That's the kind of fast that feels right
+
+[Final Chorus]
+Move — don't stop to draw the map
+Ship — and if it breaks, come back
+Speed's the cheapest way to learn
+Doing beats the diagram
+This is how the small ones take their turn
+
+[Outro]
+Doing beats the diagram
+Always did
+Move`,
+    concept: "Ramp's strategy of using raw speed as a competitive advantage: small teams, no roadmaps, shipping in 90-day cycles to become the fastest-growing SaaS startup ever.",
+    keyInsight: "When speed is your strategy, small teams beat giants because every mistake costs less and every lesson comes faster.",
+    keyQuote: "Velocity is everything at Ramp. It's how we design our product development process, how we incentivize teams, and how we make decisions.",
+    quoteSpeaker: "Geoff Charles",
+    sources: [
+      { title: "How Ramp builds product", type: "newsletter", url: "https://www.lennysnewsletter.com/p/how-ramp-builds-product", guest: "Geoff Charles" },
+      { title: "Velocity over everything: How Ramp became the fastest-growing SaaS startup of all time", type: "podcast", url: "https://www.lennyspodcast.com/velocity-over-everything-how-ramp-became-the-fastest-growing-saas-startup-of-all-time-geoff-charl/", guest: "Geoff Charles" },
+    ],
+    storyBehind: "Eight people with a whiteboard dared to beat financial giants in 90 days. No roadmaps, no burndown charts - just 'did you ship the thing you said you would?' They built a culture where someone fixes a bug that wasn't theirs at midnight. That's the kind of fast that feels right.",
+    annotations: [
+      {
+        lyricText: "Eight of us, a whiteboard and a dare\nBeat the giants — give us ninety days",
+        note: "Ramp started with roughly 8 engineers and CTO Karim Atiyeh. In their first three months, they built a competitor to American Express's corporate card. Six months later, they took on Expensify. Both were publicly traded, billion-dollar companies. Lenny writes: 'I believe they are also the fastest-growing SaaS company of all time, hitting a $100 million run rate in two years.'",
+        sourceTitle: "How Ramp builds product",
+        sourceUrl: "https://www.lennysnewsletter.com/p/how-ramp-builds-product",
+      },
+      {
+        lyricText: "No burndown charts, no points",
+        note: "Geoff Charles tells Lenny: 'We don't track tasks — we track whether you shipped what you said you were going to ship. No burndown, velocity, story points.' Before switching to bi-annual planning, Ramp calculated they were spending 33% of their time on planning alone. Their philosophy: 'Any second you spend planning is a second you don't spend doing.'",
+        sourceTitle: "How Ramp builds product",
+        sourceUrl: "https://www.lennysnewsletter.com/p/how-ramp-builds-product",
+      },
+      {
+        lyricText: "Found our best engineer in Fortnite",
+        note: "This is a real detail from the newsletter. CTO Karim Atiyeh spent his entire first year focused on hiring the best engineers — finding young talent who showed early signs of being founders: winning programming competitions in high school, building businesses in college, dropping out to work at startups. Geoff Charles writes: 'He even found engineers from playing Fortnite.' Big tech couldn't copy this approach.",
+        sourceTitle: "How Ramp builds product",
+        sourceUrl: "https://www.lennysnewsletter.com/p/how-ramp-builds-product",
+      },
+      {
+        lyricText: "Named the channel 'couscous'",
+        note: "Ramp's most popular Slack channel is their #gratitude channel, nicknamed 'couscous' — named by their early Moroccan team members. Geoff writes: 'Taking risks demands humor, kindness, and gratitude. If you're taking asymmetric bets, you're making decisions under high uncertainty and high risk... PMs can't take themselves too seriously. Life's too short.'",
+        sourceTitle: "How Ramp builds product",
+        sourceUrl: "https://www.lennysnewsletter.com/p/how-ramp-builds-product",
+      },
+      {
+        lyricText: "Hundred million, two years flat",
+        note: "Ramp hit $100 million in annual recurring revenue in just two years — the fastest any SaaS company has ever achieved that milestone. They did it with fewer than 5 PMs and roughly 50 engineers. Keith Rabois said: 'Ramp's product velocity is absolutely unprecedented in my 21 years working with technology businesses.'",
+        sourceTitle: "How Ramp builds product",
+        sourceUrl: "https://www.lennysnewsletter.com/p/how-ramp-builds-product",
+      },
+    ],
+  },
+  {
+    slug: "trace-it-back",
+    title: "Trace It Back",
+    albumSlug: "the-craft",
+    trackNumber: 9,
+    duration: "2:49",
+    audioUrl: "/audio/trace-it-back.mp3",
+    coverImage: "/covers/trace-it-back.jpg",
+    genre: "Cinematic Neo-Soul",
+    mood: "Cool, purposeful, clarifying",
+    tags: ["strategy", "alignment", "purpose"],
+    lyrics: `[Verse 1]
+I shipped the button, closed the ticket out
+They asked me why — I couldn't spell it out
+A hundred Mondays sent to who-knows-where
+Plugged to a roadmap no one ever shares
+The mission's painted pretty on the wall
+But no one drew the line between it all
+
+[Chorus]
+Trace it back, trace it back
+From the task up to the mission
+Trace it back, trace it back
+Every step is a decision
+If you can't connect the dots
+You're moving fast but standing still
+
+[Verse 2]
+Danny Ocean didn't walk in blind
+He started with a reason, then designed
+The mission — rob three casinos cold
+The vision — Tess and more than he could hold
+Strategy through every coded door
+Eleven people, each one knew the score
+
+[Chorus]
+Trace it back, trace it back
+From the vault up to the vision
+Trace it back, trace it back
+Every heist needs one decision
+If you lose the thread somewhere
+You're pulling strings that come apart
+
+[Bridge]
+"Spread ideas" — two words, and TED was born
+One line from Tesla changed the road we're on
+The biggest missions fit inside your chest
+The smallest task should pass the same damn test
+
+[Final Chorus]
+Trace it back, trace it back
+From your desk up to the mission
+Trace it back, trace it back
+It was never just a ticket
+Now I see the line that runs
+From my hands to why I'm here
+
+[Outro]
+Mission, vision, strategy
+Goals, roadmap, then the task`,
+    concept: "Lenny's Mission-Vision-Strategy-Goals-Roadmap-Task cascade: every task should trace back to the mission.",
+    keyInsight: "If you can't trace your daily task back to the company mission, you're moving fast but standing still.",
+    keyQuote: "You start with your mission — why does your team even exist? Mission, vision, strategy, goals, roadmap, task.",
+    quoteSpeaker: "Lenny Rachitsky",
+    sources: [
+      { title: "Mission - Vision - Strategy - Goals - Roadmap - Task", type: "newsletter", url: "https://www.lennysnewsletter.com/p/mission-vision-strategy-goals-roadmap", guest: "Lenny Rachitsky" },
+    ],
+    storyBehind: "A PM ships a button, closes the ticket, gets asked 'why?' and can't spell it out. Then the Ocean's Eleven metaphor: Danny Ocean didn't walk in blind. Mission, vision, strategy, eleven people who each knew the score. TED's entire mission is two words: 'Spread ideas.'",
+    annotations: [
+      {
+        lyricText: "I shipped the button, closed the ticket out",
+        note: "Lenny argues that most PMs operate at the task level without understanding how their work connects to the company mission. The cascade — Mission → Vision → Strategy → Goals → Roadmap → Task — is his framework for making every ticket meaningful.",
+        sourceTitle: "Mission - Vision - Strategy - Goals - Roadmap - Task",
+        sourceUrl: "https://www.lennysnewsletter.com/p/mission-vision-strategy-goals-roadmap",
+      },
+      {
+        lyricText: "Danny Ocean didn't walk in blind",
+        note: "The Ocean's Eleven metaphor illustrates Lenny's cascade: Danny had a mission (rob three casinos), a vision (get Tess back), a strategy (through every coded door), and eleven people who each knew their role. Every great heist — and every great company — starts with the why.",
+        sourceTitle: "Mission - Vision - Strategy - Goals - Roadmap - Task",
+        sourceUrl: "https://www.lennysnewsletter.com/p/mission-vision-strategy-goals-roadmap",
+      },
+      {
+        lyricText: "Spread ideas — two words, and TED was born",
+        note: "Lenny uses TED as the gold standard of mission brevity: their entire reason for existing fits in two words. He contrasts this with companies whose mission statements are paragraphs long and forgotten by the team.",
+        sourceTitle: "Mission - Vision - Strategy - Goals - Roadmap - Task",
+        sourceUrl: "https://www.lennysnewsletter.com/p/mission-vision-strategy-goals-roadmap",
+      },
+      {
+        lyricText: "Mission, vision, strategy",
+        note: "The six-level cascade that Lenny considers the most important alignment framework in product: Mission (why you exist) → Vision (what the world looks like if you succeed) → Strategy (how you'll get there) → Goals (how you measure) → Roadmap (what you'll build) → Task (what you do today).",
+        sourceTitle: "Mission - Vision - Strategy - Goals - Roadmap - Task",
+        sourceUrl: "https://www.lennysnewsletter.com/p/mission-vision-strategy-goals-roadmap",
+      },
+    ],
+  },
+  {
+    slug: "the-disease",
+    title: "The Disease",
+    albumSlug: "the-craft",
+    trackNumber: 10,
+    duration: "2:54",
+    audioUrl: "/audio/the-disease.mp3",
+    coverImage: "/covers/the-disease.jpg",
+    genre: "Driving Indie Rock",
+    mood: "Defiant, urgent, righteous",
+    tags: ["product management", "empowered teams", "feature factories"],
+    lyrics: `[Verse 1]
+Monday morning, roadmap on my screen
+Fourteen features I have never seen
+"Just build it," says the corner suite
+He's never talked to users on the street
+Saw something shiny at a talk last week
+Now my whole quarter's planned before I speak
+
+[Chorus]
+It's the disease
+The idea man thinks he's ninety percent
+It's the disease
+The builders leave — nobody hears the door
+Nobody knows what they were building for
+
+[Verse 2]
+Jobs called it back in '95
+When companies get big, the craft won't thrive
+The sales floor gets promoted every round
+The ones who shaped the product can't be found
+You scale with leaders or you scale with rules
+The rules look safe — the leaders look like fools
+
+[Chorus]
+It's the disease
+Eighty percent won't ever make a dent
+It's the disease
+Who cares how fast you shipped what no one needs?
+Nobody knows what they were building for
+
+[Bridge]
+Give me one quarter
+One team, one problem, one real shot
+I'll sit with the ones who feel the pain
+And build what the roadmap forgot
+
+[Final Chorus, belted]
+Cure the disease
+The ones who feel it — let them find the way
+Cure the disease
+Give us problems — watch the builders stay
+Now they know what they were building for
+
+[Outro]
+You solve it or you don't
+Who cares about release?
+Cure the disease`,
+    concept: "Marty Cagan's critique of 'feature factories': companies where builders are told what to build rather than given problems to solve.",
+    keyInsight: "When the 'idea person' thinks they're 90% of the work and builders are just implementers, the builders leave and nobody hears the door.",
+    keyQuote: "The 'idea person' thinks an idea is 90% of the work. We know only about 20% of those things will generate any positive return.",
+    quoteSpeaker: "Marty Cagan",
+    sources: [
+      { title: "The nature of product", type: "podcast", url: "https://www.lennyspodcast.com/the-nature-of-product-marty-cagan/", guest: "Marty Cagan" },
+    ],
+    storyBehind: "Monday morning, roadmap on screen, fourteen features the PM has never seen. 'Just build it' says the corner suite, someone who's never talked to users. The cure: give builders problems, not solutions, and watch them stay.",
+    annotations: [
+      {
+        lyricText: "The idea man thinks he's ninety percent",
+        note: "Marty Cagan told Lenny that in feature factories, stakeholders believe having the idea is 90% of the work and engineers are just 'coders.' In reality, only about 20% of ideas generate positive return — the magic is in how empowered teams discover and solve problems.",
+        sourceTitle: "The nature of product",
+        sourceUrl: "https://www.lennyspodcast.com/the-nature-of-product-marty-cagan/",
+      },
+      {
+        lyricText: "Jobs called it back in '95",
+        note: "Cagan references Steve Jobs's 1995 interview where Jobs warned that as companies grow, the sales and marketing people take over and the product people — the ones who built the thing — get pushed out. Jobs called this the reason great companies decline.",
+        sourceTitle: "The nature of product",
+        sourceUrl: "https://www.lennyspodcast.com/the-nature-of-product-marty-cagan/",
+      },
+      {
+        lyricText: "Eighty percent won't ever make a dent",
+        note: "Cagan cites data showing roughly 80% of features shipped by feature factories have no measurable impact on the metrics they were supposed to move. This is the core argument for empowered teams: let builders discover what actually works.",
+        sourceTitle: "The nature of product",
+        sourceUrl: "https://www.lennyspodcast.com/the-nature-of-product-marty-cagan/",
+      },
+      {
+        lyricText: "Give me one quarter",
+        note: "Cagan's prescription for curing the disease: give a team one problem to solve, let them sit with the users who feel the pain, and measure outcomes instead of output. The bridge captures the emotional plea of every builder stuck in a feature factory.",
+        sourceTitle: "The nature of product",
+        sourceUrl: "https://www.lennyspodcast.com/the-nature-of-product-marty-cagan/",
+      },
+    ],
+  },
+  {
+    slug: "whats-the-job",
+    title: "What's the Job",
+    albumSlug: "the-craft",
+    trackNumber: 11,
+    duration: "3:39",
+    audioUrl: "/audio/whats-the-job.mp3",
+    coverImage: "/covers/whats-the-job.jpg",
+    genre: "Acoustic Soul",
+    mood: "Warm, revelatory, intimate",
+    tags: ["JTBD", "customer empathy", "product strategy"],
+    lyrics: `[Verse 1]
+Two candy bars on the same damn shelf
+Same chocolate and caramel inside
+One gets grabbed when you've skipped your lunch
+The other when you need a place to hide
+One competes with a protein shake
+The other with a glass of wine
+Same aisle, different universe
+You'd never know just looking at the sign
+
+[Chorus]
+What's the job, what's the job
+It was never 'bout the thing
+What's the job, what's the job
+It's the struggle that they bring
+You gave them what they asked for
+And they walked away
+What's the job?
+
+[Verse 2]
+He built the condos for the empty nest
+They said, "We're done with dinner plates"
+So he cut the room, gave them the rest
+And six weeks later, no one stayed
+He sat them down and heard the truth
+The table held their holidays, their grace
+Every candle, every fight, every prayer
+They couldn't leave until it had a place
+
+[Chorus]
+What's the job, what's the job
+It was never what they said
+What's the job, what's the job
+It's the life inside their head
+You gave them what they asked for
+But they needed something else
+What's the job?
+
+[Bridge]
+He couldn't read a single page
+So he learned to read the room
+Not the feature, not the price tag
+But the weight behind the move
+
+[Final Chorus, building]
+What's the job, what's the job
+It was never 'bout the brand
+What's the job, what's the job
+There's a life that needs a hand
+Build it and they'll come, they said
+That was always just a lie
+What's the job?
+
+[Outro]
+He cut the bedroom for the table
+They moved the week they knew it'd fit`,
+    concept: "Bob Moesta's Jobs to Be Done framework: people don't buy products, they hire them to make progress.",
+    keyInsight: "People don't buy, they hire. What they say isn't what they do. The struggling moment is the clue.",
+    keyQuote: "A struggling moment causes demand. Most people think they create a product and that creates demand.",
+    quoteSpeaker: "Bob Moesta",
+    sources: [
+      { title: "The ultimate guide to JTBD", type: "podcast", url: "https://www.lennyspodcast.com/the-ultimate-guide-to-jtbd-bob-moesta/", guest: "Bob Moesta" },
+    ],
+    storyBehind: "A condo developer couldn't sell units. Retirees said 'we don't need a dining room' but every sale fell through at six weeks. Bob sat across from them and asked not what they wanted but what they'd lost. That dining table held their life in oak. He cut the bedroom and added the table. They moved the week they knew it'd fit.",
+    annotations: [
+      {
+        lyricText: "Two candy bars on the same damn shelf",
+        note: "Bob Moesta's famous Snickers vs. Milky Way example from his Lenny interview: two nearly identical chocolate bars compete with completely different things. Snickers competes with a meal replacement; Milky Way competes with a moment of relaxation. Same shelf, different jobs.",
+        sourceTitle: "The ultimate guide to JTBD",
+        sourceUrl: "https://www.lennyspodcast.com/the-ultimate-guide-to-jtbd-bob-moesta/",
+      },
+      {
+        lyricText: "He built the condos for the empty nest",
+        note: "The condo story is Moesta's signature case study. A Detroit developer couldn't sell units to retirees. They all said 'we don't need a dining room' — but every sale stalled at six weeks. The real blocker wasn't the condo; it was leaving the dining table that held 30 years of holidays.",
+        sourceTitle: "The ultimate guide to JTBD",
+        sourceUrl: "https://www.lennyspodcast.com/the-ultimate-guide-to-jtbd-bob-moesta/",
+      },
+      {
+        lyricText: "He couldn't read a single page",
+        note: "Moesta told Lenny he's dyslexic and couldn't read until he was 25. This forced him to learn by watching people — observing what they actually do rather than what they say. He credits this as the origin of his 'struggling moment' interview technique.",
+        sourceTitle: "The ultimate guide to JTBD",
+        sourceUrl: "https://www.lennyspodcast.com/the-ultimate-guide-to-jtbd-bob-moesta/",
+      },
+      {
+        lyricText: "He cut the bedroom for the table",
+        note: "The resolution of the condo story: once Moesta understood the real job (preserving family tradition, not downsizing), the developer cut a bedroom and added space for the dining table. Units started selling immediately. The product didn't change — the understanding did.",
+        sourceTitle: "The ultimate guide to JTBD",
+        sourceUrl: "https://www.lennyspodcast.com/the-ultimate-guide-to-jtbd-bob-moesta/",
+      },
+    ],
+  },
+];
+
+const growthEngineTracks: Track[] = [
+  {
+    slug: "dont-break-the-streak",
+    title: "Don't Break the Streak",
+    albumSlug: "growth-engine",
+    trackNumber: 1,
+    duration: "2:57",
+    audioUrl: "/audio/dont-break-the-streak.mp3",
+    coverImage: "/covers/dont-break-the-streak.jpg",
+    genre: "Acoustic Folk-Pop",
+    mood: "Uplifting, playful, warm urgency",
+    tags: ["gamification", "retention", "compounding growth"],
+    lyrics: `[Verse 1]
+Biggest app in the world, but the line went flat
+Stole a trick from a game — nothing came from that
+Tried referrals next, the Uber play
+Three percent and the doubters had their day
+Two big swings and nothing left to show
+The boardroom's faith was running low
+But somewhere in the numbers, buried deep
+Was a secret only data keeps
+
+[Chorus]
+Don't break the streak, don't let it slip
+One more day and you're in the grip
+Yesterday's you is keeping score
+Come back tomorrow, just once more
+Don't break the streak
+
+[Verse 2]
+They found the number everyone had missed
+Current users — top of every list
+Five times the pull, the model made it clear
+Keep who comes back, year to year to year
+A leaderboard, a buzz at ten PM
+A nudge that says, "This isn't working" — then
+You smile, you swipe, one lesson and that's that
+And tomorrow night it pulls you right back
+
+[Chorus]
+Don't break the streak, don't let it slip
+Day after day, a tighter grip
+The chain gets stronger every time
+Come back tomorrow, you'll be fine
+Don't break the streak
+
+[Bridge]
+It started as a number on a screen
+Now it's four years, no days in between
+Each day you come back, you care a little more
+That's the math they never taught before
+
+[Final Chorus, belted]
+Don't break the streak, don't let it go
+Day fourteen hundred, still in the flow
+Tomorrow's you is counting on today
+Don't walk away, don't walk away
+Don't break the streak
+
+[Outro]
+One more day
+That's all it takes
+One more day`,
+    concept: "Duolingo's growth turnaround by discovering that retaining current users (not acquiring new ones) was the key, leading to the streak mechanic that drives compounding engagement.",
+    keyInsight: "Each day a user comes back, they care a bit more about coming back the next day. Retention compounds into commitment.",
+    keyQuote: "Streaks is the most impactful feature. We have over 9 million users with a year-plus streak.",
+    quoteSpeaker: "Jackson Shuttleworth",
+    sources: [
+      { title: "How Duolingo reignited user growth", type: "newsletter", url: "https://www.lennysnewsletter.com/p/how-duolingo-reignited-user-growth", guest: "Jorge Mazal" },
+      { title: "Behind the product: Duolingo streaks", type: "podcast", url: "https://www.lennyspodcast.com/behind-the-product-duolingo-streaks-jackson-shuttleworth/", guest: "Jackson Shuttleworth" },
+    ],
+    storyBehind: "Duolingo was the biggest language app in the world but growth went flat. They tried gamification and referrals, but both failed. Then they discovered that focusing on current user retention had 5x the impact. The streak mechanic became their flywheel, turning daily returns into deepening commitment. DAU grew 4.5x.",
+    annotations: [
+      {
+        lyricText: "Biggest app in the world, but the line went flat",
+        note: "By mid-2018, Duolingo's daily active users were growing at only a single-digit rate year-over-year — alarming for a company with investors anxious to see fast monetization growth. Jorge Mazal describes this as the moment when leadership realized the explosive growth of Duolingo's early years had stalled despite being the world's most popular education app.",
+        sourceTitle: "How Duolingo reignited user growth",
+        sourceUrl: "https://www.lennysnewsletter.com/p/how-duolingo-reignited-user-growth",
+      },
+      {
+        lyricText: "Tried referrals next, the Uber play\nThree percent",
+        note: "After their first gamification attempt failed (copying a moves counter from the mobile game Gardenscapes), the Duolingo team pivoted to a referral program modeled on Uber's, offering a free month of Super Duolingo. The result: new users increased by only 3%. Jorge calls this period 'back-to-back failures in only a few months' that forced a fundamental rethinking of their growth strategy.",
+        sourceTitle: "How Duolingo reignited user growth",
+        sourceUrl: "https://www.lennysnewsletter.com/p/how-duolingo-reignited-user-growth",
+      },
+      {
+        lyricText: "They found the number everyone had missed\nCurrent users — top of every list\nFive times the pull",
+        note: "The team built a growth model tracking user movement between engagement buckets and ran a sensitivity analysis. CURR — the current user retention rate — had a staggering 5x greater impact on DAU than the second-best metric. Jorge writes: 'We immediately saw that CURR had a gigantic impact on DAU.' This was a huge mindset shift — the company had spent years focused on new-user acquisition.",
+        sourceTitle: "How Duolingo reignited user growth",
+        sourceUrl: "https://www.lennysnewsletter.com/p/how-duolingo-reignited-user-growth",
+      },
+      {
+        lyricText: "A leaderboard, a buzz at ten PM",
+        note: "Two of the Retention Team's biggest wins: competitive leaderboards and the streak-saver notification — a late-night push notification alerting users with active streaks that they're about to lose them. Jorge specifically calls it a 'late-night notification' that 'proved that indeed there was considerable upside to doubling down on streak optimizations.'",
+        sourceTitle: "How Duolingo reignited user growth",
+        sourceUrl: "https://www.lennysnewsletter.com/p/how-duolingo-reignited-user-growth",
+      },
+      {
+        lyricText: "Now it's four years, no days in between",
+        note: "Jorge Mazal writes about meeting a user who told him: 'I have a 1,435-day streak! With no streak freezes!' — almost four years of daily language practice without missing a single day. Jackson Shuttleworth from Duolingo's Retention Team later revealed that over 9 million users now hold a streak of one year or longer. The team has run over 600 experiments on the streak feature alone.",
+        sourceTitle: "How Duolingo reignited user growth",
+        sourceUrl: "https://www.lennysnewsletter.com/p/how-duolingo-reignited-user-growth",
+      },
+    ],
+  },
+  {
+    slug: "the-racecar",
+    title: "The Racecar",
+    albumSlug: "growth-engine",
+    trackNumber: 2,
+    duration: "3:07",
+    audioUrl: "/audio/the-racecar.mp3",
+    coverImage: "/covers/the-racecar.jpg",
+    genre: "Warm Folk-Rock",
+    mood: "Anthemic, revelatory, building energy",
+    tags: ["growth", "frameworks", "loops"],
+    lyrics: `[Verse 1]
+We built the thing and no one came
+Every dashboard flat, each chart the same
+So I knocked on doors and slept on floors
+Showed the app in bars and campus stores
+Loaded up my car and drove at night
+The whole city was my demo site
+Hands on the hood, just push and pray
+Kickstart fades by end of day
+
+[Chorus]
+Build the engine, pour the fuel
+Feel it catch and start to move
+Output feeding input back —
+Find the loop and cut it loose
+
+[Verse 2]
+The engine caught — now watch it spin
+Money goes out, comes right back in
+Friend tells friend, the searches grow
+Every exit feeds the flow
+A headline hits, the traffic spikes
+Gone by morning — that's the ride
+Half the riders left the track
+Grease the gears to bring them back
+
+[Chorus]
+Build the engine, pour the fuel
+Every mile compounds the proof
+Output feeding input back —
+Find the loop and cut it loose
+
+[Bridge]
+Pouring fuel with no engine built
+Wondering why the car stood still
+Not the speed and not the size —
+It's the loop that multiplies
+
+[Final Chorus]
+Build the engine, pour the fuel
+Now the car knows what to do
+Output feeding input back —
+Find the loop and cut it loose
+
+[Outro]
+Build the next one
+Before this one stops`,
+    concept: "Lenny's Racecar Growth Framework: growth isn't one thing but a machine with parts (kickstarts, engines/loops, fuel, lubricants) that work together.",
+    keyInsight: "Growth isn't one thing. It's a machine with parts that work together, and the secret is knowing which part to build at which stage.",
+    keyQuote: "Pouring fuel with no engine built, wondering why the car stood still.",
+    quoteSpeaker: "Lenny Rachitsky",
+    sources: [
+      { title: "The Racecar Growth Framework - expanded and illustrated", type: "newsletter", url: "https://www.lennysnewsletter.com/p/the-racecar-growth-frameworkexpanded", guest: "Lenny Rachitsky" },
+    ],
+    storyBehind: "The extended metaphor of a racecar: you start by push-starting (doing things that don't scale), then the engine catches (growth loops), then you pour fuel (paid growth) and grease the gears (reduce churn). The universal founder mistake is pouring fuel before building the engine.",
+    annotations: [
+      {
+        lyricText: "Hands on the hood, just push and pray\nKickstart fades by end of day",
+        note: "The Racecar Framework identifies 9 specific 'kickstart' tactics for getting your first 1,000 users — things like DoorDash going door-to-door to restaurants, Tinder throwing parties at college campuses, and Snapchat pitching kids at malls. These are unscalable by design: they get the car rolling but can't keep it moving. The framework warns to use kickstarts only 'until your growth engine begins to drive the majority of your growth.'",
+        sourceTitle: "The Racecar Growth Framework — expanded and illustrated",
+        sourceUrl: "https://www.lennysnewsletter.com/p/the-racecar-growth-frameworkexpanded",
+      },
+      {
+        lyricText: "Friend tells friend, the searches grow\nEvery exit feeds the flow",
+        note: "The framework names exactly four growth engines: SEO, Paid Ads, Sales, and Virality. 'Friend tells friend' is Virality — where a user enjoys the product, shares it, and that friend signs up and shares it again. 'The searches grow' is SEO — where users create content others discover through Google. According to Lenny's survey of today's biggest consumer apps, virality and SEO are the two most common primary growth engines.",
+        sourceTitle: "The Racecar Growth Framework — expanded and illustrated",
+        sourceUrl: "https://www.lennysnewsletter.com/p/the-racecar-growth-frameworkexpanded",
+      },
+      {
+        lyricText: "A headline hits, the traffic spikes\nGone by morning — that's the ride",
+        note: "This captures what the framework calls a 'Turbo Boost' — a one-off event that temporarily accelerates growth but doesn't last. The article lists 10 common turbo boosts including PR, viral content, and influencer mentions. The key distinction from an engine: turbo boosts create a spike, not a loop. There's no self-sustaining mechanism to keep growth going after the headline fades.",
+        sourceTitle: "The Racecar Growth Framework — expanded and illustrated",
+        sourceUrl: "https://www.lennysnewsletter.com/p/the-racecar-growth-frameworkexpanded",
+      },
+      {
+        lyricText: "Pouring fuel with no engine built\nWondering why the car stood still",
+        note: "'Fuel' is the raw input your engine runs on: content drives SEO, users drive virality, capital drives paid ads and sales. But fuel without an engine is wasted. This is the classic mistake Lenny warns about — founders pouring capital into ads before they have a working growth loop. The framework prescribes a specific order: build kickstarts first, then get your engine running, then add fuel.",
+        sourceTitle: "The Racecar Growth Framework — expanded and illustrated",
+        sourceUrl: "https://www.lennysnewsletter.com/p/the-racecar-growth-frameworkexpanded",
+      },
+      {
+        lyricText: "Output feeding input back —\nFind the loop and cut it loose",
+        note: "The entire premise of a growth 'engine' vs. a tactic is the loop: output feeds input. Paid ads generate revenue that funds more ads. Users invite friends who invite friends. Content ranks on Google, driving signups who create more content. Lenny's research shows companies like Pinterest and Yelp grew primarily through a single engine run well, not through doing everything at once.",
+        sourceTitle: "The Racecar Growth Framework — expanded and illustrated",
+        sourceUrl: "https://www.lennysnewsletter.com/p/the-racecar-growth-frameworkexpanded",
+      },
+    ],
+  },
+  {
+    slug: "find-your-north-star",
+    title: "Find Your North Star",
+    albumSlug: "growth-engine",
+    trackNumber: 3,
+    duration: "3:41",
+    audioUrl: "/audio/find-your-north-star.mp3",
+    coverImage: "/covers/find-your-north-star.jpg",
+    genre: "Acoustic Folk",
+    mood: "Clarifying, urgent, contemplative",
+    tags: ["metrics", "focus", "strategy"],
+    lyrics: `[Verse 1]
+Fourteen dashboards, Monday morning haze
+Every number pulling different ways
+Revenue is up, the users leave
+The boardroom cheers — I still can't breathe
+A sky of scattered light above my desk
+A thousand stars — I can't tell which one's best
+
+[Chorus]
+Find your north star
+One number in the dark
+What you measure is what you become
+What you chase is what you are
+Not the revenue — the value
+Find your north star
+
+[Verse 2]
+Nights booked, rides taken, messages sent
+Every company found what winning meant
+Facebook counted monthly — doing fine
+Switched to daily, everything realigned
+"Bring them back" became the battle cry
+The product bent to match a single "why"
+
+[Chorus]
+Find your north star
+One signal through the noise
+What you measure is what you become
+Every metric was a choice
+Not the revenue — the value
+Find your north star
+
+[Bridge]
+But careful what you choose, it cuts both ways
+Facebook brought them back — they couldn't leave
+Congress called, the papers filled for days
+The metric worked — that's the thing you grieve
+What gets measured gets managed, that's the deal
+Be sure you want the world your number builds
+
+[Final Chorus]
+Find your north star
+One number in the dark
+What you measure is what you become
+What you build is what you are
+Not the revenue — the value you deliver
+Find your north star
+
+[Outro]
+You only need one light to find your way
+Pick the one that matters
+Start today`,
+    concept: "Choosing your North Star Metric, the one number that captures the value you deliver, and the warning that what you measure is what you become.",
+    keyInsight: "What you measure is what you become. Pick the metric that represents the value you deliver, not just the revenue you extract.",
+    keyQuote: "What you measure is what you become.",
+    quoteSpeaker: "Lenny Rachitsky",
+    sources: [
+      { title: "Choosing Your North Star Metric", type: "newsletter", url: "https://www.lennysnewsletter.com/p/choosing-your-north-star-metric", guest: "Lenny Rachitsky" },
+    ],
+    storyBehind: "The song starts with a PM drowning in 14 dashboards, then shows how companies like Airbnb ('nights booked') and Facebook found their North Star. But the bridge is a cautionary tale: Facebook switched to daily active users, brought people back so well they couldn't leave. Congress called.",
+    annotations: [
+      {
+        lyricText: "Nights booked, rides taken, messages sent\nEvery company found what winning meant",
+        note: "These are actual North Star metrics from Lenny's survey of over 40 successful growth-stage companies. Airbnb tracked 'nights booked,' Uber and Lyft tracked 'rides taken,' Twilio tracked 'messages sent.' None chose revenue as their North Star. They picked consumption metrics that reflect value delivered, because as Lenny explains, revenue is 'spiky, and thus hard to make operational.'",
+        sourceTitle: "Choosing Your North Star Metric",
+        sourceUrl: "https://www.lennysnewsletter.com/p/choosing-your-north-star-metric",
+      },
+      {
+        lyricText: "Facebook counted monthly — doing fine\nSwitched to daily, everything realigned",
+        note: "Facebook and Snap both chose DAU over MAU as their North Star because social media is a daily habit. Pinterest, by contrast, chose WAU because it 'doesn't expect its users to need the product daily.' The frequency of the metric signals what behavior you're optimizing for — Facebook's shift to DAU meant every team suddenly focused on bringing people back every single day.",
+        sourceTitle: "Choosing Your North Star Metric",
+        sourceUrl: "https://www.lennysnewsletter.com/p/choosing-your-north-star-metric",
+      },
+      {
+        lyricText: "Not the revenue — the value",
+        note: "Lenny argues explicitly against using revenue as a North Star. Three reasons: revenue is spiky and hard to make operational, optimizing pricing too early leads to suboptimal decisions, and 'people often join companies to accomplish a specific mission; rarely is that mission simply growth in generating revenue.' Airbnb chose 'nights booked' over booking revenue. Robinhood chose NPS over trading volume.",
+        sourceTitle: "Choosing Your North Star Metric",
+        sourceUrl: "https://www.lennysnewsletter.com/p/choosing-your-north-star-metric",
+      },
+      {
+        lyricText: "But careful what you choose, it cuts both ways\nFacebook brought them back — they couldn't leave\nCongress called, the papers filled for days",
+        note: "Lenny's guide warns: 'By maintaining a laser focus on a single metric for too long, teams risk short-term thinking, missing new opportunities, and sacrificing the user experience.' He uses a motorcycle analogy: 'Where your eyes go, your bike goes. Look to your right and you'll drift right.' Facebook's relentless optimization of daily engagement — the very metric that drove its explosive growth — eventually drew Congressional scrutiny over addiction and harm.",
+        sourceTitle: "Choosing Your North Star Metric",
+        sourceUrl: "https://www.lennysnewsletter.com/p/choosing-your-north-star-metric",
+      },
+    ],
+  },
+  {
+    slug: "test-everything",
+    title: "Test Everything",
+    albumSlug: "growth-engine",
+    trackNumber: 4,
+    duration: "2:39",
+    audioUrl: "/audio/test-everything.mp3",
+    coverImage: "/covers/test-everything.jpg",
+    genre: "Driving Indie Rock",
+    mood: "Energetic, defiant, awestruck",
+    tags: ["A/B testing", "experimentation", "humility"],
+    lyrics: `[Verse 1]
+Every meeting, same old scene
+Someone's selling us the dream
+"This one's different, watch it fly"
+Eighty-five percent will die
+A backlog full of brilliant plans
+Dying quiet in our hands
+
+[Chorus]
+Test everything, test everything
+Your best idea might not mean a thing
+The throwaway, the afterthought
+Could be the biggest win you've got
+Test everything
+
+[Verse 2]
+A tiny change sat on the list
+Move the ad text — easy to miss
+It gathered dust for half a year
+Till one engineer said "I'm building here"
+Two days to ship it, let it run
+The alarm went off — what had they done?
+
+[Chorus]
+Test everything, test everything
+"Too good to be true — go find the bug"
+But there was no bug, no mistake
+Just the biggest win they'd ever make
+Test everything
+
+[Bridge]
+A hundred million from a shrug
+From the change nobody loved enough
+If nine in ten are gonna break
+You're free to try the wildest take
+
+[Final Chorus]
+Test everything, test everything
+The one you'd cut could be the biggest thing
+Don't trust the room, don't trust your gut
+The data knows what you do not
+Test everything
+
+[Outro]
+We thought we knew
+We never do`,
+    concept: "Ronny Kohavi's guide to A/B testing: the story of a tiny, ignored change at Bing that generated $100M in revenue.",
+    keyInsight: "Your best idea might not mean a thing. The throwaway afterthought could be the biggest win. 85% of ideas fail.",
+    keyQuote: "I'm a big fan of test everything. Even small bug fixes can sometimes have surprising, unexpected impact.",
+    quoteSpeaker: "Ronny Kohavi",
+    sources: [
+      { title: "The ultimate guide to A/B testing", type: "podcast", url: "https://www.lennyspodcast.com/the-ultimate-guide-to-ab-testing-ronny-kohavi/", guest: "Ronny Kohavi" },
+    ],
+    storyBehind: "A tiny change sat on Bing's backlog for half a year: move the ad text. One engineer said 'I'm building this.' Two days to ship, let it run. The alarm went off: 'Too good to be true, go find the bug.' But there was no bug. Just $100 million in annual revenue.",
+    annotations: [
+      {
+        lyricText: "Eighty-five percent will die",
+        note: "Ronny Kohavi told Lenny that across Microsoft, Google, and other tech giants, roughly 85% of ideas that teams are excited about fail to move the metrics they target. This is why experimentation culture matters — intuition is wrong most of the time.",
+        sourceTitle: "The ultimate guide to A/B testing",
+        sourceUrl: "https://www.lennyspodcast.com/the-ultimate-guide-to-ab-testing-ronny-kohavi/",
+      },
+      {
+        lyricText: "A tiny change sat on the list",
+        note: "The legendary Bing ad headline experiment: a small change to ad text placement sat on the backlog for six months because nobody thought it mattered. When an engineer finally shipped it in two days, it generated over $100 million in annual revenue.",
+        sourceTitle: "The ultimate guide to A/B testing",
+        sourceUrl: "https://www.lennyspodcast.com/the-ultimate-guide-to-ab-testing-ronny-kohavi/",
+      },
+      {
+        lyricText: "Too good to be true — go find the bug",
+        note: "When the Bing experiment results came in, the team's first reaction was that the numbers must be wrong. Kohavi told Lenny this is a common pattern: the biggest wins often look like measurement errors at first because nobody expected the change to matter.",
+        sourceTitle: "The ultimate guide to A/B testing",
+        sourceUrl: "https://www.lennyspodcast.com/the-ultimate-guide-to-ab-testing-ronny-kohavi/",
+      },
+      {
+        lyricText: "A hundred million from a shrug",
+        note: "Kohavi's $100M Bing story became the defining parable of experimentation culture. The lesson: the changes you'd cut from the roadmap might be worth more than the features you're most excited about. Humility about ideas is the foundation of testing culture.",
+        sourceTitle: "The ultimate guide to A/B testing",
+        sourceUrl: "https://www.lennyspodcast.com/the-ultimate-guide-to-ab-testing-ronny-kohavi/",
+      },
+    ],
+  },
+  {
+    slug: "the-first-thousand",
+    title: "The First Thousand",
+    albumSlug: "growth-engine",
+    trackNumber: 5,
+    duration: "2:52",
+    audioUrl: "/audio/the-first-thousand.mp3",
+    coverImage: "/covers/the-first-thousand.jpg",
+    genre: "Uptempo Indie Pop",
+    mood: "Scrappy, triumphant, energetic",
+    tags: ["growth", "early users", "hustle"],
+    lyrics: "",
+    concept: "How the biggest consumer apps got their first 1,000 users through scrappy, unscalable, unglamorous hustle.",
+    keyInsight: "Every app you've ever loved once looked lame. You earn your first users one by one through showing up, not through scale.",
+    keyQuote: "Don't pay attention to what Facebook does today — pay attention to Facebook when they were getting their first thousand users.",
+    quoteSpeaker: "Dalton Caldwell",
+    sources: [
+      { title: "How the biggest consumer apps got their first 1,000 users", type: "newsletter", url: "https://www.lennysnewsletter.com/p/how-the-biggest-consumer-apps-got", guest: "Lenny Rachitsky" },
+    ],
+    storyBehind: "A montage of origin stories: Whitney Wolfe pitching Tinder dorm to dorm, Evan Spiegel at the mall with Snapchat flyers, Ben Silbermann changing Apple Store displays to show Pinterest, Tony Xu taping a DoorDash menu to a wall, Brian Chesky hot-gluing cereal boxes for Airbnb.",
+  },
+  {
+    slug: "go-viral",
+    title: "Go Viral",
+    albumSlug: "growth-engine",
+    trackNumber: 6,
+    duration: "3:04",
+    audioUrl: "/audio/go-viral.mp3",
+    coverImage: "/covers/go-viral.jpg",
+    genre: "Dark Electro-Pop",
+    mood: "Electric, manic, cinematic",
+    tags: ["virality", "consumer apps", "growth loops"],
+    lyrics: "",
+    concept: "Nikita Bier's story of building repeatedly viral consumer apps: 14 failures before a hit, reading the room instead of the language, controlled geographic rollouts.",
+    keyInsight: "Virality comes from finding latent demand and controlling the burn: geographic rollout, school by school, state by state.",
+    keyQuote: "With certainty, if you're good at your job, you can make an app grow and go viral.",
+    quoteSpeaker: "Nikita Bier",
+    sources: [
+      { title: "How to consistently go viral", type: "podcast", url: "https://www.lennyspodcast.com/how-to-consistently-go-viral-nikita-bier/", guest: "Nikita Bier" },
+    ],
+    storyBehind: "Nikita tried 14 apps, was about to dissolve his company, then his app hit #1 in the US - written in Arabic, a language he couldn't read. He pivoted, built Gas (anonymous compliments), dropped it in Georgia schools, watched it spread state by state.",
+  },
+  {
+    slug: "you-aint-that",
+    title: "You Ain't That",
+    albumSlug: "growth-engine",
+    trackNumber: 7,
+    duration: "",
+    audioUrl: "",
+    coverImage: "",
+    genre: "Funky Pop-Soul",
+    mood: "Confident, swaggering, liberating",
+    tags: ["positioning", "go-to-market", "product identity"],
+    lyrics: "",
+    isLocked: true,
+    concept: "April Dunford's positioning framework: your product isn't broken, it's badly introduced. Same code, different name, and suddenly the phone rings.",
+    keyInsight: "You're not broken, you're just badly introduced. The right positioning transforms a product nobody buys into something everyone needs.",
+    keyQuote: "When we get positioning wrong, everything sucks. When we get it right, we all make all kinds of money.",
+    quoteSpeaker: "April Dunford",
+    sources: [
+      { title: "April Dunford on product positioning, segmentation, and optimizing your sales process", type: "podcast", url: "https://www.lennyspodcast.com/april-dunford-on-product-positioning-segmentation-and-optimizing-your-sales-process/", guest: "April Dunford" },
+    ],
+    storyBehind: "April had a product she called an 'Access killer.' She called her customer list and heard 'Sorry, lady, we don't have that.' But 21 customers picked up and said 'Your product made me hero of my team!' Same code, no changes - except the name and positioning. The phone started ringing.",
+  },
+];
+
+const byTheNumbersTracks: Track[] = [
+];
+
+const theWeightTracks: Track[] = [
+  {
+    slug: "fire-with-grace",
+    title: "Fire with Grace",
+    albumSlug: "the-weight",
+    trackNumber: 1,
+    duration: "4:28",
+    audioUrl: "/audio/fire-with-grace.mp3",
+    coverImage: "/covers/fire-with-grace.jpg",
+    genre: "Soulful Indie Folk",
+    mood: "Intimate, devastating, redemptive",
+    tags: ["firing", "leadership", "compassion"],
+    lyrics: "",
+    concept: "How to fire people with compassion. The most dreaded leadership task reframed as liberation.",
+    keyInsight: "Firing someone with grace means being their agent on the way out, holding their weight, not explaining it away.",
+    keyQuote: "The biggest marker between a botched layoff and a successful one: did they hear it from their manager, one-on-one?",
+    quoteSpeaker: "Matt Mochary",
+    sources: [
+      { title: "How to fire people with grace, work through fear, and nurture innovation", type: "podcast", url: "https://www.lennyspodcast.com/how-to-fire-people-with-grace-matt-mochary/", guest: "Matt Mochary" },
+    ],
+    storyBehind: "Monday 9AM, door closed, her coffee getting cold. By pretending she's a fit when she's not, he's holding her in place when she should fly. After the conversation, he picked up the phone and called in every name. Two hours on the line to find her light. Now she's building something she adores.",
+  },
+];
+
+const careerMovesTracks: Track[] = [
+  {
+    slug: "the-magic-loop",
+    title: "The Magic Loop",
+    albumSlug: "career-moves",
+    trackNumber: 1,
+    duration: "3:06",
+    audioUrl: "/audio/the-magic-loop.mp3",
+    coverImage: "/covers/the-magic-loop.jpg",
+    genre: "Funky Neo-Soul Pop",
+    mood: "Groovy, confident, building",
+    tags: ["career growth", "managing up", "compounding"],
+    lyrics: "",
+    concept: "Ethan Evans's 'Magic Loop' framework for rapid career growth: ask your boss what they need, deliver it, build trust, and compound your way up.",
+    keyInsight: "Career growth isn't about working harder. It's about asking 'what do you need?' and creating a compounding loop of trust and opportunity.",
+    keyQuote: "Not stuck down here, I'm stuck going up.",
+    quoteSpeaker: "Ethan Evans's mentee",
+    sources: [
+      { title: "The Magic Loop - A framework for rapid career growth", type: "newsletter", url: "https://www.lennysnewsletter.com/p/the-magic-loop", guest: "Ethan Evans" },
+    ],
+    storyBehind: "A farm kid from Ohio raises his hand on day one: 'Where's the gap nobody wants to own?' Two years later he led the floor he'd grown. Fifteen years later, his mentee calls and says 'I'm stuck - not stuck down here, I'm stuck going up.'",
+  },
+  {
+    slug: "state-of-the-me",
+    title: "State of the Me",
+    albumSlug: "career-moves",
+    trackNumber: 2,
+    duration: "2:44",
+    audioUrl: "/audio/state-of-the-me.mp3",
+    coverImage: "/covers/state-of-the-me.jpg",
+    genre: "Neo-Soul Pop",
+    mood: "Confident, empowered, groovy",
+    tags: ["managing up", "visibility", "career growth"],
+    lyrics: `[Verse 1]
+I've been staying late, nobody sees
+Twelve things on my plate, they know about three
+Boss walks in and asks about the brief
+Finished that last Tuesday — no relief
+I thought my silence meant I'm strong
+Turns out invisible is just gone
+
+[Chorus]
+State of the Me, every Monday morning
+Here's my world, here's what I need
+It ain't sucking up, it's just showing up
+Three short lines gonna set me free
+
+[Verse 2]
+Two weeks in, she knows what's on my list
+Knows the blockers 'fore I have to ask
+Used to say yes every single time
+Now I set the bar before I climb
+They can't reward the work they've never seen
+So I wrote it down and let it breathe
+
+[Chorus]
+State of the Me, every Monday morning
+Here's what I shipped, here's what's in my way
+It ain't sucking up, it's just showing up
+Two weeks in and something starts to change
+
+[Bridge]
+She said, "My boss won't let me breathe"
+I said, "Is anyone else on a leash?"
+The room went quiet, truth hit like a wall
+Maybe the leash is yours to break
+
+[Final Chorus]
+State of the Me, every Monday morning
+Here's what I built, here's where I'm heading
+It ain't sucking up, it's just showing up
+Trust goes up, the walls come down — I'm ready
+
+[Outro]
+The work won't speak for you
+It never did
+But you can`,
+    concept: "The practice of 'managing up': sending your boss a simple weekly update so your work becomes visible and trust compounds.",
+    keyInsight: "They can't reward the work they've never seen. Visibility isn't sucking up, it's showing up.",
+    keyQuote: "They can't reward the work they've never seen.",
+    quoteSpeaker: "Lenny Rachitsky",
+    sources: [
+      { title: "Managing up", type: "newsletter", url: "https://www.lennysnewsletter.com/p/managing-up", guest: "Lenny Rachitsky" },
+    ],
+    storyBehind: "Staying late, nobody sees. Twelve things on the plate, boss knows about three. The 'State of the Me' is a Monday morning ritual: three short lines about what you shipped, what's blocking you, what you need. Two weeks in, something starts to change.",
+    annotations: [
+      {
+        lyricText: "They can't reward the work they've never seen",
+        note: "Lenny's core argument for managing up: most people assume good work speaks for itself. It doesn't. Your manager has 6-10 other reports, their own deadlines, and limited attention. A short weekly update makes your work visible without requiring them to dig.",
+        sourceTitle: "Managing up",
+        sourceUrl: "https://www.lennysnewsletter.com/p/managing-up",
+      },
+      {
+        lyricText: "State of the Me, every Monday morning",
+        note: "Lenny's recommended format: a brief Monday email to your manager with three sections — what you shipped last week, what you're working on this week, and where you're blocked. He calls it the highest-ROI career habit most people skip because it 'feels like sucking up.'",
+        sourceTitle: "Managing up",
+        sourceUrl: "https://www.lennysnewsletter.com/p/managing-up",
+      },
+      {
+        lyricText: "It ain't sucking up, it's just showing up",
+        note: "Lenny directly addresses the #1 objection people have to managing up. The reframe: visibility isn't political maneuvering, it's professional responsibility. Your manager needs context to advocate for you in rooms you're not in.",
+        sourceTitle: "Managing up",
+        sourceUrl: "https://www.lennysnewsletter.com/p/managing-up",
+      },
+      {
+        lyricText: "The work won't speak for you",
+        note: "The song's closing line captures Lenny's blunt conclusion: the myth that 'great work speaks for itself' has held back more careers than any lack of skill. The people who get promoted aren't always the best — they're the ones whose managers actually know what they've done.",
+        sourceTitle: "Managing up",
+        sourceUrl: "https://www.lennysnewsletter.com/p/managing-up",
+      },
+    ],
+  },
+];
+
+const electricDreamsTracks: Track[] = [
+  {
+    slug: "vibe-coding",
+    title: "Vibe Coding",
+    albumSlug: "electric-dreams",
+    trackNumber: 1,
+    duration: "3:15",
+    audioUrl: "/audio/vibe-coding.mp3",
+    coverImage: "/covers/vibe-coding.jpg",
+    genre: "Glitch Hop",
+    mood: "Never wrote a line of code, shipped it anyway",
+    tags: ["satire", "comedy", "AI"],
+    lyrics: `[Verse 1]
+Never wrote a line of code before last spring
+Now I'm shipping features, building everything
+Prompt and pray and iterate and test
+Claude and Cursor doing all the rest
+The engineers are sweating, "that's not clean"
+But the users? They don't care what's behind the screen
+
+[Chorus]
+Vibe coding, vibe coding
+Don't read the code, just feel the flow
+Vibe coding, vibe coding
+Ship it before the model gets to know
+That you have no idea what you're doing
+But it works and that's the point
+Vibe coding
+
+[Verse 2]
+Best time to learn to code was years ago
+Second best time? Never — let the models go
+Designers building backends after lunch
+PMs shipping prototypes on a hunch
+Democratized the making, broke the gate
+A million new builders and they didn't have to wait
+
+[Chorus]
+Vibe coding, vibe coding
+Don't read the code, just feel the flow
+Vibe coding, vibe coding
+Ship it before the model gets to know
+That you have no idea what you're doing
+But it works and that's the point
+Vibe coding
+
+[Outro]
+Welcome to the era
+Where everyone can build
+Vibe coding`,
+    concept: "Based on Lazar Jovanovic's episode. The first official 'vibe coding engineer' at Lovable. Lovable hit $200M ARR in under a year with fewer than 100 people. 500+ builders wrote to Lenny saying they shipped products without writing code.",
+    keyInsight: "The best time to learn to code was 10 years ago. The second best time is never. Just vibe code.",
+    sources: [
+      { title: "The rise of the professional vibe coder", type: "podcast", url: "https://www.lennysnewsletter.com/p/getting-paid-to-vibe-code", guest: "Lazar Jovanovic" },
+      { title: "What people are vibe coding (and actually using)", type: "newsletter", url: "https://www.lennysnewsletter.com/p/what-people-are-vibe-coding-and-actually", guest: "Lenny Rachitsky" },
+    ],
+    keyQuote: "I just mass mass accept everything. I don't even look at the diffs. It's not even coding. I just see things, say things, run things, and copy paste things.",
+    quoteSpeaker: "Andrej Karpathy",
+    storyBehind: "Lenny covered the vibe coding revolution as it was happening in real time. Lazar Jovanovic became the first official 'vibe coding engineer' at Lovable, a company that hit $200M ARR in under a year with fewer than 100 people. Over 500 builders wrote to Lenny saying they'd shipped real products without writing a single line of code. Andrej Karpathy coined the term 'vibe coding', fully giving in to the vibes, seeing things appear, and not really caring how the code works. It's the most polarizing topic in Lenny's archive.",
+    annotations: [
+      {
+        lyricText: "Claude and Cursor doing all the rest",
+        note: "Lenny's survey of 500+ vibe coders found Claude and Cursor were the two most-used tools for building without writing code. Builders described a workflow of prompting, previewing, and iterating — never reading the underlying code.",
+        sourceTitle: "What people are vibe coding (and actually using)",
+        sourceUrl: "https://www.lennysnewsletter.com/p/what-people-are-vibe-coding-and-actually",
+      },
+      {
+        lyricText: "Don't read the code, just feel the flow",
+        note: "Andrej Karpathy coined 'vibe coding' in a viral post: 'I just see things, say things, run things, and copy paste things. I don't even look at the diffs.' This became the defining ethos of the movement — trusting the output over understanding the implementation.",
+        sourceTitle: "The rise of the professional vibe coder",
+        sourceUrl: "https://www.lennysnewsletter.com/p/getting-paid-to-vibe-code",
+      },
+      {
+        lyricText: "Best time to learn to code was years ago",
+        note: "Lazar Jovanovic, the first official 'vibe coding engineer' at Lovable, told Lenny: 'The best time to learn to code was 10 years ago. The second best time is never.' Lovable hit $200M ARR in under a year with fewer than 100 people, many of them non-engineers.",
+        sourceTitle: "The rise of the professional vibe coder",
+        sourceUrl: "https://www.lennysnewsletter.com/p/getting-paid-to-vibe-code",
+      },
+      {
+        lyricText: "A million new builders and they didn't have to wait",
+        note: "Over 500 builders wrote to Lenny saying they'd shipped real products without writing code. Designers building backends, PMs shipping prototypes, founders launching MVPs — the gatekeeping of software creation collapsed almost overnight.",
+        sourceTitle: "What people are vibe coding (and actually using)",
+        sourceUrl: "https://www.lennysnewsletter.com/p/what-people-are-vibe-coding-and-actually",
+      },
+    ],
+  },
+];
+
+const startupLifeTracks: Track[] = [
   {
     slug: "do-things-that-dont-scale",
     title: "Do Things That Don't Scale",
-    albumSlug: "founders",
+    albumSlug: "the-startup-life",
     trackNumber: 1,
     duration: "3:24",
     audioUrl: "/audio/do-things-that-dont-scale.mp3",
@@ -98,7 +1816,7 @@ Physically go to them`,
   {
     slug: "product-market-fit",
     title: "Product-Market Fit (You'll Know)",
-    albumSlug: "founders",
+    albumSlug: "the-startup-life",
     trackNumber: 2,
     duration: "3:38",
     audioUrl: "/audio/product-market-fit.mp3",
@@ -188,7 +1906,7 @@ You'll know`,
   {
     slug: "the-maze",
     title: "The Maze",
-    albumSlug: "founders",
+    albumSlug: "the-startup-life",
     trackNumber: 3,
     duration: "3:45",
     audioUrl: "/audio/the-maze.mp3",
@@ -280,439 +1998,236 @@ The maze is how you find your way`,
       },
     ],
   },
+  {
+    slug: "nobodys-coming",
+    title: "Nobody's Coming",
+    albumSlug: "the-startup-life",
+    trackNumber: 4,
+    duration: "2:42",
+    audioUrl: "/audio/nobodys-coming.mp3",
+    coverImage: "/covers/nobodys-coming.jpg",
+    genre: "Garage Rock",
+    mood: "Scrappy, urgent, triumphant",
+    tags: ["marketplaces", "cold start", "flywheel"],
+    lyrics: "",
+    concept: "The marketplace cold-start problem: every great marketplace started by the founder doing tiny, unscalable things until the flywheel caught on its own.",
+    keyInsight: "Nobody's coming till somebody's here. Every marketplace flywheel starts with the founder going first through the door.",
+    keyQuote: "Nobody's coming till somebody's here.",
+    quoteSpeaker: "Lenny Rachitsky",
+    sources: [
+      { title: "How to Kickstart and Scale a Marketplace Business (8-part series)", type: "newsletter", url: "https://www.lennysnewsletter.com/p/how-to-kickstart-and-scale-a-marketplace", guest: "Lenny Rachitsky" },
+    ],
+    storyBehind: "A founder launches to silence: two empty sides of a marketplace. So they pack a camera, catch a flight, ring doorbells till midnight. Tony Xu dashed food on his own date night. Then one morning, stickers appeared in windows they never placed. The flywheel caught.",
+  },
+  {
+    slug: "not-venture-scale",
+    title: "Not Venture-Scale",
+    albumSlug: "the-startup-life",
+    trackNumber: 5,
+    duration: "2:44",
+    audioUrl: "/audio/not-venture-scale.mp3",
+    coverImage: "/covers/not-venture-scale.jpg",
+    genre: "Indie Folk-Rock",
+    mood: "Defiant, bittersweet, warm",
+    tags: ["bootstrapping", "independence", "founder identity"],
+    lyrics: "",
+    concept: "The case for building a business that's 'not venture-scale,' choosing independence and ownership over the unicorn treadmill.",
+    keyInsight: "Not every fire needs to be the sun. You can build a real, profitable business that a VC would pass on and own every cent of it.",
+    keyQuote: "They want a unicorn. I built a home.",
+    quoteSpeaker: "Narrative voice",
+    sources: [
+      { title: "Jason Fried challenges your thinking on fundraising, goals, growth, and more", type: "podcast", url: "https://www.lennyspodcast.com/jason-fried-challenges-your-thinking-on-fundraising-goals-growth-and-more/", guest: "Jason Fried" },
+    ],
+    storyBehind: "Three characters: the founder rejected by a VC at slide eleven, the buddy who took the money and ended up on a golden treadmill owning 10% of what was once his, and Patrick Campbell who bootstrapped to $200M, sold it all, and still whispered 'left a billion on the table.'",
+  },
+  {
+    slug: "smile-through-the-silence",
+    title: "Smile Through the Silence",
+    albumSlug: "the-startup-life",
+    trackNumber: 6,
+    duration: "4:14",
+    audioUrl: "/audio/smile-through-the-silence.mp3",
+    coverImage: "/covers/smile-through-the-silence.jpg",
+    genre: "Piano-Driven Indie Folk",
+    mood: "Intimate, building, bittersweet",
+    tags: ["fundraising", "rejection", "founder loneliness"],
+    lyrics: "",
+    concept: "The brutal asymmetry of fundraising: VCs do this every Tuesday, founders do this once in their life.",
+    keyInsight: "The power asymmetry of fundraising is devastating: they do this every Tuesday, you do this once in your life. But someone believing in you can change everything.",
+    keyQuote: "Fundraising is incredibly opaque, asymmetrical, and is often the difference between having a company and not.",
+    quoteSpeaker: "Marc McCabe",
+    sources: [
+      { title: "A playbook for fundraising", type: "newsletter", url: "https://www.lennysnewsletter.com/p/a-playbook-for-fundraising", guest: "Marc McCabe" },
+    ],
+    storyBehind: "A founder carves slides at 2AM, pitches to the mirror, melts through 8 months of runway. Five pitches a day for two straight weeks, warm handshakes then silence. Then one VC leans in and asks about the dream, not the deck.",
+  },
+  {
+    slug: "push-the-car",
+    title: "Push the Car",
+    albumSlug: "the-startup-life",
+    trackNumber: 7,
+    duration: "3:08",
+    audioUrl: "/audio/push-the-car.mp3",
+    coverImage: "/covers/push-the-car.jpg",
+    genre: "Acoustic Indie Folk",
+    mood: "Melancholic, raw, resolute",
+    tags: ["failure", "traction", "founder delusion"],
+    lyrics: "",
+    concept: "Two stories of startups that didn't make it: one that couldn't get real traction despite great credentials, and one that tore down its walls going freemium.",
+    keyInsight: "If your product only moves when you're pushing it, it was never alive. The hardest thing is figuring out whether the crowd is rooting for you or for the car.",
+    keyQuote: "Don't confuse people rooting for you with market signal.",
+    quoteSpeaker: "Jake Fuentes",
+    sources: [
+      { title: "Lessons learned from a startup that didn't make it", type: "newsletter", url: "https://www.lennysnewsletter.com/p/lessons-learned-from-a-startup-that", guest: "Jake Fuentes" },
+    ],
+    storyBehind: "Five million raised, a team of ten, repeat founders. But no one switched their systems in. On a quiet night, the founder let go and the car stopped beneath a yellow light. The crowd was cheering for the founders, not the product.",
+  },
+  {
+    slug: "its-never-going-well",
+    title: "It's Never Going Well",
+    albumSlug: "the-startup-life",
+    trackNumber: 8,
+    duration: "3:22",
+    audioUrl: "/audio/its-never-going-well.mp3",
+    coverImage: "/covers/its-never-going-well.jpg",
+    genre: "Indie Folk Anthem",
+    mood: "Vulnerable, communal, defiant",
+    tags: ["founder struggle", "vulnerability", "resilience"],
+    lyrics: "",
+    concept: "Gustaf Alstromer's lessons from 600+ YC startups: the universal founder experience of struggle, vulnerability, and building anyway.",
+    keyInsight: "The worst part of struggling isn't failing. It's thinking it's only you. Shared vulnerability unlocks resilience.",
+    keyQuote: "When you ask a founder 'how are things going?' — it's never going well. All founders, when they look each other in the eyes, know that's not the answer.",
+    quoteSpeaker: "Gustaf Alstromer",
+    sources: [
+      { title: "Lessons from 600+ YC startups", type: "podcast", url: "https://www.lennyspodcast.com/lessons-from-working-with-600-yc-startups-gustaf-alstromer-y-combinator-airbnb/", guest: "Gustaf Alstromer" },
+    ],
+    storyBehind: "Someone asks how it's going. You freeze, then smile. In a YC group session, Gustaf says forget your pitch, just tell us everything. She goes first, voice shaking: 'No traction and we're out of cash.' Something in your chest breaks open, because yours sounds just like that.",
+  },
 ];
 
-const productTracks: Track[] = [
+const theTalentSearchTracks: Track[] = [
+];
+
+const theInterviewTracks: Track[] = [
   {
-    slug: "taste",
-    title: "Taste",
-    albumSlug: "product",
+    slug: "dont-give-em-your-number",
+    title: "Don't Give 'Em Your Number",
+    albumSlug: "the-interview",
     trackNumber: 1,
-    duration: "3:18",
-    audioUrl: "/audio/taste.mp3",
-    coverImage: "/covers/taste.jpg",
-    genre: "Jazz Pop",
-    mood: "When you know something's off but can't explain why",
-    tags: ["craft", "design intuition"],
+    duration: "3:08",
+    audioUrl: "/audio/dont-give-em-your-number.mp3",
+    coverImage: "/covers/dont-give-em-your-number.jpg",
+    genre: "Gospel-Soul Anthem",
+    mood: "Defiant, empowering, swagger",
+    tags: ["salary negotiation", "self-advocacy", "knowing your worth"],
+    lyrics: "",
+    concept: "The rules of salary negotiation: never give your number first, let silence do the talking, understand the game is designed to keep you quiet.",
+    keyInsight: "The salary negotiation game has rules, and once you learn them, you stop leaving money on the table.",
+    keyQuote: "Every recruiter will ask about your salary expectations. Do not — I repeat, do not — give them a number.",
+    quoteSpeaker: "Niya Dragova",
+    sources: [
+      { title: "The 10 commandments of salary negotiation", type: "newsletter", url: "https://www.lennysnewsletter.com/p/negotiating-comp", guest: "Niya Dragova" },
+    ],
+    storyBehind: "Rehearsed lines in the parking lot, walked in steady, then she leaned across the table and asked 'what's your number?' Mouth went dry. The system is built to keep you quiet, grateful, and small enough to say 'that's great.'",
+  },
+];
+
+const deepWorkTracks: Track[] = [
+  {
+    slug: "good-enough",
+    title: "Good Enough",
+    albumSlug: "deep-work",
+    trackNumber: 1,
+    duration: "2:43",
+    audioUrl: "/audio/good-enough.mp3",
+    coverImage: "/covers/good-enough.jpg",
+    genre: "Indie Pop",
+    mood: "Urgent, liberating, cathartic",
+    tags: ["prioritization", "perfectionism", "leverage"],
     lyrics: `[Verse 1]
-The numbers say it's fine, the chart looks great
-Adoption's up, engagement's pulling weight
-But something in the corner of the screen
-Is half a pixel off from what I mean
-I couldn't tell you why — it just feels wrong
-Like hearing someone play the right note on the wrong song
+Three years at Google, couldn't sleep
+The list grew longer every week
+Came home and told her every night
+"I worked all day and nothing's right"
+Spent an hour on notes nobody read
+Same fire for what moved and what was dead
 
 [Chorus]
-It's taste — can't put it in a deck
-It's taste — the thing you can't connect
-To frameworks or to data or OKRs
-It's knowing what the user never asks for
-Taste is saying no to good ideas
-And holding out through all the noise and fears
-The data told me no
-The user's face told me yes
-That's taste
+Good enough, good enough
+Not every task deserves my blood
+The list won't love me back
+No matter how I bleed for that
+L-N-O, now I know
+Where to pour and where to let go
 
 [Verse 2]
-She walked me through the prototype last night
-Said every interaction felt too tight
-I said, "But look, the metrics don't complain"
-She said, "The metrics miss the human pain"
-Pattern recognition plus the empathy
-To see the thing that isn't there but needs to be
+Found a blog post, never found again
+But those words cut the noise inside my head
+Some work comes back at ten for one
+The rest is overhead — just get it done
+The notes that shape a CEO's next call?
+Two hours. But the standup? Send, that's all
 
-[Chorus]
-It's taste — can't put it in a deck
-It's taste — the thing you can't connect
-To frameworks or to data or OKRs
-It's knowing what the user never asks for
-Taste is saying no to good ideas
-And holding out through all the noise and fears
-The data told me no
-The user's face told me yes
-That's taste
+[Chorus 2]
+Good enough, good enough
+Not everything deserves my love
+The list won't love me back
+The overhead can have enough
+L-N-O, now I know
+Which to hold and which to let go
+
+[Bridge]
+"Next month I'll finally have the time"
+"Next month I'll work on what is mine"
+Next month showed up with fires of its own
+Same lie I told in a different tone
+I stopped asking "when"
+And started asking "which"
+
+[Final Chorus]
+Good enough, good enough
+I don't owe perfection every time
+The list won't love me back
+But the leverage work? That's where I shine
+L-N-O, now I go
+With the fire for what makes me grow
 
 [Outro]
-You know it when you see it
-But you feel it first
-That's taste`,
-    concept: "Based on Shreyas Doshi's episode on product sense and taste. Scott Belsky's rule: 'In the first 30 seconds, your user is lazy, vain, and selfish.' Taste is pattern recognition plus empathy: seeing what isn't there but needs to be.",
-    keyInsight: "Product sense is pattern recognition plus empathy. Taste is the ability to say no to good ideas.",
-    sources: [
-      { title: "Shreyas Doshi on product sense", type: "podcast", url: "https://www.lennysnewsletter.com/p/episode-3-shreyas-doshi", guest: "Shreyas Doshi" },
-      { title: "Brian Chesky on detail obsession", type: "podcast", url: "https://www.lennyspodcast.com/brian-cheskys-new-playbook/", guest: "Brian Chesky" },
-    ],
-    keyQuote: "Taste is saying no to good ideas.",
+Not every task you own
+Deserves the you that can't sleep at night
+Good enough... is enough`,
+    concept: "Shreyas Doshi's LNO Framework: categorizing tasks as Leverage, Neutral, or Overhead, and giving yourself permission to do overhead tasks at 'good enough.'",
+    keyInsight: "Not every task deserves your best. The list won't love you back. Stop asking 'when will I have time?' and start asking 'which tasks deserve my full effort?'",
+    keyQuote: "All your tasks are not created equal. Many ambitious people treat each type the same way, and therein lies the problem.",
     quoteSpeaker: "Shreyas Doshi",
-    storyBehind: "Shreyas Doshi's conversation with Lenny about product sense became one of the most-shared episodes in the archive. He argued that taste isn't some mystical gift. It's pattern recognition plus empathy, built through thousands of hours of watching real users struggle. Scott Belsky added another layer: 'In the first 30 seconds, your user is lazy, vain, and selfish.' The best product people aren't the ones with the most data. They're the ones who can feel when something's off before anyone can explain why.",
-    annotations: [
-      {
-        lyricText: "Is half a pixel off from what I mean",
-        note: "Brian Chesky told Lenny he obsesses over details down to individual pixels. He reviews every screen personally and has been known to send designers back to fix sub-pixel alignment issues that most people would never notice.",
-        sourceTitle: "Brian Chesky on detail obsession",
-        sourceUrl: "https://www.lennyspodcast.com/brian-cheskys-new-playbook/",
-      },
-      {
-        lyricText: "Pattern recognition plus the empathy",
-        note: "Shreyas Doshi defined product sense on Lenny's podcast as 'pattern recognition plus empathy.' It's not intuition — it's thousands of hours of watching real users struggle, compressed into a feeling that fires before conscious analysis.",
-        sourceTitle: "Shreyas Doshi on product sense",
-        sourceUrl: "https://www.lennysnewsletter.com/p/episode-3-shreyas-doshi",
-      },
-      {
-        lyricText: "Taste is saying no to good ideas",
-        note: "Shreyas argued that the hardest part of taste is rejection. Most ideas that cross your desk are good. Taste is knowing which good ideas to say no to, so you can say yes to the great ones.",
-        sourceTitle: "Shreyas Doshi on product sense",
-        sourceUrl: "https://www.lennysnewsletter.com/p/episode-3-shreyas-doshi",
-      },
-      {
-        lyricText: "The metrics miss the human pain",
-        note: "A core theme across Lenny's archive: metrics capture behavior but miss emotion. Shreyas Doshi warns that over-indexing on data leads to products that are technically successful but emotionally empty.",
-        sourceTitle: "Shreyas Doshi on product sense",
-        sourceUrl: "https://www.lennysnewsletter.com/p/episode-3-shreyas-doshi",
-      },
-    ],
-  },
-  {
-    slug: "eleven-stars",
-    title: "Eleven Stars",
-    albumSlug: "product",
-    trackNumber: 2,
-    duration: "3:12",
-    audioUrl: "/audio/eleven-stars.mp3",
-    coverImage: "/covers/eleven-stars.jpg",
-    genre: "Cinematic Folk",
-    mood: "Dream absurd, then design the room",
-    tags: ["ambition", "vision", "inspiration"],
-    lyrics: `[Verse 1]
-A one-star stay is sleeping on the floor
-A three-star stay — you get a key and door
-A five-star night, the sheets are pressed and clean
-But what's a six? What does a seven mean?
-An eight, you've got a bottle and a note
-A nine, the host already learned your favorite coat
-
-[Chorus]
-What would eleven stars look like?
-What would eleven stars feel like?
-Elon picks you up in a rocket to the moon
-The last ten percent is ninety percent of the magic
-So dream absurd and then design the room
-Eleven stars, eleven stars
-
-[Verse 2]
-You start where gravity can't hold you down
-Imagining what can't exist in town
-Then work it backwards, what's the version here
-That keeps the wonder but removes the fear?
-Craft is caring 'bout the things they'll never
-Consciously notice, but they'll feel forever
-
-[Chorus]
-What would eleven stars look like?
-What would eleven stars feel like?
-Elon picks you up in a rocket to the moon
-The last ten percent is ninety percent of the magic
-So dream absurd and then design the room
-Eleven stars, eleven stars
-
-[Outro]
-Don't think ten percent better
-Think ten stars further
-Then come back down to Earth
-With something worth the work
-Eleven stars`,
-    concept: "Based on Brian Chesky's episode, Lenny's most listened-to episode, which took him a full year to land. Chesky's 11-star framework: at 11 stars, Elon picks you up in a rocket. Dream absurd, then design the room.",
-    keyInsight: "The last 10% is 90% of the magic. Start with an impossibly ambitious vision and work backwards to what's buildable.",
     sources: [
-      { title: "Brian Chesky on the 11-star framework", type: "podcast", url: "https://www.lennyspodcast.com/brian-cheskys-new-playbook/", guest: "Brian Chesky" },
+      { title: "4 questions Shreyas Doshi wishes he'd asked himself sooner", type: "podcast", url: "https://www.lennyspodcast.com/shreyas-doshi-4-questions/", guest: "Shreyas Doshi" },
     ],
-    keyQuote: "What would a 10-star experience look like? Now what about 11?",
-    quoteSpeaker: "Brian Chesky",
-    storyBehind: "It took Lenny a full year to land the Brian Chesky interview, and it became his most-listened-to episode ever. Chesky walked through the 11-star framework live: a 1-star Airbnb stay is sleeping on the floor, 5 stars is a nice clean place, and by 11 stars, Elon Musk picks you up in a rocket to the moon. The genius is that you're not supposed to build the 11-star version. You're supposed to dream absurd so that when you come back down to a 6 or 7, it still feels magical. 'The last 10% is 90% of the magic.'",
+    storyBehind: "Three years at Google, Shreyas couldn't sleep. The list grew longer every week. He found a blog post that cut the noise: some work returns 10x, the rest is overhead. The standup notes nobody reads? Send, that's all. The notes that shape a CEO's next call? Two hours. Good enough is enough.",
     annotations: [
       {
-        lyricText: "Elon picks you up in a rocket to the moon",
-        note: "Chesky's actual example on Lenny's podcast: at 11 stars, Elon Musk personally picks you up in a rocket and takes you to the moon. The point is to dream so absurdly big that when you scale back to a 6 or 7, it still feels magical.",
-        sourceTitle: "Brian Chesky on the 11-star framework",
-        sourceUrl: "https://www.lennyspodcast.com/brian-cheskys-new-playbook/",
+        lyricText: "Three years at Google, couldn't sleep",
+        note: "Shreyas Doshi told Lenny about his early years at Google where he treated every task with the same intensity. He'd come home exhausted telling his wife 'I worked all day and nothing's right' — because he was giving overhead tasks the same energy as leverage tasks.",
+        sourceTitle: "4 questions Shreyas Doshi wishes he'd asked himself sooner",
+        sourceUrl: "https://www.lennyspodcast.com/shreyas-doshi-4-questions/",
       },
       {
-        lyricText: "The last ten percent is ninety percent of the magic",
-        note: "One of Chesky's most quoted lines from the episode. Most teams ship at 90% done. Chesky argues the final 10% — the polish, the details, the delight — is where 90% of the magic lives.",
-        sourceTitle: "Brian Chesky on the 11-star framework",
-        sourceUrl: "https://www.lennyspodcast.com/brian-cheskys-new-playbook/",
+        lyricText: "L-N-O, now I know",
+        note: "The LNO Framework: Leverage tasks (10x return on effort — prep for a CEO meeting), Neutral tasks (1x return — regular work), Overhead tasks (necessary but low-return — status updates, expense reports). Doshi's insight: do L tasks at 100%, N at 80%, O at 'good enough.'",
+        sourceTitle: "4 questions Shreyas Doshi wishes he'd asked himself sooner",
+        sourceUrl: "https://www.lennyspodcast.com/shreyas-doshi-4-questions/",
       },
       {
-        lyricText: "A one-star stay is sleeping on the floor",
-        note: "Chesky walked Lenny through the framework step by step: 1 star is sleeping on the floor, 3 stars is a key and a door, 5 stars is a great hotel experience. Then he kept going — what's 6? 7? 8? Each level forced more creative thinking.",
-        sourceTitle: "Brian Chesky on the 11-star framework",
-        sourceUrl: "https://www.lennyspodcast.com/brian-cheskys-new-playbook/",
+        lyricText: "Next month I'll finally have the time",
+        note: "Doshi told Lenny this is the most dangerous lie ambitious people tell themselves. 'Next month' never comes with fewer fires. The breakthrough is switching from 'when will I have time?' to 'which tasks deserve my full effort?' — a question of allocation, not availability.",
+        sourceTitle: "4 questions Shreyas Doshi wishes he'd asked himself sooner",
+        sourceUrl: "https://www.lennyspodcast.com/shreyas-doshi-4-questions/",
       },
       {
-        lyricText: "Craft is caring 'bout the things they'll never",
-        note: "Chesky believes great products are built by people who care about details users will never consciously notice — but will feel. This philosophy drove Airbnb's design-led culture and its obsessive attention to host and guest experience.",
-        sourceTitle: "Brian Chesky on the 11-star framework",
-        sourceUrl: "https://www.lennyspodcast.com/brian-cheskys-new-playbook/",
-      },
-    ],
-  },
-  {
-    slug: "talk-to-users",
-    title: "Talk to Users",
-    albumSlug: "product",
-    trackNumber: 3,
-    duration: "3:05",
-    audioUrl: "/audio/talk-to-users.mp3",
-    coverImage: "/covers/talk-to-users.jpg",
-    genre: "Acoustic Pop",
-    mood: "One conversation can save you six months",
-    tags: ["customer discovery", "empathy"],
-    lyrics: `[Verse 1]
-We built a survey, sent it to a list
-Analyzed the data, nothing we had missed
-Color-coded dashboards, segments, cohort views
-But somehow every launch still missed the cues
-There's a simpler answer, it's been here all along
-You're reading sheet music but you've never heard the song
-
-[Chorus]
-Talk to your users
-Sit with them, listen, watch them try
-Talk to your users
-One conversation saves you months of why
-You're not your user
-You're not your user
-Go sit with them
-
-[Verse 2]
-She watched him struggle on the second screen
-Clicking where the button should have been
-Five minutes told her more than months of charts
-The gap between the data and their hearts
-Continuous discovery, week by week
-The answers aren't in Slack, they're down the street
-
-[Chorus]
-Talk to your users
-Sit with them, listen, watch them try
-Talk to your users
-One conversation saves you months of why
-You're not your user
-You're not your user
-Go sit with them
-
-[Outro]
-One conversation
-Can save you six months
-Talk to your users
-Go sit with them`,
-    concept: "Based on Teresa Torres' episode on continuous discovery habits, the #1 most recommended book in Lenny's Slack community. She's trained 11,000+ students. Her rule: one user interview per week, every week.",
-    keyInsight: "One conversation can save you six months. You're not your user. Go sit with them.",
-    sources: [
-      { title: "Teresa Torres on continuous discovery", type: "podcast", url: "https://www.lennyspodcast.com/teresa-torres-on-how-to-interview-customers-automating-continuous-discovery-the-opportunity-solution-tree-framework-making-the-case-for-user-research-common-interviewing-mistakes-and-much-more/", guest: "Teresa Torres" },
-      { title: "Gustaf Alstromer on talking to users", type: "podcast", url: "https://www.lennyspodcast.com/lessons-from-working-with-600-yc-startups-gustaf-alstromer-y-combinator-airbnb/", guest: "Gustaf Alstromer" },
-    ],
-    keyQuote: "One conversation can save you six months.",
-    quoteSpeaker: "Teresa Torres",
-    storyBehind: "Teresa Torres' book 'Continuous Discovery Habits' became the #1 most recommended book in Lenny's Slack community. On the podcast, she shared that she's trained over 11,000 product people, and the single most impactful habit is dead simple: one user interview per week, every week. Not quarterly research sprints, not annual surveys, just weekly conversations. Gustaf Alstromer from YC reinforced it: most product failures trace back to building in a vacuum. The answers aren't in your Slack channels, they're down the street.",
-    annotations: [
-      {
-        lyricText: "Color-coded dashboards, segments, cohort views",
-        note: "Teresa Torres argues that teams over-rely on quantitative data while skipping the qualitative discovery that reveals why users behave the way they do. Dashboards show what's happening, but only conversations reveal the 'why.'",
-        sourceTitle: "Teresa Torres on continuous discovery",
-        sourceUrl: "https://www.lennyspodcast.com/teresa-torres-on-how-to-interview-customers-automating-continuous-discovery-the-opportunity-solution-tree-framework-making-the-case-for-user-research-common-interviewing-mistakes-and-much-more/",
-      },
-      {
-        lyricText: "Five minutes told her more than months of charts",
-        note: "Torres' core teaching: watching a single user try to complete a task for five minutes reveals usability gaps that no amount of analytics can surface. She calls this the 'experience gap' between what teams think users do and what actually happens.",
-        sourceTitle: "Teresa Torres on continuous discovery",
-        sourceUrl: "https://www.lennyspodcast.com/teresa-torres-on-how-to-interview-customers-automating-continuous-discovery-the-opportunity-solution-tree-framework-making-the-case-for-user-research-common-interviewing-mistakes-and-much-more/",
-      },
-      {
-        lyricText: "Continuous discovery, week by week",
-        note: "Torres' signature framework: one user interview per week, every week, no exceptions. Not quarterly research sprints or annual surveys. She's trained over 11,000 product people on this habit, making it the #1 recommended practice in Lenny's Slack community.",
-        sourceTitle: "Teresa Torres on continuous discovery",
-        sourceUrl: "https://www.lennyspodcast.com/teresa-torres-on-how-to-interview-customers-automating-continuous-discovery-the-opportunity-solution-tree-framework-making-the-case-for-user-research-common-interviewing-mistakes-and-much-more/",
-      },
-      {
-        lyricText: "The answers aren't in Slack, they're down the street",
-        note: "Gustaf Alstromer from YC told Lenny that most product failures at YC startups trace back to building in a vacuum. Teams debate features in Slack channels instead of walking down the street to talk to actual users.",
-        sourceTitle: "Gustaf Alstromer on talking to users",
-        sourceUrl: "https://www.lennyspodcast.com/lessons-from-working-with-600-yc-startups-gustaf-alstromer-y-combinator-airbnb/",
-      },
-    ],
-  },
-];
-
-const buildersTracks: Track[] = [
-  {
-    slug: "ship-it",
-    title: "Ship It",
-    albumSlug: "builders",
-    trackNumber: 1,
-    duration: "3:30",
-    audioUrl: "/audio/ship-it.mp3",
-    coverImage: "/covers/ship-it.jpg",
-    genre: "Lo-Fi Hip Hop",
-    mood: "Stop planning. Start shipping.",
-    tags: ["motivation", "velocity"],
-    lyrics: `[Verse 1]
-Another standup, another blocker filed
-Another sprint review where nothing's compiled
-The backlog's deep, the roadmap's three years wide
-But nothing's real until it's on the outside
-You polish, you refine, you hold it close
-Afraid the world might see the version that's the most
-Honest thing you've ever made — so let it go
-Speed is not reckless, speed is how you show you care
-
-[Chorus]
-Ship it, ship it, let it breathe
-If you're not embarrassed, you waited too long to leave
-Ship it, ship it, hit the key
-The best PMs ship — the rest make decks for free
-Ship it
-
-[Verse 2]
-Rabois said speed's a proxy for the love
-You push it out because the users' time's above
-Your ego and your fear of looking wrong
-A shipped experiment beats a perfect song
-That lives inside your laptop, never heard
-Velocity is just another word
-For giving people what they need today
-Not next quarter, not next year — ship it, no delay
-
-[Chorus]
-Ship it, ship it, let it breathe
-If you're not embarrassed, you waited too long to leave
-Ship it, ship it, hit the key
-The best PMs ship — the rest make decks for free
-Ship it
-
-[Outro]
-Stop planning
-Stop polishing
-Stop asking for one more review
-Ship it`,
-    concept: "Based on Ramp's episode with Geoff Charles. Ramp hit $100M ARR in 2 years, the fastest-growing SaaS ever, with fewer than 5 PMs and 50 engineers. Their mantra: 'Our culture is velocity.'",
-    keyInsight: "Speed is a proxy for how much you care. If you're not embarrassed by v1, you shipped too late.",
-    sources: [
-      { title: "Keith Rabois on speed as competitive advantage (via Ramp episode)", type: "podcast", url: "https://www.lennysnewsletter.com/p/lessons-from-scaling-ramp-sri-batchu", guest: "Keith Rabois" },
-      { title: "Velocity over everything: How Ramp became the fastest-growing SaaS startup", type: "podcast", url: "https://www.lennyspodcast.com/velocity-over-everything-how-ramp-became-the-fastest-growing-saas-startup-of-all-time-geoff-charl/", guest: "Geoff Charles" },
-    ],
-    keyQuote: "If you're not embarrassed by the first version, you shipped too late.",
-    quoteSpeaker: "Reid Hoffman",
-    storyBehind: "Ramp's story blew up on Lenny's podcast. They hit $100M ARR in just 2 years, making them the fastest-growing SaaS company ever, with fewer than 5 PMs and 50 engineers. Their internal mantra was 'our culture is velocity.' Keith Rabois added the framework that stuck: speed isn't reckless, it's a proxy for how much you care about your users' time. Every week you don't ship is a week your users are stuck with a worse version of the thing you already built.",
-    annotations: [
-      {
-        lyricText: "Rabois said speed's a proxy for the love",
-        note: "Keith Rabois shared on Lenny's podcast that shipping speed is the clearest signal of how much a team cares about its users. Every day you delay is a day users are stuck with an inferior experience. He used this principle to push teams at Square, Opendoor, and Ramp.",
-        sourceTitle: "Keith Rabois on speed as competitive advantage (via Ramp episode)",
-        sourceUrl: "https://www.lennysnewsletter.com/p/lessons-from-scaling-ramp-sri-batchu",
-      },
-      {
-        lyricText: "If you're not embarrassed, you waited too long to leave",
-        note: "Reid Hoffman's famous advice, frequently cited on Lenny's podcast: 'If you're not embarrassed by the first version of your product, you've launched too late.' The Ramp team embodied this — shipping fast, learning from users, and iterating in weeks instead of quarters.",
-        sourceTitle: "Velocity over everything: How Ramp became the fastest-growing SaaS startup",
-        sourceUrl: "https://www.lennyspodcast.com/velocity-over-everything-how-ramp-became-the-fastest-growing-saas-startup-of-all-time-geoff-charl/",
-      },
-      {
-        lyricText: "The best PMs ship — the rest make decks for free",
-        note: "Geoff Charles described Ramp's PM culture: fewer than 5 PMs for a $100M ARR company. Instead of roadmap presentations and stakeholder alignment decks, PMs were expected to ship working features. Their hiring filter: 'Can this person ship, or do they just present?'",
-        sourceTitle: "Velocity over everything: How Ramp became the fastest-growing SaaS startup",
-        sourceUrl: "https://www.lennyspodcast.com/velocity-over-everything-how-ramp-became-the-fastest-growing-saas-startup-of-all-time-geoff-charl/",
-      },
-      {
-        lyricText: "A shipped experiment beats a perfect song",
-        note: "Ramp hit $100M ARR in just 2 years with 50 engineers — the fastest-growing SaaS company ever. Their secret wasn't perfection; it was volume of shipped experiments. Geoff Charles told Lenny their culture was 'velocity over everything.'",
-        sourceTitle: "Velocity over everything: How Ramp became the fastest-growing SaaS startup",
-        sourceUrl: "https://www.lennyspodcast.com/velocity-over-everything-how-ramp-became-the-fastest-growing-saas-startup-of-all-time-geoff-charl/",
-      },
-    ],
-  },
-  {
-    slug: "vibe-coding",
-    title: "Vibe Coding",
-    albumSlug: "builders",
-    trackNumber: 2,
-    duration: "3:15",
-    audioUrl: "/audio/vibe-coding.mp3",
-    coverImage: "/covers/vibe-coding.jpg",
-    genre: "Glitch Hop",
-    mood: "Never wrote a line of code, shipped it anyway",
-    tags: ["satire", "comedy", "AI"],
-    lyrics: `[Verse 1]
-Never wrote a line of code before last spring
-Now I'm shipping features, building everything
-Prompt and pray and iterate and test
-Claude and Cursor doing all the rest
-The engineers are sweating, "that's not clean"
-But the users? They don't care what's behind the screen
-
-[Chorus]
-Vibe coding, vibe coding
-Don't read the code, just feel the flow
-Vibe coding, vibe coding
-Ship it before the model gets to know
-That you have no idea what you're doing
-But it works and that's the point
-Vibe coding
-
-[Verse 2]
-Best time to learn to code was years ago
-Second best time? Never — let the models go
-Designers building backends after lunch
-PMs shipping prototypes on a hunch
-Democratized the making, broke the gate
-A million new builders and they didn't have to wait
-
-[Chorus]
-Vibe coding, vibe coding
-Don't read the code, just feel the flow
-Vibe coding, vibe coding
-Ship it before the model gets to know
-That you have no idea what you're doing
-But it works and that's the point
-Vibe coding
-
-[Outro]
-Welcome to the era
-Where everyone can build
-Vibe coding`,
-    concept: "Based on Lazar Jovanovic's episode. The first official 'vibe coding engineer' at Lovable. Lovable hit $200M ARR in under a year with fewer than 100 people. 500+ builders wrote to Lenny saying they shipped products without writing code.",
-    keyInsight: "The best time to learn to code was 10 years ago. The second best time is never. Just vibe code.",
-    sources: [
-      { title: "The rise of the professional vibe coder", type: "podcast", url: "https://www.lennysnewsletter.com/p/getting-paid-to-vibe-code", guest: "Lazar Jovanovic" },
-      { title: "What people are vibe coding (and actually using)", type: "newsletter", url: "https://www.lennysnewsletter.com/p/what-people-are-vibe-coding-and-actually", guest: "Lenny Rachitsky" },
-    ],
-    keyQuote: "I just mass mass accept everything. I don't even look at the diffs. It's not even coding. I just see things, say things, run things, and copy paste things.",
-    quoteSpeaker: "Andrej Karpathy",
-    storyBehind: "Lenny covered the vibe coding revolution as it was happening in real time. Lazar Jovanovic became the first official 'vibe coding engineer' at Lovable, a company that hit $200M ARR in under a year with fewer than 100 people. Over 500 builders wrote to Lenny saying they'd shipped real products without writing a single line of code. Andrej Karpathy coined the term 'vibe coding', fully giving in to the vibes, seeing things appear, and not really caring how the code works. It's the most polarizing topic in Lenny's archive.",
-    annotations: [
-      {
-        lyricText: "Claude and Cursor doing all the rest",
-        note: "Lenny's survey of 500+ vibe coders found Claude and Cursor were the two most-used tools for building without writing code. Builders described a workflow of prompting, previewing, and iterating — never reading the underlying code.",
-        sourceTitle: "What people are vibe coding (and actually using)",
-        sourceUrl: "https://www.lennysnewsletter.com/p/what-people-are-vibe-coding-and-actually",
-      },
-      {
-        lyricText: "Don't read the code, just feel the flow",
-        note: "Andrej Karpathy coined 'vibe coding' in a viral post: 'I just see things, say things, run things, and copy paste things. I don't even look at the diffs.' This became the defining ethos of the movement — trusting the output over understanding the implementation.",
-        sourceTitle: "The rise of the professional vibe coder",
-        sourceUrl: "https://www.lennysnewsletter.com/p/getting-paid-to-vibe-code",
-      },
-      {
-        lyricText: "Best time to learn to code was years ago",
-        note: "Lazar Jovanovic, the first official 'vibe coding engineer' at Lovable, told Lenny: 'The best time to learn to code was 10 years ago. The second best time is never.' Lovable hit $200M ARR in under a year with fewer than 100 people, many of them non-engineers.",
-        sourceTitle: "The rise of the professional vibe coder",
-        sourceUrl: "https://www.lennysnewsletter.com/p/getting-paid-to-vibe-code",
-      },
-      {
-        lyricText: "A million new builders and they didn't have to wait",
-        note: "Over 500 builders wrote to Lenny saying they'd shipped real products without writing code. Designers building backends, PMs shipping prototypes, founders launching MVPs — the gatekeeping of software creation collapsed almost overnight.",
-        sourceTitle: "What people are vibe coding (and actually using)",
-        sourceUrl: "https://www.lennysnewsletter.com/p/what-people-are-vibe-coding-and-actually",
+        lyricText: "Spent an hour on notes nobody read",
+        note: "Doshi's go-to example of overhead disguised as important work: spending an hour perfecting meeting notes that nobody reads. The standup update? Just send it. The notes that shape a CEO's next decision? Those deserve two hours. Knowing the difference is the whole framework.",
+        sourceTitle: "4 questions Shreyas Doshi wishes he'd asked himself sooner",
+        sourceUrl: "https://www.lennyspodcast.com/shreyas-doshi-4-questions/",
       },
     ],
   },
@@ -892,950 +2407,11 @@ You can set it down`,
       },
     ],
   },
-  // IC Track hidden until audio is generated — see content/suno-prompts/the-ic-track.json
-];
-
-// --- Batch 2: Coming Soon albums (locked tracks) ---
-
-const operatorsTracks: Track[] = [
-  {
-    slug: "dont-break-the-streak",
-    title: "Don't Break the Streak",
-    albumSlug: "the-operators",
-    trackNumber: 1,
-    duration: "2:57",
-    audioUrl: "/audio/dont-break-the-streak.mp3",
-    coverImage: "/covers/dont-break-the-streak.jpg",
-    genre: "Acoustic Folk-Pop",
-    mood: "Uplifting, playful, warm urgency",
-    tags: ["gamification", "retention", "compounding growth"],
-    lyrics: `[Verse 1]
-Biggest app in the world, but the line went flat
-Stole a trick from a game — nothing came from that
-Tried referrals next, the Uber play
-Three percent and the doubters had their day
-Two big swings and nothing left to show
-The boardroom's faith was running low
-But somewhere in the numbers, buried deep
-Was a secret only data keeps
-
-[Chorus]
-Don't break the streak, don't let it slip
-One more day and you're in the grip
-Yesterday's you is keeping score
-Come back tomorrow, just once more
-Don't break the streak
-
-[Verse 2]
-They found the number everyone had missed
-Current users — top of every list
-Five times the pull, the model made it clear
-Keep who comes back, year to year to year
-A leaderboard, a buzz at ten PM
-A nudge that says, "This isn't working" — then
-You smile, you swipe, one lesson and that's that
-And tomorrow night it pulls you right back
-
-[Chorus]
-Don't break the streak, don't let it slip
-Day after day, a tighter grip
-The chain gets stronger every time
-Come back tomorrow, you'll be fine
-Don't break the streak
-
-[Bridge]
-It started as a number on a screen
-Now it's four years, no days in between
-Each day you come back, you care a little more
-That's the math they never taught before
-
-[Final Chorus, belted]
-Don't break the streak, don't let it go
-Day fourteen hundred, still in the flow
-Tomorrow's you is counting on today
-Don't walk away, don't walk away
-Don't break the streak
-
-[Outro]
-One more day
-That's all it takes
-One more day`,
-    concept: "Duolingo's growth turnaround by discovering that retaining current users (not acquiring new ones) was the key, leading to the streak mechanic that drives compounding engagement.",
-    keyInsight: "Each day a user comes back, they care a bit more about coming back the next day. Retention compounds into commitment.",
-    keyQuote: "Streaks is the most impactful feature. We have over 9 million users with a year-plus streak.",
-    quoteSpeaker: "Jackson Shuttleworth",
-    sources: [
-      { title: "How Duolingo reignited user growth", type: "newsletter", url: "https://www.lennysnewsletter.com/p/how-duolingo-reignited-user-growth", guest: "Jorge Mazal" },
-      { title: "Behind the product: Duolingo streaks", type: "podcast", url: "https://www.lennyspodcast.com/behind-the-product-duolingo-streaks-jackson-shuttleworth/", guest: "Jackson Shuttleworth" },
-    ],
-    storyBehind: "Duolingo was the biggest language app in the world but growth went flat. They tried gamification and referrals, but both failed. Then they discovered that focusing on current user retention had 5x the impact. The streak mechanic became their flywheel, turning daily returns into deepening commitment. DAU grew 4.5x.",
-    annotations: [
-      {
-        lyricText: "Biggest app in the world, but the line went flat",
-        note: "By mid-2018, Duolingo's daily active users were growing at only a single-digit rate year-over-year — alarming for a company with investors anxious to see fast monetization growth. Jorge Mazal describes this as the moment when leadership realized the explosive growth of Duolingo's early years had stalled despite being the world's most popular education app.",
-        sourceTitle: "How Duolingo reignited user growth",
-        sourceUrl: "https://www.lennysnewsletter.com/p/how-duolingo-reignited-user-growth",
-      },
-      {
-        lyricText: "Tried referrals next, the Uber play\nThree percent",
-        note: "After their first gamification attempt failed (copying a moves counter from the mobile game Gardenscapes), the Duolingo team pivoted to a referral program modeled on Uber's, offering a free month of Super Duolingo. The result: new users increased by only 3%. Jorge calls this period 'back-to-back failures in only a few months' that forced a fundamental rethinking of their growth strategy.",
-        sourceTitle: "How Duolingo reignited user growth",
-        sourceUrl: "https://www.lennysnewsletter.com/p/how-duolingo-reignited-user-growth",
-      },
-      {
-        lyricText: "They found the number everyone had missed\nCurrent users — top of every list\nFive times the pull",
-        note: "The team built a growth model tracking user movement between engagement buckets and ran a sensitivity analysis. CURR — the current user retention rate — had a staggering 5x greater impact on DAU than the second-best metric. Jorge writes: 'We immediately saw that CURR had a gigantic impact on DAU.' This was a huge mindset shift — the company had spent years focused on new-user acquisition.",
-        sourceTitle: "How Duolingo reignited user growth",
-        sourceUrl: "https://www.lennysnewsletter.com/p/how-duolingo-reignited-user-growth",
-      },
-      {
-        lyricText: "A leaderboard, a buzz at ten PM",
-        note: "Two of the Retention Team's biggest wins: competitive leaderboards and the streak-saver notification — a late-night push notification alerting users with active streaks that they're about to lose them. Jorge specifically calls it a 'late-night notification' that 'proved that indeed there was considerable upside to doubling down on streak optimizations.'",
-        sourceTitle: "How Duolingo reignited user growth",
-        sourceUrl: "https://www.lennysnewsletter.com/p/how-duolingo-reignited-user-growth",
-      },
-      {
-        lyricText: "Now it's four years, no days in between",
-        note: "Jorge Mazal writes about meeting a user who told him: 'I have a 1,435-day streak! With no streak freezes!' — almost four years of daily language practice without missing a single day. Jackson Shuttleworth from Duolingo's Retention Team later revealed that over 9 million users now hold a streak of one year or longer. The team has run over 600 experiments on the streak feature alone.",
-        sourceTitle: "How Duolingo reignited user growth",
-        sourceUrl: "https://www.lennysnewsletter.com/p/how-duolingo-reignited-user-growth",
-      },
-    ],
-  },
-  {
-    slug: "im-in-the-room",
-    title: "I'm in the Room",
-    albumSlug: "the-operators",
-    trackNumber: 2,
-    duration: "3:19",
-    audioUrl: "/audio/im-in-the-room.mp3",
-    coverImage: "/covers/im-in-the-room.jpg",
-    genre: "Intimate Acoustic Folk",
-    mood: "Determined, bittersweet, building to conviction",
-    tags: ["founder mode", "leadership", "detail obsession"],
-    lyrics: `[Verse 1]
-I hired every name the board approved
-Gave them keys and gave them room to move
-The roadmap grew, the product lost its soul
-My name was on it but I'd lost control
-"Step back," they said, "that's what good leaders do"
-I trusted — and I watched the vision blur
-
-[Chorus]
-I'm in the room, I'm in the room
-Touch every pixel, read every page
-Call it control — I call it care
-If my name's on the building, I'll be there
-I'm in the room
-
-[Verse 2]
-Then March hit like a hammer on the glass
-The bottom fell — we're bleeding, bleeding fast
-I cut a quarter of the names I'd hired
-Burned the five-year plan, dissolved the tiers
-And in the wreckage, something old came through
-The voice I'd buried said I know what to do
-
-[Chorus]
-I'm in the room, I'm in the room
-Know every detail, own every stage
-Call it obsession — I don't care
-If my name's on the building, I'll be there
-I'm in the room
-
-[Bridge]
-Ten PM, the product review runs late
-My team can't sleep — they're prepping for my weight
-It's great to be in founder mode, they say
-Not as great for those who walk beside me
-But you can't hand off the thing only you feel
-So I'll carry the cost to keep it real
-
-[Final Chorus, belted]
-I'm in the room, I'm in the room
-Not stepping back, not leaving soon
-Tore their playbook down and wrote my own
-If my name's on the building, I'm not gone
-I'm in the room
-
-[Outro]
-They built a church around the thing I'd start
-Then prayed to process till it lost its heart`,
-    concept: "Brian Chesky's journey from delegating to professional managers (and losing the soul of Airbnb) to reclaiming 'founder mode': being deeply involved in every detail.",
-    keyInsight: "You can't hand off the thing only you feel. Embodied knowledge can't be delegated.",
-    keyQuote: "We religiously focused on making sure customers loved us.",
-    quoteSpeaker: "Brian Chesky",
-    sources: [
-      { title: "Brian Chesky's new playbook", type: "podcast", url: "https://www.lennyspodcast.com/brian-cheskys-new-playbook/", guest: "Brian Chesky" },
-    ],
-    storyBehind: "Chesky hired professional managers on the board's advice and stepped back. The product lost its soul. When COVID hit and Airbnb lost 80% of revenue, he cut a quarter of the company, dissolved the layers, and went back to being in every room, but the song also acknowledges the cost to the people around him.",
-    annotations: [
-      {
-        lyricText: "I hired every name the board approved",
-        note: "Chesky followed the conventional Silicon Valley playbook: hire experienced executives, delegate authority, build management layers, and step back. Ben Horowitz later told Lenny: 'He had screwed every one of those things up — hired LT and all this stuff — and these are very senior people and he wanted to defer to them, but you can't defer as the CEO because you know what Airbnb should be doing.'",
-        sourceTitle: "Brian Chesky's new playbook (via Ben Horowitz, Sanchan Saxena)",
-        sourceUrl: "https://www.lennyspodcast.com/sanchan-saxena/",
-      },
-      {
-        lyricText: "Then March hit like a hammer on the glass",
-        note: "In March 2020, global travel stopped overnight. Sanchan Saxena (then VP of Product at Airbnb) describes the moment on Lenny's Podcast: 'We start predicting that our revenue will be 7, 10, some ridiculous very small percent of last year's. There's panic.' Every day a new country would close its borders.",
-        sourceTitle: "Sanchan Saxena on the inside story of how Airbnb made it through Covid",
-        sourceUrl: "https://www.lennyspodcast.com/sanchan-saxena/",
-      },
-      {
-        lyricText: "I cut a quarter of the names I'd hired\nBurned the five-year plan, dissolved the tiers",
-        note: "Airbnb laid off roughly 25% of its workforce during COVID. All sub-teams were dissolved, long-term roadmaps were scrapped, and the company moved to two-week planning cycles. Greg Greeley described the pivot: 'Can't plan for a year, can't plan for a quarter. We're going to plan every two weeks.' Chesky studied the Apple/Steve Jobs playbook and restructured around founder-led, design-driven product reviews.",
-        sourceTitle: "Sanchan Saxena on Airbnb through COVID",
-        sourceUrl: "https://www.lennyspodcast.com/sanchan-saxena/",
-      },
-      {
-        lyricText: "Ten PM, the product review runs late",
-        note: "Chip Conley — Chesky's mentor who joined Airbnb at age 52 — described what it was like: 'Brian assumed everybody else was going to work at the same pace and duration. His point of view is like, \"Hey, we're having a meeting in the office tonight at 10 o'clock, be there.\"' He adds that people 'wouldn't sleep in anticipation' of product reviews with Brian.",
-        sourceTitle: "Brian Chesky's secret mentor | Chip Conley",
-        sourceUrl: "https://www.lennyspodcast.com/chip-conley/",
-      },
-      {
-        lyricText: "They built a church around the thing I'd start\nThen prayed to process till it lost its heart",
-        note: "This couplet crystallizes Chesky's core diagnosis: as Airbnb scaled, process replaced passion. Lenny Rachitsky, who worked at Airbnb for seven years, observed this firsthand. He later summarized the tension: 'It's great to be in founder mode. It's not as great to be working for someone in founder mode.' Chesky's talk at a YC retreat about reclaiming control coined the term 'founder mode.'",
-        sourceTitle: "Brian Chesky's new playbook",
-        sourceUrl: "https://www.lennyspodcast.com/chip-conley/",
-      },
-    ],
-  },
-  {
-    slug: "build-the-machine",
-    title: "Build the Machine",
-    albumSlug: "the-operators",
-    trackNumber: 3,
-    duration: "3:07",
-    audioUrl: "/audio/build-the-machine.mp3",
-    coverImage: "/covers/build-the-machine.jpg",
-    genre: "Neo-Soul",
-    mood: "Determined, quietly proud, sophisticated",
-    tags: ["scaling", "operations", "invisible leadership"],
-    lyrics: `[Verse 1]
-She ran the numbers, morning two
-Tickets piled like dishes in the sink
-"We need twice the people on this floor"
-The room went quiet — no one liked the score
-
-She'd ridden rockets once before
-Knew the sound before the engine roars
-
-[Chorus]
-Build the machine that builds the dream
-Hold the line that no one ever sees
-Write it down, and don't get stuck
-If you don't know who decides — it's you
-
-[Verse 2]
-She called around — "When'd you add the levels?"
-One said "bloodbath." One said "way too late"
-Spun a wheel, a random team stood up
-No rehearsal — show us what you've made
-Progress, impact, momentum on the wall
-A hundred small decisions before nightfall
-
-[Chorus]
-Build the machine that builds the dream
-She built the engine while they built the name
-Write it down, and don't get stuck
-Progress, impact, momentum — us
-
-[Bridge]
-They celebrate the product and the name
-The headline and the billion-dollar fame
-But someone poured the foundation in the dark
-Someone wired the walls before the spark
-John said, "We need Claire in a box"
-She laughed — then wrote the book
-
-[Final Chorus]
-Build the machine that builds the dream
-Seven thousand strong and still it's clean
-Write it down, and don't get stuck
-The decision-maker's always us
-
-[Outro]
-Someone's gotta build the house
-While the rest just talk about the view`,
-    concept: "Claire Hughes Johnson's invisible, indispensable work scaling Stripe from early stage to 7,000 people: the operator who builds the infrastructure while founders get the headlines.",
-    keyInsight: "Behind every celebrated product is someone who poured the foundation in the dark. The decision-maker is always the person who steps up.",
-    keyQuote: "Product-market fit is just the product. That is not a company, and that will not scale.",
-    quoteSpeaker: "Claire Hughes Johnson",
-    sources: [
-      { title: "Lessons from scaling Stripe", type: "podcast", url: "https://www.lennyspodcast.com/lessons-from-scaling-stripe-claire-hughes-johnson/", guest: "Claire Hughes Johnson" },
-    ],
-    storyBehind: "Claire walked into Stripe, assessed the chaos, and built the machine - systems, processes, decision frameworks - that allowed Stripe to scale from 160 to 7,000 people. John Collison said 'We need Claire in a box.' She laughed, then wrote the book.",
-    annotations: [
-      {
-        lyricText: "She'd ridden rockets once before",
-        note: "Claire spent nearly 11 years at Google, joining when it was ~1,800 people pre-IPO and leaving at 60,000. She held eight different jobs there — VP of self-driving cars, VP of global online sales, director of ops for Gmail, YouTube, and AdWords. As she tells Lenny: 'I had eight different jobs while I was there.' She joined Stripe at about 160 people.",
-        sourceTitle: "Lessons from scaling Stripe | Claire Hughes Johnson",
-        sourceUrl: "https://www.lennyspodcast.com/lessons-from-scaling-stripe-claire-hughes-johnson-ex-coo-of-stripe/",
-      },
-      {
-        lyricText: "She called around — 'When'd you add the levels?'",
-        note: "When Stripe needed job levels and career ladders, Claire called other companies. One person said it was a 'bloodbath,' another said 'I'm so impressed that you're doing that so early. We waited too long.' One company waited until 800 people and regretted it. Claire tells Lenny: 'Putting in levels and ladders felt like ripping the band-aid off, honestly, but I was glad.'",
-        sourceTitle: "Lessons from scaling Stripe | Claire Hughes Johnson",
-        sourceUrl: "https://www.lennyspodcast.com/lessons-from-scaling-stripe-claire-hughes-johnson-ex-coo-of-stripe/",
-      },
-      {
-        lyricText: "John said, 'We need Claire in a box'\nShe laughed — then wrote the book",
-        note: "This is a real quote. John Collison would travel to meet customers and founders who constantly asked how Stripe scaled. He'd joke to Claire: 'We need Claire in a box.' Her book Scaling People is literally that box. Patrick Collison separately pushed her toward it after a chapter she wrote for Elad Gil's High Growth Handbook gained unexpected traction. Lenny calls it 'incredible' and says it 'should be and likely will be on every founder's bookshelf.'",
-        sourceTitle: "Lessons from scaling Stripe | Claire Hughes Johnson",
-        sourceUrl: "https://www.lennyspodcast.com/lessons-from-scaling-stripe-claire-hughes-johnson-ex-coo-of-stripe/",
-      },
-      {
-        lyricText: "Seven thousand strong and still it's clean",
-        note: "Claire joined Stripe at ~160 people and helped scale it past 7,000. She tells Lenny: 'What's crystallized is how much work it is to build a company.' Her opening line on the podcast captures her philosophy: 'If you're not sure who the decision maker is, it's probably you. I'd rather you act that way than not, because you're going to slow the whole company down.'",
-        sourceTitle: "Lessons from scaling Stripe | Claire Hughes Johnson",
-        sourceUrl: "https://www.lennyspodcast.com/lessons-from-scaling-stripe-claire-hughes-johnson-ex-coo-of-stripe/",
-      },
-    ],
-  },
-  {
-    slug: "doesnt-feel-right-yet",
-    title: "Doesn't Feel Right Yet",
-    albumSlug: "the-operators",
-    trackNumber: 4,
-    duration: "3:14",
-    audioUrl: "/audio/doesnt-feel-right-yet.mp3",
-    coverImage: "/covers/doesnt-feel-right-yet.jpg",
-    genre: "Indie Folk-Pop",
-    mood: "Precise, cathartic, dreamy conviction",
-    tags: ["craft", "taste", "product quality"],
-    lyrics: `[Verse 1]
-Every tool I touched was made by strangers
-Built by people who would never use the thing
-Fourteen menus deep to move a ticket
-Dashboards glowing, nobody was listening
-A designer staring at a broken system
-Said "I'm done pretending this is fine"
-
-[Chorus]
-Doesn't feel right yet — hold the launch
-Doesn't feel right yet — take it back
-No one's gonna tell me when it's done
-I'll know it when the last detail feels won
-Doesn't feel right yet
-And that's fine
-
-[Verse 2]
-Fifty people, two have ever left us
-More cash in the bank than the VCs gave
-No one translates the vision into tickets
-The builders and the dreamers are the same
-They said "you need a roadmap and a process"
-We said "we need a window and some taste"
-
-[Chorus]
-Doesn't feel right yet — hold the launch
-Doesn't feel right yet — bring it back
-The fastest teams in tech all found our door
-Not 'cause we were loud — 'cause we were sure
-Doesn't feel right yet
-Now it does
-
-[Bridge]
-They use the data like a safety net
-Afraid to make the call, afraid to bet
-On what their hands can feel, on what they know
-So they hide behind the chart and let it go
-Craft is pushing out and coming back
-Shipping fast and fixing every crack
-
-[Final Chorus]
-Doesn't feel right yet — hold the launch
-Doesn't feel right yet — one more pass
-Fewer people, sharper eye, no compromise
-Build it till the last pixel satisfies
-This one feels right now
-Let it fly
-
-[Outro]
-The more it matters
-The more the design matters`,
-    concept: "Linear's philosophy of trusting taste over metrics, building opinionated software with a tiny team that refuses to ship until it feels right.",
-    keyInsight: "Trust your taste over your metrics. The best products come from people who care enough to say 'this doesn't feel right yet.'",
-    keyQuote: "Productivity software should be opinionated. We provide good defaults so you can focus on the work you do.",
-    quoteSpeaker: "Karri Saarinen",
-    sources: [
-      { title: "How Linear builds product", type: "newsletter", url: "https://www.lennysnewsletter.com/p/how-linear-builds-product", guest: "Karri Saarinen" },
-    ],
-    storyBehind: "Karri Saarinen was a designer frustrated by bloated project management tools built by people who never used them. He founded Linear with a tiny team (50 people, 2 have ever left), more cash than VCs gave them, and a relentless commitment to craft over speed.",
-    annotations: [
-      {
-        lyricText: "Fifty people, two have ever left us\nMore cash in the bank than the VCs gave",
-        note: "These are real numbers from Lenny's newsletter. At the time, Linear had ~50 employees, had only ever lost two team members, had more cash in the bank than they'd raised in total VC funding, and had been profitable for 2+ years. They'd spent a grand total of $35,000 on paid marketing in the entire history of the company.",
-        sourceTitle: "How Linear builds product",
-        sourceUrl: "https://www.lennysnewsletter.com/p/how-linear-builds-product",
-      },
-      {
-        lyricText: "No one translates the vision into tickets\nThe builders and the dreamers are the same",
-        note: "Linear has no product managers — just a single head of product. PM duties are distributed across engineering and design. There are no durable cross-functional teams either; teams assemble around a project and disperse when it's done. Lenny's newsletter summary: 'No product managers, just a head of product. PM duties are distributed across engineering and design.'",
-        sourceTitle: "How Linear builds product",
-        sourceUrl: "https://www.lennysnewsletter.com/p/how-linear-builds-product",
-      },
-      {
-        lyricText: "They said 'you need a roadmap and a process'\nWe said 'we need a window and some taste'",
-        note: "Linear operates with no metrics-based goals, no A/B tests, and decisions based explicitly on taste. Lenny directly contrasts this with Ramp's approach on the podcast: 'Ramp is all about velocity, shipping all the time, metrics, measuring everything. And your approach is almost the opposite.' Both are among the fastest-growing tools in their space — proof there's more than one way to win.",
-        sourceTitle: "Inside Linear: Building with taste, craft, and focus | Karri Saarinen",
-        sourceUrl: "https://www.lennyspodcast.com/inside-linear-building-with-taste-craft-and-focus-karri-saarinen/",
-      },
-      {
-        lyricText: "The fastest teams in tech all found our door",
-        note: "Karri names Linear's customer list on the podcast: Block, Vercel, Ramp, Retool, Mercury — plus thousands more from fresh YC graduates to public companies. The irony: Ramp, the fastest-shipping SaaS company of all time (another track on this album), uses Linear to manage their work. Linear became the tool of choice for teams that embody speed and craft, without any traditional sales motion.",
-        sourceTitle: "Inside Linear: Building with taste, craft, and focus | Karri Saarinen",
-        sourceUrl: "https://www.lennyspodcast.com/inside-linear-building-with-taste-craft-and-focus-karri-saarinen/",
-      },
-    ],
-  },
-  {
-    slug: "the-ramp-speed",
-    title: "The Ramp Speed",
-    albumSlug: "the-operators",
-    trackNumber: 5,
-    duration: "2:42",
-    audioUrl: "/audio/the-ramp-speed.mp3",
-    coverImage: "/covers/the-ramp-speed.jpg",
-    genre: "Lo-Fi Hip-Hop",
-    mood: "Exhilarating, playful, swagger",
-    tags: ["velocity", "shipping culture", "small teams"],
-    lyrics: `[Verse 1]
-Eight of us, a whiteboard and a dare
-Beat the giants — give us ninety days
-No one writes a roadmap, no one waits
-Every bug gets killed before it stays
-Six months later, dropped another one
-Fifty people, and we'd just begun
-
-[Chorus]
-Move — don't stop to draw the map
-Ship — and if it breaks, come back
-Three months, not a three-year plan
-Doing beats the diagram
-This is how the small ones win it back
-
-[Verse 2]
-Five people and a ninety-day clock
-Build the thing that giants couldn't block
-Billions flowing through it — watch it run
-No burndown charts, no points — just "is it done?"
-Did you ship the thing you said you would?
-That's the only score that's understood
-
-[Chorus]
-Move — don't stop to draw the map
-Ship — the wreckage teaches fast
-Hundred million, two years flat
-Doing beats the diagram
-Giants never saw us coming back
-
-[Bridge]
-Found our best engineer in Fortnite
-Gratitude's the loudest room we've got
-Named the channel "couscous" — who knows why
-Speed looks different from the inside —
-Someone fixed a bug that wasn't theirs last night
-That's the kind of fast that feels right
-
-[Final Chorus]
-Move — don't stop to draw the map
-Ship — and if it breaks, come back
-Speed's the cheapest way to learn
-Doing beats the diagram
-This is how the small ones take their turn
-
-[Outro]
-Doing beats the diagram
-Always did
-Move`,
-    concept: "Ramp's strategy of using raw speed as a competitive advantage: small teams, no roadmaps, shipping in 90-day cycles to become the fastest-growing SaaS startup ever.",
-    keyInsight: "When speed is your strategy, small teams beat giants because every mistake costs less and every lesson comes faster.",
-    keyQuote: "Velocity is everything at Ramp. It's how we design our product development process, how we incentivize teams, and how we make decisions.",
-    quoteSpeaker: "Geoff Charles",
-    sources: [
-      { title: "How Ramp builds product", type: "newsletter", url: "https://www.lennysnewsletter.com/p/how-ramp-builds-product", guest: "Geoff Charles" },
-      { title: "Velocity over everything: How Ramp became the fastest-growing SaaS startup of all time", type: "podcast", url: "https://www.lennyspodcast.com/velocity-over-everything-how-ramp-became-the-fastest-growing-saas-startup-of-all-time-geoff-charl/", guest: "Geoff Charles" },
-    ],
-    storyBehind: "Eight people with a whiteboard dared to beat financial giants in 90 days. No roadmaps, no burndown charts - just 'did you ship the thing you said you would?' They built a culture where someone fixes a bug that wasn't theirs at midnight. That's the kind of fast that feels right.",
-    annotations: [
-      {
-        lyricText: "Eight of us, a whiteboard and a dare\nBeat the giants — give us ninety days",
-        note: "Ramp started with roughly 8 engineers and CTO Karim Atiyeh. In their first three months, they built a competitor to American Express's corporate card. Six months later, they took on Expensify. Both were publicly traded, billion-dollar companies. Lenny writes: 'I believe they are also the fastest-growing SaaS company of all time, hitting a $100 million run rate in two years.'",
-        sourceTitle: "How Ramp builds product",
-        sourceUrl: "https://www.lennysnewsletter.com/p/how-ramp-builds-product",
-      },
-      {
-        lyricText: "No burndown charts, no points",
-        note: "Geoff Charles tells Lenny: 'We don't track tasks — we track whether you shipped what you said you were going to ship. No burndown, velocity, story points.' Before switching to bi-annual planning, Ramp calculated they were spending 33% of their time on planning alone. Their philosophy: 'Any second you spend planning is a second you don't spend doing.'",
-        sourceTitle: "How Ramp builds product",
-        sourceUrl: "https://www.lennysnewsletter.com/p/how-ramp-builds-product",
-      },
-      {
-        lyricText: "Found our best engineer in Fortnite",
-        note: "This is a real detail from the newsletter. CTO Karim Atiyeh spent his entire first year focused on hiring the best engineers — finding young talent who showed early signs of being founders: winning programming competitions in high school, building businesses in college, dropping out to work at startups. Geoff Charles writes: 'He even found engineers from playing Fortnite.' Big tech couldn't copy this approach.",
-        sourceTitle: "How Ramp builds product",
-        sourceUrl: "https://www.lennysnewsletter.com/p/how-ramp-builds-product",
-      },
-      {
-        lyricText: "Named the channel 'couscous'",
-        note: "Ramp's most popular Slack channel is their #gratitude channel, nicknamed 'couscous' — named by their early Moroccan team members. Geoff writes: 'Taking risks demands humor, kindness, and gratitude. If you're taking asymmetric bets, you're making decisions under high uncertainty and high risk... PMs can't take themselves too seriously. Life's too short.'",
-        sourceTitle: "How Ramp builds product",
-        sourceUrl: "https://www.lennysnewsletter.com/p/how-ramp-builds-product",
-      },
-      {
-        lyricText: "Hundred million, two years flat",
-        note: "Ramp hit $100 million in annual recurring revenue in just two years — the fastest any SaaS company has ever achieved that milestone. They did it with fewer than 5 PMs and roughly 50 engineers. Keith Rabois said: 'Ramp's product velocity is absolutely unprecedented in my 21 years working with technology businesses.'",
-        sourceTitle: "How Ramp builds product",
-        sourceUrl: "https://www.lennysnewsletter.com/p/how-ramp-builds-product",
-      },
-    ],
-  },
-];
-
-const growthEngineTracks: Track[] = [
-  {
-    slug: "the-racecar",
-    title: "The Racecar",
-    albumSlug: "growth-engine",
-    trackNumber: 1,
-    duration: "3:07",
-    audioUrl: "/audio/the-racecar.mp3",
-    coverImage: "/covers/the-racecar.jpg",
-    genre: "Warm Folk-Rock",
-    mood: "Anthemic, revelatory, building energy",
-    tags: ["growth", "frameworks", "loops"],
-    lyrics: `[Verse 1]
-We built the thing and no one came
-Every dashboard flat, each chart the same
-So I knocked on doors and slept on floors
-Showed the app in bars and campus stores
-Loaded up my car and drove at night
-The whole city was my demo site
-Hands on the hood, just push and pray
-Kickstart fades by end of day
-
-[Chorus]
-Build the engine, pour the fuel
-Feel it catch and start to move
-Output feeding input back —
-Find the loop and cut it loose
-
-[Verse 2]
-The engine caught — now watch it spin
-Money goes out, comes right back in
-Friend tells friend, the searches grow
-Every exit feeds the flow
-A headline hits, the traffic spikes
-Gone by morning — that's the ride
-Half the riders left the track
-Grease the gears to bring them back
-
-[Chorus]
-Build the engine, pour the fuel
-Every mile compounds the proof
-Output feeding input back —
-Find the loop and cut it loose
-
-[Bridge]
-Pouring fuel with no engine built
-Wondering why the car stood still
-Not the speed and not the size —
-It's the loop that multiplies
-
-[Final Chorus]
-Build the engine, pour the fuel
-Now the car knows what to do
-Output feeding input back —
-Find the loop and cut it loose
-
-[Outro]
-Build the next one
-Before this one stops`,
-    concept: "Lenny's Racecar Growth Framework: growth isn't one thing but a machine with parts (kickstarts, engines/loops, fuel, lubricants) that work together.",
-    keyInsight: "Growth isn't one thing. It's a machine with parts that work together, and the secret is knowing which part to build at which stage.",
-    keyQuote: "Pouring fuel with no engine built, wondering why the car stood still.",
-    quoteSpeaker: "Lenny Rachitsky",
-    sources: [
-      { title: "The Racecar Growth Framework - expanded and illustrated", type: "newsletter", url: "https://www.lennysnewsletter.com/p/the-racecar-growth-frameworkexpanded", guest: "Lenny Rachitsky" },
-    ],
-    storyBehind: "The extended metaphor of a racecar: you start by push-starting (doing things that don't scale), then the engine catches (growth loops), then you pour fuel (paid growth) and grease the gears (reduce churn). The universal founder mistake is pouring fuel before building the engine.",
-    annotations: [
-      {
-        lyricText: "Hands on the hood, just push and pray\nKickstart fades by end of day",
-        note: "The Racecar Framework identifies 9 specific 'kickstart' tactics for getting your first 1,000 users — things like DoorDash going door-to-door to restaurants, Tinder throwing parties at college campuses, and Snapchat pitching kids at malls. These are unscalable by design: they get the car rolling but can't keep it moving. The framework warns to use kickstarts only 'until your growth engine begins to drive the majority of your growth.'",
-        sourceTitle: "The Racecar Growth Framework — expanded and illustrated",
-        sourceUrl: "https://www.lennysnewsletter.com/p/the-racecar-growth-frameworkexpanded",
-      },
-      {
-        lyricText: "Friend tells friend, the searches grow\nEvery exit feeds the flow",
-        note: "The framework names exactly four growth engines: SEO, Paid Ads, Sales, and Virality. 'Friend tells friend' is Virality — where a user enjoys the product, shares it, and that friend signs up and shares it again. 'The searches grow' is SEO — where users create content others discover through Google. According to Lenny's survey of today's biggest consumer apps, virality and SEO are the two most common primary growth engines.",
-        sourceTitle: "The Racecar Growth Framework — expanded and illustrated",
-        sourceUrl: "https://www.lennysnewsletter.com/p/the-racecar-growth-frameworkexpanded",
-      },
-      {
-        lyricText: "A headline hits, the traffic spikes\nGone by morning — that's the ride",
-        note: "This captures what the framework calls a 'Turbo Boost' — a one-off event that temporarily accelerates growth but doesn't last. The article lists 10 common turbo boosts including PR, viral content, and influencer mentions. The key distinction from an engine: turbo boosts create a spike, not a loop. There's no self-sustaining mechanism to keep growth going after the headline fades.",
-        sourceTitle: "The Racecar Growth Framework — expanded and illustrated",
-        sourceUrl: "https://www.lennysnewsletter.com/p/the-racecar-growth-frameworkexpanded",
-      },
-      {
-        lyricText: "Pouring fuel with no engine built\nWondering why the car stood still",
-        note: "'Fuel' is the raw input your engine runs on: content drives SEO, users drive virality, capital drives paid ads and sales. But fuel without an engine is wasted. This is the classic mistake Lenny warns about — founders pouring capital into ads before they have a working growth loop. The framework prescribes a specific order: build kickstarts first, then get your engine running, then add fuel.",
-        sourceTitle: "The Racecar Growth Framework — expanded and illustrated",
-        sourceUrl: "https://www.lennysnewsletter.com/p/the-racecar-growth-frameworkexpanded",
-      },
-      {
-        lyricText: "Output feeding input back —\nFind the loop and cut it loose",
-        note: "The entire premise of a growth 'engine' vs. a tactic is the loop: output feeds input. Paid ads generate revenue that funds more ads. Users invite friends who invite friends. Content ranks on Google, driving signups who create more content. Lenny's research shows companies like Pinterest and Yelp grew primarily through a single engine run well, not through doing everything at once.",
-        sourceTitle: "The Racecar Growth Framework — expanded and illustrated",
-        sourceUrl: "https://www.lennysnewsletter.com/p/the-racecar-growth-frameworkexpanded",
-      },
-    ],
-  },
-  {
-    slug: "find-your-north-star",
-    title: "Find Your North Star",
-    albumSlug: "growth-engine",
-    trackNumber: 2,
-    duration: "3:41",
-    audioUrl: "/audio/find-your-north-star.mp3",
-    coverImage: "/covers/find-your-north-star.jpg",
-    genre: "Acoustic Folk",
-    mood: "Clarifying, urgent, contemplative",
-    tags: ["metrics", "focus", "strategy"],
-    lyrics: `[Verse 1]
-Fourteen dashboards, Monday morning haze
-Every number pulling different ways
-Revenue is up, the users leave
-The boardroom cheers — I still can't breathe
-A sky of scattered light above my desk
-A thousand stars — I can't tell which one's best
-
-[Chorus]
-Find your north star
-One number in the dark
-What you measure is what you become
-What you chase is what you are
-Not the revenue — the value
-Find your north star
-
-[Verse 2]
-Nights booked, rides taken, messages sent
-Every company found what winning meant
-Facebook counted monthly — doing fine
-Switched to daily, everything realigned
-"Bring them back" became the battle cry
-The product bent to match a single "why"
-
-[Chorus]
-Find your north star
-One signal through the noise
-What you measure is what you become
-Every metric was a choice
-Not the revenue — the value
-Find your north star
-
-[Bridge]
-But careful what you choose, it cuts both ways
-Facebook brought them back — they couldn't leave
-Congress called, the papers filled for days
-The metric worked — that's the thing you grieve
-What gets measured gets managed, that's the deal
-Be sure you want the world your number builds
-
-[Final Chorus]
-Find your north star
-One number in the dark
-What you measure is what you become
-What you build is what you are
-Not the revenue — the value you deliver
-Find your north star
-
-[Outro]
-You only need one light to find your way
-Pick the one that matters
-Start today`,
-    concept: "Choosing your North Star Metric, the one number that captures the value you deliver, and the warning that what you measure is what you become.",
-    keyInsight: "What you measure is what you become. Pick the metric that represents the value you deliver, not just the revenue you extract.",
-    keyQuote: "What you measure is what you become.",
-    quoteSpeaker: "Lenny Rachitsky",
-    sources: [
-      { title: "Choosing Your North Star Metric", type: "newsletter", url: "https://www.lennysnewsletter.com/p/choosing-your-north-star-metric", guest: "Lenny Rachitsky" },
-    ],
-    storyBehind: "The song starts with a PM drowning in 14 dashboards, then shows how companies like Airbnb ('nights booked') and Facebook found their North Star. But the bridge is a cautionary tale: Facebook switched to daily active users, brought people back so well they couldn't leave. Congress called.",
-    annotations: [
-      {
-        lyricText: "Nights booked, rides taken, messages sent\nEvery company found what winning meant",
-        note: "These are actual North Star metrics from Lenny's survey of over 40 successful growth-stage companies. Airbnb tracked 'nights booked,' Uber and Lyft tracked 'rides taken,' Twilio tracked 'messages sent.' None chose revenue as their North Star. They picked consumption metrics that reflect value delivered, because as Lenny explains, revenue is 'spiky, and thus hard to make operational.'",
-        sourceTitle: "Choosing Your North Star Metric",
-        sourceUrl: "https://www.lennysnewsletter.com/p/choosing-your-north-star-metric",
-      },
-      {
-        lyricText: "Facebook counted monthly — doing fine\nSwitched to daily, everything realigned",
-        note: "Facebook and Snap both chose DAU over MAU as their North Star because social media is a daily habit. Pinterest, by contrast, chose WAU because it 'doesn't expect its users to need the product daily.' The frequency of the metric signals what behavior you're optimizing for — Facebook's shift to DAU meant every team suddenly focused on bringing people back every single day.",
-        sourceTitle: "Choosing Your North Star Metric",
-        sourceUrl: "https://www.lennysnewsletter.com/p/choosing-your-north-star-metric",
-      },
-      {
-        lyricText: "Not the revenue — the value",
-        note: "Lenny argues explicitly against using revenue as a North Star. Three reasons: revenue is spiky and hard to make operational, optimizing pricing too early leads to suboptimal decisions, and 'people often join companies to accomplish a specific mission; rarely is that mission simply growth in generating revenue.' Airbnb chose 'nights booked' over booking revenue. Robinhood chose NPS over trading volume.",
-        sourceTitle: "Choosing Your North Star Metric",
-        sourceUrl: "https://www.lennysnewsletter.com/p/choosing-your-north-star-metric",
-      },
-      {
-        lyricText: "But careful what you choose, it cuts both ways\nFacebook brought them back — they couldn't leave\nCongress called, the papers filled for days",
-        note: "Lenny's guide warns: 'By maintaining a laser focus on a single metric for too long, teams risk short-term thinking, missing new opportunities, and sacrificing the user experience.' He uses a motorcycle analogy: 'Where your eyes go, your bike goes. Look to your right and you'll drift right.' Facebook's relentless optimization of daily engagement — the very metric that drove its explosive growth — eventually drew Congressional scrutiny over addiction and harm.",
-        sourceTitle: "Choosing Your North Star Metric",
-        sourceUrl: "https://www.lennysnewsletter.com/p/choosing-your-north-star-metric",
-      },
-    ],
-  },
-  {
-    slug: "the-first-thousand",
-    title: "The First Thousand",
-    albumSlug: "growth-engine",
-    trackNumber: 3,
-    duration: "2:52",
-    audioUrl: "/audio/the-first-thousand.mp3",
-    coverImage: "/covers/the-first-thousand.jpg",
-    genre: "Uptempo Indie Pop",
-    mood: "Scrappy, triumphant, energetic",
-    tags: ["growth", "early users", "hustle"],
-    lyrics: "",
-    concept: "How the biggest consumer apps got their first 1,000 users through scrappy, unscalable, unglamorous hustle.",
-    keyInsight: "Every app you've ever loved once looked lame. You earn your first users one by one through showing up, not through scale.",
-    keyQuote: "Don't pay attention to what Facebook does today — pay attention to Facebook when they were getting their first thousand users.",
-    quoteSpeaker: "Dalton Caldwell",
-    sources: [
-      { title: "How the biggest consumer apps got their first 1,000 users", type: "newsletter", url: "https://www.lennysnewsletter.com/p/how-the-biggest-consumer-apps-got", guest: "Lenny Rachitsky" },
-    ],
-    storyBehind: "A montage of origin stories: Whitney Wolfe pitching Tinder dorm to dorm, Evan Spiegel at the mall with Snapchat flyers, Ben Silbermann changing Apple Store displays to show Pinterest, Tony Xu taping a DoorDash menu to a wall, Brian Chesky hot-gluing cereal boxes for Airbnb.",
-  },
-  {
-    slug: "go-viral",
-    title: "Go Viral",
-    albumSlug: "growth-engine",
-    trackNumber: 4,
-    duration: "3:04",
-    audioUrl: "/audio/go-viral.mp3",
-    coverImage: "/covers/go-viral.jpg",
-    genre: "Dark Electro-Pop",
-    mood: "Electric, manic, cinematic",
-    tags: ["virality", "consumer apps", "growth loops"],
-    lyrics: "",
-    concept: "Nikita Bier's story of building repeatedly viral consumer apps: 14 failures before a hit, reading the room instead of the language, controlled geographic rollouts.",
-    keyInsight: "Virality comes from finding latent demand and controlling the burn: geographic rollout, school by school, state by state.",
-    keyQuote: "With certainty, if you're good at your job, you can make an app grow and go viral.",
-    quoteSpeaker: "Nikita Bier",
-    sources: [
-      { title: "How to consistently go viral", type: "podcast", url: "https://www.lennyspodcast.com/how-to-consistently-go-viral-nikita-bier/", guest: "Nikita Bier" },
-    ],
-    storyBehind: "Nikita tried 14 apps, was about to dissolve his company, then his app hit #1 in the US - written in Arabic, a language he couldn't read. He pivoted, built Gas (anonymous compliments), dropped it in Georgia schools, watched it spread state by state.",
-  },
-  {
-    slug: "you-aint-that",
-    title: "You Ain't That",
-    albumSlug: "growth-engine",
-    trackNumber: 5,
-    duration: "",
-    audioUrl: "",
-    coverImage: "",
-    genre: "Funky Pop-Soul",
-    mood: "Confident, swaggering, liberating",
-    tags: ["positioning", "go-to-market", "product identity"],
-    lyrics: "",
-    isLocked: true,
-    concept: "April Dunford's positioning framework: your product isn't broken, it's badly introduced. Same code, different name, and suddenly the phone rings.",
-    keyInsight: "You're not broken, you're just badly introduced. The right positioning transforms a product nobody buys into something everyone needs.",
-    keyQuote: "When we get positioning wrong, everything sucks. When we get it right, we all make all kinds of money.",
-    quoteSpeaker: "April Dunford",
-    sources: [
-      { title: "April Dunford on product positioning, segmentation, and optimizing your sales process", type: "podcast", url: "https://www.lennyspodcast.com/april-dunford-on-product-positioning-segmentation-and-optimizing-your-sales-process/", guest: "April Dunford" },
-    ],
-    storyBehind: "April had a product she called an 'Access killer.' She called her customer list and heard 'Sorry, lady, we don't have that.' But 21 customers picked up and said 'Your product made me hero of my team!' Same code, no changes - except the name and positioning. The phone started ringing.",
-  },
-];
-
-const startupLifeTracks: Track[] = [
-  {
-    slug: "nobodys-coming",
-    title: "Nobody's Coming",
-    albumSlug: "the-startup-life",
-    trackNumber: 1,
-    duration: "2:42",
-    audioUrl: "/audio/nobodys-coming.mp3",
-    coverImage: "/covers/nobodys-coming.jpg",
-    genre: "Garage Rock",
-    mood: "Scrappy, urgent, triumphant",
-    tags: ["marketplaces", "cold start", "flywheel"],
-    lyrics: "",
-    concept: "The marketplace cold-start problem: every great marketplace started by the founder doing tiny, unscalable things until the flywheel caught on its own.",
-    keyInsight: "Nobody's coming till somebody's here. Every marketplace flywheel starts with the founder going first through the door.",
-    keyQuote: "Nobody's coming till somebody's here.",
-    quoteSpeaker: "Lenny Rachitsky",
-    sources: [
-      { title: "How to Kickstart and Scale a Marketplace Business (8-part series)", type: "newsletter", url: "https://www.lennysnewsletter.com/p/how-to-kickstart-and-scale-a-marketplace", guest: "Lenny Rachitsky" },
-    ],
-    storyBehind: "A founder launches to silence: two empty sides of a marketplace. So they pack a camera, catch a flight, ring doorbells till midnight. Tony Xu dashed food on his own date night. Then one morning, stickers appeared in windows they never placed. The flywheel caught.",
-  },
-  {
-    slug: "not-venture-scale",
-    title: "Not Venture-Scale",
-    albumSlug: "the-startup-life",
-    trackNumber: 2,
-    duration: "2:44",
-    audioUrl: "/audio/not-venture-scale.mp3",
-    coverImage: "/covers/not-venture-scale.jpg",
-    genre: "Indie Folk-Rock",
-    mood: "Defiant, bittersweet, warm",
-    tags: ["bootstrapping", "independence", "founder identity"],
-    lyrics: "",
-    concept: "The case for building a business that's 'not venture-scale,' choosing independence and ownership over the unicorn treadmill.",
-    keyInsight: "Not every fire needs to be the sun. You can build a real, profitable business that a VC would pass on and own every cent of it.",
-    keyQuote: "They want a unicorn. I built a home.",
-    quoteSpeaker: "Narrative voice",
-    sources: [
-      { title: "Jason Fried challenges your thinking on fundraising, goals, growth, and more", type: "podcast", url: "https://www.lennyspodcast.com/jason-fried-challenges-your-thinking-on-fundraising-goals-growth-and-more/", guest: "Jason Fried" },
-    ],
-    storyBehind: "Three characters: the founder rejected by a VC at slide eleven, the buddy who took the money and ended up on a golden treadmill owning 10% of what was once his, and Patrick Campbell who bootstrapped to $200M, sold it all, and still whispered 'left a billion on the table.'",
-  },
-  {
-    slug: "smile-through-the-silence",
-    title: "Smile Through the Silence",
-    albumSlug: "the-startup-life",
-    trackNumber: 3,
-    duration: "4:14",
-    audioUrl: "/audio/smile-through-the-silence.mp3",
-    coverImage: "/covers/smile-through-the-silence.jpg",
-    genre: "Piano-Driven Indie Folk",
-    mood: "Intimate, building, bittersweet",
-    tags: ["fundraising", "rejection", "founder loneliness"],
-    lyrics: "",
-    concept: "The brutal asymmetry of fundraising: VCs do this every Tuesday, founders do this once in their life.",
-    keyInsight: "The power asymmetry of fundraising is devastating: they do this every Tuesday, you do this once in your life. But someone believing in you can change everything.",
-    keyQuote: "Fundraising is incredibly opaque, asymmetrical, and is often the difference between having a company and not.",
-    quoteSpeaker: "Marc McCabe",
-    sources: [
-      { title: "A playbook for fundraising", type: "newsletter", url: "https://www.lennysnewsletter.com/p/a-playbook-for-fundraising", guest: "Marc McCabe" },
-    ],
-    storyBehind: "A founder carves slides at 2AM, pitches to the mirror, melts through 8 months of runway. Five pitches a day for two straight weeks, warm handshakes then silence. Then one VC leans in and asks about the dream, not the deck.",
-  },
-  {
-    slug: "push-the-car",
-    title: "Push the Car",
-    albumSlug: "the-startup-life",
-    trackNumber: 4,
-    duration: "3:08",
-    audioUrl: "/audio/push-the-car.mp3",
-    coverImage: "/covers/push-the-car.jpg",
-    genre: "Acoustic Indie Folk",
-    mood: "Melancholic, raw, resolute",
-    tags: ["failure", "traction", "founder delusion"],
-    lyrics: "",
-    concept: "Two stories of startups that didn't make it: one that couldn't get real traction despite great credentials, and one that tore down its walls going freemium.",
-    keyInsight: "If your product only moves when you're pushing it, it was never alive. The hardest thing is figuring out whether the crowd is rooting for you or for the car.",
-    keyQuote: "Don't confuse people rooting for you with market signal.",
-    quoteSpeaker: "Jake Fuentes",
-    sources: [
-      { title: "Lessons learned from a startup that didn't make it", type: "newsletter", url: "https://www.lennysnewsletter.com/p/lessons-learned-from-a-startup-that", guest: "Jake Fuentes" },
-    ],
-    storyBehind: "Five million raised, a team of ten, repeat founders. But no one switched their systems in. On a quiet night, the founder let go and the car stopped beneath a yellow light. The crowd was cheering for the founders, not the product.",
-  },
-  {
-    slug: "its-never-going-well",
-    title: "It's Never Going Well",
-    albumSlug: "the-startup-life",
-    trackNumber: 5,
-    duration: "3:22",
-    audioUrl: "/audio/its-never-going-well.mp3",
-    coverImage: "/covers/its-never-going-well.jpg",
-    genre: "Indie Folk Anthem",
-    mood: "Vulnerable, communal, defiant",
-    tags: ["founder struggle", "vulnerability", "resilience"],
-    lyrics: "",
-    concept: "Gustaf Alstromer's lessons from 600+ YC startups: the universal founder experience of struggle, vulnerability, and building anyway.",
-    keyInsight: "The worst part of struggling isn't failing. It's thinking it's only you. Shared vulnerability unlocks resilience.",
-    keyQuote: "When you ask a founder 'how are things going?' — it's never going well. All founders, when they look each other in the eyes, know that's not the answer.",
-    quoteSpeaker: "Gustaf Alstromer",
-    sources: [
-      { title: "Lessons from 600+ YC startups", type: "podcast", url: "https://www.lennyspodcast.com/lessons-from-working-with-600-yc-startups-gustaf-alstromer-y-combinator-airbnb/", guest: "Gustaf Alstromer" },
-    ],
-    storyBehind: "Someone asks how it's going. You freeze, then smile. In a YC group session, Gustaf says forget your pitch, just tell us everything. She goes first, voice shaking: 'No traction and we're out of cash.' Something in your chest breaks open, because yours sounds just like that.",
-  },
-];
-
-const careerMovesTracks: Track[] = [
-  {
-    slug: "the-magic-loop",
-    title: "The Magic Loop",
-    albumSlug: "career-moves",
-    trackNumber: 1,
-    duration: "3:06",
-    audioUrl: "/audio/the-magic-loop.mp3",
-    coverImage: "/covers/the-magic-loop.jpg",
-    genre: "Funky Neo-Soul Pop",
-    mood: "Groovy, confident, building",
-    tags: ["career growth", "managing up", "compounding"],
-    lyrics: "",
-    concept: "Ethan Evans's 'Magic Loop' framework for rapid career growth: ask your boss what they need, deliver it, build trust, and compound your way up.",
-    keyInsight: "Career growth isn't about working harder. It's about asking 'what do you need?' and creating a compounding loop of trust and opportunity.",
-    keyQuote: "Not stuck down here, I'm stuck going up.",
-    quoteSpeaker: "Ethan Evans's mentee",
-    sources: [
-      { title: "The Magic Loop - A framework for rapid career growth", type: "newsletter", url: "https://www.lennysnewsletter.com/p/the-magic-loop", guest: "Ethan Evans" },
-    ],
-    storyBehind: "A farm kid from Ohio raises his hand on day one: 'Where's the gap nobody wants to own?' Two years later he led the floor he'd grown. Fifteen years later, his mentee calls and says 'I'm stuck - not stuck down here, I'm stuck going up.'",
-  },
-  {
-    slug: "dont-give-em-your-number",
-    title: "Don't Give 'Em Your Number",
-    albumSlug: "career-moves",
-    trackNumber: 2,
-    duration: "3:08",
-    audioUrl: "/audio/dont-give-em-your-number.mp3",
-    coverImage: "/covers/dont-give-em-your-number.jpg",
-    genre: "Gospel-Soul Anthem",
-    mood: "Defiant, empowering, swagger",
-    tags: ["salary negotiation", "self-advocacy", "knowing your worth"],
-    lyrics: "",
-    concept: "The rules of salary negotiation: never give your number first, let silence do the talking, understand the game is designed to keep you quiet.",
-    keyInsight: "The salary negotiation game has rules, and once you learn them, you stop leaving money on the table.",
-    keyQuote: "Every recruiter will ask about your salary expectations. Do not — I repeat, do not — give them a number.",
-    quoteSpeaker: "Niya Dragova",
-    sources: [
-      { title: "The 10 commandments of salary negotiation", type: "newsletter", url: "https://www.lennysnewsletter.com/p/negotiating-comp", guest: "Niya Dragova" },
-    ],
-    storyBehind: "Rehearsed lines in the parking lot, walked in steady, then she leaned across the table and asked 'what's your number?' Mouth went dry. The system is built to keep you quiet, grateful, and small enough to say 'that's great.'",
-  },
-  {
-    slug: "fire-with-grace",
-    title: "Fire with Grace",
-    albumSlug: "career-moves",
-    trackNumber: 3,
-    duration: "4:28",
-    audioUrl: "/audio/fire-with-grace.mp3",
-    coverImage: "/covers/fire-with-grace.jpg",
-    genre: "Soulful Indie Folk",
-    mood: "Intimate, devastating, redemptive",
-    tags: ["firing", "leadership", "compassion"],
-    lyrics: "",
-    concept: "How to fire people with compassion. The most dreaded leadership task reframed as liberation.",
-    keyInsight: "Firing someone with grace means being their agent on the way out, holding their weight, not explaining it away.",
-    keyQuote: "The biggest marker between a botched layoff and a successful one: did they hear it from their manager, one-on-one?",
-    quoteSpeaker: "Matt Mochary",
-    sources: [
-      { title: "How to fire people with grace, work through fear, and nurture innovation", type: "podcast", url: "https://www.lennyspodcast.com/how-to-fire-people-with-grace-matt-mochary/", guest: "Matt Mochary" },
-    ],
-    storyBehind: "Monday 9AM, door closed, her coffee getting cold. By pretending she's a fit when she's not, he's holding her in place when she should fly. After the conversation, he picked up the phone and called in every name. Two hours on the line to find her light. Now she's building something she adores.",
-  },
   {
     slug: "when-enough-is-enough",
     title: "When Enough Is Enough",
-    albumSlug: "career-moves",
-    trackNumber: 4,
+    albumSlug: "the-human-side",
+    trackNumber: 3,
     duration: "",
     audioUrl: "",
     coverImage: "",
@@ -1853,661 +2429,106 @@ const careerMovesTracks: Track[] = [
     ],
     storyBehind: "Andy's mother died when he was ten. He learned to win so people would want him. Captain, straight A's, six startups. At 28, shaking on the floor. Ground his teeth to dust, rebuilt them twice. Forty-five days in a quiet room, he found the boy behind the noise.",
   },
-  {
-    slug: "state-of-the-me",
-    title: "State of the Me",
-    albumSlug: "career-moves",
-    trackNumber: 5,
-    duration: "2:44",
-    audioUrl: "/audio/state-of-the-me.mp3",
-    coverImage: "/covers/state-of-the-me.jpg",
-    genre: "Neo-Soul Pop",
-    mood: "Confident, empowered, groovy",
-    tags: ["managing up", "visibility", "career growth"],
-    lyrics: `[Verse 1]
-I've been staying late, nobody sees
-Twelve things on my plate, they know about three
-Boss walks in and asks about the brief
-Finished that last Tuesday — no relief
-I thought my silence meant I'm strong
-Turns out invisible is just gone
-
-[Chorus]
-State of the Me, every Monday morning
-Here's my world, here's what I need
-It ain't sucking up, it's just showing up
-Three short lines gonna set me free
-
-[Verse 2]
-Two weeks in, she knows what's on my list
-Knows the blockers 'fore I have to ask
-Used to say yes every single time
-Now I set the bar before I climb
-They can't reward the work they've never seen
-So I wrote it down and let it breathe
-
-[Chorus]
-State of the Me, every Monday morning
-Here's what I shipped, here's what's in my way
-It ain't sucking up, it's just showing up
-Two weeks in and something starts to change
-
-[Bridge]
-She said, "My boss won't let me breathe"
-I said, "Is anyone else on a leash?"
-The room went quiet, truth hit like a wall
-Maybe the leash is yours to break
-
-[Final Chorus]
-State of the Me, every Monday morning
-Here's what I built, here's where I'm heading
-It ain't sucking up, it's just showing up
-Trust goes up, the walls come down — I'm ready
-
-[Outro]
-The work won't speak for you
-It never did
-But you can`,
-    concept: "The practice of 'managing up': sending your boss a simple weekly update so your work becomes visible and trust compounds.",
-    keyInsight: "They can't reward the work they've never seen. Visibility isn't sucking up, it's showing up.",
-    keyQuote: "They can't reward the work they've never seen.",
-    quoteSpeaker: "Lenny Rachitsky",
-    sources: [
-      { title: "Managing up", type: "newsletter", url: "https://www.lennysnewsletter.com/p/managing-up", guest: "Lenny Rachitsky" },
-    ],
-    storyBehind: "Staying late, nobody sees. Twelve things on the plate, boss knows about three. The 'State of the Me' is a Monday morning ritual: three short lines about what you shipped, what's blocking you, what you need. Two weeks in, something starts to change.",
-    annotations: [
-      {
-        lyricText: "They can't reward the work they've never seen",
-        note: "Lenny's core argument for managing up: most people assume good work speaks for itself. It doesn't. Your manager has 6-10 other reports, their own deadlines, and limited attention. A short weekly update makes your work visible without requiring them to dig.",
-        sourceTitle: "Managing up",
-        sourceUrl: "https://www.lennysnewsletter.com/p/managing-up",
-      },
-      {
-        lyricText: "State of the Me, every Monday morning",
-        note: "Lenny's recommended format: a brief Monday email to your manager with three sections — what you shipped last week, what you're working on this week, and where you're blocked. He calls it the highest-ROI career habit most people skip because it 'feels like sucking up.'",
-        sourceTitle: "Managing up",
-        sourceUrl: "https://www.lennysnewsletter.com/p/managing-up",
-      },
-      {
-        lyricText: "It ain't sucking up, it's just showing up",
-        note: "Lenny directly addresses the #1 objection people have to managing up. The reframe: visibility isn't political maneuvering, it's professional responsibility. Your manager needs context to advocate for you in rooms you're not in.",
-        sourceTitle: "Managing up",
-        sourceUrl: "https://www.lennysnewsletter.com/p/managing-up",
-      },
-      {
-        lyricText: "The work won't speak for you",
-        note: "The song's closing line captures Lenny's blunt conclusion: the myth that 'great work speaks for itself' has held back more careers than any lack of skill. The people who get promoted aren't always the best — they're the ones whose managers actually know what they've done.",
-        sourceTitle: "Managing up",
-        sourceUrl: "https://www.lennysnewsletter.com/p/managing-up",
-      },
-    ],
-  },
-];
-
-const frameworksTracks: Track[] = [
-  {
-    slug: "trace-it-back",
-    title: "Trace It Back",
-    albumSlug: "frameworks",
-    trackNumber: 1,
-    duration: "2:49",
-    audioUrl: "/audio/trace-it-back.mp3",
-    coverImage: "/covers/trace-it-back.jpg",
-    genre: "Cinematic Neo-Soul",
-    mood: "Cool, purposeful, clarifying",
-    tags: ["strategy", "alignment", "purpose"],
-    lyrics: `[Verse 1]
-I shipped the button, closed the ticket out
-They asked me why — I couldn't spell it out
-A hundred Mondays sent to who-knows-where
-Plugged to a roadmap no one ever shares
-The mission's painted pretty on the wall
-But no one drew the line between it all
-
-[Chorus]
-Trace it back, trace it back
-From the task up to the mission
-Trace it back, trace it back
-Every step is a decision
-If you can't connect the dots
-You're moving fast but standing still
-
-[Verse 2]
-Danny Ocean didn't walk in blind
-He started with a reason, then designed
-The mission — rob three casinos cold
-The vision — Tess and more than he could hold
-Strategy through every coded door
-Eleven people, each one knew the score
-
-[Chorus]
-Trace it back, trace it back
-From the vault up to the vision
-Trace it back, trace it back
-Every heist needs one decision
-If you lose the thread somewhere
-You're pulling strings that come apart
-
-[Bridge]
-"Spread ideas" — two words, and TED was born
-One line from Tesla changed the road we're on
-The biggest missions fit inside your chest
-The smallest task should pass the same damn test
-
-[Final Chorus]
-Trace it back, trace it back
-From your desk up to the mission
-Trace it back, trace it back
-It was never just a ticket
-Now I see the line that runs
-From my hands to why I'm here
-
-[Outro]
-Mission, vision, strategy
-Goals, roadmap, then the task`,
-    concept: "Lenny's Mission-Vision-Strategy-Goals-Roadmap-Task cascade: every task should trace back to the mission.",
-    keyInsight: "If you can't trace your daily task back to the company mission, you're moving fast but standing still.",
-    keyQuote: "You start with your mission — why does your team even exist? Mission, vision, strategy, goals, roadmap, task.",
-    quoteSpeaker: "Lenny Rachitsky",
-    sources: [
-      { title: "Mission - Vision - Strategy - Goals - Roadmap - Task", type: "newsletter", url: "https://www.lennysnewsletter.com/p/mission-vision-strategy-goals-roadmap", guest: "Lenny Rachitsky" },
-    ],
-    storyBehind: "A PM ships a button, closes the ticket, gets asked 'why?' and can't spell it out. Then the Ocean's Eleven metaphor: Danny Ocean didn't walk in blind. Mission, vision, strategy, eleven people who each knew the score. TED's entire mission is two words: 'Spread ideas.'",
-    annotations: [
-      {
-        lyricText: "I shipped the button, closed the ticket out",
-        note: "Lenny argues that most PMs operate at the task level without understanding how their work connects to the company mission. The cascade — Mission → Vision → Strategy → Goals → Roadmap → Task — is his framework for making every ticket meaningful.",
-        sourceTitle: "Mission - Vision - Strategy - Goals - Roadmap - Task",
-        sourceUrl: "https://www.lennysnewsletter.com/p/mission-vision-strategy-goals-roadmap",
-      },
-      {
-        lyricText: "Danny Ocean didn't walk in blind",
-        note: "The Ocean's Eleven metaphor illustrates Lenny's cascade: Danny had a mission (rob three casinos), a vision (get Tess back), a strategy (through every coded door), and eleven people who each knew their role. Every great heist — and every great company — starts with the why.",
-        sourceTitle: "Mission - Vision - Strategy - Goals - Roadmap - Task",
-        sourceUrl: "https://www.lennysnewsletter.com/p/mission-vision-strategy-goals-roadmap",
-      },
-      {
-        lyricText: "Spread ideas — two words, and TED was born",
-        note: "Lenny uses TED as the gold standard of mission brevity: their entire reason for existing fits in two words. He contrasts this with companies whose mission statements are paragraphs long and forgotten by the team.",
-        sourceTitle: "Mission - Vision - Strategy - Goals - Roadmap - Task",
-        sourceUrl: "https://www.lennysnewsletter.com/p/mission-vision-strategy-goals-roadmap",
-      },
-      {
-        lyricText: "Mission, vision, strategy",
-        note: "The six-level cascade that Lenny considers the most important alignment framework in product: Mission (why you exist) → Vision (what the world looks like if you succeed) → Strategy (how you'll get there) → Goals (how you measure) → Roadmap (what you'll build) → Task (what you do today).",
-        sourceTitle: "Mission - Vision - Strategy - Goals - Roadmap - Task",
-        sourceUrl: "https://www.lennysnewsletter.com/p/mission-vision-strategy-goals-roadmap",
-      },
-    ],
-  },
-  {
-    slug: "the-disease",
-    title: "The Disease",
-    albumSlug: "frameworks",
-    trackNumber: 2,
-    duration: "2:54",
-    audioUrl: "/audio/the-disease.mp3",
-    coverImage: "/covers/the-disease.jpg",
-    genre: "Driving Indie Rock",
-    mood: "Defiant, urgent, righteous",
-    tags: ["product management", "empowered teams", "feature factories"],
-    lyrics: `[Verse 1]
-Monday morning, roadmap on my screen
-Fourteen features I have never seen
-"Just build it," says the corner suite
-He's never talked to users on the street
-Saw something shiny at a talk last week
-Now my whole quarter's planned before I speak
-
-[Chorus]
-It's the disease
-The idea man thinks he's ninety percent
-It's the disease
-The builders leave — nobody hears the door
-Nobody knows what they were building for
-
-[Verse 2]
-Jobs called it back in '95
-When companies get big, the craft won't thrive
-The sales floor gets promoted every round
-The ones who shaped the product can't be found
-You scale with leaders or you scale with rules
-The rules look safe — the leaders look like fools
-
-[Chorus]
-It's the disease
-Eighty percent won't ever make a dent
-It's the disease
-Who cares how fast you shipped what no one needs?
-Nobody knows what they were building for
-
-[Bridge]
-Give me one quarter
-One team, one problem, one real shot
-I'll sit with the ones who feel the pain
-And build what the roadmap forgot
-
-[Final Chorus, belted]
-Cure the disease
-The ones who feel it — let them find the way
-Cure the disease
-Give us problems — watch the builders stay
-Now they know what they were building for
-
-[Outro]
-You solve it or you don't
-Who cares about release?
-Cure the disease`,
-    concept: "Marty Cagan's critique of 'feature factories': companies where builders are told what to build rather than given problems to solve.",
-    keyInsight: "When the 'idea person' thinks they're 90% of the work and builders are just implementers, the builders leave and nobody hears the door.",
-    keyQuote: "The 'idea person' thinks an idea is 90% of the work. We know only about 20% of those things will generate any positive return.",
-    quoteSpeaker: "Marty Cagan",
-    sources: [
-      { title: "The nature of product", type: "podcast", url: "https://www.lennyspodcast.com/the-nature-of-product-marty-cagan/", guest: "Marty Cagan" },
-    ],
-    storyBehind: "Monday morning, roadmap on screen, fourteen features the PM has never seen. 'Just build it' says the corner suite, someone who's never talked to users. The cure: give builders problems, not solutions, and watch them stay.",
-    annotations: [
-      {
-        lyricText: "The idea man thinks he's ninety percent",
-        note: "Marty Cagan told Lenny that in feature factories, stakeholders believe having the idea is 90% of the work and engineers are just 'coders.' In reality, only about 20% of ideas generate positive return — the magic is in how empowered teams discover and solve problems.",
-        sourceTitle: "The nature of product",
-        sourceUrl: "https://www.lennyspodcast.com/the-nature-of-product-marty-cagan/",
-      },
-      {
-        lyricText: "Jobs called it back in '95",
-        note: "Cagan references Steve Jobs's 1995 interview where Jobs warned that as companies grow, the sales and marketing people take over and the product people — the ones who built the thing — get pushed out. Jobs called this the reason great companies decline.",
-        sourceTitle: "The nature of product",
-        sourceUrl: "https://www.lennyspodcast.com/the-nature-of-product-marty-cagan/",
-      },
-      {
-        lyricText: "Eighty percent won't ever make a dent",
-        note: "Cagan cites data showing roughly 80% of features shipped by feature factories have no measurable impact on the metrics they were supposed to move. This is the core argument for empowered teams: let builders discover what actually works.",
-        sourceTitle: "The nature of product",
-        sourceUrl: "https://www.lennyspodcast.com/the-nature-of-product-marty-cagan/",
-      },
-      {
-        lyricText: "Give me one quarter",
-        note: "Cagan's prescription for curing the disease: give a team one problem to solve, let them sit with the users who feel the pain, and measure outcomes instead of output. The bridge captures the emotional plea of every builder stuck in a feature factory.",
-        sourceTitle: "The nature of product",
-        sourceUrl: "https://www.lennyspodcast.com/the-nature-of-product-marty-cagan/",
-      },
-    ],
-  },
-  {
-    slug: "test-everything",
-    title: "Test Everything",
-    albumSlug: "frameworks",
-    trackNumber: 3,
-    duration: "2:39",
-    audioUrl: "/audio/test-everything.mp3",
-    coverImage: "/covers/test-everything.jpg",
-    genre: "Driving Indie Rock",
-    mood: "Energetic, defiant, awestruck",
-    tags: ["A/B testing", "experimentation", "humility"],
-    lyrics: `[Verse 1]
-Every meeting, same old scene
-Someone's selling us the dream
-"This one's different, watch it fly"
-Eighty-five percent will die
-A backlog full of brilliant plans
-Dying quiet in our hands
-
-[Chorus]
-Test everything, test everything
-Your best idea might not mean a thing
-The throwaway, the afterthought
-Could be the biggest win you've got
-Test everything
-
-[Verse 2]
-A tiny change sat on the list
-Move the ad text — easy to miss
-It gathered dust for half a year
-Till one engineer said "I'm building here"
-Two days to ship it, let it run
-The alarm went off — what had they done?
-
-[Chorus]
-Test everything, test everything
-"Too good to be true — go find the bug"
-But there was no bug, no mistake
-Just the biggest win they'd ever make
-Test everything
-
-[Bridge]
-A hundred million from a shrug
-From the change nobody loved enough
-If nine in ten are gonna break
-You're free to try the wildest take
-
-[Final Chorus]
-Test everything, test everything
-The one you'd cut could be the biggest thing
-Don't trust the room, don't trust your gut
-The data knows what you do not
-Test everything
-
-[Outro]
-We thought we knew
-We never do`,
-    concept: "Ronny Kohavi's guide to A/B testing: the story of a tiny, ignored change at Bing that generated $100M in revenue.",
-    keyInsight: "Your best idea might not mean a thing. The throwaway afterthought could be the biggest win. 85% of ideas fail.",
-    keyQuote: "I'm a big fan of test everything. Even small bug fixes can sometimes have surprising, unexpected impact.",
-    quoteSpeaker: "Ronny Kohavi",
-    sources: [
-      { title: "The ultimate guide to A/B testing", type: "podcast", url: "https://www.lennyspodcast.com/the-ultimate-guide-to-ab-testing-ronny-kohavi/", guest: "Ronny Kohavi" },
-    ],
-    storyBehind: "A tiny change sat on Bing's backlog for half a year: move the ad text. One engineer said 'I'm building this.' Two days to ship, let it run. The alarm went off: 'Too good to be true, go find the bug.' But there was no bug. Just $100 million in annual revenue.",
-    annotations: [
-      {
-        lyricText: "Eighty-five percent will die",
-        note: "Ronny Kohavi told Lenny that across Microsoft, Google, and other tech giants, roughly 85% of ideas that teams are excited about fail to move the metrics they target. This is why experimentation culture matters — intuition is wrong most of the time.",
-        sourceTitle: "The ultimate guide to A/B testing",
-        sourceUrl: "https://www.lennyspodcast.com/the-ultimate-guide-to-ab-testing-ronny-kohavi/",
-      },
-      {
-        lyricText: "A tiny change sat on the list",
-        note: "The legendary Bing ad headline experiment: a small change to ad text placement sat on the backlog for six months because nobody thought it mattered. When an engineer finally shipped it in two days, it generated over $100 million in annual revenue.",
-        sourceTitle: "The ultimate guide to A/B testing",
-        sourceUrl: "https://www.lennyspodcast.com/the-ultimate-guide-to-ab-testing-ronny-kohavi/",
-      },
-      {
-        lyricText: "Too good to be true — go find the bug",
-        note: "When the Bing experiment results came in, the team's first reaction was that the numbers must be wrong. Kohavi told Lenny this is a common pattern: the biggest wins often look like measurement errors at first because nobody expected the change to matter.",
-        sourceTitle: "The ultimate guide to A/B testing",
-        sourceUrl: "https://www.lennyspodcast.com/the-ultimate-guide-to-ab-testing-ronny-kohavi/",
-      },
-      {
-        lyricText: "A hundred million from a shrug",
-        note: "Kohavi's $100M Bing story became the defining parable of experimentation culture. The lesson: the changes you'd cut from the roadmap might be worth more than the features you're most excited about. Humility about ideas is the foundation of testing culture.",
-        sourceTitle: "The ultimate guide to A/B testing",
-        sourceUrl: "https://www.lennyspodcast.com/the-ultimate-guide-to-ab-testing-ronny-kohavi/",
-      },
-    ],
-  },
-  {
-    slug: "whats-the-job",
-    title: "What's the Job",
-    albumSlug: "frameworks",
-    trackNumber: 4,
-    duration: "3:39",
-    audioUrl: "/audio/whats-the-job.mp3",
-    coverImage: "/covers/whats-the-job.jpg",
-    genre: "Acoustic Soul",
-    mood: "Warm, revelatory, intimate",
-    tags: ["JTBD", "customer empathy", "product strategy"],
-    lyrics: `[Verse 1]
-Two candy bars on the same damn shelf
-Same chocolate and caramel inside
-One gets grabbed when you've skipped your lunch
-The other when you need a place to hide
-One competes with a protein shake
-The other with a glass of wine
-Same aisle, different universe
-You'd never know just looking at the sign
-
-[Chorus]
-What's the job, what's the job
-It was never 'bout the thing
-What's the job, what's the job
-It's the struggle that they bring
-You gave them what they asked for
-And they walked away
-What's the job?
-
-[Verse 2]
-He built the condos for the empty nest
-They said, "We're done with dinner plates"
-So he cut the room, gave them the rest
-And six weeks later, no one stayed
-He sat them down and heard the truth
-The table held their holidays, their grace
-Every candle, every fight, every prayer
-They couldn't leave until it had a place
-
-[Chorus]
-What's the job, what's the job
-It was never what they said
-What's the job, what's the job
-It's the life inside their head
-You gave them what they asked for
-But they needed something else
-What's the job?
-
-[Bridge]
-He couldn't read a single page
-So he learned to read the room
-Not the feature, not the price tag
-But the weight behind the move
-
-[Final Chorus, building]
-What's the job, what's the job
-It was never 'bout the brand
-What's the job, what's the job
-There's a life that needs a hand
-Build it and they'll come, they said
-That was always just a lie
-What's the job?
-
-[Outro]
-He cut the bedroom for the table
-They moved the week they knew it'd fit`,
-    concept: "Bob Moesta's Jobs to Be Done framework: people don't buy products, they hire them to make progress.",
-    keyInsight: "People don't buy, they hire. What they say isn't what they do. The struggling moment is the clue.",
-    keyQuote: "A struggling moment causes demand. Most people think they create a product and that creates demand.",
-    quoteSpeaker: "Bob Moesta",
-    sources: [
-      { title: "The ultimate guide to JTBD", type: "podcast", url: "https://www.lennyspodcast.com/the-ultimate-guide-to-jtbd-bob-moesta/", guest: "Bob Moesta" },
-    ],
-    storyBehind: "A condo developer couldn't sell units. Retirees said 'we don't need a dining room' but every sale fell through at six weeks. Bob sat across from them and asked not what they wanted but what they'd lost. That dining table held their life in oak. He cut the bedroom and added the table. They moved the week they knew it'd fit.",
-    annotations: [
-      {
-        lyricText: "Two candy bars on the same damn shelf",
-        note: "Bob Moesta's famous Snickers vs. Milky Way example from his Lenny interview: two nearly identical chocolate bars compete with completely different things. Snickers competes with a meal replacement; Milky Way competes with a moment of relaxation. Same shelf, different jobs.",
-        sourceTitle: "The ultimate guide to JTBD",
-        sourceUrl: "https://www.lennyspodcast.com/the-ultimate-guide-to-jtbd-bob-moesta/",
-      },
-      {
-        lyricText: "He built the condos for the empty nest",
-        note: "The condo story is Moesta's signature case study. A Detroit developer couldn't sell units to retirees. They all said 'we don't need a dining room' — but every sale stalled at six weeks. The real blocker wasn't the condo; it was leaving the dining table that held 30 years of holidays.",
-        sourceTitle: "The ultimate guide to JTBD",
-        sourceUrl: "https://www.lennyspodcast.com/the-ultimate-guide-to-jtbd-bob-moesta/",
-      },
-      {
-        lyricText: "He couldn't read a single page",
-        note: "Moesta told Lenny he's dyslexic and couldn't read until he was 25. This forced him to learn by watching people — observing what they actually do rather than what they say. He credits this as the origin of his 'struggling moment' interview technique.",
-        sourceTitle: "The ultimate guide to JTBD",
-        sourceUrl: "https://www.lennyspodcast.com/the-ultimate-guide-to-jtbd-bob-moesta/",
-      },
-      {
-        lyricText: "He cut the bedroom for the table",
-        note: "The resolution of the condo story: once Moesta understood the real job (preserving family tradition, not downsizing), the developer cut a bedroom and added space for the dining table. Units started selling immediately. The product didn't change — the understanding did.",
-        sourceTitle: "The ultimate guide to JTBD",
-        sourceUrl: "https://www.lennyspodcast.com/the-ultimate-guide-to-jtbd-bob-moesta/",
-      },
-    ],
-  },
-  {
-    slug: "good-enough",
-    title: "Good Enough",
-    albumSlug: "frameworks",
-    trackNumber: 5,
-    duration: "2:43",
-    audioUrl: "/audio/good-enough.mp3",
-    coverImage: "/covers/good-enough.jpg",
-    genre: "Indie Pop",
-    mood: "Urgent, liberating, cathartic",
-    tags: ["prioritization", "perfectionism", "leverage"],
-    lyrics: `[Verse 1]
-Three years at Google, couldn't sleep
-The list grew longer every week
-Came home and told her every night
-"I worked all day and nothing's right"
-Spent an hour on notes nobody read
-Same fire for what moved and what was dead
-
-[Chorus]
-Good enough, good enough
-Not every task deserves my blood
-The list won't love me back
-No matter how I bleed for that
-L-N-O, now I know
-Where to pour and where to let go
-
-[Verse 2]
-Found a blog post, never found again
-But those words cut the noise inside my head
-Some work comes back at ten for one
-The rest is overhead — just get it done
-The notes that shape a CEO's next call?
-Two hours. But the standup? Send, that's all
-
-[Chorus 2]
-Good enough, good enough
-Not everything deserves my love
-The list won't love me back
-The overhead can have enough
-L-N-O, now I know
-Which to hold and which to let go
-
-[Bridge]
-"Next month I'll finally have the time"
-"Next month I'll work on what is mine"
-Next month showed up with fires of its own
-Same lie I told in a different tone
-I stopped asking "when"
-And started asking "which"
-
-[Final Chorus]
-Good enough, good enough
-I don't owe perfection every time
-The list won't love me back
-But the leverage work? That's where I shine
-L-N-O, now I go
-With the fire for what makes me grow
-
-[Outro]
-Not every task you own
-Deserves the you that can't sleep at night
-Good enough... is enough`,
-    concept: "Shreyas Doshi's LNO Framework: categorizing tasks as Leverage, Neutral, or Overhead, and giving yourself permission to do overhead tasks at 'good enough.'",
-    keyInsight: "Not every task deserves your best. The list won't love you back. Stop asking 'when will I have time?' and start asking 'which tasks deserve my full effort?'",
-    keyQuote: "All your tasks are not created equal. Many ambitious people treat each type the same way, and therein lies the problem.",
-    quoteSpeaker: "Shreyas Doshi",
-    sources: [
-      { title: "4 questions Shreyas Doshi wishes he'd asked himself sooner", type: "podcast", url: "https://www.lennyspodcast.com/shreyas-doshi-4-questions/", guest: "Shreyas Doshi" },
-    ],
-    storyBehind: "Three years at Google, Shreyas couldn't sleep. The list grew longer every week. He found a blog post that cut the noise: some work returns 10x, the rest is overhead. The standup notes nobody reads? Send, that's all. The notes that shape a CEO's next call? Two hours. Good enough is enough.",
-    annotations: [
-      {
-        lyricText: "Three years at Google, couldn't sleep",
-        note: "Shreyas Doshi told Lenny about his early years at Google where he treated every task with the same intensity. He'd come home exhausted telling his wife 'I worked all day and nothing's right' — because he was giving overhead tasks the same energy as leverage tasks.",
-        sourceTitle: "4 questions Shreyas Doshi wishes he'd asked himself sooner",
-        sourceUrl: "https://www.lennyspodcast.com/shreyas-doshi-4-questions/",
-      },
-      {
-        lyricText: "L-N-O, now I know",
-        note: "The LNO Framework: Leverage tasks (10x return on effort — prep for a CEO meeting), Neutral tasks (1x return — regular work), Overhead tasks (necessary but low-return — status updates, expense reports). Doshi's insight: do L tasks at 100%, N at 80%, O at 'good enough.'",
-        sourceTitle: "4 questions Shreyas Doshi wishes he'd asked himself sooner",
-        sourceUrl: "https://www.lennyspodcast.com/shreyas-doshi-4-questions/",
-      },
-      {
-        lyricText: "Next month I'll finally have the time",
-        note: "Doshi told Lenny this is the most dangerous lie ambitious people tell themselves. 'Next month' never comes with fewer fires. The breakthrough is switching from 'when will I have time?' to 'which tasks deserve my full effort?' — a question of allocation, not availability.",
-        sourceTitle: "4 questions Shreyas Doshi wishes he'd asked himself sooner",
-        sourceUrl: "https://www.lennyspodcast.com/shreyas-doshi-4-questions/",
-      },
-      {
-        lyricText: "Spent an hour on notes nobody read",
-        note: "Doshi's go-to example of overhead disguised as important work: spending an hour perfecting meeting notes that nobody reads. The standup update? Just send it. The notes that shape a CEO's next decision? Those deserve two hours. Knowing the difference is the whole framework.",
-        sourceTitle: "4 questions Shreyas Doshi wishes he'd asked himself sooner",
-        sourceUrl: "https://www.lennyspodcast.com/shreyas-doshi-4-questions/",
-      },
-    ],
-  },
 ];
 
 export const albums: Album[] = [
   {
-    slug: "frameworks",
-    title: "Frameworks",
-    subtitle: "The mental models that run tech",
-    description: "The intellectual tools and thinking patterns that define modern product work. Mission cascades, empowered teams, A/B testing, JTBD, and the LNO Framework.",
-    coverImage: "/covers/frameworks.jpg",
-    accentColor: "#4338ca",
-    tracks: frameworksTracks,
-  },
-  {
-    slug: "founders",
-    title: "Founders",
-    subtitle: "For anyone who's knocked on doors and believed",
-    description: "Songs about the early days: finding PMF, escaping tarpit ideas, and doing things that don't scale. Based on Brian Chesky, Rahul Vohra, and Dalton Caldwell's episodes.",
-    coverImage: "/covers/founders.jpg",
-    accentColor: "#d97706",
-    tracks: foundersTracks,
-  },
-  {
-    slug: "product",
-    title: "Product",
-    subtitle: "For the ones who obsess over every pixel",
-    description: "Songs about taste, the 11-star framework, and why one user conversation beats a thousand dashboards. Based on Shreyas Doshi, Brian Chesky, and Teresa Torres.",
-    coverImage: "/covers/product.jpg",
-    accentColor: "#b45309",
-    tracks: productTracks,
-  },
-  {
-    slug: "builders",
-    title: "Builders",
-    subtitle: "For the ones who'd rather ship than plan",
-    description: "Songs about shipping velocity and the vibe coding revolution. Based on Ramp's story and the rise of AI-powered building. More tracks coming soon.",
-    coverImage: "/covers/builders.jpg",
-    accentColor: "#92400e",
-    tracks: buildersTracks,
-  },
-  {
-    slug: "the-human-side",
-    title: "The Human Side",
-    subtitle: "For anyone who's wondered if they belong",
-    description: "Songs about imposter syndrome and burnout, the things nobody talks about in standups. Based on Julie Zhuo and Andy Johns' episodes. More tracks coming soon.",
-    coverImage: "/covers/the-human-side.jpg",
-    accentColor: "#78350f",
-    tracks: humanSideTracks,
-  },
-  {
-    slug: "the-operators",
-    title: "The Operators",
-    subtitle: "Inside stories from the best companies",
-    description: "The iconic company stories and legendary guests from Lenny's most popular content. Duolingo's streak, Chesky's founder mode, Stripe's scaling, Linear's craft, and Ramp's speed.",
+    slug: "the-craft",
+    title: "The Craft",
+    subtitle: "Build better products",
+    description: "Songs about taste, detail obsession, and the invisible work that separates good products from great ones. From Shreyas Doshi's product sense to Linear's relentless pursuit of quality.",
     coverImage: "",
-    accentColor: "#c2410c",
-    tracks: operatorsTracks,
+    accentColor: "#b45309",
+    tracks: theCraftTracks,
   },
   {
     slug: "growth-engine",
     title: "Growth Engine",
     subtitle: "How products take off",
-    description: "Frameworks, strategies, and stories about growing products from zero to massive. The Racecar framework, North Star metrics, first users, virality, and positioning.",
+    description: "Frameworks, strategies, and stories about growing products from zero to massive. The Racecar framework, North Star metrics, streaks, and the loops that compound.",
     coverImage: "",
     accentColor: "#a16207",
     tracks: growthEngineTracks,
   },
   {
-    slug: "the-startup-life",
-    title: "The Startup Life",
-    subtitle: "Building from nothing",
-    description: "The emotional journey of starting, scaling, and sometimes failing. Marketplace cold starts, bootstrapping, fundraising, failure, and the universal founder struggle.",
+    slug: "by-the-numbers",
+    title: "By the Numbers",
+    subtitle: "Benchmarks & metrics that matter",
+    description: "Songs about retention rates, activation metrics, cohort analysis, and the numbers that separate thriving products from dying ones.",
     coverImage: "",
-    accentColor: "#7e22ce",
-    tracks: startupLifeTracks,
+    accentColor: "#0369a1",
+    tracks: byTheNumbersTracks,
+  },
+  {
+    slug: "the-weight",
+    title: "The Weight",
+    subtitle: "Leadership & management",
+    description: "The hardest parts of leadership: firing with grace, making tough calls, and carrying the weight that comes with the title.",
+    coverImage: "",
+    accentColor: "#7c2d12",
+    tracks: theWeightTracks,
   },
   {
     slug: "career-moves",
     title: "Career Moves",
     subtitle: "Getting ahead, getting real",
-    description: "Career growth, negotiation, leadership, and the human side of work. The Magic Loop, salary negotiation, firing with grace, burnout, and managing up.",
+    description: "Career growth, managing up, and the art of making your work visible. The Magic Loop, weekly updates, and compound trust.",
     coverImage: "",
     accentColor: "#0e7490",
     tracks: careerMovesTracks,
+  },
+  {
+    slug: "electric-dreams",
+    title: "Electric Dreams",
+    subtitle: "Songs about AI",
+    description: "The AI revolution in product building: vibe coding, the new stack, and the people shaping what comes next.",
+    coverImage: "",
+    accentColor: "#7e22ce",
+    tracks: electricDreamsTracks,
+  },
+  {
+    slug: "the-startup-life",
+    title: "The Startup Life",
+    subtitle: "Building from nothing",
+    description: "The emotional journey of starting, scaling, and sometimes failing. Marketplace cold starts, doing things that don't scale, fundraising, and the universal founder struggle.",
+    coverImage: "",
+    accentColor: "#d97706",
+    tracks: startupLifeTracks,
+  },
+  {
+    slug: "the-talent-search",
+    title: "The Talent Search",
+    subtitle: "Hire the best people",
+    description: "Songs about finding, interviewing, and closing the people who will define your company. From first hires to executive recruiting.",
+    coverImage: "",
+    accentColor: "#059669",
+    tracks: theTalentSearchTracks,
+  },
+  {
+    slug: "the-interview",
+    title: "The Interview",
+    subtitle: "Get the job",
+    description: "Songs about job searching, interviewing, negotiating, and landing your dream role. Never search alone.",
+    coverImage: "",
+    accentColor: "#4338ca",
+    tracks: theInterviewTracks,
+  },
+  {
+    slug: "deep-work",
+    title: "Deep Work",
+    subtitle: "Productivity that matters",
+    description: "Songs about focus, time management, and protecting the space where real work happens. Indistractable habits and making time for what matters.",
+    coverImage: "",
+    accentColor: "#1e3a5f",
+    tracks: deepWorkTracks,
+  },
+  {
+    slug: "the-human-side",
+    title: "The Human Side",
+    subtitle: "Feel less alone in the struggle",
+    description: "Songs about imposter syndrome, burnout, asking for help, and the things nobody talks about in standups. You're not the only one.",
+    coverImage: "",
+    accentColor: "#78350f",
+    tracks: humanSideTracks,
   },
 ];
