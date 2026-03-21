@@ -5,3 +5,4 @@ Content Task 1 DONE: Album recategorization — validated 11 JTBD categories, na
 Task 3: Added author/source attribution (Mic/FileText icon + guest name) below tags on unlocked album track rows.
 Task 4: Replaced "Inspired by" section on track pages with styled "Based on" cards — accent left border, font-lenny title, guest name, type pill badge, external links.
 Content Task 2 DONE: Created batch3/tasks.json — 20 songs filling all gap albums (By the Numbers 3, Talent Search 3, Electric Dreams 2, Interview 3, Deep Work 3, Weight 2, Career Moves 2, Human Side 2). Each task has MCP filenames, research_keywords, album, output_file.
+Task 5: Added 4 annotations each to product-market-fit, the-maze, taste, eleven-stars in lib/albums.ts. Build passes.
