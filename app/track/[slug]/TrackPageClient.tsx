@@ -415,12 +415,8 @@ export default function TrackPageClient({ slug }: { slug: string }) {
 
         {/* Vote + Share (hidden for locked tracks) */}
         {!track.isLocked && (
-          <div className="mb-6">
-            <VoteButtons trackSlug={track.slug} accentColor={album.accentColor} />
-          </div>
-        )}
-        {!track.isLocked && (
           <div className="flex flex-wrap items-center gap-3">
+            <VoteButtons trackSlug={track.slug} accentColor={album.accentColor} />
             {track.sunoId && (
               <a
                 href={`https://suno.com/song/${track.sunoId}`}
@@ -433,31 +429,6 @@ export default function TrackPageClient({ slug }: { slug: string }) {
                 Listen on Suno
               </a>
             )}
-            <button
-              onClick={handleCopyLink}
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium transition-colors"
-              style={{
-                backgroundColor: copied ? album.accentColor : "transparent",
-                color: copied ? "#ffffff" : undefined,
-                borderWidth: "1px",
-                borderStyle: "solid",
-                borderColor: copied ? album.accentColor : "hsl(var(--border) / 0.5)",
-              }}
-            >
-              {copied ? "Copied!" : "Copy Link"}
-            </button>
-            <button
-              onClick={handleShareX}
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm text-muted-foreground hover:text-foreground border border-border/50 hover:border-border transition-colors"
-            >
-              Share to X
-            </button>
-            <button
-              onClick={handleShareLinkedIn}
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm text-muted-foreground hover:text-foreground border border-border/50 hover:border-border transition-colors"
-            >
-              Share to LinkedIn
-            </button>
           </div>
         )}
       </main>
