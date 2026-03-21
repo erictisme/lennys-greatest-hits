@@ -86,7 +86,7 @@
         "All output files exist"
       ],
       "files": ["plans/ralph-songwriter.md", "content/songs/batch3/tasks.json"],
-      "passes": false
+      "passes": true
     }
   ]
 }

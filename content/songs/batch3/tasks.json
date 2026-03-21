@@ -147,7 +147,8 @@
       "source_files": [
         "newsletters/the-definitive-guide-to-mastering-product-sense-interviews.md"
       ],
-      "complete": false
+      "complete": true,
+      "completed_at": "2026-03-21T22:30:00+08:00"
     },
     {
       "id": 12,
@@ -160,7 +161,8 @@
         "newsletters/time-management-techniques-that-actually-work.md",
         "newsletters/part-2-time-management-techniques-that-actually-work.md"
       ],
-      "complete": false
+      "complete": true,
+      "completed_at": "2026-03-21T22:30:00+08:00"
     },
     {
       "id": 13,
@@ -172,7 +174,8 @@
       "source_files": [
         "podcasts/nir-eyal.md"
       ],
-      "complete": false
+      "complete": true,
+      "completed_at": "2026-03-21T22:30:00+08:00"
     },
     {
       "id": 14,
@@ -184,7 +187,8 @@
       "source_files": [
         "podcasts/jake-knapp--john-zeratsky.md"
       ],
-      "complete": false
+      "complete": true,
+      "completed_at": "2026-03-21T22:30:00+08:00"
     },
     {
       "id": 15,
@@ -196,7 +200,8 @@
       "source_files": [
         "newsletters/my-favorite-decision-making-frameworks.md"
       ],
-      "complete": false
+      "complete": true,
+      "completed_at": "2026-03-21T22:30:00+08:00"
     },
     {
       "id": 16,
@@ -208,7 +213,8 @@
       "source_files": [
         "newsletters/the-secret-to-a-great-planning-process---lessons-from-airbnb-and-eventbrite.md"
       ],
-      "complete": false
+      "complete": true,
+      "completed_at": "2026-03-21T22:30:00+08:00"
     },
     {
       "id": 17,
@@ -221,7 +227,8 @@
         "newsletters/a-pms-guide-to-influence.md",
         "newsletters/how-to-get-better-at-influence.md"
       ],
-      "complete": false
+      "complete": true,
+      "completed_at": "2026-03-21T22:30:00+08:00"
     },
     {
       "id": 18,
@@ -233,7 +240,8 @@
       "source_files": [
         "newsletters/how-to-communicate-tradeoffs-so-leaders-will-listen.md"
       ],
-      "complete": false
+      "complete": true,
+      "completed_at": "2026-03-21T22:30:00+08:00"
     },
     {
       "id": 19,
@@ -245,7 +253,8 @@
       "source_files": [
         "podcasts/jonny-miller.md"
       ],
-      "complete": false
+      "complete": true,
+      "completed_at": "2026-03-21T22:30:00+08:00"
     },
     {
       "id": 20,
@@ -257,7 +266,8 @@
       "source_files": [
         "newsletters/on-asking-for-help-even-when-you-really-dont-want-to.md"
       ],
-      "complete": false
+      "complete": true,
+      "completed_at": "2026-03-21T22:30:00+08:00"
     }
   ]
 }
