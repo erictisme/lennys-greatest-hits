@@ -70,6 +70,30 @@ Physically go to them`,
     keyQuote: "Go to your users. Physically go to them.",
     quoteSpeaker: "Brian Chesky",
     storyBehind: "Brian Chesky told Lenny the story of flying to New York in 2009, personally photographing Airbnb listings with a rented camera because hosts' blurry phone photos weren't converting. The Collison brothers at Stripe would literally grab people's laptops and install Stripe for them on the spot. DoorDash's Tony Xu started by taping $6 flyers to dorm room doors at Stanford. Every one of these billion-dollar companies started with founders doing the most unscalable thing imaginable, and that's exactly what made them work.",
+    annotations: [
+      {
+        lyricText: "Knocked on every door from dusk to dawn",
+        note: "Brian Chesky told Lenny he flew to New York and personally knocked on hosts' doors to photograph their apartments. This hands-on approach tripled conversion rates on listings with professional photos.",
+        sourceTitle: "Brian Chesky on Airbnb's early days",
+        sourceUrl: "https://www.lennyspodcast.com/brian-cheskys-new-playbook/",
+      },
+      {
+        lyricText: "Stripe boys at the laptop, wouldn't leave",
+        note: "The Collison brothers famously wouldn't take \"I'll sign up later\" for an answer. They'd ask \"can I see your laptop?\" and install Stripe right there. Lenny calls this the gold standard of unscalable acquisition.",
+        sourceTitle: "How the biggest companies got their first users",
+      },
+      {
+        lyricText: "A hundred users loved by hand, not code",
+        note: "Paul Graham's famous essay argues you need to \"recruit users one at a time\" and make each one love you before thinking about growth. Lenny featured this as the #1 lesson across 20+ first-user stories.",
+        sourceTitle: "Do Things That Don't Scale",
+        sourceUrl: "https://paulgraham.com/ds.html",
+      },
+      {
+        lyricText: "Every great company started small",
+        note: "Lenny's research across Airbnb, DoorDash, Tinder, Stripe, and Uber found the same pattern: the founders who won were the ones willing to do the work that wouldn't scale, personally serving early users until they figured out what people really wanted.",
+        sourceTitle: "How the biggest companies got their first users",
+      },
+    ],
   },
   {
     slug: "product-market-fit",
