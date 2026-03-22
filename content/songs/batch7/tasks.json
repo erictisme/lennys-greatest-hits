@@ -1,0 +1,98 @@
+{
+  "batch": 7,
+  "created": "2026-03-22",
+  "strategy": "Final batch. 7 songs filling the thinnest albums (The Talent Search, By the Numbers, The Interview, Deep Work) plus iconic founders still missing. Every song must be a standout — this is the closing statement of the catalog.",
+  "tasks": [
+    {
+      "id": 1,
+      "idea": "The Giant Piece of Shit",
+      "description": "Song about Stewart Butterfield and Slack — 'I feel like what we have right now is just a giant piece of shit.' Mental models for building products people love. The divine discontent of never being satisfied. Two famous pivots (Flickr → Slack). Making the entire company chant 'the measure of our success will be the customer's success.' Read podcasts/stewart-butterfield.md for the full conversation (16K words).",
+      "research_keywords": ["Stewart Butterfield", "Slack", "mental models", "divine discontent", "pivot"],
+      "output_file": "the-giant-piece-of-shit",
+      "album": "the-craft",
+      "source_files": [
+        "podcasts/stewart-butterfield.md"
+      ],
+      "complete": true,
+      "completed_at": "2026-03-22T12:00:00+08:00"
+    },
+    {
+      "id": 2,
+      "idea": "A Hundred Nos",
+      "description": "Song about Melanie Perkins and Canva — 100+ investor rejections to $42B. Column B thinking: dream of the perfect vision, work backwards. University student from Australia with no connections. 'The most embarrassing step is the first one.' Profitable for 8 years straight. Read podcasts/melanie-perkins.md for the full conversation (13K words).",
+      "research_keywords": ["Melanie Perkins", "Canva", "rejection", "Column B", "persistence"],
+      "output_file": "a-hundred-nos",
+      "album": "the-startup-life",
+      "source_files": [
+        "podcasts/melanie-perkins.md"
+      ],
+      "complete": true,
+      "completed_at": "2026-03-22T12:00:00+08:00"
+    },
+    {
+      "id": 3,
+      "idea": "Thinking in Bets",
+      "description": "Song about Annie Duke — decision-making under uncertainty. Pre-mortems with kill criteria. 'There is no such thing as a long feedback loop.' The difference between decision quality and outcome quality. Former pro poker player turned decision science advisor. Meetings should only be for discussion, never discovery or decision. Read podcasts/annie-duke.md for the full conversation (14K words).",
+      "research_keywords": ["Annie Duke", "Thinking in Bets", "decision-making", "kill criteria", "poker"],
+      "output_file": "thinking-in-bets",
+      "album": "deep-work",
+      "source_files": [
+        "podcasts/annie-duke.md"
+      ],
+      "complete": true,
+      "completed_at": "2026-03-22T12:00:00+08:00"
+    },
+    {
+      "id": 4,
+      "idea": "The Long Game",
+      "description": "Song about Nikhyl Singhal on building a long and meaningful career — mentored hundreds of PMs, one of Lenny's all-time best episodes. The dog track metaphor (chasing a mechanical rabbit). Stage of company matters more than name of company. The Skip community. Read podcasts/nikhyl-singhal.md for the full conversation (14K words).",
+      "research_keywords": ["Nikhyl Singhal", "career", "long game", "mentoring", "The Skip"],
+      "output_file": "the-long-game",
+      "album": "career-moves",
+      "source_files": [
+        "podcasts/nikhyl-singhal.md"
+      ],
+      "complete": true,
+      "completed_at": "2026-03-22T12:00:00+08:00"
+    },
+    {
+      "id": 5,
+      "idea": "How Have I Been Complicit",
+      "description": "Song about Jerry Colonna — 'How have I been complicit in creating the conditions I say I don't want?' Complicit not responsible — you're driving the getaway car, not sticking up the bank teller. We're socialized to bullshit ourselves. Former VC turned executive coach. The big lie: success doesn't equal happiness. Read podcasts/jerry-colonna.md for the full conversation (11K words).",
+      "research_keywords": ["Jerry Colonna", "Reboot", "complicit", "coaching", "self-inquiry"],
+      "output_file": "how-have-i-been-complicit",
+      "album": "the-human-side",
+      "source_files": [
+        "podcasts/jerry-colonna.md"
+      ],
+      "complete": true,
+      "completed_at": "2026-03-22T12:00:00+08:00"
+    },
+    {
+      "id": 6,
+      "idea": "Crossing the Chasm",
+      "description": "Song about Geoffrey Moore — the most influential go-to-market book ever written. Finding your beachhead. The kindling and the log — you have to light the fire right next to the fuel. 'Our beachhead segment is the Fortune 500' (that's not how this works). The gap between early adopters and the early majority. Read podcasts/geoffrey-moore.md for the full conversation (15K words).",
+      "research_keywords": ["Geoffrey Moore", "Crossing the Chasm", "beachhead", "go-to-market", "early adopters"],
+      "output_file": "crossing-the-chasm",
+      "album": "the-interview",
+      "source_files": [
+        "podcasts/geoffrey-moore.md"
+      ],
+      "complete": true,
+      "completed_at": "2026-03-22T12:00:00+08:00"
+    },
+    {
+      "id": 7,
+      "idea": "Seventy-Five Businesses",
+      "description": "Song about Andrew Wilkinson / Tiny — 'I've run 75+ businesses. Here's why you're probably chasing the wrong idea.' The Berkshire Hathaway of the internet. Fish where the fish are (Charlie Munger). Don't try to deadlift 300 pounds on day one. AI as the $200/month employee who works 24/7. The fundamental question: do all jobs become a single prompt? Read podcasts/andrew-wilkinson.md for the full conversation (16K words).",
+      "research_keywords": ["Andrew Wilkinson", "Tiny", "boring businesses", "holding company", "AI"],
+      "output_file": "seventy-five-businesses",
+      "album": "the-interview",
+      "source_files": [
+        "podcasts/andrew-wilkinson.md"
+      ],
+      "complete": true,
+      "completed_at": "2026-03-22T12:00:00+08:00"
+    }
+  ]
+}

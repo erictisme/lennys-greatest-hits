@@ -171,6 +171,31 @@
       ],
       "files": ["content/songs/batch6/tasks.json", "plans/ralph-songwriter-batch5.md", "content/songs/batch6/feedback.md"],
       "passes": true
+    },
+    {
+      "id": 11,
+      "category": "content",
+      "priority": 0,
+      "description": "GENERATE SONGS (BATCH 7, 7 SONGS — FINAL BATCH): Execute the song pipeline for all 7 tasks in content/songs/batch7/tasks.json. For each song: Phase 1 (Research via Lenny MCP — use mcp__lennysdata__read_content with the source_files listed in the task, extract story/quotes/emotional core, rate, generate hooks, save research brief to content/songs/batch7/research/). Phase 2 (Songwriting — read research brief + ALL quality guides: content/lyric-craft-guide.md, content/brainstorm/lyric-principles.md, content/brainstorm/suno-lyric-tips.md, content/songs/artist-palette.md, content/songs/batch7/feedback.md. Write lyrics using Rick Rubin mode, critique, rewrite, create Suno prompt. Save lyrics to content/songs/batch7/lyrics/ and suno prompt to content/songs/batch7/suno-prompts/). THIS IS THE FINAL BATCH — every song must be a standout. Iconic guests: Stewart Butterfield, Melanie Perkins, Annie Duke, Nikhyl Singhal, Jerry Colonna, Geoffrey Moore, Andrew Wilkinson. DONE: 7 research briefs, 7 lyric files, 7 suno prompts exist. Each task marked complete in tasks.json. NOT TOUCH: Do not modify any batch1-6 files, do not modify lib/albums.ts. VERIFY: 21 output files exist (7 research + 7 lyrics + 7 suno prompts), all 7 tasks marked complete.",
+      "steps": [
+        "Read plans/ralph-songwriter-batch7.md for full loop instructions",
+        "Read content/songs/batch7/feedback.md for batch-specific rules",
+        "Read content/lyric-craft-guide.md for lyric quality rules",
+        "Read content/brainstorm/lyric-principles.md for songwriting principles",
+        "Read content/brainstorm/suno-lyric-tips.md for Suno technical checklist",
+        "Read content/songs/artist-palette.md for genre/style guidance",
+        "For task 1 (The Giant Piece of Shit — Stewart Butterfield): Phase 1 Research → Phase 2 Songwriting",
+        "For task 2 (A Hundred Nos — Melanie Perkins): Phase 1 Research → Phase 2 Songwriting",
+        "For task 3 (Thinking in Bets — Annie Duke): Phase 1 Research → Phase 2 Songwriting",
+        "For task 4 (The Long Game — Nikhyl Singhal): Phase 1 Research → Phase 2 Songwriting",
+        "For task 5 (How Have I Been Complicit — Jerry Colonna): Phase 1 Research → Phase 2 Songwriting",
+        "For task 6 (Crossing the Chasm — Geoffrey Moore): Phase 1 Research → Phase 2 Songwriting",
+        "For task 7 (Seventy-Five Businesses — Andrew Wilkinson): Phase 1 Research → Phase 2 Songwriting",
+        "Mark tasks 1-7 complete in content/songs/batch7/tasks.json",
+        "Verify: 21 output files exist (7 research + 7 lyrics + 7 suno prompts)"
+      ],
+      "files": ["content/songs/batch7/tasks.json", "plans/ralph-songwriter-batch7.md", "content/songs/batch7/feedback.md"],
+      "passes": true
     }
   ]
 }
