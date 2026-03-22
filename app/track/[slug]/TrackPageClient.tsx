@@ -225,12 +225,13 @@ export default function TrackPageClient({ slug }: { slug: string }) {
                 )}
               </p>
               {track.sources?.[0] && (
-                <p className="text-xs text-muted-foreground/50 mt-1 flex items-center gap-1">
+                <p className="text-xs text-muted-foreground/50 mt-1">
                   {track.sources[0].type === "podcast" ? (
-                    <Mic className="w-3 h-3" />
+                    <Mic className="w-3 h-3 inline -mt-0.5" />
                   ) : (
-                    <FileText className="w-3 h-3" />
+                    <FileText className="w-3 h-3 inline -mt-0.5" />
                   )}
+                  {" "}
                   {track.sources[0].guest || track.sources[0].title}
                   {track.sources[0].guest && track.sources[0].title && (
                     <span className="text-muted-foreground/30"> · {track.sources[0].title}</span>
