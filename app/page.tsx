@@ -109,8 +109,7 @@ export default function Home() {
         <button
           onClick={() => {
             trackEvent("shuffle_play_clicked");
-            const track = audio.shuffleAll();
-            if (track) router.push(`/track/${track.slug}`);
+            audio.shuffleAll();
           }}
           className="mt-4 inline-flex items-center gap-2 px-6 py-2.5 text-sm font-semibold rounded-full text-white hover:opacity-90 transition-opacity"
           style={{ backgroundColor: "#b45309" }}
@@ -216,20 +215,19 @@ export default function Home() {
                   Show all
                 </Link>
               </div>
-              <div className="flex gap-4 overflow-x-auto pb-4 -mx-4 px-4 scrollbar-hide snap-x snap-mandatory" style={{ WebkitOverflowScrolling: "touch" }}>
+              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
                 {allAlbums.map((album, i) => (
                   <motion.div
                     key={album.slug}
                     initial={{ opacity: 0, y: 10 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.3, delay: i * 0.06 }}
-                    className="snap-start"
                   >
                     <Link
                       href={`/album/${album.slug}`}
-                      className="shrink-0 group block"
+                      className="group block"
                     >
-                      <div className="w-40 sm:w-44">
+                      <div>
                         <div className="relative aspect-square w-full overflow-hidden rounded-lg mb-2 shadow-md transition-transform duration-300 group-hover:scale-[1.04]">
                           {album.coverImage ? (
                             <Image
