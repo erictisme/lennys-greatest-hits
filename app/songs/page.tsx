@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
-import { Play, Pause, ArrowLeft, Mic, FileText } from "lucide-react";
+import { Play, Pause, ArrowLeft, Mic, FileText, Clock } from "lucide-react";
 import { motion } from "framer-motion";
 import { getAllTracksSorted, getAlbumForTrack } from "@/lib/tracks";
 import { useAudio } from "@/lib/audio-context";
@@ -78,9 +78,19 @@ export default function SongsPage() {
         ))}
       </div>
 
+      {/* Column headers */}
+      <div className="flex items-center gap-3 px-3 -mx-3 pb-2 mb-1 border-b border-border/30 text-[11px] uppercase tracking-wider text-muted-foreground/40 font-medium">
+        <span className="w-10 shrink-0">#</span>
+        <span className="flex-1 min-w-0">Title</span>
+        <span className="hidden sm:inline w-24 shrink-0 text-right">Date added</span>
+        <span className="w-12 shrink-0 text-right flex items-center justify-end">
+          <Clock className="w-3.5 h-3.5" />
+        </span>
+      </div>
+
       {/* Track list */}
       <div className="flex flex-col gap-0.5">
-        {tracks.map((track) => {
+        {tracks.map((track, trackIdx) => {
           const album = getAlbumForTrack(track.slug);
           const isCurrentTrack = audio.currentTrack?.slug === track.slug;
           const isPlayingThis = isCurrentTrack && audio.isPlaying;
@@ -94,6 +104,44 @@ export default function SongsPage() {
                 router.push(`/track/${track.slug}`);
               }}
             >
+              {/* Track number / play-pause toggle */}
+              <div
+                className="w-10 flex items-center justify-center shrink-0"
+                onClick={(e) => {
+                  e.stopPropagation();
+                  if (isPlayingThis) {
+                    audio.pause();
+                  } else {
+                    audio.play(track);
+                  }
+                }}
+              >
+                {isPlayingThis ? (
+                  <>
+                    <div className="flex items-center gap-[3px] h-4 group-hover:hidden">
+                      <span className="w-[3px] rounded-full animate-eq-1" style={{ height: "60%", backgroundColor: "var(--primary)" }} />
+                      <span className="w-[3px] rounded-full animate-eq-2" style={{ height: "100%", backgroundColor: "var(--primary)" }} />
+                      <span className="w-[3px] rounded-full animate-eq-3" style={{ height: "40%", backgroundColor: "var(--primary)" }} />
+                    </div>
+                    <span className="hidden group-hover:block">
+                      <Pause className="w-4 h-4 text-foreground" fill="currentColor" />
+                    </span>
+                  </>
+                ) : (
+                  <>
+                    <span
+                      className={`text-sm tabular-nums ${isCurrentTrack ? "hidden" : "group-hover:hidden"}`}
+                      style={isCurrentTrack ? { color: "var(--primary)" } : { color: "rgba(161,161,170,0.4)" }}
+                    >
+                      {trackIdx + 1}
+                    </span>
+                    <span className={`${isCurrentTrack ? "" : "hidden group-hover:block"}`}>
+                      <Play className="w-4 h-4 text-foreground" fill="currentColor" />
+                    </span>
+                  </>
+                )}
+              </div>
+
               {/* Cover thumbnail with play overlay */}
               <div className="relative w-10 h-10 flex-shrink-0 rounded overflow-hidden">
                 {track.coverImage ? (
@@ -107,35 +155,6 @@ export default function SongsPage() {
                 ) : (
                   <div className="w-full h-full bg-muted flex items-center justify-center">
                     <span className="text-xs opacity-30">~</span>
-                  </div>
-                )}
-                {/* Play button overlay */}
-                <button
-                  onClick={(e) => {
-                    e.stopPropagation();
-                    if (isPlayingThis) {
-                      audio.pause();
-                    } else {
-                      audio.play(track);
-                    }
-                  }}
-                  className="absolute inset-0 flex items-center justify-center bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity"
-                  aria-label={isPlayingThis ? "Pause" : "Play"}
-                >
-                  {isPlayingThis ? (
-                    <Pause className="w-4 h-4 text-white" fill="white" />
-                  ) : (
-                    <Play className="w-4 h-4 text-white" fill="white" />
-                  )}
-                </button>
-                {/* Currently playing indicator (visible when not hovering) */}
-                {isPlayingThis && (
-                  <div className="absolute inset-0 flex items-center justify-center bg-black/40 group-hover:opacity-0 transition-opacity">
-                    <div className="flex gap-0.5 items-end h-3">
-                      <span className="w-0.5 bg-white animate-pulse rounded-full" style={{ height: "60%", animationDelay: "0ms" }} />
-                      <span className="w-0.5 bg-white animate-pulse rounded-full" style={{ height: "100%", animationDelay: "150ms" }} />
-                      <span className="w-0.5 bg-white animate-pulse rounded-full" style={{ height: "40%", animationDelay: "300ms" }} />
-                    </div>
                   </div>
                 )}
               </div>

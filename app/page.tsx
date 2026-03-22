@@ -161,6 +161,7 @@ export default function Home() {
                 index={i}
                 showAlbum
                 onPlay={() => handleTrackPlay(track)}
+                onPause={() => audio.pause()}
                 onNavigate={() => handleTrackNavigate(track)}
                 isCurrentTrack={audio.currentTrack?.slug === track.slug}
                 isPlaying={audio.currentTrack?.slug === track.slug && audio.isPlaying}

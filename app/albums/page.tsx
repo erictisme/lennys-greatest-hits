@@ -98,6 +98,7 @@ export default function AlbumsPage() {
                       index={trackIndex}
                       showAlbum={false}
                       onPlay={() => handleTrackPlay(track)}
+                      onPause={() => audio.pause()}
                       isCurrentTrack={audio.currentTrack?.slug === track.slug}
                       isPlaying={
                         audio.currentTrack?.slug === track.slug && audio.isPlaying

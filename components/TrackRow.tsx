@@ -11,6 +11,7 @@ type TrackRowProps = {
   index: number;
   showAlbum?: boolean;
   onPlay?: () => void;
+  onPause?: () => void;
   onNavigate?: () => void;
   isCurrentTrack?: boolean;
   isPlaying?: boolean;
@@ -21,6 +22,7 @@ export default function TrackRow({
   index,
   showAlbum = false,
   onPlay,
+  onPause,
   onNavigate,
   isCurrentTrack = false,
   isPlaying = false,
@@ -37,18 +39,25 @@ export default function TrackRow({
       <div
         className="w-8 flex items-center justify-center shrink-0"
         onClick={(e) => {
-          if (onPlay) {
-            e.stopPropagation();
+          e.stopPropagation();
+          if (isPlaying && onPause) {
+            onPause();
+          } else if (onPlay) {
             onPlay();
           }
         }}
       >
         {isPlaying ? (
-          <div className="flex items-center gap-[3px] h-4">
-            <span className="w-[3px] rounded-full animate-eq-1" style={{ height: "60%", backgroundColor: "#b45309" }} />
-            <span className="w-[3px] rounded-full animate-eq-2" style={{ height: "100%", backgroundColor: "#b45309" }} />
-            <span className="w-[3px] rounded-full animate-eq-3" style={{ height: "40%", backgroundColor: "#b45309" }} />
-          </div>
+          <>
+            <div className="flex items-center gap-[3px] h-4 group-hover:hidden">
+              <span className="w-[3px] rounded-full animate-eq-1" style={{ height: "60%", backgroundColor: "#b45309" }} />
+              <span className="w-[3px] rounded-full animate-eq-2" style={{ height: "100%", backgroundColor: "#b45309" }} />
+              <span className="w-[3px] rounded-full animate-eq-3" style={{ height: "40%", backgroundColor: "#b45309" }} />
+            </div>
+            <span className="hidden group-hover:block">
+              <Pause className="w-4 h-4 text-foreground" fill="currentColor" />
+            </span>
+          </>
         ) : (
           <>
             <span
