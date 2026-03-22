@@ -10,6 +10,7 @@ import { useAudio } from "@/lib/audio-context";
 import { trackEvent } from "@/lib/analytics";
 import { useEffect, useState, useRef } from "react";
 import EmailSignup from "@/components/EmailSignup";
+import VoteButtons from "@/components/VoteButtons";
 
 const gradientClass: Record<string, string> = {
   founders: "gradient-founders",
@@ -361,7 +362,22 @@ export default function AlbumPageClient({ slug }: { slug: string }) {
                     ) : (
                       <>
                         <p className="text-xs text-muted-foreground/60 truncate mt-0.5">
-                          {track.genre} &middot; {track.mood}
+                          {track.sources && track.sources.length > 0 && (track.sources[0].guest || track.sources[0].title) ? (
+                            <>
+                              {track.sources[0].type === "podcast" ? (
+                                <Mic className="w-3 h-3 inline -mt-0.5" />
+                              ) : (
+                                <FileText className="w-3 h-3 inline -mt-0.5" />
+                              )}
+                              {" "}
+                              {track.sources[0].guest || track.sources[0].title}
+                              {track.sources[0].guest && track.sources[0].title && (
+                                <span className="text-muted-foreground/40"> · {track.sources[0].title}</span>
+                              )}
+                            </>
+                          ) : (
+                            <>{track.genre} &middot; {track.mood}</>
+                          )}
                         </p>
                         {track.tags && track.tags.length > 0 && (
                           <div className="flex flex-wrap gap-1 mt-1">
@@ -375,19 +391,19 @@ export default function AlbumPageClient({ slug }: { slug: string }) {
                             ))}
                           </div>
                         )}
-                        {track.sources && track.sources.length > 0 && track.sources[0].guest && (
-                          <p className="text-[10px] text-muted-foreground/40 flex items-center gap-1 mt-1">
-                            {track.sources[0].type === "podcast" ? (
-                              <Mic className="w-3 h-3" />
-                            ) : (
-                              <FileText className="w-3 h-3" />
-                            )}
-                            {track.sources[0].guest}
-                          </p>
-                        )}
                       </>
                     )}
                   </div>
+
+                  {/* Vote Buttons (hidden for locked) */}
+                  {!locked && (
+                    <div
+                      className="hidden sm:flex items-center shrink-0"
+                      onClick={(e) => e.stopPropagation()}
+                    >
+                      <VoteButtons trackSlug={track.slug} accentColor={album.accentColor} />
+                    </div>
+                  )}
 
                   {/* Play Count + Duration (hidden for locked) */}
                   {!locked && (

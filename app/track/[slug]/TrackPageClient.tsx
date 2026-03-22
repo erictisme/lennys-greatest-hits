@@ -69,6 +69,19 @@ export default function TrackPageClient({ slug }: { slug: string }) {
   const [imageLoaded, setImageLoaded] = useState(false);
   const [hoverTime, setHoverTime] = useState<{ time: number; x: number } | null>(null);
   const [copied, setCopied] = useState(false);
+  const [playCount, setPlayCount] = useState(0);
+
+  useEffect(() => {
+    const loadCount = () => {
+      try {
+        const counts = JSON.parse(localStorage.getItem("lgh-play-counts") || "{}");
+        setPlayCount(counts[slug] || 0);
+      } catch { /* ignore */ }
+    };
+    loadCount();
+    const interval = setInterval(loadCount, 3000);
+    return () => clearInterval(interval);
+  }, [slug]);
 
   if (!track || !album) {
     notFound();
@@ -162,13 +175,22 @@ export default function TrackPageClient({ slug }: { slug: string }) {
         className={`${gradientClass[album.slug] ?? ""} px-4 sm:px-6 pt-8 pb-8 sm:pb-10`}
       >
         <div className="max-w-2xl mx-auto w-full">
-          <Link
-            href={`/album/${album.slug}`}
-            className="inline-flex items-center gap-1.5 text-sm text-muted-foreground hover:text-foreground transition-colors mb-8"
-          >
-            <ArrowLeft className="w-4 h-4" />
-            {album.title}
-          </Link>
+          <div className="flex items-center gap-4 mb-8">
+            <Link
+              href="/"
+              className="inline-flex items-center gap-1.5 text-sm text-muted-foreground hover:text-foreground transition-colors"
+            >
+              <ArrowLeft className="w-4 h-4" />
+              Home
+            </Link>
+            <span className="text-muted-foreground/30">·</span>
+            <Link
+              href={`/album/${album.slug}`}
+              className="inline-flex items-center text-sm text-muted-foreground hover:text-foreground transition-colors"
+            >
+              {album.title}
+            </Link>
+          </div>
 
           <div className="flex items-start gap-5">
             {track.coverImage && (
@@ -198,7 +220,23 @@ export default function TrackPageClient({ slug }: { slug: string }) {
               </h1>
               <p className="text-sm text-muted-foreground/70">
                 {track.genre} &middot; {track.mood}
+                {playCount > 0 && (
+                  <span className="text-muted-foreground/40"> &middot; {playCount} {playCount === 1 ? "play" : "plays"}</span>
+                )}
               </p>
+              {track.sources?.[0] && (
+                <p className="text-xs text-muted-foreground/50 mt-1 flex items-center gap-1">
+                  {track.sources[0].type === "podcast" ? (
+                    <Mic className="w-3 h-3" />
+                  ) : (
+                    <FileText className="w-3 h-3" />
+                  )}
+                  {track.sources[0].guest || track.sources[0].title}
+                  {track.sources[0].guest && track.sources[0].title && (
+                    <span className="text-muted-foreground/30"> · {track.sources[0].title}</span>
+                  )}
+                </p>
+              )}
               {track.tags && track.tags.length > 0 && (
                 <div className="flex flex-wrap gap-1.5 mt-2">
                   {track.tags.map((tag) => (
@@ -210,6 +248,11 @@ export default function TrackPageClient({ slug }: { slug: string }) {
                       {tag}
                     </Link>
                   ))}
+                </div>
+              )}
+              {!track.isLocked && (
+                <div className="mt-3">
+                  <VoteButtons trackSlug={track.slug} accentColor={album.accentColor} />
                 </div>
               )}
             </div>

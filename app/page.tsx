@@ -8,6 +8,7 @@ import { Search, X, Shuffle } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { getAllAlbums, getAllTracks, getAlbumForTrack } from "@/lib/tracks";
 import { useAudio } from "@/lib/audio-context";
+import { trackEvent } from "@/lib/analytics";
 import TrackRow from "@/components/TrackRow";
 import EmailSignup from "@/components/EmailSignup";
 
@@ -41,35 +42,52 @@ export default function Home() {
     });
   }, [debouncedQuery, allTracks]);
 
-  // Popular tracks: sorted by play count, fallback to newest
-  const [popularTracks, setPopularTracks] = useState(allTracks.slice(0, 5));
+  // Popular tracks: sorted by play count, fallback to curated picks
+  const curatedSlugs = ["not-venture-scale", "dont-give-em-your-number", "fire-with-grace", "vibe-coding", "burnout"];
+  const [popularTracks, setPopularTracks] = useState(() => {
+    const curated = curatedSlugs
+      .map((s) => allTracks.find((t) => t.slug === s))
+      .filter(Boolean) as typeof allTracks;
+    return curated.length > 0 ? curated : allTracks.slice(0, 6);
+  });
 
   useEffect(() => {
     try {
       const counts = JSON.parse(localStorage.getItem("lgh-play-counts") || "{}");
-      const sorted = [...allTracks].sort((a, b) => {
-        const countA = counts[a.slug] || 0;
-        const countB = counts[b.slug] || 0;
-        if (countA !== countB) return countB - countA;
-        // Fallback: newest by releaseDate
-        if (!a.releaseDate) return 1;
-        if (!b.releaseDate) return -1;
-        return b.releaseDate.localeCompare(a.releaseDate);
-      });
-      setPopularTracks(sorted.slice(0, 5));
+      // Find tracks with >20 plays, sorted by count
+      const earned = [...allTracks]
+        .filter((t) => (counts[t.slug] || 0) > 20)
+        .sort((a, b) => (counts[b.slug] || 0) - (counts[a.slug] || 0));
+
+      if (earned.length > 0) {
+        // Earned tracks take spots from the bottom of curated list
+        const curated = curatedSlugs
+          .map((s) => allTracks.find((t) => t.slug === s))
+          .filter(Boolean) as typeof allTracks;
+        const earnedSlugs = new Set(earned.map((t) => t.slug));
+        // Remove any curated tracks that are also earned (avoid duplicates)
+        const remaining = curated.filter((t) => !earnedSlugs.has(t.slug));
+        // Earned fill from top, curated fill remaining spots
+        const merged = [...earned, ...remaining].slice(0, 5);
+        setPopularTracks(merged);
+      }
+      // If no earned tracks, keep curated picks
     } catch {
-      // Fallback: newest
-      const sorted = [...allTracks].sort((a, b) => {
-        if (!a.releaseDate) return 1;
-        if (!b.releaseDate) return -1;
-        return b.releaseDate.localeCompare(a.releaseDate);
-      });
-      setPopularTracks(sorted.slice(0, 5));
+      // Keep curated picks
     }
-  }, [allTracks]);
+  }, [allTracks]); // eslint-disable-line react-hooks/exhaustive-deps
 
   const handleTrackPlay = useCallback(
     (track: typeof allTracks[number]) => {
+      trackEvent("track_played", { track: track.slug, track_title: track.title, page: "home" });
+      audio.play(track);
+    },
+    [audio]
+  );
+
+  const handleTrackNavigate = useCallback(
+    (track: typeof allTracks[number]) => {
+      trackEvent("track_played", { track: track.slug, track_title: track.title, page: "home" });
       audio.play(track);
       router.push(`/track/${track.slug}`);
     },
@@ -90,10 +108,12 @@ export default function Home() {
         </p>
         <button
           onClick={() => {
+            trackEvent("shuffle_play_clicked");
             const track = audio.shuffleAll();
             if (track) router.push(`/track/${track.slug}`);
           }}
-          className="mt-4 inline-flex items-center gap-2 px-6 py-2.5 text-sm font-semibold rounded-full bg-green-500 text-black hover:bg-green-400 transition-colors"
+          className="mt-4 inline-flex items-center gap-2 px-6 py-2.5 text-sm font-semibold rounded-full text-white hover:opacity-90 transition-opacity"
+          style={{ backgroundColor: "#b45309" }}
         >
           <Shuffle className="w-4 h-4" />
           Shuffle Play
@@ -141,6 +161,7 @@ export default function Home() {
                 index={i}
                 showAlbum
                 onPlay={() => handleTrackPlay(track)}
+                onNavigate={() => handleTrackNavigate(track)}
                 isCurrentTrack={audio.currentTrack?.slug === track.slug}
                 isPlaying={audio.currentTrack?.slug === track.slug && audio.isPlaying}
               />
@@ -176,6 +197,7 @@ export default function Home() {
                   index={i}
                   showAlbum
                   onPlay={() => handleTrackPlay(track)}
+                  onNavigate={() => handleTrackNavigate(track)}
                   isCurrentTrack={audio.currentTrack?.slug === track.slug}
                   isPlaying={audio.currentTrack?.slug === track.slug && audio.isPlaying}
                 />
@@ -260,6 +282,13 @@ export default function Home() {
                 </a>
               </p>
               <p className="text-xs text-muted-foreground/30 mt-1">
+                <Link
+                  href="/feedback"
+                  className="hover:text-foreground/50 transition-colors"
+                >
+                  Send Feedback
+                </Link>
+                {" · "}
                 <a
                   href="https://www.lennysdata.com/"
                   target="_blank"

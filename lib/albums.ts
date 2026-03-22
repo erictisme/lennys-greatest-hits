@@ -2495,6 +2495,77 @@ Blow their socks off — blow their socks off`,
     ],
     releaseDate: "2026-03-22",
   },
+  {
+    slug: "you-aint-that",
+    title: "You Ain't That",
+    albumSlug: "growth-engine",
+    trackNumber: 14,
+    duration: "2:39",
+    audioUrl: "/audio/you-aint-that.mp3",
+    coverImage: "/covers/you-aint-that.jpg",
+    genre: "Funky Pop-Soul",
+    mood: "Confident, swaggering, liberating",
+    tags: ["positioning", "go-to-market", "B2B"],
+    lyrics: `[Verse 1]
+She had a product nobody would buy
+Called it an "Access killer" — wondered why
+She called the list to see if they would care
+"Sorry, lady, we don't have that"
+Then twenty-one picked up and blew her mind
+"Your product made me hero of my team!"
+
+[Chorus]
+You ain't that — back it up, pitch it again
+You ain't that — but you could be everything
+You ain't what you called yourself
+You're something no one's seen
+
+[Verse 2]
+Forty percent won't choose your rival's name
+They chose the spreadsheet, chose the pen and pad
+"I get what you do, I just don't see
+Why I'd pay for what I get for free"
+Same code inside, she didn't change a thing
+Except the name — and then the phone would ring
+
+[Chorus]
+You ain't that — back it up, pitch it again
+You ain't that — but you could be everything
+You ain't what you thought you were
+You're better than you dreamed
+
+[Bridge]
+You're not broken, you're just badly introduced
+The right words set the right assumptions loose
+She pitched it once and everyone just nodded
+"Of course — that's what it is, what else?"
+
+[Final Chorus]
+You ain't that — back it up, one last time
+You ain't that — now they see you and they buy
+You found what you always were
+Now everybody sees
+
+[Outro]
+You don't know what you are
+Till you hear it from the outside`,
+    concept: "Your product isn't broken — it's just badly positioned. April Dunford's origin story of turning a 'failed' Microsoft Access killer into a product that generated hundreds of millions in revenue, just by changing how it was introduced.",
+    keyInsight: "Out of 100 customers April called, 94 didn't even know they had the product and 6 had transformed their business with it. The product was the same — the positioning was the problem.",
+    keyQuote: "Sorry, lady, we don't have that.",
+    quoteSpeaker: "April Dunford's customer call",
+    sources: [
+      { title: "April Dunford on product positioning, segmentation, and optimizing your sales process", type: "podcast" as const, url: "https://www.lennyspodcast.com/april-dunford-on-product-positioning-segmentation-and-optimizing-your-sales-process/", guest: "April Dunford" },
+      { title: "Positioning", type: "newsletter" as const, url: "https://www.lennysnewsletter.com/p/positioning", guest: "April Dunford" },
+    ],
+    storyBehind: "April Dunford's first job was marketing a product positioned as a 'Microsoft Access killer.' After barely selling 200 copies, they decided to kill it. April made calls to check in with buyers — 20 conversations were identical: 'Sorry, lady, we don't have that.' Then call 21 changed everything: 'Your product made me the hero of the sales team!' They repositioned as an 'embeddable database for mobile devices,' got acquired, and over 20 years later the product still runs on mobile devices worldwide.",
+    annotations: [
+      { lyricText: "Called it an \"Access killer\" — wondered why", note: "April's team had positioned their SQL database as a 'Microsoft Access killer' for desktops. They barely sold 200 copies. When they repositioned the exact same product as an 'embeddable database for mobile devices,' it took off, led to an acquisition, and spawned a product family that generated hundreds of millions in revenue. Over 20 years later, the product still runs as SAP SQL Anywhere.", sourceTitle: "Positioning", sourceUrl: "https://www.lennysnewsletter.com/p/positioning" },
+      { lyricText: "Then twenty-one picked up and blew her mind", note: "April made 100 calls to existing customers. The first 20 didn't remember buying it. Call 21 was a sales team using the database on laptops to take orders in the field and sync back to headquarters. 'We're doubling sales! That SQL feature was a game changer!' In the end: 94 customers didn't know they had it, 6 had transformed their business with it.", sourceTitle: "Positioning", sourceUrl: "https://www.lennysnewsletter.com/p/positioning" },
+      { lyricText: "Forty percent won't choose your rival's name", note: "April told Lenny that in B2B, 'we lose about 40% of our deals to quote-unquote no decision, which actually means we lost to the spreadsheet, we lost to pen and paper, we lost to interns.' Most companies discount the status quo as a competitor, but it's the biggest one.", sourceTitle: "April Dunford on product positioning", sourceUrl: "https://www.lennyspodcast.com/april-dunford-on-product-positioning-segmentation-and-optimizing-your-sales-process/" },
+      { lyricText: "You're not broken, you're just badly introduced", note: "April defines positioning as: 'Positioning defines how your product is a leader at delivering something that a well-defined set of customers cares a lot about.' She's worked with over 200 companies including Google, IBM, Postman, and Epic Games — and says most positioning problems are actually misalignment problems where each function of the company says something different about the product.", sourceTitle: "Positioning", sourceUrl: "https://www.lennysnewsletter.com/p/positioning" },
+    ],
+    releaseDate: "2026-03-22",
+  },
 ];
 
 const byTheNumbersTracks: Track[] = [
@@ -4458,6 +4529,78 @@ The lights go low`,
       { lyricText: "Forgiven, forgotten, or both", note: "Pfeffer's research shows that political skill is empirically correlated with higher salary, faster promotion, career happiness, and lower stress. He told Lenny: 'You're not describing how the world should work. This is just how it is.' Pfeffer replied: 'Not only is, but how it was and how it will be.'", sourceTitle: "The paths to power | Jeffrey Pfeffer (Stanford)", sourceUrl: "https://www.lennysnewsletter.com/p/the-paths-to-power-jeffrey-pfeffer" },
       { lyricText: "Not a sin — it's just a skill", note: "Pfeffer deliberately takes students from denial ('I don't believe this') through anger ('I believe this and I'm angry') to acceptance. He told Lenny: 'If I think power is dirty, the first thing that's going to happen is I'm not going to do what I need to do to be successful.' His opening quote: 'If you want power to be used for good, more good people need to have power.'", sourceTitle: "The paths to power | Jeffrey Pfeffer (Stanford)", sourceUrl: "https://www.lennysnewsletter.com/p/the-paths-to-power-jeffrey-pfeffer" },
       { lyricText: "He quit his desk and worked the halls", note: "In 1993, a doctor named Laura Esserman took Pfeffer's class while simultaneously getting her MBA, having her first child, and practicing medicine full-time. She claims publicly it was the only Stanford class for which she did all the reading. Pfeffer uses her story as proof that the principles work across every domain — not just business.", sourceTitle: "The paths to power | Jeffrey Pfeffer (Stanford)", sourceUrl: "https://www.lennysnewsletter.com/p/the-paths-to-power-jeffrey-pfeffer" },
+    ],
+    releaseDate: "2026-03-22",
+  },
+  {
+    slug: "when-enough-is-enough",
+    title: "When Enough Is Enough",
+    albumSlug: "career-moves",
+    trackNumber: 8,
+    duration: "3:17",
+    audioUrl: "/audio/when-enough-is-enough.mp3",
+    coverImage: "/covers/when-enough-is-enough.jpg",
+    genre: "Cinematic Piano Ballad",
+    mood: "Raw, breaking, cathartic",
+    tags: ["burnout", "mental health", "identity"],
+    lyrics: `[Verse 1]
+Slipped out at ten, nobody saw
+Panic in the stairwell, clenched my jaw
+Twenty-eight and shaking on the floor
+Of a building I was dying for
+Ground my teeth to dust, rebuilt 'em twice
+Heart cracked open at thirty-five
+
+[Chorus]
+Enough, enough
+I won everything and lost
+The mountain doesn't care
+How much the climbing cost
+
+[Verse 2]
+Mama died when I was only ten
+I learned to win so they'd want me again
+Captain, straight A's, any goal I'd chase
+Love looked like a trophy on a shelf
+Seventeen years outrunning myself
+Six startups couldn't fill the space
+
+[Chorus]
+Enough, enough
+The thing that saved me then
+Became the thing that broke
+A boy of only ten
+
+[Bridge, building]
+Forty-five days in a quiet room
+I found the boy behind the noise
+He said, "You were enough before
+Before the gold, before the climb"
+
+[Final Chorus, soaring]
+Enough... enough
+I'm floating where the river goes
+The mountain's far behind
+The current's bringing me home
+
+[Outro]
+Stop climbing
+Let the water take you home
+You were always enough`,
+    concept: "Your body's alarm — broken sleep, broken heart, broken teeth — is telling you something your ambition won't let you hear: it's time to stop climbing and start living.",
+    keyInsight: "The coping mechanism that saves you as a child (achieving to feel loved) can become the thing that destroys you as an adult. Andy Johns built his entire career on a wound from age 10.",
+    keyQuote: "I almost had a heart attack at 35, and I got the classic talk from a Stanford cardiologist saying, 'You're just going to be another 40-something-year-old CEO with a broken heart.'",
+    quoteSpeaker: "Andy Johns",
+    sources: [
+      { title: "When enough is enough", type: "podcast" as const, url: "https://www.lennyspodcast.com/when-enough-is-enough-andy-johns-ex-fb-twitter-quora/", guest: "Andy Johns" },
+    ],
+    storyBehind: "Andy Johns was a legendary growth leader at Facebook, Twitter, Quora, and Wealthfront — in line to become CEO. But his mother's death when he was 10 created a wound he spent 17 years running from through relentless achievement. His body broke first: panic attacks, teeth ground to dust from stress, and a near heart attack at 35. He eventually spent 45 days in a mental health institute and walked away from tech entirely.",
+    annotations: [
+      { lyricText: "Ground my teeth to dust, rebuilt 'em twice", note: "Andy told Lenny he had to completely redo all his molars and most of his front teeth — twice — because his stress-induced grinding was so severe. He described it alongside a near heart attack at 35 and years of broken sleep as his body screaming what his mind refused to hear.", sourceTitle: "When enough is enough | Andy Johns", sourceUrl: "https://www.lennyspodcast.com/when-enough-is-enough-andy-johns-ex-fb-twitter-quora/" },
+      { lyricText: "Mama died when I was only ten", note: "Andy's mother was severely mentally ill — bipolar with bouts of psychosis — and spent time in and out of psychiatric hospitals. Some of Andy's earliest memories are visiting those hospitals as a child. She died when he was 10, and as he told Lenny: 'As a kid, you don't have the tools or even the capabilities to effectively process something as significant and traumatic as that.'", sourceTitle: "When enough is enough | Andy Johns", sourceUrl: "https://www.lennyspodcast.com/when-enough-is-enough-andy-johns-ex-fb-twitter-quora/" },
+      { lyricText: "Forty-five days in a quiet room", note: "Andy spent 45 days in a mental health institute after conversations with his doctors made him realize that 'the only reason I was continuing to push forward despite how poorly I felt on the inside was because of stuff that had happened to me when I was much younger.' It was the turning point that led him to leave tech entirely.", sourceTitle: "When enough is enough | Andy Johns", sourceUrl: "https://www.lennyspodcast.com/when-enough-is-enough-andy-johns-ex-fb-twitter-quora/" },
+      { lyricText: "Heart cracked open at thirty-five", note: "Andy almost had a heart attack at 35 and got what he called 'the classic talk from a Stanford cardiologist' who told him: 'You're just going to be another 40-something-year-old CEO with a broken heart.' He recommended the book 'The Body Keeps the Score' by Bessel van der Kolk — the idea that when mental health breaks down, the body is the first to show it.", sourceTitle: "When enough is enough | Andy Johns", sourceUrl: "https://www.lennyspodcast.com/when-enough-is-enough-andy-johns-ex-fb-twitter-quora/" },
+      { lyricText: "Six startups couldn't fill the space", note: "Lenny described Andy as 'a legendary product and growth leader at Facebook, Twitter, Quora, and Wealthfront, where he was VP of Growth and VP of Product, and then President, and was in line to be CEO.' Andy walked away from all of it after realizing achievement was a coping mechanism, not a calling.", sourceTitle: "When enough is enough | Andy Johns", sourceUrl: "https://www.lennyspodcast.com/when-enough-is-enough-andy-johns-ex-fb-twitter-quora/" },
     ],
     releaseDate: "2026-03-22",
   },

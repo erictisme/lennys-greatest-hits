@@ -21,11 +21,11 @@ interface VoteState {
 
 const circleBtn =
   "w-10 h-10 rounded-full flex items-center justify-center transition-colors";
-const glassBg = "bg-white/10 hover:bg-white/20";
+const glassBg = "hover:bg-black/[0.08]";
 
 export default function VoteButtons({
   trackSlug,
-  accentColor = "#22c55e",
+  accentColor = "#d97706",
 }: VoteButtonsProps) {
   const [state, setState] = useState<VoteState>({
     upCount: 0,
@@ -105,7 +105,7 @@ export default function VoteButtons({
     setTimeout(() => setCopied(false), 2000);
   };
 
-  const inactiveColor = "hsl(var(--muted-foreground) / 0.5)";
+  const inactiveColor = "hsl(var(--muted-foreground) / 0.35)";
 
   return (
     <div className="flex items-center gap-2">

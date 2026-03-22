@@ -1,21 +1,39 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { Play, Pause, ArrowLeft } from "lucide-react";
+import { useRouter } from "next/navigation";
+import { Play, Pause, ArrowLeft, Mic, FileText } from "lucide-react";
 import { motion } from "framer-motion";
 import { getAllTracksSorted, getAlbumForTrack } from "@/lib/tracks";
 import { useAudio } from "@/lib/audio-context";
 
-type SortMode = "newest" | "alphabetical" | "album";
+type SortMode = "newest" | "alphabetical" | "album" | "most-played";
 
 export default function SongsPage() {
   const [sortBy, setSortBy] = useState<SortMode>("newest");
+  const router = useRouter();
   const audio = useAudio();
 
-  const tracks = getAllTracksSorted(sortBy).filter((t) => !t.isLocked);
+  const [playCounts, setPlayCounts] = useState<Record<string, number>>({});
+
+  const baseTracks = getAllTracksSorted(sortBy === "most-played" ? "newest" : sortBy).filter((t) => !t.isLocked);
+  const tracks = sortBy === "most-played"
+    ? [...baseTracks].sort((a, b) => (playCounts[b.slug] || 0) - (playCounts[a.slug] || 0))
+    : baseTracks;
   const trackCount = tracks.length;
+  useEffect(() => {
+    const loadCounts = () => {
+      try {
+        const counts = JSON.parse(localStorage.getItem("lgh-play-counts") || "{}");
+        setPlayCounts(counts);
+      } catch { /* ignore */ }
+    };
+    loadCounts();
+    const interval = setInterval(loadCounts, 3000);
+    return () => clearInterval(interval);
+  }, []);
 
   return (
     <div className="min-h-screen px-4 sm:px-6 py-10 sm:py-16 max-w-3xl mx-auto w-full">
@@ -42,6 +60,7 @@ export default function SongsPage() {
       <div className="flex gap-2 mb-8">
         {([
           { key: "newest", label: "Newest" },
+          { key: "most-played", label: "Most Played" },
           { key: "alphabetical", label: "A-Z" },
           { key: "album", label: "By Album" },
         ] as const).map(({ key, label }) => (
@@ -72,7 +91,7 @@ export default function SongsPage() {
               whileHover={{ backgroundColor: "rgba(255,255,255,0.04)" }}
               className="group flex items-center gap-3 py-2.5 px-3 -mx-3 rounded-lg cursor-pointer transition-colors"
               onClick={() => {
-                window.location.href = `/track/${track.slug}`;
+                router.push(`/track/${track.slug}`);
               }}
             >
               {/* Cover thumbnail with play overlay */}
@@ -131,15 +150,35 @@ export default function SongsPage() {
                   {track.title}
                 </p>
                 <p className="text-xs text-muted-foreground truncate">
-                  {album?.title ?? "Unknown Album"}
+                  {track.sources?.[0] ? (
+                    <>
+                      {track.sources[0].type === "podcast" ? (
+                        <Mic className="w-3 h-3 inline -mt-0.5" />
+                      ) : (
+                        <FileText className="w-3 h-3 inline -mt-0.5" />
+                      )}
+                      {" "}
+                      {track.sources[0].guest || track.sources[0].title}
+                      {track.sources[0].guest && track.sources[0].title && (
+                        <span className="text-muted-foreground/40">{" · "}{track.sources[0].title}</span>
+                      )}
+                    </>
+                  ) : (
+                    album?.title ?? "Unknown Album"
+                  )}
                 </p>
               </div>
 
-              {/* Release date + Duration */}
+              {/* Play count + Release date + Duration */}
               <div className="flex items-center gap-3 flex-shrink-0">
+                {(playCounts[track.slug] || 0) > 0 && (
+                  <span className="hidden sm:inline text-xs text-muted-foreground/40 tabular-nums">
+                    {playCounts[track.slug]} {playCounts[track.slug] === 1 ? "play" : "plays"}
+                  </span>
+                )}
                 {track.releaseDate && (
-                  <span className="hidden sm:inline text-xs text-muted-foreground/50 tabular-nums">
-                    {new Date(track.releaseDate).toLocaleDateString("en-US", { month: "short", day: "numeric" })}
+                  <span className="text-xs text-muted-foreground/50 tabular-nums">
+                    {new Date(track.releaseDate + "T00:00:00").toLocaleDateString("en-US", { month: "short", day: "numeric" })}
                   </span>
                 )}
                 <span className="text-xs text-muted-foreground tabular-nums">
