@@ -37,7 +37,11 @@ export default function Home() {
         t.title.toLowerCase().includes(q) ||
         t.genre.toLowerCase().includes(q) ||
         (t.tags && t.tags.some((tag) => tag.toLowerCase().includes(q))) ||
-        (album && album.title.toLowerCase().includes(q))
+        (album && album.title.toLowerCase().includes(q)) ||
+        (t.sources && t.sources.some((s) => (s.title && s.title.toLowerCase().includes(q)) || (s.guest && s.guest.toLowerCase().includes(q)))) ||
+        (t.quoteSpeaker && t.quoteSpeaker.toLowerCase().includes(q)) ||
+        (t.concept && t.concept.toLowerCase().includes(q)) ||
+        (t.keyInsight && t.keyInsight.toLowerCase().includes(q))
       );
     });
   }, [debouncedQuery, allTracks]);
@@ -124,7 +128,7 @@ export default function Home() {
         <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground/60" />
         <input
           type="text"
-          placeholder="Search songs..."
+          placeholder="What's your favorite Lenny podcast or article?"
           value={searchQuery}
           onChange={(e) => setSearchQuery(e.target.value)}
           className="w-full pl-10 pr-10 py-2.5 text-sm bg-white/[0.06] border border-border/30 rounded-lg text-foreground placeholder:text-muted-foreground/40 focus:outline-none focus:border-border/60 transition-colors"
