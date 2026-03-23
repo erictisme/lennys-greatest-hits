@@ -1,3 +1,5 @@
 # Ralph PROD run Tue Mar 24 02:13:38 +08 2026
 ID6: Fixed duplicate annotation highlighting — each annotation now appears only on first matching lyric line via pre-computed annotationMap.
 Build passes.
+ID7: Added search bar to /songs page — filters by title, source, guest, tags, album, speaker, concept.
+Build passes.

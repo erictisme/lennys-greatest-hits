@@ -113,7 +113,7 @@
         "pnpm build passes"
       ],
       "files": ["app/songs/page.tsx"],
-      "passes": false
+      "passes": true
     },
     {
       "id": 8,

@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
-import { Play, Pause, ArrowLeft, Mic, FileText, Clock } from "lucide-react";
+import { Play, Pause, ArrowLeft, Mic, FileText, Clock, Search, X } from "lucide-react";
 import { motion } from "framer-motion";
 import { getAllTracksSorted, getAlbumForTrack } from "@/lib/tracks";
 import { useAudio } from "@/lib/audio-context";
@@ -13,6 +13,7 @@ type SortMode = "newest" | "alphabetical" | "album" | "most-played";
 
 export default function SongsPage() {
   const [sortBy, setSortBy] = useState<SortMode>("newest");
+  const [searchQuery, setSearchQuery] = useState("");
   const router = useRouter();
   const audio = useAudio();
 
@@ -22,6 +23,22 @@ export default function SongsPage() {
   const tracks = sortBy === "most-played"
     ? [...baseTracks].sort((a, b) => ((playCounts ?? {})[b.slug] || 0) - ((playCounts ?? {})[a.slug] || 0))
     : baseTracks;
+  const filteredTracks = searchQuery.trim()
+    ? (() => {
+        const q = searchQuery.trim().toLowerCase();
+        return tracks.filter((t) => {
+          const album = getAlbumForTrack(t.slug);
+          return (
+            t.title.toLowerCase().includes(q) ||
+            (t.sources && t.sources.some((s) => (s.title && s.title.toLowerCase().includes(q)) || (s.guest && s.guest.toLowerCase().includes(q)))) ||
+            (t.tags && t.tags.some((tag) => tag.toLowerCase().includes(q))) ||
+            (album && album.title.toLowerCase().includes(q)) ||
+            (t.quoteSpeaker && t.quoteSpeaker.toLowerCase().includes(q)) ||
+            (t.concept && t.concept.toLowerCase().includes(q))
+          );
+        });
+      })()
+    : tracks;
   const trackCount = tracks.length;
   useEffect(() => {
     const slugs = baseTracks.map((t) => t.slug).join(",");
@@ -50,7 +67,7 @@ export default function SongsPage() {
           All Songs
         </h1>
         <p className="text-sm text-muted-foreground">
-          {trackCount} tracks
+          {searchQuery.trim() ? `${filteredTracks.length} of ${trackCount} tracks` : `${trackCount} tracks`}
         </p>
       </div>
 
@@ -76,6 +93,26 @@ export default function SongsPage() {
         ))}
       </div>
 
+      {/* Search */}
+      <div className="relative mb-4">
+        <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground/60" />
+        <input
+          type="text"
+          placeholder="Search songs..."
+          value={searchQuery}
+          onChange={(e) => setSearchQuery(e.target.value)}
+          className="w-full pl-10 pr-10 py-2.5 text-sm bg-white/[0.06] border border-border/30 rounded-lg text-foreground placeholder:text-muted-foreground/40 focus:outline-none focus:border-border/60 transition-colors"
+        />
+        {searchQuery && (
+          <button
+            onClick={() => setSearchQuery("")}
+            className="absolute right-3 top-1/2 -translate-y-1/2 text-muted-foreground/60 hover:text-foreground"
+          >
+            <X className="w-4 h-4" />
+          </button>
+        )}
+      </div>
+
       {/* Column headers */}
       <div className="flex items-center gap-3 px-3 -mx-3 pb-2 mb-1 border-b border-border/30 text-[11px] uppercase tracking-wider text-muted-foreground/40 font-medium">
         <span className="w-10 shrink-0">#</span>
@@ -89,7 +126,7 @@ export default function SongsPage() {
 
       {/* Track list */}
       <div className="flex flex-col gap-0.5">
-        {tracks.map((track, trackIdx) => {
+        {filteredTracks.map((track, trackIdx) => {
           const album = getAlbumForTrack(track.slug);
           const isCurrentTrack = audio.currentTrack?.slug === track.slug;
           const isPlayingThis = isCurrentTrack && audio.isPlaying;
