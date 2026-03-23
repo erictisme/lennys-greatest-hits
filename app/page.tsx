@@ -11,6 +11,7 @@ import { useAudio } from "@/lib/audio-context";
 import { trackEvent } from "@/lib/analytics";
 import TrackRow from "@/components/TrackRow";
 import EmailSignup from "@/components/EmailSignup";
+import OnboardingTooltips from "@/components/OnboardingTooltips";
 
 export default function Home() {
   const allAlbums = getAllAlbums();
@@ -123,6 +124,9 @@ export default function Home() {
         </button>
       </header>
 
+      {/* 1.5 Onboarding Card */}
+      <OnboardingTooltips />
+
       {/* 2. Search Bar */}
       <div className="relative mb-8">
         <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground/60" />
@@ -171,7 +175,11 @@ export default function Home() {
               />
             ))}
             {filteredTracks.length === 0 && (
-              <p className="text-sm text-muted-foreground/40 mt-4">No songs found.</p>
+              <div className="mt-4 space-y-1">
+                <p className="text-sm text-muted-foreground/60">No songs found for &quot;<span className="font-medium text-foreground/80">{debouncedQuery}</span>&quot;.</p>
+                <p className="text-sm text-muted-foreground/40">We have {allTracks.length} songs covering topics like product-market fit, growth, leadership, and more.</p>
+                <p className="text-sm text-muted-foreground/40">Try searching for a guest name or topic!</p>
+              </div>
             )}
           </motion.div>
         ) : (

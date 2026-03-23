@@ -147,7 +147,7 @@
         "pnpm build passes"
       ],
       "files": ["components/OnboardingTooltips.tsx", "app/page.tsx"],
-      "passes": false
+      "passes": true
     },
     {
       "id": 11,
@@ -160,7 +160,7 @@
         "pnpm build passes"
       ],
       "files": ["app/page.tsx"],
-      "passes": false
+      "passes": true
     },
     {
       "id": 12,

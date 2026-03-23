@@ -5,3 +5,5 @@ ID7: Added search bar to /songs page — filters by title, source, guest, tags, 
 Build passes.
 ID8: Improved homepage search — changed placeholder text, added source title/guest, quoteSpeaker, concept, keyInsight to filter.
 Build passes.
+ID10: Created OnboardingTooltips component with localStorage dismiss, mounted on homepage between header and search bar.
+ID11: Improved no-results search state with query echo, track count, and helpful suggestion text. Build passes.
