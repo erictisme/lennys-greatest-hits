@@ -230,7 +230,7 @@
         "pnpm build passes"
       ],
       "files": ["content/songs/batch7/annotations/the-long-game.json"],
-      "passes": false
+      "passes": true
     },
     {
       "id": 16,
@@ -247,7 +247,7 @@
         "pnpm build passes"
       ],
       "files": ["content/songs/batch7/annotations/how-have-i-been-complicit.json"],
-      "passes": false
+      "passes": true
     },
     {
       "id": 17,

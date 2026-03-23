@@ -13,3 +13,5 @@ ID13: Wrote 5 annotations for a-hundred-nos — covers 100 investor rejections, 
 Build passes.
 ID14: Wrote 5 annotations for thinking-in-bets — covers no long feedback loops, curious not coercive, 70% rule, Glitch/Slack pivot story, outcome vs decision quality.
 Build passes.
+ID16: Wrote 5 annotations for how-have-i-been-complicit — covers getaway car metaphor, busyness/complicity, toppled oak tree legacy, Jung unconscious quote, and art of growing up.
+Build passes.
