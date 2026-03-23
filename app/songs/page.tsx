@@ -80,7 +80,8 @@ export default function SongsPage() {
       <div className="flex items-center gap-3 px-3 -mx-3 pb-2 mb-1 border-b border-border/30 text-[11px] uppercase tracking-wider text-muted-foreground/40 font-medium">
         <span className="w-10 shrink-0">#</span>
         <span className="flex-1 min-w-0">Title</span>
-        <span className="hidden sm:inline w-24 shrink-0 text-right">Date added</span>
+        <span className="hidden sm:inline w-20 shrink-0 text-right">Plays</span>
+        <span className="hidden sm:inline w-20 shrink-0 text-right">Date added</span>
         <span className="w-12 shrink-0 text-right flex items-center justify-end">
           <Clock className="w-3.5 h-3.5" />
         </span>
@@ -187,18 +188,18 @@ export default function SongsPage() {
               </div>
 
               {/* Play count + Release date + Duration */}
-              <div className="flex items-center gap-3 flex-shrink-0">
-                {playCounts && (playCounts[track.slug] || 0) > 0 && (
-                  <span className="hidden sm:inline text-xs text-muted-foreground/40 tabular-nums">
-                    {playCounts[track.slug]} {playCounts[track.slug] === 1 ? "play" : "plays"}
-                  </span>
-                )}
-                {track.releaseDate && (
-                  <span className="text-xs text-muted-foreground/50 tabular-nums">
-                    {new Date(track.releaseDate + "T00:00:00").toLocaleDateString("en-US", { month: "short", day: "numeric" })}
-                  </span>
-                )}
-                <span className="text-xs text-muted-foreground tabular-nums">
+              <div className="flex items-center flex-shrink-0">
+                <span className="hidden sm:inline w-20 shrink-0 text-right text-xs text-muted-foreground/40 tabular-nums">
+                  {playCounts && (playCounts[track.slug] || 0) > 0
+                    ? `${playCounts[track.slug]} ${playCounts[track.slug] === 1 ? "play" : "plays"}`
+                    : ""}
+                </span>
+                <span className="hidden sm:inline w-20 shrink-0 text-right text-xs text-muted-foreground/50 tabular-nums">
+                  {track.releaseDate
+                    ? new Date(track.releaseDate + "T00:00:00").toLocaleDateString("en-US", { month: "short", day: "numeric" })
+                    : ""}
+                </span>
+                <span className="w-12 shrink-0 text-right text-xs text-muted-foreground tabular-nums">
                   {track.duration}
                 </span>
               </div>
