@@ -281,7 +281,7 @@
         "pnpm build passes"
       ],
       "files": ["content/songs/batch7/annotations/seventy-five-businesses.json"],
-      "passes": false
+      "passes": true
     }
   ]
 }

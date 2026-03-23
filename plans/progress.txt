@@ -17,3 +17,5 @@ ID16: Wrote 5 annotations for how-have-i-been-complicit — covers getaway car m
 Build passes.
 ID17: Wrote 5 annotations for crossing-the-chasm — covers kindling metaphor, invisible chasm, Documentum pharma case study, beachhead formula, and primary votes analogy.
 Build passes.
+ID18: Wrote 5 annotations for seventy-five-businesses — covers "fish where the fish are" Munger quote, billion-dollar anxiety, $10M Flow loss, yellow pill SSRI story, and $30M government forms business.
+Build passes.
