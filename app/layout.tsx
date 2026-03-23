@@ -33,7 +33,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Lenny's Greatest Hits",
     description:
-      "10 songs from 638 episodes. The insights you quote on X, turned into music you can feel.",
+      "88 songs from 638 episodes. The insights you quote on X, turned into music you can feel.",
     type: "website",
     siteName: "Lenny's Greatest Hits",
   },
@@ -41,7 +41,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Lenny's Greatest Hits",
     description:
-      "10 songs from 638 episodes. The insights you quote on X, turned into music you can feel.",
+      "88 songs from 638 episodes. The insights you quote on X, turned into music you can feel.",
   },
 };
 

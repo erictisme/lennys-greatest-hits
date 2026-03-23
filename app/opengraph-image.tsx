@@ -67,7 +67,7 @@ export default async function Image() {
             marginTop: "24px",
           }}
         >
-          10 songs &middot; 4 albums &middot; 638 episodes distilled
+          88 songs &middot; 11 albums &middot; 638 episodes distilled
         </div>
       </div>
     ),

@@ -29,7 +29,7 @@ export default function AlbumPageClient({ slug }: { slug: string }) {
   const audio = useAudio();
   const router = useRouter();
 
-  const [playCounts, setPlayCounts] = useState<Record<string, number>>({});
+  const [playCounts, setPlayCounts] = useState<Record<string, number> | null>(null);
   const [openMenu, setOpenMenu] = useState<string | null>(null);
   const [copiedSlug, setCopiedSlug] = useState<string | null>(null);
   const [albumShareOpen, setAlbumShareOpen] = useState(false);
@@ -118,12 +118,8 @@ export default function AlbumPageClient({ slug }: { slug: string }) {
     setOpenMenu(null);
   };
 
-  // Load play counts from Supabase, localStorage as fallback
+  // Load play counts from Supabase
   useEffect(() => {
-    try {
-      const counts = JSON.parse(localStorage.getItem("lgh-play-counts") || "{}");
-      setPlayCounts(counts);
-    } catch { /* ignore */ }
     if (album) {
       const slugs = album.tracks.filter((t) => !t.isLocked).map((t) => t.slug).join(",");
       if (slugs) {
@@ -410,7 +406,7 @@ export default function AlbumPageClient({ slug }: { slug: string }) {
                   {/* Play Count + Duration (hidden for locked) */}
                   {!locked && (
                     <div className="flex items-center gap-3 text-xs text-muted-foreground/50">
-                      {(playCounts[track.slug] || 0) > 0 && (
+                      {playCounts && (playCounts[track.slug] || 0) > 0 && (
                         <span className="tabular-nums">
                           {playCounts[track.slug]} {playCounts[track.slug] === 1 ? "play" : "plays"}
                         </span>
