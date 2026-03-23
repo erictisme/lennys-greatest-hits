@@ -70,6 +70,9 @@ export default function TrackPageClient({ slug }: { slug: string }) {
   const [hoverTime, setHoverTime] = useState<{ time: number; x: number } | null>(null);
   const [copied, setCopied] = useState(false);
   const [playCount, setPlayCount] = useState(0);
+  const [audioAvailable, setAudioAvailable] = useState<boolean | null>(null);
+  const [notifyEmail, setNotifyEmail] = useState("");
+  const [notifyStatus, setNotifyStatus] = useState<"idle" | "loading" | "done">("idle");
 
   useEffect(() => {
     const loadCount = () => {
@@ -82,6 +85,14 @@ export default function TrackPageClient({ slug }: { slug: string }) {
     const interval = setInterval(loadCount, 3000);
     return () => clearInterval(interval);
   }, [slug]);
+
+  // Check if audio is actually available
+  useEffect(() => {
+    if (!track?.audioUrl) return;
+    fetch(track.audioUrl, { method: "HEAD" })
+      .then((r) => setAudioAvailable(r.ok))
+      .catch(() => setAudioAvailable(false));
+  }, [track?.audioUrl]);
 
   if (!track || !album) {
     notFound();
@@ -262,14 +273,53 @@ export default function TrackPageClient({ slug }: { slug: string }) {
       </header>
 
       {/* Audio Player or Coming Soon */}
-      {track.isLocked ? (
-        <div className="px-4 sm:px-6 py-8 border-b border-border/30">
+      {(track.isLocked || audioAvailable === false) ? (
+        <div className="px-4 sm:px-6 py-10 border-b border-border/30">
           <div className="max-w-2xl mx-auto w-full text-center">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium bg-muted text-muted-foreground mb-6">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium bg-muted text-muted-foreground mb-3">
               <Lock className="w-3.5 h-3.5" />
-              Coming Soon
+              {track.isLocked ? "Coming Soon" : "Improvements in Progress"}
             </div>
-            <EmailSignup heading="Get notified when this song drops" />
+            {!track.isLocked && (
+              <p className="text-sm text-muted-foreground/60 mb-6 max-w-sm mx-auto">
+                We&apos;re working on improvements to this song. Drop your email and we&apos;ll notify you when it&apos;s back.
+              </p>
+            )}
+            {notifyStatus === "done" ? (
+              <p className="text-sm text-green-400 font-medium">✓ You&apos;re on the list!</p>
+            ) : (
+              <form
+                onSubmit={async (e) => {
+                  e.preventDefault();
+                  if (!notifyEmail) return;
+                  setNotifyStatus("loading");
+                  await fetch("/api/subscribe", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({ email: notifyEmail }),
+                  });
+                  setNotifyStatus("done");
+                }}
+                className="flex gap-2 max-w-sm mx-auto"
+              >
+                <input
+                  type="email"
+                  value={notifyEmail}
+                  onChange={(e) => setNotifyEmail(e.target.value)}
+                  placeholder="your@email.com"
+                  required
+                  className="flex-1 px-3 py-2 text-sm rounded-lg bg-white/[0.06] border border-border/30 text-foreground placeholder:text-muted-foreground/40 focus:outline-none focus:border-border/60"
+                />
+                <button
+                  type="submit"
+                  disabled={notifyStatus === "loading"}
+                  className="px-4 py-2 text-sm font-semibold rounded-lg text-white disabled:opacity-50"
+                  style={{ backgroundColor: album.accentColor }}
+                >
+                  {notifyStatus === "loading" ? "..." : "Notify me"}
+                </button>
+              </form>
+            )}
           </div>
         </div>
       ) : (
