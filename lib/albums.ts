@@ -4461,78 +4461,6 @@ The lights go low`,
     ],
     releaseDate: "2026-03-22",
   },
-  {
-    slug: "when-enough-is-enough",
-    title: "When Enough Is Enough",
-    albumSlug: "career-moves",
-    trackNumber: 8,
-    duration: "3:17",
-    audioUrl: "/audio/when-enough-is-enough.mp3",
-    coverImage: "/covers/when-enough-is-enough.jpg",
-    genre: "Cinematic Piano Ballad",
-    mood: "Raw, breaking, cathartic",
-    tags: ["burnout", "mental health", "identity"],
-    lyrics: `[Verse 1]
-Slipped out at ten, nobody saw
-Panic in the stairwell, clenched my jaw
-Twenty-eight and shaking on the floor
-Of a building I was dying for
-Ground my teeth to dust, rebuilt 'em twice
-Heart cracked open at thirty-five
-
-[Chorus]
-Enough, enough
-I won everything and lost
-The mountain doesn't care
-How much the climbing cost
-
-[Verse 2]
-Mama died when I was only ten
-I learned to win so they'd want me again
-Captain, straight A's, any goal I'd chase
-Love looked like a trophy on a shelf
-Seventeen years outrunning myself
-Six startups couldn't fill the space
-
-[Chorus]
-Enough, enough
-The thing that saved me then
-Became the thing that broke
-A boy of only ten
-
-[Bridge, building]
-Forty-five days in a quiet room
-I found the boy behind the noise
-He said, "You were enough before
-Before the gold, before the climb"
-
-[Final Chorus, soaring]
-Enough... enough
-I'm floating where the river goes
-The mountain's far behind
-The current's bringing me home
-
-[Outro]
-Stop climbing
-Let the water take you home
-You were always enough`,
-    concept: "Your body's alarm — broken sleep, broken heart, broken teeth — is telling you something your ambition won't let you hear: it's time to stop climbing and start living.",
-    keyInsight: "The coping mechanism that saves you as a child (achieving to feel loved) can become the thing that destroys you as an adult. Andy Johns built his entire career on a wound from age 10.",
-    keyQuote: "I almost had a heart attack at 35, and I got the classic talk from a Stanford cardiologist saying, 'You're just going to be another 40-something-year-old CEO with a broken heart.'",
-    quoteSpeaker: "Andy Johns",
-    sources: [
-      { title: "When enough is enough", type: "podcast" as const, url: "https://www.lennyspodcast.com/when-enough-is-enough-andy-johns-ex-fb-twitter-quora/", guest: "Andy Johns" },
-    ],
-    storyBehind: "Andy Johns was a legendary growth leader at Facebook, Twitter, Quora, and Wealthfront — in line to become CEO. But his mother's death when he was 10 created a wound he spent 17 years running from through relentless achievement. His body broke first: panic attacks, teeth ground to dust from stress, and a near heart attack at 35. He eventually spent 45 days in a mental health institute and walked away from tech entirely.",
-    annotations: [
-      { lyricText: "Ground my teeth to dust, rebuilt 'em twice", note: "Andy told Lenny he had to completely redo all his molars and most of his front teeth — twice — because his stress-induced grinding was so severe. He described it alongside a near heart attack at 35 and years of broken sleep as his body screaming what his mind refused to hear.", sourceTitle: "When enough is enough | Andy Johns", sourceUrl: "https://www.lennyspodcast.com/when-enough-is-enough-andy-johns-ex-fb-twitter-quora/" },
-      { lyricText: "Mama died when I was only ten", note: "Andy's mother was severely mentally ill — bipolar with bouts of psychosis — and spent time in and out of psychiatric hospitals. Some of Andy's earliest memories are visiting those hospitals as a child. She died when he was 10, and as he told Lenny: 'As a kid, you don't have the tools or even the capabilities to effectively process something as significant and traumatic as that.'", sourceTitle: "When enough is enough | Andy Johns", sourceUrl: "https://www.lennyspodcast.com/when-enough-is-enough-andy-johns-ex-fb-twitter-quora/" },
-      { lyricText: "Forty-five days in a quiet room", note: "Andy spent 45 days in a mental health institute after conversations with his doctors made him realize that 'the only reason I was continuing to push forward despite how poorly I felt on the inside was because of stuff that had happened to me when I was much younger.' It was the turning point that led him to leave tech entirely.", sourceTitle: "When enough is enough | Andy Johns", sourceUrl: "https://www.lennyspodcast.com/when-enough-is-enough-andy-johns-ex-fb-twitter-quora/" },
-      { lyricText: "Heart cracked open at thirty-five", note: "Andy almost had a heart attack at 35 and got what he called 'the classic talk from a Stanford cardiologist' who told him: 'You're just going to be another 40-something-year-old CEO with a broken heart.' He recommended the book 'The Body Keeps the Score' by Bessel van der Kolk — the idea that when mental health breaks down, the body is the first to show it.", sourceTitle: "When enough is enough | Andy Johns", sourceUrl: "https://www.lennyspodcast.com/when-enough-is-enough-andy-johns-ex-fb-twitter-quora/" },
-      { lyricText: "Six startups couldn't fill the space", note: "Lenny described Andy as 'a legendary product and growth leader at Facebook, Twitter, Quora, and Wealthfront, where he was VP of Growth and VP of Product, and then President, and was in line to be CEO.' Andy walked away from all of it after realizing achievement was a coping mechanism, not a calling.", sourceTitle: "When enough is enough | Andy Johns", sourceUrl: "https://www.lennyspodcast.com/when-enough-is-enough-andy-johns-ex-fb-twitter-quora/" },
-    ],
-    releaseDate: "2026-03-22",
-  },
 ];
 
 const electricDreamsTracks: Track[] = [
@@ -7877,9 +7805,9 @@ You can set it down`,
     title: "When Enough Is Enough",
     albumSlug: "the-human-side",
     trackNumber: 3,
-    duration: "",
-    audioUrl: "",
-    coverImage: "",
+    duration: "3:17",
+    audioUrl: "/audio/when-enough-is-enough.mp3",
+    coverImage: "/covers/when-enough-is-enough.jpg",
     genre: "Cinematic Piano Ballad",
     mood: "Raw, breaking, cathartic",
     tags: ["burnout", "mental health", "identity"],
@@ -7927,22 +7855,22 @@ The current's bringing me home
 Stop climbing
 Let the water take you home
 You were always enough`,
-    isLocked: true,
-    concept: "Andy Johns's story of burnout, childhood wounds driving achievement, and learning that the mountain doesn't care how much the climbing cost.",
-    keyInsight: "Your body's alarm - broken sleep, broken heart, broken teeth - is telling you something your ambition won't let you hear.",
-    keyQuote: "I was experiencing an addiction to achievement as a way to feel whole. I had slowly become the frog boiling in the pot.",
+    concept: "Your body's alarm — broken sleep, broken heart, broken teeth — is telling you something your ambition won't let you hear: it's time to stop climbing and start living.",
+    keyInsight: "The coping mechanism that saves you as a child (achieving to feel loved) can become the thing that destroys you as an adult. Andy Johns built his entire career on a wound from age 10.",
+    keyQuote: "I almost had a heart attack at 35, and I got the classic talk from a Stanford cardiologist saying, 'You're just going to be another 40-something-year-old CEO with a broken heart.'",
     quoteSpeaker: "Andy Johns",
     sources: [
       { title: "When enough is enough", type: "podcast", url: "https://www.lennysnewsletter.com/p/when-enough-is-enough-andy-johns", guest: "Andy Johns" },
     ],
-    storyBehind: "Andy's mother died when he was ten. He learned to win so people would want him. Captain, straight A's, six startups. At 28, shaking on the floor. Ground his teeth to dust, rebuilt them twice. Forty-five days in a quiet room, he found the boy behind the noise.",
+    storyBehind: "Andy Johns was a legendary growth leader at Facebook, Twitter, Quora, and Wealthfront — in line to become CEO. But his mother's death when he was 10 created a wound he spent 17 years running from through relentless achievement. His body broke first: panic attacks, teeth ground to dust from stress, and a near heart attack at 35. He eventually spent 45 days in a mental health institute and walked away from tech entirely.",
     annotations: [
-      { lyricText: "Panic in the stairwell, clenched my jaw", note: "Andy Johns described how in 2010, while at Twitter in his late 20s, he was 'suddenly hit with near constant panic, panic attacks, depression.' He said: 'There were several occasions while I was at work where I could tell that I was about ready to have a breakdown, and I would just grab my laptop, throw it in my bag, and pretty quietly just walk out of the office even if it was 10:00 AM.'", sourceTitle: "When enough is enough | Andy Johns (ex-FB, Twitter, Quora)", sourceUrl: "https://www.lennysnewsletter.com/p/when-enough-is-enough-andy-johns" },
-      { lyricText: "Mama died when I was only ten", note: "Andy's mother was severely mentally ill — bipolar with bouts of psychosis — and spent time in and out of psychiatric hospitals. She died when Andy was 10. He told Lenny: 'I was heartbroken, I lost a parent, and that adaptation that I formed saved my life when I was young and gave me a great childhood after that, but these adaptations, if you're unaware of them, they reverse course and become detrimental.'", sourceTitle: "When enough is enough | Andy Johns (ex-FB, Twitter, Quora)", sourceUrl: "https://www.lennysnewsletter.com/p/when-enough-is-enough-andy-johns" },
-      { lyricText: "Seventeen years outrunning myself", note: "Andy spent 17 years in startups at Facebook, Twitter, Quora, and Wealthfront, where he rose to VP of Growth, VP of Product, then President, and was in line to be CEO. He described it as 'frankly an addiction to achievement as a way to feel good and to feel whole,' adding he had 'slowly become the frog that was boiling in the pot.'", sourceTitle: "When enough is enough | Andy Johns (ex-FB, Twitter, Quora)", sourceUrl: "https://www.lennysnewsletter.com/p/when-enough-is-enough-andy-johns" },
-      { lyricText: "I won everything and lost", note: "Andy told Lenny that 'as my career reached its pinnacle — from a professional, from a financial perspective, I was at my highest — but when it came to other aspects of my life, I was at my lowest.' Lenny called it 'maybe the most meaningful and important episode of the podcast.' Andy walked away from being in line for CEO of Wealthfront to become a mental health advocate.", sourceTitle: "When enough is enough | Andy Johns (ex-FB, Twitter, Quora)", sourceUrl: "https://www.lennysnewsletter.com/p/when-enough-is-enough-andy-johns" },
-      { lyricText: "Forty-five days in a quiet room", note: "Andy described the formative experiences that 'put us in positions to where we form adaptations in order to survive.' His stepping away from his career was about recognizing that the adaptation — achievement as self-worth — which saved him at 10 had become destructive. He changed his entire life's path to helping burned-out high achievers and veterans with their mental health journeys.", sourceTitle: "When enough is enough | Andy Johns (ex-FB, Twitter, Quora)", sourceUrl: "https://www.lennysnewsletter.com/p/when-enough-is-enough-andy-johns" },
+      { lyricText: "Ground my teeth to dust, rebuilt 'em twice", note: "Andy told Lenny he had to completely redo all his molars and most of his front teeth — twice — because his stress-induced grinding was so severe. He described it alongside a near heart attack at 35 and years of broken sleep as his body screaming what his mind refused to hear.", sourceTitle: "When enough is enough | Andy Johns", sourceUrl: "https://www.lennysnewsletter.com/p/when-enough-is-enough-andy-johns" },
+      { lyricText: "Mama died when I was only ten", note: "Andy's mother was severely mentally ill — bipolar with bouts of psychosis — and spent time in and out of psychiatric hospitals. Some of Andy's earliest memories are visiting those hospitals as a child. She died when he was 10, and as he told Lenny: 'As a kid, you don't have the tools or even the capabilities to effectively process something as significant and traumatic as that.'", sourceTitle: "When enough is enough | Andy Johns", sourceUrl: "https://www.lennysnewsletter.com/p/when-enough-is-enough-andy-johns" },
+      { lyricText: "Forty-five days in a quiet room", note: "Andy spent 45 days in a mental health institute after conversations with his doctors made him realize that 'the only reason I was continuing to push forward despite how poorly I felt on the inside was because of stuff that had happened to me when I was much younger.' It was the turning point that led him to leave tech entirely.", sourceTitle: "When enough is enough | Andy Johns", sourceUrl: "https://www.lennysnewsletter.com/p/when-enough-is-enough-andy-johns" },
+      { lyricText: "Heart cracked open at thirty-five", note: "Andy almost had a heart attack at 35 and got what he called 'the classic talk from a Stanford cardiologist' who told him: 'You're just going to be another 40-something-year-old CEO with a broken heart.' He recommended the book 'The Body Keeps the Score' by Bessel van der Kolk — the idea that when mental health breaks down, the body is the first to show it.", sourceTitle: "When enough is enough | Andy Johns", sourceUrl: "https://www.lennysnewsletter.com/p/when-enough-is-enough-andy-johns" },
+      { lyricText: "Six startups couldn't fill the space", note: "Lenny described Andy as 'a legendary product and growth leader at Facebook, Twitter, Quora, and Wealthfront, where he was VP of Growth and VP of Product, and then President, and was in line to be CEO.' Andy walked away from all of it after realizing achievement was a coping mechanism, not a calling.", sourceTitle: "When enough is enough | Andy Johns", sourceUrl: "https://www.lennysnewsletter.com/p/when-enough-is-enough-andy-johns" },
     ],
+    releaseDate: "2026-03-22",
   },
   {
     slug: "ask-for-help",
