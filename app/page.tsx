@@ -249,6 +249,9 @@ export default function Home() {
                           )}
                         </div>
                         <p className="text-sm font-semibold truncate">{album.title}</p>
+                        {album.subtitle && (
+                          <p className="text-xs italic text-muted-foreground/50 truncate">{album.subtitle}</p>
+                        )}
                         <p className="text-xs text-muted-foreground/60 truncate">
                           {album.tracks.filter((t) => !t.isLocked).length} tracks
                         </p>

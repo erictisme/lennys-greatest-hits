@@ -162,6 +162,12 @@ export function AudioProvider({ children }: { children: ReactNode }) {
     } catch {
       // ignore
     }
+    // Record play in Supabase
+    fetch("/api/play", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ slug: currentTrack.slug }),
+    }).catch(() => {});
   }, [currentTrack, isPlaying, currentTime]);
 
   const getPlayCount = useCallback((slug: string): number => {

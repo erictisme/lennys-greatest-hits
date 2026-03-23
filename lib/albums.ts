@@ -8241,7 +8241,7 @@ export const albums: Album[] = [
   {
     slug: "the-craft",
     title: "The Craft",
-    subtitle: "Build better products",
+    subtitle: "For those who want to build better products",
     description: "Songs about taste, detail obsession, and the invisible work that separates good products from great ones. From Shreyas Doshi's product sense to Linear's relentless pursuit of quality.",
     coverImage: "/covers/taste.jpg",
     accentColor: "#b45309",
@@ -8250,7 +8250,7 @@ export const albums: Album[] = [
   {
     slug: "growth-engine",
     title: "Growth Engine",
-    subtitle: "How products take off",
+    subtitle: "For those who want to grow products",
     description: "Frameworks, strategies, and stories about growing products from zero to massive. The Racecar framework, North Star metrics, streaks, and the loops that compound.",
     coverImage: "/covers/dont-break-the-streak.jpg",
     accentColor: "#a16207",
@@ -8259,7 +8259,7 @@ export const albums: Album[] = [
   {
     slug: "by-the-numbers",
     title: "By the Numbers",
-    subtitle: "Benchmarks & metrics that matter",
+    subtitle: "For those who want to benchmark metrics",
     description: "Songs about retention rates, activation metrics, cohort analysis, and the numbers that separate thriving products from dying ones.",
     coverImage: "/covers/measure-twice.jpg",
     accentColor: "#0369a1",
@@ -8268,7 +8268,7 @@ export const albums: Album[] = [
   {
     slug: "the-weight",
     title: "The Weight",
-    subtitle: "Leadership & management",
+    subtitle: "For those who want to manage people",
     description: "The hardest parts of leadership: firing with grace, making tough calls, and carrying the weight that comes with the title.",
     coverImage: "/covers/fire-with-grace.jpg",
     accentColor: "#7c2d12",
@@ -8277,7 +8277,7 @@ export const albums: Album[] = [
   {
     slug: "career-moves",
     title: "Career Moves",
-    subtitle: "Getting ahead, getting real",
+    subtitle: "For those who want to grow your career",
     description: "Career growth, managing up, and the art of making your work visible. The Magic Loop, weekly updates, and compound trust.",
     coverImage: "/covers/the-magic-loop.jpg",
     accentColor: "#0e7490",
@@ -8286,7 +8286,7 @@ export const albums: Album[] = [
   {
     slug: "electric-dreams",
     title: "Electric Dreams",
-    subtitle: "Songs about AI",
+    subtitle: "For those who want to build with AI",
     description: "The AI revolution in product building: vibe coding, the new stack, and the people shaping what comes next.",
     coverImage: "/covers/vibe-coding.jpg",
     accentColor: "#7e22ce",
@@ -8295,7 +8295,7 @@ export const albums: Album[] = [
   {
     slug: "the-startup-life",
     title: "The Startup Life",
-    subtitle: "Building from nothing",
+    subtitle: "For those who want to start a company",
     description: "The emotional journey of starting, scaling, and sometimes failing. Marketplace cold starts, doing things that don't scale, fundraising, and the universal founder struggle.",
     coverImage: "/covers/do-things-that-dont-scale.jpg",
     accentColor: "#d97706",
@@ -8304,7 +8304,7 @@ export const albums: Album[] = [
   {
     slug: "the-talent-search",
     title: "The Talent Search",
-    subtitle: "Hire the best people",
+    subtitle: "For those who want to find the right people",
     description: "Songs about finding, interviewing, and closing the people who will define your company. From first hires to executive recruiting.",
     coverImage: "/covers/first-ten.jpg",
     accentColor: "#059669",
@@ -8313,7 +8313,7 @@ export const albums: Album[] = [
   {
     slug: "the-interview",
     title: "The Interview",
-    subtitle: "Get the job",
+    subtitle: "For those who want to get the job",
     description: "Songs about job searching, interviewing, negotiating, and landing your dream role. Never search alone.",
     coverImage: "/covers/dont-give-em-your-number.jpg",
     accentColor: "#4338ca",
@@ -8322,7 +8322,7 @@ export const albums: Album[] = [
   {
     slug: "deep-work",
     title: "Deep Work",
-    subtitle: "Productivity that matters",
+    subtitle: "For those who want to be more productive",
     description: "Songs about focus, time management, and protecting the space where real work happens. Indistractable habits and making time for what matters.",
     coverImage: "/covers/good-enough.jpg",
     accentColor: "#1e3a5f",
@@ -8331,7 +8331,7 @@ export const albums: Album[] = [
   {
     slug: "the-human-side",
     title: "The Human Side",
-    subtitle: "Feel less alone in the struggle",
+    subtitle: "For those who want to feel less stressed",
     description: "Songs about imposter syndrome, burnout, asking for help, and the things nobody talks about in standups. You're not the only one.",
     coverImage: "/covers/imposter.jpg",
     accentColor: "#78350f",
