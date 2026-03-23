@@ -118,20 +118,22 @@ export default function AlbumPageClient({ slug }: { slug: string }) {
     setOpenMenu(null);
   };
 
-  // Load play counts on mount and refresh periodically while playing
+  // Load play counts from Supabase, localStorage as fallback
   useEffect(() => {
-    const loadCounts = () => {
-      try {
-        const counts = JSON.parse(localStorage.getItem("lgh-play-counts") || "{}");
-        setPlayCounts(counts);
-      } catch {
-        // ignore
+    try {
+      const counts = JSON.parse(localStorage.getItem("lgh-play-counts") || "{}");
+      setPlayCounts(counts);
+    } catch { /* ignore */ }
+    if (album) {
+      const slugs = album.tracks.filter((t) => !t.isLocked).map((t) => t.slug).join(",");
+      if (slugs) {
+        fetch(`/api/play?slugs=${slugs}`)
+          .then((r) => r.json())
+          .then((d) => { if (d.counts) setPlayCounts(d.counts); })
+          .catch(() => {});
       }
-    };
-    loadCounts();
-    const interval = setInterval(loadCounts, 3000);
-    return () => clearInterval(interval);
-  }, []);
+    }
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   useEffect(() => {
     if (album) {

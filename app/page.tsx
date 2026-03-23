@@ -52,29 +52,29 @@ export default function Home() {
   });
 
   useEffect(() => {
-    try {
-      const counts = JSON.parse(localStorage.getItem("lgh-play-counts") || "{}");
-      // Find tracks with >20 plays, sorted by count
-      const earned = [...allTracks]
-        .filter((t) => (counts[t.slug] || 0) > 20)
-        .sort((a, b) => (counts[b.slug] || 0) - (counts[a.slug] || 0));
+    const slugs = allTracks.map((t) => t.slug).join(",");
+    if (!slugs) return;
+    fetch(`/api/play?slugs=${slugs}`)
+      .then((r) => r.json())
+      .then((d) => {
+        if (!d.counts) return;
+        const counts = d.counts as Record<string, number>;
+        // Find tracks with >20 plays, sorted by count
+        const earned = [...allTracks]
+          .filter((t) => (counts[t.slug] || 0) > 20)
+          .sort((a, b) => (counts[b.slug] || 0) - (counts[a.slug] || 0));
 
-      if (earned.length > 0) {
-        // Earned tracks take spots from the bottom of curated list
-        const curated = curatedSlugs
-          .map((s) => allTracks.find((t) => t.slug === s))
-          .filter(Boolean) as typeof allTracks;
-        const earnedSlugs = new Set(earned.map((t) => t.slug));
-        // Remove any curated tracks that are also earned (avoid duplicates)
-        const remaining = curated.filter((t) => !earnedSlugs.has(t.slug));
-        // Earned fill from top, curated fill remaining spots
-        const merged = [...earned, ...remaining].slice(0, 5);
-        setPopularTracks(merged);
-      }
-      // If no earned tracks, keep curated picks
-    } catch {
-      // Keep curated picks
-    }
+        if (earned.length > 0) {
+          const curated = curatedSlugs
+            .map((s) => allTracks.find((t) => t.slug === s))
+            .filter(Boolean) as typeof allTracks;
+          const earnedSlugs = new Set(earned.map((t) => t.slug));
+          const remaining = curated.filter((t) => !earnedSlugs.has(t.slug));
+          const merged = [...earned, ...remaining].slice(0, 5);
+          setPopularTracks(merged);
+        }
+      })
+      .catch(() => {});
   }, [allTracks]); // eslint-disable-line react-hooks/exhaustive-deps
 
   const handleTrackPlay = useCallback(

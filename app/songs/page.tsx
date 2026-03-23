@@ -24,16 +24,20 @@ export default function SongsPage() {
     : baseTracks;
   const trackCount = tracks.length;
   useEffect(() => {
-    const loadCounts = () => {
-      try {
-        const counts = JSON.parse(localStorage.getItem("lgh-play-counts") || "{}");
-        setPlayCounts(counts);
-      } catch { /* ignore */ }
-    };
-    loadCounts();
-    const interval = setInterval(loadCounts, 3000);
-    return () => clearInterval(interval);
-  }, []);
+    // Load from localStorage immediately as fallback
+    try {
+      const counts = JSON.parse(localStorage.getItem("lgh-play-counts") || "{}");
+      setPlayCounts(counts);
+    } catch { /* ignore */ }
+    // Then fetch from Supabase
+    const slugs = baseTracks.map((t) => t.slug).join(",");
+    if (slugs) {
+      fetch(`/api/play?slugs=${slugs}`)
+        .then((r) => r.json())
+        .then((d) => { if (d.counts) setPlayCounts(d.counts); })
+        .catch(() => {});
+    }
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   return (
     <div className="min-h-screen px-4 sm:px-6 py-10 sm:py-16 max-w-3xl mx-auto w-full">

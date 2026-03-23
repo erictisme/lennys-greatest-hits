@@ -75,15 +75,16 @@ export default function TrackPageClient({ slug }: { slug: string }) {
   const [notifyStatus, setNotifyStatus] = useState<"idle" | "loading" | "done">("idle");
 
   useEffect(() => {
-    const loadCount = () => {
-      try {
-        const counts = JSON.parse(localStorage.getItem("lgh-play-counts") || "{}");
-        setPlayCount(counts[slug] || 0);
-      } catch { /* ignore */ }
-    };
-    loadCount();
-    const interval = setInterval(loadCount, 3000);
-    return () => clearInterval(interval);
+    // localStorage fallback
+    try {
+      const counts = JSON.parse(localStorage.getItem("lgh-play-counts") || "{}");
+      setPlayCount(counts[slug] || 0);
+    } catch { /* ignore */ }
+    // Fetch from Supabase
+    fetch(`/api/play?slugs=${slug}`)
+      .then((r) => r.json())
+      .then((d) => { if (d.counts) setPlayCount(d.counts[slug] || 0); })
+      .catch(() => {});
   }, [slug]);
 
   // Check if audio is actually available
