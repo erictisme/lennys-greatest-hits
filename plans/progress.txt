@@ -1,3 +1,2 @@
-# Ralph DEFAULT run Mon Mar 23 22:46:58 +08 2026
-Task 12: Generated batch 7.5 (9 songs, final expansion) — 27 output files (9 research + 9 lyrics + 9 suno prompts). All tasks complete.
-Songs: The Hiring Playbook, Culture of Excellence, The Obsession, The Value Loop, Three Eras, The Hard Thing, High Intensity, Coding Is Solved, We Haven't Built Windows Yet.
+# Ralph PROD run Mon Mar 23 23:05:46 +08 2026
+Task 1: Fixed NowPlayingBar next/prev buttons — removed navigatingRef and useEffect that caused unwanted page navigation on skip. Auto-advance countdown navigation preserved.

@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useRef, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
@@ -29,7 +29,6 @@ export default function NowPlayingBar() {
   } = useAudio();
 
   const router = useRouter();
-  const navigatingRef = useRef(false);
   const [hoverTime, setHoverTime] = useState<{ time: number; x: number } | null>(null);
   const [copied, setCopied] = useState(false);
 
@@ -40,13 +39,6 @@ export default function NowPlayingBar() {
     });
     return () => setOnTrackChange(null);
   }, [router, setOnTrackChange]);
-
-  useEffect(() => {
-    if (navigatingRef.current && currentTrack) {
-      router.push(`/track/${currentTrack.slug}`);
-      navigatingRef.current = false;
-    }
-  }, [currentTrack, router]);
 
   if (!currentTrack) return null;
 
@@ -159,7 +151,7 @@ export default function NowPlayingBar() {
         {/* Controls */}
         <div className="flex items-center gap-3">
           <button
-            onClick={() => { navigatingRef.current = true; prev(); }}
+            onClick={() => prev()}
             className={`hidden sm:block ${hasPrev ? "text-muted-foreground hover:text-foreground" : "text-muted-foreground/30"} transition-colors`}
             disabled={!hasPrev}
           >
@@ -181,7 +173,7 @@ export default function NowPlayingBar() {
           </button>
 
           <button
-            onClick={() => { navigatingRef.current = true; next(); }}
+            onClick={() => next()}
             className={`hidden sm:block ${hasNext ? "text-muted-foreground hover:text-foreground" : "text-muted-foreground/30"} transition-colors`}
             disabled={!hasNext}
           >

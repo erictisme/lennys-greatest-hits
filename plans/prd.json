@@ -1,117 +1,287 @@
 {
   "features": [
     {
-      "id": 0,
+      "id": 1,
       "category": "bugfix",
       "priority": 0,
-      "description": "CRITICAL: Remove TrackNavigator auto-navigation component. components/TrackNavigator.tsx is mounted in app/layout.tsx (line 78). It has a useEffect that watches currentTrack.slug and isPlaying — whenever a NEW track starts playing, it does router.push(`/track/${slug}`), which navigates the user away from the album page to the track page. This is the ROOT CAUSE of the play-then-navigate bug. The user clicks a track on the album page expecting it to play in-place, but TrackNavigator forces navigation to /track/[slug]. Fix: Delete components/TrackNavigator.tsx entirely. Remove the import and <TrackNavigator /> from app/layout.tsx (around line 6 and line 78). Users should stay on whatever page they're on when they play a song — they can navigate to the track page by clicking the ChevronRight icon or the NowPlayingBar. DONE: TrackNavigator.tsx is deleted. No import or usage in layout.tsx. Playing a song from the album page does NOT navigate away. DO NOT TOUCH: NowPlayingBar (it has a Link and that's fine — user explicitly clicks it). VERIFY: pnpm build passes. No references to TrackNavigator in any file.",
+      "description": "Fix next/prev buttons in NowPlayingBar navigating to the track page. In components/NowPlayingBar.tsx, there is a `navigatingRef` pattern (line 32) where clicking next/prev sets `navigatingRef.current = true`, then a useEffect (lines 44-49) watches `currentTrack` and does `router.push` when navigatingRef is true. This causes unwanted page navigation when the user just wants to skip tracks. FIX: (1) Remove `const navigatingRef = useRef(false)` on line 32. (2) Remove the useEffect on lines 44-49 that checks navigatingRef. (3) Change the prev button onClick (line 162) from `() => { navigatingRef.current = true; prev(); }` to just `() => prev()`. (4) Change the next button onClick (line 184) from `() => { navigatingRef.current = true; next(); }` to just `() => next()`. (5) Remove `useRef` from the React import if no other refs use it (check the rest of the file). KEEP the `setOnTrackChange` callback (lines 37-42) — that handles auto-advance countdown navigation which SHOULD navigate. DONE: Next/prev buttons skip tracks without navigating away from the current page. Auto-advance countdown still navigates. DO NOT TOUCH: the setOnTrackChange callback, the Link component wrapping track info, any other files. VERIFY: pnpm build passes.",
       "steps": [
-        "Delete components/TrackNavigator.tsx",
-        "Remove import TrackNavigator from app/layout.tsx",
-        "Remove <TrackNavigator /> JSX from app/layout.tsx",
-        "Verify no remaining references: grep -r TrackNavigator in the project",
+        "Read components/NowPlayingBar.tsx",
+        "Remove navigatingRef declaration",
+        "Remove the useEffect that watches navigatingRef + currentTrack",
+        "Simplify prev onClick to just call prev()",
+        "Simplify next onClick to just call next()",
+        "Check if useRef is still needed — if not, remove from import",
         "pnpm build passes"
       ],
-      "files": ["components/TrackNavigator.tsx", "app/layout.tsx"],
+      "files": ["components/NowPlayingBar.tsx"],
       "passes": true
     },
     {
       "id": 2,
       "category": "bugfix",
       "priority": 0,
-      "description": "Fix play/navigate on topics track list. app/topics/[tag]/page.tsx wraps entire track rows in a <Link>, making it impossible to play without navigating. Apply the same play-first pattern: row click plays the song, small icon for navigation. This is currently a server component — it needs to become a client component. Since generateStaticParams and generateMetadata cannot be in client components, split into page.tsx (server, keeps metadata/params) and a new TopicPageClient.tsx component. The audio context has a playTrack method — use it. Check lib/audio-context.tsx for the correct method name to play a single track by its data. If no direct playTrack method exists, use playAlbum(track.albumSlug, trackIndex) to play. DONE: Clicking a track on /topics/[slug] plays the song. A small ChevronRight navigates to the track page. Locked tracks (no audioUrl) show but don't play on click. DO NOT TOUCH: /topics page itself, lib/ files. VERIFY: pnpm build passes. /topics/[tag] pages still generate statically.",
+      "description": "Fix play count flash on the /songs page only. In app/songs/page.tsx, play counts load from localStorage first (flash of stale data), then Supabase overwrites. If Supabase returns 0 or fails, the count disappears — creating a visible flash. FIX: (1) Change `useState<Record<string, number>>({})` to `useState<Record<string, number> | null>(null)`. (2) Remove the localStorage load block (the try/catch around lines 28-31 that reads from `lgh-play-counts`). Keep only the Supabase fetch. (3) When rendering play counts (around line 197), guard with `playCounts !== null` before accessing `playCounts[track.slug]`. Only show count if `playCounts && (playCounts[track.slug] || 0) > 0`. (4) The `sortBy === 'most-played'` sort also uses playCounts — guard it: treat null as empty object for sorting purposes. DONE: Play counts on /songs page appear only after Supabase responds. No flash. DO NOT TOUCH: the Supabase fetch itself, other pages, /api/play endpoint. VERIFY: pnpm build passes.",
       "steps": [
-        "Read app/topics/[tag]/page.tsx",
-        "Read lib/audio-context.tsx to find the correct play method",
-        "Create app/topics/[tag]/TopicPageClient.tsx as a 'use client' component",
-        "Move the track list rendering into TopicPageClient, accepting tracks and category as props",
-        "Import useAudio, useRouter in TopicPageClient",
-        "Replace Link wrappers with div onClick that plays the track using audio context",
-        "Add ChevronRight icon button for navigation with stopPropagation",
-        "Keep page.tsx as server component with generateStaticParams/generateMetadata, render TopicPageClient",
+        "Read app/songs/page.tsx",
+        "Change playCounts state type to include null",
+        "Remove localStorage load block",
+        "Guard all playCounts renders with null check",
+        "Guard the most-played sort with null check",
         "pnpm build passes"
       ],
-      "files": ["app/topics/[tag]/page.tsx", "app/topics/[tag]/TopicPageClient.tsx"],
-      "passes": true
+      "files": ["app/songs/page.tsx"],
+      "passes": false
     },
     {
       "id": 3,
-      "category": "feature",
-      "priority": 1,
-      "description": "Add author/source attribution to album track rows. Each track has a sources array with { title, type, url, guest }. Below the genre/mood line on unlocked tracks, add a new attribution line showing the primary source guest name and source type. Format: small icon (Mic icon for podcast, FileText icon for newsletter) + guest name, all in muted styling. This connects each song to its Lenny source content. DONE: Every unlocked track row shows guest name with a type icon below the genre line. Locked tracks show concept only (no change). DO NOT TOUCH: track pages, homepage, NowPlayingBar, lib/ files. VERIFY: All unlocked tracks display attribution. Icons correctly reflect source type (podcast vs newsletter). pnpm build passes.",
+      "category": "bugfix",
+      "priority": 0,
+      "description": "Fix play count flash on the album page only. In app/album/[slug]/AlbumPageClient.tsx, play counts load from localStorage first (flash of stale data), then Supabase overwrites. FIX: (1) Change `useState<Record<string, number>>({})` (line 32) to `useState<Record<string, number> | null>(null)`. (2) Remove the localStorage load block (the try/catch around lines 123-126 that reads from `lgh-play-counts`). Keep only the Supabase fetch. (3) When rendering play counts (around line 413), guard with `playCounts !== null` before accessing. Only show count if `playCounts && (playCounts[track.slug] || 0) > 0`. DONE: Play counts on album pages appear only after Supabase responds. No flash. DO NOT TOUCH: other pages, the Supabase fetch logic, /api/play endpoint. VERIFY: pnpm build passes.",
       "steps": [
         "Read app/album/[slug]/AlbumPageClient.tsx",
-        "Import Mic and FileText icons from lucide-react",
-        "After the genre/mood <p> tag and tags div in unlocked tracks, add a new attribution line",
-        "Use track.sources[0] for the primary source — show type icon + guest name",
-        "Style: text-[10px] text-muted-foreground/40 flex items-center gap-1 mt-1",
-        "Handle empty sources array gracefully (don't render attribution line)",
+        "Change playCounts state type to include null",
+        "Remove localStorage load block",
+        "Guard play count render with null check",
         "pnpm build passes"
       ],
       "files": ["app/album/[slug]/AlbumPageClient.tsx"],
-      "passes": true
+      "passes": false
     },
     {
       "id": 4,
-      "category": "feature",
-      "priority": 1,
-      "description": "Add 'Based on' attribution card to track detail pages. On TrackPageClient.tsx, after the lyrics/SyncedLyrics section, add a 'Based on' section that links to the original Lenny newsletter or podcast episode. For each source in track.sources, show: source title (as external link), guest name, type badge ('Newsletter' or 'Podcast' in a small pill), and the URL. Style the card like the existing annotation panels: accent color left border (3px solid), subtle background (bg-white/5 or bg-black/[0.02]), rounded, font-lenny for the title. If multiple sources exist, show all. DONE: Every track page has a 'Based on' section showing source articles/podcasts with links. DO NOT TOUCH: album pages, homepage, audio player. VERIFY: Card renders on all track pages. External links open in new tab. pnpm build passes.",
+      "category": "bugfix",
+      "priority": 0,
+      "description": "Fix play count flash on the track detail page only. In app/track/[slug]/TrackPageClient.tsx, play count loads from localStorage first (flash), then Supabase overwrites. FIX: (1) Change `useState(0)` (line 72) to `useState<number | null>(null)`. (2) Remove the localStorage load block (the try/catch around lines 76-79 that reads from `lgh-play-counts`). Keep only the Supabase fetch. (3) When rendering play count (around line 224), only show if `playCount !== null && playCount > 0`. DONE: Play count on track pages appears only after Supabase responds. No flash. DO NOT TOUCH: other pages, the Supabase fetch logic, /api/play endpoint. VERIFY: pnpm build passes.",
       "steps": [
-        "Read app/track/[slug]/TrackPageClient.tsx to find the right insertion point",
-        "After the SyncedLyrics component or lyrics section, add a 'Based on' heading and cards",
-        "For each source: render title as <a> link, guest name, type pill badge",
-        "Style with accent left border, subtle bg, font-lenny for title text",
-        "External links: target=_blank rel=noopener noreferrer",
+        "Read app/track/[slug]/TrackPageClient.tsx",
+        "Change playCount state type to number | null, initial null",
+        "Remove localStorage load block",
+        "Guard play count render with null check",
         "pnpm build passes"
       ],
       "files": ["app/track/[slug]/TrackPageClient.tsx"],
-      "passes": true
+      "passes": false
     },
     {
       "id": 5,
-      "category": "feature",
-      "priority": 2,
-      "description": "Add Genius-style annotations for all Founders album tracks (4 tracks). Currently only do-things-that-dont-scale has annotations. Add 3-5 annotations each to: product-market-fit, the-maze, taste, eleven-stars. Use each track's lyrics, concept, storyBehind, keyInsight, and sources to write factual annotations explaining what specific lyric lines reference. Each annotation object: { lyricText: string (must match a real line in the lyrics, case-insensitive partial match), note: string (the explanation — specific, factual, interesting), sourceTitle: string, sourceUrl: string }. DONE: All 5 Founders tracks have annotations arrays with 3-5 items each in lib/albums.ts. DO NOT TOUCH: component files, other album tracks. VERIFY: pnpm build passes. Each lyricText substring exists in that track's lyrics.",
+      "category": "bugfix",
+      "priority": 0,
+      "description": "Fix date column alignment on /songs page. In app/songs/page.tsx, the 'Date added' column header has `text-right` but date values in track rows are in a flex container with other elements (play count, duration) that don't have fixed widths, so the date column shifts depending on whether play count is shown. FIX: (1) In the column headers row (around line 86-93), add a play count header between Title and Date: `<span className=\"hidden sm:inline w-20 shrink-0 text-right\">Plays</span>`. Keep the date header but give it `w-20`. (2) In the track row's right-side container (around line 196-210), give each element a fixed width: play count `w-20`, date `w-20`, duration `w-12`. CRITICAL: Always render the play count span even when count is 0 — just render an empty span with the same width class to maintain column alignment. Only show the number text inside when count > 0. DONE: All columns align perfectly regardless of which tracks have play counts. DO NOT TOUCH: track row click behavior, sort logic, play count fetch logic, other pages. VERIFY: pnpm build passes.",
       "steps": [
-        "Read lib/albums.ts foundersTracks section — focus on lyrics for each track",
-        "For product-market-fit: identify 3-5 lyric lines referencing Rahul Vohra, superhuman, PMF survey, etc. Write annotations.",
-        "For the-maze: identify lines referencing tarpit ideas, Dalton Caldwell advice, etc. Write annotations.",
-        "For taste: identify lines referencing Jony Ive, Dieter Rams, craft, etc. Write annotations.",
-        "For eleven-stars: identify lines referencing Chesky's 11-star framework. Write annotations.",
-        "Add annotations arrays to each track object in lib/albums.ts",
+        "Read app/songs/page.tsx",
+        "Add Plays column header with w-20",
+        "Give date column header w-20",
+        "In track rows, give play count span w-20 (always rendered, text conditional)",
+        "Give date span w-20",
+        "Give duration span w-12",
         "pnpm build passes"
       ],
-      "files": ["lib/albums.ts"],
-      "passes": true
+      "files": ["app/songs/page.tsx"],
+      "passes": false
     },
     {
       "id": 6,
-      "category": "feature",
-      "priority": 2,
-      "description": "Add Genius-style annotations for Product and Builders album tracks (5 tracks total). Add 3-5 annotations each to: talk-to-users, ship-it, vibe-coding (Product), imposter, burnout (Builders). Use each track's lyrics, concept, storyBehind, keyInsight to write factual annotations. Each annotation: { lyricText, note, sourceTitle, sourceUrl }. DONE: All 5 tracks have annotations arrays with 3-5 items each. DO NOT TOUCH: component files, other albums. VERIFY: pnpm build passes.",
+      "category": "bugfix",
+      "priority": 1,
+      "description": "Fix duplicate annotation highlighting on repeated lyric lines. In components/SyncedLyrics.tsx, the `findAnnotation()` function (lines 93-100) matches annotations by substring. If the same lyric line appears multiple times (e.g., 'Tell me what hard means to you' repeats 7+ times in 'the-one-question'), EVERY instance gets the annotation icon, making it look spammy. FIX: (1) Create a new `useMemo` that pre-computes a `Map<number, LyricAnnotation>` (line index → annotation). Iterate through `lines` once. For each non-section line, call `findAnnotation`. If it returns a match, check if that annotation's index in the `annotations` array has already been used (track with a `Set<number>`). If not used, add to the map and mark as used. If already used, skip — that line gets no annotation. (2) Replace the inline `findAnnotation` call in the render loop (line 156) with a simple map lookup: `annotationMap.get(i)`. (3) Update `annotationCount` to use `annotationMap.size` instead of filtering lines. (4) Update the auto-expand logic (the useMemo around line 130) to find the first key in annotationMap instead of calling findAnnotation. DONE: Each annotation icon appears exactly once — on the first lyric line that matches. Subsequent identical lines have no icon. The count in the banner reflects unique matched annotations. DO NOT TOUCH: annotation expand/collapse behavior, share lyric feature, parseLyrics function. VERIFY: pnpm build passes.",
       "steps": [
-        "Read lib/albums.ts productTracks and buildersTracks — focus on lyrics",
-        "For each track: identify 3-5 lyric lines referencing real stories/concepts, write annotations",
-        "Add annotations arrays",
+        "Read components/SyncedLyrics.tsx",
+        "Create useMemo for annotationMap: Map<number, LyricAnnotation>",
+        "Iterate lines, use Set to track used annotation indices, build map",
+        "Replace inline findAnnotation in render with annotationMap.get(i)",
+        "Update annotationCount to annotationMap.size",
+        "Update auto-expand to use annotationMap",
         "pnpm build passes"
       ],
-      "files": ["lib/albums.ts"],
-      "passes": true
+      "files": ["components/SyncedLyrics.tsx"],
+      "passes": false
     },
     {
       "id": 7,
       "category": "feature",
-      "priority": 2,
-      "description": "Add Genius-style annotations for Frameworks and Career Moves tracks (6 tracks). Add 3-5 annotations each to: trace-it-back, the-disease, test-everything, whats-the-job, good-enough (Frameworks), state-of-the-me (Career Moves). Use each track's lyrics, concept, storyBehind to write factual annotations. Each annotation: { lyricText, note, sourceTitle, sourceUrl }. DONE: All 6 tracks have annotations arrays. DO NOT TOUCH: component files, other albums. VERIFY: pnpm build passes.",
+      "priority": 1,
+      "description": "Add search to the /songs page. Currently app/songs/page.tsx has sort pills but NO search input. FIX: (1) Add `const [searchQuery, setSearchQuery] = useState('')`. (2) Add a search input between the sort pills div and the column headers div. Style it like the homepage search bar in app/page.tsx (lines 123-139): Search icon on the left, X clear button on the right, same classes — `w-full pl-10 pr-10 py-2.5 text-sm bg-white/[0.06] border border-border/30 rounded-lg text-foreground placeholder:text-muted-foreground/40 focus:outline-none focus:border-border/60 transition-colors`. Add `mb-4` for spacing. (3) Import Search and X from lucide-react (add to existing import). (4) Filter: when searchQuery is non-empty, filter the `tracks` array. Match case-insensitively against: `t.title`, `t.sources?.some(s => s.title?.includes(q) || s.guest?.includes(q))`, `t.tags?.some(tag => tag.includes(q))`, `album?.title`, `t.quoteSpeaker`, `t.concept`. Apply filter AFTER sort. (5) Update the track count: when searching show '12 of 88 tracks', otherwise just '88 tracks'. Use a `filteredTracks` variable for the filtered result and render that instead of `tracks`. DONE: /songs has a working search bar. Searching 'Dr Becky' finds her tracks. Clearing shows all. DO NOT TOUCH: sort logic itself, track row rendering, play count logic, other pages. VERIFY: pnpm build passes.",
       "steps": [
-        "Read lib/albums.ts frameworksTracks and careerMovesTracks — focus on lyrics",
-        "For each track: identify 3-5 lyric lines referencing real stories/concepts, write annotations",
-        "Add annotations arrays",
+        "Read app/songs/page.tsx",
+        "Add searchQuery state",
+        "Import Search, X from lucide-react",
+        "Add search input UI between sort pills and column headers",
+        "Add filter logic with all specified fields",
+        "Create filteredTracks variable, render it instead of tracks",
+        "Update track count display for filtered state",
         "pnpm build passes"
       ],
-      "files": ["lib/albums.ts"],
-      "passes": true
+      "files": ["app/songs/page.tsx"],
+      "passes": false
+    },
+    {
+      "id": 8,
+      "category": "feature",
+      "priority": 1,
+      "description": "Improve homepage search: expand filter fields AND change placeholder text. In app/page.tsx: (1) Change the search input placeholder (around line 128) from 'Search songs...' to 'What's your favorite Lenny podcast or article?'. (2) In the filteredTracks useMemo (around lines 31-43), expand the filter predicate. Currently matches: t.title, t.genre, t.tags, album.title. ADD these additional || conditions: `(t.sources && t.sources.some(s => (s.title && s.title.toLowerCase().includes(q)) || (s.guest && s.guest.toLowerCase().includes(q))))` for source titles and guest names, `(t.quoteSpeaker && t.quoteSpeaker.toLowerCase().includes(q))` for quote attribution, `(t.concept && t.concept.toLowerCase().includes(q))` for track concept, `(t.keyInsight && t.keyInsight.toLowerCase().includes(q))` for key insight. DONE: Placeholder reads the new text. Searching 'Dr Becky' finds her tracks. Searching a podcast episode title finds the song. DO NOT TOUCH: search UI layout (only placeholder text), debounce logic, popular tracks, album grid. VERIFY: pnpm build passes.",
+      "steps": [
+        "Read app/page.tsx",
+        "Change search placeholder text on the input element",
+        "Add sources[].title and sources[].guest to filter with .some()",
+        "Add quoteSpeaker to filter",
+        "Add concept to filter",
+        "Add keyInsight to filter",
+        "pnpm build passes"
+      ],
+      "files": ["app/page.tsx"],
+      "passes": false
+    },
+    {
+      "id": 10,
+      "category": "feature",
+      "priority": 1,
+      "description": "Create a first-time visitor onboarding component and mount it on the homepage. TWO STEPS: (A) Create components/OnboardingTooltips.tsx — a 'use client' component. On mount, check localStorage for `lgh-onboarding-seen` — if present, render nothing (return null). Otherwise render an inline card (NOT a modal). Design: div with classes `relative bg-white/[0.04] border border-border/30 rounded-lg px-5 py-4 mb-6`. Content: (1) A dismiss X button absolutely positioned top-right — on click sets `localStorage.setItem('lgh-onboarding-seen', '1')` and hides the component (use useState for visibility). (2) A heading: `<p className='text-sm font-medium mb-3'>Welcome to Lenny's Greatest Hits 🎵</p>`. (3) Four tips in a 2x2 grid (grid grid-cols-2 gap-2): each tip is a `<div className='flex items-start gap-2 text-xs text-muted-foreground'>` with an emoji span and text span. Tips: '🔺 Tap the play triangle to preview a song', '📄 Tap the song row to see lyrics & learnings', '👍 Vote thumbs up/down to give Eric feedback', '🔗 Share your favorites — it helps a lot!'. (4) Footer text: `<p className='text-xs text-muted-foreground/60 mt-3'>Have fun exploring! 🎵</p>`. (5) Wrap the entire card in framer-motion: `<motion.div initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -10 }} transition={{ duration: 0.3 }}>`. Import motion from 'framer-motion'. (B) In app/page.tsx, import OnboardingTooltips and mount it between the </header> closing tag and the search bar div (before the 'relative mb-8' div). DONE: First-time visitors see a friendly welcome card with 4 tips. Dismissing sets localStorage. Return visitors don't see it. Card animates in smoothly. DO NOT TOUCH: lib/audio-context.tsx, other pages, NowPlayingBar. No new dependencies. VERIFY: pnpm build passes.",
+      "steps": [
+        "Create components/OnboardingTooltips.tsx with 'use client'",
+        "Add localStorage check on mount",
+        "Add visibility state and dismiss handler",
+        "Add the 4 tips in 2x2 grid with emoji icons",
+        "Wrap in framer-motion animation",
+        "Import and mount in app/page.tsx between header and search bar",
+        "pnpm build passes"
+      ],
+      "files": ["components/OnboardingTooltips.tsx", "app/page.tsx"],
+      "passes": false
+    },
+    {
+      "id": 11,
+      "category": "feature",
+      "priority": 1,
+      "description": "Improve the search 'no results' state on the homepage. In app/page.tsx, when search returns 0 results (around line 169-171), it currently shows just 'No songs found.' — a dead end. FIX: Replace the `<p>No songs found.</p>` element with a more helpful multi-line message. Use a div with class `mt-4 space-y-1`: (1) `<p className='text-sm text-muted-foreground/60'>No songs found for \"<span className='font-medium text-foreground/80'>{debouncedQuery}</span>\".</p>` (2) `<p className='text-sm text-muted-foreground/40'>We have {allTracks.length} songs covering topics like product-market fit, growth, leadership, and more.</p>` (3) `<p className='text-sm text-muted-foreground/40'>Try searching for a guest name or topic!</p>`. DONE: Empty search state shows the user's query, total count, and a helpful suggestion. DO NOT TOUCH: search filter logic, track rendering, other pages. VERIFY: pnpm build passes.",
+      "steps": [
+        "Read app/page.tsx around the 'No songs found' text",
+        "Replace with the 3-line helpful message using debouncedQuery and allTracks.length",
+        "pnpm build passes"
+      ],
+      "files": ["app/page.tsx"],
+      "passes": false
+    },
+    {
+      "id": 12,
+      "category": "research",
+      "priority": 2,
+      "description": "Research and write annotation drafts for batch 7 song: the-giant-piece-of-shit. (1) Read lyrics from content/songs/batch7/lyrics/the-giant-piece-of-shit.txt. (2) Read research brief from content/songs/batch7/research/the-giant-piece-of-shit.md. (3) Use mcp__lennysdata__search_content to find the source material this song is based on. (4) Use mcp__lennysdata__read_excerpt to pull specific quotes, context, and facts. (5) Identify 3-5 lyric lines that reference specific concepts, people, frameworks, or stories from the source. (6) Write annotation objects: { lyricText (exact substring from lyrics, case-insensitive partial match is fine), note (2-3 sentences explaining what this lyric references — specific, factual, connecting lyric to Lenny's content), sourceTitle (name of the article/episode), sourceUrl (URL if available, empty string if not) }. (7) Save to content/songs/batch7/annotations/the-giant-piece-of-shit.json as a JSON array. DONE: JSON file exists with 3-5 high-quality annotation objects. Each lyricText substring exists in the lyrics file. DO NOT TOUCH: lib/albums.ts, component files, other songs. VERIFY: pnpm build passes.",
+      "steps": [
+        "Create content/songs/batch7/annotations/ directory if it doesn't exist",
+        "Read content/songs/batch7/lyrics/the-giant-piece-of-shit.txt",
+        "Read content/songs/batch7/research/the-giant-piece-of-shit.md",
+        "Use mcp__lennysdata__search_content to find the source material",
+        "Use mcp__lennysdata__read_excerpt for quotes and context",
+        "Identify 3-5 annotatable lyric lines",
+        "Write annotations JSON file",
+        "Verify each lyricText appears in lyrics",
+        "pnpm build passes"
+      ],
+      "files": ["content/songs/batch7/annotations/the-giant-piece-of-shit.json"],
+      "passes": false
+    },
+    {
+      "id": 13,
+      "category": "research",
+      "priority": 2,
+      "description": "Research and write annotation drafts for batch 7 song: a-hundred-nos. (1) Read lyrics from content/songs/batch7/lyrics/a-hundred-nos.txt. (2) Read research brief from content/songs/batch7/research/a-hundred-nos.md. (3) Use mcp__lennysdata__search_content to find the source material. (4) Use mcp__lennysdata__read_excerpt for quotes and context. (5) Identify 3-5 lyric lines referencing specific concepts/people/stories. (6) Write annotation objects: { lyricText, note, sourceTitle, sourceUrl }. (7) Save to content/songs/batch7/annotations/a-hundred-nos.json. DONE: JSON file with 3-5 annotations, each lyricText matches lyrics. DO NOT TOUCH: lib/albums.ts, components, other songs. VERIFY: pnpm build passes.",
+      "steps": [
+        "Read content/songs/batch7/lyrics/a-hundred-nos.txt",
+        "Read content/songs/batch7/research/a-hundred-nos.md",
+        "Search Lenny MCP for source material",
+        "Read excerpts for quotes and context",
+        "Write annotations JSON file",
+        "Verify lyricText matches",
+        "pnpm build passes"
+      ],
+      "files": ["content/songs/batch7/annotations/a-hundred-nos.json"],
+      "passes": false
+    },
+    {
+      "id": 14,
+      "category": "research",
+      "priority": 2,
+      "description": "Research and write annotation drafts for batch 7 song: thinking-in-bets. (1) Read lyrics from content/songs/batch7/lyrics/thinking-in-bets.txt. (2) Read research brief from content/songs/batch7/research/thinking-in-bets.md. (3) Use mcp__lennysdata__search_content to find the source material. (4) Use mcp__lennysdata__read_excerpt for quotes and context. (5) Identify 3-5 lyric lines referencing specific concepts/people/stories. (6) Write annotation objects: { lyricText, note, sourceTitle, sourceUrl }. (7) Save to content/songs/batch7/annotations/thinking-in-bets.json. DONE: JSON file with 3-5 annotations, each lyricText matches lyrics. DO NOT TOUCH: lib/albums.ts, components, other songs. VERIFY: pnpm build passes.",
+      "steps": [
+        "Read content/songs/batch7/lyrics/thinking-in-bets.txt",
+        "Read content/songs/batch7/research/thinking-in-bets.md",
+        "Search Lenny MCP for source material",
+        "Read excerpts for quotes and context",
+        "Write annotations JSON file",
+        "Verify lyricText matches",
+        "pnpm build passes"
+      ],
+      "files": ["content/songs/batch7/annotations/thinking-in-bets.json"],
+      "passes": false
+    },
+    {
+      "id": 15,
+      "category": "research",
+      "priority": 2,
+      "description": "Research and write annotation drafts for batch 7 song: the-long-game. (1) Read lyrics from content/songs/batch7/lyrics/the-long-game.txt. (2) Read research brief from content/songs/batch7/research/the-long-game.md. (3) Use mcp__lennysdata__search_content to find the source material. (4) Use mcp__lennysdata__read_excerpt for quotes and context. (5) Identify 3-5 lyric lines referencing specific concepts/people/stories. (6) Write annotation objects: { lyricText, note, sourceTitle, sourceUrl }. (7) Save to content/songs/batch7/annotations/the-long-game.json. DONE: JSON file with 3-5 annotations, each lyricText matches lyrics. DO NOT TOUCH: lib/albums.ts, components, other songs. VERIFY: pnpm build passes.",
+      "steps": [
+        "Read content/songs/batch7/lyrics/the-long-game.txt",
+        "Read content/songs/batch7/research/the-long-game.md",
+        "Search Lenny MCP for source material",
+        "Read excerpts for quotes and context",
+        "Write annotations JSON file",
+        "Verify lyricText matches",
+        "pnpm build passes"
+      ],
+      "files": ["content/songs/batch7/annotations/the-long-game.json"],
+      "passes": false
+    },
+    {
+      "id": 16,
+      "category": "research",
+      "priority": 2,
+      "description": "Research and write annotation drafts for batch 7 song: how-have-i-been-complicit. (1) Read lyrics from content/songs/batch7/lyrics/how-have-i-been-complicit.txt. (2) Read research brief from content/songs/batch7/research/how-have-i-been-complicit.md. (3) Use mcp__lennysdata__search_content to find the source material. (4) Use mcp__lennysdata__read_excerpt for quotes and context. (5) Identify 3-5 lyric lines referencing specific concepts/people/stories. (6) Write annotation objects: { lyricText, note, sourceTitle, sourceUrl }. (7) Save to content/songs/batch7/annotations/how-have-i-been-complicit.json. DONE: JSON file with 3-5 annotations, each lyricText matches lyrics. DO NOT TOUCH: lib/albums.ts, components, other songs. VERIFY: pnpm build passes.",
+      "steps": [
+        "Read content/songs/batch7/lyrics/how-have-i-been-complicit.txt",
+        "Read content/songs/batch7/research/how-have-i-been-complicit.md",
+        "Search Lenny MCP for source material",
+        "Read excerpts for quotes and context",
+        "Write annotations JSON file",
+        "Verify lyricText matches",
+        "pnpm build passes"
+      ],
+      "files": ["content/songs/batch7/annotations/how-have-i-been-complicit.json"],
+      "passes": false
+    },
+    {
+      "id": 17,
+      "category": "research",
+      "priority": 2,
+      "description": "Research and write annotation drafts for batch 7 song: crossing-the-chasm. (1) Read lyrics from content/songs/batch7/lyrics/crossing-the-chasm.txt. (2) Read research brief from content/songs/batch7/research/crossing-the-chasm.md. (3) Use mcp__lennysdata__search_content to find the source material. (4) Use mcp__lennysdata__read_excerpt for quotes and context. (5) Identify 3-5 lyric lines referencing specific concepts/people/stories. (6) Write annotation objects: { lyricText, note, sourceTitle, sourceUrl }. (7) Save to content/songs/batch7/annotations/crossing-the-chasm.json. DONE: JSON file with 3-5 annotations, each lyricText matches lyrics. DO NOT TOUCH: lib/albums.ts, components, other songs. VERIFY: pnpm build passes.",
+      "steps": [
+        "Read content/songs/batch7/lyrics/crossing-the-chasm.txt",
+        "Read content/songs/batch7/research/crossing-the-chasm.md",
+        "Search Lenny MCP for source material",
+        "Read excerpts for quotes and context",
+        "Write annotations JSON file",
+        "Verify lyricText matches",
+        "pnpm build passes"
+      ],
+      "files": ["content/songs/batch7/annotations/crossing-the-chasm.json"],
+      "passes": false
+    },
+    {
+      "id": 18,
+      "category": "research",
+      "priority": 2,
+      "description": "Research and write annotation drafts for batch 7 song: seventy-five-businesses. (1) Read lyrics from content/songs/batch7/lyrics/seventy-five-businesses.txt. (2) Read research brief from content/songs/batch7/research/seventy-five-businesses.md. (3) Use mcp__lennysdata__search_content to find the source material. (4) Use mcp__lennysdata__read_excerpt for quotes and context. (5) Identify 3-5 lyric lines referencing specific concepts/people/stories. (6) Write annotation objects: { lyricText, note, sourceTitle, sourceUrl }. (7) Save to content/songs/batch7/annotations/seventy-five-businesses.json. DONE: JSON file with 3-5 annotations, each lyricText matches lyrics. DO NOT TOUCH: lib/albums.ts, components, other songs. VERIFY: pnpm build passes.",
+      "steps": [
+        "Read content/songs/batch7/lyrics/seventy-five-businesses.txt",
+        "Read content/songs/batch7/research/seventy-five-businesses.md",
+        "Search Lenny MCP for source material",
+        "Read excerpts for quotes and context",
+        "Write annotations JSON file",
+        "Verify lyricText matches",
+        "pnpm build passes"
+      ],
+      "files": ["content/songs/batch7/annotations/seventy-five-businesses.json"],
+      "passes": false
     }
   ]
 }
-
