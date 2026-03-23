@@ -15,3 +15,5 @@ ID14: Wrote 5 annotations for thinking-in-bets — covers no long feedback loops
 Build passes.
 ID16: Wrote 5 annotations for how-have-i-been-complicit — covers getaway car metaphor, busyness/complicity, toppled oak tree legacy, Jung unconscious quote, and art of growing up.
 Build passes.
+ID17: Wrote 5 annotations for crossing-the-chasm — covers kindling metaphor, invisible chasm, Documentum pharma case study, beachhead formula, and primary votes analogy.
+Build passes.

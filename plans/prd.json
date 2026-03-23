@@ -264,7 +264,7 @@
         "pnpm build passes"
       ],
       "files": ["content/songs/batch7/annotations/crossing-the-chasm.json"],
-      "passes": false
+      "passes": true
     },
     {
       "id": 18,
