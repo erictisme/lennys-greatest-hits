@@ -118,25 +118,37 @@ export default function SyncedLyrics({
 
   const lines = useMemo(() => parseLyrics(lyrics, duration), [lyrics, duration]);
 
-  // Count annotations for the hint banner
-  const annotationCount = useMemo(() => {
-    if (!annotations || annotations.length === 0) return 0;
-    return lines.filter(
-      (line) => !line.isSectionLabel && findAnnotation(line.text, annotations)
-    ).length;
+  // Pre-compute annotation map: each annotation matches only its first occurrence
+  const annotationMap = useMemo(() => {
+    const map = new Map<number, LyricAnnotation>();
+    if (!annotations || annotations.length === 0) return map;
+    const usedAnnotations = new Set<number>();
+    for (let i = 0; i < lines.length; i++) {
+      if (lines[i].isSectionLabel) continue;
+      const lower = lines[i].text.toLowerCase();
+      for (let ai = 0; ai < annotations.length; ai++) {
+        if (usedAnnotations.has(ai)) continue;
+        if (lower.includes(annotations[ai].lyricText.toLowerCase())) {
+          map.set(i, annotations[ai]);
+          usedAnnotations.add(ai);
+          break;
+        }
+      }
+    }
+    return map;
   }, [lines, annotations]);
+
+  const annotationCount = annotationMap.size;
 
   // Auto-expand the first annotated line on mount
   useMemo(() => {
-    if (hasAutoExpanded.current || !annotations || annotations.length === 0) return;
-    for (let i = 0; i < lines.length; i++) {
-      if (!lines[i].isSectionLabel && findAnnotation(lines[i].text, annotations)) {
-        setExpandedAnnotationIndex(i);
-        hasAutoExpanded.current = true;
-        break;
-      }
+    if (hasAutoExpanded.current || annotationMap.size === 0) return;
+    const firstKey = annotationMap.keys().next().value;
+    if (firstKey !== undefined) {
+      setExpandedAnnotationIndex(firstKey);
+      hasAutoExpanded.current = true;
     }
-  }, [lines, annotations]);
+  }, [annotationMap]);
 
   if (lines.length === 0) return null;
 
@@ -153,7 +165,7 @@ export default function SyncedLyrics({
       )}
       <div ref={containerRef} className="space-y-1">
         {lines.map((line, i) => {
-          const annotation = line.isSectionLabel ? undefined : findAnnotation(line.text, annotations);
+          const annotation = annotationMap.get(i);
           const isAnnotationExpanded = expandedAnnotationIndex === i;
 
           if (line.isSectionLabel) {
