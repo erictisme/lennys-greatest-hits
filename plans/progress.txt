@@ -1,2 +1,3 @@
 # Ralph PROD run Mon Mar 23 23:05:46 +08 2026
 Task 1: Fixed NowPlayingBar next/prev buttons — removed navigatingRef and useEffect that caused unwanted page navigation on skip. Auto-advance countdown navigation preserved.
+Task 2: Fixed play count flash on /songs — changed playCounts initial state to null, removed localStorage fallback, added null guards.

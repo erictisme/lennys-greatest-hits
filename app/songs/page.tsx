@@ -16,20 +16,14 @@ export default function SongsPage() {
   const router = useRouter();
   const audio = useAudio();
 
-  const [playCounts, setPlayCounts] = useState<Record<string, number>>({});
+  const [playCounts, setPlayCounts] = useState<Record<string, number> | null>(null);
 
   const baseTracks = getAllTracksSorted(sortBy === "most-played" ? "newest" : sortBy).filter((t) => !t.isLocked);
   const tracks = sortBy === "most-played"
-    ? [...baseTracks].sort((a, b) => (playCounts[b.slug] || 0) - (playCounts[a.slug] || 0))
+    ? [...baseTracks].sort((a, b) => ((playCounts ?? {})[b.slug] || 0) - ((playCounts ?? {})[a.slug] || 0))
     : baseTracks;
   const trackCount = tracks.length;
   useEffect(() => {
-    // Load from localStorage immediately as fallback
-    try {
-      const counts = JSON.parse(localStorage.getItem("lgh-play-counts") || "{}");
-      setPlayCounts(counts);
-    } catch { /* ignore */ }
-    // Then fetch from Supabase
     const slugs = baseTracks.map((t) => t.slug).join(",");
     if (slugs) {
       fetch(`/api/play?slugs=${slugs}`)
@@ -194,7 +188,7 @@ export default function SongsPage() {
 
               {/* Play count + Release date + Duration */}
               <div className="flex items-center gap-3 flex-shrink-0">
-                {(playCounts[track.slug] || 0) > 0 && (
+                {playCounts && (playCounts[track.slug] || 0) > 0 && (
                   <span className="hidden sm:inline text-xs text-muted-foreground/40 tabular-nums">
                     {playCounts[track.slug]} {playCounts[track.slug] === 1 ? "play" : "plays"}
                   </span>
