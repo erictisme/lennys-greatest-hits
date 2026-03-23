@@ -196,6 +196,33 @@
       ],
       "files": ["content/songs/batch7/tasks.json", "plans/ralph-songwriter-batch7.md", "content/songs/batch7/feedback.md"],
       "passes": true
+    },
+    {
+      "id": 12,
+      "category": "content",
+      "priority": 0,
+      "description": "GENERATE SONGS (BATCH 7.5, 9 SONGS — FINAL EXPANSION): Execute the song pipeline for all 9 tasks in content/songs/batch7.5/tasks.json. For each song: Phase 1 (Research via Lenny MCP — use mcp__lennysdata__read_content with the source_files listed in the task, extract story/quotes/emotional core, rate, generate hooks, save research brief to content/songs/batch7.5/research/). Phase 2 (Songwriting — read research brief + ALL quality guides: content/lyric-craft-guide.md, content/brainstorm/lyric-principles.md, content/brainstorm/suno-lyric-tips.md, content/songs/artist-palette.md, content/songs/batch7.5/feedback.md. Write lyrics using Rick Rubin mode, critique, rewrite, create Suno prompt. Save lyrics to content/songs/batch7.5/lyrics/ and suno prompt to content/songs/batch7.5/suno-prompts/). THIS IS THE FINAL EXPANSION — closes every remaining gap. Fills The Talent Search (3→5), By the Numbers (4→6), adds iconic founders (Drew Houston, Ben Horowitz, Shopify) and AI builders (Boris Cherny/Claude Code, Nick Turley/ChatGPT). DONE: 9 research briefs, 9 lyric files, 9 suno prompts exist. Each task marked complete in tasks.json. NOT TOUCH: Do not modify any batch1-7 files, do not modify lib/albums.ts. VERIFY: 27 output files exist (9 research + 9 lyrics + 9 suno prompts), all 9 tasks marked complete.",
+      "steps": [
+        "Read plans/ralph-songwriter-batch7.5.md for full loop instructions",
+        "Read content/songs/batch7.5/feedback.md for batch-specific rules",
+        "Read content/lyric-craft-guide.md for lyric quality rules",
+        "Read content/brainstorm/lyric-principles.md for songwriting principles",
+        "Read content/brainstorm/suno-lyric-tips.md for Suno technical checklist",
+        "Read content/songs/artist-palette.md for genre/style guidance",
+        "For task 1 (The Hiring Playbook — Gokul Rajaram): Phase 1 Research → Phase 2 Songwriting",
+        "For task 2 (Culture of Excellence — David Singleton): Phase 1 Research → Phase 2 Songwriting",
+        "For task 3 (The Obsession — Jeff Weinstein): Phase 1 Research → Phase 2 Songwriting",
+        "For task 4 (The Value Loop — Subscription newsletter): Phase 1 Research → Phase 2 Songwriting",
+        "For task 5 (Three Eras — Drew Houston): Phase 1 Research → Phase 2 Songwriting",
+        "For task 6 (The Hard Thing — Ben Horowitz): Phase 1 Research → Phase 2 Songwriting",
+        "For task 7 (High Intensity — Shopify): Phase 1 Research → Phase 2 Songwriting",
+        "For task 8 (Coding Is Solved — Boris Cherny): Phase 1 Research → Phase 2 Songwriting",
+        "For task 9 (We Haven't Built Windows Yet — Nick Turley): Phase 1 Research → Phase 2 Songwriting",
+        "Mark tasks 1-9 complete in content/songs/batch7.5/tasks.json",
+        "Verify: 27 output files exist (9 research + 9 lyrics + 9 suno prompts)"
+      ],
+      "files": ["content/songs/batch7.5/tasks.json", "plans/ralph-songwriter-batch7.5.md", "content/songs/batch7.5/feedback.md"],
+      "passes": true
     }
   ]
 }

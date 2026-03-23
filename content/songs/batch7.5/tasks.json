@@ -1,0 +1,125 @@
+{
+  "batch": "7.5",
+  "created": "2026-03-23",
+  "strategy": "Final expansion batch. 9 songs closing every remaining gap: 2 for The Talent Search (3→5), 2 for By the Numbers (4→6), 3 iconic founders (Dropbox, Ben Horowitz, Shopify), 2 AI builders (Boris Cherny/Claude Code, Nick Turley/ChatGPT). After this, the catalog is truly complete.",
+  "tasks": [
+    {
+      "id": 1,
+      "idea": "The Hiring Playbook",
+      "description": "Song about Gokul Rajaram — when to hire your first PM, a playbook for hiring leaders who actually lead. Practical, tactical hiring wisdom. Read podcasts/gokul-rajaram.md for the full conversation (13K words).",
+      "research_keywords": ["Gokul Rajaram", "hiring", "PM", "playbook", "leaders"],
+      "output_file": "the-hiring-playbook",
+      "album": "the-talent-search",
+      "source_files": [
+        "podcasts/gokul-rajaram.md"
+      ],
+      "complete": true,
+      "completed_at": "2026-03-23T23:30:00+08:00"
+    },
+    {
+      "id": 2,
+      "idea": "Culture of Excellence",
+      "description": "Song about David Singleton, CTO of Stripe — building a culture of excellence through hiring. Not just filling seats, but hiring as culture-building. The engineering standards that made Stripe legendary. Read podcasts/david-singleton.md for the full conversation (18K words).",
+      "research_keywords": ["David Singleton", "Stripe", "culture", "excellence", "hiring"],
+      "output_file": "culture-of-excellence",
+      "album": "the-talent-search",
+      "source_files": [
+        "podcasts/david-singleton.md"
+      ],
+      "complete": true,
+      "completed_at": "2026-03-23T23:30:00+08:00"
+    },
+    {
+      "id": 3,
+      "idea": "The Obsession",
+      "description": "Song about Jeff Weinstein, Stripe product lead — the craft of measurement. Metrics that actually matter vs. vanity numbers. Customer obsession expressed through data. Read podcasts/jeff-weinstein.md for the full conversation (26K words).",
+      "research_keywords": ["Jeff Weinstein", "Stripe", "metrics", "customer obsession", "measurement"],
+      "output_file": "the-obsession",
+      "album": "by-the-numbers",
+      "source_files": [
+        "podcasts/jeff-weinstein.md"
+      ],
+      "complete": true,
+      "completed_at": "2026-03-23T23:30:00+08:00"
+    },
+    {
+      "id": 4,
+      "idea": "The Value Loop",
+      "description": "Song about the Subscription Value Loop — trial rates, conversion rates, retention rates. The treadmill of subscription business. Every paragraph has a specific number. Read newsletters/the-subscription-value-loop-a-framework-for-growing-consumer-subscription-busine.md for the full piece (7K words).",
+      "research_keywords": ["subscription", "value loop", "retention", "conversion", "pricing"],
+      "output_file": "the-value-loop",
+      "album": "by-the-numbers",
+      "source_files": [
+        "newsletters/the-subscription-value-loop-a-framework-for-growing-consumer-subscription-busine.md"
+      ],
+      "complete": true,
+      "completed_at": "2026-03-23T23:30:00+08:00"
+    },
+    {
+      "id": 5,
+      "idea": "Three Eras",
+      "description": "Song about Drew Houston and Dropbox — Lenny called it 'maybe my most interesting episode ever.' Three eras: killing it (5,000 to 85,000 waitlist overnight), everyone trying to kill you (Apple, Google, Microsoft all launched competitors), and reinvention. 18 years of building. The referral program that changed growth marketing. Read podcasts/drew-houston.md for the full conversation (18K words).",
+      "research_keywords": ["Drew Houston", "Dropbox", "three eras", "competition", "reinvention"],
+      "output_file": "three-eras",
+      "album": "the-startup-life",
+      "source_files": [
+        "podcasts/drew-houston.md"
+      ],
+      "complete": true,
+      "completed_at": "2026-03-23T23:30:00+08:00"
+    },
+    {
+      "id": 6,
+      "idea": "The Hard Thing",
+      "description": "Song about Ben Horowitz — '$46B of hard truths.' The co-founder of a16z on why founders fail and why you need to run toward fear. 'It doesn't matter if you write a good spec. What matters is that the product works.' Every founder screws up — from Zuckerberg to Sam Altman. The series of bad decisions metaphor (plane crash). Read podcasts/ben-horowitz.md for the full conversation (16K words).",
+      "research_keywords": ["Ben Horowitz", "a16z", "hard thing", "fear", "founders fail"],
+      "output_file": "the-hard-thing",
+      "album": "the-human-side",
+      "source_files": [
+        "podcasts/ben-horowitz.md"
+      ],
+      "complete": true,
+      "completed_at": "2026-03-23T23:30:00+08:00"
+    },
+    {
+      "id": 7,
+      "idea": "High Intensity",
+      "description": "Song about how Shopify builds a high-intensity culture — Farhan Thawar, VP and Head of Eng. 'Build something, not resumes.' Meeting Armageddon (killing all meetings). 'Look at the API docs and build something.' Also reference Tobi Lütke's episode (podcasts/tobi-lutke.md, 16K words) for the founder's perspective. This is the 'How X Builds Product' series representation. Read podcasts/farhan-thawar.md for the full conversation (22K words).",
+      "research_keywords": ["Shopify", "Farhan Thawar", "high intensity", "engineering culture", "Tobi Lütke"],
+      "output_file": "high-intensity",
+      "album": "the-craft",
+      "source_files": [
+        "podcasts/farhan-thawar.md",
+        "podcasts/tobi-lutke.md"
+      ],
+      "complete": true,
+      "completed_at": "2026-03-23T23:30:00+08:00"
+    },
+    {
+      "id": 8,
+      "idea": "Coding Is Solved",
+      "description": "Song about Boris Cherny, head of Claude Code at Anthropic — '100% of my code is written by Claude Code. I haven't edited a single line by hand since November.' Productivity up 200%. 5 agents running while recording the podcast. 4% of all commits in the world. 'Coding is virtually solved.' 'The title software engineer is going to go away. It's going to be replaced by builder.' Started as a little hack. Read podcasts/boris-cherny.md for the full conversation (19K words).",
+      "research_keywords": ["Boris Cherny", "Claude Code", "coding agents", "AI coding", "builder"],
+      "output_file": "coding-is-solved",
+      "album": "electric-dreams",
+      "source_files": [
+        "podcasts/boris-cherny.md"
+      ],
+      "complete": true,
+      "completed_at": "2026-03-23T23:30:00+08:00"
+    },
+    {
+      "id": 9,
+      "idea": "We Haven't Built Windows Yet",
+      "description": "Song about Nick Turley, Head of ChatGPT at OpenAI — 'ChatGPT feels a little bit like MS-DOS. We haven't built Windows yet.' The fastest-growing product in history: 0 to 700M weekly active users. Original name was 'Chat with GPT-3.5' because they didn't think it would be successful. Sam Altman just tweeted it. 'You won't know what to polish until after you ship.' 10% of the world population uses it every week. Read podcasts/nick-turley.md for the full conversation (19K words).",
+      "research_keywords": ["Nick Turley", "ChatGPT", "OpenAI", "fastest growing", "MS-DOS"],
+      "output_file": "we-havent-built-windows-yet",
+      "album": "electric-dreams",
+      "source_files": [
+        "podcasts/nick-turley.md"
+      ],
+      "complete": true,
+      "completed_at": "2026-03-23T23:30:00+08:00"
+    }
+  ]
+}
