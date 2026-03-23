@@ -11,3 +11,5 @@ ID12: Wrote 5 annotations for the-giant-piece-of-shit — covers "giant piece of
 Build passes.
 ID13: Wrote 5 annotations for a-hundred-nos — covers 100 investor rejections, Column B thinking, embarrassing first step, ladder to moon, and 2-year codebase rewrite.
 Build passes.
+ID14: Wrote 5 annotations for thinking-in-bets — covers no long feedback loops, curious not coercive, 70% rule, Glitch/Slack pivot story, outcome vs decision quality.
+Build passes.

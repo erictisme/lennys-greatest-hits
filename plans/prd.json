@@ -213,7 +213,7 @@
         "pnpm build passes"
       ],
       "files": ["content/songs/batch7/annotations/thinking-in-bets.json"],
-      "passes": false
+      "passes": true
     },
     {
       "id": 15,
