@@ -69,18 +69,12 @@ export default function TrackPageClient({ slug }: { slug: string }) {
   const [imageLoaded, setImageLoaded] = useState(false);
   const [hoverTime, setHoverTime] = useState<{ time: number; x: number } | null>(null);
   const [copied, setCopied] = useState(false);
-  const [playCount, setPlayCount] = useState(0);
+  const [playCount, setPlayCount] = useState<number | null>(null);
   const [audioAvailable, setAudioAvailable] = useState<boolean | null>(null);
   const [notifyEmail, setNotifyEmail] = useState("");
   const [notifyStatus, setNotifyStatus] = useState<"idle" | "loading" | "done">("idle");
 
   useEffect(() => {
-    // localStorage fallback
-    try {
-      const counts = JSON.parse(localStorage.getItem("lgh-play-counts") || "{}");
-      setPlayCount(counts[slug] || 0);
-    } catch { /* ignore */ }
-    // Fetch from Supabase
     fetch(`/api/play?slugs=${slug}`)
       .then((r) => r.json())
       .then((d) => { if (d.counts) setPlayCount(d.counts[slug] || 0); })
@@ -232,7 +226,7 @@ export default function TrackPageClient({ slug }: { slug: string }) {
               </h1>
               <p className="text-sm text-muted-foreground/70">
                 {track.genre} &middot; {track.mood}
-                {playCount > 0 && (
+                {playCount !== null && playCount > 0 && (
                   <span className="text-muted-foreground/40"> &middot; {playCount} {playCount === 1 ? "play" : "plays"}</span>
                 )}
               </p>
