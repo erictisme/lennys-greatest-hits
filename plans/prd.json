@@ -196,7 +196,7 @@
         "pnpm build passes"
       ],
       "files": ["content/songs/batch7/annotations/a-hundred-nos.json"],
-      "passes": false
+      "passes": true
     },
     {
       "id": 14,
