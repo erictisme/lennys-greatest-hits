@@ -7,3 +7,5 @@ ID8: Improved homepage search — changed placeholder text, added source title/g
 Build passes.
 ID10: Created OnboardingTooltips component with localStorage dismiss, mounted on homepage between header and search bar.
 ID11: Improved no-results search state with query echo, track count, and helpful suggestion text. Build passes.
+ID12: Wrote 5 annotations for the-giant-piece-of-shit — covers "giant piece of shit" quote, $9M pivot, tilt your umbrella, 23-year Cal Henderson partnership, and the company chant.
+Build passes.

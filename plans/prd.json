@@ -179,7 +179,7 @@
         "pnpm build passes"
       ],
       "files": ["content/songs/batch7/annotations/the-giant-piece-of-shit.json"],
-      "passes": false
+      "passes": true
     },
     {
       "id": 13,
