@@ -1,22 +1,3 @@
-# Ralph PROD run Tue Mar 24 23:38:31 +08 2026
-Task 1: Onboarded the-giant-piece-of-shit to The Craft (track 16) with 5 annotations, cover art, and full metadata. Build passes.
-Task 2: Onboarded a-hundred-nos to The Startup Life (track 16) with 5 MCP-verified annotations. Melanie Perkins / Canva founder story. Build passes.
-Task 3: Onboarded thinking-in-bets to Deep Work (track 6) with 5 MCP-verified annotations. Annie Duke / Stewart Butterfield pivot story. Build passes.
-Task 4: Onboarded the-long-game to Career Moves (track 8) with 5 annotations. Nikhyl Singhal greyhound/career metaphor. Build passes.
-Task 5: Onboarded how-have-i-been-complicit to The Human Side (track 8) with 5 MCP-verified annotations. Jerry Colonna complicit question/oak tree metaphor. Build passes.
-Task 6: Onboarded crossing-the-chasm to Growth Engine (track 15) with 5 annotations. Geoffrey Moore beachhead/kindling metaphor. Build passes.
-Task 7: Onboarded seventy-five-businesses to The Interview (track 5) with 5 MCP-verified annotations. Andrew Wilkinson / Tiny boring businesses + mental health story. Build passes.
-Task 8: Onboarded coding-is-solved to Electric Dreams (track 7) with 5 MCP-verified annotations. Boris Cherny / Claude Code origin story — punch cards to five agents. Build passes.
-Task 9: Onboarded the-hard-thing to The Human Side (track 9) with 5 MCP-verified annotations. Ben Horowitz / a16z — plane crash metaphor, IPO from hell, Shaka solitary. Build passes.
-Task 10: Onboarded the-hiring-playbook to The Talent Search (track 4) with 5 MCP-verified annotations. Gokul Rajaram — lieutenant hiring playbook, Square IPO raids, two hours a day. Build passes.
-Task 11: Onboarded the-obsession to By the Numbers (track 5) with 5 MCP-verified annotations. Jeff Weinstein / Stripe Atlas — 15% to 85% zero-support metric, "up and to the left" charts. Build passes.
-Task 12: Onboarded the-value-loop to By the Numbers (track 6) with 5 MCP-verified annotations. Phil Carter / Subscription Value Loop — 1-in-20 conversion, ATT disruption, fewer-than-50 billion-dollar apps. Build passes.
-Task 13: Onboarded three-eras to The Startup Life (track 17) with 5 MCP-verified annotations. Drew Houston / Dropbox — three eras, Bill Campbell "we killed ourselves," T-shirt line. Build passes.
-Task 14: Onboarded we-havent-built-windows-yet to Electric Dreams (track 8) with 5 MCP-verified annotations. Nick Turley / ChatGPT origin — hackathon to 700M users, MS-DOS metaphor, jazz pianist backstory. Build passes.
-Task 15: QA Round 1 PM audit written to content/qa/round1-pm-audit.md. Top 5: prev/next ignores album, vote counts hidden, no global nav, mobile votes hidden, fake lyric sync. Build passes.
-Task 16: Fixed prev/next navigation to use album tracks instead of global track list. Now navigating within an album stays in that album. Build passes.
-Task 17: Show upvote count next to thumbs-up button for social proof. Count appears when > 0, styled with accent color when user has voted. Build passes.
-Task 18: Added global navigation bar (Home, All Songs, Search, ThemeToggle) as sticky header on all non-home pages. Users can now navigate from any page. Build passes.
-Task 19: Annotation quality audit written to content/qa/annotation-audit.md. 480 annotations audited: 459 GOOD, 21 lyricText mismatches (quote types, capitalization, fabricated text). Build passes.
-Task 20: Fixed all 21 mismatched annotations: 6 quote-type fixes, 2 capitalization/line-break fixes, 13 fabricated lyricText replaced with exact lyric substrings. Build passes.
-Task 21: QA Round 2 contest judge audit written. Scores: Wow 8/10, Faithfulness 8/10, Polish 7/10. Top issues: missing OG meta tags, fake lyric sync, no prominent share CTA on track pages. Build passes.
+# Ralph PROD run Wed Mar 25 07:30:06 +08 2026
+Task 22: Added OG images to track, album, and layout metadata so social shares show cover art instead of blank previews.
+Files changed: app/track/[slug]/page.tsx, app/album/[slug]/page.tsx, app/layout.tsx

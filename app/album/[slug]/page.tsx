@@ -24,6 +24,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const title = `${album.title} | Lenny's Greatest Hits`;
   const description = `${album.subtitle}. ${album.description}`;
 
+  const imageUrl = album.coverImage;
+
   return {
     title,
     description,
@@ -31,11 +33,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       title,
       description,
       type: "music.album",
+      images: [{ url: imageUrl, width: 1200, height: 1200, alt: album.title }],
     },
     twitter: {
       card: "summary_large_image",
       title,
       description,
+      images: [imageUrl],
     },
   };
 }

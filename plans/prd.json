@@ -196,7 +196,7 @@
       "description": "Fix top issue from Round 2 judge audit. Read content/qa/round2-judge-audit.md 'Top 3 Things Holding It Back'. Fix the #1 code-fixable issue. DONE: Fixed. VERIFY: pnpm build passes.",
       "steps": ["Read audit", "Fix #1 issue", "pnpm build passes"],
       "files": [],
-      "passes": false
+      "passes": true
     },
     {
       "id": 23,

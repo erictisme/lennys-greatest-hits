@@ -26,6 +26,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     ? `"${track.keyQuote}" - ${track.quoteSpeaker}. ${track.concept}`
     : track.concept;
 
+  const imageUrl = track.coverImage;
+
   return {
     title,
     description,
@@ -33,11 +35,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       title,
       description,
       type: "music.song",
+      images: [{ url: imageUrl, width: 1200, height: 1200, alt: track.title }],
     },
     twitter: {
       card: "summary_large_image",
       title,
       description,
+      images: [imageUrl],
     },
   };
 }

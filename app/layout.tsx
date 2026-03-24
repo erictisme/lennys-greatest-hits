@@ -39,12 +39,14 @@ export const metadata: Metadata = {
       "88 songs from 638 episodes. The insights you quote on X, turned into music you can feel.",
     type: "website",
     siteName: "Lenny's Greatest Hits",
+    images: [{ url: "/covers/taste.jpg", width: 1200, height: 1200, alt: "Lenny's Greatest Hits" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Lenny's Greatest Hits",
     description:
       "88 songs from 638 episodes. The insights you quote on X, turned into music you can feel.",
+    images: ["/covers/taste.jpg"],
   },
   themeColor: "#0a0a0a",
 };
