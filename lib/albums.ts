@@ -6492,6 +6492,87 @@ Make the water ours
     ],
     releaseDate: "2026-03-22",
   },
+  {
+    slug: "a-hundred-nos",
+    title: "A Hundred Nos",
+    albumSlug: "the-startup-life",
+    trackNumber: 16,
+    duration: "3:00",
+    audioUrl: "/audio/a-hundred-nos.mp3",
+    coverImage: "/covers/a-hundred-nos.jpg",
+    genre: "Indie Folk-Pop, 6/8 Waltz",
+    mood: "Quiet defiance, stubborn hope, understated certainty",
+    tags: ["founder story", "rejection", "Canva", "persistence"],
+    lyrics: `[Intro, fingerpicked acoustic, bare]
+
+[Verse 1]
+Her mother's living room in Perth
+She's teaching kids to lay out words
+No money, no connections, no degree
+She drew the version she could see
+
+[Pre-Chorus]
+She wrote it down in Column B
+The end before the starting line
+Then worked from there
+Back through the dark
+
+[Chorus]
+A hundred nos don't make the future no
+Each letter filed and turned into a row
+She climbed the rungs she carved out of the cold
+A hundred nos don't make the future no
+
+[Verse 2]
+Two years down in the broken code
+Rewriting every room from stone
+The most embarrassing step is the first
+But that one step — it broke the curse
+
+[Pre-Chorus]
+She wrote it down in Column B
+The end before the starting line
+Then worked from there
+Back through the dark
+
+[Chorus]
+A hundred nos don't make the future no
+Each letter filed and turned into a row
+She climbed the rungs she carved out of the cold
+A hundred nos don't make the future no
+
+[Bridge, violin enters, swelling]
+Everything good was once imagined
+A ladder to a lit-up moon
+Rung by rung, rung by rung
+She kept on climbing — rung by rung
+
+[Final Chorus, full ensemble, violin full]
+A hundred nos don't make the future no
+Each letter filed and turned into a row
+She climbed the rungs she carved out of the cold
+A hundred nos — she built the future, though
+
+[Outro, violin fades over single guitar note]
+Rung by rung...
+Rung by rung...`,
+    concept: "Melanie Perkins was rejected by over 100 investors before building Canva into a $42B company. Each rejection sharpened her pitch until the deck was bulletproof.",
+    keyInsight: "Rejection is research. Melanie treated every investor no as feedback, adding a new slide to her pitch deck for each objection until the story was undeniable.",
+    keyQuote: "I thought the investors were wrong, frankly.",
+    quoteSpeaker: "Melanie Perkins",
+    sources: [
+      { title: "The woman behind Canva shares how she built a $42B company from nothing | Melanie Perkins", type: "podcast" as const, url: "https://www.lennysnewsletter.com/p/melanie-perkins", guest: "Melanie Perkins" },
+    ],
+    storyBehind: "Melanie Perkins started teaching design in her mother's living room in Perth, Australia, with no money, no connections, and no degree. She pitched over 100 investors — every one said no. But each rejection came with feedback she folded into a new pitch deck slide, sharpening the story until one investor spent six hours on a call and finally got it. Canva is now valued at $42 billion.",
+    annotations: [
+      { lyricText: "A hundred nos don't make the future no", note: "Melanie pitched over 100 investors before anyone said yes. She told Lenny: 'I thought the investors were wrong, frankly.' Each rejection came with feedback — 'Oh, your market's not big enough' — and she'd add a new slide to her pitch deck addressing that objection. The deck got sharper with every no until it was bulletproof.", sourceTitle: "The woman behind Canva shares how she built a $42B company from nothing | Melanie Perkins", sourceUrl: "https://www.lennysnewsletter.com/p/melanie-perkins" },
+      { lyricText: "She wrote it down in Column B", note: "Melanie described her planning philosophy to Lenny as 'Column B thinking.' Column A is looking at the bricks around you and stacking them. Column B is imagining a dream future and working backwards. She said 'Column A would've been nothing, frankly' — as a university student with no experience, only the wild vision mattered.", sourceTitle: "The woman behind Canva shares how she built a $42B company from nothing | Melanie Perkins", sourceUrl: "https://www.lennysnewsletter.com/p/melanie-perkins" },
+      { lyricText: "The most embarrassing step is the first", note: "Melanie told Lenny about Canva's 'chaos to clarity' concept: every idea starts in chaos. She said 'that very first step at the far end of chaos was quite an embarrassing step actually, because you don't have mastery at that point. You don't have all the answers.'", sourceTitle: "The woman behind Canva shares how she built a $42B company from nothing | Melanie Perkins", sourceUrl: "https://www.lennysnewsletter.com/p/melanie-perkins" },
+      { lyricText: "A ladder to a lit-up moon", note: "Melanie used this exact metaphor on Lenny's podcast: 'You kind of want to have a ladder that goes all the way up to the moon, which is your crazy, wild vision. And then you want to have rungs that just work its way up step by step.' It doesn't matter how small the first step is — if it climbs toward your vision, you keep going.", sourceTitle: "The woman behind Canva shares how she built a $42B company from nothing | Melanie Perkins", sourceUrl: "https://www.lennysnewsletter.com/p/melanie-perkins" },
+      { lyricText: "Two years down in the broken code", note: "Canva's team spent two years rewriting their entire codebase — a project they expected to take six months. During that period they couldn't ship any new features. Lenny noted this was one of the hardest stretches in the company's history, yet they emerged with a foundation that supported $3.3 billion in annual revenue.", sourceTitle: "The woman behind Canva shares how she built a $42B company from nothing | Melanie Perkins", sourceUrl: "https://www.lennysnewsletter.com/p/melanie-perkins" },
+    ],
+    releaseDate: "2026-03-24",
+  },
 ];
 
 const theTalentSearchTracks: Track[] = [
