@@ -4,3 +4,5 @@ Task 2: Added .dark CSS variable block in globals.css with dark theme colors. ht
 Task 3+4: Fixed share dropdown bg-white→bg-popover, hover:bg-black→hover:bg-white, text colors, and track row hover states in AlbumPageClient.tsx. Build passes.
 Task 5-9: Dark mode gradients, card-glass, loading skeletons, NowPlayingBar, SyncedLyrics, TrackPageClient, not-found — all bg-black→bg-white swaps. Build passes.
 Task 11: Shuffle Play button #b45309→#f59e0b bright amber, text-white→text-black. VoteButtons hover:bg-black→hover:bg-white. Build passes.
+Task 10: Feedback page submit button #b45309→#f59e0b bright amber, text-white→text-black. EmailSignup already dark-mode compatible. Build passes.
+Task 12: Final dark mode audit. Fixed album loading skeleton bg-black/5→bg-white/5, bg-black/10→bg-white/10, bg-black/[0.02]→bg-white/[0.02]. No remaining solid bg-white or hover:bg-black issues. Build passes.
