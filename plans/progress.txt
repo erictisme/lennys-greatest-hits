@@ -1,21 +1,2 @@
-# Ralph PROD run Tue Mar 24 08:09:18 +08 2026
-Task 1: Rewrote OnboardingTooltips to single-line subtle banner. Removed emojis, grid, multi-tip layout. Build passes.
-Task 2: Added .dark CSS variable block in globals.css with dark theme colors. html tag already had dark class. Build passes.
-Task 3+4: Fixed share dropdown bg-white→bg-popover, hover:bg-black→hover:bg-white, text colors, and track row hover states in AlbumPageClient.tsx. Build passes.
-Task 5-9: Dark mode gradients, card-glass, loading skeletons, NowPlayingBar, SyncedLyrics, TrackPageClient, not-found — all bg-black→bg-white swaps. Build passes.
-Task 11: Shuffle Play button #b45309→#f59e0b bright amber, text-white→text-black. VoteButtons hover:bg-black→hover:bg-white. Build passes.
-Task 10: Feedback page submit button #b45309→#f59e0b bright amber, text-white→text-black. EmailSignup already dark-mode compatible. Build passes.
-Task 12: Final dark mode audit. Fixed album loading skeleton bg-black/5→bg-white/5, bg-black/10→bg-white/10, bg-black/[0.02]→bg-white/[0.02]. No remaining solid bg-white or hover:bg-black issues. Build passes.
-Task 13: OG image already dark. Added themeColor: '#0a0a0a' to layout.tsx metadata. Build passes.
-Task 14: Songs page — brightened track numbers rgba 0.4→0.6, column headers /40→/50 for dark mode readability. Build passes.
-Task 15: Added subtle accent-colored top border to NowPlayingBar via inline borderTopColor style with 25% opacity. Build passes.
-Task 16: Added subtle warm amber glow shadow on album cover hover using transition-all and group-hover:shadow. Build passes.
-Task 17: Added subtle ambient gradient glow behind homepage hero title. Build passes.
-Task 18: Created scripts/upload-audio.ts for Supabase Storage upload. Added upload-audio script to package.json. Build passes.
-Task 19: Created scripts/migrate-audio-urls.ts to rewrite audioUrl paths in lib/albums.ts to Supabase Storage URLs. Build passes.
-Task 20: Added public/audio/*.mp3 to .gitignore and flow comment to upload-audio.ts. Build passes.
-Task 21: Created ScrollToTop component using usePathname + useEffect, mounted in layout.tsx. Build passes.
-Task 22: Added 0.3s fade-in animation via motion.div to AlbumPageClient and TrackPageClient. Fixed mismatched closing tag in page.tsx. Build passes.
-Task 23: Made skip back/forward buttons visible on mobile in NowPlayingBar. Removed hidden sm:block, added responsive icon sizes w-3.5 h-3.5 sm:w-4 sm:h-4. Build passes.
-Task 24: Added track count and total duration stats line below Play All button on album pages. Parses duration strings and sums. Build passes.
-Task 25: Added animated equalizer bars for playing tracks on album pages. Fixed TrackRow.tsx hardcoded #b45309→var(--primary) for dark mode. Songs page already correct. Build passes.
+# Ralph PROD run Tue Mar 24 23:38:31 +08 2026
+Task 1: Onboarded the-giant-piece-of-shit to The Craft (track 16) with 5 annotations, cover art, and full metadata. Build passes.

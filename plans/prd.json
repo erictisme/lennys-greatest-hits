@@ -7,7 +7,7 @@
       "description": "Onboard batch 7 song: the-giant-piece-of-shit. MP3 at public/audio/the-giant-piece-of-shit.mp3, cover at public/covers/the-giant-piece-of-shit.jpg. (1) Read content/songs/batch7/lyrics/the-giant-piece-of-shit.md for metadata (Title, Album, Source, Genre, Mood, Tags, Concept, Key Insight, Key Quote, Quote Speaker, Story Behind) and full lyrics text. (2) Read content/songs/batch7/research/the-giant-piece-of-shit.md for additional context. (3) Read content/songs/batch7/annotations/the-giant-piece-of-shit.json for pre-written annotations. (4) Find the correct album tracks array in lib/albums.ts by matching the Album field from lyrics metadata (e.g. 'The Craft' → theCraftTracks). (5) Add the track object to that array. Fields: slug, title, albumSlug, trackNumber (next number in that album), duration '3:00', audioUrl '/audio/the-giant-piece-of-shit.mp3', coverImage '/covers/the-giant-piece-of-shit.jpg', genre, mood, lyrics (full lyrics without metadata/headers — just the song lines), concept, keyInsight, sources [{title, type, url, guest}], keyQuote, quoteSpeaker, storyBehind, tags, annotations (from JSON), releaseDate '2026-03-24'. DONE: Track appears in lib/albums.ts. DO NOT TOUCH: existing tracks. VERIFY: pnpm build passes.",
       "steps": ["Read lyrics md", "Read research md", "Read annotations json", "Add track to correct album array in lib/albums.ts", "pnpm build passes"],
       "files": ["lib/albums.ts"],
-      "passes": false
+      "passes": true
     },
     {
       "id": 2,

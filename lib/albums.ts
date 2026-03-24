@@ -1362,6 +1362,124 @@ I found it in the care`,
     ],
     releaseDate: "2026-03-22",
   },
+  {
+    slug: "the-giant-piece-of-shit",
+    title: "The Giant Piece of Shit",
+    albumSlug: "the-craft",
+    trackNumber: 16,
+    duration: "3:00",
+    audioUrl: "/audio/the-giant-piece-of-shit.mp3",
+    coverImage: "/covers/the-giant-piece-of-shit.jpg",
+    genre: "Indie Folk-Rock",
+    mood: "Restless, proud, self-critical — but forward-moving",
+    tags: ["craft", "pivoting", "Slack"],
+    lyrics: `[Verse 1]
+We had a game nobody played
+Nine million dollars left to trade
+Cal said keep the side project warm
+I said we're walking into the storm
+
+[Pre-Chorus]
+We pasted forty sheets of paper on the wall
+Four words that stared us down
+
+[Chorus]
+It's a giant piece of shit
+We should be humiliated and we are
+It's the only honest thing
+When you can't stop seeing how far
+The customer wins or we don't
+Tilt your umbrella in the rain
+It's a giant piece of shit
+And we'll build it again
+
+[Verse 2]
+Flickr came from a burning world
+A pivot dressed as a girl
+Twice we killed the thing we loved
+Twice the floor became enough
+
+[Pre-Chorus]
+The rational ones will tell you keep your cool
+I say that's how you lose
+
+[Chorus]
+It's a giant piece of shit
+We should be humiliated and we are
+It's the only honest thing
+When you can't stop seeing how far
+The customer wins or we don't
+Tilt your umbrella in the rain
+It's a giant piece of shit
+And we'll build it again
+
+[Bridge]
+Twenty-three years
+Same room different walls
+You see the crack before I do
+You catch me when I fall
+Divine discontent
+It's not a flaw
+It's the only way I know
+To do this at all
+
+[Chorus]
+It's a giant piece of shit
+We should be humiliated and we are
+It's the only honest thing
+When you can't stop seeing how far
+The customer wins or we don't
+Tilt your umbrella in the rain
+It's a giant piece of shit
+And we built it again
+
+[Outro, call and response chant]
+The measure of our success
+Will be the customer's success
+The measure of our success
+Will be the customer's success`,
+    concept: "Based on Stewart Butterfield's Lenny's Podcast episode. After shutting down Glitch with $9M left, Butterfield pivoted to Slack — then publicly called it 'a giant piece of shit' the year it launched. That quote became a battle cry printed on 40 sheets of paper on the office wall.",
+    keyInsight: "True builders are never satisfied — not because they're broken, but because they can see what's possible. Embarrassment is a compass.",
+    sources: [
+      { title: "Slack founder: Mental models for building products people love ft. Stewart Butterfield", type: "podcast" as const, url: "https://www.lennysnewsletter.com/p/stewart-butterfield", guest: "Stewart Butterfield" },
+    ],
+    keyQuote: "I feel like what we have right now is just a giant piece of shit. It's just terrible and we should be humiliated that we offer this to the public.",
+    quoteSpeaker: "Stewart Butterfield",
+    storyBehind: "Stewart Butterfield built two video games that failed commercially — the second one, Glitch, had to be shut down with $9 million still in the bank. The internal communication tool his team had been building on the side became Slack. In 2014, the year Slack launched, Butterfield told MIT Technology Review it was 'a giant piece of shit.' The team printed those words on 40 sheets of paper and pasted them on the office wall as a motivational battle cry. Slack was sold to Salesforce for $27.7 billion.",
+    annotations: [
+      {
+        lyricText: "Nine million dollars left to trade",
+        note: "When Stewart Butterfield shut down Glitch, the game his team had been building, they had $9 million left in the bank. He described having to be 'coldly rational' about the pivot because 'it's fucking humiliating' — you promised people something and it failed.",
+        sourceTitle: "Slack founder: Mental models for building products people love ft. Stewart Butterfield",
+        sourceUrl: "https://www.lennysnewsletter.com/p/stewart-butterfield",
+      },
+      {
+        lyricText: "It's a giant piece of shit",
+        note: "In 2014, the year Slack launched, Stewart Butterfield told MIT Technology Review: 'I feel like what we have right now is just a giant piece of shit. It's just terrible and we should be humiliated that we offer this to the public.' He meant it as a design philosophy — if you can't see almost limitless opportunities to improve, you shouldn't be designing the product.",
+        sourceTitle: "Slack founder: Mental models for building products people love ft. Stewart Butterfield",
+        sourceUrl: "https://www.lennysnewsletter.com/p/stewart-butterfield",
+      },
+      {
+        lyricText: "Tilt your umbrella in the rain",
+        note: "Stewart told a story on Lenny's podcast about walking on a narrow Vancouver sidewalk in the rain. A woman approaching tilted her umbrella so they wouldn't collide. He turned it into a core Slack value about empathy and craftsmanship — 'tilt your umbrella' appeared on company swag and became shorthand for going out of your way for the user.",
+        sourceTitle: "Slack founder: Mental models for building products people love ft. Stewart Butterfield",
+        sourceUrl: "https://www.lennysnewsletter.com/p/stewart-butterfield",
+      },
+      {
+        lyricText: "Twenty-three years",
+        note: "Stewart Butterfield and Cal Henderson, Slack's CTO, have worked together for 23 years — first on Flickr, then on Slack. Stewart told Lenny they still talk regularly about what to do next, calling their partnership one of the most enduring in tech.",
+        sourceTitle: "Slack founder: Mental models for building products people love ft. Stewart Butterfield",
+        sourceUrl: "https://www.lennysnewsletter.com/p/stewart-butterfield",
+      },
+      {
+        lyricText: "The measure of our success",
+        note: "At more than one company all-hands, Stewart made the entire company repeat this as a chant: 'In the long run, the measure of our success will be the amount of value that we create for customers.' He told Lenny there's no substitute for actually creating value — you can't fake it with marketing.",
+        sourceTitle: "Slack founder: Mental models for building products people love ft. Stewart Butterfield",
+        sourceUrl: "https://www.lennysnewsletter.com/p/stewart-butterfield",
+      },
+    ],
+    releaseDate: "2026-03-24",
+  },
 ];
 
 const growthEngineTracks: Track[] = [
