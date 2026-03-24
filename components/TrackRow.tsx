@@ -4,6 +4,7 @@ import Image from "next/image";
 import { Play, Pause, Mic, FileText } from "lucide-react";
 import { motion } from "framer-motion";
 import type { Track } from "@/lib/types";
+import { getAlbumForTrack } from "@/lib/tracks";
 import VoteButtons from "@/components/VoteButtons";
 
 type TrackRowProps = {
@@ -82,6 +83,11 @@ export default function TrackRow({
             width={40}
             height={40}
             className="rounded"
+            onError={(e) => {
+              const img = e.currentTarget;
+              const albumCover = getAlbumForTrack(track.slug)?.coverImage;
+              if (albumCover && img.src !== albumCover) img.src = albumCover;
+            }}
           />
         </div>
       )}

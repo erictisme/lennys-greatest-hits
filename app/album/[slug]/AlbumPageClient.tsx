@@ -319,6 +319,12 @@ export default function AlbumPageClient({ slug }: { slug: string }) {
                         width={40}
                         height={40}
                         className="rounded"
+                        onError={(e) => {
+                          const img = e.currentTarget;
+                          if (album.coverImage && img.src !== album.coverImage) {
+                            img.src = album.coverImage;
+                          }
+                        }}
                       />
                     </div>
                   )}

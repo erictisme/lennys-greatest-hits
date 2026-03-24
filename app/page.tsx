@@ -117,7 +117,15 @@ export default function Home() {
         </h1>
         <div className="flex items-center gap-2 mt-2">
           <p className="text-sm text-muted-foreground">
-            {allTracks.length} songs &middot; {allAlbums.filter((a) => !a.comingSoon).length} albums
+            {allTracks.length} songs &middot; {allAlbums.filter((a) => !a.comingSoon).length} albums &middot; {(() => {
+              const totalSecs = allTracks.reduce((sum, t) => {
+                const parts = t.duration.split(":");
+                return sum + parseInt(parts[0], 10) * 60 + parseInt(parts[1], 10);
+              }, 0);
+              const hrs = Math.floor(totalSecs / 3600);
+              const mins = Math.floor((totalSecs % 3600) / 60);
+              return hrs > 0 ? `${hrs} hr ${mins} min` : `${mins} min`;
+            })()}
           </p>
           <ThemeToggle />
         </div>

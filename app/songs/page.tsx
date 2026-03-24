@@ -189,6 +189,11 @@ export default function SongsPage() {
                     width={40}
                     height={40}
                     className="object-cover w-full h-full"
+                    onError={(e) => {
+                      const img = e.currentTarget;
+                      const albumCover = album?.coverImage;
+                      if (albumCover && img.src !== albumCover) img.src = albumCover;
+                    }}
                   />
                 ) : (
                   <div className="w-full h-full bg-muted flex items-center justify-center">
