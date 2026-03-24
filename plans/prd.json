@@ -2,359 +2,128 @@
   "features": [
     {
       "id": 1,
-      "category": "bugfix",
+      "category": "quality",
       "priority": 0,
-      "description": "Rewrite the onboarding card to be tasteful, not tutorial-y. The current components/OnboardingTooltips.tsx is ugly — emojis, 'triangle', 'give Eric feedback' copy, grid layout. It feels like a cheap tutorial overlay, not a premium music app. REWRITE IT: Replace with a single subtle inline banner (one line, not a card). Design: `<div className='flex items-center justify-between px-4 py-2.5 mb-4 rounded-lg bg-white/[0.04] border border-border/20'>`. Left side: `<p className='text-xs text-muted-foreground/70'>Every song is built from a real Lenny podcast or article. Tap any song to hear the insight.</p>`. Right side: dismiss X button (same as now). Keep the same localStorage logic (`lgh-onboarding-seen`). Keep framer-motion fade animation. Remove the emoji grid, the 4 tips, the 'Have fun exploring', the 'Welcome to' heading. It should feel like a whisper, not a shout. DONE: Onboarding is a single subtle line. No emojis. No 'Eric'. No grid. Dismissible. DO NOT TOUCH: app/page.tsx mounting (it's already mounted correctly), other components. VERIFY: pnpm build passes.",
+      "description": "User persona QA audit: Pretend you are Sarah, a senior PM at a Series B startup who listens to Lenny's Podcast on her commute. She has 5 minutes to explore this site after seeing it shared in Lenny's Slack. Open the homepage (read app/page.tsx and all components it renders). Walk through EVERY page a real user would visit in their first 5 minutes. For each page, note: (1) What's confusing or broken? (2) What's missing? (3) What delights? Document your findings in content/qa/user-persona-audit.md with sections: First Impressions, Navigation Flow, Track Page Experience, Album Page Experience, Search Experience, Mobile Concerns, Top 5 Issues (ranked by impact on first-time visitor). Read EVERY component and page file — app/page.tsx, app/album/[slug]/AlbumPageClient.tsx, app/track/[slug]/TrackPageClient.tsx, app/songs/page.tsx, components/NowPlayingBar.tsx, components/SyncedLyrics.tsx, components/TrackRow.tsx, components/VoteButtons.tsx. Be brutally honest. DONE: content/qa/user-persona-audit.md exists with detailed findings. DO NOT TOUCH: any code files. VERIFY: pnpm build passes.",
       "steps": [
+        "Read app/page.tsx thoroughly",
+        "Read app/album/[slug]/AlbumPageClient.tsx",
+        "Read app/track/[slug]/TrackPageClient.tsx",
+        "Read app/songs/page.tsx",
+        "Read components/NowPlayingBar.tsx",
+        "Read components/SyncedLyrics.tsx",
+        "Read components/TrackRow.tsx",
+        "Read components/VoteButtons.tsx",
         "Read components/OnboardingTooltips.tsx",
-        "Rewrite to single-line subtle banner",
-        "Remove emojis, grid, multi-line tips",
-        "Keep localStorage + framer-motion logic",
+        "Read components/KeyboardShortcuts.tsx",
+        "Read components/ThemeToggle.tsx",
+        "Write content/qa/user-persona-audit.md with findings",
         "pnpm build passes"
       ],
-      "files": ["components/OnboardingTooltips.tsx"],
-      "passes": true
+      "files": ["content/qa/user-persona-audit.md"],
+      "passes": false
     },
     {
       "id": 2,
-      "category": "feature",
+      "category": "quality",
       "priority": 0,
-      "description": "Dark mode step 1: Add dark CSS variables and set dark as default. This is a music app — dark is the standard (Spotify, Apple Music). In app/globals.css: (1) After the existing `:root { ... }` block (which has the light theme vars), add a `.dark` block with dark theme variables. Use these values: --background: #0a0a0a; --foreground: #fafaf9; --card: #141414; --card-foreground: #fafaf9; --popover: #1a1a1a; --popover-foreground: #fafaf9; --primary: #f59e0b; --primary-foreground: #0a0a0a; --secondary: #1c1917; --secondary-foreground: #d6d3d1; --muted: #1c1917; --muted-foreground: #a8a29e; --accent: #1c1917; --accent-foreground: #fef3c7; --destructive: #ef4444; --border: #292524; --input: #292524; --ring: #f59e0b; --chart-1 through --chart-5: same amber family but brighter. --sidebar vars: dark equivalents. (2) In app/layout.tsx, add `className='dark'` to the `<html>` tag. The html tag is in the RootLayout function — find it and add the dark class. This will activate all the CSS custom property overrides. Many components already use CSS vars (text-foreground, bg-background, border-border) so they'll automatically switch. DONE: Site renders with dark background. Text is light. CSS vars are dark. DO NOT TOUCH: component files in this task. VERIFY: pnpm build passes.",
+      "description": "Audit ALL track annotations for quality and accuracy. Read lib/albums.ts and check every track that has an `annotations` array. For each annotation, verify: (1) The lyricText actually appears as a substring in that track's lyrics. (2) The note is specific, factual, and references real Lenny content — not vague or generic. (3) The sourceTitle and sourceUrl are plausible. Flag any annotations that feel force-fit (where the lyric doesn't clearly reference the annotated concept). Write findings to content/qa/annotation-audit.md. Format: one section per album, with each track listing its annotations and a verdict (GOOD, NEEDS WORK, FORCE-FIT). For FORCE-FIT annotations, suggest a better lyric line to annotate or suggest removing it. DONE: content/qa/annotation-audit.md exists with findings for all annotated tracks. DO NOT TOUCH: lib/albums.ts or any code. VERIFY: pnpm build passes.",
       "steps": [
-        "Read app/globals.css",
-        "Add .dark CSS variable block after :root",
-        "Read app/layout.tsx",
-        "Add className='dark' to html tag",
+        "Read lib/albums.ts — find all tracks with annotations",
+        "For each annotated track: check lyrics contain lyricText",
+        "Evaluate note quality — specific/factual vs vague/generic",
+        "Flag force-fit annotations",
+        "Write content/qa/annotation-audit.md",
         "pnpm build passes"
       ],
-      "files": ["app/globals.css", "app/layout.tsx"],
-      "passes": true
+      "files": ["content/qa/annotation-audit.md"],
+      "passes": false
     },
     {
       "id": 3,
-      "category": "feature",
+      "category": "bugfix",
       "priority": 0,
-      "description": "Dark mode step 2: Fix share menu dropdowns. In app/album/[slug]/AlbumPageClient.tsx, there are TWO share dropdown menus with hardcoded `bg-white` (lines 243 and 442). These will look broken in dark mode — white boxes on dark background. FIX: Change `bg-white` to `bg-popover` on both dropdown containers (lines 243 and 442). Also change `hover:bg-black/[0.04]` to `hover:bg-white/[0.06]` on all 6 dropdown button items (lines 247, 254, 261, 446, 453, 460). Also change `text-foreground/80` to `text-popover-foreground` on those same buttons. The popover CSS vars will handle light/dark automatically. DONE: Share dropdowns look correct in dark mode. DO NOT TOUCH: other files, share logic. VERIFY: pnpm build passes.",
+      "description": "Fix any FORCE-FIT annotations found in the audit (task 2). Read content/qa/annotation-audit.md for the list of problematic annotations. For each FORCE-FIT annotation in lib/albums.ts: either (1) find a better lyric line to match and update lyricText, or (2) rewrite the note to better connect the lyric to the concept, or (3) remove the annotation entirely if it can't be saved. Use the track's lyrics, concept, storyBehind, and keyInsight fields to find better matches. Every remaining annotation must feel natural — like a Genius annotation where you read it and think 'oh that's what that line means!' DONE: No more force-fit annotations. Every annotation feels earned. DO NOT TOUCH: component files, non-annotation track data. VERIFY: pnpm build passes. Each lyricText still appears in its track's lyrics.",
       "steps": [
-        "Read app/album/[slug]/AlbumPageClient.tsx",
-        "Replace bg-white with bg-popover on both dropdown containers",
-        "Replace hover:bg-black/[0.04] with hover:bg-white/[0.06] on dropdown buttons",
-        "Replace text-foreground/80 with text-popover-foreground on dropdown buttons",
+        "Read content/qa/annotation-audit.md for FORCE-FIT list",
+        "Read lib/albums.ts",
+        "Fix each flagged annotation",
+        "Verify lyricText substrings still match",
         "pnpm build passes"
       ],
-      "files": ["app/album/[slug]/AlbumPageClient.tsx"],
-      "passes": true
+      "files": ["lib/albums.ts"],
+      "passes": false
     },
     {
       "id": 4,
-      "category": "feature",
-      "priority": 0,
-      "description": "Dark mode step 3: Fix album page track row hover states. In app/album/[slug]/AlbumPageClient.tsx line 289, the track row has `hover:bg-black/[0.04]` which won't be visible on a dark background. Change to `hover:bg-white/[0.04]`. Also check the rest of this file for any other `bg-black/[0.04]` or similar light-mode-only hover states and fix them to use `bg-white/[0.04]` or `bg-white/[0.06]` instead. DONE: Album page track rows have visible hover states in dark mode. DO NOT TOUCH: other files. VERIFY: pnpm build passes.",
+      "category": "bugfix",
+      "priority": 1,
+      "description": "Fix top issues from the user persona audit (task 1). Read content/qa/user-persona-audit.md for the Top 5 Issues list. Implement fixes for the top 3 issues that are code-fixable (skip any that require new assets, Eric's input, or major architecture changes). For each fix: read the relevant file, make the minimal change, verify build passes. DONE: Top 3 code-fixable issues from the audit are resolved. DO NOT TOUCH: lib/audio-context.tsx (read only), track data in lib/albums.ts (unless fixing display bugs). VERIFY: pnpm build passes.",
       "steps": [
-        "Read app/album/[slug]/AlbumPageClient.tsx",
-        "Find all bg-black/[0.04] and similar hover states",
-        "Replace with bg-white/[0.04] or bg-white/[0.06]",
+        "Read content/qa/user-persona-audit.md Top 5 Issues",
+        "Identify top 3 that are code-fixable",
+        "Fix issue 1",
+        "Fix issue 2",
+        "Fix issue 3",
         "pnpm build passes"
       ],
-      "files": ["app/album/[slug]/AlbumPageClient.tsx"],
-      "passes": true
+      "files": [],
+      "passes": false
     },
     {
       "id": 5,
-      "category": "feature",
-      "priority": 0,
-      "description": "Dark mode step 4: Fix gradient backgrounds for dark mode. In app/globals.css, the album gradient classes (.gradient-founders, .gradient-product, .gradient-builders, .gradient-human, .gradient-the-operators, .gradient-growth-engine, .gradient-the-startup-life, .gradient-career-moves, .gradient-frameworks) all use light-mode colors (subtle pastels). In dark mode, these need to be darker. Add `.dark .gradient-founders { background: linear-gradient(135deg, rgba(217, 119, 6, 0.12) 0%, rgba(217, 119, 6, 0.03) 100%); }` and similar for each gradient. The pattern: increase the accent color opacity slightly (0.08→0.12), and instead of going to a pastel, go to a very subtle tint of the accent (0.03 opacity). Do this for all 9 gradient classes. Also fix `.card-glass` — add `.dark .card-glass { background: #141414; border-color: #292524; box-shadow: 0 1px 3px rgba(0,0,0,0.3); }` and `.dark .card-glass:hover { background: #1c1917; border-color: #f59e0b; box-shadow: 0 4px 12px rgba(245,158,11,0.15); }`. DONE: Album headers and cards look rich in dark mode. DO NOT TOUCH: component files. VERIFY: pnpm build passes.",
+      "category": "quality",
+      "priority": 1,
+      "description": "Second persona audit: Now pretend you are Marcus, a tech journalist who covers AI/creator tools. He's evaluating LGH as a potential story angle. He cares about: Is this impressive technically? Is it novel? Would his readers care? Walk through the site again with fresh eyes after the fixes from task 4. Read all page files again. Write content/qa/journalist-persona-audit.md with: Headline Angle (what would the story be?), Wow Moments, Credibility Gaps, Missing Polish, Suggested Improvements (max 5, ranked). DONE: content/qa/journalist-persona-audit.md exists. DO NOT TOUCH: any code. VERIFY: pnpm build passes.",
       "steps": [
-        "Read app/globals.css",
-        "Add .dark variants for all 9 gradient classes",
-        "Add .dark variants for card-glass and card-glass:hover",
+        "Read all page and component files again",
+        "Write content/qa/journalist-persona-audit.md",
         "pnpm build passes"
       ],
-      "files": ["app/globals.css"],
-      "passes": true
+      "files": ["content/qa/journalist-persona-audit.md"],
+      "passes": false
     },
     {
       "id": 6,
-      "category": "feature",
-      "priority": 0,
-      "description": "Dark mode step 5: Fix loading skeleton pages. In app/track/[slug]/loading.tsx and app/loading.tsx, skeleton placeholders use hardcoded `bg-black/5` and `bg-black/10` which are invisible on dark backgrounds. Replace ALL instances of `bg-black/5` with `bg-white/5` and ALL instances of `bg-black/10` with `bg-white/10` in both files. Also in app/track/[slug]/loading.tsx line 5, change `bg-black/[0.02]` to `bg-white/[0.02]`. DONE: Loading skeletons are visible in dark mode. DO NOT TOUCH: other files. VERIFY: pnpm build passes.",
+      "category": "bugfix",
+      "priority": 1,
+      "description": "Fix top issues from the journalist persona audit (task 5). Read content/qa/journalist-persona-audit.md Suggested Improvements. Implement the top 2 code-fixable improvements. Keep changes minimal and focused. DONE: Top 2 code-fixable improvements implemented. DO NOT TOUCH: lib/audio-context.tsx, track data unless fixing display bugs. VERIFY: pnpm build passes.",
       "steps": [
-        "Read app/track/[slug]/loading.tsx",
-        "Replace bg-black/5 with bg-white/5, bg-black/10 with bg-white/10, bg-black/[0.02] with bg-white/[0.02]",
-        "Read app/loading.tsx",
-        "Same replacements",
+        "Read content/qa/journalist-persona-audit.md",
+        "Identify top 2 code-fixable improvements",
+        "Implement them",
         "pnpm build passes"
       ],
-      "files": ["app/track/[slug]/loading.tsx", "app/loading.tsx"],
-      "passes": true
+      "files": [],
+      "passes": false
     },
     {
       "id": 7,
-      "category": "feature",
-      "priority": 0,
-      "description": "Dark mode step 6: Fix NowPlayingBar and SyncedLyrics. In components/NowPlayingBar.tsx line 110, the progress bar background uses `bg-black/10` — change to `bg-white/10`. In components/SyncedLyrics.tsx line 176, the lyric line hover uses `hover:bg-black/5` — change to `hover:bg-white/5`. Also check for any `hover:bg-black/10` in SyncedLyrics and change to `hover:bg-white/10`. DONE: Bottom bar and lyrics look correct in dark mode. DO NOT TOUCH: audio logic, other files. VERIFY: pnpm build passes.",
+      "category": "quality",
+      "priority": 2,
+      "description": "Third persona audit: Lenny Rachitsky himself. He built the newsletter and podcast this app is based on. He cares about: Does it represent his content accurately? Is it respectful? Would he be proud to share it? Would it make him smile? Read lib/albums.ts to check how his content is represented — track titles, concepts, source attributions, key quotes. Read a few track page files. Write content/qa/lenny-persona-audit.md with: What Would Make Lenny Smile, What Might Concern Lenny, Accuracy Check (any misattributions or misrepresentations?), Missing Content (notable Lenny episodes/topics not covered), Overall Verdict. DONE: content/qa/lenny-persona-audit.md exists. DO NOT TOUCH: any code. VERIFY: pnpm build passes.",
       "steps": [
-        "Read components/NowPlayingBar.tsx",
-        "Replace bg-black/10 with bg-white/10",
-        "Read components/SyncedLyrics.tsx",
-        "Replace hover:bg-black/5 with hover:bg-white/5",
-        "Replace any hover:bg-black/10 with hover:bg-white/10",
+        "Read lib/albums.ts thoroughly — all track data",
+        "Check source attributions, quotes, concepts for accuracy",
+        "Write content/qa/lenny-persona-audit.md",
         "pnpm build passes"
       ],
-      "files": ["components/NowPlayingBar.tsx", "components/SyncedLyrics.tsx"],
-      "passes": true
+      "files": ["content/qa/lenny-persona-audit.md"],
+      "passes": false
     },
     {
       "id": 8,
-      "category": "feature",
-      "priority": 0,
-      "description": "Dark mode step 7: Fix track detail page. In app/track/[slug]/TrackPageClient.tsx: (1) Line 364 has `bg-black/10` for the progress bar — change to `bg-white/10`. (2) Line 466 has `bg-white/5 dark:bg-white/5 bg-black/[0.02]` — simplify to just `bg-white/[0.04]`. (3) Check for any other hardcoded light-mode colors in this file. DONE: Track detail page looks correct in dark mode. DO NOT TOUCH: audio logic, other pages. VERIFY: pnpm build passes.",
-      "steps": [
-        "Read app/track/[slug]/TrackPageClient.tsx",
-        "Fix bg-black/10 to bg-white/10 on progress bar",
-        "Simplify the source card bg classes",
-        "Check for other hardcoded light-mode colors",
-        "pnpm build passes"
-      ],
-      "files": ["app/track/[slug]/TrackPageClient.tsx"],
-      "passes": true
-    },
-    {
-      "id": 9,
-      "category": "feature",
-      "priority": 0,
-      "description": "Dark mode step 8: Fix not-found page. In app/not-found.tsx line 20, there's a `bg-white text-[#0a0a0a]` button — change to `bg-foreground text-background` so it respects the theme. DONE: 404 page looks correct in dark mode. DO NOT TOUCH: other files. VERIFY: pnpm build passes.",
-      "steps": [
-        "Read app/not-found.tsx",
-        "Replace bg-white text-[#0a0a0a] with bg-foreground text-background",
-        "pnpm build passes"
-      ],
-      "files": ["app/not-found.tsx"],
-      "passes": true
-    },
-    {
-      "id": 10,
-      "category": "feature",
-      "priority": 0,
-      "description": "Dark mode step 9: Fix feedback page and EmailSignup for dark mode. Read app/feedback/page.tsx and components/EmailSignup.tsx. Check for any hardcoded `bg-white` (solid, not `bg-white/[0.0x]`), `text-[#` with dark hex values, or `bg-black/[0.0x]` patterns that would be invisible on dark. Fix them. Common fixes: `bg-white` → `bg-popover`, `bg-black/5` → `bg-white/5`. If everything already uses CSS vars or white/black with opacity, it may already work — in that case, no changes needed, just verify. DONE: Feedback page and email signup work in dark mode. DO NOT TOUCH: submission logic. VERIFY: pnpm build passes.",
-      "steps": [
-        "Read app/feedback/page.tsx",
-        "Read components/EmailSignup.tsx",
-        "Fix any hardcoded light-mode colors",
-        "pnpm build passes"
-      ],
-      "files": ["app/feedback/page.tsx", "components/EmailSignup.tsx"],
-      "passes": true
-    },
-    {
-      "id": 11,
-      "category": "feature",
-      "priority": 1,
-      "description": "Dark mode step 10: Fix Shuffle Play button and accent buttons. The Shuffle Play button on app/page.tsx has `style={{ backgroundColor: '#b45309' }}` — this brown is too dark against a dark background. Change to `style={{ backgroundColor: '#f59e0b' }}` (bright amber) and change `text-white` to `text-black`. Also check components/VoteButtons.tsx for any hardcoded colors that need fixing for dark mode. DONE: Shuffle Play button is bright and visible on dark background. DO NOT TOUCH: audio logic, track data. VERIFY: pnpm build passes.",
-      "steps": [
-        "Read app/page.tsx — find Shuffle Play button",
-        "Change background color to #f59e0b",
-        "Change text-white to text-black",
-        "Read components/VoteButtons.tsx — fix any dark mode issues",
-        "pnpm build passes"
-      ],
-      "files": ["app/page.tsx", "components/VoteButtons.tsx"],
-      "passes": true
-    },
-    {
-      "id": 12,
-      "category": "feature",
-      "priority": 1,
-      "description": "Dark mode step 11: Final audit. Scan ALL .tsx files under app/ and components/ for remaining hardcoded light-mode colors. Specifically grep for: (1) `bg-white` not followed by `/` (solid white backgrounds — should be bg-popover or bg-card), (2) `bg-black/5` or `bg-black/10` (should be bg-white/5 or bg-white/10), (3) `hover:bg-black/[0.04]` (should be hover:bg-white/[0.04]). Fix each one found. This is a sweep — touch as many files as needed but ONLY change color-related classes. DONE: No remaining hardcoded light-mode colors. DO NOT TOUCH: any logic, data, or non-style code. VERIFY: pnpm build passes.",
-      "steps": [
-        "Grep for bg-white (not bg-white/) in all tsx files",
-        "Grep for bg-black/5 and bg-black/10",
-        "Grep for hover:bg-black/[0.04]",
-        "Fix each instance",
-        "pnpm build passes"
-      ],
-      "files": ["app/", "components/"],
-      "passes": true
-    },
-    {
-      "id": 13,
-      "category": "feature",
-      "priority": 1,
-      "description": "Dark mode step 12: Fix opengraph image. In app/opengraph-image.tsx, the OG image likely renders with light background colors. Read it and check — if it uses hardcoded white/light backgrounds, change them to dark (#0a0a0a background, light text). The OG image should match the site's dark aesthetic. Also in app/layout.tsx, if there's a themeColor in metadata, set it to '#0a0a0a'. DONE: OG images render with dark background. DO NOT TOUCH: other files. VERIFY: pnpm build passes.",
-      "steps": [
-        "Read app/opengraph-image.tsx",
-        "Change background colors to dark",
-        "Change text colors to light",
-        "Check app/layout.tsx metadata for themeColor",
-        "pnpm build passes"
-      ],
-      "files": ["app/opengraph-image.tsx", "app/layout.tsx"],
-      "passes": true
-    },
-    {
-      "id": 14,
-      "category": "feature",
-      "priority": 1,
-      "description": "Dark mode step 13: Fix /songs page for dark mode. In app/songs/page.tsx, check for dark-mode issues: (1) Track number color `rgba(161,161,170,0.4)` — might be too dim on dark, brighten to `rgba(161,161,170,0.6)`. (2) Column header text `text-muted-foreground/40` — might be too dim, bump to `/50`. (3) The `motion.div` whileHover `backgroundColor: 'rgba(255,255,255,0.04)'` — fine for dark. (4) Search bar `bg-white/[0.06]` — fine. Read the whole file and fix any visibility issues. DONE: /songs page is fully readable in dark mode. DO NOT TOUCH: sort/filter logic. VERIFY: pnpm build passes.",
-      "steps": [
-        "Read app/songs/page.tsx",
-        "Fix any colors too dim for dark mode",
-        "pnpm build passes"
-      ],
-      "files": ["app/songs/page.tsx"],
-      "passes": true
-    },
-    {
-      "id": 15,
-      "category": "polish",
+      "category": "bugfix",
       "priority": 2,
-      "description": "Polish: Subtle accent-colored top border on NowPlayingBar. In components/NowPlayingBar.tsx, the bottom bar has `border-t border-border bg-background/95 backdrop-blur-lg`. In dark mode this is functional but flat. Add a subtle glow using the track's accent color. On the outermost div (the fixed container), add an inline style: `style={{ borderTopColor: accentColor + '40' }}` (hex 40 = 25% opacity). This creates a subtle colored line at the top that matches the currently playing track's album color. Keep the existing `border-t border-border` classes — the inline style overrides the border color. DONE: NowPlayingBar has a subtle accent-colored top border. DO NOT TOUCH: controls, audio logic. VERIFY: pnpm build passes.",
+      "description": "Fix any accuracy issues from the Lenny persona audit (task 7). Read content/qa/lenny-persona-audit.md. If there are misattributions, wrong source titles, inaccurate quotes, or misrepresented concepts in lib/albums.ts — fix them. Use mcp__lennysdata__search_content and mcp__lennysdata__read_excerpt to verify facts against the actual Lenny archive. Only fix things that are clearly wrong, not style preferences. DONE: All factual accuracy issues resolved. DO NOT TOUCH: component files. VERIFY: pnpm build passes.",
       "steps": [
-        "Read components/NowPlayingBar.tsx",
-        "Add inline borderTopColor style using accentColor + '40'",
+        "Read content/qa/lenny-persona-audit.md for accuracy issues",
+        "Use Lenny MCP to verify facts",
+        "Fix any errors in lib/albums.ts",
         "pnpm build passes"
       ],
-      "files": ["components/NowPlayingBar.tsx"],
-      "passes": true
-    },
-    {
-      "id": 16,
-      "category": "polish",
-      "priority": 2,
-      "description": "Polish: Subtle warm glow on album cover hover. In app/page.tsx, the album grid covers currently have `shadow-md` and a scale hover effect. Add a subtle warm shadow glow on hover. On the album cover wrapper div (the one with `relative aspect-square`), add a `transition-shadow duration-300` class and change the parent group-hover to also include a warm shadow: add `group-hover:shadow-[0_8px_30px_rgba(245,158,11,0.08)]` to the cover container div. This creates a barely-visible warm glow when hovering album artwork. DONE: Album covers glow subtly warm on hover. DO NOT TOUCH: click behavior, album data. VERIFY: pnpm build passes.",
-      "steps": [
-        "Read app/page.tsx album grid section",
-        "Add transition-shadow and warm hover shadow to album cover container",
-        "pnpm build passes"
-      ],
-      "files": ["app/page.tsx"],
-      "passes": true
-    },
-    {
-      "id": 17,
-      "category": "polish",
-      "priority": 2,
-      "description": "Polish: Add subtle homepage hero glow. In app/page.tsx, add a subtle gradient glow behind the main title for depth on the dark background. Make the `<header>` element `relative`. Add a child div BEFORE the h1: `<div className='absolute -inset-x-20 -inset-y-10 bg-gradient-to-r from-amber-500/[0.03] via-transparent to-amber-500/[0.03] blur-3xl pointer-events-none' />`. This creates a barely-visible warm ambient light around the title. It should be VERY subtle — if someone asks 'is there a glow?' the answer should be 'I think so?'. DONE: Homepage title has a whisper of warm ambient glow. DO NOT TOUCH: content, search, track list. VERIFY: pnpm build passes.",
-      "steps": [
-        "Read app/page.tsx header section",
-        "Add relative class to header",
-        "Add subtle gradient glow div",
-        "pnpm build passes"
-      ],
-      "files": ["app/page.tsx"],
-      "passes": true
-    },
-    {
-      "id": 18,
-      "category": "feature",
-      "priority": 2,
-      "description": "Supabase Storage step 1: Create a Node.js upload script. Create a file `scripts/upload-audio.ts` that: (1) Imports createClient from @supabase/supabase-js. (2) Reads NEXT_PUBLIC_SUPABASE_URL and NEXT_PUBLIC_SUPABASE_ANON_KEY from process.env (use dotenv to load .env.local). (3) Lists all .mp3 files in public/audio/. (4) For each MP3: uploads to a Supabase Storage bucket called 'audio' with the same filename, content type 'audio/mpeg', upsert: true. (5) Logs progress: 'Uploaded 1/88: taste.mp3'. (6) After all uploads, logs the public URL pattern: `{supabaseUrl}/storage/v1/object/public/audio/{filename}`. IMPORTANT: The script should first try to create the bucket (createClient.storage.createBucket('audio', { public: true })) and ignore the error if it already exists. Add a package.json script: 'upload-audio': 'npx tsx scripts/upload-audio.ts'. Also install dotenv as a dev dependency if not present. DONE: Script exists and is runnable. DO NOT RUN IT — just create it. Eric will run it manually after reviewing. DO NOT TOUCH: lib/albums.ts, audio playback code. VERIFY: pnpm build passes. The script file exists.",
-      "steps": [
-        "Check if dotenv is installed, add as devDep if not",
-        "Create scripts/upload-audio.ts",
-        "Add upload-audio script to package.json",
-        "pnpm build passes"
-      ],
-      "files": ["scripts/upload-audio.ts", "package.json"],
-      "passes": true
-    },
-    {
-      "id": 19,
-      "category": "feature",
-      "priority": 2,
-      "description": "Supabase Storage step 2: Create a script to update audio URLs in lib/albums.ts. Create `scripts/migrate-audio-urls.ts` that: (1) Reads the NEXT_PUBLIC_SUPABASE_URL from .env.local. (2) Reads lib/albums.ts as a string. (3) Uses a regex to find all `audioUrl: \"/audio/{filename}.mp3\"` patterns. (4) Replaces each with `audioUrl: \"{supabaseUrl}/storage/v1/object/public/audio/{filename}.mp3\"`. (5) Writes the modified file back. (6) Logs how many URLs were replaced. Add a package.json script: 'migrate-audio-urls': 'npx tsx scripts/migrate-audio-urls.ts'. DONE: Script exists. When run, it rewrites all audioUrl values in lib/albums.ts to point to Supabase Storage. DO NOT RUN IT — just create it. DO NOT TOUCH: lib/albums.ts directly, audio playback code. VERIFY: pnpm build passes. Script file exists.",
-      "steps": [
-        "Create scripts/migrate-audio-urls.ts",
-        "Add migrate-audio-urls script to package.json",
-        "pnpm build passes"
-      ],
-      "files": ["scripts/migrate-audio-urls.ts", "package.json"],
-      "passes": true
-    },
-    {
-      "id": 20,
-      "category": "feature",
-      "priority": 2,
-      "description": "Supabase Storage step 3: Add .gitignore rule for public/audio MP3s and create a README note. After the MP3s are uploaded to Supabase Storage and URLs are migrated, the local MP3 files in public/audio/ are no longer needed in git. Add `public/audio/*.mp3` to .gitignore. BUT: do NOT delete the files — they should stay locally for development. Also add a comment in .gitignore above the line: `# MP3s served from Supabase Storage — local copies for dev only`. Also create a small note at the top of scripts/upload-audio.ts as a comment explaining the flow: upload script → migrate URLs → gitignore. DONE: .gitignore excludes MP3s. Local files remain. Future git commits won't include 353MB of audio. DO NOT TOUCH: lib/albums.ts, audio playback. DO NOT delete any MP3 files. VERIFY: pnpm build passes.",
-      "steps": [
-        "Read .gitignore",
-        "Add public/audio/*.mp3 with comment",
-        "Add flow comment to scripts/upload-audio.ts",
-        "pnpm build passes"
-      ],
-      "files": [".gitignore", "scripts/upload-audio.ts"],
-      "passes": true
-    },
-    {
-      "id": 21,
-      "category": "polish",
-      "priority": 3,
-      "description": "Polish: Add smooth scroll-to-top on page navigation. In app/layout.tsx, the page content scrolls but navigating between pages doesn't scroll to top. Add a ScrollToTop component: create components/ScrollToTop.tsx — a 'use client' component that uses `usePathname()` from next/navigation and a useEffect that calls `window.scrollTo({ top: 0, behavior: 'instant' })` whenever pathname changes. Mount it in app/layout.tsx inside the body, before the main content. DONE: Navigating between pages scrolls to top. DO NOT TOUCH: audio context, NowPlayingBar. VERIFY: pnpm build passes.",
-      "steps": [
-        "Create components/ScrollToTop.tsx",
-        "Add usePathname + useEffect to scroll to top",
-        "Mount in app/layout.tsx",
-        "pnpm build passes"
-      ],
-      "files": ["components/ScrollToTop.tsx", "app/layout.tsx"],
-      "passes": true
-    },
-    {
-      "id": 22,
-      "category": "polish",
-      "priority": 3,
-      "description": "Polish: Add a subtle fade-in animation to page content. In app/page.tsx, the main content div (the flex-col min-h-screen container) should fade in on load. Wrap the outermost div in a framer-motion motion.div with `initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.3 }}`. Do the same in app/album/[slug]/AlbumPageClient.tsx — wrap the outermost flex-col div. And app/track/[slug]/TrackPageClient.tsx — wrap the outermost flex-col div. Keep it subtle — 0.3s fade, no slide. DONE: Pages fade in smoothly on navigation. DO NOT TOUCH: content, logic, audio. VERIFY: pnpm build passes.",
-      "steps": [
-        "Read app/page.tsx, wrap outermost div in motion.div with fade",
-        "Read app/album/[slug]/AlbumPageClient.tsx, same treatment",
-        "Read app/track/[slug]/TrackPageClient.tsx, same treatment",
-        "pnpm build passes"
-      ],
-      "files": ["app/page.tsx", "app/album/[slug]/AlbumPageClient.tsx", "app/track/[slug]/TrackPageClient.tsx"],
-      "passes": true
-    },
-    {
-      "id": 23,
-      "category": "polish",
-      "priority": 3,
-      "description": "Polish: Improve mobile experience for NowPlayingBar. The NowPlayingBar is cramped on mobile. In components/NowPlayingBar.tsx: (1) The skip back/forward buttons are `hidden sm:block` — they should be visible on mobile too since they're essential controls. Remove `hidden sm:block` from both skip buttons (around lines 161 and 183), replace with just the styling classes. Make them slightly smaller on mobile: `w-3.5 h-3.5 sm:w-4 sm:h-4` for the icons. (2) The time display is `hidden sm:flex` — keep it hidden on mobile, that's fine. (3) The share button can stay. DONE: Skip buttons visible on mobile. Buttons sized appropriately. DO NOT TOUCH: audio logic, desktop layout. VERIFY: pnpm build passes.",
-      "steps": [
-        "Read components/NowPlayingBar.tsx",
-        "Remove hidden sm:block from skip buttons",
-        "Make skip button icons responsive size",
-        "pnpm build passes"
-      ],
-      "files": ["components/NowPlayingBar.tsx"],
-      "passes": true
-    },
-    {
-      "id": 24,
-      "category": "polish",
-      "priority": 3,
-      "description": "Polish: Add track count and total duration to album pages. In app/album/[slug]/AlbumPageClient.tsx, after the 'Play All' button area (around line 278), add a stats line: `<p className='text-xs text-muted-foreground/50 mt-3'>{trackCount} tracks · {totalDuration}</p>`. Calculate trackCount from `album.tracks.filter(t => !t.isLocked).length`. Calculate totalDuration by parsing each track.duration string (format 'M:SS'), summing seconds, and formatting back to 'Xm Ys' or 'X min'. This gives the album page the same feel as Spotify's album info. DONE: Album page shows track count and total duration below the Play All button. DO NOT TOUCH: track list rendering, audio logic. VERIFY: pnpm build passes.",
-      "steps": [
-        "Read app/album/[slug]/AlbumPageClient.tsx",
-        "Add duration parsing and summing logic",
-        "Add stats line below Play All button",
-        "pnpm build passes"
-      ],
-      "files": ["app/album/[slug]/AlbumPageClient.tsx"],
-      "passes": true
-    },
-    {
-      "id": 25,
-      "category": "polish",
-      "priority": 3,
-      "description": "Polish: Add 'Now Playing' indicator to album and songs pages. When a track is currently playing, show a small animated equalizer icon next to the track title (like Spotify does). The equalizer bars already exist as CSS animations in globals.css (animate-eq-1, eq-2, eq-3). In app/album/[slug]/AlbumPageClient.tsx: when `isPlaying` is true for a track, show the equalizer bars instead of the track number (this may already be partially done — check and ensure it works). In app/songs/page.tsx: the equalizer bars are already implemented for playing tracks — verify they're working and visible in dark mode. If the bar colors use `var(--primary)`, they should be fine. DONE: Playing track shows animated equalizer bars on album and songs pages. DO NOT TOUCH: audio logic, NowPlayingBar. VERIFY: pnpm build passes.",
-      "steps": [
-        "Read app/album/[slug]/AlbumPageClient.tsx — check playing indicator",
-        "Read app/songs/page.tsx — check playing indicator",
-        "Ensure equalizer colors work in dark mode",
-        "pnpm build passes"
-      ],
-      "files": ["app/album/[slug]/AlbumPageClient.tsx", "app/songs/page.tsx"],
-      "passes": true
+      "files": ["lib/albums.ts"],
+      "passes": false
     }
   ]
 }
-
