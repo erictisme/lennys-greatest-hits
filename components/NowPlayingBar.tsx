@@ -152,10 +152,10 @@ export default function NowPlayingBar() {
         <div className="flex items-center gap-3">
           <button
             onClick={() => prev()}
-            className={`hidden sm:block ${hasPrev ? "text-muted-foreground hover:text-foreground" : "text-muted-foreground/30"} transition-colors`}
+            className={`${hasPrev ? "text-muted-foreground hover:text-foreground" : "text-muted-foreground/30"} transition-colors`}
             disabled={!hasPrev}
           >
-            <SkipBack className="w-4 h-4" />
+            <SkipBack className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
           </button>
 
           <button
@@ -174,10 +174,10 @@ export default function NowPlayingBar() {
 
           <button
             onClick={() => next()}
-            className={`hidden sm:block ${hasNext ? "text-muted-foreground hover:text-foreground" : "text-muted-foreground/30"} transition-colors`}
+            className={`${hasNext ? "text-muted-foreground hover:text-foreground" : "text-muted-foreground/30"} transition-colors`}
             disabled={!hasNext}
           >
-            <SkipForward className="w-4 h-4" />
+            <SkipForward className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
           </button>
         </div>
 
