@@ -7147,6 +7147,130 @@ You let me in`,
     releaseDate: "2026-03-21",
     sunoId: "08480b15-4c6e-4c08-bca9-38acf41dadf3",
   },
+  {
+    slug: "the-hiring-playbook",
+    title: "The Hiring Playbook",
+    albumSlug: "the-talent-search",
+    trackNumber: 4,
+    duration: "3:00",
+    audioUrl: "/audio/the-hiring-playbook.mp3",
+    coverImage: "/covers/the-hiring-playbook.jpg",
+    genre: "Neo-Soul / Acoustic R&B",
+    mood: "Warm, tactical, mentor-like — calm confidence",
+    tags: ["hiring", "recruiting", "leadership", "playbook"],
+    lyrics: `[Verse 1]
+You ask me for a name, I ask: where?
+Who built the team that does this best?
+Not your rival — find the one next door
+The lieutenant running all the rest
+Every hire I made looked like luck
+I was reading a different map
+
+[Pre-Chorus]
+Morning text from the CEO
+Said, "Three in a row, how'd you know?"
+I said, I knew the company
+The person came along with it
+
+[Chorus]
+Don't ask me for a name
+Ask me for the company
+The lieutenant's in there waiting
+You just have to go and see
+Find the best in class
+Find the one below the top
+That's your hire, that's your play
+That's the only way
+
+[Verse 2]
+Square rang the bell in fifteen
+The fintechs lined up on our street
+Compliance, risk, and payments left
+The lieutenants found their next seat
+I was on the losing end that year
+Now I run the same play in reverse
+
+[Pre-Chorus]
+Morning text from the CEO
+Said, "Three in a row, how'd you know?"
+I said, I knew the company
+The person came along with it
+
+[Chorus]
+Don't ask me for a name
+Ask me for the company
+The lieutenant's in there waiting
+You just have to go and see
+Find the best in class
+Find the one below the top
+That's your hire, that's your play
+That's the only way
+
+[Bridge]
+Two hours every day
+One to reach, one to meet
+Sixty calls, sixty doors
+Block it on the calendar
+Hold the title back
+Let the scope do all the talking
+
+[Final Chorus]
+Don't ask me for a name
+Ask me for the company
+The lieutenant's in there waiting
+You just have to go and see
+Find the best in class
+Find the one below the top
+That's your hire, that's your play
+That's the only way
+
+[Outro]
+I never hand you a name
+I hand you a door
+The person was already built
+I just knew which door to knock`,
+    concept: "Gokul Rajaram's counterintuitive hiring playbook: don't search for the person — find the company that already built them, then hire the lieutenant.",
+    keyInsight: "When asked to recommend a hire, Gokul never responds with a person — he responds with a company. Find the best-in-class company for that function, then hire the lieutenant (or the lieutenant's lieutenant), not the head.",
+    keyQuote: "You hire the person who's reporting to them — the lieutenant.",
+    quoteSpeaker: "Gokul Rajaram",
+    sources: [
+      { title: "Gokul Rajaram on designing your product development process, when and how to hire your first PM, a playbook for hiring leaders", type: "podcast" as const, url: "https://www.lennysnewsletter.com/p/gokul-rajaram", guest: "Gokul Rajaram" },
+    ],
+    storyBehind: "Gokul Rajaram told Lenny about a CEO texting him after three successful senior hires in a row asking how he knew. Gokul's secret: he never recommended a person — he recommended a company. Then he watched the same playbook used against him when Square went public in 2015 and other fintechs systematically raided their compliance, risk, and payments teams.",
+    annotations: [
+      {
+        lyricText: "The lieutenant running all the rest",
+        note: "Gokul told Lenny his hiring framework: find the best-in-class company for a function, then 'you don't hire the person, the head of marketing at these companies. You hire the person who's reporting to them, the lieutenant.' Adam Zamos, head of people at Square, confirmed the pattern: 'We used to go and hire the up and coming lieutenants of the lieutenants.'",
+        sourceTitle: "Gokul Rajaram on designing your product development process, when and how to hire your first PM, a playbook for hiring leaders",
+        sourceUrl: "https://www.lennysnewsletter.com/p/gokul-rajaram",
+      },
+      {
+        lyricText: "I said, I knew the company\nThe person came along with it",
+        note: "Gokul explained his core insight to Lenny: when someone asks him to recommend a hire, he never names a person. Instead he asks 'who's the company who's best in class' at that function. The person is already inside the company — you just have to map the org chart and find them.",
+        sourceTitle: "Gokul Rajaram on designing your product development process, when and how to hire your first PM, a playbook for hiring leaders",
+        sourceUrl: "https://www.lennysnewsletter.com/p/gokul-rajaram",
+      },
+      {
+        lyricText: "Square rang the bell in fifteen\nThe fintechs lined up on our street",
+        note: "Gokul watched this playbook used against him firsthand. When Square went public in 2015 as one of the few public fintechs, he told Lenny: 'I literally saw the full team, a huge chunk of a team in different parts of payments, compliance, risk, just being raided by other fintechs.' They targeted the lieutenants, not the heads. Lenny's reaction: 'You saw this happening to you and then you weaponized it in reverse.'",
+        sourceTitle: "Gokul Rajaram on designing your product development process, when and how to hire your first PM, a playbook for hiring leaders",
+        sourceUrl: "https://www.lennysnewsletter.com/p/gokul-rajaram",
+      },
+      {
+        lyricText: "Two hours every day\nOne to reach, one to meet",
+        note: "When Lenny asked how much time founders should spend on hiring, Gokul was specific: 'A founder of a young company should spend two hours a day hiring. I would suggest spending one hour a day doing the reach outs and then one hour talking to people — two 30-minute conversations.' Over 30 days that equals 60 candidate conversations.",
+        sourceTitle: "Gokul Rajaram on designing your product development process, when and how to hire your first PM, a playbook for hiring leaders",
+        sourceUrl: "https://www.lennysnewsletter.com/p/gokul-rajaram",
+      },
+      {
+        lyricText: "Hold the title back\nLet the scope do all the talking",
+        note: "Gokul advised Lenny that leaders should focus on scope and impact over titles. He told a story about convincing someone to take a step down in title to join Coinbase (where he sat on the board) instead of being a top exec at a tier-two e-commerce company: 'The value of working at a leader in any space, the quality of talent you work with, the brand, the network effect, so many things accrue to you.'",
+        sourceTitle: "Gokul Rajaram on designing your product development process, when and how to hire your first PM, a playbook for hiring leaders",
+        sourceUrl: "https://www.lennysnewsletter.com/p/gokul-rajaram",
+      },
+    ],
+    releaseDate: "2026-03-24",
+  },
 ];
 
 const theInterviewTracks: Track[] = [
