@@ -4,6 +4,7 @@ import "./globals.css";
 import { AudioProvider } from "@/lib/audio-context";
 import NowPlayingBar from "@/components/NowPlayingBar";
 import ScrollToTop from "@/components/ScrollToTop";
+import KeyboardShortcuts from "@/components/KeyboardShortcuts";
 
 import { PostHogProvider } from "@/components/PostHogProvider";
 
@@ -57,6 +58,13 @@ export default function RootLayout({
       lang="en"
       className={`${inter.variable} ${geistMono.variable} ${spectral.variable} dark h-full antialiased`}
     >
+      <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: "try{if(localStorage.getItem('lgh-theme')==='light')document.documentElement.classList.remove('dark')}catch(e){}",
+          }}
+        />
+      </head>
       <body className="min-h-full flex flex-col bg-background text-foreground overflow-x-hidden">
         <script
           type="application/ld+json"
@@ -78,6 +86,7 @@ export default function RootLayout({
             <ScrollToTop />
             <div className="pb-[72px]">{children}</div>
             <NowPlayingBar />
+            <KeyboardShortcuts />
           </AudioProvider>
         </PostHogProvider>
       </body>

@@ -204,7 +204,7 @@ export default function SongsPage() {
                 >
                   {track.title}
                 </p>
-                <p className="text-xs text-muted-foreground truncate">
+                <p className="text-xs text-muted-foreground/80 truncate">
                   {track.sources?.[0] ? (
                     <>
                       {track.sources[0].type === "podcast" ? (
@@ -215,7 +215,7 @@ export default function SongsPage() {
                       {" "}
                       {track.sources[0].guest || track.sources[0].title}
                       {track.sources[0].guest && track.sources[0].title && (
-                        <span className="text-muted-foreground/40">{" · "}{track.sources[0].title}</span>
+                        <span className="text-muted-foreground/60">{" · "}{track.sources[0].title}</span>
                       )}
                     </>
                   ) : (

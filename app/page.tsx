@@ -12,6 +12,7 @@ import { trackEvent } from "@/lib/analytics";
 import TrackRow from "@/components/TrackRow";
 import EmailSignup from "@/components/EmailSignup";
 import OnboardingTooltips from "@/components/OnboardingTooltips";
+import ThemeToggle from "@/components/ThemeToggle";
 
 export default function Home() {
   const allAlbums = getAllAlbums();
@@ -114,9 +115,12 @@ export default function Home() {
         <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight leading-[1.05]">
           Lenny&apos;s Greatest Hits
         </h1>
-        <p className="text-sm text-muted-foreground mt-2">
-          {allTracks.length} songs &middot; {allAlbums.filter((a) => !a.comingSoon).length} albums
-        </p>
+        <div className="flex items-center gap-2 mt-2">
+          <p className="text-sm text-muted-foreground">
+            {allTracks.length} songs &middot; {allAlbums.filter((a) => !a.comingSoon).length} albums
+          </p>
+          <ThemeToggle />
+        </div>
         <button
           onClick={() => {
             trackEvent("shuffle_play_clicked");
@@ -223,7 +227,7 @@ export default function Home() {
             </section>
 
             {/* 4. Discography Section */}
-            <section className="mb-12">
+            <section id="discography" className="mb-12">
               <div className="flex items-center justify-between mb-4">
                 <h2 className="text-xl font-bold">Discography</h2>
                 <Link

@@ -15,7 +15,7 @@ import {
 } from "lucide-react";
 import { motion } from "framer-motion";
 import { getTrackBySlug, getAlbumForTrack, getAllTracks } from "@/lib/tracks";
-import { notFound } from "next/navigation";
+import { notFound, useRouter } from "next/navigation";
 import { useAudio } from "@/lib/audio-context";
 import { trackEvent } from "@/lib/analytics";
 import SyncedLyrics from "@/components/SyncedLyrics";
@@ -39,6 +39,7 @@ export default function TrackPageClient({ slug }: { slug: string }) {
   const track = getTrackBySlug(slug);
   const album = track ? getAlbumForTrack(slug) : undefined;
   const audio = useAudio();
+  const router = useRouter();
 
   // Set the queue to the album's tracks when visiting a track page.
   // If audio is already playing, only update the queue without interrupting playback.
@@ -328,13 +329,13 @@ export default function TrackPageClient({ slug }: { slug: string }) {
           <div className="max-w-2xl mx-auto w-full">
             {/* Controls */}
             <div className="flex items-center justify-center gap-6 mb-4">
-              {prevTrack ? (
-                <Link href={`/track/${prevTrack.slug}`}>
-                  <SkipBack className="w-5 h-5 text-muted-foreground hover:text-foreground transition-colors" />
-                </Link>
-              ) : (
-                <SkipBack className="w-5 h-5 text-muted-foreground/30" />
-              )}
+              <button
+                onClick={() => { if (prevTrack) { audio.prev(); router.push(`/track/${prevTrack.slug}`); } }}
+                disabled={!prevTrack}
+                className="disabled:opacity-30"
+              >
+                <SkipBack className="w-5 h-5 text-muted-foreground hover:text-foreground transition-colors" />
+              </button>
 
               <button
                 onClick={togglePlay}
@@ -351,13 +352,13 @@ export default function TrackPageClient({ slug }: { slug: string }) {
                 )}
               </button>
 
-              {nextTrack ? (
-                <Link href={`/track/${nextTrack.slug}`}>
-                  <SkipForward className="w-5 h-5 text-muted-foreground hover:text-foreground transition-colors" />
-                </Link>
-              ) : (
-                <SkipForward className="w-5 h-5 text-muted-foreground/30" />
-              )}
+              <button
+                onClick={() => { if (nextTrack) { audio.next(); router.push(`/track/${nextTrack.slug}`); } }}
+                disabled={!nextTrack}
+                className="disabled:opacity-30"
+              >
+                <SkipForward className="w-5 h-5 text-muted-foreground hover:text-foreground transition-colors" />
+              </button>
             </div>
 
             {/* Progress Bar */}

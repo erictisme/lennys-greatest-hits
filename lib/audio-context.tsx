@@ -428,6 +428,44 @@ export function AudioProvider({ children }: { children: ReactNode }) {
     return first;
   }, [clearCountdown]);
 
+  // MediaSession API — enables AirPods, keyboard media keys, Bluetooth controls, lock screen
+  useEffect(() => {
+    if (!("mediaSession" in navigator)) return;
+    if (!currentTrack) return;
+    const albumInfo = getAlbumForTrack(currentTrack.slug);
+    navigator.mediaSession.metadata = new MediaMetadata({
+      title: currentTrack.title,
+      artist: "Lenny's Greatest Hits",
+      album: albumInfo?.title ?? "",
+      artwork: currentTrack.coverImage
+        ? [{ src: currentTrack.coverImage, sizes: "512x512", type: "image/jpeg" }]
+        : [],
+    });
+  }, [currentTrack]);
+
+  useEffect(() => {
+    if (!("mediaSession" in navigator)) return;
+    navigator.mediaSession.playbackState = isPlaying ? "playing" : "paused";
+  }, [isPlaying]);
+
+  useEffect(() => {
+    if (!("mediaSession" in navigator)) return;
+    navigator.mediaSession.setActionHandler("play", () => resume());
+    navigator.mediaSession.setActionHandler("pause", () => pause());
+    navigator.mediaSession.setActionHandler("previoustrack", () => prev());
+    navigator.mediaSession.setActionHandler("nexttrack", () => next());
+    navigator.mediaSession.setActionHandler("seekto", (details) => {
+      if (details.seekTime !== undefined) seek(details.seekTime);
+    });
+    return () => {
+      navigator.mediaSession.setActionHandler("play", null);
+      navigator.mediaSession.setActionHandler("pause", null);
+      navigator.mediaSession.setActionHandler("previoustrack", null);
+      navigator.mediaSession.setActionHandler("nexttrack", null);
+      navigator.mediaSession.setActionHandler("seekto", null);
+    };
+  }, [resume, pause, prev, next, seek]);
+
   // Global keyboard shortcuts
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
