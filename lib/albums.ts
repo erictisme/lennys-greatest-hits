@@ -7049,6 +7049,114 @@ Rung by rung...`,
     ],
     releaseDate: "2026-03-24",
   },
+  {
+    slug: "three-eras",
+    title: "Three Eras",
+    albumSlug: "the-startup-life",
+    trackNumber: 17,
+    duration: "3:00",
+    audioUrl: "/audio/three-eras.mp3",
+    coverImage: "/covers/three-eras.jpg",
+    genre: "Indie Folk / Alt-Country Ballad",
+    mood: "Bittersweet epic — triumphant, then heavy, then quietly resolved",
+    tags: ["founder story", "Dropbox", "survival"],
+    lyrics: `[Verse 1]
+Twenty-four and missed the bus
+One video cracked the world wide open
+Numbers taped along the wall
+Then they climbed up to the ceiling
+A hundred feet above the ground
+Riding what he couldn't slow down
+
+[Pre-Chorus]
+You see the cloud but miss the sound
+Winter always comes around
+
+[Chorus]
+They stopped wearing the shirt
+You stopped putting it on
+Microsoft didn't kill you
+You did that on your own
+
+[Verse 2]
+Jobs called it archaic from a stage
+Google made your photos free forever
+Fourth of July in New Hampshire
+One book and two apps left to kill
+You picked your teeth up off the floor
+And dragged yourself back up the hill
+
+[Pre-Chorus]
+You see the cloud but miss the sound
+Winter always comes around
+
+[Chorus]
+They stopped wearing the shirt
+You stopped putting it on
+Microsoft didn't kill you
+You did that on your own
+
+[Bridge, stripped — voice and guitar only]
+Alone on Independence Day
+Andy Grove spread on your lap
+You killed the things you built with love
+And still came back
+
+[Verse 3]
+IPO in 2018
+Same old problem, wider world
+The little icon at Starbucks
+Over someone's shoulder still
+Eighteen years and three whole lives
+Still building, still alive
+
+[Final Chorus]
+They stopped wearing the shirt
+You stopped putting it on
+Microsoft didn't kill you
+You had to break to carry on`,
+    concept: "Three acts of an 18-year company — rise, siege, reinvention. Drew Houston built Dropbox from a forgotten thumb drive to a $10B IPO, surviving Apple, Google, and Microsoft trying to kill him along the way.",
+    keyInsight: "The things that get you to the top — optimism, velocity, viral expansion — are exactly the things that blind you to what's coming. Survival isn't about avoiding hard chapters, it's about staying in the game long enough to reach the third act.",
+    keyQuote: "Microsoft did not kill us. We killed ourselves.",
+    quoteSpeaker: "Bill Campbell (to Drew Houston)",
+    sources: [
+      { title: "Behind the founder: Drew Houston (Dropbox)", type: "podcast" as const, url: "https://www.lennysnewsletter.com/p/behind-the-founder-drew-houston-dropbox", guest: "Drew Houston" },
+    ],
+    storyBehind: "Drew Houston started Dropbox at 24 after forgetting his thumb drive on a bus. A viral demo video sent his beta waitlist from 5,000 to 85,000 overnight. By 2011, Apple, Google, and Microsoft had all launched competing products. Google Photos offered free unlimited storage, nuking Dropbox's Carousel business model. Drew killed Carousel and Mailbox alone over Fourth of July weekend, rereading Andy Grove's 'Only the Paranoid Survive.' Bill Campbell told him: 'Microsoft did not kill us. We killed ourselves.' Dropbox IPO'd in 2018.",
+    annotations: [
+      {
+        lyricText: "Numbers taped along the wall",
+        note: "Drew Houston told Lenny: 'For the first several years, it was doubling, 10-xing every year. Taping user counts that we printed out to the wall, and then running out of space on the wall. Having to put 100,000 users, 200,000, 500,000, 1,000,000, 10,000,000 on the ceiling.' The numbers literally outgrew the walls.",
+        sourceTitle: "Behind the founder: Drew Houston (Dropbox)",
+        sourceUrl: "https://www.lennysnewsletter.com/p/behind-the-founder-drew-houston-dropbox",
+      },
+      {
+        lyricText: "Microsoft didn't kill you",
+        note: "Bill Campbell — former Netscape exec and legendary Silicon Valley coach — told Drew this directly. Drew asked him about Microsoft's bundling tactics that killed Netscape. Campbell 'laughed and snorted' and said: 'Microsoft did not kill us. We killed ourselves.' Drew realized the same was true at Dropbox: 'A lot of our wounds were self-inflicted.'",
+        sourceTitle: "Behind the founder: Drew Houston (Dropbox)",
+        sourceUrl: "https://www.lennysnewsletter.com/p/behind-the-founder-drew-houston-dropbox",
+      },
+      {
+        lyricText: "They stopped wearing the shirt",
+        note: "Drew described the lowest point to Lenny: 'The narrative completely flipped on the company. Suddenly, your employees don't want to wear your T-shirt anymore. Everybody's looking to you, and is wondering, how the hell did you get us in this situation?' He admitted he didn't want to wear the shirt either.",
+        sourceTitle: "Behind the founder: Drew Houston (Dropbox)",
+        sourceUrl: "https://www.lennysnewsletter.com/p/behind-the-founder-drew-houston-dropbox",
+      },
+      {
+        lyricText: "Jobs called it archaic from a stage",
+        note: "In 2011, Steve Jobs announced iCloud on stage, calling out Dropbox by name as something that would be viewed as 'archaic.' Drew told Lenny the competitive threat felt like 'you see the videos where there's the mushroom cloud in the distance. You see it. But you don't hear, or notice it.' Apple, Microsoft, and Google all launched competing products, but Drew described it as a 'boa constrictor, not a shotgun blast.'",
+        sourceTitle: "Behind the founder: Drew Houston (Dropbox)",
+        sourceUrl: "https://www.lennysnewsletter.com/p/behind-the-founder-drew-houston-dropbox",
+      },
+      {
+        lyricText: "Google made your photos free forever",
+        note: "In 2015, Google Photos launched with free unlimited photo and video storage for life — directly undercutting Dropbox's Carousel product. Drew told Lenny: 'They just totally nuked our business model.' He killed both Carousel and Mailbox, going all-in on productivity. 'I wish I could say then everything got better. It was the opposite, actually.'",
+        sourceTitle: "Behind the founder: Drew Houston (Dropbox)",
+        sourceUrl: "https://www.lennysnewsletter.com/p/behind-the-founder-drew-houston-dropbox",
+      },
+    ],
+    releaseDate: "2026-03-24",
+  },
 ];
 
 const theTalentSearchTracks: Track[] = [

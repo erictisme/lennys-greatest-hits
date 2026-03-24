@@ -115,7 +115,7 @@
       "description": "Onboard batch 7.5 song: three-eras. Same process. Read content/songs/batch7.5/lyrics/three-eras.md. Use Lenny MCP for annotations. Add to correct album. DONE: Track in lib/albums.ts with annotations. VERIFY: pnpm build passes.",
       "steps": ["Read lyrics", "Use Lenny MCP for annotations", "Add to lib/albums.ts", "pnpm build passes"],
       "files": ["lib/albums.ts"],
-      "passes": false
+      "passes": true
     },
     {
       "id": 14,
