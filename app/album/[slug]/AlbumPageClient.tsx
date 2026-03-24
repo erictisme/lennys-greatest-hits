@@ -277,6 +277,22 @@ export default function AlbumPageClient({ slug }: { slug: string }) {
               </AnimatePresence>
             </div>
           </div>
+
+          {/* Track count & total duration */}
+          {(() => {
+            const playable = album.tracks.filter((t) => !t.isLocked);
+            const totalSecs = playable.reduce((sum, t) => {
+              const parts = t.duration.split(":");
+              return sum + parseInt(parts[0], 10) * 60 + parseInt(parts[1], 10);
+            }, 0);
+            const mins = Math.floor(totalSecs / 60);
+            const secs = totalSecs % 60;
+            return (
+              <p className="text-xs text-muted-foreground/50 mt-3">
+                {playable.length} track{playable.length !== 1 ? "s" : ""} · {mins} min {secs > 0 ? `${secs} sec` : ""}
+              </p>
+            );
+          })()}
         </div>
       </header>
 
