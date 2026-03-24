@@ -3252,6 +3252,137 @@ until the silence sings`,
     ],
     releaseDate: "2026-03-24",
   },
+  {
+    slug: "the-value-loop",
+    title: "The Value Loop",
+    albumSlug: "by-the-numbers",
+    trackNumber: 6,
+    duration: "3:00",
+    audioUrl: "/audio/the-value-loop.mp3",
+    coverImage: "/covers/the-value-loop.jpg",
+    genre: "Lo-fi neo-soul",
+    mood: "Wry, worn-in wisdom — illuminated exhaustion",
+    tags: ["subscriptions", "growth", "churn", "retention", "consumer apps"],
+    lyrics: `[Intro]
+Anyone can launch an app
+the stores will take their share
+high margins on paper
+but the leak is always there
+
+[Verse 1]
+First of the month I pull the screen
+nineteen of twenty gone
+somewhere between the hope and math
+one paid — the loop goes on
+Apple changed the rules in twenty-one
+tracking died that year
+the playbook built on paid-to-click
+just disappeared
+
+[Pre-Chorus]
+You've got minutes, maybe less
+before they tap away
+get them to the value fast
+there's no time for delay
+
+[Chorus]
+Trial, convert, retain, grow
+the loop runs or the treadmill does
+one in twenty learn to flow
+the rest just churn because
+
+[Verse 2]
+The ones who loop don't pray for ads
+they built a thing worth sharing
+word of mouth becomes the engine
+self-sustaining, self-repairing
+half your monthly users gone
+inside of ninety days
+you keep paying for the installs
+the treadmill earns its wage
+
+[Pre-Chorus]
+You've got minutes, maybe less
+before they tap away
+get them to the value fast
+there's no time for delay
+
+[Chorus]
+Trial, convert, retain, grow
+the loop runs or the treadmill does
+one in twenty learn to flow
+the rest just churn because
+
+[Bridge]
+Fewer than fifty ever cleared
+a billion dollar mark
+out of all who chased the dream
+and stumbled in the dark
+half your subs gone by January
+signed up, then forgot
+you can't just buy your way to growth
+the treadmill never stops
+
+[Chorus — Final]
+Trial, convert, retain, grow
+the loop runs or the treadmill does
+one in twenty learn to flow
+the rest just churn because
+build the thing that earns the stay
+not the thing that begs
+
+[Outro]
+The groove keeps turning
+the groove keeps turning
+trial, convert, retain, grow
+the groove keeps turning`,
+    concept: "Based on Phil Carter's Subscription Value Loop framework, published on Lenny's Newsletter. Analyzed 30,000+ subscription apps and 290M subscribers via RevenueCat data. The framework reveals why consumer subscription apps are easy to launch but brutally hard to scale — and why the winners build a self-reinforcing loop of value creation, delivery, and capture.",
+    keyInsight: "Even top-quartile consumer subscription apps only convert 1 in 20 installs into paid subscribers, and lose more than half their subscribers within the first year. The winners aren't better at marketing — they've built a compounding value loop.",
+    sources: [
+      {
+        title: "The Subscription Value Loop: A framework for growing consumer subscription businesses",
+        type: "newsletter",
+        url: "https://www.lennysnewsletter.com/p/the-subscription-value-loop",
+        guest: "Phil Carter",
+      },
+    ],
+    keyQuote: "Even top-quartile consumer subscription apps only convert roughly 1 in 20 installs into a paid subscription.",
+    quoteSpeaker: "Phil Carter",
+    storyBehind: "Phil Carter spent a year developing the Subscription Value Loop framework, analyzing RevenueCat's proprietary data from over 30,000 subscription apps representing 290 million subscribers. What he found was sobering: the model that looks easiest to launch is one of the hardest to scale. Consumer subscription apps face high churn, low ARPU, overdependence on paid acquisition, and Apple's ATT restrictions that gutted tracking. Fewer than 50 have ever reached $1B+ valuations. The ones that win don't just acquire better — they build a self-reinforcing loop where every dollar retained funds better product, which funds better retention, which funds growth. The rest run on a treadmill.",
+    annotations: [
+      {
+        lyricText: "nineteen of twenty gone",
+        note: "Phil Carter's analysis of RevenueCat data from 30,000+ subscription apps revealed that even top-quartile consumer subscription apps only convert roughly 1 in 20 installs into a paid subscription. The other 19 never pay a dollar — making sustainable growth nearly impossible without a compounding retention loop.",
+        sourceTitle: "The Subscription Value Loop",
+        sourceUrl: "https://www.lennysnewsletter.com/p/the-subscription-value-loop",
+      },
+      {
+        lyricText: "Apple changed the rules in twenty-one\ntracking died that year",
+        note: "Apple's App Tracking Transparency (ATT) restrictions fundamentally changed consumer app growth. Phil Carter explains that many subscription apps had relied on paid acquisition as their primary growth lever, but ATT 'rendered paid acquisition less efficient, making it even more difficult for these companies to maintain healthy unit economics.'",
+        sourceTitle: "The Subscription Value Loop",
+        sourceUrl: "https://www.lennysnewsletter.com/p/the-subscription-value-loop",
+      },
+      {
+        lyricText: "half your monthly users gone\ninside of ninety days",
+        note: "The churn numbers are stark: top-quartile apps lose more than half of their monthly subscribers after just three months, and more than half of their annual subscribers after the first year. Phil Carter calls churn 'generally higher for consumer subscription apps vs. B2B SaaS businesses' — with products that are 'fairly easy to replicate and thus prone to copycats.'",
+        sourceTitle: "The Subscription Value Loop",
+        sourceUrl: "https://www.lennysnewsletter.com/p/the-subscription-value-loop",
+      },
+      {
+        lyricText: "Fewer than fifty ever cleared\na billion dollar mark",
+        note: "Out of the hundreds of thousands of consumer subscription apps in the app stores, Phil Carter found that fewer than 50 have ever reached $1B+ valuations, and fewer than 10 are publicly traded companies with $10B+ market caps. The ease of launching creates fierce competition, channel saturation, and subscription fatigue.",
+        sourceTitle: "The Subscription Value Loop",
+        sourceUrl: "https://www.lennysnewsletter.com/p/the-subscription-value-loop",
+      },
+      {
+        lyricText: "the loop runs or the treadmill does",
+        note: "The central thesis of Phil Carter's framework: subscription businesses either build a self-reinforcing Subscription Value Loop — where value creation feeds delivery feeds capture feeds reinvestment — or they're stuck on a paid acquisition treadmill, paying for installs that churn and paying again. The loop compounds; the treadmill grinds.",
+        sourceTitle: "The Subscription Value Loop",
+        sourceUrl: "https://www.lennysnewsletter.com/p/the-subscription-value-loop",
+      },
+    ],
+    releaseDate: "2026-03-24",
+  },
 ];
 
 const theWeightTracks: Track[] = [

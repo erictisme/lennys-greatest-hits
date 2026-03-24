@@ -106,7 +106,7 @@
       "description": "Onboard batch 7.5 song: the-value-loop. Same process. Read content/songs/batch7.5/lyrics/the-value-loop.md. Use Lenny MCP for annotations. Add to correct album (likely 'growth-engine' or 'the-craft'). DONE: Track in lib/albums.ts with annotations. VERIFY: pnpm build passes.",
       "steps": ["Read lyrics", "Use Lenny MCP for annotations", "Add to lib/albums.ts", "pnpm build passes"],
       "files": ["lib/albums.ts"],
-      "passes": false
+      "passes": true
     },
     {
       "id": 13,
