@@ -79,7 +79,7 @@
       "description": "Onboard batch 7.5 song: the-hard-thing. Same process as task 8. Read content/songs/batch7.5/lyrics/the-hard-thing.md. Use Lenny MCP for 3-5 annotations. Add to correct album (likely 'the-startup-life' or 'the-weight' depending on topic). DONE: Track in lib/albums.ts with annotations. VERIFY: pnpm build passes.",
       "steps": ["Read lyrics", "Read research if exists", "Use Lenny MCP for annotations", "Add to lib/albums.ts", "pnpm build passes"],
       "files": ["lib/albums.ts"],
-      "passes": false
+      "passes": true
     },
     {
       "id": 10,
