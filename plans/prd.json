@@ -124,7 +124,7 @@
       "description": "Onboard batch 7.5 song: we-havent-built-windows-yet. Same process. Read content/songs/batch7.5/lyrics/we-havent-built-windows-yet.md. Use Lenny MCP for annotations. Add to correct album (likely 'electric-dreams'). DONE: Track in lib/albums.ts with annotations. VERIFY: pnpm build passes.",
       "steps": ["Read lyrics", "Use Lenny MCP for annotations", "Add to lib/albums.ts", "pnpm build passes"],
       "files": ["lib/albums.ts"],
-      "passes": false
+      "passes": true
     },
     {
       "id": 15,

@@ -5582,6 +5582,105 @@ Grandfather, look what we finally made`,
     ],
     releaseDate: "2026-03-24",
   },
+  {
+    slug: "we-havent-built-windows-yet",
+    title: "We Haven't Built Windows Yet",
+    albumSlug: "electric-dreams",
+    trackNumber: 8,
+    duration: "3:00",
+    audioUrl: "/audio/we-havent-built-windows-yet.mp3",
+    coverImage: "/covers/we-havent-built-windows-yet.jpg",
+    genre: "Chamber Pop / Jazz-Inflected Folk",
+    mood: "Awe, wonder, vertigo — quiet reverence at civilization-scale consequence",
+    tags: ["AI", "origin story", "scale"],
+    lyrics: `[Verse 1]
+He fixed the blinds on his first day
+A research lab, just finding his way
+Ten days to ship, they kept it plain
+They named it by the model's name
+
+[Pre-Chorus]
+Sam hit tweet, the dashboard broke
+The whole world opened before he spoke
+
+[Chorus]
+We haven't built Windows yet
+One in ten on every street
+Seven hundred million strong
+And we still don't see what's complete
+We haven't built Windows yet
+
+[Verse 2]
+He almost chose the piano keys
+The jazz ensemble, not the screen
+But he heard a room that needed sound
+And improvised his way around
+
+[Pre-Chorus]
+They stayed when he thought they'd walk away
+The hackathon code is here to stay
+
+[Chorus]
+We haven't built Windows yet
+One in ten on every street
+Seven hundred million strong
+And we still don't see what's complete
+We haven't built Windows yet
+
+[Bridge, hushed]
+You won't know what to polish
+Until the world holds it first
+We launched it while we built it
+And the dashboard broke — then burst
+
+[Final Chorus, fuller arrangement]
+We haven't built Windows yet
+One in ten on every street
+Seven hundred million strong
+We launched it while we built the thing
+We haven't built Windows yet`,
+    concept: "The origin story of ChatGPT — from hackathon codebase with a placeholder name to 700 million weekly active users — told through Nick Turley, the man who built the most consequential product in history and still thinks it's just the beginning.",
+    keyInsight: "Ship before you know what to polish — because the product's real shape only reveals itself when the world gets its hands on it.",
+    sources: [
+      { title: "Inside ChatGPT: The fastest-growing product in history", type: "podcast" as const, url: "https://www.lennysnewsletter.com/p/nick-turley", guest: "Nick Turley" },
+    ],
+    keyQuote: "ChatGPT feels a little bit like MS-DOS. We haven't built Windows yet, and it will be obvious once we do.",
+    quoteSpeaker: "Nick Turley",
+    storyBehind: "Nick Turley joined OpenAI when it was still a research lab — his first task was fixing the blinds. A volunteer hackathon team built what they planned to call 'Chat with GPT-3.5' because they didn't think it would succeed. They shipped it before the holidays expecting to pull it down after getting some data. Sam Altman tweeted it, the dashboard broke from traffic, and it became the fastest-growing consumer product in history — 700 million weekly active users, 10% of the world's population, every week.",
+    annotations: [
+      {
+        lyricText: "They named it by the model's name",
+        note: "Nick Turley told Lenny: 'It was going to be Chat with GPT-3.5 because we really didn't think it was going to be a successful product.' The team internally called the codebase 'SA Server' (Super Assistant Server) — a hackathon project they expected to wind down after the holidays.",
+        sourceTitle: "Inside ChatGPT: The fastest-growing product in history",
+        sourceUrl: "https://www.lennysnewsletter.com/p/nick-turley",
+      },
+      {
+        lyricText: "Sam hit tweet, the dashboard broke",
+        note: "There was no press launch, no waitlist. Sam Altman simply tweeted a link to ChatGPT. Nick recalled: 'I remember going through the motions of like, Oh man, dashboard is broken. Oh wait, people are liking it. I'm sure it's just going viral and stuff is going to die down.' It never died down.",
+        sourceTitle: "Inside ChatGPT: The fastest-growing product in history",
+        sourceUrl: "https://www.lennysnewsletter.com/p/nick-turley",
+      },
+      {
+        lyricText: "One in ten on every street",
+        note: "Nick shared that about 10% of the world's population uses ChatGPT every single week — 700 million weekly active users, not just registered accounts. Lenny's reaction on mic was simply: 'Holy shit.' ChatGPT now drives more traffic to Lenny's newsletter than Twitter.",
+        sourceTitle: "Inside ChatGPT: The fastest-growing product in history",
+        sourceUrl: "https://www.lennysnewsletter.com/p/nick-turley",
+      },
+      {
+        lyricText: "He almost chose the piano keys",
+        note: "Nick was a competitive jazz pianist who nearly went to music school instead of tech. He told Lenny: 'I chickened out at the very last minute, but I was going to go to school for music. And that's still my, hopefully, chapter two.' He compared great product development to a jazz band — riffing off each other, not following a scripted orchestral score.",
+        sourceTitle: "Inside ChatGPT: The fastest-growing product in history",
+        sourceUrl: "https://www.lennysnewsletter.com/p/nick-turley",
+      },
+      {
+        lyricText: "You won't know what to polish",
+        note: "Nick's core product philosophy: 'This is a pattern with AI, you won't know what to polish until after you ship. My dream is that we ship daily.' The team shipped ChatGPT with no conversation history — that was literally the first piece of user feedback they got. The $20/month subscription was priced using a Van Westendorp survey sent via Discord and Google Forms.",
+        sourceTitle: "Inside ChatGPT: The fastest-growing product in history",
+        sourceUrl: "https://www.lennysnewsletter.com/p/nick-turley",
+      },
+    ],
+    releaseDate: "2026-03-24",
+  },
 ];
 
 const startupLifeTracks: Track[] = [
