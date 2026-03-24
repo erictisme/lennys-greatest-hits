@@ -5,6 +5,7 @@ import { AudioProvider } from "@/lib/audio-context";
 import NowPlayingBar from "@/components/NowPlayingBar";
 import ScrollToTop from "@/components/ScrollToTop";
 import KeyboardShortcuts from "@/components/KeyboardShortcuts";
+import GlobalNav from "@/components/GlobalNav";
 
 import { PostHogProvider } from "@/components/PostHogProvider";
 
@@ -84,6 +85,7 @@ export default function RootLayout({
         <PostHogProvider>
           <AudioProvider>
             <ScrollToTop />
+            <GlobalNav />
             <div className="pb-[72px]">{children}</div>
             <NowPlayingBar />
             <KeyboardShortcuts />
