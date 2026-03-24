@@ -205,6 +205,47 @@
   background: linear-gradient(135deg, rgba(99, 102, 241, 0.08) 0%, rgba(238, 242, 255, 0.3) 100%);
 }
 
+/* Dark mode gradient backgrounds */
+.dark .gradient-founders {
+  background: linear-gradient(135deg, rgba(217, 119, 6, 0.12) 0%, rgba(217, 119, 6, 0.03) 100%);
+}
+.dark .gradient-product {
+  background: linear-gradient(135deg, rgba(180, 83, 9, 0.12) 0%, rgba(180, 83, 9, 0.03) 100%);
+}
+.dark .gradient-builders {
+  background: linear-gradient(135deg, rgba(146, 64, 14, 0.12) 0%, rgba(146, 64, 14, 0.03) 100%);
+}
+.dark .gradient-human {
+  background: linear-gradient(135deg, rgba(120, 53, 15, 0.12) 0%, rgba(120, 53, 15, 0.03) 100%);
+}
+.dark .gradient-the-operators {
+  background: linear-gradient(135deg, rgba(234, 88, 12, 0.12) 0%, rgba(234, 88, 12, 0.03) 100%);
+}
+.dark .gradient-growth-engine {
+  background: linear-gradient(135deg, rgba(202, 138, 4, 0.12) 0%, rgba(202, 138, 4, 0.03) 100%);
+}
+.dark .gradient-the-startup-life {
+  background: linear-gradient(135deg, rgba(139, 92, 246, 0.12) 0%, rgba(139, 92, 246, 0.03) 100%);
+}
+.dark .gradient-career-moves {
+  background: linear-gradient(135deg, rgba(6, 182, 212, 0.12) 0%, rgba(6, 182, 212, 0.03) 100%);
+}
+.dark .gradient-frameworks {
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.12) 0%, rgba(99, 102, 241, 0.03) 100%);
+}
+
+/* Dark mode card-glass */
+.dark .card-glass {
+  background: #141414;
+  border-color: #292524;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+.dark .card-glass:hover {
+  background: #1c1917;
+  border-color: #f59e0b;
+  box-shadow: 0 4px 12px rgba(245, 158, 11, 0.15);
+}
+
 /* Equalizer bar animations for currently playing track */
 @keyframes eq-1 {
   0%, 100% { height: 40%; }

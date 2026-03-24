@@ -71,7 +71,7 @@
         "pnpm build passes"
       ],
       "files": ["app/globals.css"],
-      "passes": false
+      "passes": true
     },
     {
       "id": 6,
@@ -86,7 +86,7 @@
         "pnpm build passes"
       ],
       "files": ["app/track/[slug]/loading.tsx", "app/loading.tsx"],
-      "passes": false
+      "passes": true
     },
     {
       "id": 7,
@@ -102,7 +102,7 @@
         "pnpm build passes"
       ],
       "files": ["components/NowPlayingBar.tsx", "components/SyncedLyrics.tsx"],
-      "passes": false
+      "passes": true
     },
     {
       "id": 8,
@@ -117,7 +117,7 @@
         "pnpm build passes"
       ],
       "files": ["app/track/[slug]/TrackPageClient.tsx"],
-      "passes": false
+      "passes": true
     },
     {
       "id": 9,
@@ -130,7 +130,7 @@
         "pnpm build passes"
       ],
       "files": ["app/not-found.tsx"],
-      "passes": false
+      "passes": true
     },
     {
       "id": 10,

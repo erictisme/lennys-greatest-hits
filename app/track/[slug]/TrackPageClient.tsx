@@ -361,7 +361,7 @@ export default function TrackPageClient({ slug }: { slug: string }) {
               onMouseMove={handleProgressHover}
               onMouseLeave={() => setHoverTime(null)}
             >
-              <div className="relative h-[6px] group-hover:h-[10px] bg-black/10 rounded-full transition-[height] duration-150">
+              <div className="relative h-[6px] group-hover:h-[10px] bg-white/10 rounded-full transition-[height] duration-150">
                 <div
                   className="absolute inset-y-0 left-0 rounded-full transition-[width] duration-300 ease-linear"
                   style={{
@@ -463,7 +463,7 @@ export default function TrackPageClient({ slug }: { slug: string }) {
               {track.sources.map((source, i) => (
                 <div
                   key={i}
-                  className="border-l-[3px] rounded-r-lg bg-white/5 dark:bg-white/5 bg-black/[0.02] px-4 py-3"
+                  className="border-l-[3px] rounded-r-lg bg-white/[0.04] px-4 py-3"
                   style={{ borderColor: album.accentColor }}
                 >
                   {source.url ? (

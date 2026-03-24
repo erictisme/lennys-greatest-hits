@@ -185,7 +185,7 @@ export default function SyncedLyrics({
           return (
             <div key={i} ref={(el) => { lineRefs.current[i] = el; }}>
               <div
-                className="group flex items-center gap-1 rounded hover:bg-black/5 transition-all duration-300"
+                className="group flex items-center gap-1 rounded hover:bg-white/5 transition-all duration-300"
                 style={{ opacity: 0.8 }}
               >
                 <div
@@ -211,7 +211,7 @@ export default function SyncedLyrics({
                       setExpandedAnnotationIndex(isAnnotationExpanded ? null : i);
                       trackEvent("annotation_toggled", { lyric: line.text, track: trackTitle });
                     }}
-                    className="p-1.5 rounded-full hover:bg-black/10 transition-all shrink-0"
+                    className="p-1.5 rounded-full hover:bg-white/10 transition-all shrink-0"
                     style={{
                       opacity: isAnnotationExpanded ? 1 : 0.7,
                       color: accentColor,
@@ -223,7 +223,7 @@ export default function SyncedLyrics({
                 )}
                 <button
                   onClick={() => { trackEvent("lyric_shared", { lyric: line.text, track: trackTitle }); setShareLine(line.text); }}
-                  className="opacity-0 group-hover:opacity-60 hover:!opacity-100 p-1.5 rounded-full hover:bg-black/10 transition-all shrink-0"
+                  className="opacity-0 group-hover:opacity-60 hover:!opacity-100 p-1.5 rounded-full hover:bg-white/10 transition-all shrink-0"
                   aria-label={`Share lyric: ${line.text}`}
                 >
                   <Share2 className="w-3.5 h-3.5" />
