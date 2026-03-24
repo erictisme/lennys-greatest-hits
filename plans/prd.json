@@ -256,7 +256,7 @@
         "pnpm build passes"
       ],
       "files": ["scripts/upload-audio.ts", "package.json"],
-      "passes": false
+      "passes": true
     },
     {
       "id": 19,

@@ -11,3 +11,4 @@ Task 14: Songs page — brightened track numbers rgba 0.4→0.6, column headers 
 Task 15: Added subtle accent-colored top border to NowPlayingBar via inline borderTopColor style with 25% opacity. Build passes.
 Task 16: Added subtle warm amber glow shadow on album cover hover using transition-all and group-hover:shadow. Build passes.
 Task 17: Added subtle ambient gradient glow behind homepage hero title. Build passes.
+Task 18: Created scripts/upload-audio.ts for Supabase Storage upload. Added upload-audio script to package.json. Build passes.
