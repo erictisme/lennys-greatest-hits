@@ -7821,6 +7821,117 @@ Till the whole thing pulls through
     ],
     releaseDate: "2026-03-22",
   },
+  {
+    slug: "thinking-in-bets",
+    title: "Thinking in Bets",
+    albumSlug: "deep-work",
+    trackNumber: 6,
+    duration: "3:00",
+    audioUrl: "/audio/thinking-in-bets.mp3",
+    coverImage: "/covers/thinking-in-bets.jpg",
+    genre: "Jazz-Pop, Neo-Soul",
+    mood: "Sultry, cerebral, quietly urgent",
+    tags: ["decision-making", "probability", "quitting"],
+    lyrics: `[Verse 1, Rhodes, brushed drums, warm bass]
+The chips are down, the cards are dealt
+You play the hand, not what you felt
+A good hand loses, bad hands win
+The table doesn't care where you have been
+So you wait on more information
+You tell yourself it's due diligence
+But waiting is its own decision —
+The clock is always evidence
+
+[Chorus, intimate, swung]
+There's no such thing as a long wait
+You just decided not to look
+Curious, not coercive —
+That's the only honest hook
+There's no such thing as a long wait
+You just decided not to look
+
+[Verse 2, Rhodes solo figure under]
+Before the hand is even played
+Imagine all the ways you're wrong
+Write down the number, name the day —
+If we're still here, the bet's too long
+Seventy percent — make the call
+Don't wait for certainty to show
+The information you wish you had
+Will never get you where you go
+
+[Chorus]
+There's no such thing as a long wait
+You just decided not to look
+Curious, not coercive —
+That's the only honest hook
+There's no such thing as a long wait
+You just decided not to look
+
+[Bridge, stripped — Rhodes alone, no drums]
+He built the thing for seven years
+And never saw what it could be
+He had to burn it to the ground
+Before the next door came in clear
+What was already in his hands —
+He couldn't read it from inside
+You never see the room you're in
+Until you've stepped outside
+
+[Final Chorus, building — full ensemble returns]
+There's no such thing as a long wait
+You just decided not to look
+Curious, not coercive —
+You chose the comfortable hook
+There's no such thing as a long wait
+You just decided not to look
+
+[Outro, Rhodes fades, brushed snare only]
+The odds don't lie
+They only wait
+You just decided not to look`,
+    concept: "Annie Duke's insight that there's no such thing as a long feedback loop — you can always find leading indicators. Combined with the Stewart Butterfield/Glitch story about the cost of not quitting.",
+    keyInsight: "You don't have a long feedback loop — you have an excuse to avoid finding out you're wrong. Name your bets, track your signals, shorten the loop.",
+    keyQuote: "There is no such thing as a long feedback loop. And the way you choose to shorten the feedback loop is to say, what are the things that are correlated with the outcome that I eventually desire?",
+    quoteSpeaker: "Annie Duke",
+    sources: [
+      { title: "This will make you a better decision-maker | Annie Duke", type: "podcast" as const, url: "https://www.lennysnewsletter.com/p/annie-duke", guest: "Annie Duke" },
+    ],
+    storyBehind: "Annie Duke told Lenny that when VCs claimed their feedback loops were a decade long, she challenged them: 'Do you invest and then go to sleep like Rip Van Winkle?' After five years at First Round Capital, she helped them build structured decision rubrics. The bridge tells Stewart Butterfield's story — he built Glitch for years, did the math, and wrote to investors with 'dead certainty that Glitch was over.' Two days later he pivoted to Slack.",
+    annotations: [
+      {
+        lyricText: "There's no such thing as a long wait",
+        note: "Annie Duke told Lenny: 'There is no such thing as a long feedback loop.' When VCs claimed their feedback loops were a decade, she challenged them: 'Do you invest and then go to sleep like Rip Van Winkle?' You can always find leading indicators correlated with the outcome you desire.",
+        sourceTitle: "This will make you a better decision-maker | Annie Duke",
+        sourceUrl: "https://www.lennysnewsletter.com/p/annie-duke",
+      },
+      {
+        lyricText: "A good hand loses, bad hands win",
+        note: "A core principle from Annie Duke's poker career ($4M+ in tournament winnings, World Series of Poker Bracelet winner): outcome quality doesn't equal decision quality. You can play a hand perfectly and still lose. For product teams, the lesson is to evaluate decisions by the process, not the result.",
+        sourceTitle: "This will make you a better decision-maker | Annie Duke",
+        sourceUrl: "https://www.lennysnewsletter.com/p/annie-duke",
+      },
+      {
+        lyricText: "Seventy percent — make the call",
+        note: "References Bezos's 70% rule, which Annie Duke discussed on Lenny's podcast: make decisions with 70% of the information you wish you had. She explained that wanting more certainty feels like due diligence, but it's often just avoiding the discomfort of being wrong.",
+        sourceTitle: "This will make you a better decision-maker | Annie Duke",
+        sourceUrl: "https://www.lennysnewsletter.com/p/annie-duke",
+      },
+      {
+        lyricText: "He built the thing for seven years",
+        note: "Stewart Butterfield built Glitch — a massive multiplayer game with 5,000 diehard users and $6M in the bank. But for every diehard, 95-99 people came for five minutes and left. After six weeks of paid marketing growing 6-7% week over week, he did back-of-the-envelope math: 31 weeks to break even, and acquisition costs would only rise. That Monday morning he wrote to investors with 'dead certainty that Glitch was over.' Two days later, he pivoted to Slack.",
+        sourceTitle: "This will make you a better decision-maker | Annie Duke",
+        sourceUrl: "https://www.lennysnewsletter.com/p/annie-duke",
+      },
+      {
+        lyricText: "He couldn't read it from inside",
+        note: "Annie Duke's punchline on the Butterfield story: 'As smart as Stewart Butterfield is, he couldn't see Slack until he quit Glitch.' The internal communication tool his team used to build Glitch became the product — searchable log of all company knowledge. But he could never have seen that opportunity while still committed to the old one.",
+        sourceTitle: "This will make you a better decision-maker | Annie Duke",
+        sourceUrl: "https://www.lennysnewsletter.com/p/annie-duke",
+      },
+    ],
+    releaseDate: "2026-03-24",
+  },
 ];
 
 const humanSideTracks: Track[] = [
