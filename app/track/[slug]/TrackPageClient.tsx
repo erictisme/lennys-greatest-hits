@@ -14,7 +14,7 @@ import {
   FileText,
 } from "lucide-react";
 import { motion } from "framer-motion";
-import { getTrackBySlug, getAlbumForTrack, getAllTracks } from "@/lib/tracks";
+import { getTrackBySlug, getAlbumForTrack } from "@/lib/tracks";
 import { notFound, useRouter } from "next/navigation";
 import { useAudio } from "@/lib/audio-context";
 import { trackEvent } from "@/lib/analytics";
@@ -101,12 +101,12 @@ export default function TrackPageClient({ slug }: { slug: string }) {
   const currentTime = isCurrentTrack ? audio.currentTime : 0;
   const duration = isCurrentTrack ? audio.duration : 0;
 
-  // Prev/Next track navigation
-  const allTracks = getAllTracks();
-  const currentIndex = allTracks.findIndex((t) => t.slug === track.slug);
-  const prevTrack = currentIndex > 0 ? allTracks[currentIndex - 1] : null;
+  // Prev/Next track navigation — use album tracks so navigation stays within the album
+  const albumTracks = album.tracks;
+  const currentIndex = albumTracks.findIndex((t) => t.slug === track.slug);
+  const prevTrack = currentIndex > 0 ? albumTracks[currentIndex - 1] : null;
   const nextTrack =
-    currentIndex < allTracks.length - 1 ? allTracks[currentIndex + 1] : null;
+    currentIndex < albumTracks.length - 1 ? albumTracks[currentIndex + 1] : null;
 
   // Track listening depth milestones
   const pct = duration > 0 ? (currentTime / duration) * 100 : 0;
