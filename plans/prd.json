@@ -133,7 +133,7 @@
       "description": "QA Round 1 — PM Persona audit. Pretend you are Sarah, senior PM, Lenny podcast listener. 5 minutes to explore. Read app/page.tsx, app/album/[slug]/AlbumPageClient.tsx, app/track/[slug]/TrackPageClient.tsx, app/songs/page.tsx, components/NowPlayingBar.tsx, components/SyncedLyrics.tsx, components/TrackRow.tsx, components/VoteButtons.tsx, components/OnboardingTooltips.tsx, components/KeyboardShortcuts.tsx, components/ThemeToggle.tsx. Write content/qa/round1-pm-audit.md: First Impressions, Navigation Flow, Content Quality, Search Experience, Top 5 Issues ranked by impact. Be brutally honest. DONE: Audit file exists. DO NOT TOUCH: code. VERIFY: pnpm build passes.",
       "steps": ["Read all page files", "Read all component files", "Write audit", "pnpm build passes"],
       "files": ["content/qa/round1-pm-audit.md"],
-      "passes": false
+      "passes": true
     },
     {
       "id": 16,

@@ -13,3 +13,4 @@ Task 11: Onboarded the-obsession to By the Numbers (track 5) with 5 MCP-verified
 Task 12: Onboarded the-value-loop to By the Numbers (track 6) with 5 MCP-verified annotations. Phil Carter / Subscription Value Loop — 1-in-20 conversion, ATT disruption, fewer-than-50 billion-dollar apps. Build passes.
 Task 13: Onboarded three-eras to The Startup Life (track 17) with 5 MCP-verified annotations. Drew Houston / Dropbox — three eras, Bill Campbell "we killed ourselves," T-shirt line. Build passes.
 Task 14: Onboarded we-havent-built-windows-yet to Electric Dreams (track 8) with 5 MCP-verified annotations. Nick Turley / ChatGPT origin — hackathon to 700M users, MS-DOS metaphor, jazz pianist backstory. Build passes.
+Task 15: QA Round 1 PM audit written to content/qa/round1-pm-audit.md. Top 5: prev/next ignores album, vote counts hidden, no global nav, mobile votes hidden, fake lyric sync. Build passes.
