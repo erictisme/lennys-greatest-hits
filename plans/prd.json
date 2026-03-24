@@ -215,7 +215,7 @@
         "pnpm build passes"
       ],
       "files": ["components/NowPlayingBar.tsx"],
-      "passes": false
+      "passes": true
     },
     {
       "id": 16,

@@ -8,3 +8,4 @@ Task 10: Feedback page submit button #b45309→#f59e0b bright amber, text-white�
 Task 12: Final dark mode audit. Fixed album loading skeleton bg-black/5→bg-white/5, bg-black/10→bg-white/10, bg-black/[0.02]→bg-white/[0.02]. No remaining solid bg-white or hover:bg-black issues. Build passes.
 Task 13: OG image already dark. Added themeColor: '#0a0a0a' to layout.tsx metadata. Build passes.
 Task 14: Songs page — brightened track numbers rgba 0.4→0.6, column headers /40→/50 for dark mode readability. Build passes.
+Task 15: Added subtle accent-colored top border to NowPlayingBar via inline borderTopColor style with 25% opacity. Build passes.
