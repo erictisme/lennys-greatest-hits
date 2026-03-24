@@ -5282,6 +5282,77 @@ Just press send... just press send...`,
     ],
     releaseDate: "2026-03-22",
   },
+  {
+    slug: "coding-is-solved",
+    title: "Coding Is Solved",
+    albumSlug: "electric-dreams",
+    trackNumber: 7,
+    duration: "3:00",
+    audioUrl: "/audio/coding-is-solved.mp3",
+    coverImage: "/covers/coding-is-solved.jpg",
+    genre: "Neo-Soul / Indie Folk",
+    mood: "Warm awe — quiet wonder, 2am introspective",
+    tags: ["AI", "builders", "coding"],
+    lyrics: `[Verse 1]
+Grandfather had punch cards in the cold
+Ukraine, nineteen sixty-four years old
+Mom drew flowers on the margins there
+Crayons on his stack without a care
+
+[Pre-Chorus]
+I learned to code to cheat a math exam
+Thirty years before I had a plan
+
+[Chorus]
+Coding is solved — I'm awake at two
+Five agents running while I talk to you
+The punch cards are gone but the fire stayed
+He never loved the syntax — loved what it made
+
+[Verse 2]
+It started as a hack, got two likes back
+Posted on a Friday, no one tracked
+May came and went, the curve was barely seen
+November — code was gone behind the machine
+
+[Pre-Chorus]
+The scribe put down the quill and did not grieve
+He picked up art — the meaning didn't leave
+
+[Chorus]
+Coding is solved — I'm awake at two
+Five agents running while I talk to you
+The punch cards are gone but the fire stayed
+He never loved the syntax — loved what it made
+
+[Bridge]
+I never loved the lines
+I loved what they became
+Five agents hum tonight
+The dream stays just the same
+
+[Final Chorus]
+Coding is solved — I'm awake at two
+Five agents running while I talk to you
+The punch cards are gone but the fire stayed
+Grandfather, look what we finally made`,
+    concept: "The story of Boris Cherny, head of Claude Code at Anthropic — a builder who loves building more than ever because the machine took over the parts he never loved. Three generations of programmers, from Soviet punch cards to AI agents.",
+    keyInsight: "A builder's job was never writing code — it was always figuring out what to make. Coding is solved. Building never will be.",
+    sources: [
+      { title: "Boris Cherny on Lenny's Podcast", type: "podcast" as const, url: "https://www.lennysnewsletter.com/p/boris-cherny", guest: "Boris Cherny" },
+    ],
+    keyQuote: "I have never enjoyed coding as much as I do today, because I don't have to deal with all the minutia.",
+    quoteSpeaker: "Boris Cherny",
+    storyBehind: "Boris Cherny built Claude Code as a solo hack in a terminal — it got two likes on its internal announcement. A year later, 4% of all GitHub commits in the world are authored by Claude Code. Boris hasn't edited a single line of code by hand since November 2025, yet says he's never enjoyed coding more.",
+    annotations: [
+      { lyricText: "I learned to code to cheat a math exam", note: "Boris told Lenny he first learned to program on a TI-83+ graphing calculator in middle school — specifically to cheat on a math test. He programmed the answers in, then realized the next test was too hard for that approach, so he wrote a solver instead. He shared it with the whole class via a cable, they all got As, and the teacher caught them.", sourceTitle: "Boris Cherny on Lenny's Podcast", sourceUrl: "https://www.lennysnewsletter.com/p/boris-cherny" },
+      { lyricText: "Five agents running while I talk to you", note: "During the actual podcast recording, Boris had five AI agents running simultaneously. When Lenny asked 'While we're recording this?' Boris replied 'Yeah. Yeah. Yeah.' He ships 10, 20, or 30 pull requests every single day — all written entirely by Claude Code, with zero hand-edited lines since November 2025.", sourceTitle: "Boris Cherny on Lenny's Podcast", sourceUrl: "https://www.lennysnewsletter.com/p/boris-cherny" },
+      { lyricText: "It started as a hack, got two likes back", note: "Boris announced Claude Code internally at Anthropic and it got exactly two likes. 'No one thought that this thing could be terminal-based. That's a weird way to design it, and that wasn't really the intention,' he said. He built it in a terminal simply because 'for the first couple months it was just me. So, it was just the easiest way to build.'", sourceTitle: "Boris Cherny on Lenny's Podcast", sourceUrl: "https://www.lennysnewsletter.com/p/boris-cherny" },
+      { lyricText: "November — code was gone behind the machine", note: "Boris traced a clear exponential: Claude Code was writing about 20% of his code at launch, roughly 30% by May 2025, and by November he crossed 100%. According to a Semi-Analysis report, Claude Code now authors 4% of all GitHub commits worldwide — and that only counts public repositories. The growth rate is still accelerating.", sourceTitle: "Boris Cherny on Lenny's Podcast", sourceUrl: "https://www.lennysnewsletter.com/p/boris-cherny" },
+      { lyricText: "He never loved the syntax — loved what it made", note: "When Lenny asked 'Do you miss writing code?' Boris answered: 'I have never enjoyed coding as much as I do today, because I don't have to deal with all the minutia.' He compared it to a medieval scribe celebrating the printing press — not because writing disappeared, but because he could finally focus on book binding and illustration instead of copying.", sourceTitle: "Boris Cherny on Lenny's Podcast", sourceUrl: "https://www.lennysnewsletter.com/p/boris-cherny" },
+    ],
+    releaseDate: "2026-03-24",
+  },
 ];
 
 const startupLifeTracks: Track[] = [

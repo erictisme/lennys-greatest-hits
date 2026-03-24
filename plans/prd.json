@@ -70,7 +70,7 @@
       "description": "Onboard batch 7.5 song: coding-is-solved. MP3 at public/audio/coding-is-solved.mp3, cover at public/covers/coding-is-solved.jpg. (1) Read content/songs/batch7.5/lyrics/coding-is-solved.md for metadata and lyrics. (2) Read content/songs/batch7.5/research/coding-is-solved.md if it exists. (3) NO pre-written annotations — use mcp__lennysdata__search_content to find the source episode/article, then mcp__lennysdata__read_excerpt for quotes. Write 3-5 annotations: {lyricText (exact substring from lyrics), note (2-3 sentences connecting lyric to Lenny content), sourceTitle, sourceUrl}. (4) Add track to correct album in lib/albums.ts. Map album from metadata — AI/coding songs go to 'electric-dreams' (electricDreamsTracks). DONE: Track in lib/albums.ts with annotations. VERIFY: pnpm build passes.",
       "steps": ["Read lyrics", "Read research if exists", "Use Lenny MCP for annotations", "Add to lib/albums.ts", "pnpm build passes"],
       "files": ["lib/albums.ts"],
-      "passes": false
+      "passes": true
     },
     {
       "id": 9,
