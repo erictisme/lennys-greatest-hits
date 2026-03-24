@@ -2613,6 +2613,91 @@ Till you hear it from the outside`,
     ],
     releaseDate: "2026-03-22",
   },
+  {
+    slug: "crossing-the-chasm",
+    title: "Crossing the Chasm",
+    albumSlug: "growth-engine",
+    trackNumber: 15,
+    duration: "3:00",
+    audioUrl: "/audio/crossing-the-chasm.mp3",
+    coverImage: "/covers/crossing-the-chasm.jpg",
+    genre: "Folk-Rock, 12/8 Shuffle",
+    mood: "Controlled tension, disciplined, building to breakthrough",
+    tags: ["go-to-market", "beachhead", "chasm", "strategy"],
+    lyrics: `[Verse 1]
+You struck a match against the stone
+But logs don't catch on faith alone
+The early ones believed your dream
+The next crowd needs a different thing
+
+[Pre-Chorus]
+They've seen a thousand bold ideas
+That burned bright and disappeared
+They don't say no
+They go quiet
+
+[Chorus]
+Hold the match until the kindling catches
+Pick your lane before the whole field hatches
+One bowling pin — knock it down, knock it down
+They never say no — they just never say yes
+Hold the match until the kindling catches
+
+[Verse 2]
+The pharma wing was drowning slow
+A million dollars lost each day they'd go
+You plant your flag in the burning room
+Before the fire spreads next to the bloom
+
+[Pre-Chorus]
+Big enough to matter if you win
+Small enough to lead it from within
+Don't say yes
+To everything
+
+[Chorus]
+Hold the match until the kindling catches
+Pick your lane before the whole field hatches
+One bowling pin — knock it down, knock it down
+They never say no — they just never say yes
+Hold the match until the kindling catches
+
+[Bridge]
+Shut the laptop down
+This room is not about you
+Build the thing they trust
+Then cross the open water
+Votes don't count out here
+Unless you win New Hampshire
+Hold until it burns through
+
+[Final Chorus]
+Hold the match until the kindling catches
+Pick your lane before the whole field hatches
+One bowling pin — knock it down, knock it down
+They never say no — they just never say yes
+Hold the match until the kindling catches
+Hold it — hold it — hold it — till it catches
+
+[Outro]
+They just never say yes...`,
+    concept: "Geoffrey Moore's 'Crossing the Chasm' framework: the invisible gap between visionary early adopters and pragmatic mainstream buyers. You can't cross it by going wide — you cross it by picking one narrow beachhead and dominating it before expanding.",
+    keyInsight: "Pragmatist buyers don't reject you outright — they take the meeting, say it's interesting, and never commit. The chasm is invisible because it looks like progress.",
+    keyQuote: "They never say no — they just never say yes.",
+    quoteSpeaker: "Geoffrey Moore",
+    sources: [
+      { title: "Geoffrey Moore on finding your beachhead, crossing the chasm, and dominating a market", type: "podcast" as const, url: "https://www.lennyspodcast.com/geoffrey-moore-on-finding-your-beachhead-crossing-the-chasm-and-dominating-a-market/", guest: "Geoffrey Moore" },
+    ],
+    storyBehind: "Geoffrey Moore spent years at Regis McKenna watching high-tech companies launch to wild success — Fortune covers, WSJ front pages — then vanish two years later. The pattern: visionaries buy because they want to be different, but pragmatists won't trust visionary references. Moore's solution: pick one narrow beachhead (like Documentum picked pharma, where lost patent days cost $1-2M each), hold the match still on that one piece of kindling, and let the fire spread from there.",
+    annotations: [
+      { lyricText: "Hold the match until the kindling catches", note: "Geoffrey Moore's central metaphor from Lenny's podcast: startups in the chasm take any customer they can find, spreading thin. Moore compared it to 'taking a match and running it back and forth under a log — it's not going to light the log.' The fix is to hold the match still on one piece of kindling until it catches, then let the fire spread to adjacent segments.", sourceTitle: "Geoffrey Moore on finding your beachhead, crossing the chasm, and dominating a market", sourceUrl: "" },
+      { lyricText: "They never say no — they just never say yes", note: "Moore explained to Lenny that the chasm is invisible because pragmatist buyers don't reject you outright. They take the meeting, say 'this is really interesting,' encourage you to come back — but they never commit. Founders mistake this politeness for progress, endlessly refining their pitch deck instead of finding a compelling reason to buy.", sourceTitle: "Geoffrey Moore on finding your beachhead, crossing the chasm, and dominating a market", sourceUrl: "" },
+      { lyricText: "The pharma wing was drowning slow", note: "References Documentum, the case study Moore walked through with Lenny. Documentum was a document management database that found its beachhead in pharma: new drug approvals required 500,000-page FDA documents, and every day of mismanagement cost a million or two million dollars in lost patent life. That burning pain made pharma the perfect first bowling pin.", sourceTitle: "Geoffrey Moore on finding your beachhead, crossing the chasm, and dominating a market", sourceUrl: "" },
+      { lyricText: "Big enough to matter if you win", note: "Moore gave Lenny a precise formula for choosing a beachhead segment: 'big enough to matter, small enough to lead, and a good fit with your crown jewels.' Big enough to matter means the segment has room for the triple-double growth pattern VCs expect. Small enough to lead means you can realistically dominate it within 18-24 months on a single round of funding.", sourceTitle: "Geoffrey Moore on finding your beachhead, crossing the chasm, and dominating a market", sourceUrl: "" },
+      { lyricText: "Votes don't count out here", note: "Moore used a presidential primary analogy on Lenny's podcast to explain why you can't chase multiple segments at once: 'If you're running in New Hampshire, votes in Vermont do not count.' You need three to six reputable companies in one segment to all pick you, so the rest of the segment sees an obvious market leader — just like winning a primary state.", sourceTitle: "Geoffrey Moore on finding your beachhead, crossing the chasm, and dominating a market", sourceUrl: "" },
+    ],
+    releaseDate: "2026-03-24",
+  },
 ];
 
 const byTheNumbersTracks: Track[] = [
