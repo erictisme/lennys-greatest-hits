@@ -102,7 +102,12 @@ export default function Home() {
   const isSearching = debouncedQuery.trim().length > 0;
 
   return (
-    <div className="flex flex-col min-h-screen max-w-5xl mx-auto w-full px-4 sm:px-6">
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.3 }}
+      className="flex flex-col min-h-screen max-w-5xl mx-auto w-full px-4 sm:px-6"
+    >
       {/* 1. Artist Header */}
       <header className="relative pt-12 sm:pt-16 pb-6">
         <div className="absolute -inset-x-20 -inset-y-10 bg-gradient-to-r from-amber-500/[0.03] via-transparent to-amber-500/[0.03] blur-3xl pointer-events-none" />
@@ -326,6 +331,6 @@ export default function Home() {
           </motion.div>
         )}
       </AnimatePresence>
-    </div>
+    </motion.div>
   );
 }

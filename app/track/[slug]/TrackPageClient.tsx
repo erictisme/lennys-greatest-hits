@@ -13,6 +13,7 @@ import {
   Mic,
   FileText,
 } from "lucide-react";
+import { motion } from "framer-motion";
 import { getTrackBySlug, getAlbumForTrack, getAllTracks } from "@/lib/tracks";
 import { notFound } from "next/navigation";
 import { useAudio } from "@/lib/audio-context";
@@ -175,7 +176,12 @@ export default function TrackPageClient({ slug }: { slug: string }) {
   const progress = duration > 0 ? (currentTime / duration) * 100 : 0;
 
   return (
-    <div className="flex flex-col min-h-screen">
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.3 }}
+      className="flex flex-col min-h-screen"
+    >
       {/* Header */}
       <header
         className={`${gradientClass[album.slug] ?? ""} px-4 sm:px-6 pt-8 pb-8 sm:pb-10`}
@@ -552,6 +558,6 @@ export default function TrackPageClient({ slug }: { slug: string }) {
           )}
         </div>
       </nav>
-    </div>
+    </motion.div>
   );
 }

@@ -15,3 +15,4 @@ Task 18: Created scripts/upload-audio.ts for Supabase Storage upload. Added uplo
 Task 19: Created scripts/migrate-audio-urls.ts to rewrite audioUrl paths in lib/albums.ts to Supabase Storage URLs. Build passes.
 Task 20: Added public/audio/*.mp3 to .gitignore and flow comment to upload-audio.ts. Build passes.
 Task 21: Created ScrollToTop component using usePathname + useEffect, mounted in layout.tsx. Build passes.
+Task 22: Added 0.3s fade-in animation via motion.div to AlbumPageClient and TrackPageClient. Fixed mismatched closing tag in page.tsx. Build passes.
