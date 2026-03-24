@@ -178,7 +178,7 @@
       "description": "Fix FORCE_FIT annotations. Read content/qa/annotation-audit.md. For each FORCE_FIT annotation: find a better lyric line, rewrite the note to be more specific, or remove it. Use mcp__lennysdata__search_content to verify facts. Every annotation must feel like a natural Genius-style insight. DONE: No force-fit annotations remain. VERIFY: pnpm build passes. Each lyricText still in lyrics.",
       "steps": ["Read audit", "Fix each flagged annotation", "Verify lyricText matches", "pnpm build passes"],
       "files": ["lib/albums.ts"],
-      "passes": false
+      "passes": true
     },
     {
       "id": 21,
