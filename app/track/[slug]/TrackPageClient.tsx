@@ -279,11 +279,11 @@ export default function TrackPageClient({ slug }: { slug: string }) {
           <div className="max-w-2xl mx-auto w-full text-center">
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium bg-muted text-muted-foreground mb-3">
               <Lock className="w-3.5 h-3.5" />
-              {track.isLocked ? "Coming Soon" : "Improvements in Progress"}
+              {"Audio Coming Soon"}
             </div>
             {!track.isLocked && (
               <p className="text-sm text-muted-foreground/60 mb-6 max-w-sm mx-auto">
-                We&apos;re working on improvements to this song. Drop your email and we&apos;ll notify you when it&apos;s back.
+                This track isn&apos;t available yet. Drop your email and we&apos;ll let you know when it&apos;s ready.
               </p>
             )}
             {notifyStatus === "done" ? (
