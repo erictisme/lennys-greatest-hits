@@ -4,284 +4,357 @@
       "id": 1,
       "category": "bugfix",
       "priority": 0,
-      "description": "Fix next/prev buttons in NowPlayingBar navigating to the track page. In components/NowPlayingBar.tsx, there is a `navigatingRef` pattern (line 32) where clicking next/prev sets `navigatingRef.current = true`, then a useEffect (lines 44-49) watches `currentTrack` and does `router.push` when navigatingRef is true. This causes unwanted page navigation when the user just wants to skip tracks. FIX: (1) Remove `const navigatingRef = useRef(false)` on line 32. (2) Remove the useEffect on lines 44-49 that checks navigatingRef. (3) Change the prev button onClick (line 162) from `() => { navigatingRef.current = true; prev(); }` to just `() => prev()`. (4) Change the next button onClick (line 184) from `() => { navigatingRef.current = true; next(); }` to just `() => next()`. (5) Remove `useRef` from the React import if no other refs use it (check the rest of the file). KEEP the `setOnTrackChange` callback (lines 37-42) — that handles auto-advance countdown navigation which SHOULD navigate. DONE: Next/prev buttons skip tracks without navigating away from the current page. Auto-advance countdown still navigates. DO NOT TOUCH: the setOnTrackChange callback, the Link component wrapping track info, any other files. VERIFY: pnpm build passes.",
+      "description": "Rewrite the onboarding card to be tasteful, not tutorial-y. The current components/OnboardingTooltips.tsx is ugly — emojis, 'triangle', 'give Eric feedback' copy, grid layout. It feels like a cheap tutorial overlay, not a premium music app. REWRITE IT: Replace with a single subtle inline banner (one line, not a card). Design: `<div className='flex items-center justify-between px-4 py-2.5 mb-4 rounded-lg bg-white/[0.04] border border-border/20'>`. Left side: `<p className='text-xs text-muted-foreground/70'>Every song is built from a real Lenny podcast or article. Tap any song to hear the insight.</p>`. Right side: dismiss X button (same as now). Keep the same localStorage logic (`lgh-onboarding-seen`). Keep framer-motion fade animation. Remove the emoji grid, the 4 tips, the 'Have fun exploring', the 'Welcome to' heading. It should feel like a whisper, not a shout. DONE: Onboarding is a single subtle line. No emojis. No 'Eric'. No grid. Dismissible. DO NOT TOUCH: app/page.tsx mounting (it's already mounted correctly), other components. VERIFY: pnpm build passes.",
       "steps": [
-        "Read components/NowPlayingBar.tsx",
-        "Remove navigatingRef declaration",
-        "Remove the useEffect that watches navigatingRef + currentTrack",
-        "Simplify prev onClick to just call prev()",
-        "Simplify next onClick to just call next()",
-        "Check if useRef is still needed — if not, remove from import",
+        "Read components/OnboardingTooltips.tsx",
+        "Rewrite to single-line subtle banner",
+        "Remove emojis, grid, multi-line tips",
+        "Keep localStorage + framer-motion logic",
         "pnpm build passes"
       ],
-      "files": ["components/NowPlayingBar.tsx"],
+      "files": ["components/OnboardingTooltips.tsx"],
       "passes": true
     },
     {
       "id": 2,
-      "category": "bugfix",
+      "category": "feature",
       "priority": 0,
-      "description": "Fix play count flash on the /songs page only. In app/songs/page.tsx, play counts load from localStorage first (flash of stale data), then Supabase overwrites. If Supabase returns 0 or fails, the count disappears — creating a visible flash. FIX: (1) Change `useState<Record<string, number>>({})` to `useState<Record<string, number> | null>(null)`. (2) Remove the localStorage load block (the try/catch around lines 28-31 that reads from `lgh-play-counts`). Keep only the Supabase fetch. (3) When rendering play counts (around line 197), guard with `playCounts !== null` before accessing `playCounts[track.slug]`. Only show count if `playCounts && (playCounts[track.slug] || 0) > 0`. (4) The `sortBy === 'most-played'` sort also uses playCounts — guard it: treat null as empty object for sorting purposes. DONE: Play counts on /songs page appear only after Supabase responds. No flash. DO NOT TOUCH: the Supabase fetch itself, other pages, /api/play endpoint. VERIFY: pnpm build passes.",
+      "description": "Dark mode step 1: Add dark CSS variables and set dark as default. This is a music app — dark is the standard (Spotify, Apple Music). In app/globals.css: (1) After the existing `:root { ... }` block (which has the light theme vars), add a `.dark` block with dark theme variables. Use these values: --background: #0a0a0a; --foreground: #fafaf9; --card: #141414; --card-foreground: #fafaf9; --popover: #1a1a1a; --popover-foreground: #fafaf9; --primary: #f59e0b; --primary-foreground: #0a0a0a; --secondary: #1c1917; --secondary-foreground: #d6d3d1; --muted: #1c1917; --muted-foreground: #a8a29e; --accent: #1c1917; --accent-foreground: #fef3c7; --destructive: #ef4444; --border: #292524; --input: #292524; --ring: #f59e0b; --chart-1 through --chart-5: same amber family but brighter. --sidebar vars: dark equivalents. (2) In app/layout.tsx, add `className='dark'` to the `<html>` tag. The html tag is in the RootLayout function — find it and add the dark class. This will activate all the CSS custom property overrides. Many components already use CSS vars (text-foreground, bg-background, border-border) so they'll automatically switch. DONE: Site renders with dark background. Text is light. CSS vars are dark. DO NOT TOUCH: component files in this task. VERIFY: pnpm build passes.",
       "steps": [
-        "Read app/songs/page.tsx",
-        "Change playCounts state type to include null",
-        "Remove localStorage load block",
-        "Guard all playCounts renders with null check",
-        "Guard the most-played sort with null check",
+        "Read app/globals.css",
+        "Add .dark CSS variable block after :root",
+        "Read app/layout.tsx",
+        "Add className='dark' to html tag",
         "pnpm build passes"
       ],
-      "files": ["app/songs/page.tsx"],
-      "passes": true
+      "files": ["app/globals.css", "app/layout.tsx"],
+      "passes": false
     },
     {
       "id": 3,
-      "category": "bugfix",
+      "category": "feature",
       "priority": 0,
-      "description": "Fix play count flash on the album page only. In app/album/[slug]/AlbumPageClient.tsx, play counts load from localStorage first (flash of stale data), then Supabase overwrites. FIX: (1) Change `useState<Record<string, number>>({})` (line 32) to `useState<Record<string, number> | null>(null)`. (2) Remove the localStorage load block (the try/catch around lines 123-126 that reads from `lgh-play-counts`). Keep only the Supabase fetch. (3) When rendering play counts (around line 413), guard with `playCounts !== null` before accessing. Only show count if `playCounts && (playCounts[track.slug] || 0) > 0`. DONE: Play counts on album pages appear only after Supabase responds. No flash. DO NOT TOUCH: other pages, the Supabase fetch logic, /api/play endpoint. VERIFY: pnpm build passes.",
+      "description": "Dark mode step 2: Fix share menu dropdowns. In app/album/[slug]/AlbumPageClient.tsx, there are TWO share dropdown menus with hardcoded `bg-white` (lines 243 and 442). These will look broken in dark mode — white boxes on dark background. FIX: Change `bg-white` to `bg-popover` on both dropdown containers (lines 243 and 442). Also change `hover:bg-black/[0.04]` to `hover:bg-white/[0.06]` on all 6 dropdown button items (lines 247, 254, 261, 446, 453, 460). Also change `text-foreground/80` to `text-popover-foreground` on those same buttons. The popover CSS vars will handle light/dark automatically. DONE: Share dropdowns look correct in dark mode. DO NOT TOUCH: other files, share logic. VERIFY: pnpm build passes.",
       "steps": [
         "Read app/album/[slug]/AlbumPageClient.tsx",
-        "Change playCounts state type to include null",
-        "Remove localStorage load block",
-        "Guard play count render with null check",
+        "Replace bg-white with bg-popover on both dropdown containers",
+        "Replace hover:bg-black/[0.04] with hover:bg-white/[0.06] on dropdown buttons",
+        "Replace text-foreground/80 with text-popover-foreground on dropdown buttons",
         "pnpm build passes"
       ],
       "files": ["app/album/[slug]/AlbumPageClient.tsx"],
-      "passes": true
+      "passes": false
     },
     {
       "id": 4,
-      "category": "bugfix",
+      "category": "feature",
       "priority": 0,
-      "description": "Fix play count flash on the track detail page only. In app/track/[slug]/TrackPageClient.tsx, play count loads from localStorage first (flash), then Supabase overwrites. FIX: (1) Change `useState(0)` (line 72) to `useState<number | null>(null)`. (2) Remove the localStorage load block (the try/catch around lines 76-79 that reads from `lgh-play-counts`). Keep only the Supabase fetch. (3) When rendering play count (around line 224), only show if `playCount !== null && playCount > 0`. DONE: Play count on track pages appears only after Supabase responds. No flash. DO NOT TOUCH: other pages, the Supabase fetch logic, /api/play endpoint. VERIFY: pnpm build passes.",
+      "description": "Dark mode step 3: Fix album page track row hover states. In app/album/[slug]/AlbumPageClient.tsx line 289, the track row has `hover:bg-black/[0.04]` which won't be visible on a dark background. Change to `hover:bg-white/[0.04]`. Also check the rest of this file for any other `bg-black/[0.04]` or similar light-mode-only hover states and fix them to use `bg-white/[0.04]` or `bg-white/[0.06]` instead. DONE: Album page track rows have visible hover states in dark mode. DO NOT TOUCH: other files. VERIFY: pnpm build passes.",
       "steps": [
-        "Read app/track/[slug]/TrackPageClient.tsx",
-        "Change playCount state type to number | null, initial null",
-        "Remove localStorage load block",
-        "Guard play count render with null check",
+        "Read app/album/[slug]/AlbumPageClient.tsx",
+        "Find all bg-black/[0.04] and similar hover states",
+        "Replace with bg-white/[0.04] or bg-white/[0.06]",
         "pnpm build passes"
       ],
-      "files": ["app/track/[slug]/TrackPageClient.tsx"],
-      "passes": true
+      "files": ["app/album/[slug]/AlbumPageClient.tsx"],
+      "passes": false
     },
     {
       "id": 5,
-      "category": "bugfix",
+      "category": "feature",
       "priority": 0,
-      "description": "Fix date column alignment on /songs page. In app/songs/page.tsx, the 'Date added' column header has `text-right` but date values in track rows are in a flex container with other elements (play count, duration) that don't have fixed widths, so the date column shifts depending on whether play count is shown. FIX: (1) In the column headers row (around line 86-93), add a play count header between Title and Date: `<span className=\"hidden sm:inline w-20 shrink-0 text-right\">Plays</span>`. Keep the date header but give it `w-20`. (2) In the track row's right-side container (around line 196-210), give each element a fixed width: play count `w-20`, date `w-20`, duration `w-12`. CRITICAL: Always render the play count span even when count is 0 — just render an empty span with the same width class to maintain column alignment. Only show the number text inside when count > 0. DONE: All columns align perfectly regardless of which tracks have play counts. DO NOT TOUCH: track row click behavior, sort logic, play count fetch logic, other pages. VERIFY: pnpm build passes.",
+      "description": "Dark mode step 4: Fix gradient backgrounds for dark mode. In app/globals.css, the album gradient classes (.gradient-founders, .gradient-product, .gradient-builders, .gradient-human, .gradient-the-operators, .gradient-growth-engine, .gradient-the-startup-life, .gradient-career-moves, .gradient-frameworks) all use light-mode colors (subtle pastels). In dark mode, these need to be darker. Add `.dark .gradient-founders { background: linear-gradient(135deg, rgba(217, 119, 6, 0.12) 0%, rgba(217, 119, 6, 0.03) 100%); }` and similar for each gradient. The pattern: increase the accent color opacity slightly (0.08→0.12), and instead of going to a pastel, go to a very subtle tint of the accent (0.03 opacity). Do this for all 9 gradient classes. Also fix `.card-glass` — add `.dark .card-glass { background: #141414; border-color: #292524; box-shadow: 0 1px 3px rgba(0,0,0,0.3); }` and `.dark .card-glass:hover { background: #1c1917; border-color: #f59e0b; box-shadow: 0 4px 12px rgba(245,158,11,0.15); }`. DONE: Album headers and cards look rich in dark mode. DO NOT TOUCH: component files. VERIFY: pnpm build passes.",
       "steps": [
-        "Read app/songs/page.tsx",
-        "Add Plays column header with w-20",
-        "Give date column header w-20",
-        "In track rows, give play count span w-20 (always rendered, text conditional)",
-        "Give date span w-20",
-        "Give duration span w-12",
+        "Read app/globals.css",
+        "Add .dark variants for all 9 gradient classes",
+        "Add .dark variants for card-glass and card-glass:hover",
         "pnpm build passes"
       ],
-      "files": ["app/songs/page.tsx"],
-      "passes": true
+      "files": ["app/globals.css"],
+      "passes": false
     },
     {
       "id": 6,
-      "category": "bugfix",
-      "priority": 1,
-      "description": "Fix duplicate annotation highlighting on repeated lyric lines. In components/SyncedLyrics.tsx, the `findAnnotation()` function (lines 93-100) matches annotations by substring. If the same lyric line appears multiple times (e.g., 'Tell me what hard means to you' repeats 7+ times in 'the-one-question'), EVERY instance gets the annotation icon, making it look spammy. FIX: (1) Create a new `useMemo` that pre-computes a `Map<number, LyricAnnotation>` (line index → annotation). Iterate through `lines` once. For each non-section line, call `findAnnotation`. If it returns a match, check if that annotation's index in the `annotations` array has already been used (track with a `Set<number>`). If not used, add to the map and mark as used. If already used, skip — that line gets no annotation. (2) Replace the inline `findAnnotation` call in the render loop (line 156) with a simple map lookup: `annotationMap.get(i)`. (3) Update `annotationCount` to use `annotationMap.size` instead of filtering lines. (4) Update the auto-expand logic (the useMemo around line 130) to find the first key in annotationMap instead of calling findAnnotation. DONE: Each annotation icon appears exactly once — on the first lyric line that matches. Subsequent identical lines have no icon. The count in the banner reflects unique matched annotations. DO NOT TOUCH: annotation expand/collapse behavior, share lyric feature, parseLyrics function. VERIFY: pnpm build passes.",
+      "category": "feature",
+      "priority": 0,
+      "description": "Dark mode step 5: Fix loading skeleton pages. In app/track/[slug]/loading.tsx and app/loading.tsx, skeleton placeholders use hardcoded `bg-black/5` and `bg-black/10` which are invisible on dark backgrounds. Replace ALL instances of `bg-black/5` with `bg-white/5` and ALL instances of `bg-black/10` with `bg-white/10` in both files. Also in app/track/[slug]/loading.tsx line 5, change `bg-black/[0.02]` to `bg-white/[0.02]`. DONE: Loading skeletons are visible in dark mode. DO NOT TOUCH: other files. VERIFY: pnpm build passes.",
       "steps": [
-        "Read components/SyncedLyrics.tsx",
-        "Create useMemo for annotationMap: Map<number, LyricAnnotation>",
-        "Iterate lines, use Set to track used annotation indices, build map",
-        "Replace inline findAnnotation in render with annotationMap.get(i)",
-        "Update annotationCount to annotationMap.size",
-        "Update auto-expand to use annotationMap",
+        "Read app/track/[slug]/loading.tsx",
+        "Replace bg-black/5 with bg-white/5, bg-black/10 with bg-white/10, bg-black/[0.02] with bg-white/[0.02]",
+        "Read app/loading.tsx",
+        "Same replacements",
         "pnpm build passes"
       ],
-      "files": ["components/SyncedLyrics.tsx"],
-      "passes": true
+      "files": ["app/track/[slug]/loading.tsx", "app/loading.tsx"],
+      "passes": false
     },
     {
       "id": 7,
       "category": "feature",
-      "priority": 1,
-      "description": "Add search to the /songs page. Currently app/songs/page.tsx has sort pills but NO search input. FIX: (1) Add `const [searchQuery, setSearchQuery] = useState('')`. (2) Add a search input between the sort pills div and the column headers div. Style it like the homepage search bar in app/page.tsx (lines 123-139): Search icon on the left, X clear button on the right, same classes — `w-full pl-10 pr-10 py-2.5 text-sm bg-white/[0.06] border border-border/30 rounded-lg text-foreground placeholder:text-muted-foreground/40 focus:outline-none focus:border-border/60 transition-colors`. Add `mb-4` for spacing. (3) Import Search and X from lucide-react (add to existing import). (4) Filter: when searchQuery is non-empty, filter the `tracks` array. Match case-insensitively against: `t.title`, `t.sources?.some(s => s.title?.includes(q) || s.guest?.includes(q))`, `t.tags?.some(tag => tag.includes(q))`, `album?.title`, `t.quoteSpeaker`, `t.concept`. Apply filter AFTER sort. (5) Update the track count: when searching show '12 of 88 tracks', otherwise just '88 tracks'. Use a `filteredTracks` variable for the filtered result and render that instead of `tracks`. DONE: /songs has a working search bar. Searching 'Dr Becky' finds her tracks. Clearing shows all. DO NOT TOUCH: sort logic itself, track row rendering, play count logic, other pages. VERIFY: pnpm build passes.",
+      "priority": 0,
+      "description": "Dark mode step 6: Fix NowPlayingBar and SyncedLyrics. In components/NowPlayingBar.tsx line 110, the progress bar background uses `bg-black/10` — change to `bg-white/10`. In components/SyncedLyrics.tsx line 176, the lyric line hover uses `hover:bg-black/5` — change to `hover:bg-white/5`. Also check for any `hover:bg-black/10` in SyncedLyrics and change to `hover:bg-white/10`. DONE: Bottom bar and lyrics look correct in dark mode. DO NOT TOUCH: audio logic, other files. VERIFY: pnpm build passes.",
       "steps": [
-        "Read app/songs/page.tsx",
-        "Add searchQuery state",
-        "Import Search, X from lucide-react",
-        "Add search input UI between sort pills and column headers",
-        "Add filter logic with all specified fields",
-        "Create filteredTracks variable, render it instead of tracks",
-        "Update track count display for filtered state",
+        "Read components/NowPlayingBar.tsx",
+        "Replace bg-black/10 with bg-white/10",
+        "Read components/SyncedLyrics.tsx",
+        "Replace hover:bg-black/5 with hover:bg-white/5",
+        "Replace any hover:bg-black/10 with hover:bg-white/10",
         "pnpm build passes"
       ],
-      "files": ["app/songs/page.tsx"],
-      "passes": true
+      "files": ["components/NowPlayingBar.tsx", "components/SyncedLyrics.tsx"],
+      "passes": false
     },
     {
       "id": 8,
       "category": "feature",
-      "priority": 1,
-      "description": "Improve homepage search: expand filter fields AND change placeholder text. In app/page.tsx: (1) Change the search input placeholder (around line 128) from 'Search songs...' to 'What's your favorite Lenny podcast or article?'. (2) In the filteredTracks useMemo (around lines 31-43), expand the filter predicate. Currently matches: t.title, t.genre, t.tags, album.title. ADD these additional || conditions: `(t.sources && t.sources.some(s => (s.title && s.title.toLowerCase().includes(q)) || (s.guest && s.guest.toLowerCase().includes(q))))` for source titles and guest names, `(t.quoteSpeaker && t.quoteSpeaker.toLowerCase().includes(q))` for quote attribution, `(t.concept && t.concept.toLowerCase().includes(q))` for track concept, `(t.keyInsight && t.keyInsight.toLowerCase().includes(q))` for key insight. DONE: Placeholder reads the new text. Searching 'Dr Becky' finds her tracks. Searching a podcast episode title finds the song. DO NOT TOUCH: search UI layout (only placeholder text), debounce logic, popular tracks, album grid. VERIFY: pnpm build passes.",
+      "priority": 0,
+      "description": "Dark mode step 7: Fix track detail page. In app/track/[slug]/TrackPageClient.tsx: (1) Line 364 has `bg-black/10` for the progress bar — change to `bg-white/10`. (2) Line 466 has `bg-white/5 dark:bg-white/5 bg-black/[0.02]` — simplify to just `bg-white/[0.04]`. (3) Check for any other hardcoded light-mode colors in this file. DONE: Track detail page looks correct in dark mode. DO NOT TOUCH: audio logic, other pages. VERIFY: pnpm build passes.",
       "steps": [
-        "Read app/page.tsx",
-        "Change search placeholder text on the input element",
-        "Add sources[].title and sources[].guest to filter with .some()",
-        "Add quoteSpeaker to filter",
-        "Add concept to filter",
-        "Add keyInsight to filter",
+        "Read app/track/[slug]/TrackPageClient.tsx",
+        "Fix bg-black/10 to bg-white/10 on progress bar",
+        "Simplify the source card bg classes",
+        "Check for other hardcoded light-mode colors",
         "pnpm build passes"
       ],
-      "files": ["app/page.tsx"],
-      "passes": true
+      "files": ["app/track/[slug]/TrackPageClient.tsx"],
+      "passes": false
+    },
+    {
+      "id": 9,
+      "category": "feature",
+      "priority": 0,
+      "description": "Dark mode step 8: Fix not-found page. In app/not-found.tsx line 20, there's a `bg-white text-[#0a0a0a]` button — change to `bg-foreground text-background` so it respects the theme. DONE: 404 page looks correct in dark mode. DO NOT TOUCH: other files. VERIFY: pnpm build passes.",
+      "steps": [
+        "Read app/not-found.tsx",
+        "Replace bg-white text-[#0a0a0a] with bg-foreground text-background",
+        "pnpm build passes"
+      ],
+      "files": ["app/not-found.tsx"],
+      "passes": false
     },
     {
       "id": 10,
       "category": "feature",
-      "priority": 1,
-      "description": "Create a first-time visitor onboarding component and mount it on the homepage. TWO STEPS: (A) Create components/OnboardingTooltips.tsx — a 'use client' component. On mount, check localStorage for `lgh-onboarding-seen` — if present, render nothing (return null). Otherwise render an inline card (NOT a modal). Design: div with classes `relative bg-white/[0.04] border border-border/30 rounded-lg px-5 py-4 mb-6`. Content: (1) A dismiss X button absolutely positioned top-right — on click sets `localStorage.setItem('lgh-onboarding-seen', '1')` and hides the component (use useState for visibility). (2) A heading: `<p className='text-sm font-medium mb-3'>Welcome to Lenny's Greatest Hits 🎵</p>`. (3) Four tips in a 2x2 grid (grid grid-cols-2 gap-2): each tip is a `<div className='flex items-start gap-2 text-xs text-muted-foreground'>` with an emoji span and text span. Tips: '🔺 Tap the play triangle to preview a song', '📄 Tap the song row to see lyrics & learnings', '👍 Vote thumbs up/down to give Eric feedback', '🔗 Share your favorites — it helps a lot!'. (4) Footer text: `<p className='text-xs text-muted-foreground/60 mt-3'>Have fun exploring! 🎵</p>`. (5) Wrap the entire card in framer-motion: `<motion.div initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -10 }} transition={{ duration: 0.3 }}>`. Import motion from 'framer-motion'. (B) In app/page.tsx, import OnboardingTooltips and mount it between the </header> closing tag and the search bar div (before the 'relative mb-8' div). DONE: First-time visitors see a friendly welcome card with 4 tips. Dismissing sets localStorage. Return visitors don't see it. Card animates in smoothly. DO NOT TOUCH: lib/audio-context.tsx, other pages, NowPlayingBar. No new dependencies. VERIFY: pnpm build passes.",
+      "priority": 0,
+      "description": "Dark mode step 9: Fix feedback page and EmailSignup for dark mode. Read app/feedback/page.tsx and components/EmailSignup.tsx. Check for any hardcoded `bg-white` (solid, not `bg-white/[0.0x]`), `text-[#` with dark hex values, or `bg-black/[0.0x]` patterns that would be invisible on dark. Fix them. Common fixes: `bg-white` → `bg-popover`, `bg-black/5` → `bg-white/5`. If everything already uses CSS vars or white/black with opacity, it may already work — in that case, no changes needed, just verify. DONE: Feedback page and email signup work in dark mode. DO NOT TOUCH: submission logic. VERIFY: pnpm build passes.",
       "steps": [
-        "Create components/OnboardingTooltips.tsx with 'use client'",
-        "Add localStorage check on mount",
-        "Add visibility state and dismiss handler",
-        "Add the 4 tips in 2x2 grid with emoji icons",
-        "Wrap in framer-motion animation",
-        "Import and mount in app/page.tsx between header and search bar",
+        "Read app/feedback/page.tsx",
+        "Read components/EmailSignup.tsx",
+        "Fix any hardcoded light-mode colors",
         "pnpm build passes"
       ],
-      "files": ["components/OnboardingTooltips.tsx", "app/page.tsx"],
-      "passes": true
+      "files": ["app/feedback/page.tsx", "components/EmailSignup.tsx"],
+      "passes": false
     },
     {
       "id": 11,
       "category": "feature",
       "priority": 1,
-      "description": "Improve the search 'no results' state on the homepage. In app/page.tsx, when search returns 0 results (around line 169-171), it currently shows just 'No songs found.' — a dead end. FIX: Replace the `<p>No songs found.</p>` element with a more helpful multi-line message. Use a div with class `mt-4 space-y-1`: (1) `<p className='text-sm text-muted-foreground/60'>No songs found for \"<span className='font-medium text-foreground/80'>{debouncedQuery}</span>\".</p>` (2) `<p className='text-sm text-muted-foreground/40'>We have {allTracks.length} songs covering topics like product-market fit, growth, leadership, and more.</p>` (3) `<p className='text-sm text-muted-foreground/40'>Try searching for a guest name or topic!</p>`. DONE: Empty search state shows the user's query, total count, and a helpful suggestion. DO NOT TOUCH: search filter logic, track rendering, other pages. VERIFY: pnpm build passes.",
+      "description": "Dark mode step 10: Fix Shuffle Play button and accent buttons. The Shuffle Play button on app/page.tsx has `style={{ backgroundColor: '#b45309' }}` — this brown is too dark against a dark background. Change to `style={{ backgroundColor: '#f59e0b' }}` (bright amber) and change `text-white` to `text-black`. Also check components/VoteButtons.tsx for any hardcoded colors that need fixing for dark mode. DONE: Shuffle Play button is bright and visible on dark background. DO NOT TOUCH: audio logic, track data. VERIFY: pnpm build passes.",
       "steps": [
-        "Read app/page.tsx around the 'No songs found' text",
-        "Replace with the 3-line helpful message using debouncedQuery and allTracks.length",
+        "Read app/page.tsx — find Shuffle Play button",
+        "Change background color to #f59e0b",
+        "Change text-white to text-black",
+        "Read components/VoteButtons.tsx — fix any dark mode issues",
         "pnpm build passes"
       ],
-      "files": ["app/page.tsx"],
-      "passes": true
+      "files": ["app/page.tsx", "components/VoteButtons.tsx"],
+      "passes": false
     },
     {
       "id": 12,
-      "category": "research",
-      "priority": 2,
-      "description": "Research and write annotation drafts for batch 7 song: the-giant-piece-of-shit. (1) Read lyrics from content/songs/batch7/lyrics/the-giant-piece-of-shit.txt. (2) Read research brief from content/songs/batch7/research/the-giant-piece-of-shit.md. (3) Use mcp__lennysdata__search_content to find the source material this song is based on. (4) Use mcp__lennysdata__read_excerpt to pull specific quotes, context, and facts. (5) Identify 3-5 lyric lines that reference specific concepts, people, frameworks, or stories from the source. (6) Write annotation objects: { lyricText (exact substring from lyrics, case-insensitive partial match is fine), note (2-3 sentences explaining what this lyric references — specific, factual, connecting lyric to Lenny's content), sourceTitle (name of the article/episode), sourceUrl (URL if available, empty string if not) }. (7) Save to content/songs/batch7/annotations/the-giant-piece-of-shit.json as a JSON array. DONE: JSON file exists with 3-5 high-quality annotation objects. Each lyricText substring exists in the lyrics file. DO NOT TOUCH: lib/albums.ts, component files, other songs. VERIFY: pnpm build passes.",
+      "category": "feature",
+      "priority": 1,
+      "description": "Dark mode step 11: Final audit. Scan ALL .tsx files under app/ and components/ for remaining hardcoded light-mode colors. Specifically grep for: (1) `bg-white` not followed by `/` (solid white backgrounds — should be bg-popover or bg-card), (2) `bg-black/5` or `bg-black/10` (should be bg-white/5 or bg-white/10), (3) `hover:bg-black/[0.04]` (should be hover:bg-white/[0.04]). Fix each one found. This is a sweep — touch as many files as needed but ONLY change color-related classes. DONE: No remaining hardcoded light-mode colors. DO NOT TOUCH: any logic, data, or non-style code. VERIFY: pnpm build passes.",
       "steps": [
-        "Create content/songs/batch7/annotations/ directory if it doesn't exist",
-        "Read content/songs/batch7/lyrics/the-giant-piece-of-shit.txt",
-        "Read content/songs/batch7/research/the-giant-piece-of-shit.md",
-        "Use mcp__lennysdata__search_content to find the source material",
-        "Use mcp__lennysdata__read_excerpt for quotes and context",
-        "Identify 3-5 annotatable lyric lines",
-        "Write annotations JSON file",
-        "Verify each lyricText appears in lyrics",
+        "Grep for bg-white (not bg-white/) in all tsx files",
+        "Grep for bg-black/5 and bg-black/10",
+        "Grep for hover:bg-black/[0.04]",
+        "Fix each instance",
         "pnpm build passes"
       ],
-      "files": ["content/songs/batch7/annotations/the-giant-piece-of-shit.json"],
-      "passes": true
+      "files": ["app/", "components/"],
+      "passes": false
     },
     {
       "id": 13,
-      "category": "research",
-      "priority": 2,
-      "description": "Research and write annotation drafts for batch 7 song: a-hundred-nos. (1) Read lyrics from content/songs/batch7/lyrics/a-hundred-nos.txt. (2) Read research brief from content/songs/batch7/research/a-hundred-nos.md. (3) Use mcp__lennysdata__search_content to find the source material. (4) Use mcp__lennysdata__read_excerpt for quotes and context. (5) Identify 3-5 lyric lines referencing specific concepts/people/stories. (6) Write annotation objects: { lyricText, note, sourceTitle, sourceUrl }. (7) Save to content/songs/batch7/annotations/a-hundred-nos.json. DONE: JSON file with 3-5 annotations, each lyricText matches lyrics. DO NOT TOUCH: lib/albums.ts, components, other songs. VERIFY: pnpm build passes.",
+      "category": "feature",
+      "priority": 1,
+      "description": "Dark mode step 12: Fix opengraph image. In app/opengraph-image.tsx, the OG image likely renders with light background colors. Read it and check — if it uses hardcoded white/light backgrounds, change them to dark (#0a0a0a background, light text). The OG image should match the site's dark aesthetic. Also in app/layout.tsx, if there's a themeColor in metadata, set it to '#0a0a0a'. DONE: OG images render with dark background. DO NOT TOUCH: other files. VERIFY: pnpm build passes.",
       "steps": [
-        "Read content/songs/batch7/lyrics/a-hundred-nos.txt",
-        "Read content/songs/batch7/research/a-hundred-nos.md",
-        "Search Lenny MCP for source material",
-        "Read excerpts for quotes and context",
-        "Write annotations JSON file",
-        "Verify lyricText matches",
+        "Read app/opengraph-image.tsx",
+        "Change background colors to dark",
+        "Change text colors to light",
+        "Check app/layout.tsx metadata for themeColor",
         "pnpm build passes"
       ],
-      "files": ["content/songs/batch7/annotations/a-hundred-nos.json"],
-      "passes": true
+      "files": ["app/opengraph-image.tsx", "app/layout.tsx"],
+      "passes": false
     },
     {
       "id": 14,
-      "category": "research",
-      "priority": 2,
-      "description": "Research and write annotation drafts for batch 7 song: thinking-in-bets. (1) Read lyrics from content/songs/batch7/lyrics/thinking-in-bets.txt. (2) Read research brief from content/songs/batch7/research/thinking-in-bets.md. (3) Use mcp__lennysdata__search_content to find the source material. (4) Use mcp__lennysdata__read_excerpt for quotes and context. (5) Identify 3-5 lyric lines referencing specific concepts/people/stories. (6) Write annotation objects: { lyricText, note, sourceTitle, sourceUrl }. (7) Save to content/songs/batch7/annotations/thinking-in-bets.json. DONE: JSON file with 3-5 annotations, each lyricText matches lyrics. DO NOT TOUCH: lib/albums.ts, components, other songs. VERIFY: pnpm build passes.",
+      "category": "feature",
+      "priority": 1,
+      "description": "Dark mode step 13: Fix /songs page for dark mode. In app/songs/page.tsx, check for dark-mode issues: (1) Track number color `rgba(161,161,170,0.4)` — might be too dim on dark, brighten to `rgba(161,161,170,0.6)`. (2) Column header text `text-muted-foreground/40` — might be too dim, bump to `/50`. (3) The `motion.div` whileHover `backgroundColor: 'rgba(255,255,255,0.04)'` — fine for dark. (4) Search bar `bg-white/[0.06]` — fine. Read the whole file and fix any visibility issues. DONE: /songs page is fully readable in dark mode. DO NOT TOUCH: sort/filter logic. VERIFY: pnpm build passes.",
       "steps": [
-        "Read content/songs/batch7/lyrics/thinking-in-bets.txt",
-        "Read content/songs/batch7/research/thinking-in-bets.md",
-        "Search Lenny MCP for source material",
-        "Read excerpts for quotes and context",
-        "Write annotations JSON file",
-        "Verify lyricText matches",
+        "Read app/songs/page.tsx",
+        "Fix any colors too dim for dark mode",
         "pnpm build passes"
       ],
-      "files": ["content/songs/batch7/annotations/thinking-in-bets.json"],
-      "passes": true
+      "files": ["app/songs/page.tsx"],
+      "passes": false
     },
     {
       "id": 15,
-      "category": "research",
+      "category": "polish",
       "priority": 2,
-      "description": "Research and write annotation drafts for batch 7 song: the-long-game. (1) Read lyrics from content/songs/batch7/lyrics/the-long-game.txt. (2) Read research brief from content/songs/batch7/research/the-long-game.md. (3) Use mcp__lennysdata__search_content to find the source material. (4) Use mcp__lennysdata__read_excerpt for quotes and context. (5) Identify 3-5 lyric lines referencing specific concepts/people/stories. (6) Write annotation objects: { lyricText, note, sourceTitle, sourceUrl }. (7) Save to content/songs/batch7/annotations/the-long-game.json. DONE: JSON file with 3-5 annotations, each lyricText matches lyrics. DO NOT TOUCH: lib/albums.ts, components, other songs. VERIFY: pnpm build passes.",
+      "description": "Polish: Subtle accent-colored top border on NowPlayingBar. In components/NowPlayingBar.tsx, the bottom bar has `border-t border-border bg-background/95 backdrop-blur-lg`. In dark mode this is functional but flat. Add a subtle glow using the track's accent color. On the outermost div (the fixed container), add an inline style: `style={{ borderTopColor: accentColor + '40' }}` (hex 40 = 25% opacity). This creates a subtle colored line at the top that matches the currently playing track's album color. Keep the existing `border-t border-border` classes — the inline style overrides the border color. DONE: NowPlayingBar has a subtle accent-colored top border. DO NOT TOUCH: controls, audio logic. VERIFY: pnpm build passes.",
       "steps": [
-        "Read content/songs/batch7/lyrics/the-long-game.txt",
-        "Read content/songs/batch7/research/the-long-game.md",
-        "Search Lenny MCP for source material",
-        "Read excerpts for quotes and context",
-        "Write annotations JSON file",
-        "Verify lyricText matches",
+        "Read components/NowPlayingBar.tsx",
+        "Add inline borderTopColor style using accentColor + '40'",
         "pnpm build passes"
       ],
-      "files": ["content/songs/batch7/annotations/the-long-game.json"],
-      "passes": true
+      "files": ["components/NowPlayingBar.tsx"],
+      "passes": false
     },
     {
       "id": 16,
-      "category": "research",
+      "category": "polish",
       "priority": 2,
-      "description": "Research and write annotation drafts for batch 7 song: how-have-i-been-complicit. (1) Read lyrics from content/songs/batch7/lyrics/how-have-i-been-complicit.txt. (2) Read research brief from content/songs/batch7/research/how-have-i-been-complicit.md. (3) Use mcp__lennysdata__search_content to find the source material. (4) Use mcp__lennysdata__read_excerpt for quotes and context. (5) Identify 3-5 lyric lines referencing specific concepts/people/stories. (6) Write annotation objects: { lyricText, note, sourceTitle, sourceUrl }. (7) Save to content/songs/batch7/annotations/how-have-i-been-complicit.json. DONE: JSON file with 3-5 annotations, each lyricText matches lyrics. DO NOT TOUCH: lib/albums.ts, components, other songs. VERIFY: pnpm build passes.",
+      "description": "Polish: Subtle warm glow on album cover hover. In app/page.tsx, the album grid covers currently have `shadow-md` and a scale hover effect. Add a subtle warm shadow glow on hover. On the album cover wrapper div (the one with `relative aspect-square`), add a `transition-shadow duration-300` class and change the parent group-hover to also include a warm shadow: add `group-hover:shadow-[0_8px_30px_rgba(245,158,11,0.08)]` to the cover container div. This creates a barely-visible warm glow when hovering album artwork. DONE: Album covers glow subtly warm on hover. DO NOT TOUCH: click behavior, album data. VERIFY: pnpm build passes.",
       "steps": [
-        "Read content/songs/batch7/lyrics/how-have-i-been-complicit.txt",
-        "Read content/songs/batch7/research/how-have-i-been-complicit.md",
-        "Search Lenny MCP for source material",
-        "Read excerpts for quotes and context",
-        "Write annotations JSON file",
-        "Verify lyricText matches",
+        "Read app/page.tsx album grid section",
+        "Add transition-shadow and warm hover shadow to album cover container",
         "pnpm build passes"
       ],
-      "files": ["content/songs/batch7/annotations/how-have-i-been-complicit.json"],
-      "passes": true
+      "files": ["app/page.tsx"],
+      "passes": false
     },
     {
       "id": 17,
-      "category": "research",
+      "category": "polish",
       "priority": 2,
-      "description": "Research and write annotation drafts for batch 7 song: crossing-the-chasm. (1) Read lyrics from content/songs/batch7/lyrics/crossing-the-chasm.txt. (2) Read research brief from content/songs/batch7/research/crossing-the-chasm.md. (3) Use mcp__lennysdata__search_content to find the source material. (4) Use mcp__lennysdata__read_excerpt for quotes and context. (5) Identify 3-5 lyric lines referencing specific concepts/people/stories. (6) Write annotation objects: { lyricText, note, sourceTitle, sourceUrl }. (7) Save to content/songs/batch7/annotations/crossing-the-chasm.json. DONE: JSON file with 3-5 annotations, each lyricText matches lyrics. DO NOT TOUCH: lib/albums.ts, components, other songs. VERIFY: pnpm build passes.",
+      "description": "Polish: Add subtle homepage hero glow. In app/page.tsx, add a subtle gradient glow behind the main title for depth on the dark background. Make the `<header>` element `relative`. Add a child div BEFORE the h1: `<div className='absolute -inset-x-20 -inset-y-10 bg-gradient-to-r from-amber-500/[0.03] via-transparent to-amber-500/[0.03] blur-3xl pointer-events-none' />`. This creates a barely-visible warm ambient light around the title. It should be VERY subtle — if someone asks 'is there a glow?' the answer should be 'I think so?'. DONE: Homepage title has a whisper of warm ambient glow. DO NOT TOUCH: content, search, track list. VERIFY: pnpm build passes.",
       "steps": [
-        "Read content/songs/batch7/lyrics/crossing-the-chasm.txt",
-        "Read content/songs/batch7/research/crossing-the-chasm.md",
-        "Search Lenny MCP for source material",
-        "Read excerpts for quotes and context",
-        "Write annotations JSON file",
-        "Verify lyricText matches",
+        "Read app/page.tsx header section",
+        "Add relative class to header",
+        "Add subtle gradient glow div",
         "pnpm build passes"
       ],
-      "files": ["content/songs/batch7/annotations/crossing-the-chasm.json"],
-      "passes": true
+      "files": ["app/page.tsx"],
+      "passes": false
     },
     {
       "id": 18,
-      "category": "research",
+      "category": "feature",
       "priority": 2,
-      "description": "Research and write annotation drafts for batch 7 song: seventy-five-businesses. (1) Read lyrics from content/songs/batch7/lyrics/seventy-five-businesses.txt. (2) Read research brief from content/songs/batch7/research/seventy-five-businesses.md. (3) Use mcp__lennysdata__search_content to find the source material. (4) Use mcp__lennysdata__read_excerpt for quotes and context. (5) Identify 3-5 lyric lines referencing specific concepts/people/stories. (6) Write annotation objects: { lyricText, note, sourceTitle, sourceUrl }. (7) Save to content/songs/batch7/annotations/seventy-five-businesses.json. DONE: JSON file with 3-5 annotations, each lyricText matches lyrics. DO NOT TOUCH: lib/albums.ts, components, other songs. VERIFY: pnpm build passes.",
+      "description": "Supabase Storage step 1: Create a Node.js upload script. Create a file `scripts/upload-audio.ts` that: (1) Imports createClient from @supabase/supabase-js. (2) Reads NEXT_PUBLIC_SUPABASE_URL and NEXT_PUBLIC_SUPABASE_ANON_KEY from process.env (use dotenv to load .env.local). (3) Lists all .mp3 files in public/audio/. (4) For each MP3: uploads to a Supabase Storage bucket called 'audio' with the same filename, content type 'audio/mpeg', upsert: true. (5) Logs progress: 'Uploaded 1/88: taste.mp3'. (6) After all uploads, logs the public URL pattern: `{supabaseUrl}/storage/v1/object/public/audio/{filename}`. IMPORTANT: The script should first try to create the bucket (createClient.storage.createBucket('audio', { public: true })) and ignore the error if it already exists. Add a package.json script: 'upload-audio': 'npx tsx scripts/upload-audio.ts'. Also install dotenv as a dev dependency if not present. DONE: Script exists and is runnable. DO NOT RUN IT — just create it. Eric will run it manually after reviewing. DO NOT TOUCH: lib/albums.ts, audio playback code. VERIFY: pnpm build passes. The script file exists.",
       "steps": [
-        "Read content/songs/batch7/lyrics/seventy-five-businesses.txt",
-        "Read content/songs/batch7/research/seventy-five-businesses.md",
-        "Search Lenny MCP for source material",
-        "Read excerpts for quotes and context",
-        "Write annotations JSON file",
-        "Verify lyricText matches",
+        "Check if dotenv is installed, add as devDep if not",
+        "Create scripts/upload-audio.ts",
+        "Add upload-audio script to package.json",
         "pnpm build passes"
       ],
-      "files": ["content/songs/batch7/annotations/seventy-five-businesses.json"],
-      "passes": true
+      "files": ["scripts/upload-audio.ts", "package.json"],
+      "passes": false
+    },
+    {
+      "id": 19,
+      "category": "feature",
+      "priority": 2,
+      "description": "Supabase Storage step 2: Create a script to update audio URLs in lib/albums.ts. Create `scripts/migrate-audio-urls.ts` that: (1) Reads the NEXT_PUBLIC_SUPABASE_URL from .env.local. (2) Reads lib/albums.ts as a string. (3) Uses a regex to find all `audioUrl: \"/audio/{filename}.mp3\"` patterns. (4) Replaces each with `audioUrl: \"{supabaseUrl}/storage/v1/object/public/audio/{filename}.mp3\"`. (5) Writes the modified file back. (6) Logs how many URLs were replaced. Add a package.json script: 'migrate-audio-urls': 'npx tsx scripts/migrate-audio-urls.ts'. DONE: Script exists. When run, it rewrites all audioUrl values in lib/albums.ts to point to Supabase Storage. DO NOT RUN IT — just create it. DO NOT TOUCH: lib/albums.ts directly, audio playback code. VERIFY: pnpm build passes. Script file exists.",
+      "steps": [
+        "Create scripts/migrate-audio-urls.ts",
+        "Add migrate-audio-urls script to package.json",
+        "pnpm build passes"
+      ],
+      "files": ["scripts/migrate-audio-urls.ts", "package.json"],
+      "passes": false
+    },
+    {
+      "id": 20,
+      "category": "feature",
+      "priority": 2,
+      "description": "Supabase Storage step 3: Add .gitignore rule for public/audio MP3s and create a README note. After the MP3s are uploaded to Supabase Storage and URLs are migrated, the local MP3 files in public/audio/ are no longer needed in git. Add `public/audio/*.mp3` to .gitignore. BUT: do NOT delete the files — they should stay locally for development. Also add a comment in .gitignore above the line: `# MP3s served from Supabase Storage — local copies for dev only`. Also create a small note at the top of scripts/upload-audio.ts as a comment explaining the flow: upload script → migrate URLs → gitignore. DONE: .gitignore excludes MP3s. Local files remain. Future git commits won't include 353MB of audio. DO NOT TOUCH: lib/albums.ts, audio playback. DO NOT delete any MP3 files. VERIFY: pnpm build passes.",
+      "steps": [
+        "Read .gitignore",
+        "Add public/audio/*.mp3 with comment",
+        "Add flow comment to scripts/upload-audio.ts",
+        "pnpm build passes"
+      ],
+      "files": [".gitignore", "scripts/upload-audio.ts"],
+      "passes": false
+    },
+    {
+      "id": 21,
+      "category": "polish",
+      "priority": 3,
+      "description": "Polish: Add smooth scroll-to-top on page navigation. In app/layout.tsx, the page content scrolls but navigating between pages doesn't scroll to top. Add a ScrollToTop component: create components/ScrollToTop.tsx — a 'use client' component that uses `usePathname()` from next/navigation and a useEffect that calls `window.scrollTo({ top: 0, behavior: 'instant' })` whenever pathname changes. Mount it in app/layout.tsx inside the body, before the main content. DONE: Navigating between pages scrolls to top. DO NOT TOUCH: audio context, NowPlayingBar. VERIFY: pnpm build passes.",
+      "steps": [
+        "Create components/ScrollToTop.tsx",
+        "Add usePathname + useEffect to scroll to top",
+        "Mount in app/layout.tsx",
+        "pnpm build passes"
+      ],
+      "files": ["components/ScrollToTop.tsx", "app/layout.tsx"],
+      "passes": false
+    },
+    {
+      "id": 22,
+      "category": "polish",
+      "priority": 3,
+      "description": "Polish: Add a subtle fade-in animation to page content. In app/page.tsx, the main content div (the flex-col min-h-screen container) should fade in on load. Wrap the outermost div in a framer-motion motion.div with `initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.3 }}`. Do the same in app/album/[slug]/AlbumPageClient.tsx — wrap the outermost flex-col div. And app/track/[slug]/TrackPageClient.tsx — wrap the outermost flex-col div. Keep it subtle — 0.3s fade, no slide. DONE: Pages fade in smoothly on navigation. DO NOT TOUCH: content, logic, audio. VERIFY: pnpm build passes.",
+      "steps": [
+        "Read app/page.tsx, wrap outermost div in motion.div with fade",
+        "Read app/album/[slug]/AlbumPageClient.tsx, same treatment",
+        "Read app/track/[slug]/TrackPageClient.tsx, same treatment",
+        "pnpm build passes"
+      ],
+      "files": ["app/page.tsx", "app/album/[slug]/AlbumPageClient.tsx", "app/track/[slug]/TrackPageClient.tsx"],
+      "passes": false
+    },
+    {
+      "id": 23,
+      "category": "polish",
+      "priority": 3,
+      "description": "Polish: Improve mobile experience for NowPlayingBar. The NowPlayingBar is cramped on mobile. In components/NowPlayingBar.tsx: (1) The skip back/forward buttons are `hidden sm:block` — they should be visible on mobile too since they're essential controls. Remove `hidden sm:block` from both skip buttons (around lines 161 and 183), replace with just the styling classes. Make them slightly smaller on mobile: `w-3.5 h-3.5 sm:w-4 sm:h-4` for the icons. (2) The time display is `hidden sm:flex` — keep it hidden on mobile, that's fine. (3) The share button can stay. DONE: Skip buttons visible on mobile. Buttons sized appropriately. DO NOT TOUCH: audio logic, desktop layout. VERIFY: pnpm build passes.",
+      "steps": [
+        "Read components/NowPlayingBar.tsx",
+        "Remove hidden sm:block from skip buttons",
+        "Make skip button icons responsive size",
+        "pnpm build passes"
+      ],
+      "files": ["components/NowPlayingBar.tsx"],
+      "passes": false
+    },
+    {
+      "id": 24,
+      "category": "polish",
+      "priority": 3,
+      "description": "Polish: Add track count and total duration to album pages. In app/album/[slug]/AlbumPageClient.tsx, after the 'Play All' button area (around line 278), add a stats line: `<p className='text-xs text-muted-foreground/50 mt-3'>{trackCount} tracks · {totalDuration}</p>`. Calculate trackCount from `album.tracks.filter(t => !t.isLocked).length`. Calculate totalDuration by parsing each track.duration string (format 'M:SS'), summing seconds, and formatting back to 'Xm Ys' or 'X min'. This gives the album page the same feel as Spotify's album info. DONE: Album page shows track count and total duration below the Play All button. DO NOT TOUCH: track list rendering, audio logic. VERIFY: pnpm build passes.",
+      "steps": [
+        "Read app/album/[slug]/AlbumPageClient.tsx",
+        "Add duration parsing and summing logic",
+        "Add stats line below Play All button",
+        "pnpm build passes"
+      ],
+      "files": ["app/album/[slug]/AlbumPageClient.tsx"],
+      "passes": false
+    },
+    {
+      "id": 25,
+      "category": "polish",
+      "priority": 3,
+      "description": "Polish: Add 'Now Playing' indicator to album and songs pages. When a track is currently playing, show a small animated equalizer icon next to the track title (like Spotify does). The equalizer bars already exist as CSS animations in globals.css (animate-eq-1, eq-2, eq-3). In app/album/[slug]/AlbumPageClient.tsx: when `isPlaying` is true for a track, show the equalizer bars instead of the track number (this may already be partially done — check and ensure it works). In app/songs/page.tsx: the equalizer bars are already implemented for playing tracks — verify they're working and visible in dark mode. If the bar colors use `var(--primary)`, they should be fine. DONE: Playing track shows animated equalizer bars on album and songs pages. DO NOT TOUCH: audio logic, NowPlayingBar. VERIFY: pnpm build passes.",
+      "steps": [
+        "Read app/album/[slug]/AlbumPageClient.tsx — check playing indicator",
+        "Read app/songs/page.tsx — check playing indicator",
+        "Ensure equalizer colors work in dark mode",
+        "pnpm build passes"
+      ],
+      "files": ["app/album/[slug]/AlbumPageClient.tsx", "app/songs/page.tsx"],
+      "passes": false
     }
   ]
 }
+

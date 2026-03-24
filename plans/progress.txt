@@ -1,21 +1,2 @@
-# Ralph PROD run Tue Mar 24 02:13:38 +08 2026
-ID6: Fixed duplicate annotation highlighting — each annotation now appears only on first matching lyric line via pre-computed annotationMap.
-Build passes.
-ID7: Added search bar to /songs page — filters by title, source, guest, tags, album, speaker, concept.
-Build passes.
-ID8: Improved homepage search — changed placeholder text, added source title/guest, quoteSpeaker, concept, keyInsight to filter.
-Build passes.
-ID10: Created OnboardingTooltips component with localStorage dismiss, mounted on homepage between header and search bar.
-ID11: Improved no-results search state with query echo, track count, and helpful suggestion text. Build passes.
-ID12: Wrote 5 annotations for the-giant-piece-of-shit — covers "giant piece of shit" quote, $9M pivot, tilt your umbrella, 23-year Cal Henderson partnership, and the company chant.
-Build passes.
-ID13: Wrote 5 annotations for a-hundred-nos — covers 100 investor rejections, Column B thinking, embarrassing first step, ladder to moon, and 2-year codebase rewrite.
-Build passes.
-ID14: Wrote 5 annotations for thinking-in-bets — covers no long feedback loops, curious not coercive, 70% rule, Glitch/Slack pivot story, outcome vs decision quality.
-Build passes.
-ID16: Wrote 5 annotations for how-have-i-been-complicit — covers getaway car metaphor, busyness/complicity, toppled oak tree legacy, Jung unconscious quote, and art of growing up.
-Build passes.
-ID17: Wrote 5 annotations for crossing-the-chasm — covers kindling metaphor, invisible chasm, Documentum pharma case study, beachhead formula, and primary votes analogy.
-Build passes.
-ID18: Wrote 5 annotations for seventy-five-businesses — covers "fish where the fish are" Munger quote, billion-dollar anxiety, $10M Flow loss, yellow pill SSRI story, and $30M government forms business.
-Build passes.
+# Ralph PROD run Tue Mar 24 08:09:18 +08 2026
+Task 1: Rewrote OnboardingTooltips to single-line subtle banner. Removed emojis, grid, multi-tip layout. Build passes.
