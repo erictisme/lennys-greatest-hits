@@ -331,11 +331,11 @@ export default function AlbumPageClient({ slug }: { slug: string }) {
                       }}
                     >
                       {isPlaying ? (
-                        <Pause
-                          className="w-4 h-4"
-                          style={{ color: album.accentColor }}
-                          fill="currentColor"
-                        />
+                        <span className="flex items-end gap-[2px] h-4 w-4">
+                          <span className="w-[3px] rounded-full animate-eq-1" style={{ height: "60%", backgroundColor: album.accentColor }} />
+                          <span className="w-[3px] rounded-full animate-eq-2" style={{ height: "100%", backgroundColor: album.accentColor }} />
+                          <span className="w-[3px] rounded-full animate-eq-3" style={{ height: "40%", backgroundColor: album.accentColor }} />
+                        </span>
                       ) : (
                         <>
                           <span className={`text-sm ${isCurrentTrack ? "" : "group-hover:hidden"} ${isCurrentTrack ? "hidden" : ""}`} style={isCurrentTrack ? { color: album.accentColor } : { color: "rgba(161,161,170,0.5)" }}>

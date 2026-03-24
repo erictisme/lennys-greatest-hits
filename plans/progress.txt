@@ -18,3 +18,4 @@ Task 21: Created ScrollToTop component using usePathname + useEffect, mounted in
 Task 22: Added 0.3s fade-in animation via motion.div to AlbumPageClient and TrackPageClient. Fixed mismatched closing tag in page.tsx. Build passes.
 Task 23: Made skip back/forward buttons visible on mobile in NowPlayingBar. Removed hidden sm:block, added responsive icon sizes w-3.5 h-3.5 sm:w-4 sm:h-4. Build passes.
 Task 24: Added track count and total duration stats line below Play All button on album pages. Parses duration strings and sums. Build passes.
+Task 25: Added animated equalizer bars for playing tracks on album pages. Fixed TrackRow.tsx hardcoded #b45309→var(--primary) for dark mode. Songs page already correct. Build passes.

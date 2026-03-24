@@ -353,7 +353,7 @@
         "pnpm build passes"
       ],
       "files": ["app/album/[slug]/AlbumPageClient.tsx", "app/songs/page.tsx"],
-      "passes": false
+      "passes": true
     }
   ]
 }

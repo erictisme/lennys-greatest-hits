@@ -50,9 +50,9 @@ export default function TrackRow({
         {isPlaying ? (
           <>
             <div className="flex items-center gap-[3px] h-4 group-hover:hidden">
-              <span className="w-[3px] rounded-full animate-eq-1" style={{ height: "60%", backgroundColor: "#b45309" }} />
-              <span className="w-[3px] rounded-full animate-eq-2" style={{ height: "100%", backgroundColor: "#b45309" }} />
-              <span className="w-[3px] rounded-full animate-eq-3" style={{ height: "40%", backgroundColor: "#b45309" }} />
+              <span className="w-[3px] rounded-full animate-eq-1" style={{ height: "60%", backgroundColor: "var(--primary)" }} />
+              <span className="w-[3px] rounded-full animate-eq-2" style={{ height: "100%", backgroundColor: "var(--primary)" }} />
+              <span className="w-[3px] rounded-full animate-eq-3" style={{ height: "40%", backgroundColor: "var(--primary)" }} />
             </div>
             <span className="hidden group-hover:block">
               <Pause className="w-4 h-4 text-foreground" fill="currentColor" />
