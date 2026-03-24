@@ -2,246 +2,138 @@
   "features": [
     {
       "id": 1,
-      "category": "feature",
+      "category": "bugfix",
       "priority": 0,
-      "description": "Onboard batch 7 song: the-giant-piece-of-shit. MP3 at public/audio/the-giant-piece-of-shit.mp3, cover at public/covers/the-giant-piece-of-shit.jpg. (1) Read content/songs/batch7/lyrics/the-giant-piece-of-shit.md for metadata (Title, Album, Source, Genre, Mood, Tags, Concept, Key Insight, Key Quote, Quote Speaker, Story Behind) and full lyrics text. (2) Read content/songs/batch7/research/the-giant-piece-of-shit.md for additional context. (3) Read content/songs/batch7/annotations/the-giant-piece-of-shit.json for pre-written annotations. (4) Find the correct album tracks array in lib/albums.ts by matching the Album field from lyrics metadata (e.g. 'The Craft' → theCraftTracks). (5) Add the track object to that array. Fields: slug, title, albumSlug, trackNumber (next number in that album), duration '3:00', audioUrl '/audio/the-giant-piece-of-shit.mp3', coverImage '/covers/the-giant-piece-of-shit.jpg', genre, mood, lyrics (full lyrics without metadata/headers — just the song lines), concept, keyInsight, sources [{title, type, url, guest}], keyQuote, quoteSpeaker, storyBehind, tags, annotations (from JSON), releaseDate '2026-03-24'. DONE: Track appears in lib/albums.ts. DO NOT TOUCH: existing tracks. VERIFY: pnpm build passes.",
-      "steps": ["Read lyrics md", "Read research md", "Read annotations json", "Add track to correct album array in lib/albums.ts", "pnpm build passes"],
-      "files": ["lib/albums.ts"],
-      "passes": true
+      "description": "Fix: Lyric share buttons invisible on touch/mobile (Round 4 #3). In components/SyncedLyrics.tsx, the share button per lyric line uses `opacity-0 group-hover:opacity-60` — this means on mobile (no hover) the buttons are permanently invisible. FIX: Change to `opacity-40 sm:opacity-0 sm:group-hover:opacity-60` so on mobile they're always slightly visible, on desktop they appear on hover. Also increase the tap target: change `p-1.5` to `p-2` on the share button. DONE: Lyric share buttons visible on mobile at reduced opacity. DO NOT TOUCH: annotation toggle behavior, lyric parsing. VERIFY: pnpm build passes.",
+      "steps": ["Read components/SyncedLyrics.tsx", "Fix share button opacity for mobile", "Increase tap target", "pnpm build passes"],
+      "files": ["components/SyncedLyrics.tsx"],
+      "passes": false
     },
     {
       "id": 2,
-      "category": "feature",
+      "category": "bugfix",
       "priority": 0,
-      "description": "Onboard batch 7 song: a-hundred-nos. Same process as task 1. Read content/songs/batch7/lyrics/a-hundred-nos.md, content/songs/batch7/research/a-hundred-nos.md, content/songs/batch7/annotations/a-hundred-nos.json. Add track to correct album in lib/albums.ts with all fields. DONE: Track in lib/albums.ts. DO NOT TOUCH: existing tracks. VERIFY: pnpm build passes.",
-      "steps": ["Read lyrics", "Read research", "Read annotations", "Add to lib/albums.ts", "pnpm build passes"],
-      "files": ["lib/albums.ts"],
-      "passes": true
+      "description": "Fix: Sort pills overflow on /songs page at 320px (Round 4 #4). In app/songs/page.tsx, the sort pills are in a `flex gap-2` container without wrapping. On narrow screens they overflow. FIX: Add `flex-wrap` to the sort pills container div. Also reduce padding on pills for mobile: change `px-4 py-1.5` to `px-3 py-1 sm:px-4 sm:py-1.5`. DONE: Sort pills wrap on narrow screens. DO NOT TOUCH: sort logic, track rendering. VERIFY: pnpm build passes.",
+      "steps": ["Read app/songs/page.tsx", "Add flex-wrap to sort pills container", "Reduce mobile padding", "pnpm build passes"],
+      "files": ["app/songs/page.tsx"],
+      "passes": false
     },
     {
       "id": 3,
-      "category": "feature",
+      "category": "bugfix",
       "priority": 0,
-      "description": "Onboard batch 7 song: thinking-in-bets. Same process. Read content/songs/batch7/lyrics/thinking-in-bets.md, research, annotations JSON. Add to correct album in lib/albums.ts. DONE: Track in lib/albums.ts. VERIFY: pnpm build passes.",
-      "steps": ["Read lyrics", "Read research", "Read annotations", "Add to lib/albums.ts", "pnpm build passes"],
-      "files": ["lib/albums.ts"],
-      "passes": true
+      "description": "Fix: NowPlayingBar controls too small for touch (Round 4 #5). In components/NowPlayingBar.tsx, skip buttons and share button have tap targets under 44px. FIX: (1) Wrap each skip button in a div with `min-w-[44px] min-h-[44px] flex items-center justify-center` to create a 44px touch target while keeping the icon small. (2) Do the same for the share button. (3) Increase play/pause button from `w-9 h-9` to `w-10 h-10` on mobile: `w-10 h-10 sm:w-9 sm:h-9`. DONE: All NowPlayingBar controls meet 44px minimum tap target. DO NOT TOUCH: audio logic, progress bar. VERIFY: pnpm build passes.",
+      "steps": ["Read components/NowPlayingBar.tsx", "Add 44px touch targets to skip buttons", "Add 44px touch target to share", "Increase play button on mobile", "pnpm build passes"],
+      "files": ["components/NowPlayingBar.tsx"],
+      "passes": false
     },
     {
       "id": 4,
-      "category": "feature",
+      "category": "bugfix",
       "priority": 0,
-      "description": "Onboard batch 7 song: the-long-game. Same process. Read content/songs/batch7/lyrics/the-long-game.md, research, annotations JSON. Add to correct album in lib/albums.ts. DONE: Track in lib/albums.ts. VERIFY: pnpm build passes.",
-      "steps": ["Read lyrics", "Read research", "Read annotations", "Add to lib/albums.ts", "pnpm build passes"],
-      "files": ["lib/albums.ts"],
-      "passes": true
+      "description": "Fix: Bottom padding mismatch when Up Next banner shows (Round 4). In app/layout.tsx, the content has `pb-[72px]` to account for NowPlayingBar. But when the Up Next countdown banner appears, it adds ~40px, hiding the last item in lists. FIX: Increase bottom padding to `pb-[120px]` to safely accommodate both the NowPlayingBar and the Up Next banner. This adds extra space but prevents content from being hidden behind the bar. DONE: Content never hidden behind NowPlayingBar + Up Next. DO NOT TOUCH: NowPlayingBar component. VERIFY: pnpm build passes.",
+      "steps": ["Read app/layout.tsx", "Increase pb-[72px] to pb-[120px]", "pnpm build passes"],
+      "files": ["app/layout.tsx"],
+      "passes": false
     },
     {
       "id": 5,
-      "category": "feature",
+      "category": "bugfix",
       "priority": 0,
-      "description": "Onboard batch 7 song: how-have-i-been-complicit. Same process. Read content/songs/batch7/lyrics/how-have-i-been-complicit.md, research, annotations JSON. Add to correct album in lib/albums.ts. DONE: Track in lib/albums.ts. VERIFY: pnpm build passes.",
-      "steps": ["Read lyrics", "Read research", "Read annotations", "Add to lib/albums.ts", "pnpm build passes"],
-      "files": ["lib/albums.ts"],
-      "passes": true
+      "description": "Fix: Search clear X button too small for touch (Round 4 touch targets). In app/page.tsx and app/songs/page.tsx, the search clear (X) button is ~16px. FIX: In both files, wrap the X icon in a larger touch target: change the button to have `p-2` instead of just the icon. The X icon stays small (w-4 h-4) but the button padding creates a 44px+ tap target. DONE: Search clear buttons are easily tappable. DO NOT TOUCH: search logic. VERIFY: pnpm build passes.",
+      "steps": ["Read app/page.tsx — fix search clear button", "Read app/songs/page.tsx — fix search clear button", "pnpm build passes"],
+      "files": ["app/page.tsx", "app/songs/page.tsx"],
+      "passes": false
     },
     {
       "id": 6,
       "category": "feature",
-      "priority": 0,
-      "description": "Onboard batch 7 song: crossing-the-chasm. Same process. Read content/songs/batch7/lyrics/crossing-the-chasm.md, research, annotations JSON. Add to correct album in lib/albums.ts. DONE: Track in lib/albums.ts. VERIFY: pnpm build passes.",
-      "steps": ["Read lyrics", "Read research", "Read annotations", "Add to lib/albums.ts", "pnpm build passes"],
-      "files": ["lib/albums.ts"],
-      "passes": true
+      "priority": 1,
+      "description": "Add prominent share CTA on track detail page (Round 2 Judge #3). The track page has no visible share dropdown — sharing is only in VoteButtons (small icon) and NowPlayingBar. FIX: In app/track/[slug]/TrackPageClient.tsx, in the 'Vote + Share' section at the bottom (around the VoteButtons area), add a visible 'Share This Song' button with a dropdown menu showing: Share to X, Share to LinkedIn, Copy Link. Style: `inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium border border-border/50 text-muted-foreground hover:text-foreground hover:border-border transition-colors`. Use the same share handlers already in the file (handleShareX, handleShareLinkedIn, handleCopyLink). Add a useState for dropdown open/close and AnimatePresence for animation. DONE: Track page has a visible Share button with social options. DO NOT TOUCH: audio controls, lyrics section. VERIFY: pnpm build passes.",
+      "steps": ["Read app/track/[slug]/TrackPageClient.tsx", "Add Share dropdown in the Vote+Share section", "pnpm build passes"],
+      "files": ["app/track/[slug]/TrackPageClient.tsx"],
+      "passes": false
     },
     {
       "id": 7,
-      "category": "feature",
-      "priority": 0,
-      "description": "Onboard batch 7 song: seventy-five-businesses. Same process. Read content/songs/batch7/lyrics/seventy-five-businesses.md, research, annotations JSON. Add to correct album in lib/albums.ts. DONE: Track in lib/albums.ts. VERIFY: pnpm build passes.",
-      "steps": ["Read lyrics", "Read research", "Read annotations", "Add to lib/albums.ts", "pnpm build passes"],
+      "category": "bugfix",
+      "priority": 1,
+      "description": "Fix: 'Do Things That Don't Scale' Brian Chesky quote attribution (Round 3 Lenny). The keyQuote 'Go to your users. Physically go to them' is attributed to Brian Chesky but is more of a Paul Graham / YC maxim. Chesky lived it but didn't coin it. FIX: Use mcp__lennysdata__search_content to find what Brian Chesky actually said on Lenny's podcast about doing things that don't scale. Update the keyQuote to an actual Chesky quote from the episode. If you can find a better direct quote, use it. If not, change the attribution to be more accurate: 'Inspired by Brian Chesky's Airbnb story' rather than a direct quote. Update in lib/albums.ts — find the track with slug 'do-things-that-dont-scale'. DONE: Quote attribution is accurate. VERIFY: pnpm build passes.",
+      "steps": ["Search Lenny MCP for Chesky on doing things that don't scale", "Find actual quote", "Update lib/albums.ts", "pnpm build passes"],
       "files": ["lib/albums.ts"],
-      "passes": true
+      "passes": false
     },
     {
       "id": 8,
-      "category": "feature",
-      "priority": 0,
-      "description": "Onboard batch 7.5 song: coding-is-solved. MP3 at public/audio/coding-is-solved.mp3, cover at public/covers/coding-is-solved.jpg. (1) Read content/songs/batch7.5/lyrics/coding-is-solved.md for metadata and lyrics. (2) Read content/songs/batch7.5/research/coding-is-solved.md if it exists. (3) NO pre-written annotations — use mcp__lennysdata__search_content to find the source episode/article, then mcp__lennysdata__read_excerpt for quotes. Write 3-5 annotations: {lyricText (exact substring from lyrics), note (2-3 sentences connecting lyric to Lenny content), sourceTitle, sourceUrl}. (4) Add track to correct album in lib/albums.ts. Map album from metadata — AI/coding songs go to 'electric-dreams' (electricDreamsTracks). DONE: Track in lib/albums.ts with annotations. VERIFY: pnpm build passes.",
-      "steps": ["Read lyrics", "Read research if exists", "Use Lenny MCP for annotations", "Add to lib/albums.ts", "pnpm build passes"],
-      "files": ["lib/albums.ts"],
-      "passes": true
+      "category": "bugfix",
+      "priority": 1,
+      "description": "Fix: Progress bar too thin for mobile tap (Round 4). In app/track/[slug]/TrackPageClient.tsx and components/NowPlayingBar.tsx, the progress bar is 6px tall with a hover tooltip. On mobile, 6px is nearly impossible to tap accurately. FIX: In TrackPageClient.tsx, change the progress bar container padding from `py-2 -my-2` to `py-3 -my-3` to increase the tap target zone. The visual bar stays 6px but the clickable area is larger. Same fix in NowPlayingBar.tsx — increase `py-1.5 -mb-1.5` to `py-3 -mb-3`. DONE: Progress bars are tappable on mobile. DO NOT TOUCH: seek logic. VERIFY: pnpm build passes.",
+      "steps": ["Read TrackPageClient.tsx — increase progress bar tap area", "Read NowPlayingBar.tsx — same fix", "pnpm build passes"],
+      "files": ["app/track/[slug]/TrackPageClient.tsx", "components/NowPlayingBar.tsx"],
+      "passes": false
     },
     {
       "id": 9,
-      "category": "feature",
-      "priority": 0,
-      "description": "Onboard batch 7.5 song: the-hard-thing. Same process as task 8. Read content/songs/batch7.5/lyrics/the-hard-thing.md. Use Lenny MCP for 3-5 annotations. Add to correct album (likely 'the-startup-life' or 'the-weight' depending on topic). DONE: Track in lib/albums.ts with annotations. VERIFY: pnpm build passes.",
-      "steps": ["Read lyrics", "Read research if exists", "Use Lenny MCP for annotations", "Add to lib/albums.ts", "pnpm build passes"],
-      "files": ["lib/albums.ts"],
-      "passes": true
+      "category": "bugfix",
+      "priority": 1,
+      "description": "Fix: Annotation toggle (BookOpen) and onboarding dismiss (X) touch targets (Round 4). In components/SyncedLyrics.tsx, the annotation toggle button has `p-1.5` making it ~26px — too small. Change to `p-2.5` for a 44px target. In components/OnboardingTooltips.tsx, the dismiss X button is tiny. Add `p-2` padding. DONE: Both buttons meet 44px tap target. VERIFY: pnpm build passes.",
+      "steps": ["Fix SyncedLyrics.tsx annotation button padding", "Fix OnboardingTooltips.tsx dismiss button padding", "pnpm build passes"],
+      "files": ["components/SyncedLyrics.tsx", "components/OnboardingTooltips.tsx"],
+      "passes": false
     },
     {
       "id": 10,
-      "category": "feature",
-      "priority": 0,
-      "description": "Onboard batch 7.5 song: the-hiring-playbook. Same process. Read content/songs/batch7.5/lyrics/the-hiring-playbook.md. Use Lenny MCP for annotations. Add to correct album (likely 'the-talent-search'). DONE: Track in lib/albums.ts with annotations. VERIFY: pnpm build passes.",
-      "steps": ["Read lyrics", "Use Lenny MCP for annotations", "Add to lib/albums.ts", "pnpm build passes"],
-      "files": ["lib/albums.ts"],
-      "passes": true
+      "category": "bugfix",
+      "priority": 1,
+      "description": "Fix: Keyboard shortcuts ? button should not show on mobile (Round 4). In components/KeyboardShortcuts.tsx, the ? button shows on all screens. But mobile has no keyboard, so this button is confusing. FIX: Add `hidden sm:flex` to the ? button so it only appears on desktop/tablet screens where keyboard shortcuts are usable. DONE: ? button hidden on mobile. VERIFY: pnpm build passes.",
+      "steps": ["Read components/KeyboardShortcuts.tsx", "Add hidden sm:flex to button", "pnpm build passes"],
+      "files": ["components/KeyboardShortcuts.tsx"],
+      "passes": false
     },
     {
       "id": 11,
-      "category": "feature",
-      "priority": 0,
-      "description": "Onboard batch 7.5 song: the-obsession. Same process. Read content/songs/batch7.5/lyrics/the-obsession.md. Use Lenny MCP for annotations. Add to correct album (likely 'the-craft'). DONE: Track in lib/albums.ts with annotations. VERIFY: pnpm build passes.",
-      "steps": ["Read lyrics", "Use Lenny MCP for annotations", "Add to lib/albums.ts", "pnpm build passes"],
-      "files": ["lib/albums.ts"],
-      "passes": true
+      "category": "quality",
+      "priority": 2,
+      "description": "Verify Round 3 Lenny accuracy: spot-check 5 more tracks. The Lenny audit only checked 5 tracks. Use mcp__lennysdata__search_content to verify 5 MORE tracks chosen from different albums: (1) 'crossing-the-chasm' (Growth Engine), (2) 'the-hiring-playbook' (Talent Search), (3) 'burnout' (Human Side), (4) 'plg' (Growth Engine), (5) 'the-obsession' (By the Numbers). For each: verify the guest actually appeared on Lenny's podcast, the keyQuote is real, the concept is correctly attributed. Write findings to content/qa/round5-accuracy-spotcheck.md. DONE: Spot-check exists. DO NOT TOUCH: code. VERIFY: pnpm build passes.",
+      "steps": ["Verify 5 tracks via Lenny MCP", "Write findings", "pnpm build passes"],
+      "files": ["content/qa/round5-accuracy-spotcheck.md"],
+      "passes": false
     },
     {
       "id": 12,
-      "category": "feature",
-      "priority": 0,
-      "description": "Onboard batch 7.5 song: the-value-loop. Same process. Read content/songs/batch7.5/lyrics/the-value-loop.md. Use Lenny MCP for annotations. Add to correct album (likely 'growth-engine' or 'the-craft'). DONE: Track in lib/albums.ts with annotations. VERIFY: pnpm build passes.",
-      "steps": ["Read lyrics", "Use Lenny MCP for annotations", "Add to lib/albums.ts", "pnpm build passes"],
+      "category": "bugfix",
+      "priority": 2,
+      "description": "Fix any accuracy issues from Round 5 spot-check. Read content/qa/round5-accuracy-spotcheck.md. Fix any incorrect attributions, wrong quotes, or mismatched sources in lib/albums.ts. Use Lenny MCP to verify corrections. DONE: Issues fixed. VERIFY: pnpm build passes.",
+      "steps": ["Read spot-check", "Fix issues", "pnpm build passes"],
       "files": ["lib/albums.ts"],
-      "passes": true
+      "passes": false
     },
     {
       "id": 13,
-      "category": "feature",
-      "priority": 0,
-      "description": "Onboard batch 7.5 song: three-eras. Same process. Read content/songs/batch7.5/lyrics/three-eras.md. Use Lenny MCP for annotations. Add to correct album. DONE: Track in lib/albums.ts with annotations. VERIFY: pnpm build passes.",
-      "steps": ["Read lyrics", "Use Lenny MCP for annotations", "Add to lib/albums.ts", "pnpm build passes"],
-      "files": ["lib/albums.ts"],
-      "passes": true
+      "category": "quality",
+      "priority": 2,
+      "description": "Round 2 Judge recommendation: Add 'curated for you' / 'start here' flow (from What Would Make This Unbeatable). The judge suggested a way for first-time visitors to know which of 100+ songs to try first. FIX: On the homepage (app/page.tsx), add a 'Start Here' or 'Editor's Picks' section ABOVE the Popular section. Show 3 tracks with a brief one-line description of why each is a must-listen. Pick the 3 most impressive/accessible tracks. Use a different visual treatment — slightly larger cards or a highlight border. Add a small heading: 'New here? Start with these'. DONE: Start here section exists on homepage above Popular. DO NOT TOUCH: Popular section logic, album grid. VERIFY: pnpm build passes.",
+      "steps": ["Read app/page.tsx", "Add Start Here section above Popular", "Pick 3 best tracks", "Style distinctively", "pnpm build passes"],
+      "files": ["app/page.tsx"],
+      "passes": false
     },
     {
       "id": 14,
-      "category": "feature",
-      "priority": 0,
-      "description": "Onboard batch 7.5 song: we-havent-built-windows-yet. Same process. Read content/songs/batch7.5/lyrics/we-havent-built-windows-yet.md. Use Lenny MCP for annotations. Add to correct album (likely 'electric-dreams'). DONE: Track in lib/albums.ts with annotations. VERIFY: pnpm build passes.",
-      "steps": ["Read lyrics", "Use Lenny MCP for annotations", "Add to lib/albums.ts", "pnpm build passes"],
-      "files": ["lib/albums.ts"],
-      "passes": true
+      "category": "quality",
+      "priority": 2,
+      "description": "Verify all source URLs are valid. Read lib/albums.ts. For every track, check if sources[].url looks like a real Lenny URL (should be https://www.lennysnewsletter.com/p/ or similar). Flag any that look fabricated (random slugs) or are empty. Use mcp__lennysdata__search_content to find correct URLs where possible. Write content/qa/url-audit.md listing problematic URLs. DONE: URL audit exists. DO NOT TOUCH: code. VERIFY: pnpm build passes.",
+      "steps": ["Read lib/albums.ts URLs", "Flag suspicious ones", "Verify via MCP", "Write audit", "pnpm build passes"],
+      "files": ["content/qa/url-audit.md"],
+      "passes": false
     },
     {
       "id": 15,
-      "category": "quality",
-      "priority": 1,
-      "description": "QA Round 1 — PM Persona audit. Pretend you are Sarah, senior PM, Lenny podcast listener. 5 minutes to explore. Read app/page.tsx, app/album/[slug]/AlbumPageClient.tsx, app/track/[slug]/TrackPageClient.tsx, app/songs/page.tsx, components/NowPlayingBar.tsx, components/SyncedLyrics.tsx, components/TrackRow.tsx, components/VoteButtons.tsx, components/OnboardingTooltips.tsx, components/KeyboardShortcuts.tsx, components/ThemeToggle.tsx. Write content/qa/round1-pm-audit.md: First Impressions, Navigation Flow, Content Quality, Search Experience, Top 5 Issues ranked by impact. Be brutally honest. DONE: Audit file exists. DO NOT TOUCH: code. VERIFY: pnpm build passes.",
-      "steps": ["Read all page files", "Read all component files", "Write audit", "pnpm build passes"],
-      "files": ["content/qa/round1-pm-audit.md"],
-      "passes": true
-    },
-    {
-      "id": 16,
       "category": "bugfix",
-      "priority": 1,
-      "description": "Fix issue #1 from Round 1 PM audit. Read content/qa/round1-pm-audit.md. Find the #1 ranked issue. Read the relevant file(s). Make the minimal code fix. DONE: Issue #1 resolved. VERIFY: pnpm build passes.",
-      "steps": ["Read audit", "Read relevant file", "Fix", "pnpm build passes"],
-      "files": [],
-      "passes": true
-    },
-    {
-      "id": 17,
-      "category": "bugfix",
-      "priority": 1,
-      "description": "Fix issue #2 from Round 1 PM audit. Read content/qa/round1-pm-audit.md. Find the #2 ranked issue. Fix it. DONE: Issue #2 resolved. VERIFY: pnpm build passes.",
-      "steps": ["Read audit", "Fix issue #2", "pnpm build passes"],
-      "files": [],
-      "passes": true
-    },
-    {
-      "id": 18,
-      "category": "bugfix",
-      "priority": 1,
-      "description": "Fix issue #3 from Round 1 PM audit. Read content/qa/round1-pm-audit.md. Find the #3 ranked issue. Fix it. DONE: Issue #3 resolved. VERIFY: pnpm build passes.",
-      "steps": ["Read audit", "Fix issue #3", "pnpm build passes"],
-      "files": [],
-      "passes": true
-    },
-    {
-      "id": 19,
-      "category": "quality",
-      "priority": 1,
-      "description": "Annotation quality audit. Read lib/albums.ts. For EVERY track that has an annotations array, verify: (1) each lyricText substring exists in that track's lyrics field, (2) note is specific/factual not vague/generic, (3) annotation doesn't feel force-fit. Write content/qa/annotation-audit.md: one section per album, each track with verdict GOOD/NEEDS_WORK/FORCE_FIT. For FORCE_FIT, explain why and suggest fix. DONE: Audit exists. DO NOT TOUCH: code. VERIFY: pnpm build passes.",
-      "steps": ["Read lib/albums.ts — all annotated tracks", "Verify lyricText matches", "Judge quality", "Write audit", "pnpm build passes"],
-      "files": ["content/qa/annotation-audit.md"],
-      "passes": true
-    },
-    {
-      "id": 20,
-      "category": "bugfix",
-      "priority": 1,
-      "description": "Fix FORCE_FIT annotations. Read content/qa/annotation-audit.md. For each FORCE_FIT annotation: find a better lyric line, rewrite the note to be more specific, or remove it. Use mcp__lennysdata__search_content to verify facts. Every annotation must feel like a natural Genius-style insight. DONE: No force-fit annotations remain. VERIFY: pnpm build passes. Each lyricText still in lyrics.",
-      "steps": ["Read audit", "Fix each flagged annotation", "Verify lyricText matches", "pnpm build passes"],
+      "priority": 2,
+      "description": "Fix broken/fabricated URLs from URL audit. Read content/qa/url-audit.md. Fix each flagged URL in lib/albums.ts. Use MCP to find correct URLs. Set empty string if URL can't be found (better than a broken link). DONE: URLs fixed. VERIFY: pnpm build passes.",
+      "steps": ["Read audit", "Fix URLs", "pnpm build passes"],
       "files": ["lib/albums.ts"],
-      "passes": true
-    },
-    {
-      "id": 21,
-      "category": "quality",
-      "priority": 2,
-      "description": "QA Round 2 — Contest Judge Persona. You are judging Lenny's contest. Criteria: creativity, technical polish, faithfulness to source content, shareability. Read all page and component files again (they changed from Round 1 fixes). Write content/qa/round2-judge-audit.md: Wow Factor (1-10), Faithfulness (1-10), Polish (1-10), Top 3 Winning Qualities, Top 3 Things Holding It Back, What Would Make This Unbeatable, Verdict. DONE: Audit exists. DO NOT TOUCH: code. VERIFY: pnpm build passes.",
-      "steps": ["Read all files", "Score and evaluate", "Write audit", "pnpm build passes"],
-      "files": ["content/qa/round2-judge-audit.md"],
-      "passes": true
-    },
-    {
-      "id": 22,
-      "category": "bugfix",
-      "priority": 2,
-      "description": "Fix top issue from Round 2 judge audit. Read content/qa/round2-judge-audit.md 'Top 3 Things Holding It Back'. Fix the #1 code-fixable issue. DONE: Fixed. VERIFY: pnpm build passes.",
-      "steps": ["Read audit", "Fix #1 issue", "pnpm build passes"],
-      "files": [],
-      "passes": true
-    },
-    {
-      "id": 23,
-      "category": "bugfix",
-      "priority": 2,
-      "description": "Fix second issue from Round 2 judge audit. Read content/qa/round2-judge-audit.md. Fix the #2 code-fixable issue from 'Top 3 Things Holding It Back'. DONE: Fixed. VERIFY: pnpm build passes.",
-      "steps": ["Read audit", "Fix #2 issue", "pnpm build passes"],
-      "files": [],
-      "passes": true
-    },
-    {
-      "id": 24,
-      "category": "quality",
-      "priority": 2,
-      "description": "QA Round 3 — Lenny Himself. You are Lenny Rachitsky. Does this represent your content well? Would you share it? Read lib/albums.ts thoroughly. Spot-check 5 tracks using mcp__lennysdata__search_content to verify sources, quotes, and attributions are accurate. Write content/qa/round3-lenny-audit.md: What Makes Lenny Smile, Accuracy Issues (specific tracks + what's wrong), Missing Topics, Misrepresentations, Overall Verdict. DONE: Audit exists. DO NOT TOUCH: code. VERIFY: pnpm build passes.",
-      "steps": ["Read lib/albums.ts", "Spot-check 5 tracks with MCP", "Write audit", "pnpm build passes"],
-      "files": ["content/qa/round3-lenny-audit.md"],
-      "passes": true
-    },
-    {
-      "id": 25,
-      "category": "bugfix",
-      "priority": 2,
-      "description": "Fix accuracy issues from Lenny audit. Read content/qa/round3-lenny-audit.md. For each specific accuracy issue (wrong source, misattribution, wrong quote): verify with mcp__lennysdata__search_content and mcp__lennysdata__read_excerpt, then fix in lib/albums.ts. Only fix clearly wrong facts. DONE: Accuracy issues resolved. VERIFY: pnpm build passes.",
-      "steps": ["Read audit", "Verify with MCP", "Fix in lib/albums.ts", "pnpm build passes"],
-      "files": ["lib/albums.ts"],
-      "passes": true
-    },
-    {
-      "id": 26,
-      "category": "quality",
-      "priority": 3,
-      "description": "QA Round 4 — Mobile User. You are Jamie on a phone during commute. Read all components looking for: hidden sm: classes (what's hidden on mobile?), touch targets under 44px, text truncation issues, layout problems on narrow screens. Write content/qa/round4-mobile-audit.md: Hidden on Mobile (list everything hidden), Touch Target Issues, Truncation/Overflow, Layout Concerns, Top 5 Mobile Issues ranked. DONE: Audit exists. DO NOT TOUCH: code. VERIFY: pnpm build passes.",
-      "steps": ["Read all components for responsive classes", "Write audit", "pnpm build passes"],
-      "files": ["content/qa/round4-mobile-audit.md"],
-      "passes": true
-    },
-    {
-      "id": 27,
-      "category": "bugfix",
-      "priority": 3,
-      "description": "Fix top 2 mobile issues from Round 4. Read content/qa/round4-mobile-audit.md. Fix #1 and #2 mobile issues. Common fixes: increase touch targets, show hidden elements on mobile, fix truncation. DONE: Top 2 fixed. VERIFY: pnpm build passes.",
-      "steps": ["Read audit", "Fix #1 mobile issue", "Fix #2 mobile issue", "pnpm build passes"],
-      "files": [],
-      "passes": true
+      "passes": false
     }
   ]
 }
