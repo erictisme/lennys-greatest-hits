@@ -28,7 +28,7 @@
         "pnpm build passes"
       ],
       "files": ["app/globals.css", "app/layout.tsx"],
-      "passes": false
+      "passes": true
     },
     {
       "id": 3,
