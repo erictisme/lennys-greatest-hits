@@ -104,7 +104,8 @@ export default function Home() {
   return (
     <div className="flex flex-col min-h-screen max-w-5xl mx-auto w-full px-4 sm:px-6">
       {/* 1. Artist Header */}
-      <header className="pt-12 sm:pt-16 pb-6">
+      <header className="relative pt-12 sm:pt-16 pb-6">
+        <div className="absolute -inset-x-20 -inset-y-10 bg-gradient-to-r from-amber-500/[0.03] via-transparent to-amber-500/[0.03] blur-3xl pointer-events-none" />
         <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight leading-[1.05]">
           Lenny&apos;s Greatest Hits
         </h1>
