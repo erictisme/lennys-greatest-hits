@@ -169,7 +169,7 @@
       "description": "Annotation quality audit. Read lib/albums.ts. For EVERY track that has an annotations array, verify: (1) each lyricText substring exists in that track's lyrics field, (2) note is specific/factual not vague/generic, (3) annotation doesn't feel force-fit. Write content/qa/annotation-audit.md: one section per album, each track with verdict GOOD/NEEDS_WORK/FORCE_FIT. For FORCE_FIT, explain why and suggest fix. DONE: Audit exists. DO NOT TOUCH: code. VERIFY: pnpm build passes.",
       "steps": ["Read lib/albums.ts — all annotated tracks", "Verify lyricText matches", "Judge quality", "Write audit", "pnpm build passes"],
       "files": ["content/qa/annotation-audit.md"],
-      "passes": false
+      "passes": true
     },
     {
       "id": 20,
