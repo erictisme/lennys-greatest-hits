@@ -34,7 +34,7 @@
       "description": "Onboard batch 7 song: the-long-game. Same process. Read content/songs/batch7/lyrics/the-long-game.md, research, annotations JSON. Add to correct album in lib/albums.ts. DONE: Track in lib/albums.ts. VERIFY: pnpm build passes.",
       "steps": ["Read lyrics", "Read research", "Read annotations", "Add to lib/albums.ts", "pnpm build passes"],
       "files": ["lib/albums.ts"],
-      "passes": false
+      "passes": true
     },
     {
       "id": 5,

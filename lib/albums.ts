@@ -4579,6 +4579,97 @@ The lights go low`,
     ],
     releaseDate: "2026-03-22",
   },
+  {
+    slug: "the-long-game",
+    title: "The Long Game",
+    albumSlug: "career-moves",
+    trackNumber: 8,
+    duration: "3:00",
+    audioUrl: "/audio/the-long-game.mp3",
+    coverImage: "/covers/the-long-game.jpg",
+    genre: "Acoustic Soul",
+    mood: "Bittersweet, contemplative, warm",
+    tags: ["career", "purpose", "milestones", "ambition", "self-reflection"],
+    lyrics: `[Verse 1]
+Saturday mornings at the track
+Watching those greyhounds lean and run
+Chasing a rabbit on a wire
+Never catching it under the sun
+My father said, that's how they stay
+The moment they touch it, they're done
+
+[Pre-Chorus]
+I wrote it down in my twenties
+A list of things I'd become
+Labels and titles and milestones
+But the shelf feels heavy and numb
+
+[Chorus]
+What do you chase
+When you've been chasing all along?
+Version two came, version three
+Then you forgot the song
+What do you run for
+When the rabbit's in your hand?
+You'll make a war where there was peace—
+You don't understand
+
+[Verse 2 — cello enters]
+Your gift throws a shadow, you know
+The sharper the edge, the more it cuts
+Someone you trusted spoke plainly
+Said the thing you'd covered up
+Rewiring took years to take hold
+A long road before it was enough
+
+[Pre-Chorus]
+They told you to think one step forward
+I'm asking you: think two ahead
+Don't plan for the prize you are holding
+Plan for the one that comes instead
+
+[Chorus]
+What do you chase
+When you've been chasing all along?
+Version two came, version three
+Then you forgot the song
+What do you run for
+When the rabbit's in your hand?
+You'll make a war where there was peace—
+You don't understand
+
+[Bridge — cello solo, then return]
+Sixty years is a long time, friend
+Act three is where the work begins
+Build your next North Star before you
+Touch the one that's pulling in
+
+[Final Chorus — one line changed]
+What do you chase
+When you've been chasing all along?
+Version two came, version three
+Then you forgot the song
+What do you run for
+When the rabbit's in your hand?
+You'll make a war where there was peace—
+Until you understand`,
+    concept: "Nikhyl Singhal's childhood memory of greyhound dog tracks becomes a metaphor for career milestones — the dogs that catch the rabbit never run again. A waltz about what happens when driven people achieve everything they chased and feel nothing.",
+    keyInsight: "Stop optimizing for the rabbit. Start building a career that has reasons to keep running after you catch it.",
+    sources: [
+      { title: "Building a long and meaningful career | Nikhyl Singhal (Meta, Google)", type: "podcast" as const, url: "https://www.lennysnewsletter.com/p/building-a-long-and-meaningful-career", guest: "Nikhyl Singhal" },
+    ],
+    keyQuote: "The moment the dogs touched the rabbit, they would never run again because there was like, 'Well, what's next?'",
+    quoteSpeaker: "Nikhyl Singhal",
+    storyBehind: "Nikhyl Singhal grew up going to greyhound dog tracks in the Midwest. The dogs chased a mechanical rabbit around the ring — if one accidentally caught it, it would never race again. He used this as his opening metaphor on Lenny's podcast for what happens to ambitious people who define their career around catching one milestone. His framework: think of your career as a product with versions, plan for the job after the next one, and remember that a 60-year career means even someone 20 years in is only a third of the way through.",
+    annotations: [
+      { lyricText: "Watching those greyhounds lean and run", note: "Nikhyl Singhal opened Lenny's podcast with a childhood memory of going to greyhound dog tracks in the Midwest. The dogs chased a mechanical rabbit around the ring. If a dog accidentally caught the rabbit, it would never run again — 'because there was like, well, what's next?' He used this as a metaphor for career milestones.", sourceTitle: "Building a long and meaningful career | Nikhyl Singhal (Meta, Google)", sourceUrl: "" },
+      { lyricText: "Version two came, version three", note: "Nikhyl told Lenny to think of your career as a product: 'If you're building a good product, you think about what a great product would look like, then you break it into version one, version two, version three.' His newsletter is called The Skip because he always thinks not about the next job, but the one after it.", sourceTitle: "Building a long and meaningful career | Nikhyl Singhal (Meta, Google)", sourceUrl: "" },
+      { lyricText: "Your gift throws a shadow, you know", note: "Nikhyl discussed how every superpower creates a shadow. His own gift — being decisively opinionated with limited information — also made him difficult to work with. Someone he trusted gave him honest feedback, and rewiring that behavior took years of deliberate work.", sourceTitle: "Building a long and meaningful career | Nikhyl Singhal (Meta, Google)", sourceUrl: "" },
+      { lyricText: "Sixty years is a long time, friend", note: "Nikhyl told Lenny that with people working into their 70s and 80s, careers could be 60 years long. Even someone 20-30 years in is only halfway. He argued we don't talk about 'act three' enough — what happens after you've already built and succeeded. Without a plan, people become lost.", sourceTitle: "Building a long and meaningful career | Nikhyl Singhal (Meta, Google)", sourceUrl: "" },
+      { lyricText: "You'll make a war where there was peace", note: "Nikhyl warned Lenny's listeners about what happens when driven people catch their rabbit and have nothing left to chase: 'You'll keep working because you know nothing else to do, but you'll be sadder, or you'll find ways to create war when peace is needed.' The drive that made you successful becomes destructive without a new purpose.", sourceTitle: "Building a long and meaningful career | Nikhyl Singhal (Meta, Google)", sourceUrl: "" },
+    ],
+    releaseDate: "2026-03-24",
+  },
 ];
 
 const electricDreamsTracks: Track[] = [
