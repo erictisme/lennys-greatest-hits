@@ -283,7 +283,7 @@
         "pnpm build passes"
       ],
       "files": [".gitignore", "scripts/upload-audio.ts"],
-      "passes": false
+      "passes": true
     },
     {
       "id": 21,

@@ -1,3 +1,7 @@
+// Flow: (1) upload-audio → uploads MP3s to Supabase Storage
+//       (2) migrate-audio-urls → rewrites audioUrl paths in lib/albums.ts
+//       (3) .gitignore excludes public/audio/*.mp3 from git
+
 import "dotenv/config";
 import { createClient } from "@supabase/supabase-js";
 import { readdirSync } from "fs";
