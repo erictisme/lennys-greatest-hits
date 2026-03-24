@@ -125,6 +125,15 @@ export default function VoteButtons({
         />
       </motion.button>
 
+      {state.upCount > 0 && (
+        <span
+          className="text-xs font-medium tabular-nums -ml-1"
+          style={{ color: state.userVote === "up" ? accentColor : inactiveColor }}
+        >
+          {state.upCount}
+        </span>
+      )}
+
       <motion.button
         onClick={() => handleVote("down")}
         animate={animating === "down" ? { scale: [1, 1.2, 1] } : { scale: 1 }}

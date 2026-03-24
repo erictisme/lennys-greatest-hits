@@ -15,3 +15,4 @@ Task 13: Onboarded three-eras to The Startup Life (track 17) with 5 MCP-verified
 Task 14: Onboarded we-havent-built-windows-yet to Electric Dreams (track 8) with 5 MCP-verified annotations. Nick Turley / ChatGPT origin — hackathon to 700M users, MS-DOS metaphor, jazz pianist backstory. Build passes.
 Task 15: QA Round 1 PM audit written to content/qa/round1-pm-audit.md. Top 5: prev/next ignores album, vote counts hidden, no global nav, mobile votes hidden, fake lyric sync. Build passes.
 Task 16: Fixed prev/next navigation to use album tracks instead of global track list. Now navigating within an album stays in that album. Build passes.
+Task 17: Show upvote count next to thumbs-up button for social proof. Count appears when > 0, styled with accent color when user has voted. Build passes.

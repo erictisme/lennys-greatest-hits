@@ -151,7 +151,7 @@
       "description": "Fix issue #2 from Round 1 PM audit. Read content/qa/round1-pm-audit.md. Find the #2 ranked issue. Fix it. DONE: Issue #2 resolved. VERIFY: pnpm build passes.",
       "steps": ["Read audit", "Fix issue #2", "pnpm build passes"],
       "files": [],
-      "passes": false
+      "passes": true
     },
     {
       "id": 18,
