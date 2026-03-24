@@ -218,6 +218,10 @@ export default function TrackPageClient({ slug }: { slug: string }) {
                   height={176}
                   className="w-full h-full object-cover"
                   onLoad={() => setImageLoaded(true)}
+                  onError={(e) => {
+                    const img = e.currentTarget;
+                    if (album.coverImage && img.src !== album.coverImage) img.src = album.coverImage;
+                  }}
                 />
               </div>
             )}

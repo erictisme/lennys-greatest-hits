@@ -131,6 +131,10 @@ export default function NowPlayingBar() {
               width={40}
               height={40}
               className="w-8 h-8 sm:w-10 sm:h-10 rounded flex-shrink-0 object-cover"
+              onError={(e) => {
+                const img = e.currentTarget;
+                if (album?.coverImage && img.src !== album.coverImage) img.src = album.coverImage;
+              }}
             />
           ) : (
             <div
