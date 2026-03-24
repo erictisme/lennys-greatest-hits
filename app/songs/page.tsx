@@ -114,7 +114,7 @@ export default function SongsPage() {
       </div>
 
       {/* Column headers */}
-      <div className="flex items-center gap-3 px-3 -mx-3 pb-2 mb-1 border-b border-border/30 text-[11px] uppercase tracking-wider text-muted-foreground/40 font-medium">
+      <div className="flex items-center gap-3 px-3 -mx-3 pb-2 mb-1 border-b border-border/30 text-[11px] uppercase tracking-wider text-muted-foreground/50 font-medium">
         <span className="w-10 shrink-0">#</span>
         <span className="flex-1 min-w-0">Title</span>
         <span className="hidden sm:inline w-20 shrink-0 text-right">Plays</span>
@@ -167,7 +167,7 @@ export default function SongsPage() {
                   <>
                     <span
                       className={`text-sm tabular-nums ${isCurrentTrack ? "hidden" : "group-hover:hidden"}`}
-                      style={isCurrentTrack ? { color: "var(--primary)" } : { color: "rgba(161,161,170,0.4)" }}
+                      style={isCurrentTrack ? { color: "var(--primary)" } : { color: "rgba(161,161,170,0.6)" }}
                     >
                       {trackIdx + 1}
                     </span>
