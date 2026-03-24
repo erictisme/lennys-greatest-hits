@@ -43,6 +43,7 @@ export const metadata: Metadata = {
     description:
       "88 songs from 638 episodes. The insights you quote on X, turned into music you can feel.",
   },
+  themeColor: "#0a0a0a",
 };
 
 export default function RootLayout({

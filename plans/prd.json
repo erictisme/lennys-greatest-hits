@@ -189,7 +189,7 @@
         "pnpm build passes"
       ],
       "files": ["app/opengraph-image.tsx", "app/layout.tsx"],
-      "passes": false
+      "passes": true
     },
     {
       "id": 14,
