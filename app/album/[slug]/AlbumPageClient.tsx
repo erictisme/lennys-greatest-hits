@@ -129,7 +129,7 @@ export default function AlbumPageClient({ slug }: { slug: string }) {
             All Albums
           </Link>
 
-          <div className="flex items-start gap-6">
+          <div className="flex flex-col sm:flex-row items-center sm:items-start gap-6">
             <div className="shrink-0">
               {album.coverImage ? (
                 <Image
@@ -147,9 +147,9 @@ export default function AlbumPageClient({ slug }: { slug: string }) {
                 </div>
               )}
             </div>
-            <div className="min-w-0">
+            <div className="min-w-0 text-center sm:text-left">
               <div
-                className="w-12 h-1.5 rounded-full mb-5"
+                className="w-12 h-1.5 rounded-full mb-5 mx-auto sm:mx-0"
                 style={{ backgroundColor: album.accentColor }}
               />
               <h1 className="text-4xl sm:text-5xl font-bold tracking-tight mb-2">
@@ -380,7 +380,7 @@ export default function AlbumPageClient({ slug }: { slug: string }) {
                   {/* Vote Buttons (hidden for locked) */}
                   {!locked && (
                     <div
-                      className="hidden sm:flex items-center shrink-0"
+                      className="flex items-center shrink-0"
                       onClick={(e) => e.stopPropagation()}
                     >
                       <VoteButtons trackSlug={track.slug} accentColor={album.accentColor} />

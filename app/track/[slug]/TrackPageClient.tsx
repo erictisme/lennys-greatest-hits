@@ -205,7 +205,7 @@ export default function TrackPageClient({ slug }: { slug: string }) {
             </Link>
           </div>
 
-          <div className="flex items-start gap-5">
+          <div className="flex flex-col sm:flex-row items-center sm:items-start gap-5">
             {track.coverImage && (
               <div className="relative w-36 h-36 sm:w-44 sm:h-44 rounded-lg overflow-hidden flex-shrink-0 shadow-md">
                 {!imageLoaded && (
@@ -225,7 +225,7 @@ export default function TrackPageClient({ slug }: { slug: string }) {
                 />
               </div>
             )}
-            <div className="min-w-0">
+            <div className="min-w-0 text-center sm:text-left">
               <p
                 className="text-xs font-medium uppercase tracking-widest mb-2"
                 style={{ color: album.accentColor }}
@@ -256,7 +256,7 @@ export default function TrackPageClient({ slug }: { slug: string }) {
                 </p>
               )}
               {track.tags && track.tags.length > 0 && (
-                <div className="flex flex-wrap gap-1.5 mt-2">
+                <div className="flex flex-wrap justify-center sm:justify-start gap-1.5 mt-2">
                   {track.tags.map((tag) => (
                     <Link
                       key={tag}
@@ -269,7 +269,7 @@ export default function TrackPageClient({ slug }: { slug: string }) {
                 </div>
               )}
               {!track.isLocked && (
-                <div className="mt-3">
+                <div className="mt-3 flex justify-center sm:justify-start">
                   <VoteButtons trackSlug={track.slug} accentColor={album.accentColor} />
                 </div>
               )}

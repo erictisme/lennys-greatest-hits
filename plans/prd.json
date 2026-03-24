@@ -241,7 +241,7 @@
       "description": "Fix top 2 mobile issues from Round 4. Read content/qa/round4-mobile-audit.md. Fix #1 and #2 mobile issues. Common fixes: increase touch targets, show hidden elements on mobile, fix truncation. DONE: Top 2 fixed. VERIFY: pnpm build passes.",
       "steps": ["Read audit", "Fix #1 mobile issue", "Fix #2 mobile issue", "pnpm build passes"],
       "files": [],
-      "passes": false
+      "passes": true
     }
   ]
 }

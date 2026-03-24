@@ -9,3 +9,5 @@ Task 25: Fixed "Taste" track attribution fuzziness — replaced fabricated Shrey
 Files changed: lib/albums.ts
 Task 26: QA Round 4 — Mobile user audit. Identified hidden vote buttons, non-stacking headers, invisible hover-only share buttons, sort pill overflow, undersized touch targets.
 Files changed: content/qa/round4-mobile-audit.md
+Task 27: Fixed top 2 mobile issues — vote buttons now visible on mobile (removed hidden sm:flex), album/track headers stack vertically on small screens (flex-col sm:flex-row).
+Files changed: components/TrackRow.tsx, AlbumPageClient.tsx, TrackPageClient.tsx

@@ -122,7 +122,7 @@ export default function TrackRow({
 
       {/* Vote & Share buttons — always visible */}
       <div
-        className="hidden sm:flex items-center shrink-0"
+        className="flex items-center shrink-0"
         onClick={(e) => e.stopPropagation()}
       >
         <VoteButtons trackSlug={track.slug} accentColor="#b45309" />
