@@ -18,7 +18,7 @@ import { getTrackBySlug, getAlbumForTrack } from "@/lib/tracks";
 import { notFound, useRouter } from "next/navigation";
 import { useAudio } from "@/lib/audio-context";
 import { trackEvent } from "@/lib/analytics";
-import SyncedLyrics from "@/components/SyncedLyrics";
+import LyricsDisplay from "@/components/SyncedLyrics";
 import EmailSignup from "@/components/EmailSignup";
 import VoteButtons from "@/components/VoteButtons";
 import { Lock } from "lucide-react";
@@ -442,15 +442,11 @@ export default function TrackPageClient({ slug }: { slug: string }) {
             <h2 className="text-xs font-medium uppercase tracking-widest text-muted-foreground/50 mb-4">
               Lyrics
             </h2>
-            <SyncedLyrics
+            <LyricsDisplay
               lyrics={track.lyrics}
-              currentTime={currentTime}
-              duration={duration}
-              isPlaying={isPlaying}
               accentColor={album.accentColor}
               trackTitle={track.title}
               albumTitle={album.title}
-              onSeek={(time) => audio.seek(time)}
               annotations={track.annotations}
             />
           </section>

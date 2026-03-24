@@ -7,29 +7,24 @@ import { trackEvent } from "@/lib/analytics";
 import ShareLyricModal from "./ShareLyricModal";
 import type { LyricAnnotation } from "@/lib/types";
 
-interface SyncedLine {
+interface ParsedLine {
   text: string;
-  time: number;
   isChorus: boolean;
   isQuote: boolean;
   isSectionLabel: boolean;
   speaker?: string;
 }
 
-interface SyncedLyricsProps {
+interface LyricsDisplayProps {
   lyrics: string;
-  currentTime: number;
-  duration: number;
-  isPlaying: boolean;
   accentColor: string;
   trackTitle: string;
   albumTitle: string;
-  onSeek: (time: number) => void;
   annotations?: LyricAnnotation[];
 }
 
-function parseLyrics(raw: string, duration: number): SyncedLine[] {
-  const lines: SyncedLine[] = [];
+function parseLyrics(raw: string): ParsedLine[] {
+  const lines: ParsedLine[] = [];
   let inChorus = false;
   let inQuote = false;
   let speaker: string | undefined;
@@ -55,7 +50,6 @@ function parseLyrics(raw: string, duration: number): SyncedLine[] {
       const label = trimmed.slice(1, -1); // Remove brackets
       lines.push({
         text: label,
-        time: 0,
         isChorus: inChorus,
         isQuote: false,
         isSectionLabel: true,
@@ -71,20 +65,11 @@ function parseLyrics(raw: string, duration: number): SyncedLine[] {
 
     lines.push({
       text: lineText,
-      time: 0, // filled below
       isChorus: inChorus,
       isQuote: lineIsQuote,
       isSectionLabel: false,
       speaker: lineSpeaker,
     });
-  }
-
-  // Evenly space lines across the song duration
-  if (lines.length > 0 && duration > 0) {
-    const interval = duration / lines.length;
-    for (let i = 0; i < lines.length; i++) {
-      lines[i].time = i * interval;
-    }
   }
 
   return lines;
@@ -99,24 +84,20 @@ function findAnnotation(
   return annotations.find((a) => lower.includes(a.lyricText.toLowerCase()));
 }
 
-export default function SyncedLyrics({
+export default function LyricsDisplay({
   lyrics,
-  currentTime,
-  duration,
-  isPlaying,
   accentColor,
   trackTitle,
   albumTitle,
-  onSeek,
   annotations,
-}: SyncedLyricsProps) {
+}: LyricsDisplayProps) {
   const containerRef = useRef<HTMLDivElement>(null);
   const lineRefs = useRef<(HTMLDivElement | null)[]>([]);
   const [shareLine, setShareLine] = useState<string | null>(null);
   const [expandedAnnotationIndex, setExpandedAnnotationIndex] = useState<number | null>(null);
   const hasAutoExpanded = useRef(false);
 
-  const lines = useMemo(() => parseLyrics(lyrics, duration), [lyrics, duration]);
+  const lines = useMemo(() => parseLyrics(lyrics), [lyrics]);
 
   // Pre-compute annotation map: each annotation matches only its first occurrence
   const annotationMap = useMemo(() => {

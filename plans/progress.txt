@@ -1,3 +1,5 @@
 # Ralph PROD run Wed Mar 25 07:30:06 +08 2026
 Task 22: Added OG images to track, album, and layout metadata so social shares show cover art instead of blank previews.
 Files changed: app/track/[slug]/page.tsx, app/album/[slug]/page.tsx, app/layout.tsx
+Task 23: Removed fake lyric sync pretense — stripped unused currentTime/isPlaying/onSeek props and fake time calculations from SyncedLyrics, renamed to LyricsDisplay.
+Files changed: components/SyncedLyrics.tsx, app/track/[slug]/TrackPageClient.tsx
