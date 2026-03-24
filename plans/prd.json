@@ -134,6 +134,15 @@
       "steps": ["Read audit", "Fix URLs", "pnpm build passes"],
       "files": ["lib/albums.ts"],
       "passes": false
+    },
+    {
+      "id": 16,
+      "category": "bugfix",
+      "priority": 1,
+      "description": "Fix multi-guest attribution: many songs draw from multiple Lenny guests but only show one quoteSpeaker. Read lib/albums.ts. For EVERY track, check if the lyrics, concept, annotations, or keyInsight reference multiple guests/episodes. If a track draws from 2+ guests but only has 1 source in the sources array, add the missing sources. If quoteSpeaker attributes a composite insight to just one person, either: (a) change quoteSpeaker to the most accurate single person, or (b) change the keyQuote to one that IS from that specific person, verified via mcp__lennysdata__search_content. Common pattern: 'Taste' draws from Shreyas Doshi, Brian Chesky, and Scott Belsky — it already has 2 sources but annotations reference Belsky too. Ensure sources array covers all referenced guests. Check at minimum these tracks known to reference multiple guests: taste, do-things-that-dont-scale, im-in-the-room, build-the-machine, ship-it, product-market-fit, the-maze, eleven-stars, vibe-coding. For each, read the lyrics and annotations, identify all guests mentioned, and ensure the sources array includes them all with correct titles, types, URLs (use MCP to find), and guest names. DONE: All multi-guest tracks have complete sources arrays. No guest is referenced in lyrics/annotations but missing from sources. VERIFY: pnpm build passes.",
+      "steps": ["Read lib/albums.ts", "Check 10+ tracks for missing sources", "Use Lenny MCP to find missing source URLs", "Add missing sources to each track", "pnpm build passes"],
+      "files": ["lib/albums.ts"],
+      "passes": false
     }
   ]
 }
