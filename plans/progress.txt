@@ -5,3 +5,5 @@ Task 23: Removed fake lyric sync pretense — stripped unused currentTime/isPlay
 Files changed: components/SyncedLyrics.tsx, app/track/[slug]/TrackPageClient.tsx
 Task 24: QA Round 3 — Lenny persona audit. Spot-checked 5 tracks (Taste, I'm in the Room, Fire with Grace, Do Things That Don't Scale, Imposter) against Lenny MCP archive. Found minor attribution fuzziness on "Taste" (Shreyas Doshi). Score: 8/10.
 Files changed: content/qa/round3-lenny-audit.md
+Task 25: Fixed "Taste" track attribution fuzziness — replaced fabricated Shreyas Doshi quotes with verified quotes from the live episode, corrected source URLs, reattributed annotations to actual sources (Scott Belsky, synthesis).
+Files changed: lib/albums.ts

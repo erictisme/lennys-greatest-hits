@@ -223,7 +223,7 @@
       "description": "Fix accuracy issues from Lenny audit. Read content/qa/round3-lenny-audit.md. For each specific accuracy issue (wrong source, misattribution, wrong quote): verify with mcp__lennysdata__search_content and mcp__lennysdata__read_excerpt, then fix in lib/albums.ts. Only fix clearly wrong facts. DONE: Accuracy issues resolved. VERIFY: pnpm build passes.",
       "steps": ["Read audit", "Verify with MCP", "Fix in lib/albums.ts", "pnpm build passes"],
       "files": ["lib/albums.ts"],
-      "passes": false
+      "passes": true
     },
     {
       "id": 26,
