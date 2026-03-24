@@ -3154,6 +3154,104 @@ Let 'em choose — and now they're asking you`,
     releaseDate: "2026-03-21",
     sunoId: "6ddd046d-b4d7-4b00-855a-66accbbf34b0",
   },
+  {
+    slug: "the-obsession",
+    title: "The Obsession",
+    albumSlug: "by-the-numbers",
+    trackNumber: 5,
+    duration: "3:00",
+    audioUrl: "/audio/the-obsession.mp3",
+    coverImage: "/covers/the-obsession.jpg",
+    genre: "Minimal Electronic / Post-Rock",
+    mood: "Intimate, precise, quietly ecstatic",
+    tags: ["metrics", "customer obsession", "measurement", "product-market fit"],
+    lyrics: `[Verse 1]
+We had an outage, twenty minutes flat
+The server came back, the team raised a glass
+No one knocked, not a single call
+The quiet told me everything, at last
+
+[Pre-Chorus, whispered]
+I watched the silence and called it good
+Read the wrong line in the wrong place
+
+[Chorus]
+I log every bad day
+every crack inside the floor
+The chart goes up and to the left
+that's what I'm working for
+I log every bad day
+count the ones who got away
+
+[Verse 2]
+Fifteen percent made it without a call
+No tickets filed, no hand raised for help
+I asked one question: would they tell a friend
+Watched eighty-five climb up the shelf
+
+[Bridge]
+Leak the dashboard — they'd be ecstatic
+Give the metric a name that stings
+"Companies with zero" — that's the gospel
+Four plain words — the only thing
+
+[Chorus]
+I log every bad day
+every crack inside the floor
+The chart goes up and to the left
+that's what I'm working for
+I log every bad day
+count the ones who got away
+
+[Final Chorus]
+I log every bad day
+every crack inside the floor
+The chart goes up and to the left
+that's what I'm working for
+I log every bad day
+until the silence sings`,
+    concept: "Measurement is an act of love — when a metric is truly customer-facing, it's not a spreadsheet, it's a promise. Jeff Weinstein's journey from missing the signal of silence to building the most human metric at Stripe Atlas.",
+    keyInsight: "The best metrics measure what the customer actually experiences. Jeff Weinstein drove Atlas from 15% to 85% zero-support completions in 18 months by picking one honest, customer-facing metric.",
+    keyQuote: "If you accidentally leaked your dashboard to your customer, they would be ecstatic to learn that that's what you were measuring the whole time.",
+    quoteSpeaker: "Jeff Weinstein",
+    sources: [
+      { title: "Building product at Stripe: craft, metrics, and customer obsession", type: "podcast", url: "https://www.lennyspodcast.com/building-product-at-stripe-craft-metrics-and-customer-obsession-jeff-weinstein-product-lead/", guest: "Jeff Weinstein" },
+    ],
+    storyBehind: "Jeff Weinstein ran a startup building SQL analytics software. When a 20-minute outage happened and no customers complained, he didn't realize the silence was the signal — they didn't have product-market fit. Years later at Stripe Atlas, he created a metric called 'companies with zero support tickets' and drove it from 15% to 85% in 18 months. Market share followed the same curve. His philosophy: if you leaked your dashboard to customers and they'd be ecstatic, you're measuring the right thing.",
+    annotations: [
+      {
+        lyricText: "The quiet told me everything, at last",
+        note: "Jeff Weinstein tells the story of his pre-Stripe startup: they had a 20-minute outage and when the service came back, no customers complained. He says he 'missed it' — the silence wasn't satisfaction, it was indifference. 'That was the signal that we did not have product market fit.' The absence of urgency was the most important data point.",
+        sourceTitle: "Building product at Stripe: craft, metrics, and customer obsession",
+        sourceUrl: "https://www.lennyspodcast.com/building-product-at-stripe-craft-metrics-and-customer-obsession-jeff-weinstein-product-lead/",
+      },
+      {
+        lyricText: "Fifteen percent made it without a call",
+        note: "When Jeff started working on Stripe Atlas, he looked at every support ticket and asked a simple question: are these happy tickets or sad tickets? He then measured 'the percentage of founders going through the service with zero support tickets' — only 15% made it through cleanly. Over 18 months, his 10-person team drove that to 85%, and 'you can look at the market share plotted on the same timeframe and it's the same shape.'",
+        sourceTitle: "Building product at Stripe: craft, metrics, and customer obsession",
+        sourceUrl: "https://www.lennyspodcast.com/building-product-at-stripe-craft-metrics-and-customer-obsession-jeff-weinstein-product-lead/",
+      },
+      {
+        lyricText: "The chart goes up and to the left",
+        note: "Jeff inverts the classic startup chart cliché: 'Sometimes people will get excited about a chart that goes up into the right. I'm really excited about charts that go up into the left.' He means optimizing how quickly customers reach resolution — you want 100% of customers getting their final decision as fast as possible, so the curve shoots up and to the left.",
+        sourceTitle: "Building product at Stripe: craft, metrics, and customer obsession",
+        sourceUrl: "https://www.lennyspodcast.com/building-product-at-stripe-craft-metrics-and-customer-obsession-jeff-weinstein-product-lead/",
+      },
+      {
+        lyricText: "Leak the dashboard — they'd be ecstatic",
+        note: "Jeff's litmus test for whether you're measuring the right thing: 'If you accidentally leaked your dashboard to them, your customer would be ecstatic to learn that that's what you were measuring the whole time.' At Atlas, they often screenshot and publish internal metrics — and customers are happy to see that Stripe spent all its time making sure none of them had support tickets.",
+        sourceTitle: "Building product at Stripe: craft, metrics, and customer obsession",
+        sourceUrl: "https://www.lennyspodcast.com/building-product-at-stripe-craft-metrics-and-customer-obsession-jeff-weinstein-product-lead/",
+      },
+      {
+        lyricText: "\"Companies with zero\" — that's the gospel",
+        note: "Jeff chose the metric name 'companies with zero support tickets' deliberately — not a database field name, not something with underscores. He picked a single overarching metric owned by the whole team, then set specific KRs owned by individual engineers for the tactics. 'We would not allow ourselves the perverse tactics to just casually exist. We would choose which tactics we're going to do and then set a metric for it.'",
+        sourceTitle: "Building product at Stripe: craft, metrics, and customer obsession",
+        sourceUrl: "https://www.lennyspodcast.com/building-product-at-stripe-craft-metrics-and-customer-obsession-jeff-weinstein-product-lead/",
+      },
+    ],
+    releaseDate: "2026-03-24",
+  },
 ];
 
 const theWeightTracks: Track[] = [
