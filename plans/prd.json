@@ -4,14 +4,8 @@
       "id": 1,
       "category": "feature",
       "priority": 0,
-      "description": "Onboard batch 7 tracks (7 songs) into lib/albums.ts. MP3s are already at public/audio/{slug}.mp3, covers at public/covers/{slug}.jpg. Songs to onboard: a-hundred-nos, how-have-i-been-complicit, seventy-five-businesses, the-giant-piece-of-shit, the-long-game, thinking-in-bets, crossing-the-chasm. For EACH song: (1) Read the lyrics from content/songs/batch7/lyrics/{slug}.md to get metadata (Title, Album, Source, Genre, Mood, etc.) and full lyrics. (2) Read the research brief from content/songs/batch7/research/{slug}.md for concept, keyInsight, storyBehind, keyQuote, quoteSpeaker. (3) Read the annotation draft from content/songs/batch7/annotations/{slug}.json for pre-written annotations. (4) Add the track object to the correct album's track array in lib/albums.ts. The track object needs ALL fields: slug, title, albumSlug, trackNumber (next available in that album), duration (get from MP3 metadata or estimate from lyrics length — use '3:00' as default), audioUrl: '/audio/{slug}.mp3', coverImage: '/covers/{slug}.jpg', genre, mood, lyrics (the full lyrics text without metadata headers), concept, keyInsight, sources (array of {title, type, url, guest}), keyQuote, quoteSpeaker, storyBehind, tags (3-5 relevant topic tags), annotations (from the JSON file), releaseDate: '2026-03-24'. (5) Find the right album by checking the metadata Album field in the lyrics file. Map to existing album slugs. If no album matches, add to 'the-startup-life' as default. DONE: All 7 batch 7 tracks appear in lib/albums.ts with complete metadata. DO NOT TOUCH: existing tracks. VERIFY: pnpm build passes.",
-      "steps": [
-        "Read all 7 batch 7 lyrics files for metadata",
-        "Read all 7 research briefs",
-        "Read all 7 annotation JSON files",
-        "Add each track to the correct album in lib/albums.ts",
-        "pnpm build passes"
-      ],
+      "description": "Onboard batch 7 song: the-giant-piece-of-shit. MP3 at public/audio/the-giant-piece-of-shit.mp3, cover at public/covers/the-giant-piece-of-shit.jpg. (1) Read content/songs/batch7/lyrics/the-giant-piece-of-shit.md for metadata (Title, Album, Source, Genre, Mood, Tags, Concept, Key Insight, Key Quote, Quote Speaker, Story Behind) and full lyrics text. (2) Read content/songs/batch7/research/the-giant-piece-of-shit.md for additional context. (3) Read content/songs/batch7/annotations/the-giant-piece-of-shit.json for pre-written annotations. (4) Find the correct album tracks array in lib/albums.ts by matching the Album field from lyrics metadata (e.g. 'The Craft' → theCraftTracks). (5) Add the track object to that array. Fields: slug, title, albumSlug, trackNumber (next number in that album), duration '3:00', audioUrl '/audio/the-giant-piece-of-shit.mp3', coverImage '/covers/the-giant-piece-of-shit.jpg', genre, mood, lyrics (full lyrics without metadata/headers — just the song lines), concept, keyInsight, sources [{title, type, url, guest}], keyQuote, quoteSpeaker, storyBehind, tags, annotations (from JSON), releaseDate '2026-03-24'. DONE: Track appears in lib/albums.ts. DO NOT TOUCH: existing tracks. VERIFY: pnpm build passes.",
+      "steps": ["Read lyrics md", "Read research md", "Read annotations json", "Add track to correct album array in lib/albums.ts", "pnpm build passes"],
       "files": ["lib/albums.ts"],
       "passes": false
     },
@@ -19,149 +13,233 @@
       "id": 2,
       "category": "feature",
       "priority": 0,
-      "description": "Onboard batch 7.5 tracks (7 songs) into lib/albums.ts. MP3s at public/audio/{slug}.mp3, covers at public/covers/{slug}.jpg. Songs: coding-is-solved, the-hard-thing, the-hiring-playbook, the-obsession, the-value-loop, three-eras, we-havent-built-windows-yet. For EACH: (1) Read lyrics from content/songs/batch7.5/lyrics/{slug}.md for metadata and lyrics. (2) Read research brief if it exists at content/songs/batch7.5/research/{slug}.md. (3) Add the track to the correct album in lib/albums.ts with all fields (same pattern as task 1). For annotations: use mcp__lennysdata__search_content and mcp__lennysdata__read_excerpt to research 3-5 annotations per track. Find lyric lines that reference specific Lenny content, write factual notes. (4) Map albums from metadata: 'electric-dreams' for AI songs, 'the-startup-life' for startup songs, 'the-craft' for product craft, 'the-weight' for leadership, 'the-talent-search' for hiring. DONE: All 7 batch 7.5 tracks in lib/albums.ts with metadata and annotations. DO NOT TOUCH: existing tracks. VERIFY: pnpm build passes.",
-      "steps": [
-        "Read all 7 batch 7.5 lyrics files",
-        "Read research briefs where available",
-        "Use Lenny MCP to research annotations for each song",
-        "Add each track to correct album in lib/albums.ts",
-        "pnpm build passes"
-      ],
+      "description": "Onboard batch 7 song: a-hundred-nos. Same process as task 1. Read content/songs/batch7/lyrics/a-hundred-nos.md, content/songs/batch7/research/a-hundred-nos.md, content/songs/batch7/annotations/a-hundred-nos.json. Add track to correct album in lib/albums.ts with all fields. DONE: Track in lib/albums.ts. DO NOT TOUCH: existing tracks. VERIFY: pnpm build passes.",
+      "steps": ["Read lyrics", "Read research", "Read annotations", "Add to lib/albums.ts", "pnpm build passes"],
       "files": ["lib/albums.ts"],
       "passes": false
     },
     {
       "id": 3,
-      "category": "quality",
-      "priority": 1,
-      "description": "QA Round 1 — PM Persona. Pretend you are Sarah, a senior PM at a Series B startup who listens to Lenny's Podcast weekly. She clicked a link in Lenny's Slack and has 5 minutes. Read EVERY page file: app/page.tsx, app/album/[slug]/AlbumPageClient.tsx, app/track/[slug]/TrackPageClient.tsx, app/songs/page.tsx, and all components in components/. Walk through the user journey. Write content/qa/round1-pm-audit.md: First Impressions, Navigation Issues, Content Quality, Top 5 Issues (ranked by impact). Be brutally honest. DONE: Audit file exists. DO NOT TOUCH: code. VERIFY: pnpm build passes.",
-      "steps": [
-        "Read all page and component files",
-        "Write content/qa/round1-pm-audit.md",
-        "pnpm build passes"
-      ],
-      "files": ["content/qa/round1-pm-audit.md"],
+      "category": "feature",
+      "priority": 0,
+      "description": "Onboard batch 7 song: thinking-in-bets. Same process. Read content/songs/batch7/lyrics/thinking-in-bets.md, research, annotations JSON. Add to correct album in lib/albums.ts. DONE: Track in lib/albums.ts. VERIFY: pnpm build passes.",
+      "steps": ["Read lyrics", "Read research", "Read annotations", "Add to lib/albums.ts", "pnpm build passes"],
+      "files": ["lib/albums.ts"],
       "passes": false
     },
     {
       "id": 4,
-      "category": "bugfix",
-      "priority": 1,
-      "description": "Fix top 3 code-fixable issues from Round 1 PM audit. Read content/qa/round1-pm-audit.md Top 5 Issues. Fix the top 3 that can be fixed with code changes (skip anything needing new assets, design overhaul, or Eric's input). For each: read file, make minimal change, verify build. DONE: Top 3 issues fixed. DO NOT TOUCH: lib/audio-context.tsx. VERIFY: pnpm build passes.",
-      "steps": [
-        "Read content/qa/round1-pm-audit.md",
-        "Fix issue 1",
-        "Fix issue 2",
-        "Fix issue 3",
-        "pnpm build passes"
-      ],
-      "files": [],
+      "category": "feature",
+      "priority": 0,
+      "description": "Onboard batch 7 song: the-long-game. Same process. Read content/songs/batch7/lyrics/the-long-game.md, research, annotations JSON. Add to correct album in lib/albums.ts. DONE: Track in lib/albums.ts. VERIFY: pnpm build passes.",
+      "steps": ["Read lyrics", "Read research", "Read annotations", "Add to lib/albums.ts", "pnpm build passes"],
+      "files": ["lib/albums.ts"],
       "passes": false
     },
     {
       "id": 5,
-      "category": "quality",
-      "priority": 1,
-      "description": "Audit ALL annotations for quality. Read lib/albums.ts, check every track with annotations. For each annotation verify: (1) lyricText appears in that track's lyrics, (2) note is specific and factual, not vague, (3) it doesn't feel force-fit. Write content/qa/annotation-audit.md with verdicts per track: GOOD, NEEDS WORK, or FORCE-FIT. For FORCE-FIT, suggest fix. DONE: Audit file exists. DO NOT TOUCH: code. VERIFY: pnpm build passes.",
-      "steps": [
-        "Read lib/albums.ts — all annotated tracks",
-        "Check each annotation quality",
-        "Write content/qa/annotation-audit.md",
-        "pnpm build passes"
-      ],
-      "files": ["content/qa/annotation-audit.md"],
+      "category": "feature",
+      "priority": 0,
+      "description": "Onboard batch 7 song: how-have-i-been-complicit. Same process. Read content/songs/batch7/lyrics/how-have-i-been-complicit.md, research, annotations JSON. Add to correct album in lib/albums.ts. DONE: Track in lib/albums.ts. VERIFY: pnpm build passes.",
+      "steps": ["Read lyrics", "Read research", "Read annotations", "Add to lib/albums.ts", "pnpm build passes"],
+      "files": ["lib/albums.ts"],
       "passes": false
     },
     {
       "id": 6,
-      "category": "bugfix",
-      "priority": 1,
-      "description": "Fix FORCE-FIT annotations from the audit. Read content/qa/annotation-audit.md. For each FORCE-FIT: find a better lyric line, rewrite the note, or remove the annotation. Use mcp__lennysdata__search_content to verify facts. Every remaining annotation must feel natural. DONE: No force-fit annotations. VERIFY: pnpm build passes.",
-      "steps": [
-        "Read content/qa/annotation-audit.md",
-        "Fix each flagged annotation in lib/albums.ts",
-        "pnpm build passes"
-      ],
+      "category": "feature",
+      "priority": 0,
+      "description": "Onboard batch 7 song: crossing-the-chasm. Same process. Read content/songs/batch7/lyrics/crossing-the-chasm.md, research, annotations JSON. Add to correct album in lib/albums.ts. DONE: Track in lib/albums.ts. VERIFY: pnpm build passes.",
+      "steps": ["Read lyrics", "Read research", "Read annotations", "Add to lib/albums.ts", "pnpm build passes"],
       "files": ["lib/albums.ts"],
       "passes": false
     },
     {
       "id": 7,
-      "category": "quality",
-      "priority": 2,
-      "description": "QA Round 2 — Contest Judge Persona. Pretend you are a Lenny contest judge evaluating entries. You care about: creativity, technical quality, faithfulness to Lenny's content, and 'would I share this?'. Read all pages and components again (they may have changed from Round 1 fixes). Write content/qa/round2-judge-audit.md: Wow Factor Score (1-10), Faithfulness Score (1-10), Polish Score (1-10), Top 3 Things That Would Win, Top 3 Things Holding It Back, Verdict. DONE: Audit exists. DO NOT TOUCH: code. VERIFY: pnpm build passes.",
-      "steps": [
-        "Read all page and component files",
-        "Write content/qa/round2-judge-audit.md",
-        "pnpm build passes"
-      ],
-      "files": ["content/qa/round2-judge-audit.md"],
+      "category": "feature",
+      "priority": 0,
+      "description": "Onboard batch 7 song: seventy-five-businesses. Same process. Read content/songs/batch7/lyrics/seventy-five-businesses.md, research, annotations JSON. Add to correct album in lib/albums.ts. DONE: Track in lib/albums.ts. VERIFY: pnpm build passes.",
+      "steps": ["Read lyrics", "Read research", "Read annotations", "Add to lib/albums.ts", "pnpm build passes"],
+      "files": ["lib/albums.ts"],
       "passes": false
     },
     {
       "id": 8,
-      "category": "bugfix",
-      "priority": 2,
-      "description": "Fix top 2 code-fixable issues from Round 2 judge audit. Read content/qa/round2-judge-audit.md 'Top 3 Things Holding It Back'. Fix the top 2 that are code-fixable. DONE: Issues fixed. VERIFY: pnpm build passes.",
-      "steps": [
-        "Read content/qa/round2-judge-audit.md",
-        "Fix top 2 issues",
-        "pnpm build passes"
-      ],
-      "files": [],
+      "category": "feature",
+      "priority": 0,
+      "description": "Onboard batch 7.5 song: coding-is-solved. MP3 at public/audio/coding-is-solved.mp3, cover at public/covers/coding-is-solved.jpg. (1) Read content/songs/batch7.5/lyrics/coding-is-solved.md for metadata and lyrics. (2) Read content/songs/batch7.5/research/coding-is-solved.md if it exists. (3) NO pre-written annotations — use mcp__lennysdata__search_content to find the source episode/article, then mcp__lennysdata__read_excerpt for quotes. Write 3-5 annotations: {lyricText (exact substring from lyrics), note (2-3 sentences connecting lyric to Lenny content), sourceTitle, sourceUrl}. (4) Add track to correct album in lib/albums.ts. Map album from metadata — AI/coding songs go to 'electric-dreams' (electricDreamsTracks). DONE: Track in lib/albums.ts with annotations. VERIFY: pnpm build passes.",
+      "steps": ["Read lyrics", "Read research if exists", "Use Lenny MCP for annotations", "Add to lib/albums.ts", "pnpm build passes"],
+      "files": ["lib/albums.ts"],
       "passes": false
     },
     {
       "id": 9,
-      "category": "quality",
-      "priority": 2,
-      "description": "QA Round 3 — Lenny Himself. Pretend you are Lenny Rachitsky evaluating this entry. You care about accuracy, respect for your content, and whether this makes you smile. Read lib/albums.ts thoroughly — all track data, sources, quotes. Use mcp__lennysdata__search_content to spot-check 5 random tracks for accuracy. Write content/qa/round3-lenny-audit.md: What Would Make Lenny Smile, Accuracy Issues, Misrepresentations, Missing Topics, Overall Verdict. DONE: Audit exists. DO NOT TOUCH: code. VERIFY: pnpm build passes.",
-      "steps": [
-        "Read lib/albums.ts thoroughly",
-        "Spot-check 5 tracks with Lenny MCP",
-        "Write content/qa/round3-lenny-audit.md",
-        "pnpm build passes"
-      ],
-      "files": ["content/qa/round3-lenny-audit.md"],
+      "category": "feature",
+      "priority": 0,
+      "description": "Onboard batch 7.5 song: the-hard-thing. Same process as task 8. Read content/songs/batch7.5/lyrics/the-hard-thing.md. Use Lenny MCP for 3-5 annotations. Add to correct album (likely 'the-startup-life' or 'the-weight' depending on topic). DONE: Track in lib/albums.ts with annotations. VERIFY: pnpm build passes.",
+      "steps": ["Read lyrics", "Read research if exists", "Use Lenny MCP for annotations", "Add to lib/albums.ts", "pnpm build passes"],
+      "files": ["lib/albums.ts"],
       "passes": false
     },
     {
       "id": 10,
-      "category": "bugfix",
-      "priority": 2,
-      "description": "Fix accuracy issues from Lenny audit. Read content/qa/round3-lenny-audit.md. Fix any misattributions, wrong sources, or inaccurate quotes in lib/albums.ts. Use mcp__lennysdata__search_content and mcp__lennysdata__read_excerpt to verify corrections. Only fix clearly wrong facts. DONE: Accuracy issues resolved. VERIFY: pnpm build passes.",
-      "steps": [
-        "Read content/qa/round3-lenny-audit.md",
-        "Use Lenny MCP to verify",
-        "Fix errors in lib/albums.ts",
-        "pnpm build passes"
-      ],
+      "category": "feature",
+      "priority": 0,
+      "description": "Onboard batch 7.5 song: the-hiring-playbook. Same process. Read content/songs/batch7.5/lyrics/the-hiring-playbook.md. Use Lenny MCP for annotations. Add to correct album (likely 'the-talent-search'). DONE: Track in lib/albums.ts with annotations. VERIFY: pnpm build passes.",
+      "steps": ["Read lyrics", "Use Lenny MCP for annotations", "Add to lib/albums.ts", "pnpm build passes"],
       "files": ["lib/albums.ts"],
       "passes": false
     },
     {
       "id": 11,
-      "category": "quality",
-      "priority": 3,
-      "description": "QA Round 4 — Mobile User Persona. Pretend you are Jamie, scrolling on their phone during a commute. Read all components with mobile in mind — check for 'hidden sm:', responsive classes, touch targets (buttons < 44px are too small). Write content/qa/round4-mobile-audit.md: Touch Target Issues, Truncation Problems, Layout Breaks, Readability Concerns, Top 5 Mobile Issues. DONE: Audit exists. DO NOT TOUCH: code. VERIFY: pnpm build passes.",
-      "steps": [
-        "Read all components focusing on mobile classes",
-        "Write content/qa/round4-mobile-audit.md",
-        "pnpm build passes"
-      ],
-      "files": ["content/qa/round4-mobile-audit.md"],
+      "category": "feature",
+      "priority": 0,
+      "description": "Onboard batch 7.5 song: the-obsession. Same process. Read content/songs/batch7.5/lyrics/the-obsession.md. Use Lenny MCP for annotations. Add to correct album (likely 'the-craft'). DONE: Track in lib/albums.ts with annotations. VERIFY: pnpm build passes.",
+      "steps": ["Read lyrics", "Use Lenny MCP for annotations", "Add to lib/albums.ts", "pnpm build passes"],
+      "files": ["lib/albums.ts"],
       "passes": false
     },
     {
       "id": 12,
+      "category": "feature",
+      "priority": 0,
+      "description": "Onboard batch 7.5 song: the-value-loop. Same process. Read content/songs/batch7.5/lyrics/the-value-loop.md. Use Lenny MCP for annotations. Add to correct album (likely 'growth-engine' or 'the-craft'). DONE: Track in lib/albums.ts with annotations. VERIFY: pnpm build passes.",
+      "steps": ["Read lyrics", "Use Lenny MCP for annotations", "Add to lib/albums.ts", "pnpm build passes"],
+      "files": ["lib/albums.ts"],
+      "passes": false
+    },
+    {
+      "id": 13,
+      "category": "feature",
+      "priority": 0,
+      "description": "Onboard batch 7.5 song: three-eras. Same process. Read content/songs/batch7.5/lyrics/three-eras.md. Use Lenny MCP for annotations. Add to correct album. DONE: Track in lib/albums.ts with annotations. VERIFY: pnpm build passes.",
+      "steps": ["Read lyrics", "Use Lenny MCP for annotations", "Add to lib/albums.ts", "pnpm build passes"],
+      "files": ["lib/albums.ts"],
+      "passes": false
+    },
+    {
+      "id": 14,
+      "category": "feature",
+      "priority": 0,
+      "description": "Onboard batch 7.5 song: we-havent-built-windows-yet. Same process. Read content/songs/batch7.5/lyrics/we-havent-built-windows-yet.md. Use Lenny MCP for annotations. Add to correct album (likely 'electric-dreams'). DONE: Track in lib/albums.ts with annotations. VERIFY: pnpm build passes.",
+      "steps": ["Read lyrics", "Use Lenny MCP for annotations", "Add to lib/albums.ts", "pnpm build passes"],
+      "files": ["lib/albums.ts"],
+      "passes": false
+    },
+    {
+      "id": 15,
+      "category": "quality",
+      "priority": 1,
+      "description": "QA Round 1 — PM Persona audit. Pretend you are Sarah, senior PM, Lenny podcast listener. 5 minutes to explore. Read app/page.tsx, app/album/[slug]/AlbumPageClient.tsx, app/track/[slug]/TrackPageClient.tsx, app/songs/page.tsx, components/NowPlayingBar.tsx, components/SyncedLyrics.tsx, components/TrackRow.tsx, components/VoteButtons.tsx, components/OnboardingTooltips.tsx, components/KeyboardShortcuts.tsx, components/ThemeToggle.tsx. Write content/qa/round1-pm-audit.md: First Impressions, Navigation Flow, Content Quality, Search Experience, Top 5 Issues ranked by impact. Be brutally honest. DONE: Audit file exists. DO NOT TOUCH: code. VERIFY: pnpm build passes.",
+      "steps": ["Read all page files", "Read all component files", "Write audit", "pnpm build passes"],
+      "files": ["content/qa/round1-pm-audit.md"],
+      "passes": false
+    },
+    {
+      "id": 16,
+      "category": "bugfix",
+      "priority": 1,
+      "description": "Fix issue #1 from Round 1 PM audit. Read content/qa/round1-pm-audit.md. Find the #1 ranked issue. Read the relevant file(s). Make the minimal code fix. DONE: Issue #1 resolved. VERIFY: pnpm build passes.",
+      "steps": ["Read audit", "Read relevant file", "Fix", "pnpm build passes"],
+      "files": [],
+      "passes": false
+    },
+    {
+      "id": 17,
+      "category": "bugfix",
+      "priority": 1,
+      "description": "Fix issue #2 from Round 1 PM audit. Read content/qa/round1-pm-audit.md. Find the #2 ranked issue. Fix it. DONE: Issue #2 resolved. VERIFY: pnpm build passes.",
+      "steps": ["Read audit", "Fix issue #2", "pnpm build passes"],
+      "files": [],
+      "passes": false
+    },
+    {
+      "id": 18,
+      "category": "bugfix",
+      "priority": 1,
+      "description": "Fix issue #3 from Round 1 PM audit. Read content/qa/round1-pm-audit.md. Find the #3 ranked issue. Fix it. DONE: Issue #3 resolved. VERIFY: pnpm build passes.",
+      "steps": ["Read audit", "Fix issue #3", "pnpm build passes"],
+      "files": [],
+      "passes": false
+    },
+    {
+      "id": 19,
+      "category": "quality",
+      "priority": 1,
+      "description": "Annotation quality audit. Read lib/albums.ts. For EVERY track that has an annotations array, verify: (1) each lyricText substring exists in that track's lyrics field, (2) note is specific/factual not vague/generic, (3) annotation doesn't feel force-fit. Write content/qa/annotation-audit.md: one section per album, each track with verdict GOOD/NEEDS_WORK/FORCE_FIT. For FORCE_FIT, explain why and suggest fix. DONE: Audit exists. DO NOT TOUCH: code. VERIFY: pnpm build passes.",
+      "steps": ["Read lib/albums.ts — all annotated tracks", "Verify lyricText matches", "Judge quality", "Write audit", "pnpm build passes"],
+      "files": ["content/qa/annotation-audit.md"],
+      "passes": false
+    },
+    {
+      "id": 20,
+      "category": "bugfix",
+      "priority": 1,
+      "description": "Fix FORCE_FIT annotations. Read content/qa/annotation-audit.md. For each FORCE_FIT annotation: find a better lyric line, rewrite the note to be more specific, or remove it. Use mcp__lennysdata__search_content to verify facts. Every annotation must feel like a natural Genius-style insight. DONE: No force-fit annotations remain. VERIFY: pnpm build passes. Each lyricText still in lyrics.",
+      "steps": ["Read audit", "Fix each flagged annotation", "Verify lyricText matches", "pnpm build passes"],
+      "files": ["lib/albums.ts"],
+      "passes": false
+    },
+    {
+      "id": 21,
+      "category": "quality",
+      "priority": 2,
+      "description": "QA Round 2 — Contest Judge Persona. You are judging Lenny's contest. Criteria: creativity, technical polish, faithfulness to source content, shareability. Read all page and component files again (they changed from Round 1 fixes). Write content/qa/round2-judge-audit.md: Wow Factor (1-10), Faithfulness (1-10), Polish (1-10), Top 3 Winning Qualities, Top 3 Things Holding It Back, What Would Make This Unbeatable, Verdict. DONE: Audit exists. DO NOT TOUCH: code. VERIFY: pnpm build passes.",
+      "steps": ["Read all files", "Score and evaluate", "Write audit", "pnpm build passes"],
+      "files": ["content/qa/round2-judge-audit.md"],
+      "passes": false
+    },
+    {
+      "id": 22,
+      "category": "bugfix",
+      "priority": 2,
+      "description": "Fix top issue from Round 2 judge audit. Read content/qa/round2-judge-audit.md 'Top 3 Things Holding It Back'. Fix the #1 code-fixable issue. DONE: Fixed. VERIFY: pnpm build passes.",
+      "steps": ["Read audit", "Fix #1 issue", "pnpm build passes"],
+      "files": [],
+      "passes": false
+    },
+    {
+      "id": 23,
+      "category": "bugfix",
+      "priority": 2,
+      "description": "Fix second issue from Round 2 judge audit. Read content/qa/round2-judge-audit.md. Fix the #2 code-fixable issue from 'Top 3 Things Holding It Back'. DONE: Fixed. VERIFY: pnpm build passes.",
+      "steps": ["Read audit", "Fix #2 issue", "pnpm build passes"],
+      "files": [],
+      "passes": false
+    },
+    {
+      "id": 24,
+      "category": "quality",
+      "priority": 2,
+      "description": "QA Round 3 — Lenny Himself. You are Lenny Rachitsky. Does this represent your content well? Would you share it? Read lib/albums.ts thoroughly. Spot-check 5 tracks using mcp__lennysdata__search_content to verify sources, quotes, and attributions are accurate. Write content/qa/round3-lenny-audit.md: What Makes Lenny Smile, Accuracy Issues (specific tracks + what's wrong), Missing Topics, Misrepresentations, Overall Verdict. DONE: Audit exists. DO NOT TOUCH: code. VERIFY: pnpm build passes.",
+      "steps": ["Read lib/albums.ts", "Spot-check 5 tracks with MCP", "Write audit", "pnpm build passes"],
+      "files": ["content/qa/round3-lenny-audit.md"],
+      "passes": false
+    },
+    {
+      "id": 25,
+      "category": "bugfix",
+      "priority": 2,
+      "description": "Fix accuracy issues from Lenny audit. Read content/qa/round3-lenny-audit.md. For each specific accuracy issue (wrong source, misattribution, wrong quote): verify with mcp__lennysdata__search_content and mcp__lennysdata__read_excerpt, then fix in lib/albums.ts. Only fix clearly wrong facts. DONE: Accuracy issues resolved. VERIFY: pnpm build passes.",
+      "steps": ["Read audit", "Verify with MCP", "Fix in lib/albums.ts", "pnpm build passes"],
+      "files": ["lib/albums.ts"],
+      "passes": false
+    },
+    {
+      "id": 26,
+      "category": "quality",
+      "priority": 3,
+      "description": "QA Round 4 — Mobile User. You are Jamie on a phone during commute. Read all components looking for: hidden sm: classes (what's hidden on mobile?), touch targets under 44px, text truncation issues, layout problems on narrow screens. Write content/qa/round4-mobile-audit.md: Hidden on Mobile (list everything hidden), Touch Target Issues, Truncation/Overflow, Layout Concerns, Top 5 Mobile Issues ranked. DONE: Audit exists. DO NOT TOUCH: code. VERIFY: pnpm build passes.",
+      "steps": ["Read all components for responsive classes", "Write audit", "pnpm build passes"],
+      "files": ["content/qa/round4-mobile-audit.md"],
+      "passes": false
+    },
+    {
+      "id": 27,
       "category": "bugfix",
       "priority": 3,
-      "description": "Fix top 3 mobile issues from Round 4. Read content/qa/round4-mobile-audit.md. Fix the top 3 code-fixable mobile issues. Common fixes: increase touch target sizes, fix truncation, adjust responsive breakpoints. DONE: Top 3 mobile issues fixed. VERIFY: pnpm build passes.",
-      "steps": [
-        "Read content/qa/round4-mobile-audit.md",
-        "Fix top 3 mobile issues",
-        "pnpm build passes"
-      ],
+      "description": "Fix top 2 mobile issues from Round 4. Read content/qa/round4-mobile-audit.md. Fix #1 and #2 mobile issues. Common fixes: increase touch targets, show hidden elements on mobile, fix truncation. DONE: Top 2 fixed. VERIFY: pnpm build passes.",
+      "steps": ["Read audit", "Fix #1 mobile issue", "Fix #2 mobile issue", "pnpm build passes"],
       "files": [],
       "passes": false
     }
