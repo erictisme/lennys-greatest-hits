@@ -269,7 +269,7 @@
         "pnpm build passes"
       ],
       "files": ["scripts/migrate-audio-urls.ts", "package.json"],
-      "passes": false
+      "passes": true
     },
     {
       "id": 20,
