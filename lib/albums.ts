@@ -7487,6 +7487,118 @@ See the person...`,
     releaseDate: "2026-03-21",
     sunoId: "8874bbae-7fdf-4745-9234-559e1888fa86",
   },
+  {
+    slug: "seventy-five-businesses",
+    title: "Seventy-Five Businesses",
+    albumSlug: "the-interview",
+    trackNumber: 5,
+    duration: "3:00",
+    audioUrl: "/audio/seventy-five-businesses.mp3",
+    coverImage: "/covers/seventy-five-businesses.jpg",
+    genre: "Lo-fi Dream-Pop",
+    mood: "Wry, earned, slightly melancholic but warm — like a wise older friend telling you what they wish they knew at 25",
+    tags: ["boring businesses", "mental health", "serial entrepreneurship"],
+    lyrics: `[Intro, finger snaps, warm synth pad, vinyl crackle]
+
+[Verse 1]
+Started with a coffee shop
+Lost a little, moved along
+Cat furniture, a DJ school
+Skin cream for the girl next door
+Barista to a billion flat
+Still anxious as the day I started
+
+[Pre-Chorus]
+Times Square living in my head
+Til a little yellow pill
+Turned the volume way back down
+
+[Chorus]
+Fish where the fish are
+Walk away from the crowd
+Boring pays the mortgage —
+Loud is just loud
+A billion in the bank, still scared at night
+Seventy-five tries to get it right
+
+[Verse 2]
+Ten million gone on Flow and dreams
+Asana had a bigger war chest
+Easy choices, hard life — learned that late
+Hard choices bought me something great
+
+[Pre-Chorus]
+An inch deep, a mile wide
+Deadlift light before you load
+That's the whole philosophy
+
+[Chorus]
+Fish where the fish are
+Walk away from the crowd
+Boring pays the mortgage —
+Loud is just loud
+A billion in the bank, still scared at night
+Seventy-five tries to get it right
+
+[Bridge, synth pad swells, snaps drop out]
+Government forms, thirty mil a year
+Nobody wants it, everyone needs it
+Met Steve Jobs at seventeen
+Still just trying to find a quiet room
+
+[Final Chorus, snaps return, warm and full]
+Fish where the fish are
+Walk away from the crowd
+Boring pays the mortgage —
+Loud is just loud
+A billion in the bank, still scared at night
+Seventy-five tries — I'll try again tonight
+
+[Outro, snaps fade, synth holds one note]
+Try again tonight...
+Try again tonight...`,
+    concept: "Andrew Wilkinson started 75+ businesses — from coffee shops to cat furniture to a billion-dollar holding company — and found that boring, uncontested niches beat exciting crowded markets every time. The real twist: a tiny yellow pill did more for his happiness than all the money.",
+    keyInsight: "Stop fishing where everyone else is fishing. The biggest mistake is picking the exciting idea instead of the boring, profitable niche where no one is competing.",
+    sources: [
+      { title: "I've run 75+ businesses. Here's why you're probably chasing the wrong idea.", type: "podcast", url: "https://www.youtube.com/watch?v=VxAwUb86MUE", guest: "Andrew Wilkinson" },
+    ],
+    keyQuote: "I was at one point worth over a billion dollars... and I'm still just as anxious as ever.",
+    quoteSpeaker: "Andrew Wilkinson",
+    storyBehind: "Andrew Wilkinson went from barista to billionaire by co-founding Tiny, a holding company owning 40+ businesses including Dribbble, AeroPress, and Letterboxd. Along the way he lost $10 million competing with Asana via bootstrapped Flow, failed at cat furniture, a DJ school, and skin cream. The biggest revelation wasn't a business insight — it was getting diagnosed with ADHD at 40 and finding that one tiny SSRI pill did more for his mental state than all the exits combined.",
+    annotations: [
+      {
+        lyricText: "Fish where the fish are",
+        note: "Andrew Wilkinson opens the podcast by quoting Charlie Munger, Warren Buffett's longtime business partner: 'Fish where the fish are.' Wilkinson says the biggest mistakes he's made were going into business models where others repeatedly failed, thinking he could do better. He extends the metaphor throughout the episode — don't fight the commercial trawlers, find a quiet fishing hole with lots of fish and little competition.",
+        sourceTitle: "I've run 75+ businesses. Here's why you're probably chasing the wrong idea.",
+        sourceUrl: "https://www.youtube.com/watch?v=VxAwUb86MUE",
+      },
+      {
+        lyricText: "A billion in the bank, still scared at night",
+        note: "Andrew told Lenny he was at one point worth over a billion dollars and was 'still just as anxious as ever.' He described how getting diagnosed with ADHD at around 40 and starting SSRIs finally gave him relief — saying 'no amount of money or success or attention had done what this little tiny yellow pill could do for my mental state.'",
+        sourceTitle: "I've run 75+ businesses. Here's why you're probably chasing the wrong idea.",
+        sourceUrl: "https://www.youtube.com/watch?v=VxAwUb86MUE",
+      },
+      {
+        lyricText: "Ten million gone on Flow and dreams",
+        note: "Andrew built Flow, a project management tool that was essentially Asana before Asana launched. He poured roughly $10 million into it bootstrapped, but Asana had raised hundreds of millions. Andrew compared it to 'Fiji deciding to invade the United States' — a cautionary tale about picking fights in crowded markets instead of finding boring, uncontested niches.",
+        sourceTitle: "I've run 75+ businesses. Here's why you're probably chasing the wrong idea.",
+        sourceUrl: "https://www.youtube.com/watch?v=VxAwUb86MUE",
+      },
+      {
+        lyricText: "Til a little yellow pill",
+        note: "Andrew described being so scared of medication that he cut his first SSRI pill into 10 pieces. Within days of taking it, 'it was like someone turned down the volume on the nasty voice inside of me.' He said his brain went 'from Times Square to a quiet library' after also medicating his ADHD — the single biggest change in his happiness after decades of chasing success.",
+        sourceTitle: "I've run 75+ businesses. Here's why you're probably chasing the wrong idea.",
+        sourceUrl: "https://www.youtube.com/watch?v=VxAwUb86MUE",
+      },
+      {
+        lyricText: "Government forms, thirty mil a year",
+        note: "Andrew told Lenny about a business making $30 million a year by helping people fill out forms to access government assistance programs. Nobody wakes up wanting to build that, which is exactly the point — boring businesses with no competition and clear customer value are where the real money is. This was his go-to example of 'fish where the fish are' in practice.",
+        sourceTitle: "I've run 75+ businesses. Here's why you're probably chasing the wrong idea.",
+        sourceUrl: "https://www.youtube.com/watch?v=VxAwUb86MUE",
+      },
+    ],
+    releaseDate: "2026-03-24",
+  },
 ];
 
 const deepWorkTracks: Track[] = [
