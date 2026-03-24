@@ -6,6 +6,3 @@ logs/
 *.tsbuildinfo
 next-env.d.ts
 .vercel
-
-# MP3s served from Supabase Storage — local copies for dev only
-public/audio/*.mp3
