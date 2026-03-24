@@ -187,7 +187,7 @@
       "description": "QA Round 2 — Contest Judge Persona. You are judging Lenny's contest. Criteria: creativity, technical polish, faithfulness to source content, shareability. Read all page and component files again (they changed from Round 1 fixes). Write content/qa/round2-judge-audit.md: Wow Factor (1-10), Faithfulness (1-10), Polish (1-10), Top 3 Winning Qualities, Top 3 Things Holding It Back, What Would Make This Unbeatable, Verdict. DONE: Audit exists. DO NOT TOUCH: code. VERIFY: pnpm build passes.",
       "steps": ["Read all files", "Score and evaluate", "Write audit", "pnpm build passes"],
       "files": ["content/qa/round2-judge-audit.md"],
-      "passes": false
+      "passes": true
     },
     {
       "id": 22,

@@ -19,3 +19,4 @@ Task 17: Show upvote count next to thumbs-up button for social proof. Count appe
 Task 18: Added global navigation bar (Home, All Songs, Search, ThemeToggle) as sticky header on all non-home pages. Users can now navigate from any page. Build passes.
 Task 19: Annotation quality audit written to content/qa/annotation-audit.md. 480 annotations audited: 459 GOOD, 21 lyricText mismatches (quote types, capitalization, fabricated text). Build passes.
 Task 20: Fixed all 21 mismatched annotations: 6 quote-type fixes, 2 capitalization/line-break fixes, 13 fabricated lyricText replaced with exact lyric substrings. Build passes.
+Task 21: QA Round 2 contest judge audit written. Scores: Wow 8/10, Faithfulness 8/10, Polish 7/10. Top issues: missing OG meta tags, fake lyric sync, no prominent share CTA on track pages. Build passes.
