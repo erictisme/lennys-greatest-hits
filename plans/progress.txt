@@ -9,3 +9,4 @@ Task 12: Final dark mode audit. Fixed album loading skeleton bg-black/5→bg-whi
 Task 13: OG image already dark. Added themeColor: '#0a0a0a' to layout.tsx metadata. Build passes.
 Task 14: Songs page — brightened track numbers rgba 0.4→0.6, column headers /40→/50 for dark mode readability. Build passes.
 Task 15: Added subtle accent-colored top border to NowPlayingBar via inline borderTopColor style with 25% opacity. Build passes.
+Task 16: Added subtle warm amber glow shadow on album cover hover using transition-all and group-hover:shadow. Build passes.

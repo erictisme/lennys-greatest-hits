@@ -240,7 +240,7 @@ export default function Home() {
                       className="group block"
                     >
                       <div>
-                        <div className="relative aspect-square w-full overflow-hidden rounded-lg mb-2 shadow-md transition-transform duration-300 group-hover:scale-[1.04]">
+                        <div className="relative aspect-square w-full overflow-hidden rounded-lg mb-2 shadow-md transition-all duration-300 group-hover:scale-[1.04] group-hover:shadow-[0_8px_30px_rgba(245,158,11,0.08)]">
                           {album.coverImage ? (
                             <Image
                               src={album.coverImage}
