@@ -8636,6 +8636,99 @@ Ohhhh... what gets you out of bed`,
     ],
     releaseDate: "2026-03-22",
   },
+  {
+    slug: "how-have-i-been-complicit",
+    title: "How Have I Been Complicit",
+    albumSlug: "the-human-side",
+    trackNumber: 8,
+    duration: "3:00",
+    audioUrl: "/audio/how-have-i-been-complicit.mp3",
+    coverImage: "/covers/how-have-i-been-complicit.jpg",
+    genre: "Intimate Acoustic Folk",
+    mood: "Reckoning — warm, not accusatory. Like sitting across from a friend who tells you the truth.",
+    tags: ["leadership", "self-awareness", "coaching"],
+    lyrics: `[Verse 1, whispered]
+I say I don't want the noise
+But I fill up every day
+I say I want some quiet
+Then I give that quiet away
+
+[Pre-Chorus]
+There's a little voice inside
+That I've been running from
+Not failure I was hiding
+It was becoming numb
+
+[Chorus]
+How have I been complicit
+In the mess I'm standing in
+I didn't pull the trigger
+But I drove the car again
+How have I been complicit
+In the life I say I hate
+I'm not the one who built this—
+Wait
+
+[Verse 2, whispered]
+A man stood at a tree line
+Looked at the oak come down
+It laid there slowly giving
+Back to the quiet ground
+
+[Pre-Chorus]
+He said — here lies a good man
+Who spent his years awake
+Sheltered those beneath him
+Before he finally broke
+
+[Chorus]
+How have I been complicit
+In the mess I'm standing in
+I didn't pull the trigger
+But I drove the car again
+How have I been complicit
+In the life I say I hate
+I'm not the one who built this—
+Wait
+
+[Bridge, barely above a whisper]
+What's unconscious drives the car
+What's unconscious sets the pace
+Until you name the thing inside
+It just calls itself your fate
+
+[Final Chorus, slightly more open]
+How have I been complicit
+In the mess I'm standing in
+I didn't pull the trigger
+But I drove the car again
+How have I been complicit
+In the life I say I hate
+I'm not the one who built this—
+I built this
+
+[Outro, spoken-sung, fading]
+The art of growing up
+Is just a practice
+Not a door you walk through once
+Just a practice`,
+    concept: "Jerry Colonna's famous self-inquiry question — 'How have I been complicit in creating the conditions I say I don't want?' — turned into a spare, whispered folk confession about the gap between what we claim to want and what we actually choose.",
+    keyInsight: "Complicit doesn't mean responsible. You're driving the getaway car, not sticking up the bank teller. The question isn't about blame — it's about reclaiming your own agency.",
+    keyQuote: "I say I don't want to feel busy all the time, but the truth of the matter is I feel really unnerved and disconcerted if my agenda isn't jam-packed.",
+    quoteSpeaker: "Jerry Colonna",
+    sources: [
+      { title: "How have I been complicit in creating the conditions I say I don't want? | Jerry Colonna", type: "podcast" as const, url: "https://www.lennysnewsletter.com/p/how-have-i-been-complicit-in-creating", guest: "Jerry Colonna" },
+    ],
+    storyBehind: "Jerry Colonna spent 15-17 years as a VC — co-founding Flatiron Partners with Fred Wilson — before a personal crisis in his late 30s led him to become one of the most respected executive coaches in tech. His signature question, 'How have I been complicit?', has become a mantra in startup culture. On Lenny's podcast, he turned the lens on Lenny himself in real time, exposing how busyness is a mechanism to quiet imposter syndrome.",
+    annotations: [
+      { lyricText: "I drove the car again", note: "Jerry chose the word 'complicit' deliberately: 'Think of the word accomplice. As I will share, you are driving the getaway car, you're not sticking up the bank teller.' The distinction matters — the question isn't about blame, it's about recognizing the small ways you participate in outcomes you claim to reject.", sourceTitle: "How have I been complicit in creating the conditions I say I don't want? | Jerry Colonna", sourceUrl: "https://www.lennysnewsletter.com/p/how-have-i-been-complicit-in-creating" },
+      { lyricText: "I say I don't want the noise", note: "Jerry gives this exact example on the podcast: 'I say I don't want to feel busy all the time, but the truth of the matter is I feel really unnerved and disconcerted if my agenda isn't jam-packed.' The complicit question reveals the gap between what we claim to want and what we actually choose.", sourceTitle: "How have I been complicit in creating the conditions I say I don't want? | Jerry Colonna", sourceUrl: "https://www.lennysnewsletter.com/p/how-have-i-been-complicit-in-creating" },
+      { lyricText: "here lies a good man", note: "Jerry describes finding a toppled oak tree and saying to himself, 'Here lies a good man.' He imagined the tree lived 75-80 years with limbs gnarled by good and bad choices, but spent its life providing shelter and shade for those beneath it — slowly dissolving into the earth, having lived its purpose.", sourceTitle: "How have I been complicit in creating the conditions I say I don't want? | Jerry Colonna", sourceUrl: "https://www.lennysnewsletter.com/p/how-have-i-been-complicit-in-creating" },
+      { lyricText: "What's unconscious drives the car", note: "Jerry quotes Carl Jung: 'Until you make the unconscious conscious, it will direct your life and you will call it fate.' He then applies it to teams: until you make conscious the unconscious patterns operating in the group, the group will continue to repeat those patterns and blame individuals instead.", sourceTitle: "How have I been complicit in creating the conditions I say I don't want? | Jerry Colonna", sourceUrl: "https://www.lennysnewsletter.com/p/how-have-i-been-complicit-in-creating" },
+      { lyricText: "The art of growing up", note: "The subtitle of Jerry's first book Reboot is 'Leadership and the Art of Growing Up.' On the podcast he says: 'The Art of Growing Up is a practice. It's not a scientific moment where one day you wake up and you're done. It's an ongoing practice of continuous inquiry that can feel exhausting when you contemplate it, but enlivening when you live it.'", sourceTitle: "How have I been complicit in creating the conditions I say I don't want? | Jerry Colonna", sourceUrl: "https://www.lennysnewsletter.com/p/how-have-i-been-complicit-in-creating" },
+    ],
+    releaseDate: "2026-03-24",
+  },
 ];
 
 export const albums: Album[] = [
