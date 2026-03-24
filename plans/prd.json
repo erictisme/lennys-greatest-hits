@@ -232,7 +232,7 @@
       "description": "QA Round 4 — Mobile User. You are Jamie on a phone during commute. Read all components looking for: hidden sm: classes (what's hidden on mobile?), touch targets under 44px, text truncation issues, layout problems on narrow screens. Write content/qa/round4-mobile-audit.md: Hidden on Mobile (list everything hidden), Touch Target Issues, Truncation/Overflow, Layout Concerns, Top 5 Mobile Issues ranked. DONE: Audit exists. DO NOT TOUCH: code. VERIFY: pnpm build passes.",
       "steps": ["Read all components for responsive classes", "Write audit", "pnpm build passes"],
       "files": ["content/qa/round4-mobile-audit.md"],
-      "passes": false
+      "passes": true
     },
     {
       "id": 27,

@@ -7,3 +7,5 @@ Task 24: QA Round 3 — Lenny persona audit. Spot-checked 5 tracks (Taste, I'm i
 Files changed: content/qa/round3-lenny-audit.md
 Task 25: Fixed "Taste" track attribution fuzziness — replaced fabricated Shreyas Doshi quotes with verified quotes from the live episode, corrected source URLs, reattributed annotations to actual sources (Scott Belsky, synthesis).
 Files changed: lib/albums.ts
+Task 26: QA Round 4 — Mobile user audit. Identified hidden vote buttons, non-stacking headers, invisible hover-only share buttons, sort pill overflow, undersized touch targets.
+Files changed: content/qa/round4-mobile-audit.md
