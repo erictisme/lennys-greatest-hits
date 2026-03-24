@@ -116,8 +116,8 @@ export default function Home() {
             trackEvent("shuffle_play_clicked");
             audio.shuffleAll();
           }}
-          className="mt-4 inline-flex items-center gap-2 px-6 py-2.5 text-sm font-semibold rounded-full text-white hover:opacity-90 transition-opacity"
-          style={{ backgroundColor: "#b45309" }}
+          className="mt-4 inline-flex items-center gap-2 px-6 py-2.5 text-sm font-semibold rounded-full text-black hover:opacity-90 transition-opacity"
+          style={{ backgroundColor: "#f59e0b" }}
         >
           <Shuffle className="w-4 h-4" />
           Shuffle Play

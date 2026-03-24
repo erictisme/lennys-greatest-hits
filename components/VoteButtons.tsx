@@ -21,7 +21,7 @@ interface VoteState {
 
 const circleBtn =
   "w-10 h-10 rounded-full flex items-center justify-center transition-colors";
-const glassBg = "hover:bg-black/[0.08]";
+const glassBg = "hover:bg-white/[0.08]";
 
 export default function VoteButtons({
   trackSlug,

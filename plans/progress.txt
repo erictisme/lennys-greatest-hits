@@ -3,3 +3,4 @@ Task 1: Rewrote OnboardingTooltips to single-line subtle banner. Removed emojis,
 Task 2: Added .dark CSS variable block in globals.css with dark theme colors. html tag already had dark class. Build passes.
 Task 3+4: Fixed share dropdown bg-white→bg-popover, hover:bg-black→hover:bg-white, text colors, and track row hover states in AlbumPageClient.tsx. Build passes.
 Task 5-9: Dark mode gradients, card-glass, loading skeletons, NowPlayingBar, SyncedLyrics, TrackPageClient, not-found — all bg-black→bg-white swaps. Build passes.
+Task 11: Shuffle Play button #b45309→#f59e0b bright amber, text-white→text-black. VoteButtons hover:bg-black→hover:bg-white. Build passes.
