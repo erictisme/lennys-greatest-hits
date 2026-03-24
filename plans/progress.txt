@@ -1,3 +1,4 @@
 # Ralph PROD run Tue Mar 24 08:09:18 +08 2026
 Task 1: Rewrote OnboardingTooltips to single-line subtle banner. Removed emojis, grid, multi-tip layout. Build passes.
 Task 2: Added .dark CSS variable block in globals.css with dark theme colors. html tag already had dark class. Build passes.
+Task 3+4: Fixed share dropdown bg-white→bg-popover, hover:bg-black→hover:bg-white, text colors, and track row hover states in AlbumPageClient.tsx. Build passes.

@@ -240,25 +240,25 @@ export default function AlbumPageClient({ slug }: { slug: string }) {
                     animate={{ opacity: 1, scale: 1, y: 0 }}
                     exit={{ opacity: 0, scale: 0.95, y: -4 }}
                     transition={{ duration: 0.15 }}
-                    className="absolute left-0 top-full mt-1 z-50 bg-white rounded-lg shadow-lg border border-border/50 py-1 w-[180px]"
+                    className="absolute left-0 top-full mt-1 z-50 bg-popover rounded-lg shadow-lg border border-border/50 py-1 w-[180px]"
                   >
                     <button
                       onClick={handleAlbumShareX}
-                      className="flex items-center gap-2.5 w-full px-3 py-2 text-sm text-foreground/80 hover:bg-black/[0.04] transition-colors whitespace-nowrap"
+                      className="flex items-center gap-2.5 w-full px-3 py-2 text-sm text-popover-foreground hover:bg-white/[0.06] transition-colors whitespace-nowrap"
                     >
                       <Share2 className="w-3.5 h-3.5" />
                       Share to X
                     </button>
                     <button
                       onClick={handleAlbumShareLinkedIn}
-                      className="flex items-center gap-2.5 w-full px-3 py-2 text-sm text-foreground/80 hover:bg-black/[0.04] transition-colors whitespace-nowrap"
+                      className="flex items-center gap-2.5 w-full px-3 py-2 text-sm text-popover-foreground hover:bg-white/[0.06] transition-colors whitespace-nowrap"
                     >
                       <Share2 className="w-3.5 h-3.5" />
                       Share to LinkedIn
                     </button>
                     <button
                       onClick={handleAlbumCopyLink}
-                      className="flex items-center gap-2.5 w-full px-3 py-2 text-sm text-foreground/80 hover:bg-black/[0.04] transition-colors whitespace-nowrap"
+                      className="flex items-center gap-2.5 w-full px-3 py-2 text-sm text-popover-foreground hover:bg-white/[0.06] transition-colors whitespace-nowrap"
                     >
                       {albumCopied ? (
                         <Check className="w-3.5 h-3.5 text-green-600" />
@@ -286,7 +286,7 @@ export default function AlbumPageClient({ slug }: { slug: string }) {
             return (
               <div key={track.slug}>
                 <div
-                  className="group flex items-center gap-4 px-4 py-4 -mx-4 rounded-lg hover:bg-black/[0.04] transition-colors cursor-pointer"
+                  className="group flex items-center gap-4 px-4 py-4 -mx-4 rounded-lg hover:bg-white/[0.04] transition-colors cursor-pointer"
                   onClick={() => {
                     if (locked) return;
                     router.push(`/track/${track.slug}`);
@@ -426,7 +426,7 @@ export default function AlbumPageClient({ slug }: { slug: string }) {
                           e.stopPropagation();
                           setOpenMenu(openMenu === track.slug ? null : track.slug);
                         }}
-                        className="opacity-0 group-hover:opacity-100 focus:opacity-100 transition-opacity p-1.5 rounded-md hover:bg-black/[0.06]"
+                        className="opacity-0 group-hover:opacity-100 focus:opacity-100 transition-opacity p-1.5 rounded-md hover:bg-white/[0.06]"
                         aria-label="Share options"
                       >
                         <MoreHorizontal className="w-4 h-4 text-muted-foreground/60" />
@@ -439,25 +439,25 @@ export default function AlbumPageClient({ slug }: { slug: string }) {
                             animate={{ opacity: 1, scale: 1, y: 0 }}
                             exit={{ opacity: 0, scale: 0.95, y: -4 }}
                             transition={{ duration: 0.15 }}
-                            className="absolute right-0 top-full mt-1 z-50 bg-white rounded-lg shadow-lg border border-border/50 py-1 w-[180px]"
+                            className="absolute right-0 top-full mt-1 z-50 bg-popover rounded-lg shadow-lg border border-border/50 py-1 w-[180px]"
                           >
                             <button
                               onClick={() => handleShareX(track.slug, track.title)}
-                              className="flex items-center gap-2.5 w-full px-3 py-2 text-sm text-foreground/80 hover:bg-black/[0.04] transition-colors whitespace-nowrap"
+                              className="flex items-center gap-2.5 w-full px-3 py-2 text-sm text-popover-foreground hover:bg-white/[0.06] transition-colors whitespace-nowrap"
                             >
                               <Share2 className="w-3.5 h-3.5" />
                               Share to X
                             </button>
                             <button
                               onClick={() => handleShareLinkedIn(track.slug, track.title)}
-                              className="flex items-center gap-2.5 w-full px-3 py-2 text-sm text-foreground/80 hover:bg-black/[0.04] transition-colors whitespace-nowrap"
+                              className="flex items-center gap-2.5 w-full px-3 py-2 text-sm text-popover-foreground hover:bg-white/[0.06] transition-colors whitespace-nowrap"
                             >
                               <Share2 className="w-3.5 h-3.5" />
                               Share to LinkedIn
                             </button>
                             <button
                               onClick={() => handleCopyLink(track.slug, track.title)}
-                              className="flex items-center gap-2.5 w-full px-3 py-2 text-sm text-foreground/80 hover:bg-black/[0.04] transition-colors whitespace-nowrap"
+                              className="flex items-center gap-2.5 w-full px-3 py-2 text-sm text-popover-foreground hover:bg-white/[0.06] transition-colors whitespace-nowrap"
                             >
                               {copiedSlug === track.slug ? (
                                 <Check className="w-3.5 h-3.5 text-green-600" />
