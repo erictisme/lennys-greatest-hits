@@ -29,6 +29,7 @@ interface AudioState {
   prev: () => void;
   playAlbum: (albumSlug: string, startIndex?: number) => void;
   setAlbumQueue: (albumSlug: string) => void;
+  setQueue: (tracks: Track[]) => void;
   shuffleAll: () => Track | null;
   accentColor: string;
   getPlayCount: (slug: string) => number;
@@ -480,19 +481,33 @@ export function AudioProvider({ children }: { children: ReactNode }) {
           togglePlay();
           break;
         case "ArrowLeft":
-          e.preventDefault();
-          if (audioRef.current) {
-            const newTime = Math.max(0, audioRef.current.currentTime - 10);
-            audioRef.current.currentTime = newTime;
-            setCurrentTime(newTime);
+          if (e.altKey) {
+            // Alt+Left = previous track
+            e.preventDefault();
+            prev();
+          } else {
+            // Left = seek back 10s
+            e.preventDefault();
+            if (audioRef.current) {
+              const newTime = Math.max(0, audioRef.current.currentTime - 10);
+              audioRef.current.currentTime = newTime;
+              setCurrentTime(newTime);
+            }
           }
           break;
         case "ArrowRight":
-          e.preventDefault();
-          if (audioRef.current) {
-            const newTime = Math.min(audioRef.current.duration || 0, audioRef.current.currentTime + 10);
-            audioRef.current.currentTime = newTime;
-            setCurrentTime(newTime);
+          if (e.altKey) {
+            // Alt+Right = next track
+            e.preventDefault();
+            next();
+          } else {
+            // Right = seek forward 10s
+            e.preventDefault();
+            if (audioRef.current) {
+              const newTime = Math.min(audioRef.current.duration || 0, audioRef.current.currentTime + 10);
+              audioRef.current.currentTime = newTime;
+              setCurrentTime(newTime);
+            }
           }
           break;
         case "KeyN":
@@ -536,6 +551,7 @@ export function AudioProvider({ children }: { children: ReactNode }) {
         prev,
         playAlbum,
         setAlbumQueue,
+        setQueue,
         shuffleAll,
         accentColor,
         getPlayCount,

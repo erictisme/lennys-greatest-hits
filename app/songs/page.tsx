@@ -148,6 +148,8 @@ export default function SongsPage() {
                   if (isPlayingThis) {
                     audio.pause();
                   } else {
+                    // Set queue to current track list order so next/prev follows this list
+                    audio.setQueue(filteredTracks);
                     audio.play(track);
                   }
                 }}

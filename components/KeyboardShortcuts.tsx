@@ -6,10 +6,10 @@ import { useAudio } from "@/lib/audio-context";
 
 const shortcuts = [
   { keys: "Space", action: "Play / Pause" },
-  { keys: "←", action: "Seek back 10s" },
-  { keys: "→", action: "Seek forward 10s" },
-  { keys: "N", action: "Next track" },
-  { keys: "P", action: "Previous track" },
+  { keys: "←  →", action: "Seek ±10s" },
+  { keys: "Alt + ←", action: "Previous track" },
+  { keys: "Alt + →", action: "Next track" },
+  { keys: "N / P", action: "Next / Previous" },
 ];
 
 export default function KeyboardShortcuts() {
