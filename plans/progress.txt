@@ -3,3 +3,5 @@ Task 22: Added OG images to track, album, and layout metadata so social shares s
 Files changed: app/track/[slug]/page.tsx, app/album/[slug]/page.tsx, app/layout.tsx
 Task 23: Removed fake lyric sync pretense — stripped unused currentTime/isPlaying/onSeek props and fake time calculations from SyncedLyrics, renamed to LyricsDisplay.
 Files changed: components/SyncedLyrics.tsx, app/track/[slug]/TrackPageClient.tsx
+Task 24: QA Round 3 — Lenny persona audit. Spot-checked 5 tracks (Taste, I'm in the Room, Fire with Grace, Do Things That Don't Scale, Imposter) against Lenny MCP archive. Found minor attribution fuzziness on "Taste" (Shreyas Doshi). Score: 8/10.
+Files changed: content/qa/round3-lenny-audit.md

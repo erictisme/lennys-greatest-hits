@@ -214,7 +214,7 @@
       "description": "QA Round 3 — Lenny Himself. You are Lenny Rachitsky. Does this represent your content well? Would you share it? Read lib/albums.ts thoroughly. Spot-check 5 tracks using mcp__lennysdata__search_content to verify sources, quotes, and attributions are accurate. Write content/qa/round3-lenny-audit.md: What Makes Lenny Smile, Accuracy Issues (specific tracks + what's wrong), Missing Topics, Misrepresentations, Overall Verdict. DONE: Audit exists. DO NOT TOUCH: code. VERIFY: pnpm build passes.",
       "steps": ["Read lib/albums.ts", "Spot-check 5 tracks with MCP", "Write audit", "pnpm build passes"],
       "files": ["content/qa/round3-lenny-audit.md"],
-      "passes": false
+      "passes": true
     },
     {
       "id": 25,
