@@ -14,3 +14,4 @@ Task 17: Added subtle ambient gradient glow behind homepage hero title. Build pa
 Task 18: Created scripts/upload-audio.ts for Supabase Storage upload. Added upload-audio script to package.json. Build passes.
 Task 19: Created scripts/migrate-audio-urls.ts to rewrite audioUrl paths in lib/albums.ts to Supabase Storage URLs. Build passes.
 Task 20: Added public/audio/*.mp3 to .gitignore and flow comment to upload-audio.ts. Build passes.
+Task 21: Created ScrollToTop component using usePathname + useEffect, mounted in layout.tsx. Build passes.

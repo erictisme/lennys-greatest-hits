@@ -297,7 +297,7 @@
         "pnpm build passes"
       ],
       "files": ["components/ScrollToTop.tsx", "app/layout.tsx"],
-      "passes": false
+      "passes": true
     },
     {
       "id": 22,
