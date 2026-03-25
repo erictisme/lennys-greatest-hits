@@ -3,7 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { ArrowLeft, Play, Pause, Clock, Share2, Check, Lock, Mic, FileText } from "lucide-react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, useScroll, useTransform } from "framer-motion";
 import { getAlbumBySlug } from "@/lib/tracks";
 import { notFound, useRouter } from "next/navigation";
 import { useAudio } from "@/lib/audio-context";
@@ -29,6 +29,8 @@ export default function AlbumPageClient({ slug }: { slug: string }) {
   const audio = useAudio();
   const router = useRouter();
 
+  const { scrollY } = useScroll();
+  const coverY = useTransform(scrollY, [0, 300], [0, -30]);
   const [playCounts, setPlayCounts] = useState<Record<string, number> | null>(null);
   const [albumShareOpen, setAlbumShareOpen] = useState(false);
   const [albumCopied, setAlbumCopied] = useState(false);
@@ -130,7 +132,7 @@ export default function AlbumPageClient({ slug }: { slug: string }) {
           </Link>
 
           <div className="flex flex-col sm:flex-row items-center sm:items-start gap-6">
-            <div className="shrink-0">
+            <motion.div className="shrink-0" style={{ y: coverY }}>
               {album.coverImage ? (
                 <Image
                   src={album.coverImage}
@@ -146,7 +148,7 @@ export default function AlbumPageClient({ slug }: { slug: string }) {
                   <span className="text-5xl opacity-30">🎵</span>
                 </div>
               )}
-            </div>
+            </motion.div>
             <div className="min-w-0 text-center sm:text-left">
               <div
                 className="w-12 h-1.5 rounded-full mb-5 mx-auto sm:mx-0"
@@ -254,7 +256,7 @@ export default function AlbumPageClient({ slug }: { slug: string }) {
       </header>
 
       {/* Track List */}
-      <main className="flex-1 px-4 sm:px-6 py-6 sm:py-8 max-w-3xl mx-auto w-full">
+      <main className="flex-1 px-4 sm:px-6 py-6 sm:py-8 max-w-3xl mx-auto w-full overflow-x-hidden">
         <div className="flex flex-col">
           {album.tracks.map((track, i) => {
             const isCurrentTrack = audio.currentTrack?.slug === track.slug;

@@ -4,7 +4,7 @@ import { useState, useEffect, useMemo, useCallback } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
-import { Search, X, Shuffle, Sparkles } from "lucide-react";
+import { Search, X, Shuffle, Dices } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { getAllAlbums, getAllTracks, getAlbumForTrack } from "@/lib/tracks";
 import { useAudio } from "@/lib/audio-context";
@@ -22,12 +22,21 @@ export default function Home() {
 
   const [searchQuery, setSearchQuery] = useState("");
   const [debouncedQuery, setDebouncedQuery] = useState("");
+  const [playsToday, setPlaysToday] = useState<number | null>(null);
 
   // Debounce search
   useEffect(() => {
     const timer = setTimeout(() => setDebouncedQuery(searchQuery), 300);
     return () => clearTimeout(timer);
   }, [searchQuery]);
+
+  // Fetch plays today
+  useEffect(() => {
+    fetch("/api/play?today=true")
+      .then((r) => r.json())
+      .then((d) => { if (d.todayCount > 0) setPlaysToday(d.todayCount); })
+      .catch(() => {});
+  }, []);
 
   // Filtered tracks for search
   const filteredTracks = useMemo(() => {
@@ -126,20 +135,39 @@ export default function Home() {
               const mins = Math.floor((totalSecs % 3600) / 60);
               return hrs > 0 ? `${hrs} hr ${mins} min` : `${mins} min`;
             })()}
+            {playsToday !== null && playsToday > 0 && (
+              <span> &middot; {playsToday} {playsToday === 1 ? "play" : "plays"} today</span>
+            )}
           </p>
           <ThemeToggle />
         </div>
-        <button
-          onClick={() => {
-            trackEvent("shuffle_play_clicked");
-            audio.shuffleAll();
-          }}
-          className="mt-4 inline-flex items-center gap-2 px-6 py-2.5 text-sm font-semibold rounded-full text-black hover:opacity-90 transition-opacity"
-          style={{ backgroundColor: "#f59e0b" }}
-        >
-          <Shuffle className="w-4 h-4" />
-          Shuffle Play
-        </button>
+        <div className="mt-4 flex items-center gap-3">
+          <button
+            onClick={() => {
+              trackEvent("shuffle_play_clicked");
+              audio.shuffleAll();
+            }}
+            className="inline-flex items-center gap-2 px-6 py-2.5 text-sm font-semibold rounded-full text-black hover:opacity-90 transition-opacity"
+            style={{ backgroundColor: "#f59e0b" }}
+          >
+            <Shuffle className="w-4 h-4" />
+            Shuffle Play
+          </button>
+          <button
+            onClick={() => {
+              const randomTrack = allTracks[Math.floor(Math.random() * allTracks.length)];
+              if (randomTrack) {
+                trackEvent("surprise_me_clicked", { track: randomTrack.slug, track_title: randomTrack.title });
+                audio.play(randomTrack);
+                router.push(`/track/${randomTrack.slug}`);
+              }
+            }}
+            className="inline-flex items-center gap-2 px-6 py-2.5 text-sm font-semibold rounded-full border border-border/50 text-muted-foreground hover:text-foreground hover:border-border transition-colors"
+          >
+            <Dices className="w-4 h-4" />
+            Surprise Me
+          </button>
+        </div>
       </header>
 
       {/* 1.5 Onboarding Card */}
@@ -209,48 +237,6 @@ export default function Home() {
             transition={{ duration: 0.15 }}
             className="flex-1"
           >
-            {/* 2.5 Start Here Section */}
-            <section className="mb-10">
-              <div className="flex items-center gap-2 mb-4">
-                <Sparkles className="w-4 h-4 text-amber-500/70" />
-                <h2 className="text-sm font-semibold uppercase tracking-wide text-muted-foreground">New here? Start with these</h2>
-              </div>
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
-                {[
-                  { slug: "not-venture-scale", why: "The track that started it all — a love letter to weird, wonderful businesses" },
-                  { slug: "product-market-fit", why: "Every founder's obsession, turned into an anthem you can't get out of your head" },
-                  { slug: "vibe-coding", why: "The future of building software — and yes, it slaps" },
-                ].map(({ slug, why }) => {
-                  const track = allTracks.find((t) => t.slug === slug);
-                  if (!track) return null;
-                  const album = getAlbumForTrack(track.slug);
-                  return (
-                    <button
-                      key={slug}
-                      onClick={() => handleTrackNavigate(track)}
-                      className="group relative text-left p-3 rounded-lg border border-amber-500/15 bg-amber-500/[0.03] hover:bg-amber-500/[0.06] hover:border-amber-500/25 transition-all"
-                    >
-                      <div className="flex items-start gap-3">
-                        {album?.coverImage && (
-                          <Image
-                            src={album.coverImage}
-                            alt={track.title}
-                            width={48}
-                            height={48}
-                            className="rounded-md flex-shrink-0 shadow-sm"
-                          />
-                        )}
-                        <div className="min-w-0">
-                          <p className="text-sm font-semibold truncate group-hover:text-amber-500 transition-colors">{track.title}</p>
-                          <p className="text-xs text-muted-foreground/60 mt-0.5 line-clamp-2">{why}</p>
-                        </div>
-                      </div>
-                    </button>
-                  );
-                })}
-              </div>
-            </section>
-
             {/* 3. Popular Section */}
             <section className="mb-10">
               <div className="flex items-center justify-between mb-4">
