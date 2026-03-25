@@ -89,6 +89,15 @@
       "steps": ["Check metadataBase", "Add canonical URLs", "pnpm build passes"],
       "files": ["app/layout.tsx", "app/track/[slug]/page.tsx"],
       "passes": false
+    },
+    {
+      "id": 11,
+      "category": "quality",
+      "priority": 1,
+      "description": "Content gap audit for Batch 8 song generation. Use mcp__lennysdata__list_content and mcp__lennysdata__search_content to get a comprehensive view of Lenny's archive. Then read lib/albums.ts to see what's already covered. Compare: which top podcast guests and newsletter topics have NO song yet? Write content/songs/batch8/gap-analysis.md with: (1) List of the 20 most popular/important Lenny episodes NOT yet covered by any song (check guest names and topics against existing tracks). (2) For each missing episode: guest name, episode title, why it matters, suggested song concept (1 sentence). (3) List which albums are thin (fewer than 8 tracks) and what topics could fill them. (4) Suggest 10-15 songs for Batch 8, grouped by album. Use mcp__lennysdata__search_content to verify each suggestion is based on real content. DONE: gap-analysis.md exists with 10-15 specific song suggestions backed by real Lenny episodes. DO NOT TOUCH: code files. VERIFY: pnpm build passes.",
+      "steps": ["Use Lenny MCP to survey archive", "Read lib/albums.ts for existing coverage", "Identify gaps", "Write gap analysis with specific song suggestions", "pnpm build passes"],
+      "files": ["content/songs/batch8/gap-analysis.md"],
+      "passes": false
     }
   ]
 }
