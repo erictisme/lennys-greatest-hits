@@ -133,7 +133,7 @@
       "description": "Accuracy spot-check: 5 tracks from The Craft and Growth Engine albums. Use mcp__lennysdata__search_content for each. Pick: taste (The Craft), build-the-machine (The Craft), doesnt-feel-right-yet (The Craft), crossing-the-chasm (Growth Engine), dont-break-the-streak (Growth Engine). Verify: (1) guest appeared on Lenny's, (2) keyQuote is real, (3) source URL valid. Write content/qa/round8-accuracy-part1.md. DONE: Audit exists. DO NOT TOUCH: code. VERIFY: pnpm build passes.",
       "steps": ["Verify 5 tracks via Lenny MCP", "Write audit", "pnpm build passes"],
       "files": ["content/qa/round8-accuracy-part1.md"],
-      "passes": false
+      "passes": true
     },
     {
       "id": 16,

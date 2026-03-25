@@ -1,2 +1,3 @@
 # Ralph PROD run Thu Mar 26 02:56:03 +08 2026
 # PRD tasks 9-14: SEO metadata sweep — updated layout JSON-LD with 102 songs/11 albums counts, track page titles now show guest name, created songs/layout.tsx for /songs metadata, verified existing JSON-LD on track/album pages.
+# PRD task 15: Accuracy spot-check part 1 — verified 5 tracks (taste, build-the-machine, doesnt-feel-right-yet, crossing-the-chasm, dont-break-the-streak) against Lenny MCP. All 5 passed: guests confirmed, quotes verified, source URLs valid.
