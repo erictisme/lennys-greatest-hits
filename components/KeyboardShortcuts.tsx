@@ -22,7 +22,7 @@ export default function KeyboardShortcuts() {
     <>
       <button
         onClick={() => setOpen(true)}
-        className="fixed bottom-24 right-4 z-40 w-8 h-8 rounded-full bg-white/[0.08] border border-border/40 flex items-center justify-center text-xs text-muted-foreground hover:text-foreground hover:bg-white/[0.15] transition-colors shadow-lg"
+        className="fixed bottom-24 right-4 z-40 w-8 h-8 rounded-full bg-white/[0.08] border border-border/40 hidden sm:flex items-center justify-center text-xs text-muted-foreground hover:text-foreground hover:bg-white/[0.15] transition-colors shadow-lg"
         aria-label="Keyboard shortcuts"
       >
         ?

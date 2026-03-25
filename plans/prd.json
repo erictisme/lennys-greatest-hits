@@ -88,7 +88,7 @@
       "description": "Fix: Keyboard shortcuts ? button should not show on mobile (Round 4). In components/KeyboardShortcuts.tsx, the ? button shows on all screens. But mobile has no keyboard, so this button is confusing. FIX: Add `hidden sm:flex` to the ? button so it only appears on desktop/tablet screens where keyboard shortcuts are usable. DONE: ? button hidden on mobile. VERIFY: pnpm build passes.",
       "steps": ["Read components/KeyboardShortcuts.tsx", "Add hidden sm:flex to button", "pnpm build passes"],
       "files": ["components/KeyboardShortcuts.tsx"],
-      "passes": false
+      "passes": true
     },
     {
       "id": 11,

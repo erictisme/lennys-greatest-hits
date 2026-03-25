@@ -17,3 +17,5 @@ Task 9: Increased annotation toggle button padding p-1.5→p-2.5 in SyncedLyrics
 Build passes.
 Task 7: Fixed 'Do Things That Don't Scale' quote attribution — changed from fabricated Chesky quote to real Paul Graham quote, updated source URL to actual Lenny newsletter.
 Build passes.
+Task 10: Added `hidden sm:flex` to keyboard shortcuts ? button so it only shows on desktop/tablet where keyboards exist.
+Build passes.
