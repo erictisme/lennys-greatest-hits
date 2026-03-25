@@ -29,3 +29,5 @@ Task 14: Audited all source URLs in lib/albums.ts — no fabricated URLs found. 
 Build passes.
 Task 15: Filled in 10 empty annotation sourceUrl fields on crossing-the-chasm (5) and the-long-game (5) with their existing source URLs.
 Build passes.
+Task 16: Fixed multi-guest attribution — added Scott Belsky to taste sources, Sanchan Saxena + Chip Conley to im-in-the-room, Brian Chesky to do-things-that-dont-scale.
+Build passes.
