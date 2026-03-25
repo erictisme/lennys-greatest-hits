@@ -12,8 +12,9 @@ import {
   ExternalLink,
   Mic,
   FileText,
+  Share2,
 } from "lucide-react";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { getTrackBySlug, getAlbumForTrack } from "@/lib/tracks";
 import { notFound, useRouter } from "next/navigation";
 import { useAudio } from "@/lib/audio-context";
@@ -73,6 +74,7 @@ export default function TrackPageClient({ slug }: { slug: string }) {
   const [copied, setCopied] = useState(false);
   const [playCount, setPlayCount] = useState<number | null>(null);
   const [audioAvailable, setAudioAvailable] = useState<boolean | null>(null);
+  const [shareOpen, setShareOpen] = useState(false);
   const [notifyEmail, setNotifyEmail] = useState("");
   const [notifyStatus, setNotifyStatus] = useState<"idle" | "loading" | "done">("idle");
 
@@ -512,6 +514,30 @@ export default function TrackPageClient({ slug }: { slug: string }) {
         {!track.isLocked && (
           <div className="flex flex-wrap items-center gap-3">
             <VoteButtons trackSlug={track.slug} accentColor={album.accentColor} />
+            <div className="relative">
+              <button
+                onClick={() => setShareOpen(!shareOpen)}
+                className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium border border-border/50 text-muted-foreground hover:text-foreground hover:border-border transition-colors"
+              >
+                <Share2 className="w-3.5 h-3.5" />
+                Share This Song
+              </button>
+              <AnimatePresence>
+                {shareOpen && (
+                  <motion.div
+                    initial={{ opacity: 0, y: 4 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: 4 }}
+                    transition={{ duration: 0.15 }}
+                    className="absolute left-0 bottom-full mb-2 bg-background border border-border/50 rounded-lg shadow-lg py-1 min-w-[160px] z-50"
+                  >
+                    <button onClick={() => { handleShareX(); setShareOpen(false); }} className="w-full text-left px-4 py-2 text-sm text-muted-foreground hover:text-foreground hover:bg-white/[0.06] transition-colors">Share to X</button>
+                    <button onClick={() => { handleShareLinkedIn(); setShareOpen(false); }} className="w-full text-left px-4 py-2 text-sm text-muted-foreground hover:text-foreground hover:bg-white/[0.06] transition-colors">Share to LinkedIn</button>
+                    <button onClick={() => { handleCopyLink(); setShareOpen(false); }} className="w-full text-left px-4 py-2 text-sm text-muted-foreground hover:text-foreground hover:bg-white/[0.06] transition-colors">{copied ? "Copied!" : "Copy Link"}</button>
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </div>
             {track.sunoId && (
               <a
                 href={`https://suno.com/song/${track.sunoId}`}

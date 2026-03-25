@@ -52,7 +52,7 @@
       "description": "Add prominent share CTA on track detail page (Round 2 Judge #3). The track page has no visible share dropdown — sharing is only in VoteButtons (small icon) and NowPlayingBar. FIX: In app/track/[slug]/TrackPageClient.tsx, in the 'Vote + Share' section at the bottom (around the VoteButtons area), add a visible 'Share This Song' button with a dropdown menu showing: Share to X, Share to LinkedIn, Copy Link. Style: `inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium border border-border/50 text-muted-foreground hover:text-foreground hover:border-border transition-colors`. Use the same share handlers already in the file (handleShareX, handleShareLinkedIn, handleCopyLink). Add a useState for dropdown open/close and AnimatePresence for animation. DONE: Track page has a visible Share button with social options. DO NOT TOUCH: audio controls, lyrics section. VERIFY: pnpm build passes.",
       "steps": ["Read app/track/[slug]/TrackPageClient.tsx", "Add Share dropdown in the Vote+Share section", "pnpm build passes"],
       "files": ["app/track/[slug]/TrackPageClient.tsx"],
-      "passes": false
+      "passes": true
     },
     {
       "id": 7,
