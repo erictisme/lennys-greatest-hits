@@ -124,7 +124,7 @@
       "description": "Verify all source URLs are valid. Read lib/albums.ts. For every track, check if sources[].url looks like a real Lenny URL (should be https://www.lennysnewsletter.com/p/ or similar). Flag any that look fabricated (random slugs) or are empty. Use mcp__lennysdata__search_content to find correct URLs where possible. Write content/qa/url-audit.md listing problematic URLs. DONE: URL audit exists. DO NOT TOUCH: code. VERIFY: pnpm build passes.",
       "steps": ["Read lib/albums.ts URLs", "Flag suspicious ones", "Verify via MCP", "Write audit", "pnpm build passes"],
       "files": ["content/qa/url-audit.md"],
-      "passes": false
+      "passes": true
     },
     {
       "id": 15,
