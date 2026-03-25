@@ -33,7 +33,7 @@ export default function OnboardingTooltips() {
       </p>
       <button
         onClick={dismiss}
-        className="ml-4 flex-shrink-0 text-muted-foreground/60 hover:text-foreground transition-colors"
+        className="ml-4 flex-shrink-0 p-2 text-muted-foreground/60 hover:text-foreground transition-colors"
       >
         <X className="w-3.5 h-3.5" />
       </button>

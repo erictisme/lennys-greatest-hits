@@ -13,3 +13,5 @@ Task 6: Added "Share This Song" dropdown button (X, LinkedIn, Copy Link) to trac
 Build passes.
 Task 8: Increased progress bar tap targets — TrackPageClient py-2→py-3, NowPlayingBar py-1.5→py-3. Visual bar stays 6px, clickable area larger.
 Build passes.
+Task 9: Increased annotation toggle button padding p-1.5→p-2.5 in SyncedLyrics.tsx, added p-2 to onboarding dismiss X in OnboardingTooltips.tsx for 44px touch targets.
+Build passes.

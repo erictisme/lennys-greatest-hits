@@ -79,7 +79,7 @@
       "description": "Fix: Annotation toggle (BookOpen) and onboarding dismiss (X) touch targets (Round 4). In components/SyncedLyrics.tsx, the annotation toggle button has `p-1.5` making it ~26px — too small. Change to `p-2.5` for a 44px target. In components/OnboardingTooltips.tsx, the dismiss X button is tiny. Add `p-2` padding. DONE: Both buttons meet 44px tap target. VERIFY: pnpm build passes.",
       "steps": ["Fix SyncedLyrics.tsx annotation button padding", "Fix OnboardingTooltips.tsx dismiss button padding", "pnpm build passes"],
       "files": ["components/SyncedLyrics.tsx", "components/OnboardingTooltips.tsx"],
-      "passes": false
+      "passes": true
     },
     {
       "id": 10,

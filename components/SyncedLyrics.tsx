@@ -192,7 +192,7 @@ export default function LyricsDisplay({
                       setExpandedAnnotationIndex(isAnnotationExpanded ? null : i);
                       trackEvent("annotation_toggled", { lyric: line.text, track: trackTitle });
                     }}
-                    className="p-1.5 rounded-full hover:bg-white/10 transition-all shrink-0"
+                    className="p-2.5 rounded-full hover:bg-white/10 transition-all shrink-0"
                     style={{
                       opacity: isAnnotationExpanded ? 1 : 0.7,
                       color: accentColor,
