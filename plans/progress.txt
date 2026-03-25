@@ -7,3 +7,5 @@ Task 3: Added 44px min touch targets to skip/share buttons, increased play butto
 Build passes.
 Task 4: Increased bottom padding from pb-[72px] to pb-[120px] in layout.tsx to accommodate NowPlayingBar + Up Next banner.
 Build passes.
+Task 5: Added p-2 padding to search clear X buttons in app/page.tsx and app/songs/page.tsx for 44px+ tap targets.
+Build passes.

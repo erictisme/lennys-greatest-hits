@@ -106,7 +106,7 @@ export default function SongsPage() {
         {searchQuery && (
           <button
             onClick={() => setSearchQuery("")}
-            className="absolute right-3 top-1/2 -translate-y-1/2 text-muted-foreground/60 hover:text-foreground"
+            className="absolute right-1 top-1/2 -translate-y-1/2 p-2 text-muted-foreground/60 hover:text-foreground"
           >
             <X className="w-4 h-4" />
           </button>

@@ -43,7 +43,7 @@
       "description": "Fix: Search clear X button too small for touch (Round 4 touch targets). In app/page.tsx and app/songs/page.tsx, the search clear (X) button is ~16px. FIX: In both files, wrap the X icon in a larger touch target: change the button to have `p-2` instead of just the icon. The X icon stays small (w-4 h-4) but the button padding creates a 44px+ tap target. DONE: Search clear buttons are easily tappable. DO NOT TOUCH: search logic. VERIFY: pnpm build passes.",
       "steps": ["Read app/page.tsx — fix search clear button", "Read app/songs/page.tsx — fix search clear button", "pnpm build passes"],
       "files": ["app/page.tsx", "app/songs/page.tsx"],
-      "passes": false
+      "passes": true
     },
     {
       "id": 6,
