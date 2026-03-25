@@ -141,7 +141,7 @@ export default function LyricsDisplay({
           style={{ background: `${accentColor}15`, color: accentColor }}
         >
           <BookOpen className="w-3.5 h-3.5 shrink-0" />
-          <span>{annotationCount} insight{annotationCount === 1 ? "" : "s"} hidden in these lyrics — tap the icons to explore</span>
+          <span className="hidden sm:inline">{annotationCount} insight{annotationCount === 1 ? "" : "s"} hidden in these lyrics — tap the icons to explore</span><span className="sm:hidden">Tap highlighted lines for insights</span>
         </div>
       )}
       <div ref={containerRef} className="space-y-1">
@@ -204,7 +204,7 @@ export default function LyricsDisplay({
                 )}
                 <button
                   onClick={() => { trackEvent("lyric_shared", { lyric: line.text, track: trackTitle }); setShareLine(line.text); }}
-                  className="opacity-40 sm:opacity-0 sm:group-hover:opacity-60 hover:!opacity-100 p-2 rounded-full hover:bg-white/10 transition-all shrink-0"
+                  className="opacity-60 sm:opacity-0 sm:group-hover:opacity-60 hover:!opacity-100 p-2 rounded-full hover:bg-white/10 transition-all shrink-0"
                   aria-label={`Share lyric: ${line.text}`}
                 >
                   <Share2 className="w-3.5 h-3.5" />

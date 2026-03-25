@@ -79,7 +79,7 @@
       "description": "Fix ALL MEDIUM issues from Round 7 mobile audit. Read content/qa/round7-mobile-audit.md. Fix every MEDIUM severity issue. DONE: All medium mobile issues fixed. VERIFY: pnpm build passes.",
       "steps": ["Read audit", "Fix all medium issues", "pnpm build passes"],
       "files": [],
-      "passes": false
+      "passes": true
     },
     {
       "id": 10,

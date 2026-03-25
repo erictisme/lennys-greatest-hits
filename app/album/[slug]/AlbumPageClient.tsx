@@ -176,7 +176,7 @@ export default function AlbumPageClient({ slug }: { slug: string }) {
             ) : (
               <button
                 onClick={handlePlayAll}
-                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-medium transition-colors"
+                className="inline-flex items-center gap-2 px-5 py-2.5 min-h-[44px] rounded-full text-sm font-medium transition-colors"
                 style={{
                   backgroundColor: album.accentColor,
                   color: "#ffffff",
@@ -191,7 +191,7 @@ export default function AlbumPageClient({ slug }: { slug: string }) {
             <div className="relative" ref={albumShareRef}>
               <button
                 onClick={() => setAlbumShareOpen(!albumShareOpen)}
-                className="inline-flex items-center gap-2 px-4 py-2.5 rounded-full text-sm font-medium border border-border/50 text-muted-foreground hover:text-foreground hover:border-border transition-colors"
+                className="inline-flex items-center gap-2 px-4 py-2.5 min-h-[44px] rounded-full text-sm font-medium border border-border/50 text-muted-foreground hover:text-foreground hover:border-border transition-colors"
               >
                 <Share2 className="w-4 h-4" />
                 Share
@@ -274,12 +274,12 @@ export default function AlbumPageClient({ slug }: { slug: string }) {
                 >
                   {/* Track Number / Play Icon / Lock Icon */}
                   {locked ? (
-                    <div className="w-11 h-11 flex items-center justify-center shrink-0 -ml-2.5">
+                    <div className="w-11 h-11 flex items-center justify-center shrink-0">
                       <Lock className="w-4 h-4 text-muted-foreground/40" />
                     </div>
                   ) : (
                     <div
-                      className="w-11 h-11 flex items-center justify-center shrink-0 -ml-2.5"
+                      className="w-11 h-11 flex items-center justify-center shrink-0"
                       onClick={(e) => {
                         e.stopPropagation();
                         if (isCurrentTrack) {
@@ -382,7 +382,7 @@ export default function AlbumPageClient({ slug }: { slug: string }) {
                   {/* Vote Buttons (hidden for locked) */}
                   {!locked && (
                     <div
-                      className="flex items-center shrink-0"
+                      className="hidden sm:flex items-center shrink-0"
                       onClick={(e) => e.stopPropagation()}
                     >
                       <VoteButtons trackSlug={track.slug} accentColor={album.accentColor} />
@@ -391,7 +391,7 @@ export default function AlbumPageClient({ slug }: { slug: string }) {
 
                   {/* Duration + Play Count (hidden for locked) */}
                   {!locked && (
-                    <div className="flex items-center gap-3 text-xs text-muted-foreground/50 shrink-0">
+                    <div className="hidden sm:flex items-center gap-3 text-xs text-muted-foreground/50 shrink-0">
                       <span className="flex items-center gap-1.5">
                         <Clock className="w-3 h-3" />
                         {track.duration}

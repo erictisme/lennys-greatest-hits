@@ -7,3 +7,4 @@ Task 5: Wrote Round 7 first-time visitor audit (1 critical, 3 high, 6 medium, 5 
 Task 6: Fixed C1 (hero explanation line), H1 (tagline rewritten to explain format), H2 (share button with native share/clipboard fallback), H3 (Coming Soon albums non-clickable with tooltip + dimmed).
 Task 7: Content accuracy spot-check — verified 5 tracks (Build the Machine, Go Viral, The Obsession, Fire with Grace, Crossing the Chasm) across 4 albums via Lenny MCP. All 5 pass: guests confirmed, quotes verified in transcripts, URLs valid.
 Task 8: No accuracy issues found in spot-check — nothing to fix. Marked complete.
+Task 9: Fixed all 7 MEDIUM mobile issues: M1/M2 homepage touch targets+grid gap, M3/M4 album page buttons+play alignment, M5/M6 SyncedLyrics banner text+share opacity, M7 ThemeToggle min size.

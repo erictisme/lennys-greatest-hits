@@ -157,7 +157,7 @@ export default function Home() {
               trackEvent("shuffle_play_clicked");
               audio.shuffleAll();
             }}
-            className="inline-flex items-center gap-2 px-6 py-2.5 text-sm font-semibold rounded-full text-black hover:opacity-90 transition-opacity"
+            className="inline-flex items-center gap-2 px-6 py-2.5 min-h-[44px] text-sm font-semibold rounded-full text-black hover:opacity-90 transition-opacity"
             style={{ backgroundColor: "#f59e0b" }}
           >
             <Shuffle className="w-4 h-4" />
@@ -172,7 +172,7 @@ export default function Home() {
                 router.push(`/track/${randomTrack.slug}`);
               }
             }}
-            className="inline-flex items-center gap-2 px-6 py-2.5 text-sm font-semibold rounded-full border border-border/50 text-muted-foreground hover:text-foreground hover:border-border transition-colors"
+            className="inline-flex items-center gap-2 px-6 py-2.5 min-h-[44px] text-sm font-semibold rounded-full border border-border/50 text-muted-foreground hover:text-foreground hover:border-border transition-colors"
           >
             <Dices className="w-4 h-4" />
             Surprise Me
@@ -303,7 +303,7 @@ export default function Home() {
                   Show all
                 </Link>
               </div>
-              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
+              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3 sm:gap-4">
                 {allAlbums.map((album, i) => (
                   <motion.div
                     key={album.slug}
