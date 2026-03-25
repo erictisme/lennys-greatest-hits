@@ -52,7 +52,7 @@
       "description": "Fix ALL CRITICAL and HIGH issues from Round 7 visitor audit. Read content/qa/round7-visitor-audit.md. Fix every critical and high issue. DONE: All fixed. VERIFY: pnpm build passes.",
       "steps": ["Read audit", "Fix all critical/high", "pnpm build passes"],
       "files": [],
-      "passes": false
+      "passes": true
     },
     {
       "id": 7,

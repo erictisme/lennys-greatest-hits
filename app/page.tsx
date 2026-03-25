@@ -4,7 +4,7 @@ import { useState, useEffect, useMemo, useCallback } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
-import { Search, X, Shuffle, Dices } from "lucide-react";
+import { Search, X, Shuffle, Dices, Share2, Check } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { getAllAlbums, getAllTracks, getAlbumForTrack } from "@/lib/tracks";
 import { useAudio } from "@/lib/audio-context";
@@ -23,6 +23,7 @@ export default function Home() {
   const [searchQuery, setSearchQuery] = useState("");
   const [debouncedQuery, setDebouncedQuery] = useState("");
   const [playsToday, setPlaysToday] = useState<number | null>(null);
+  const [linkCopied, setLinkCopied] = useState(false);
 
   // Debounce search
   useEffect(() => {
@@ -131,7 +132,8 @@ export default function Home() {
         <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight leading-[1.05]">
           Lenny&apos;s Greatest Hits
         </h1>
-        <p className="text-base sm:text-lg text-muted-foreground/70 mt-1">The insights you quote on X, turned into music you can feel.</p>
+        <p className="text-base sm:text-lg text-muted-foreground/70 mt-1">Lenny&apos;s best podcast &amp; newsletter insights — turned into real, playable songs.</p>
+        <p className="text-sm text-muted-foreground/50 mt-1">Real songs built from 349 newsletters and 289 podcast episodes. Hit play.</p>
         <div className="flex items-center gap-2 mt-2">
           <p className="text-sm text-muted-foreground">
             {allTracks.length} songs &middot; {allAlbums.filter((a) => !a.comingSoon).length} albums &middot; {(() => {
@@ -174,6 +176,24 @@ export default function Home() {
           >
             <Dices className="w-4 h-4" />
             Surprise Me
+          </button>
+          <button
+            onClick={() => {
+              const url = window.location.origin;
+              if (navigator.share) {
+                navigator.share({ title: "Lenny's Greatest Hits", text: "Lenny's best podcast & newsletter insights — turned into real, playable songs.", url }).catch(() => {});
+              } else {
+                navigator.clipboard.writeText(url).then(() => {
+                  setLinkCopied(true);
+                  setTimeout(() => setLinkCopied(false), 2000);
+                }).catch(() => {});
+              }
+              trackEvent("homepage_share_clicked");
+            }}
+            className="inline-flex items-center gap-2 px-4 py-2.5 text-sm font-semibold rounded-full border border-border/50 text-muted-foreground hover:text-foreground hover:border-border transition-colors"
+          >
+            {linkCopied ? <Check className="w-4 h-4" /> : <Share2 className="w-4 h-4" />}
+            {linkCopied ? "Copied!" : "Share"}
           </button>
         </div>
       </header>
@@ -291,40 +311,64 @@ export default function Home() {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.3, delay: i * 0.06 }}
                   >
-                    <Link
-                      href={`/album/${album.slug}`}
-                      className="group block"
-                    >
-                      <div>
-                        <div className="relative aspect-square w-full overflow-hidden rounded-lg mb-2 shadow-md transition-all duration-300 group-hover:scale-[1.04] group-hover:shadow-[0_8px_30px_rgba(245,158,11,0.08)]">
-                          {album.coverImage ? (
-                            <Image
-                              src={album.coverImage}
-                              alt={album.title}
-                              width={176}
-                              height={176}
-                              className="object-cover w-full h-full"
-                            />
-                          ) : (
-                            <div className="w-full h-full bg-white/[0.06] flex items-center justify-center">
-                              <span className="text-4xl opacity-30">🎵</span>
-                            </div>
-                          )}
-                          {album.comingSoon && (
+                    {album.comingSoon ? (
+                      <div className="group block cursor-default" title="Songs are being produced — stay tuned!">
+                        <div>
+                          <div className="relative aspect-square w-full overflow-hidden rounded-lg mb-2 shadow-md opacity-60">
+                            {album.coverImage ? (
+                              <Image
+                                src={album.coverImage}
+                                alt={album.title}
+                                width={176}
+                                height={176}
+                                className="object-cover w-full h-full"
+                              />
+                            ) : (
+                              <div className="w-full h-full bg-white/[0.06] flex items-center justify-center">
+                                <span className="text-4xl opacity-30">🎵</span>
+                              </div>
+                            )}
                             <span className="absolute top-2 right-2 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wide rounded-full bg-primary/80 text-primary-foreground">
                               Coming Soon
                             </span>
+                          </div>
+                          <p className="text-sm font-semibold truncate">{album.title}</p>
+                          {album.subtitle && (
+                            <p className="text-xs italic text-muted-foreground/50 truncate">{album.subtitle}</p>
                           )}
                         </div>
-                        <p className="text-sm font-semibold truncate">{album.title}</p>
-                        {album.subtitle && (
-                          <p className="text-xs italic text-muted-foreground/50 truncate">{album.subtitle}</p>
-                        )}
-                        <p className="text-xs text-muted-foreground/60 truncate">
-                          {album.tracks.filter((t) => !t.isLocked).length} tracks
-                        </p>
                       </div>
-                    </Link>
+                    ) : (
+                      <Link
+                        href={`/album/${album.slug}`}
+                        className="group block"
+                      >
+                        <div>
+                          <div className="relative aspect-square w-full overflow-hidden rounded-lg mb-2 shadow-md transition-all duration-300 group-hover:scale-[1.04] group-hover:shadow-[0_8px_30px_rgba(245,158,11,0.08)]">
+                            {album.coverImage ? (
+                              <Image
+                                src={album.coverImage}
+                                alt={album.title}
+                                width={176}
+                                height={176}
+                                className="object-cover w-full h-full"
+                              />
+                            ) : (
+                              <div className="w-full h-full bg-white/[0.06] flex items-center justify-center">
+                                <span className="text-4xl opacity-30">🎵</span>
+                              </div>
+                            )}
+                          </div>
+                          <p className="text-sm font-semibold truncate">{album.title}</p>
+                          {album.subtitle && (
+                            <p className="text-xs italic text-muted-foreground/50 truncate">{album.subtitle}</p>
+                          )}
+                          <p className="text-xs text-muted-foreground/60 truncate">
+                            {album.tracks.filter((t) => !t.isLocked).length} tracks
+                          </p>
+                        </div>
+                      </Link>
+                    )}
                   </motion.div>
                 ))}
               </div>
