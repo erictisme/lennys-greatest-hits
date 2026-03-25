@@ -223,7 +223,7 @@
       "description": "Content gap audit part 4: Generate Batch 8 song suggestions. Read content/songs/batch8/missing-episodes.md and content/songs/batch8/album-balance.md. Combine the findings to suggest 10-15 songs for Batch 8. For each: song title (creative), target album, source episode (guest + title), song concept (1 sentence), key insight to build lyrics around. Prioritize: (1) filling thin albums, (2) covering top missing guests, (3) topics Lenny is known for that we haven't covered. Write content/songs/batch8/song-suggestions.md. DONE: 10-15 specific song suggestions exist. DO NOT TOUCH: code. VERIFY: pnpm build passes.",
       "steps": ["Read missing episodes + album balance", "Generate 10-15 song suggestions", "Write suggestions", "pnpm build passes"],
       "files": ["content/songs/batch8/song-suggestions.md"],
-      "passes": false
+      "passes": true
     }
   ]
 }
