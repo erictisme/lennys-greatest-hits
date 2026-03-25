@@ -2282,7 +2282,7 @@ You built a door that opens from the inside
 One by one, we're walking through`,
     concept: "The shift from sales-led to product-led growth — where the product itself becomes the primary acquisition, conversion, and expansion engine. Based on Elena Verna's framework for B2B PLG.",
     keyInsight: "In product-led growth, users are 'already warm before the phone' — they've experienced the value before ever talking to sales. The product IS the marketing.",
-    keyQuote: "You built a door that opens from the inside.",
+    keyQuote: "Every single company starts with their growth efforts focused either on product-led growth or on sales and marketing. But not overlaying every single way that you can grow is a mistake.",
     quoteSpeaker: "Elena Verna",
     sources: [
       { title: "How B2B growth is changing | Elena Verna", type: "podcast" as const, url: "https://www.lennysnewsletter.com/p/elena-verna-on-why-every-company", guest: "Elena Verna" },
@@ -2683,7 +2683,7 @@ Hold it — hold it — hold it — till it catches
 They just never say yes...`,
     concept: "Geoffrey Moore's 'Crossing the Chasm' framework: the invisible gap between visionary early adopters and pragmatic mainstream buyers. You can't cross it by going wide — you cross it by picking one narrow beachhead and dominating it before expanding.",
     keyInsight: "Pragmatist buyers don't reject you outright — they take the meeting, say it's interesting, and never commit. The chasm is invisible because it looks like progress.",
-    keyQuote: "They never say no — they just never say yes.",
+    keyQuote: "I just need more customers. I should take any customer I could find. It's like taking a match and running it back and forth under a log. It's not going to light the log.",
     quoteSpeaker: "Geoffrey Moore",
     sources: [
       { title: "Geoffrey Moore on finding your beachhead, crossing the chasm, and dominating a market", type: "podcast" as const, url: "https://www.lennyspodcast.com/geoffrey-moore-on-finding-your-beachhead-crossing-the-chasm-and-dominating-a-market/", guest: "Geoffrey Moore" },
@@ -8998,8 +8998,8 @@ You can set it down`,
       { title: "When enough is enough", type: "podcast", url: "https://www.lennysnewsletter.com/p/when-enough-is-enough-andy-johns", guest: "Andy Johns" },
       { title: "Managing nerves, anxiety, and burnout", type: "podcast", url: "https://www.lennysnewsletter.com/p/managing-nerves-anxiety-and-burnout", guest: "Jonny Miller" },
     ],
-    keyQuote: "Burnout isn't working too much. It's working on the wrong things.",
-    quoteSpeaker: "Multiple guests",
+    keyQuote: "I had slowly become the frog boiling in the pot. You don't realize how bad things are getting because it's happening to you slowly until it happens quickly.",
+    quoteSpeaker: "Andy Johns",
     storyBehind: "Andy Johns spent 17 years at Facebook, Twitter, Wealthfront, and Quora, some of the highest-pressure companies in tech. On Lenny's show, he was raw about what burnout actually felt like: not dramatic collapse, but a slow hollowing out where the work that once lit you up starts feeling like someone else's dream. Nearly 45% of tech workers report significant burnout. Jonny Miller introduced the 'feather, brick, dump truck' framework on a separate episode. Your body sends warning signs as a feather first, then a brick, and if you ignore those, the dump truck arrives.",
     annotations: [
       {

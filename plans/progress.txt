@@ -21,3 +21,5 @@ Task 10: Added `hidden sm:flex` to keyboard shortcuts ? button so it only shows 
 Build passes.
 Task 11: Spot-checked 5 tracks (crossing-the-chasm, the-hiring-playbook, burnout, plg, the-obsession) via Lenny MCP. 3 clean, 2 have fabricated keyQuotes (crossing-the-chasm, plg use song lyrics as quotes).
 Build passes.
+Task 12: Fixed 3 fabricated keyQuotes from Round 5 spot-check — replaced crossing-the-chasm (Geoffrey Moore), plg (Elena Verna), and burnout (Andy Johns) with real verbatim quotes verified via Lenny MCP.
+Build passes.

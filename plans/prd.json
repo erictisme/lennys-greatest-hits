@@ -106,7 +106,7 @@
       "description": "Fix any accuracy issues from Round 5 spot-check. Read content/qa/round5-accuracy-spotcheck.md. Fix any incorrect attributions, wrong quotes, or mismatched sources in lib/albums.ts. Use Lenny MCP to verify corrections. DONE: Issues fixed. VERIFY: pnpm build passes.",
       "steps": ["Read spot-check", "Fix issues", "pnpm build passes"],
       "files": ["lib/albums.ts"],
-      "passes": false
+      "passes": true
     },
     {
       "id": 13,
