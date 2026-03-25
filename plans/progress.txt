@@ -5,3 +5,4 @@ Task 3: Wrote Round 7 performance audit. Key finding: lib/albums.ts is 594KB (2x
 Task 4: Dynamic-imported lyrics-data.ts (417KB) in TrackPageClient — no longer in initial client bundle, loads lazily on track pages only.
 Task 5: Wrote Round 7 first-time visitor audit (1 critical, 3 high, 6 medium, 5 low). Top issues: no "what is this" explanation, tagline assumes context, no homepage share button.
 Task 6: Fixed C1 (hero explanation line), H1 (tagline rewritten to explain format), H2 (share button with native share/clipboard fallback), H3 (Coming Soon albums non-clickable with tooltip + dimmed).
+Task 7: Content accuracy spot-check — verified 5 tracks (Build the Machine, Go Viral, The Obsession, Fire with Grace, Crossing the Chasm) across 4 albums via Lenny MCP. All 5 pass: guests confirmed, quotes verified in transcripts, URLs valid.

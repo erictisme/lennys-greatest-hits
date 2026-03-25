@@ -61,7 +61,7 @@
       "description": "QA Round 7 — Content accuracy spot-check. Read lib/albums.ts. Pick 5 tracks at random (use different albums). For each, use mcp__lennysdata__search_content to verify: (1) guest actually appeared on Lenny's podcast, (2) keyQuote is real, (3) source URLs are valid. Write content/qa/round7-accuracy-audit.md. DONE: Audit exists. DO NOT TOUCH: code. VERIFY: pnpm build passes.",
       "steps": ["Pick 5 random tracks", "Verify via Lenny MCP", "Write audit", "pnpm build passes"],
       "files": ["content/qa/round7-accuracy-audit.md"],
-      "passes": false
+      "passes": true
     },
     {
       "id": 8,
