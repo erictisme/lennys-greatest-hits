@@ -214,7 +214,7 @@
       "description": "Content gap audit part 3: Check which albums are thin. Read lib/albums.ts — count tracks per album. Any album with fewer than 8 tracks needs more songs. Also check: are there topics that don't fit any existing album? (e.g., marketplace dynamics, retention, pricing). Write content/songs/batch8/album-balance.md listing: track count per album, which are thin, what topics could fill them. DONE: Album balance analysis exists. DO NOT TOUCH: code. VERIFY: pnpm build passes.",
       "steps": ["Read lib/albums.ts", "Count tracks per album", "Identify thin albums", "Write analysis", "pnpm build passes"],
       "files": ["content/songs/batch8/album-balance.md"],
-      "passes": false
+      "passes": true
     },
     {
       "id": 25,

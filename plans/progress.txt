@@ -6,3 +6,4 @@
 # PRD tasks 19-21: Twitter cards already existed on layout/track/album pages. Added explicit canonical URLs via alternates to track and album generateMetadata.
 # PRD task 22: Content gap audit part 1 — surveyed full Lenny archive (290 podcasts, 349 newsletters). Wrote content/songs/batch8/archive-survey.md with top 50 episodes + notable newsletters.
 # PRD task 23: Content gap audit part 2 — compared top 50 episodes to 102 existing tracks. 39/50 covered (78%). 11 uncovered episodes identified with gap themes. Wrote content/songs/batch8/missing-episodes.md.
+# PRD task 24: Content gap audit part 3 — album balance analysis. 4 thin albums identified (Talent Search: 4, Interview: 5, By the Numbers: 6, Deep Work: 6). Wrote content/songs/batch8/album-balance.md.
