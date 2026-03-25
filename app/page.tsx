@@ -4,7 +4,7 @@ import { useState, useEffect, useMemo, useCallback } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
-import { Search, X, Shuffle, Dices, Share2, Check } from "lucide-react";
+import { Search, X, Shuffle, Dices, Share2, Check, Headphones } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { getAllAlbums, getAllTracks, getAlbumForTrack } from "@/lib/tracks";
 import { useAudio } from "@/lib/audio-context";
@@ -136,6 +136,7 @@ export default function Home() {
         <p className="text-sm text-muted-foreground/50 mt-1">Real songs built from 349 newsletters and 289 podcast episodes. Hit play.</p>
         <div className="flex items-center gap-2 mt-2">
           <p className="text-sm text-muted-foreground">
+            <Headphones className="w-3.5 h-3.5 inline-block mr-1 -mt-0.5" />
             {allTracks.length} songs &middot; {allAlbums.filter((a) => !a.comingSoon).length} albums &middot; {(() => {
               const totalSecs = allTracks.reduce((sum, t) => {
                 const parts = t.duration.split(":");
@@ -196,6 +197,7 @@ export default function Home() {
             {linkCopied ? "Copied!" : "Share"}
           </button>
         </div>
+        <p className="mt-2 text-xs text-muted-foreground/50">Hit play — each song is a 2-3 min banger based on a real Lenny insight.</p>
       </header>
 
       {/* 1.5 Onboarding Card */}
@@ -206,7 +208,7 @@ export default function Home() {
         <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground/60" />
         <input
           type="text"
-          placeholder="What's your favorite Lenny podcast or article?"
+          placeholder="Search songs, guests, or topics..."
           value={searchQuery}
           onChange={(e) => setSearchQuery(e.target.value)}
           className="w-full pl-10 pr-10 py-2.5 text-sm bg-white/[0.06] border border-border/30 rounded-lg text-foreground placeholder:text-muted-foreground/40 focus:outline-none focus:border-border/60 transition-colors"
@@ -295,7 +297,10 @@ export default function Home() {
             {/* 4. Discography Section */}
             <section id="discography" className="mb-12">
               <div className="flex items-center justify-between mb-4">
-                <h2 className="text-xl font-bold">Discography</h2>
+                <div>
+                  <h2 className="text-xl font-bold">Discography</h2>
+                  <p className="text-xs text-muted-foreground/50 mt-0.5">Songs grouped by theme</p>
+                </div>
                 <Link
                   href="/albums"
                   className="text-xs text-muted-foreground/60 hover:text-foreground transition-colors uppercase tracking-wide font-medium"
