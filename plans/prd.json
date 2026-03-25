@@ -7,7 +7,7 @@
       "description": "QA Round 7 — Mobile User audit. Read ALL files: app/page.tsx, app/album/[slug]/AlbumPageClient.tsx, app/track/[slug]/TrackPageClient.tsx, app/songs/page.tsx, app/about/page.tsx, components/NowPlayingBar.tsx, components/TrackRow.tsx, components/VoteButtons.tsx, components/GlobalNav.tsx, components/ThemeToggle.tsx, components/KeyboardShortcuts.tsx, components/SyncedLyrics.tsx (or LyricsDisplay). Check for: horizontal overflow, touch targets under 44px, hidden elements that should show, text truncation, layout overflow. Write content/qa/round7-mobile-audit.md. Every issue must have severity, file:line, what's wrong, and how to fix. DONE: Audit exists. DO NOT TOUCH: code. VERIFY: pnpm build passes.",
       "steps": ["Read all files", "Check mobile issues", "Write audit", "pnpm build passes"],
       "files": ["content/qa/round7-mobile-audit.md"],
-      "passes": false
+      "passes": true
     },
     {
       "id": 2,
