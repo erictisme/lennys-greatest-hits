@@ -7,7 +7,7 @@
       "description": "Redesign the default homepage OG image. Read app/opengraph-image.tsx. The current one has 4 colored dots — looks like a placeholder. Redesign using ImageResponse: dark background (#0a0a0a) with subtle warm gradient, large bold 'Lenny's Greatest Hits' (64px), tagline 'Lenny's best podcast insights — turned into real, playable songs' (24px), stats line, and a 3x2 grid of album-colored squares. Make it look like a Spotify Wrapped card. DONE: OG image is visually striking. DO NOT TOUCH: app/api/og/route.tsx. VERIFY: pnpm build passes.",
       "steps": ["Read app/opengraph-image.tsx", "Redesign", "pnpm build passes"],
       "files": ["app/opengraph-image.tsx"],
-      "passes": false
+      "passes": true
     },
     {
       "id": 2,

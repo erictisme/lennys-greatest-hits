@@ -6,6 +6,11 @@ export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
 export default async function Image() {
+  const albumColors = [
+    "#b45309", "#a16207", "#0369a1",
+    "#7c2d12", "#0e7490", "#7e22ce",
+  ];
+
   return new ImageResponse(
     (
       <div
@@ -13,61 +18,132 @@ export default async function Image() {
           width: "100%",
           height: "100%",
           display: "flex",
-          flexDirection: "column",
-          justifyContent: "center",
-          alignItems: "center",
-          background: "linear-gradient(135deg, #1a0f00 0%, #3d2200 25%, #5c3a10 50%, #3d2200 75%, #1a0f00 100%)",
+          flexDirection: "row",
+          background: "#0a0a0a",
           fontFamily: "sans-serif",
+          overflow: "hidden",
+          position: "relative",
         }}
       >
-        {/* Album color dots */}
-        <div style={{ display: "flex", gap: "16px", marginBottom: "40px" }}>
-          {["#f59e0b", "#3b82f6", "#10b981", "#8b5cf6"].map((color, i) => (
+        {/* Subtle warm gradient overlay */}
+        <div
+          style={{
+            position: "absolute",
+            top: 0,
+            left: 0,
+            right: 0,
+            bottom: 0,
+            background:
+              "radial-gradient(ellipse at 20% 50%, rgba(217, 119, 6, 0.12) 0%, transparent 60%), radial-gradient(ellipse at 80% 80%, rgba(180, 83, 9, 0.08) 0%, transparent 50%)",
+            display: "flex",
+          }}
+        />
+
+        {/* Left content */}
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "center",
+            padding: "60px 56px",
+            flex: 1,
+            zIndex: 1,
+          }}
+        >
+          {/* Title */}
+          <div
+            style={{
+              fontSize: "64px",
+              fontWeight: 800,
+              color: "#fafafa",
+              lineHeight: 1.1,
+              marginBottom: "16px",
+              letterSpacing: "-1px",
+            }}
+          >
+            {"Lenny's"}
+          </div>
+          <div
+            style={{
+              fontSize: "64px",
+              fontWeight: 800,
+              color: "#fafafa",
+              lineHeight: 1.1,
+              marginBottom: "28px",
+              letterSpacing: "-1px",
+            }}
+          >
+            Greatest Hits
+          </div>
+
+          {/* Tagline */}
+          <div
+            style={{
+              fontSize: "22px",
+              color: "#d4a574",
+              lineHeight: 1.5,
+              maxWidth: "480px",
+              marginBottom: "32px",
+            }}
+          >
+            {"Lenny's best podcast insights — turned into real, playable songs"}
+          </div>
+
+          {/* Stats */}
+          <div
+            style={{
+              display: "flex",
+              gap: "24px",
+              fontSize: "16px",
+              color: "#a8845c",
+              letterSpacing: "0.5px",
+            }}
+          >
+            <span>102 songs</span>
+            <span>·</span>
+            <span>11 albums</span>
+            <span>·</span>
+            <span>638 episodes distilled</span>
+          </div>
+        </div>
+
+        {/* Right side: 3x2 album grid */}
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "center",
+            alignItems: "center",
+            padding: "60px 56px 60px 0",
+            gap: "12px",
+            zIndex: 1,
+          }}
+        >
+          {[0, 1].map((row) => (
             <div
-              key={i}
+              key={row}
               style={{
-                width: "48px",
-                height: "48px",
-                borderRadius: "24px",
-                backgroundColor: color,
-                opacity: 0.85,
+                display: "flex",
+                gap: "12px",
               }}
-            />
+            >
+              {[0, 1, 2].map((col) => {
+                const color = albumColors[row * 3 + col];
+                return (
+                  <div
+                    key={col}
+                    style={{
+                      width: "130px",
+                      height: "130px",
+                      borderRadius: "12px",
+                      background: `linear-gradient(135deg, ${color} 0%, ${color}aa 100%)`,
+                      boxShadow: `0 4px 24px ${color}44`,
+                    }}
+                  />
+                );
+              })}
+            </div>
           ))}
-        </div>
-        {/* Title */}
-        <div
-          style={{
-            fontSize: "64px",
-            fontWeight: 700,
-            color: "#fafafa",
-            textAlign: "center",
-            lineHeight: 1.15,
-            marginBottom: "16px",
-          }}
-        >
-          Lenny&apos;s Greatest Hits
-        </div>
-        {/* Subtitle */}
-        <div
-          style={{
-            fontSize: "24px",
-            color: "#d4a574",
-            textAlign: "center",
-            maxWidth: "800px",
-          }}
-        >
-          Lenny Rachitsky&apos;s best insights turned into actual songs
-        </div>
-        {/* Track count */}
-        <div
-          style={{
-            fontSize: "18px",
-            color: "#a8845c",
-            marginTop: "24px",
-          }}
-        >
-          88 songs &middot; 11 albums &middot; 638 episodes distilled
         </div>
       </div>
     ),

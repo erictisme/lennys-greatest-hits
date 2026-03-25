@@ -1,11 +1,3 @@
-# Ralph PROD run Wed Mar 25 19:35:00 +08 2026
-Task 1: Wrote Round 7 mobile audit (17 issues: 1 critical, 4 high, 7 medium, 5 low) to content/qa/round7-mobile-audit.md.
-Task 2: Fixed C1 (safe-area-inset-bottom on NowPlayingBar + viewport-fit:cover), H1 (prev/next truncation), H3 (smaller track image on mobile), H4 (tighter player gap). H2 skipped — already hidden on mobile.
-Task 3: Wrote Round 7 performance audit. Key finding: lib/albums.ts is 594KB (2x threshold) with inline lyrics.
-Task 4: Dynamic-imported lyrics-data.ts (417KB) in TrackPageClient — no longer in initial client bundle, loads lazily on track pages only.
-Task 5: Wrote Round 7 first-time visitor audit (1 critical, 3 high, 6 medium, 5 low). Top issues: no "what is this" explanation, tagline assumes context, no homepage share button.
-Task 6: Fixed C1 (hero explanation line), H1 (tagline rewritten to explain format), H2 (share button with native share/clipboard fallback), H3 (Coming Soon albums non-clickable with tooltip + dimmed).
-Task 7: Content accuracy spot-check — verified 5 tracks (Build the Machine, Go Viral, The Obsession, Fire with Grace, Crossing the Chasm) across 4 albums via Lenny MCP. All 5 pass: guests confirmed, quotes verified in transcripts, URLs valid.
-Task 8: No accuracy issues found in spot-check — nothing to fix. Marked complete.
-Task 9: Fixed all 7 MEDIUM mobile issues: M1/M2 homepage touch targets+grid gap, M3/M4 album page buttons+play alignment, M5/M6 SyncedLyrics banner text+share opacity, M7 ThemeToggle min size.
-Task 10: All 6 MEDIUM visitor issues (M1-M6) were already resolved by prior fixes in Tasks 5-6. Verified in code and build passes.
+# Ralph PROD run Wed Mar 25 23:49:52 +08 2026
+Task 1: Redesigned homepage OG image — dark bg, warm gradient, 3x2 album grid, Spotify Wrapped style.
+Build passes.
