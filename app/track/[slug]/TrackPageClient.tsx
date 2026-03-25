@@ -16,6 +16,7 @@ import {
 } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { getTrackBySlug, getAlbumForTrack, getRelatedTracks } from "@/lib/tracks";
+import type { LyricAnnotation } from "@/lib/types";
 import { notFound, useRouter } from "next/navigation";
 import { useAudio } from "@/lib/audio-context";
 import { trackEvent } from "@/lib/analytics";
@@ -37,10 +38,20 @@ const gradientClass: Record<string, string> = {
 };
 
 export default function TrackPageClient({ slug }: { slug: string }) {
-  const track = getTrackBySlug(slug);
-  const album = track ? getAlbumForTrack(slug) : undefined;
+  const baseTrack = getTrackBySlug(slug);
+  const album = baseTrack ? getAlbumForTrack(slug) : undefined;
   const audio = useAudio();
   const router = useRouter();
+
+  // Lazy-load lyrics data (417KB) only when track page is visited
+  const [dynamicLyrics, setDynamicLyrics] = useState<{ lyrics: string; annotations?: LyricAnnotation[] } | undefined>(undefined);
+  useEffect(() => {
+    import("@/lib/lyrics-data").then((mod) => {
+      setDynamicLyrics(mod.getLyricsForTrack(slug));
+    });
+  }, [slug]);
+
+  const track = baseTrack ? { ...baseTrack, lyrics: dynamicLyrics?.lyrics ?? baseTrack.lyrics ?? "", annotations: dynamicLyrics?.annotations ?? baseTrack.annotations } : undefined;
 
   // Set the queue to the album's tracks when visiting a track page.
   // If audio is already playing, only update the queue without interrupting playback.

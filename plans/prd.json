@@ -34,7 +34,7 @@
       "description": "Fix the #1 performance issue from Round 7 performance audit. Read content/qa/round7-performance-audit.md. Implement the single highest-impact performance fix. Common fixes: lazy-load data, split large files, reduce bundle size. DONE: Top perf issue fixed. VERIFY: pnpm build passes.",
       "steps": ["Read audit", "Fix #1 issue", "pnpm build passes"],
       "files": [],
-      "passes": false
+      "passes": true
     },
     {
       "id": 5,
