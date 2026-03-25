@@ -2,3 +2,4 @@
 # PRD tasks 9-14: SEO metadata sweep — updated layout JSON-LD with 102 songs/11 albums counts, track page titles now show guest name, created songs/layout.tsx for /songs metadata, verified existing JSON-LD on track/album pages.
 # PRD task 15: Accuracy spot-check part 1 — verified 5 tracks (taste, build-the-machine, doesnt-feel-right-yet, crossing-the-chasm, dont-break-the-streak) against Lenny MCP. All 5 passed: guests confirmed, quotes verified, source URLs valid.
 # PRD task 16: Accuracy spot-check part 2 — verified 5 tracks (measure-twice, the-obsession, fire-with-grace, the-long-game, state-of-the-me) against Lenny MCP. All 5 passed. One note: state-of-the-me keyQuote is a creative paraphrase, not a direct Lenny quote.
+# PRD tasks 17-18: No accuracy fixes needed — both spot-check audits (parts 1 & 2) found all 10 tracks passing with no wrong attributions, quotes, or URLs.
