@@ -161,8 +161,8 @@ export default function TrackPageClient({ slug }: { slug: string }) {
 
   const shareUrl = typeof window !== "undefined" ? window.location.href : "";
   const shareText = track.sources?.[0]?.guest
-    ? `${track.title} — ${track.sources[0].guest}'s insights from @lennysan's podcast, turned into a song`
-    : `${track.title} | Lenny's Greatest Hits — podcast insights turned into songs`;
+    ? `"${track.title}" — ${track.sources[0].guest}'s insights from Lenny's podcast, turned into a song`
+    : `"${track.title}" — startup wisdom turned into music you can feel`;
 
   const handleShareX = () => {
     trackEvent("share_clicked", { platform: "x", track: slug, track_title: track.title });

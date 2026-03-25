@@ -9,3 +9,5 @@ Task 4: Created app/sitemap.ts — generates sitemap.xml with all static pages, 
 Build passes.
 Task 5: Created app/robots.ts — allows all crawlers, points to sitemap.
 Build passes.
+Task 6: Updated track share text — guest attribution or startup wisdom tagline.
+Build passes.

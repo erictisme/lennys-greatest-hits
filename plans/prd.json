@@ -52,7 +52,7 @@
       "description": "Improve share text on track pages. Read app/track/[slug]/TrackPageClient.tsx. Find the shareText variable. Change to: if track has a guest, use `\"[Title] — [Guest]'s insights from Lenny's podcast, turned into a song\"`. If no guest, use `\"[Title] — startup wisdom turned into music you can feel\"`. Update handleShareX to use this text. DONE: Track share text is compelling. DO NOT TOUCH: audio logic. VERIFY: pnpm build passes.",
       "steps": ["Read TrackPageClient.tsx", "Update shareText", "pnpm build passes"],
       "files": ["app/track/[slug]/TrackPageClient.tsx"],
-      "passes": false
+      "passes": true
     },
     {
       "id": 7,
