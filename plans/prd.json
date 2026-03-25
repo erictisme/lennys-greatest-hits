@@ -169,7 +169,7 @@
       "description": "Add Twitter card meta tags to layout.tsx. Read app/layout.tsx metadata object. Ensure the twitter object has: card: 'summary_large_image', title, description. These may already exist — if so, verify they're correct. DONE: Twitter metadata set. VERIFY: pnpm build passes.",
       "steps": ["Read app/layout.tsx", "Check/add twitter metadata", "pnpm build passes"],
       "files": ["app/layout.tsx"],
-      "passes": false
+      "passes": true
     },
     {
       "id": 20,
@@ -178,7 +178,7 @@
       "description": "Add Twitter card meta tags to track and album generateMetadata. Read app/track/[slug]/page.tsx and app/album/[slug]/page.tsx. In generateMetadata, add twitter: { card: 'summary_large_image', title, description } to each. DONE: Per-page Twitter cards set. VERIFY: pnpm build passes.",
       "steps": ["Read track page.tsx", "Add twitter metadata", "Read album page.tsx", "Add twitter metadata", "pnpm build passes"],
       "files": ["app/track/[slug]/page.tsx", "app/album/[slug]/page.tsx"],
-      "passes": false
+      "passes": true
     },
     {
       "id": 21,
@@ -187,7 +187,7 @@
       "description": "Add canonical URLs. Read app/layout.tsx — check if metadataBase is set (should be 'https://lennys-greatest-hits.vercel.app'). If yes, Next.js auto-generates canonicals. If not, add it. Then in app/track/[slug]/page.tsx generateMetadata, add alternates: { canonical: `/track/${slug}` }. Same for album pages. DONE: Canonical URLs set. VERIFY: pnpm build passes.",
       "steps": ["Check metadataBase in layout.tsx", "Add canonicals to track/album pages", "pnpm build passes"],
       "files": ["app/layout.tsx", "app/track/[slug]/page.tsx", "app/album/[slug]/page.tsx"],
-      "passes": false
+      "passes": true
     },
     {
       "id": 22,

@@ -3,3 +3,4 @@
 # PRD task 15: Accuracy spot-check part 1 — verified 5 tracks (taste, build-the-machine, doesnt-feel-right-yet, crossing-the-chasm, dont-break-the-streak) against Lenny MCP. All 5 passed: guests confirmed, quotes verified, source URLs valid.
 # PRD task 16: Accuracy spot-check part 2 — verified 5 tracks (measure-twice, the-obsession, fire-with-grace, the-long-game, state-of-the-me) against Lenny MCP. All 5 passed. One note: state-of-the-me keyQuote is a creative paraphrase, not a direct Lenny quote.
 # PRD tasks 17-18: No accuracy fixes needed — both spot-check audits (parts 1 & 2) found all 10 tracks passing with no wrong attributions, quotes, or URLs.
+# PRD tasks 19-21: Twitter cards already existed on layout/track/album pages. Added explicit canonical URLs via alternates to track and album generateMetadata.

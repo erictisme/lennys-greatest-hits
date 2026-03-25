@@ -41,10 +41,36 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       description,
       images: [imageUrl],
     },
+    alternates: {
+      canonical: `/album/${slug}`,
+    },
   };
 }
 
 export default async function AlbumPage({ params }: Props) {
   const { slug } = await params;
-  return <AlbumPageClient slug={slug} />;
+  const album = getAlbumBySlug(slug);
+
+  const jsonLd = album
+    ? {
+        "@context": "https://schema.org",
+        "@type": "MusicAlbum",
+        name: album.title,
+        numTracks: album.tracks.length,
+        description: album.description,
+        url: `https://lennys-greatest-hits.vercel.app/album/${slug}`,
+      }
+    : null;
+
+  return (
+    <>
+      {jsonLd && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+      )}
+      <AlbumPageClient slug={slug} />
+    </>
+  );
 }
