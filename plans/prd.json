@@ -16,7 +16,7 @@
       "description": "Fix: Sort pills overflow on /songs page at 320px (Round 4 #4). In app/songs/page.tsx, the sort pills are in a `flex gap-2` container without wrapping. On narrow screens they overflow. FIX: Add `flex-wrap` to the sort pills container div. Also reduce padding on pills for mobile: change `px-4 py-1.5` to `px-3 py-1 sm:px-4 sm:py-1.5`. DONE: Sort pills wrap on narrow screens. DO NOT TOUCH: sort logic, track rendering. VERIFY: pnpm build passes.",
       "steps": ["Read app/songs/page.tsx", "Add flex-wrap to sort pills container", "Reduce mobile padding", "pnpm build passes"],
       "files": ["app/songs/page.tsx"],
-      "passes": false
+      "passes": true
     },
     {
       "id": 3,

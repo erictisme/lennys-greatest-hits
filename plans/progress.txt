@@ -1,3 +1,5 @@
 # Ralph PROD run Wed Mar 25 08:00:59 +08 2026
 Task 1: Fixed lyric share button mobile visibility (opacity-40 on mobile, hover on desktop) and increased tap target p-1.5→p-2.
 Build passes.
+Task 2: Added flex-wrap to sort pills container and reduced mobile padding (px-3 py-1) on /songs page.
+Build passes.

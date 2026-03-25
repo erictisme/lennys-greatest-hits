@@ -72,7 +72,7 @@ export default function SongsPage() {
       </div>
 
       {/* Sort pills */}
-      <div className="flex gap-2 mb-8">
+      <div className="flex flex-wrap gap-2 mb-8">
         {([
           { key: "newest", label: "Newest" },
           { key: "most-played", label: "Most Played" },
@@ -82,7 +82,7 @@ export default function SongsPage() {
           <button
             key={key}
             onClick={() => setSortBy(key)}
-            className={`px-4 py-1.5 text-sm font-medium rounded-full border transition-colors ${
+            className={`px-3 py-1 sm:px-4 sm:py-1.5 text-sm font-medium rounded-full border transition-colors ${
               sortBy === key
                 ? "bg-foreground text-background border-foreground"
                 : "border-border/50 text-muted-foreground hover:text-foreground hover:border-border"
