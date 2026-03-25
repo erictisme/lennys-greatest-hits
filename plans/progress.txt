@@ -1,33 +1,3 @@
-# Ralph PROD run Wed Mar 25 08:00:59 +08 2026
-Task 1: Fixed lyric share button mobile visibility (opacity-40 on mobile, hover on desktop) and increased tap target p-1.5→p-2.
-Build passes.
-Task 2: Added flex-wrap to sort pills container and reduced mobile padding (px-3 py-1) on /songs page.
-Build passes.
-Task 3: Added 44px min touch targets to skip/share buttons, increased play button to w-10 h-10 on mobile in NowPlayingBar.
-Build passes.
-Task 4: Increased bottom padding from pb-[72px] to pb-[120px] in layout.tsx to accommodate NowPlayingBar + Up Next banner.
-Build passes.
-Task 5: Added p-2 padding to search clear X buttons in app/page.tsx and app/songs/page.tsx for 44px+ tap targets.
-Build passes.
-Task 6: Added "Share This Song" dropdown button (X, LinkedIn, Copy Link) to track detail page Vote+Share section.
-Build passes.
-Task 8: Increased progress bar tap targets — TrackPageClient py-2→py-3, NowPlayingBar py-1.5→py-3. Visual bar stays 6px, clickable area larger.
-Build passes.
-Task 9: Increased annotation toggle button padding p-1.5→p-2.5 in SyncedLyrics.tsx, added p-2 to onboarding dismiss X in OnboardingTooltips.tsx for 44px touch targets.
-Build passes.
-Task 7: Fixed 'Do Things That Don't Scale' quote attribution — changed from fabricated Chesky quote to real Paul Graham quote, updated source URL to actual Lenny newsletter.
-Build passes.
-Task 10: Added `hidden sm:flex` to keyboard shortcuts ? button so it only shows on desktop/tablet where keyboards exist.
-Build passes.
-Task 11: Spot-checked 5 tracks (crossing-the-chasm, the-hiring-playbook, burnout, plg, the-obsession) via Lenny MCP. 3 clean, 2 have fabricated keyQuotes (crossing-the-chasm, plg use song lyrics as quotes).
-Build passes.
-Task 12: Fixed 3 fabricated keyQuotes from Round 5 spot-check — replaced crossing-the-chasm (Geoffrey Moore), plg (Elena Verna), and burnout (Andy Johns) with real verbatim quotes verified via Lenny MCP.
-Build passes.
-Task 13: Added 'New here? Start with these' section above Popular on homepage — 3 curated tracks (not-venture-scale, product-market-fit, vibe-coding) with amber-accented cards and one-line descriptions.
-Build passes.
-Task 14: Audited all source URLs in lib/albums.ts — no fabricated URLs found. 10 empty annotation URLs on 2 tracks, 2 legitimate non-Lenny URLs.
-Build passes.
-Task 15: Filled in 10 empty annotation sourceUrl fields on crossing-the-chasm (5) and the-long-game (5) with their existing source URLs.
-Build passes.
-Task 16: Fixed multi-guest attribution — added Scott Belsky to taste sources, Sanchan Saxena + Chip Conley to im-in-the-room, Brian Chesky to do-things-that-dont-scale.
-Build passes.
+# Ralph PROD run Wed Mar 25 14:07:47 +08 2026
+Task 12: Added max-w-[45%] truncate to prev/next nav links on track page to prevent long titles from overflowing on mobile.
+Tasks 1-11: Already implemented in code — marked passes:true in prd.json.

@@ -15,7 +15,7 @@ import {
   Share2,
 } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
-import { getTrackBySlug, getAlbumForTrack } from "@/lib/tracks";
+import { getTrackBySlug, getAlbumForTrack, getRelatedTracks } from "@/lib/tracks";
 import { notFound, useRouter } from "next/navigation";
 import { useAudio } from "@/lib/audio-context";
 import { trackEvent } from "@/lib/analytics";
@@ -149,7 +149,9 @@ export default function TrackPageClient({ slug }: { slug: string }) {
   };
 
   const shareUrl = typeof window !== "undefined" ? window.location.href : "";
-  const shareText = `${track.title} | Lenny's Greatest Hits`;
+  const shareText = track.sources?.[0]?.guest
+    ? `${track.title} — ${track.sources[0].guest}'s insights from @lennysan's podcast, turned into a song`
+    : `${track.title} | Lenny's Greatest Hits — podcast insights turned into songs`;
 
   const handleShareX = () => {
     trackEvent("share_clicked", { platform: "x", track: slug, track_title: track.title });
@@ -338,7 +340,7 @@ export default function TrackPageClient({ slug }: { slug: string }) {
               <button
                 onClick={() => { if (prevTrack) { audio.prev(); router.push(`/track/${prevTrack.slug}`); } }}
                 disabled={!prevTrack}
-                className="disabled:opacity-30"
+                className="disabled:opacity-30 min-w-[44px] min-h-[44px] flex items-center justify-center"
               >
                 <SkipBack className="w-5 h-5 text-muted-foreground hover:text-foreground transition-colors" />
               </button>
@@ -361,7 +363,7 @@ export default function TrackPageClient({ slug }: { slug: string }) {
               <button
                 onClick={() => { if (nextTrack) { audio.next(); router.push(`/track/${nextTrack.slug}`); } }}
                 disabled={!nextTrack}
-                className="disabled:opacity-30"
+                className="disabled:opacity-30 min-w-[44px] min-h-[44px] flex items-center justify-center"
               >
                 <SkipForward className="w-5 h-5 text-muted-foreground hover:text-foreground transition-colors" />
               </button>
@@ -413,17 +415,20 @@ export default function TrackPageClient({ slug }: { slug: string }) {
       <main className="flex-1 px-4 sm:px-6 py-6 sm:py-8 max-w-2xl mx-auto w-full">
         {/* Key Quote */}
         {track.keyQuote && (
-          <blockquote
-            className="border-l-2 pl-4 mb-8 text-sm italic text-muted-foreground/80"
-            style={{ borderColor: album.accentColor }}
-          >
-            &ldquo;{track.keyQuote}&rdquo;
-            {track.quoteSpeaker && (
-              <span className="block mt-1 not-italic text-xs text-muted-foreground/50">
-                - {track.quoteSpeaker}
-              </span>
-            )}
-          </blockquote>
+          <div className="relative mb-8">
+            <div className="absolute -inset-2 rounded-lg pointer-events-none" style={{ background: `${album.accentColor}08` }} />
+            <blockquote
+              className="relative border-l-2 pl-4 text-sm italic text-muted-foreground/80"
+              style={{ borderColor: album.accentColor }}
+            >
+              &ldquo;{track.keyQuote}&rdquo;
+              {track.quoteSpeaker && (
+                <span className="block mt-1 not-italic text-xs text-muted-foreground/50">
+                  - {track.quoteSpeaker}
+                </span>
+              )}
+            </blockquote>
+          </div>
         )}
 
         {/* Story Behind This Song */}
@@ -510,6 +515,54 @@ export default function TrackPageClient({ slug }: { slug: string }) {
           </section>
         )}
 
+        {/* You Might Also Like */}
+        {(() => {
+          const related = getRelatedTracks(track.slug, 3);
+          if (related.length === 0) return null;
+          return (
+            <section className="mb-10">
+              <h2 className="text-xs font-medium uppercase tracking-widest text-muted-foreground/50 mb-3">
+                You might also like
+              </h2>
+              <div className="space-y-2">
+                {related.map((rel) => {
+                  const relAlbum = getAlbumForTrack(rel.slug);
+                  return (
+                    <Link
+                      key={rel.slug}
+                      href={`/track/${rel.slug}`}
+                      className="flex items-center gap-3 p-2 -mx-2 rounded-lg hover:bg-white/[0.04] transition-colors group"
+                    >
+                      {relAlbum?.coverImage && (
+                        <Image
+                          src={relAlbum.coverImage}
+                          alt={rel.title}
+                          width={40}
+                          height={40}
+                          className="rounded-md flex-shrink-0"
+                        />
+                      )}
+                      <div className="min-w-0 flex-1">
+                        <p className="text-sm font-medium truncate group-hover:text-foreground transition-colors">{rel.title}</p>
+                        <p className="text-xs text-muted-foreground/50 truncate">{relAlbum?.title}</p>
+                      </div>
+                      <button
+                        onClick={(e) => {
+                          e.preventDefault();
+                          audio.play(rel);
+                        }}
+                        className="flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center bg-white/[0.06] hover:bg-white/[0.12] transition-colors"
+                      >
+                        <Play className="w-3.5 h-3.5 ml-0.5" />
+                      </button>
+                    </Link>
+                  );
+                })}
+              </div>
+            </section>
+          );
+        })()}
+
         {/* Vote + Share (hidden for locked tracks) */}
         {!track.isLocked && (
           <div className="flex flex-wrap items-center gap-3">
@@ -560,7 +613,7 @@ export default function TrackPageClient({ slug }: { slug: string }) {
           {prevTrack ? (
             <Link
               href={`/track/${prevTrack.slug}`}
-              className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+              className="text-sm text-muted-foreground hover:text-foreground transition-colors max-w-[45%] truncate"
             >
               <span className="block text-xs text-muted-foreground/50 mb-0.5">
                 Previous
@@ -573,7 +626,7 @@ export default function TrackPageClient({ slug }: { slug: string }) {
           {nextTrack ? (
             <Link
               href={`/track/${nextTrack.slug}`}
-              className="text-sm text-muted-foreground hover:text-foreground transition-colors text-right"
+              className="text-sm text-muted-foreground hover:text-foreground transition-colors text-right max-w-[45%] truncate"
             >
               <span className="block text-xs text-muted-foreground/50 mb-0.5">
                 Next
