@@ -5747,12 +5747,12 @@ Physically go to them`,
     concept: "Based on Brian Chesky's founding story, going door to door photographing Airbnb listings. Plus DoorDash's $6 flyers at Stanford and Tinder going sorority to sorority at USC. From Lenny's series on how the biggest companies got their first users.",
     keyInsight: "Before you build the engine, light the flame. Every great company started with someone who refused to scale.",
     sources: [
-      { title: "Brian Chesky on Airbnb's early days", type: "podcast", url: "https://www.lennysnewsletter.com/p/brian-cheskys-contrarian-approach", guest: "Brian Chesky" },
+      { title: "How to kickstart and scale a consumer business — Step 4: Find your early adopters by doing things that don't scale", type: "newsletter", url: "https://www.lennysnewsletter.com/p/how-to-kickstart-and-scale-a-consumer-business-step-4-find-your-early-adopters-b", guest: "Lenny Rachitsky" },
       { title: "Do Things That Don't Scale (paulgraham.com)", type: "newsletter", url: "https://paulgraham.com/ds.html", guest: "Paul Graham" },
     ],
-    keyQuote: "Go to your users. Physically go to them.",
-    quoteSpeaker: "Brian Chesky",
-    storyBehind: "Brian Chesky told Lenny the story of flying to New York in 2009, personally photographing Airbnb listings with a rented camera because hosts' blurry phone photos weren't converting. The Collison brothers at Stripe would literally grab people's laptops and install Stripe for them on the spot. DoorDash's Tony Xu started by taping $6 flyers to dorm room doors at Stanford. Every one of these billion-dollar companies started with founders doing the most unscalable thing imaginable, and that's exactly what made them work.",
+    keyQuote: "The most common unscalable thing founders have to do at the start is recruit users manually.",
+    quoteSpeaker: "Paul Graham",
+    storyBehind: "Paul Graham coined the concept in his famous essay, and Brian Chesky became the poster child — flying to New York in 2009, personally photographing Airbnb listings with a rented camera because hosts' blurry phone photos weren't converting. The Collison brothers at Stripe would literally grab people's laptops and install Stripe for them on the spot. DoorDash's Tony Xu started by taping $6 flyers to dorm room doors at Stanford. Every one of these billion-dollar companies started with founders doing the most unscalable thing imaginable, and that's exactly what made them work.",
     annotations: [
       {
         lyricText: "Knocked on every door from dusk to dawn",

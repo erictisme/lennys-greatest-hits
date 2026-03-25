@@ -61,7 +61,7 @@
       "description": "Fix: 'Do Things That Don't Scale' Brian Chesky quote attribution (Round 3 Lenny). The keyQuote 'Go to your users. Physically go to them' is attributed to Brian Chesky but is more of a Paul Graham / YC maxim. Chesky lived it but didn't coin it. FIX: Use mcp__lennysdata__search_content to find what Brian Chesky actually said on Lenny's podcast about doing things that don't scale. Update the keyQuote to an actual Chesky quote from the episode. If you can find a better direct quote, use it. If not, change the attribution to be more accurate: 'Inspired by Brian Chesky's Airbnb story' rather than a direct quote. Update in lib/albums.ts — find the track with slug 'do-things-that-dont-scale'. DONE: Quote attribution is accurate. VERIFY: pnpm build passes.",
       "steps": ["Search Lenny MCP for Chesky on doing things that don't scale", "Find actual quote", "Update lib/albums.ts", "pnpm build passes"],
       "files": ["lib/albums.ts"],
-      "passes": false
+      "passes": true
     },
     {
       "id": 8,

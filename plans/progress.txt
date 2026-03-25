@@ -15,3 +15,5 @@ Task 8: Increased progress bar tap targets — TrackPageClient py-2→py-3, NowP
 Build passes.
 Task 9: Increased annotation toggle button padding p-1.5→p-2.5 in SyncedLyrics.tsx, added p-2 to onboarding dismiss X in OnboardingTooltips.tsx for 44px touch targets.
 Build passes.
+Task 7: Fixed 'Do Things That Don't Scale' quote attribution — changed from fabricated Chesky quote to real Paul Graham quote, updated source URL to actual Lenny newsletter.
+Build passes.
