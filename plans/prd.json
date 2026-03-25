@@ -143,6 +143,78 @@
       "steps": ["Read lib/albums.ts", "Check 10+ tracks for missing sources", "Use Lenny MCP to find missing source URLs", "Add missing sources to each track", "pnpm build passes"],
       "files": ["lib/albums.ts"],
       "passes": false
+    },
+    {
+      "id": 17,
+      "category": "feature",
+      "priority": 2,
+      "description": "IMPROVEMENT: Add 'You Might Also Like' related songs section on track pages. In app/track/[slug]/TrackPageClient.tsx, after the 'Based on' section and before the Vote+Share section, add a 'You Might Also Like' section. Show 3 tracks from DIFFERENT albums that share 2+ tags with the current track. Implementation: (1) In lib/tracks.ts, add a function `getRelatedTracks(slug: string, limit: number = 3): Track[]` that finds tracks sharing the most tags with the given track, excluding same-album tracks and the track itself. Sort by tag overlap count descending. (2) In TrackPageClient.tsx, call getRelatedTracks and render them as clickable rows with cover art, title, album name, and a play button. Style like a compact version of TrackRow. Use Link to navigate to the related track. DONE: Track pages show 3 related songs from other albums. Clicking navigates to that track. DO NOT TOUCH: lib/audio-context.tsx, existing track page sections above this. VERIFY: pnpm build passes.",
+      "steps": ["Add getRelatedTracks to lib/tracks.ts", "Add section to TrackPageClient.tsx", "pnpm build passes"],
+      "files": ["lib/tracks.ts", "app/track/[slug]/TrackPageClient.tsx"],
+      "passes": false
+    },
+    {
+      "id": 18,
+      "category": "feature",
+      "priority": 2,
+      "description": "IMPROVEMENT: Add 'plays today' counter on homepage. On the homepage (app/page.tsx), after the stats line (X songs · Y albums · Z hr), add a dynamic 'N plays today' count. Implementation: (1) In app/api/play/route.ts, add a GET handler for `?today=true` that returns the total play count for today from Supabase (query: SELECT COUNT(*) FROM plays WHERE created_at >= CURRENT_DATE). (2) In app/page.tsx, add a useEffect that fetches `/api/play?today=true` and displays the count in the stats line. Only show if count > 0. Style: same muted text as the existing stats. DONE: Homepage shows 'N plays today' when there are plays. DO NOT TOUCH: lib/audio-context.tsx, existing play tracking logic. VERIFY: pnpm build passes.",
+      "steps": ["Add today count endpoint to API", "Add fetch + display in page.tsx", "pnpm build passes"],
+      "files": ["app/api/play/route.ts", "app/page.tsx"],
+      "passes": false
+    },
+    {
+      "id": 19,
+      "category": "feature",
+      "priority": 3,
+      "description": "IMPROVEMENT: Animated equalizer favicon when music plays. Create components/FaviconUpdater.tsx — a 'use client' component that uses useAudio() to detect when music is playing. When isPlaying=true, swap document.querySelector('link[rel=icon]').href to a base64-encoded equalizer SVG. When paused, revert to the default favicon. Use a simple static SVG (3 bars at different heights, amber colored) — no actual animation needed in the favicon, just the visual swap signals 'music is active'. Mount in app/layout.tsx. DONE: Favicon changes when music plays. DO NOT TOUCH: lib/audio-context.tsx. VERIFY: pnpm build passes.",
+      "steps": ["Create components/FaviconUpdater.tsx", "Mount in layout.tsx", "pnpm build passes"],
+      "files": ["components/FaviconUpdater.tsx", "app/layout.tsx"],
+      "passes": false
+    },
+    {
+      "id": 20,
+      "category": "feature",
+      "priority": 3,
+      "description": "IMPROVEMENT: Add 'Surprise Me' button on homepage. In app/page.tsx, next to the Shuffle Play button, add a 'Surprise Me' button that picks a random track, navigates to its track page, and starts playing it. Style: ghost button (border, no fill) to contrast with the filled Shuffle Play button. Use `border border-border/50 text-muted-foreground hover:text-foreground`. Icon: use Dice or Sparkles from lucide-react (check which exists). Implementation: pick random track from allTracks, call audio.play(track), router.push(`/track/${track.slug}`). DONE: Surprise Me button works. DO NOT TOUCH: lib/audio-context.tsx, Shuffle Play behavior. VERIFY: pnpm build passes.",
+      "steps": ["Add button in app/page.tsx next to Shuffle Play", "pnpm build passes"],
+      "files": ["app/page.tsx"],
+      "passes": false
+    },
+    {
+      "id": 21,
+      "category": "feature",
+      "priority": 3,
+      "description": "IMPROVEMENT: Add 'NEW' badge to recently added tracks. Tracks with releaseDate within the last 7 days should show a small 'NEW' pill badge. Implementation: (1) In components/TrackRow.tsx, check if track.releaseDate exists and is within 7 days of now. If so, render a small `<span className='px-1.5 py-0.5 text-[9px] font-bold uppercase tracking-wider rounded-full bg-primary/20 text-primary ml-1.5'>NEW</span>` after the track title. (2) Same in app/album/[slug]/AlbumPageClient.tsx after the track title in track rows. Use the album's accent color instead of primary. DONE: New tracks have a badge. DO NOT TOUCH: releaseDate data, audio logic. VERIFY: pnpm build passes.",
+      "steps": ["Add NEW badge to TrackRow.tsx", "Add NEW badge to AlbumPageClient.tsx", "pnpm build passes"],
+      "files": ["components/TrackRow.tsx", "app/album/[slug]/AlbumPageClient.tsx"],
+      "passes": false
+    },
+    {
+      "id": 22,
+      "category": "feature",
+      "priority": 3,
+      "description": "IMPROVEMENT: Subtle parallax on album cover image. In app/album/[slug]/AlbumPageClient.tsx, add a subtle parallax effect to the album cover image in the header. Use framer-motion's useScroll and useTransform: `const { scrollY } = useScroll(); const y = useTransform(scrollY, [0, 300], [0, -30]);`. Wrap the Image in a motion.div with `style={{ y }}`. The cover moves 30px slower than content over the first 300px of scroll. Very subtle — barely noticeable but adds depth. DONE: Album cover has subtle parallax on scroll. DO NOT TOUCH: track list, audio logic. VERIFY: pnpm build passes.",
+      "steps": ["Add useScroll/useTransform to AlbumPageClient.tsx", "Wrap cover Image in motion.div", "pnpm build passes"],
+      "files": ["app/album/[slug]/AlbumPageClient.tsx"],
+      "passes": false
+    },
+    {
+      "id": 23,
+      "category": "feature",
+      "priority": 3,
+      "description": "IMPROVEMENT: Add subtle accent glow behind key quote on track pages. In app/track/[slug]/TrackPageClient.tsx, the keyQuote blockquote is visually flat. Add a very subtle glow: wrap the blockquote in a div with `position: relative`, add a pseudo-element-like div behind it: `<div className='absolute -inset-2 rounded-lg pointer-events-none' style={{ background: `${album.accentColor}08` }} />`. This creates a barely-visible accent-colored halo around the quote. Keep the existing blockquote styling. DONE: Key quote has subtle accent glow. DO NOT TOUCH: quote content, audio controls. VERIFY: pnpm build passes.",
+      "steps": ["Add glow div around blockquote in TrackPageClient.tsx", "pnpm build passes"],
+      "files": ["app/track/[slug]/TrackPageClient.tsx"],
+      "passes": false
+    },
+    {
+      "id": 24,
+      "category": "feature",
+      "priority": 3,
+      "description": "IMPROVEMENT: Enhance /topics page with track counts and top track. In app/topics/page.tsx, each topic tag currently just links to its page. Enhance: show the track count next to each tag (e.g., 'growth (12 songs)'). Also visually distinguish topics with more tracks (larger font or bolder weight for popular topics). Read lib/tracks.ts to find how tags are aggregated. DONE: Topics page shows track counts. Popular topics are visually prominent. DO NOT TOUCH: /topics/[tag] detail pages, track data. VERIFY: pnpm build passes.",
+      "steps": ["Read app/topics/page.tsx", "Add track counts per tag", "Style popular tags larger", "pnpm build passes"],
+      "files": ["app/topics/page.tsx"],
+      "passes": false
     }
   ]
 }
