@@ -1,6 +1,6 @@
 import { ImageResponse } from "next/og";
 import { NextRequest } from "next/server";
-import { getTrackBySlug, getAlbumBySlug, getAlbumForTrack, getAllAlbums } from "@/lib/tracks";
+import { getTrackBySlug, getAlbumBySlug, getAlbumForTrack } from "@/lib/tracks";
 
 export const runtime = "edge";
 
@@ -35,11 +35,7 @@ function renderTrackOG(slug: string) {
     return renderDefaultOG();
   }
 
-  // Extract first meaningful lyric line for display
-  const lines = track.lyrics.split("\n").filter(
-    (l) => l.trim() && !l.trim().startsWith("[")
-  );
-  const displayLyric = track.keyQuote || lines[0] || "";
+  const displayLyric = track.keyQuote || "";
 
   return new ImageResponse(
     (
