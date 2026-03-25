@@ -43,7 +43,7 @@
       "description": "QA Round 7 — First-time visitor audit. Read app/page.tsx, components/OnboardingTooltips.tsx, components/TrackRow.tsx, components/NowPlayingBar.tsx, app/about/page.tsx. Walk through the first 60 seconds as a new visitor from Lenny's Slack. Focus on: (1) Is the tagline clear? (2) How fast to first play? (3) What would make them share? (4) What's confusing? (5) What's missing? Write content/qa/round7-visitor-audit.md. DONE: Audit exists. DO NOT TOUCH: code. VERIFY: pnpm build passes.",
       "steps": ["Read pages", "Walk through journey", "Write audit", "pnpm build passes"],
       "files": ["content/qa/round7-visitor-audit.md"],
-      "passes": false
+      "passes": true
     },
     {
       "id": 6,
