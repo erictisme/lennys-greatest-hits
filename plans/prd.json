@@ -4,216 +4,117 @@
       "id": 1,
       "category": "bugfix",
       "priority": 0,
-      "description": "Fix: Lyric share buttons invisible on touch/mobile (Round 4 #3). In components/SyncedLyrics.tsx, the share button per lyric line uses `opacity-0 group-hover:opacity-60` — this means on mobile (no hover) the buttons are permanently invisible. FIX: Change to `opacity-40 sm:opacity-0 sm:group-hover:opacity-60` so on mobile they're always slightly visible, on desktop they appear on hover. Also increase the tap target: change `p-1.5` to `p-2` on the share button. DONE: Lyric share buttons visible on mobile at reduced opacity. DO NOT TOUCH: annotation toggle behavior, lyric parsing. VERIFY: pnpm build passes.",
-      "steps": ["Read components/SyncedLyrics.tsx", "Fix share button opacity for mobile", "Increase tap target", "pnpm build passes"],
-      "files": ["components/SyncedLyrics.tsx"],
-      "passes": true
+      "description": "CRITICAL: Fix horizontal scroll on /songs page. In app/songs/page.tsx, track rows use `-mx-3` (line 138) and column header uses `-mx-3` (line 117) which extend 12px past the parent `px-4` padding, causing left-right scroll on mobile. FIX: Add `overflow-x-hidden` to the page wrapper div (the `min-h-screen` div around line 54). DONE: No horizontal scroll on /songs mobile. DO NOT TOUCH: sort logic, track rendering. VERIFY: pnpm build passes.",
+      "steps": ["Read app/songs/page.tsx", "Add overflow-x-hidden to page wrapper", "pnpm build passes"],
+      "files": ["app/songs/page.tsx"],
+      "passes": false
     },
     {
       "id": 2,
       "category": "bugfix",
       "priority": 0,
-      "description": "Fix: Sort pills overflow on /songs page at 320px (Round 4 #4). In app/songs/page.tsx, the sort pills are in a `flex gap-2` container without wrapping. On narrow screens they overflow. FIX: Add `flex-wrap` to the sort pills container div. Also reduce padding on pills for mobile: change `px-4 py-1.5` to `px-3 py-1 sm:px-4 sm:py-1.5`. DONE: Sort pills wrap on narrow screens. DO NOT TOUCH: sort logic, track rendering. VERIFY: pnpm build passes.",
-      "steps": ["Read app/songs/page.tsx", "Add flex-wrap to sort pills container", "Reduce mobile padding", "pnpm build passes"],
-      "files": ["app/songs/page.tsx"],
-      "passes": true
+      "description": "CRITICAL: Fix horizontal scroll on homepage. In components/TrackRow.tsx, rows use `-mx-4` which can overflow on homepage where no overflow-x-hidden guard exists. FIX: In app/page.tsx, add `overflow-x-hidden` to the main motion.div container (the flex-col min-h-screen div). DONE: No horizontal scroll on homepage mobile. DO NOT TOUCH: TrackRow itself. VERIFY: pnpm build passes.",
+      "steps": ["Read app/page.tsx", "Add overflow-x-hidden to main container", "pnpm build passes"],
+      "files": ["app/page.tsx"],
+      "passes": false
     },
     {
       "id": 3,
-      "category": "bugfix",
+      "category": "feature",
       "priority": 0,
-      "description": "Fix: NowPlayingBar controls too small for touch (Round 4 #5). In components/NowPlayingBar.tsx, skip buttons and share button have tap targets under 44px. FIX: (1) Wrap each skip button in a div with `min-w-[44px] min-h-[44px] flex items-center justify-center` to create a 44px touch target while keeping the icon small. (2) Do the same for the share button. (3) Increase play/pause button from `w-9 h-9` to `w-10 h-10` on mobile: `w-10 h-10 sm:w-9 sm:h-9`. DONE: All NowPlayingBar controls meet 44px minimum tap target. DO NOT TOUCH: audio logic, progress bar. VERIFY: pnpm build passes.",
-      "steps": ["Read components/NowPlayingBar.tsx", "Add 44px touch targets to skip buttons", "Add 44px touch target to share", "Increase play button on mobile", "pnpm build passes"],
-      "files": ["components/NowPlayingBar.tsx"],
-      "passes": true
+      "description": "CRITICAL: Add tagline to homepage. Every QA persona flagged this — first visitors don't understand what the site is. Below the h1 'Lenny's Greatest Hits' and ABOVE the stats line, add a tagline: `<p className='text-base sm:text-lg text-muted-foreground/70 mt-1'>The insights you quote on X, turned into music you can feel.</p>`. This is already the OG description — it just needs to be on the actual page. DONE: Tagline visible on homepage. DO NOT TOUCH: stats line, buttons. VERIFY: pnpm build passes.",
+      "steps": ["Read app/page.tsx", "Add tagline p element after h1", "pnpm build passes"],
+      "files": ["app/page.tsx"],
+      "passes": false
     },
     {
       "id": 4,
-      "category": "bugfix",
+      "category": "feature",
       "priority": 0,
-      "description": "Fix: Bottom padding mismatch when Up Next banner shows (Round 4). In app/layout.tsx, the content has `pb-[72px]` to account for NowPlayingBar. But when the Up Next countdown banner appears, it adds ~40px, hiding the last item in lists. FIX: Increase bottom padding to `pb-[120px]` to safely accommodate both the NowPlayingBar and the Up Next banner. This adds extra space but prevents content from being hidden behind the bar. DONE: Content never hidden behind NowPlayingBar + Up Next. DO NOT TOUCH: NowPlayingBar component. VERIFY: pnpm build passes.",
-      "steps": ["Read app/layout.tsx", "Increase pb-[72px] to pb-[120px]", "pnpm build passes"],
-      "files": ["app/layout.tsx"],
-      "passes": true
+      "description": "Add missing analytics events. In app/page.tsx search handler: add `trackEvent('search_query', { query: debouncedQuery, result_count: filteredTracks.length })` inside the debounce effect when debouncedQuery changes and is non-empty. In components/EmailSignup.tsx: add `trackEvent('email_subscribed', { email })` after successful submission. In components/OnboardingTooltips.tsx: add `trackEvent('onboarding_dismissed')` in the dismiss handler. Import trackEvent from '@/lib/analytics' in each file. DONE: Search queries, email signups, and onboarding dismissals are tracked. DO NOT TOUCH: existing event tracking. VERIFY: pnpm build passes.",
+      "steps": ["Add search_query tracking in app/page.tsx", "Add email_subscribed in EmailSignup.tsx", "Add onboarding_dismissed in OnboardingTooltips.tsx", "pnpm build passes"],
+      "files": ["app/page.tsx", "components/EmailSignup.tsx", "components/OnboardingTooltips.tsx"],
+      "passes": false
     },
     {
       "id": 5,
       "category": "bugfix",
       "priority": 0,
-      "description": "Fix: Search clear X button too small for touch (Round 4 touch targets). In app/page.tsx and app/songs/page.tsx, the search clear (X) button is ~16px. FIX: In both files, wrap the X icon in a larger touch target: change the button to have `p-2` instead of just the icon. The X icon stays small (w-4 h-4) but the button padding creates a 44px+ tap target. DONE: Search clear buttons are easily tappable. DO NOT TOUCH: search logic. VERIFY: pnpm build passes.",
-      "steps": ["Read app/page.tsx — fix search clear button", "Read app/songs/page.tsx — fix search clear button", "pnpm build passes"],
-      "files": ["app/page.tsx", "app/songs/page.tsx"],
-      "passes": true
-    },
-    {
-      "id": 6,
-      "category": "feature",
-      "priority": 1,
-      "description": "Add prominent share CTA on track detail page (Round 2 Judge #3). The track page has no visible share dropdown — sharing is only in VoteButtons (small icon) and NowPlayingBar. FIX: In app/track/[slug]/TrackPageClient.tsx, in the 'Vote + Share' section at the bottom (around the VoteButtons area), add a visible 'Share This Song' button with a dropdown menu showing: Share to X, Share to LinkedIn, Copy Link. Style: `inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium border border-border/50 text-muted-foreground hover:text-foreground hover:border-border transition-colors`. Use the same share handlers already in the file (handleShareX, handleShareLinkedIn, handleCopyLink). Add a useState for dropdown open/close and AnimatePresence for animation. DONE: Track page has a visible Share button with social options. DO NOT TOUCH: audio controls, lyrics section. VERIFY: pnpm build passes.",
-      "steps": ["Read app/track/[slug]/TrackPageClient.tsx", "Add Share dropdown in the Vote+Share section", "pnpm build passes"],
-      "files": ["app/track/[slug]/TrackPageClient.tsx"],
-      "passes": true
-    },
-    {
-      "id": 7,
-      "category": "bugfix",
-      "priority": 1,
-      "description": "Fix: 'Do Things That Don't Scale' Brian Chesky quote attribution (Round 3 Lenny). The keyQuote 'Go to your users. Physically go to them' is attributed to Brian Chesky but is more of a Paul Graham / YC maxim. Chesky lived it but didn't coin it. FIX: Use mcp__lennysdata__search_content to find what Brian Chesky actually said on Lenny's podcast about doing things that don't scale. Update the keyQuote to an actual Chesky quote from the episode. If you can find a better direct quote, use it. If not, change the attribution to be more accurate: 'Inspired by Brian Chesky's Airbnb story' rather than a direct quote. Update in lib/albums.ts — find the track with slug 'do-things-that-dont-scale'. DONE: Quote attribution is accurate. VERIFY: pnpm build passes.",
-      "steps": ["Search Lenny MCP for Chesky on doing things that don't scale", "Find actual quote", "Update lib/albums.ts", "pnpm build passes"],
-      "files": ["lib/albums.ts"],
-      "passes": true
-    },
-    {
-      "id": 8,
-      "category": "bugfix",
-      "priority": 1,
-      "description": "Fix: Progress bar too thin for mobile tap (Round 4). In app/track/[slug]/TrackPageClient.tsx and components/NowPlayingBar.tsx, the progress bar is 6px tall with a hover tooltip. On mobile, 6px is nearly impossible to tap accurately. FIX: In TrackPageClient.tsx, change the progress bar container padding from `py-2 -my-2` to `py-3 -my-3` to increase the tap target zone. The visual bar stays 6px but the clickable area is larger. Same fix in NowPlayingBar.tsx — increase `py-1.5 -mb-1.5` to `py-3 -mb-3`. DONE: Progress bars are tappable on mobile. DO NOT TOUCH: seek logic. VERIFY: pnpm build passes.",
-      "steps": ["Read TrackPageClient.tsx — increase progress bar tap area", "Read NowPlayingBar.tsx — same fix", "pnpm build passes"],
-      "files": ["app/track/[slug]/TrackPageClient.tsx", "components/NowPlayingBar.tsx"],
-      "passes": true
-    },
-    {
-      "id": 9,
-      "category": "bugfix",
-      "priority": 1,
-      "description": "Fix: Annotation toggle (BookOpen) and onboarding dismiss (X) touch targets (Round 4). In components/SyncedLyrics.tsx, the annotation toggle button has `p-1.5` making it ~26px — too small. Change to `p-2.5` for a 44px target. In components/OnboardingTooltips.tsx, the dismiss X button is tiny. Add `p-2` padding. DONE: Both buttons meet 44px tap target. VERIFY: pnpm build passes.",
-      "steps": ["Fix SyncedLyrics.tsx annotation button padding", "Fix OnboardingTooltips.tsx dismiss button padding", "pnpm build passes"],
-      "files": ["components/SyncedLyrics.tsx", "components/OnboardingTooltips.tsx"],
-      "passes": true
-    },
-    {
-      "id": 10,
-      "category": "bugfix",
-      "priority": 1,
-      "description": "Fix: Keyboard shortcuts ? button should not show on mobile (Round 4). In components/KeyboardShortcuts.tsx, the ? button shows on all screens. But mobile has no keyboard, so this button is confusing. FIX: Add `hidden sm:flex` to the ? button so it only appears on desktop/tablet screens where keyboard shortcuts are usable. DONE: ? button hidden on mobile. VERIFY: pnpm build passes.",
-      "steps": ["Read components/KeyboardShortcuts.tsx", "Add hidden sm:flex to button", "pnpm build passes"],
-      "files": ["components/KeyboardShortcuts.tsx"],
-      "passes": true
-    },
-    {
-      "id": 11,
-      "category": "quality",
-      "priority": 2,
-      "description": "Verify Round 3 Lenny accuracy: spot-check 5 more tracks. The Lenny audit only checked 5 tracks. Use mcp__lennysdata__search_content to verify 5 MORE tracks chosen from different albums: (1) 'crossing-the-chasm' (Growth Engine), (2) 'the-hiring-playbook' (Talent Search), (3) 'burnout' (Human Side), (4) 'plg' (Growth Engine), (5) 'the-obsession' (By the Numbers). For each: verify the guest actually appeared on Lenny's podcast, the keyQuote is real, the concept is correctly attributed. Write findings to content/qa/round5-accuracy-spotcheck.md. DONE: Spot-check exists. DO NOT TOUCH: code. VERIFY: pnpm build passes.",
-      "steps": ["Verify 5 tracks via Lenny MCP", "Write findings", "pnpm build passes"],
-      "files": ["content/qa/round5-accuracy-spotcheck.md"],
-      "passes": true
-    },
-    {
-      "id": 12,
-      "category": "bugfix",
-      "priority": 2,
-      "description": "Fix any accuracy issues from Round 5 spot-check. Read content/qa/round5-accuracy-spotcheck.md. Fix any incorrect attributions, wrong quotes, or mismatched sources in lib/albums.ts. Use Lenny MCP to verify corrections. DONE: Issues fixed. VERIFY: pnpm build passes.",
-      "steps": ["Read spot-check", "Fix issues", "pnpm build passes"],
-      "files": ["lib/albums.ts"],
-      "passes": true
-    },
-    {
-      "id": 13,
-      "category": "quality",
-      "priority": 2,
-      "description": "Round 2 Judge recommendation: Add 'curated for you' / 'start here' flow (from What Would Make This Unbeatable). The judge suggested a way for first-time visitors to know which of 100+ songs to try first. FIX: On the homepage (app/page.tsx), add a 'Start Here' or 'Editor's Picks' section ABOVE the Popular section. Show 3 tracks with a brief one-line description of why each is a must-listen. Pick the 3 most impressive/accessible tracks. Use a different visual treatment — slightly larger cards or a highlight border. Add a small heading: 'New here? Start with these'. DONE: Start here section exists on homepage above Popular. DO NOT TOUCH: Popular section logic, album grid. VERIFY: pnpm build passes.",
-      "steps": ["Read app/page.tsx", "Add Start Here section above Popular", "Pick 3 best tracks", "Style distinctively", "pnpm build passes"],
-      "files": ["app/page.tsx"],
-      "passes": true
-    },
-    {
-      "id": 14,
-      "category": "quality",
-      "priority": 2,
-      "description": "Verify all source URLs are valid. Read lib/albums.ts. For every track, check if sources[].url looks like a real Lenny URL (should be https://www.lennysnewsletter.com/p/ or similar). Flag any that look fabricated (random slugs) or are empty. Use mcp__lennysdata__search_content to find correct URLs where possible. Write content/qa/url-audit.md listing problematic URLs. DONE: URL audit exists. DO NOT TOUCH: code. VERIFY: pnpm build passes.",
-      "steps": ["Read lib/albums.ts URLs", "Flag suspicious ones", "Verify via MCP", "Write audit", "pnpm build passes"],
-      "files": ["content/qa/url-audit.md"],
-      "passes": true
-    },
-    {
-      "id": 15,
-      "category": "bugfix",
-      "priority": 2,
-      "description": "Fix broken/fabricated URLs from URL audit. Read content/qa/url-audit.md. Fix each flagged URL in lib/albums.ts. Use MCP to find correct URLs. Set empty string if URL can't be found (better than a broken link). DONE: URLs fixed. VERIFY: pnpm build passes.",
-      "steps": ["Read audit", "Fix URLs", "pnpm build passes"],
-      "files": ["lib/albums.ts"],
-      "passes": true
-    },
-    {
-      "id": 16,
-      "category": "bugfix",
-      "priority": 1,
-      "description": "Fix multi-guest attribution: many songs draw from multiple Lenny guests but only show one quoteSpeaker. Read lib/albums.ts. For EVERY track, check if the lyrics, concept, annotations, or keyInsight reference multiple guests/episodes. If a track draws from 2+ guests but only has 1 source in the sources array, add the missing sources. If quoteSpeaker attributes a composite insight to just one person, either: (a) change quoteSpeaker to the most accurate single person, or (b) change the keyQuote to one that IS from that specific person, verified via mcp__lennysdata__search_content. Common pattern: 'Taste' draws from Shreyas Doshi, Brian Chesky, and Scott Belsky — it already has 2 sources but annotations reference Belsky too. Ensure sources array covers all referenced guests. Check at minimum these tracks known to reference multiple guests: taste, do-things-that-dont-scale, im-in-the-room, build-the-machine, ship-it, product-market-fit, the-maze, eleven-stars, vibe-coding. For each, read the lyrics and annotations, identify all guests mentioned, and ensure the sources array includes them all with correct titles, types, URLs (use MCP to find), and guest names. DONE: All multi-guest tracks have complete sources arrays. No guest is referenced in lyrics/annotations but missing from sources. VERIFY: pnpm build passes.",
-      "steps": ["Read lib/albums.ts", "Check 10+ tracks for missing sources", "Use Lenny MCP to find missing source URLs", "Add missing sources to each track", "pnpm build passes"],
-      "files": ["lib/albums.ts"],
-      "passes": true
-    },
-    {
-      "id": 17,
-      "category": "feature",
-      "priority": 2,
-      "description": "IMPROVEMENT: Add 'You Might Also Like' related songs section on track pages. In app/track/[slug]/TrackPageClient.tsx, after the 'Based on' section and before the Vote+Share section, add a 'You Might Also Like' section. Show 3 tracks from DIFFERENT albums that share 2+ tags with the current track. Implementation: (1) In lib/tracks.ts, add a function `getRelatedTracks(slug: string, limit: number = 3): Track[]` that finds tracks sharing the most tags with the given track, excluding same-album tracks and the track itself. Sort by tag overlap count descending. (2) In TrackPageClient.tsx, call getRelatedTracks and render them as clickable rows with cover art, title, album name, and a play button. Style like a compact version of TrackRow. Use Link to navigate to the related track. DONE: Track pages show 3 related songs from other albums. Clicking navigates to that track. DO NOT TOUCH: lib/audio-context.tsx, existing track page sections above this. VERIFY: pnpm build passes.",
-      "steps": ["Add getRelatedTracks to lib/tracks.ts", "Add section to TrackPageClient.tsx", "pnpm build passes"],
-      "files": ["lib/tracks.ts", "app/track/[slug]/TrackPageClient.tsx"],
-      "passes": false
-    },
-    {
-      "id": 18,
-      "category": "feature",
-      "priority": 2,
-      "description": "IMPROVEMENT: Add 'plays today' counter on homepage. On the homepage (app/page.tsx), after the stats line (X songs · Y albums · Z hr), add a dynamic 'N plays today' count. Implementation: (1) In app/api/play/route.ts, add a GET handler for `?today=true` that returns the total play count for today from Supabase (query: SELECT COUNT(*) FROM plays WHERE created_at >= CURRENT_DATE). (2) In app/page.tsx, add a useEffect that fetches `/api/play?today=true` and displays the count in the stats line. Only show if count > 0. Style: same muted text as the existing stats. DONE: Homepage shows 'N plays today' when there are plays. DO NOT TOUCH: lib/audio-context.tsx, existing play tracking logic. VERIFY: pnpm build passes.",
-      "steps": ["Add today count endpoint to API", "Add fetch + display in page.tsx", "pnpm build passes"],
-      "files": ["app/api/play/route.ts", "app/page.tsx"],
-      "passes": false
-    },
-    {
-      "id": 19,
-      "category": "feature",
-      "priority": 3,
-      "description": "IMPROVEMENT: Animated equalizer favicon when music plays. Create components/FaviconUpdater.tsx — a 'use client' component that uses useAudio() to detect when music is playing. When isPlaying=true, swap document.querySelector('link[rel=icon]').href to a base64-encoded equalizer SVG. When paused, revert to the default favicon. Use a simple static SVG (3 bars at different heights, amber colored) — no actual animation needed in the favicon, just the visual swap signals 'music is active'. Mount in app/layout.tsx. DONE: Favicon changes when music plays. DO NOT TOUCH: lib/audio-context.tsx. VERIFY: pnpm build passes.",
-      "steps": ["Create components/FaviconUpdater.tsx", "Mount in layout.tsx", "pnpm build passes"],
-      "files": ["components/FaviconUpdater.tsx", "app/layout.tsx"],
-      "passes": false
-    },
-    {
-      "id": 20,
-      "category": "feature",
-      "priority": 3,
-      "description": "IMPROVEMENT: Add 'Surprise Me' button on homepage. In app/page.tsx, next to the Shuffle Play button, add a 'Surprise Me' button that picks a random track, navigates to its track page, and starts playing it. Style: ghost button (border, no fill) to contrast with the filled Shuffle Play button. Use `border border-border/50 text-muted-foreground hover:text-foreground`. Icon: use Dice or Sparkles from lucide-react (check which exists). Implementation: pick random track from allTracks, call audio.play(track), router.push(`/track/${track.slug}`). DONE: Surprise Me button works. DO NOT TOUCH: lib/audio-context.tsx, Shuffle Play behavior. VERIFY: pnpm build passes.",
-      "steps": ["Add button in app/page.tsx next to Shuffle Play", "pnpm build passes"],
-      "files": ["app/page.tsx"],
-      "passes": false
-    },
-    {
-      "id": 21,
-      "category": "feature",
-      "priority": 3,
-      "description": "IMPROVEMENT: Add 'NEW' badge to recently added tracks. Tracks with releaseDate within the last 7 days should show a small 'NEW' pill badge. Implementation: (1) In components/TrackRow.tsx, check if track.releaseDate exists and is within 7 days of now. If so, render a small `<span className='px-1.5 py-0.5 text-[9px] font-bold uppercase tracking-wider rounded-full bg-primary/20 text-primary ml-1.5'>NEW</span>` after the track title. (2) Same in app/album/[slug]/AlbumPageClient.tsx after the track title in track rows. Use the album's accent color instead of primary. DONE: New tracks have a badge. DO NOT TOUCH: releaseDate data, audio logic. VERIFY: pnpm build passes.",
-      "steps": ["Add NEW badge to TrackRow.tsx", "Add NEW badge to AlbumPageClient.tsx", "pnpm build passes"],
-      "files": ["components/TrackRow.tsx", "app/album/[slug]/AlbumPageClient.tsx"],
-      "passes": false
-    },
-    {
-      "id": 22,
-      "category": "feature",
-      "priority": 3,
-      "description": "IMPROVEMENT: Subtle parallax on album cover image. In app/album/[slug]/AlbumPageClient.tsx, add a subtle parallax effect to the album cover image in the header. Use framer-motion's useScroll and useTransform: `const { scrollY } = useScroll(); const y = useTransform(scrollY, [0, 300], [0, -30]);`. Wrap the Image in a motion.div with `style={{ y }}`. The cover moves 30px slower than content over the first 300px of scroll. Very subtle — barely noticeable but adds depth. DONE: Album cover has subtle parallax on scroll. DO NOT TOUCH: track list, audio logic. VERIFY: pnpm build passes.",
-      "steps": ["Add useScroll/useTransform to AlbumPageClient.tsx", "Wrap cover Image in motion.div", "pnpm build passes"],
+      "description": "Fix album page mobile layout: hide VoteButtons on mobile in track rows. On 375px screens, VoteButtons (3 buttons at 40px each = ~160px) crush the track title to near-zero width. FIX: In app/album/[slug]/AlbumPageClient.tsx, the VoteButtons container (around line 383) should change from `className='flex items-center shrink-0'` to `className='hidden sm:flex items-center shrink-0'`. Also hide the duration+play count section on mobile: change its container to `className='hidden sm:flex items-center gap-3 ...'`. This matches Spotify's pattern — track rows on mobile only show number, cover, title, and a play indicator. DONE: Album track rows are clean on mobile. DO NOT TOUCH: track page VoteButtons (those should stay). VERIFY: pnpm build passes.",
+      "steps": ["Read AlbumPageClient.tsx", "Add hidden sm:flex to VoteButtons container", "Add hidden sm:flex to duration/count container", "pnpm build passes"],
       "files": ["app/album/[slug]/AlbumPageClient.tsx"],
       "passes": false
     },
     {
-      "id": 23,
+      "id": 6,
+      "category": "bugfix",
+      "priority": 0,
+      "description": "Fix VoteButtons width on homepage TrackRow mobile. Same issue — VoteButtons take ~160px, crushing track titles on mobile. FIX: In components/TrackRow.tsx, the VoteButtons container (around line 125) should change from `className='flex items-center shrink-0'` to `className='hidden sm:flex items-center shrink-0'`. Mobile users can vote from the track detail page instead. DONE: TrackRow is clean on mobile. VERIFY: pnpm build passes.",
+      "steps": ["Read TrackRow.tsx", "Add hidden sm:flex to VoteButtons container", "pnpm build passes"],
+      "files": ["components/TrackRow.tsx"],
+      "passes": false
+    },
+    {
+      "id": 7,
       "category": "feature",
-      "priority": 3,
-      "description": "IMPROVEMENT: Add subtle accent glow behind key quote on track pages. In app/track/[slug]/TrackPageClient.tsx, the keyQuote blockquote is visually flat. Add a very subtle glow: wrap the blockquote in a div with `position: relative`, add a pseudo-element-like div behind it: `<div className='absolute -inset-2 rounded-lg pointer-events-none' style={{ background: `${album.accentColor}08` }} />`. This creates a barely-visible accent-colored halo around the quote. Keep the existing blockquote styling. DONE: Key quote has subtle accent glow. DO NOT TOUCH: quote content, audio controls. VERIFY: pnpm build passes.",
-      "steps": ["Add glow div around blockquote in TrackPageClient.tsx", "pnpm build passes"],
+      "priority": 1,
+      "description": "Fix track page skip buttons touch targets. In app/track/[slug]/TrackPageClient.tsx, the SkipBack and SkipForward buttons (around lines 338-367) contain 20px icons with no padding — too small for mobile touch. FIX: Add `min-w-[44px] min-h-[44px] flex items-center justify-center` to both skip button elements. DONE: Skip buttons meet 44px tap target. DO NOT TOUCH: audio logic. VERIFY: pnpm build passes.",
+      "steps": ["Read TrackPageClient.tsx", "Add min touch target to skip buttons", "pnpm build passes"],
       "files": ["app/track/[slug]/TrackPageClient.tsx"],
       "passes": false
     },
     {
-      "id": 24,
+      "id": 8,
       "category": "feature",
-      "priority": 3,
-      "description": "IMPROVEMENT: Enhance /topics page with track counts and top track. In app/topics/page.tsx, each topic tag currently just links to its page. Enhance: show the track count next to each tag (e.g., 'growth (12 songs)'). Also visually distinguish topics with more tracks (larger font or bolder weight for popular topics). Read lib/tracks.ts to find how tags are aggregated. DONE: Topics page shows track counts. Popular topics are visually prominent. DO NOT TOUCH: /topics/[tag] detail pages, track data. VERIFY: pnpm build passes.",
-      "steps": ["Read app/topics/page.tsx", "Add track counts per tag", "Style popular tags larger", "pnpm build passes"],
-      "files": ["app/topics/page.tsx"],
+      "priority": 1,
+      "description": "Improve share text for better conversion. Current share text is generic ('[Track Title] | Lenny's Greatest Hits'). FIX: In app/track/[slug]/TrackPageClient.tsx, change `shareText` to include context: `const shareText = track.sources?.[0]?.guest ? \\`${track.title} — ${track.sources[0].guest}'s insights from @lennysan's podcast, turned into a song\\` : \\`${track.title} | Lenny's Greatest Hits — podcast insights turned into songs\\`;`. Also update the X share in NowPlayingBar.tsx if it has share text. DONE: Share text explains what LGH is. VERIFY: pnpm build passes.",
+      "steps": ["Read TrackPageClient.tsx — update shareText", "Check NowPlayingBar.tsx for share text", "pnpm build passes"],
+      "files": ["app/track/[slug]/TrackPageClient.tsx", "components/NowPlayingBar.tsx"],
+      "passes": false
+    },
+    {
+      "id": 9,
+      "category": "feature",
+      "priority": 1,
+      "description": "Fix hardcoded amber accent color in TrackRow. In components/TrackRow.tsx, VoteButtons uses hardcoded `accentColor='#b45309'` (line 128) and the current-track title uses `color: '#b45309'` (line 99). This means tracks from Electric Dreams (purple) or By the Numbers (blue) all show amber on the homepage. FIX: (1) Add `accentColor?: string` to TrackRowProps. (2) In VoteButtons, use `accentColor={accentColor || '#b45309'}`. (3) For the title, use `style={isCurrentTrack ? { color: accentColor || '#b45309' } : {}}`. (4) In app/page.tsx where TrackRow is used, pass `accentColor={getAlbumForTrack(track.slug)?.accentColor}`. DONE: Track rows show correct album accent color. VERIFY: pnpm build passes.",
+      "steps": ["Update TrackRow props and usage", "Update app/page.tsx to pass accentColor", "pnpm build passes"],
+      "files": ["components/TrackRow.tsx", "app/page.tsx"],
+      "passes": false
+    },
+    {
+      "id": 10,
+      "category": "feature",
+      "priority": 1,
+      "description": "Add Up Next banner text truncation. In components/NowPlayingBar.tsx around line 82-83, the 'Up next: {track title}' text doesn't truncate. Long titles push the Cancel button off-screen on mobile. FIX: Change the text span to `<span className='text-muted-foreground min-w-0 flex-1 truncate'>` and wrap the flex row parent in `min-w-0`. DONE: Up Next text truncates on narrow screens. VERIFY: pnpm build passes.",
+      "steps": ["Read NowPlayingBar.tsx", "Add truncate to Up Next text", "pnpm build passes"],
+      "files": ["components/NowPlayingBar.tsx"],
+      "passes": false
+    },
+    {
+      "id": 11,
+      "category": "feature",
+      "priority": 1,
+      "description": "Add GlobalNav touch targets. In components/GlobalNav.tsx, the Home link (mobile = icon only) and other nav items have small touch targets. FIX: Add `min-h-[44px] flex items-center` to all nav link elements. For the Search and ThemeToggle icons, increase padding from `p-2` to `p-3`. DONE: All nav items meet 44px touch target. VERIFY: pnpm build passes.",
+      "steps": ["Read GlobalNav.tsx", "Increase touch targets", "pnpm build passes"],
+      "files": ["components/GlobalNav.tsx"],
+      "passes": false
+    },
+    {
+      "id": 12,
+      "category": "feature",
+      "priority": 1,
+      "description": "Add track prev/next truncation on mobile. In app/track/[slug]/TrackPageClient.tsx, the prev/next navigation links at the bottom (around lines 611-636) have no width constraint. Long titles can overflow. FIX: Add `max-w-[45%] truncate` to both the prev and next Link elements. DONE: Prev/next titles truncate cleanly. VERIFY: pnpm build passes.",
+      "steps": ["Read TrackPageClient.tsx bottom nav", "Add max-w and truncate", "pnpm build passes"],
+      "files": ["app/track/[slug]/TrackPageClient.tsx"],
+      "passes": false
+    },
+    {
+      "id": 13,
+      "category": "feature",
+      "priority": 2,
+      "description": "Create an /about page. Contest judges want to understand the project. Create app/about/page.tsx — a simple server component. Content: 3-4 paragraphs explaining: (1) What this is — Lenny's podcast/newsletter insights turned into real songs. (2) How songs were made — AI-assisted research from 638 episodes, lyrics written to capture the insight, generated on Suno. (3) Why — contest entry for Lenny's 'build something cool with my data'. (4) Who — 'Built by Eric Tan' with LinkedIn link. Keep it minimal, same dark theme. Add a link to /about in the homepage footer. DONE: /about page exists and is linked from footer. DO NOT TOUCH: other pages. VERIFY: pnpm build passes.",
+      "steps": ["Create app/about/page.tsx", "Add link in homepage footer", "pnpm build passes"],
+      "files": ["app/about/page.tsx", "app/page.tsx"],
       "passes": false
     }
   ]
