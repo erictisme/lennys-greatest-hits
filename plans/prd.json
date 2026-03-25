@@ -25,7 +25,7 @@
       "description": "QA Round 7 — Performance audit. Read app/layout.tsx, lib/albums.ts (check file size with wc -c), app/page.tsx, app/track/[slug]/TrackPageClient.tsx. Check: (1) How big is lib/albums.ts? Run `wc -c lib/albums.ts`. If over 300KB, that's too much client-side JS. (2) Are images using Next.js Image with width/height? (3) Are there unnecessary client-side fetches on every page load? (4) Could any pages be server components instead of client? (5) Is the audio element preloading too aggressively? Write content/qa/round7-performance-audit.md with specific issues and fixes. DONE: Audit exists. DO NOT TOUCH: code. VERIFY: pnpm build passes.",
       "steps": ["Check file sizes", "Read pages for perf issues", "Write audit", "pnpm build passes"],
       "files": ["content/qa/round7-performance-audit.md"],
-      "passes": false
+      "passes": true
     },
     {
       "id": 4,
