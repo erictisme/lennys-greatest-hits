@@ -34,7 +34,7 @@
       "description": "Fix: Bottom padding mismatch when Up Next banner shows (Round 4). In app/layout.tsx, the content has `pb-[72px]` to account for NowPlayingBar. But when the Up Next countdown banner appears, it adds ~40px, hiding the last item in lists. FIX: Increase bottom padding to `pb-[120px]` to safely accommodate both the NowPlayingBar and the Up Next banner. This adds extra space but prevents content from being hidden behind the bar. DONE: Content never hidden behind NowPlayingBar + Up Next. DO NOT TOUCH: NowPlayingBar component. VERIFY: pnpm build passes.",
       "steps": ["Read app/layout.tsx", "Increase pb-[72px] to pb-[120px]", "pnpm build passes"],
       "files": ["app/layout.tsx"],
-      "passes": false
+      "passes": true
     },
     {
       "id": 5,

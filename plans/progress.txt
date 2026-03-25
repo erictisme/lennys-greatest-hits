@@ -5,3 +5,5 @@ Task 2: Added flex-wrap to sort pills container and reduced mobile padding (px-3
 Build passes.
 Task 3: Added 44px min touch targets to skip/share buttons, increased play button to w-10 h-10 on mobile in NowPlayingBar.
 Build passes.
+Task 4: Increased bottom padding from pb-[72px] to pb-[120px] in layout.tsx to accommodate NowPlayingBar + Up Next banner.
+Build passes.

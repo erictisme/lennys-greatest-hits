@@ -88,7 +88,7 @@ export default function RootLayout({
           <AudioProvider>
             <ScrollToTop />
             <GlobalNav />
-            <div className="pb-[72px]">{children}</div>
+            <div className="pb-[120px]">{children}</div>
             <NowPlayingBar />
             <KeyboardShortcuts />
           </AudioProvider>
