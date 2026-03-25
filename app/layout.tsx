@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Inter, Geist_Mono, Spectral } from "next/font/google";
 import "./globals.css";
 import { AudioProvider } from "@/lib/audio-context";
@@ -6,6 +6,7 @@ import NowPlayingBar from "@/components/NowPlayingBar";
 import ScrollToTop from "@/components/ScrollToTop";
 import KeyboardShortcuts from "@/components/KeyboardShortcuts";
 import GlobalNav from "@/components/GlobalNav";
+import FaviconUpdater from "@/components/FaviconUpdater";
 
 import { PostHogProvider } from "@/components/PostHogProvider";
 
@@ -25,6 +26,10 @@ const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
 });
+
+export const viewport: Viewport = {
+  viewportFit: "cover",
+};
 
 export const metadata: Metadata = {
   metadataBase: new URL(
@@ -91,6 +96,7 @@ export default function RootLayout({
             <div className="pb-[120px]">{children}</div>
             <NowPlayingBar />
             <KeyboardShortcuts />
+            <FaviconUpdater />
           </AudioProvider>
         </PostHogProvider>
       </body>

@@ -211,7 +211,7 @@ export default function TrackPageClient({ slug }: { slug: string }) {
 
           <div className="flex flex-col sm:flex-row items-center sm:items-start gap-5">
             {track.coverImage && (
-              <div className="relative w-36 h-36 sm:w-44 sm:h-44 rounded-lg overflow-hidden flex-shrink-0 shadow-md">
+              <div className="relative w-28 h-28 sm:w-44 sm:h-44 rounded-lg overflow-hidden flex-shrink-0 shadow-md">
                 {!imageLoaded && (
                   <div className="absolute inset-0 animate-pulse bg-muted" />
                 )}
@@ -336,7 +336,7 @@ export default function TrackPageClient({ slug }: { slug: string }) {
         <div className="px-4 sm:px-6 py-5 sm:py-6 border-b border-border/30">
           <div className="max-w-2xl mx-auto w-full">
             {/* Controls */}
-            <div className="flex items-center justify-center gap-6 mb-4">
+            <div className="flex items-center justify-center gap-4 sm:gap-6 mb-4">
               <button
                 onClick={() => { if (prevTrack) { audio.prev(); router.push(`/track/${prevTrack.slug}`); } }}
                 disabled={!prevTrack}
@@ -613,12 +613,12 @@ export default function TrackPageClient({ slug }: { slug: string }) {
           {prevTrack ? (
             <Link
               href={`/track/${prevTrack.slug}`}
-              className="text-sm text-muted-foreground hover:text-foreground transition-colors max-w-[45%] truncate"
+              className="text-sm text-muted-foreground hover:text-foreground transition-colors max-w-[45%]"
             >
               <span className="block text-xs text-muted-foreground/50 mb-0.5">
                 Previous
               </span>
-              {prevTrack.title}
+              <span className="block truncate">{prevTrack.title}</span>
             </Link>
           ) : (
             <div />
@@ -626,12 +626,12 @@ export default function TrackPageClient({ slug }: { slug: string }) {
           {nextTrack ? (
             <Link
               href={`/track/${nextTrack.slug}`}
-              className="text-sm text-muted-foreground hover:text-foreground transition-colors text-right max-w-[45%] truncate"
+              className="text-sm text-muted-foreground hover:text-foreground transition-colors text-right max-w-[45%]"
             >
               <span className="block text-xs text-muted-foreground/50 mb-0.5">
                 Next
               </span>
-              {nextTrack.title}
+              <span className="block truncate">{nextTrack.title}</span>
             </Link>
           ) : (
             <div />

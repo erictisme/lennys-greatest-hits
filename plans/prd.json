@@ -16,7 +16,7 @@
       "description": "Fix ALL CRITICAL and HIGH issues from Round 7 mobile audit. Read content/qa/round7-mobile-audit.md. For every CRITICAL and HIGH issue, make the fix described. If a fix risks breaking something, skip it. DONE: All critical/high mobile issues fixed. VERIFY: pnpm build passes.",
       "steps": ["Read audit", "Fix all critical issues", "Fix all high issues", "pnpm build passes"],
       "files": [],
-      "passes": false
+      "passes": true
     },
     {
       "id": 3,
