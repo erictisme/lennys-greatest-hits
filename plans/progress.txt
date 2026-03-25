@@ -1,13 +1,3 @@
-# Ralph PROD run Wed Mar 25 07:30:06 +08 2026
-Task 22: Added OG images to track, album, and layout metadata so social shares show cover art instead of blank previews.
-Files changed: app/track/[slug]/page.tsx, app/album/[slug]/page.tsx, app/layout.tsx
-Task 23: Removed fake lyric sync pretense — stripped unused currentTime/isPlaying/onSeek props and fake time calculations from SyncedLyrics, renamed to LyricsDisplay.
-Files changed: components/SyncedLyrics.tsx, app/track/[slug]/TrackPageClient.tsx
-Task 24: QA Round 3 — Lenny persona audit. Spot-checked 5 tracks (Taste, I'm in the Room, Fire with Grace, Do Things That Don't Scale, Imposter) against Lenny MCP archive. Found minor attribution fuzziness on "Taste" (Shreyas Doshi). Score: 8/10.
-Files changed: content/qa/round3-lenny-audit.md
-Task 25: Fixed "Taste" track attribution fuzziness — replaced fabricated Shreyas Doshi quotes with verified quotes from the live episode, corrected source URLs, reattributed annotations to actual sources (Scott Belsky, synthesis).
-Files changed: lib/albums.ts
-Task 26: QA Round 4 — Mobile user audit. Identified hidden vote buttons, non-stacking headers, invisible hover-only share buttons, sort pill overflow, undersized touch targets.
-Files changed: content/qa/round4-mobile-audit.md
-Task 27: Fixed top 2 mobile issues — vote buttons now visible on mobile (removed hidden sm:flex), album/track headers stack vertically on small screens (flex-col sm:flex-row).
-Files changed: components/TrackRow.tsx, AlbumPageClient.tsx, TrackPageClient.tsx
+# Ralph PROD run Wed Mar 25 08:00:59 +08 2026
+Task 1: Fixed lyric share button mobile visibility (opacity-40 on mobile, hover on desktop) and increased tap target p-1.5→p-2.
+Build passes.

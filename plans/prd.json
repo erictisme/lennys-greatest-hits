@@ -7,7 +7,7 @@
       "description": "Fix: Lyric share buttons invisible on touch/mobile (Round 4 #3). In components/SyncedLyrics.tsx, the share button per lyric line uses `opacity-0 group-hover:opacity-60` — this means on mobile (no hover) the buttons are permanently invisible. FIX: Change to `opacity-40 sm:opacity-0 sm:group-hover:opacity-60` so on mobile they're always slightly visible, on desktop they appear on hover. Also increase the tap target: change `p-1.5` to `p-2` on the share button. DONE: Lyric share buttons visible on mobile at reduced opacity. DO NOT TOUCH: annotation toggle behavior, lyric parsing. VERIFY: pnpm build passes.",
       "steps": ["Read components/SyncedLyrics.tsx", "Fix share button opacity for mobile", "Increase tap target", "pnpm build passes"],
       "files": ["components/SyncedLyrics.tsx"],
-      "passes": false
+      "passes": true
     },
     {
       "id": 2,

@@ -204,7 +204,7 @@ export default function LyricsDisplay({
                 )}
                 <button
                   onClick={() => { trackEvent("lyric_shared", { lyric: line.text, track: trackTitle }); setShareLine(line.text); }}
-                  className="opacity-0 group-hover:opacity-60 hover:!opacity-100 p-1.5 rounded-full hover:bg-white/10 transition-all shrink-0"
+                  className="opacity-40 sm:opacity-0 sm:group-hover:opacity-60 hover:!opacity-100 p-2 rounded-full hover:bg-white/10 transition-all shrink-0"
                   aria-label={`Share lyric: ${line.text}`}
                 >
                   <Share2 className="w-3.5 h-3.5" />
