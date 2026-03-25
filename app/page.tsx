@@ -4,7 +4,7 @@ import { useState, useEffect, useMemo, useCallback } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
-import { Search, X, Shuffle } from "lucide-react";
+import { Search, X, Shuffle, Sparkles } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { getAllAlbums, getAllTracks, getAlbumForTrack } from "@/lib/tracks";
 import { useAudio } from "@/lib/audio-context";
@@ -209,6 +209,48 @@ export default function Home() {
             transition={{ duration: 0.15 }}
             className="flex-1"
           >
+            {/* 2.5 Start Here Section */}
+            <section className="mb-10">
+              <div className="flex items-center gap-2 mb-4">
+                <Sparkles className="w-4 h-4 text-amber-500/70" />
+                <h2 className="text-sm font-semibold uppercase tracking-wide text-muted-foreground">New here? Start with these</h2>
+              </div>
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                {[
+                  { slug: "not-venture-scale", why: "The track that started it all — a love letter to weird, wonderful businesses" },
+                  { slug: "product-market-fit", why: "Every founder's obsession, turned into an anthem you can't get out of your head" },
+                  { slug: "vibe-coding", why: "The future of building software — and yes, it slaps" },
+                ].map(({ slug, why }) => {
+                  const track = allTracks.find((t) => t.slug === slug);
+                  if (!track) return null;
+                  const album = getAlbumForTrack(track.slug);
+                  return (
+                    <button
+                      key={slug}
+                      onClick={() => handleTrackNavigate(track)}
+                      className="group relative text-left p-3 rounded-lg border border-amber-500/15 bg-amber-500/[0.03] hover:bg-amber-500/[0.06] hover:border-amber-500/25 transition-all"
+                    >
+                      <div className="flex items-start gap-3">
+                        {album?.coverImage && (
+                          <Image
+                            src={album.coverImage}
+                            alt={track.title}
+                            width={48}
+                            height={48}
+                            className="rounded-md flex-shrink-0 shadow-sm"
+                          />
+                        )}
+                        <div className="min-w-0">
+                          <p className="text-sm font-semibold truncate group-hover:text-amber-500 transition-colors">{track.title}</p>
+                          <p className="text-xs text-muted-foreground/60 mt-0.5 line-clamp-2">{why}</p>
+                        </div>
+                      </div>
+                    </button>
+                  );
+                })}
+              </div>
+            </section>
+
             {/* 3. Popular Section */}
             <section className="mb-10">
               <div className="flex items-center justify-between mb-4">

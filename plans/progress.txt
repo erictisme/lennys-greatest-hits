@@ -23,3 +23,5 @@ Task 11: Spot-checked 5 tracks (crossing-the-chasm, the-hiring-playbook, burnout
 Build passes.
 Task 12: Fixed 3 fabricated keyQuotes from Round 5 spot-check — replaced crossing-the-chasm (Geoffrey Moore), plg (Elena Verna), and burnout (Andy Johns) with real verbatim quotes verified via Lenny MCP.
 Build passes.
+Task 13: Added 'New here? Start with these' section above Popular on homepage — 3 curated tracks (not-venture-scale, product-market-fit, vibe-coding) with amber-accented cards and one-line descriptions.
+Build passes.
