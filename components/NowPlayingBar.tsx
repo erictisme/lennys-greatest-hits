@@ -156,7 +156,7 @@ export default function NowPlayingBar() {
         <div className="flex items-center gap-3">
           <button
             onClick={() => prev()}
-            className={`${hasPrev ? "text-muted-foreground hover:text-foreground" : "text-muted-foreground/30"} transition-colors`}
+            className={`min-w-[44px] min-h-[44px] flex items-center justify-center ${hasPrev ? "text-muted-foreground hover:text-foreground" : "text-muted-foreground/30"} transition-colors`}
             disabled={!hasPrev}
           >
             <SkipBack className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
@@ -164,7 +164,7 @@ export default function NowPlayingBar() {
 
           <button
             onClick={togglePlay}
-            className="w-9 h-9 rounded-full flex items-center justify-center transition-colors"
+            className="w-10 h-10 sm:w-9 sm:h-9 rounded-full flex items-center justify-center transition-colors"
             style={{ backgroundColor: accentColor, color: "#ffffff" }}
           >
             {isBuffering ? (
@@ -178,7 +178,7 @@ export default function NowPlayingBar() {
 
           <button
             onClick={() => next()}
-            className={`${hasNext ? "text-muted-foreground hover:text-foreground" : "text-muted-foreground/30"} transition-colors`}
+            className={`min-w-[44px] min-h-[44px] flex items-center justify-center ${hasNext ? "text-muted-foreground hover:text-foreground" : "text-muted-foreground/30"} transition-colors`}
             disabled={!hasNext}
           >
             <SkipForward className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
@@ -202,7 +202,7 @@ export default function NowPlayingBar() {
               setCopied(true);
               setTimeout(() => setCopied(false), 2000);
             }}
-            className="text-muted-foreground hover:text-foreground transition-colors p-1.5"
+            className="min-w-[44px] min-h-[44px] flex items-center justify-center text-muted-foreground hover:text-foreground transition-colors"
           >
             <Share2 className="w-4 h-4" />
           </button>

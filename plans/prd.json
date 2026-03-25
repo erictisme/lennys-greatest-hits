@@ -25,7 +25,7 @@
       "description": "Fix: NowPlayingBar controls too small for touch (Round 4 #5). In components/NowPlayingBar.tsx, skip buttons and share button have tap targets under 44px. FIX: (1) Wrap each skip button in a div with `min-w-[44px] min-h-[44px] flex items-center justify-center` to create a 44px touch target while keeping the icon small. (2) Do the same for the share button. (3) Increase play/pause button from `w-9 h-9` to `w-10 h-10` on mobile: `w-10 h-10 sm:w-9 sm:h-9`. DONE: All NowPlayingBar controls meet 44px minimum tap target. DO NOT TOUCH: audio logic, progress bar. VERIFY: pnpm build passes.",
       "steps": ["Read components/NowPlayingBar.tsx", "Add 44px touch targets to skip buttons", "Add 44px touch target to share", "Increase play button on mobile", "pnpm build passes"],
       "files": ["components/NowPlayingBar.tsx"],
-      "passes": false
+      "passes": true
     },
     {
       "id": 4,
