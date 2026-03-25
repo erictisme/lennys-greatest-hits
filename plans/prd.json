@@ -70,7 +70,7 @@
       "description": "Fix: Progress bar too thin for mobile tap (Round 4). In app/track/[slug]/TrackPageClient.tsx and components/NowPlayingBar.tsx, the progress bar is 6px tall with a hover tooltip. On mobile, 6px is nearly impossible to tap accurately. FIX: In TrackPageClient.tsx, change the progress bar container padding from `py-2 -my-2` to `py-3 -my-3` to increase the tap target zone. The visual bar stays 6px but the clickable area is larger. Same fix in NowPlayingBar.tsx — increase `py-1.5 -mb-1.5` to `py-3 -mb-3`. DONE: Progress bars are tappable on mobile. DO NOT TOUCH: seek logic. VERIFY: pnpm build passes.",
       "steps": ["Read TrackPageClient.tsx — increase progress bar tap area", "Read NowPlayingBar.tsx — same fix", "pnpm build passes"],
       "files": ["app/track/[slug]/TrackPageClient.tsx", "components/NowPlayingBar.tsx"],
-      "passes": false
+      "passes": true
     },
     {
       "id": 9,

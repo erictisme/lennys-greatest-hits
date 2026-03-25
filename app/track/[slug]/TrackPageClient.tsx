@@ -369,7 +369,7 @@ export default function TrackPageClient({ slug }: { slug: string }) {
 
             {/* Progress Bar */}
             <div
-              className="group relative cursor-pointer py-2 -my-2"
+              className="group relative cursor-pointer py-3 -my-3"
               onClick={seek}
               onMouseMove={handleProgressHover}
               onMouseLeave={() => setHoverTime(null)}

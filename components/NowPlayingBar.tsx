@@ -94,7 +94,7 @@ export default function NowPlayingBar() {
 
       {/* Progress bar — thin line at top of bar */}
       <div
-        className="cursor-pointer group relative py-1.5 -mb-1.5"
+        className="cursor-pointer group relative py-3 -mb-3"
         onClick={handleSeek}
         onMouseMove={handleBarHover}
         onMouseLeave={() => setHoverTime(null)}
