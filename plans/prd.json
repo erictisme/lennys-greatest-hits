@@ -142,7 +142,7 @@
       "description": "Accuracy spot-check: 5 tracks from By the Numbers, The Weight, and Career Moves. Pick: measure-twice (By the Numbers), the-obsession (By the Numbers), fire-with-grace (The Weight), the-long-game (Career Moves), state-of-the-me (Career Moves). Verify via Lenny MCP. Write content/qa/round8-accuracy-part2.md. DONE: Audit exists. DO NOT TOUCH: code. VERIFY: pnpm build passes.",
       "steps": ["Verify 5 tracks via Lenny MCP", "Write audit", "pnpm build passes"],
       "files": ["content/qa/round8-accuracy-part2.md"],
-      "passes": false
+      "passes": true
     },
     {
       "id": 17,
