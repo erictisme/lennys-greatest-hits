@@ -133,7 +133,7 @@
       "description": "Fix broken/fabricated URLs from URL audit. Read content/qa/url-audit.md. Fix each flagged URL in lib/albums.ts. Use MCP to find correct URLs. Set empty string if URL can't be found (better than a broken link). DONE: URLs fixed. VERIFY: pnpm build passes.",
       "steps": ["Read audit", "Fix URLs", "pnpm build passes"],
       "files": ["lib/albums.ts"],
-      "passes": false
+      "passes": true
     },
     {
       "id": 16,

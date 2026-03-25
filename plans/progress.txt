@@ -27,3 +27,5 @@ Task 13: Added 'New here? Start with these' section above Popular on homepage â€
 Build passes.
 Task 14: Audited all source URLs in lib/albums.ts â€” no fabricated URLs found. 10 empty annotation URLs on 2 tracks, 2 legitimate non-Lenny URLs.
 Build passes.
+Task 15: Filled in 10 empty annotation sourceUrl fields on crossing-the-chasm (5) and the-long-game (5) with their existing source URLs.
+Build passes.
