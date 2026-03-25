@@ -88,7 +88,7 @@
       "description": "Fix ALL MEDIUM issues from Round 7 visitor audit. Read content/qa/round7-visitor-audit.md. Fix every MEDIUM severity issue. DONE: All medium visitor issues fixed. VERIFY: pnpm build passes.",
       "steps": ["Read audit", "Fix all medium issues", "pnpm build passes"],
       "files": [],
-      "passes": false
+      "passes": true
     }
   ]
 }
