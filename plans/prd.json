@@ -70,7 +70,7 @@
       "description": "Improve NowPlayingBar share tooltip. Read components/NowPlayingBar.tsx. The copy-link share button shows 'Copied!' after clicking. Change to 'Link copied! Share it with your team'. DONE: Tooltip is more actionable. DO NOT TOUCH: audio controls. VERIFY: pnpm build passes.",
       "steps": ["Read NowPlayingBar.tsx", "Update copied tooltip text", "pnpm build passes"],
       "files": ["components/NowPlayingBar.tsx"],
-      "passes": false
+      "passes": true
     },
     {
       "id": 9,
@@ -79,7 +79,7 @@
       "description": "Add JSON-LD structured data to track pages. Read app/track/[slug]/page.tsx (the server component). Add a <script type='application/ld+json'> with MusicRecording schema: { '@context': 'https://schema.org', '@type': 'MusicRecording', name: track.title, byArtist: { '@type': 'MusicGroup', name: 'Lenny\\'s Greatest Hits' }, duration: track.duration, url }. DONE: Track pages have structured data. DO NOT TOUCH: client components. VERIFY: pnpm build passes.",
       "steps": ["Read app/track/[slug]/page.tsx", "Add JSON-LD script", "pnpm build passes"],
       "files": ["app/track/[slug]/page.tsx"],
-      "passes": false
+      "passes": true
     },
     {
       "id": 10,
@@ -88,7 +88,7 @@
       "description": "Add JSON-LD structured data to album pages. Read app/album/[slug]/page.tsx (the server component). Add MusicAlbum schema: { '@context': 'https://schema.org', '@type': 'MusicAlbum', name: album.title, numTracks: album.tracks.length, description: album.description }. DONE: Album pages have structured data. DO NOT TOUCH: client components. VERIFY: pnpm build passes.",
       "steps": ["Read app/album/[slug]/page.tsx", "Add JSON-LD script", "pnpm build passes"],
       "files": ["app/album/[slug]/page.tsx"],
-      "passes": false
+      "passes": true
     },
     {
       "id": 11,
@@ -97,7 +97,7 @@
       "description": "Update WebApplication JSON-LD in layout.tsx. Read app/layout.tsx. There's an existing JSON-LD script. Update it with correct numbers: 102 songs, 11 albums. If the description is outdated, update it. DONE: Layout schema is accurate. VERIFY: pnpm build passes.",
       "steps": ["Read app/layout.tsx", "Update JSON-LD numbers", "pnpm build passes"],
       "files": ["app/layout.tsx"],
-      "passes": false
+      "passes": true
     },
     {
       "id": 12,
@@ -106,7 +106,7 @@
       "description": "Add/verify meta titles and descriptions on track pages. Read app/track/[slug]/page.tsx. Check if generateMetadata exists. If so, verify the title format is '[Track] — [Guest] | Lenny's Greatest Hits' and description uses the concept field. If not, add generateMetadata. DONE: Track pages have unique titles/descriptions. DO NOT TOUCH: client components. VERIFY: pnpm build passes.",
       "steps": ["Read app/track/[slug]/page.tsx", "Check/add generateMetadata", "pnpm build passes"],
       "files": ["app/track/[slug]/page.tsx"],
-      "passes": false
+      "passes": true
     },
     {
       "id": 13,
@@ -115,7 +115,7 @@
       "description": "Add/verify meta titles and descriptions on album pages. Read app/album/[slug]/page.tsx. Check if generateMetadata exists. Title: '[Album] | Lenny's Greatest Hits'. Description: album.description. If missing, add it. DONE: Album pages have unique titles/descriptions. VERIFY: pnpm build passes.",
       "steps": ["Read app/album/[slug]/page.tsx", "Check/add generateMetadata", "pnpm build passes"],
       "files": ["app/album/[slug]/page.tsx"],
-      "passes": false
+      "passes": true
     },
     {
       "id": 14,
@@ -124,7 +124,7 @@
       "description": "Add metadata to /songs and /about pages. Read app/songs/page.tsx — add export const metadata = { title: 'All Songs | Lenny's Greatest Hits', description: 'Browse all 102 songs...' }. BUT: songs/page.tsx is a client component ('use client'), so metadata export won't work. Instead, create app/songs/layout.tsx as a server component with the metadata, or convert the metadata to be in a parent layout. Same for app/about/page.tsx — check if it already has metadata, add if missing. DONE: /songs and /about have proper titles. VERIFY: pnpm build passes.",
       "steps": ["Check app/songs/page.tsx for client directive", "Add metadata via layout or head", "Check app/about/page.tsx", "pnpm build passes"],
       "files": ["app/songs/page.tsx", "app/about/page.tsx"],
-      "passes": false
+      "passes": true
     },
     {
       "id": 15,

@@ -1,15 +1,2 @@
-# Ralph PROD run Wed Mar 25 23:49:52 +08 2026
-Task 1: Redesigned homepage OG image — dark bg, warm gradient, 3x2 album grid, Spotify Wrapped style.
-Build passes.
-Task 2: Redesigned per-track OG images — 80px left accent stripe, 64px title, guest attribution, italic keyQuote, branded footer.
-Build passes.
-Task 3: Redesigned per-album OG images — 80px left accent stripe, 72px title, subtitle, track count + total duration, first 5 track names.
-Build passes.
-Task 4: Created app/sitemap.ts — generates sitemap.xml with all static pages, tracks, albums, and topic URLs.
-Build passes.
-Task 5: Created app/robots.ts — allows all crawlers, points to sitemap.
-Build passes.
-Task 6: Updated track share text — guest attribution or startup wisdom tagline.
-Build passes.
-Task 7: Updated album share text — track count, subtitle, podcast archive tagline.
-Build passes.
+# Ralph PROD run Thu Mar 26 02:56:03 +08 2026
+# PRD tasks 9-14: SEO metadata sweep — updated layout JSON-LD with 102 songs/11 albums counts, track page titles now show guest name, created songs/layout.tsx for /songs metadata, verified existing JSON-LD on track/album pages.

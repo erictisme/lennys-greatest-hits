@@ -41,7 +41,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Lenny's Greatest Hits",
     description:
-      "88 songs from 638 episodes. The insights you quote on X, turned into music you can feel.",
+      "102 songs across 11 albums from 638 episodes. The insights you quote on X, turned into music you can feel.",
     type: "website",
     siteName: "Lenny's Greatest Hits",
     images: [{ url: "/covers/taste.jpg", width: 1200, height: 1200, alt: "Lenny's Greatest Hits" }],
@@ -50,7 +50,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Lenny's Greatest Hits",
     description:
-      "88 songs from 638 episodes. The insights you quote on X, turned into music you can feel.",
+      "102 songs across 11 albums from 638 episodes. The insights you quote on X, turned into music you can feel.",
     images: ["/covers/taste.jpg"],
   },
   themeColor: "#0a0a0a",
@@ -82,7 +82,7 @@ export default function RootLayout({
               "@type": "WebApplication",
               name: "Lenny's Greatest Hits",
               description:
-                "Tech culture anthems from 638 episodes of Lenny's Podcast. Real, catchy songs built from the best insights in product, startups, and building.",
+                "102 songs across 11 albums — tech culture anthems from 638 episodes of Lenny's Podcast. Real, catchy songs built from the best insights in product, startups, and building.",
               url: process.env.NEXT_PUBLIC_SITE_URL || "https://lennys-greatest-hits.vercel.app",
               applicationCategory: "Entertainment",
               operatingSystem: "Web",

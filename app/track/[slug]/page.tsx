@@ -21,9 +21,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     return { title: "Track Not Found | Lenny's Greatest Hits" };
   }
 
-  const title = `${track.title} - ${album.title} | Lenny's Greatest Hits`;
+  const guest = track.sources?.[0]?.guest;
+  const title = guest
+    ? `${track.title} — ${guest} | Lenny's Greatest Hits`
+    : `${track.title} — ${album.title} | Lenny's Greatest Hits`;
   const description = track.keyQuote
-    ? `"${track.keyQuote}" - ${track.quoteSpeaker}. ${track.concept}`
+    ? `"${track.keyQuote}" — ${track.quoteSpeaker}. ${track.concept}`
     : track.concept;
 
   const imageUrl = track.coverImage;
@@ -48,5 +51,31 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default async function TrackPage({ params }: Props) {
   const { slug } = await params;
-  return <TrackPageClient slug={slug} />;
+  const track = getTrackBySlug(slug);
+
+  const jsonLd = track
+    ? {
+        "@context": "https://schema.org",
+        "@type": "MusicRecording",
+        name: track.title,
+        byArtist: {
+          "@type": "MusicGroup",
+          name: "Lenny's Greatest Hits",
+        },
+        duration: track.duration,
+        url: `https://lennys-greatest-hits.vercel.app/track/${slug}`,
+      }
+    : null;
+
+  return (
+    <>
+      {jsonLd && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+      )}
+      <TrackPageClient slug={slug} />
+    </>
+  );
 }
