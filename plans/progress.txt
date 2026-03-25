@@ -1,3 +1,5 @@
 # Ralph PROD run Wed Mar 25 23:49:52 +08 2026
 Task 1: Redesigned homepage OG image — dark bg, warm gradient, 3x2 album grid, Spotify Wrapped style.
 Build passes.
+Task 2: Redesigned per-track OG images — 80px left accent stripe, 64px title, guest attribution, italic keyQuote, branded footer.
+Build passes.

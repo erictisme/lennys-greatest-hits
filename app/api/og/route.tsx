@@ -35,7 +35,7 @@ function renderTrackOG(slug: string) {
     return renderDefaultOG();
   }
 
-  const displayLyric = track.keyQuote || "";
+  const displayQuote = track.keyQuote || "";
 
   return new ImageResponse(
     (
@@ -44,72 +44,79 @@ function renderTrackOG(slug: string) {
           width: "100%",
           height: "100%",
           display: "flex",
-          flexDirection: "column",
-          justifyContent: "center",
-          padding: "60px",
-          background: `linear-gradient(135deg, #0a0a0a 0%, ${album.accentColor}22 50%, #0a0a0a 100%)`,
+          background: "#0a0a0a",
           fontFamily: "sans-serif",
         }}
       >
-        {/* Accent bar */}
+        {/* Left accent stripe */}
         <div
           style={{
             width: "80px",
-            height: "6px",
-            borderRadius: "3px",
+            height: "100%",
             backgroundColor: album.accentColor,
-            marginBottom: "24px",
+            flexShrink: 0,
           }}
         />
-        {/* Album label */}
-        <div
-          style={{
-            fontSize: "20px",
-            color: album.accentColor,
-            textTransform: "uppercase" as const,
-            letterSpacing: "3px",
-            marginBottom: "16px",
-          }}
-        >
-          {album.title} &middot; Track {track.trackNumber}
-        </div>
-        {/* Track title */}
-        <div
-          style={{
-            fontSize: "56px",
-            fontWeight: 700,
-            color: "#fafafa",
-            lineHeight: 1.15,
-            marginBottom: "24px",
-          }}
-        >
-          {track.title}
-        </div>
-        {/* Key lyric */}
-        {displayLyric && (
-          <div
-            style={{
-              fontSize: "22px",
-              color: "#a1a1aa",
-              fontStyle: "italic",
-              lineHeight: 1.5,
-              maxWidth: "900px",
-            }}
-          >
-            &ldquo;{displayLyric.slice(0, 120)}{displayLyric.length > 120 ? "..." : ""}&rdquo;
-          </div>
-        )}
-        {/* Footer */}
+        {/* Content area */}
         <div
           style={{
             display: "flex",
-            alignItems: "center",
-            marginTop: "auto",
-            gap: "12px",
+            flexDirection: "column",
+            justifyContent: "center",
+            padding: "60px 60px 60px 48px",
+            flex: 1,
           }}
         >
-          <div style={{ fontSize: "18px", color: "#71717a" }}>
-            Lenny&apos;s Greatest Hits
+          {/* Track title */}
+          <div
+            style={{
+              fontSize: "64px",
+              fontWeight: 700,
+              color: "#fafafa",
+              lineHeight: 1.1,
+              marginBottom: "20px",
+            }}
+          >
+            {track.title}
+          </div>
+          {/* Guest attribution */}
+          {track.sources[0]?.guest && (
+            <div
+              style={{
+                fontSize: "22px",
+                color: album.accentColor,
+                marginBottom: "28px",
+              }}
+            >
+              Based on {track.sources[0].guest}&apos;s episode with Lenny
+            </div>
+          )}
+          {/* Key quote */}
+          {displayQuote && (
+            <div
+              style={{
+                fontSize: "22px",
+                color: "#a1a1aa",
+                fontStyle: "italic",
+                lineHeight: 1.5,
+                maxWidth: "900px",
+                marginBottom: "28px",
+              }}
+            >
+              &ldquo;{displayQuote.slice(0, 140)}{displayQuote.length > 140 ? "..." : ""}&rdquo;
+            </div>
+          )}
+          {/* Footer */}
+          <div
+            style={{
+              display: "flex",
+              alignItems: "center",
+              marginTop: "auto",
+              fontSize: "18px",
+              color: "#71717a",
+            }}
+          >
+            lennys-greatest-hits.vercel.app &middot; Hit Play
           </div>
         </div>
       </div>

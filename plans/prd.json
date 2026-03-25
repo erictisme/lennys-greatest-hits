@@ -16,7 +16,7 @@
       "description": "Redesign per-TRACK OG images. Read app/api/og/route.tsx — the renderTrackOG function. Add: (1) 80px accent color stripe on left, (2) track title at 64px bold, (3) guest name: 'Based on [guest]'s episode with Lenny' at 22px, (4) keyQuote in italics, (5) footer: 'lennys-greatest-hits.vercel.app · Hit Play'. IMPORTANT: Do NOT import lyrics-data.ts — edge function must stay under 1MB. DONE: Track OG images are compelling. DO NOT TOUCH: renderAlbumOG or renderDefaultOG. VERIFY: pnpm build passes.",
       "steps": ["Read app/api/og/route.tsx", "Redesign renderTrackOG only", "pnpm build passes"],
       "files": ["app/api/og/route.tsx"],
-      "passes": false
+      "passes": true
     },
     {
       "id": 3,
