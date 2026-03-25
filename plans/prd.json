@@ -61,7 +61,7 @@
       "description": "Improve share text on album pages. Read app/album/[slug]/AlbumPageClient.tsx. Find handleAlbumShareX. Change the share text to: `\"[Album Title]: [track count] songs about [subtitle]. Built from Lenny's podcast archive\"`. DONE: Album share text is compelling. DO NOT TOUCH: track row rendering. VERIFY: pnpm build passes.",
       "steps": ["Read AlbumPageClient.tsx", "Update album share text", "pnpm build passes"],
       "files": ["app/album/[slug]/AlbumPageClient.tsx"],
-      "passes": false
+      "passes": true
     },
     {
       "id": 8,

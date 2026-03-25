@@ -11,3 +11,5 @@ Task 5: Created app/robots.ts — allows all crawlers, points to sitemap.
 Build passes.
 Task 6: Updated track share text — guest attribution or startup wisdom tagline.
 Build passes.
+Task 7: Updated album share text — track count, subtitle, podcast archive tagline.
+Build passes.

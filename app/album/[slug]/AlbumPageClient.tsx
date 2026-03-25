@@ -54,8 +54,7 @@ export default function AlbumPageClient({ slug }: { slug: string }) {
 
   const handleAlbumShareX = () => {
     const url = getAlbumUrl();
-    const comingSoonText = album?.comingSoon ? " (coming soon)" : "";
-    const text = encodeURIComponent(`Check out ${album?.title}${comingSoonText} on Lenny's Greatest Hits | ${album?.subtitle}`);
+    const text = encodeURIComponent(`${album?.title}: ${album?.tracks.length} songs about ${album?.subtitle?.toLowerCase()}. Built from Lenny's podcast archive`);
     window.open(`https://twitter.com/intent/tweet?text=${text}&url=${encodeURIComponent(url)}`, "_blank");
     trackEvent("share_clicked", { platform: "x", album: slug, type: "album" });
     setAlbumShareOpen(false);
