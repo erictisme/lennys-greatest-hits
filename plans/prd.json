@@ -2,93 +2,93 @@
   "features": [
     {
       "id": 1,
-      "category": "quality",
+      "category": "feature",
       "priority": 0,
-      "description": "QA Round 7 — Mobile User audit. Read ALL files: app/page.tsx, app/album/[slug]/AlbumPageClient.tsx, app/track/[slug]/TrackPageClient.tsx, app/songs/page.tsx, app/about/page.tsx, components/NowPlayingBar.tsx, components/TrackRow.tsx, components/VoteButtons.tsx, components/GlobalNav.tsx, components/ThemeToggle.tsx, components/KeyboardShortcuts.tsx, components/SyncedLyrics.tsx (or LyricsDisplay). Check for: horizontal overflow, touch targets under 44px, hidden elements that should show, text truncation, layout overflow. Write content/qa/round7-mobile-audit.md. Every issue must have severity, file:line, what's wrong, and how to fix. DONE: Audit exists. DO NOT TOUCH: code. VERIFY: pnpm build passes.",
-      "steps": ["Read all files", "Check mobile issues", "Write audit", "pnpm build passes"],
-      "files": ["content/qa/round7-mobile-audit.md"],
-      "passes": true
+      "description": "CRITICAL: Redesign the default OG image for maximum shareability. The current app/opengraph-image.tsx generates 4 colored dots and generic text — this is what shows when someone shares lennys-greatest-hits.vercel.app on LinkedIn/X. It looks like a placeholder. Nobody clicks it. FIX: Redesign to be visually striking. Use ImageResponse with: (1) Dark background (#0a0a0a) with subtle warm gradient. (2) Large bold title 'Lenny's Greatest Hits' (64px). (3) Tagline: 'Lenny's best podcast insights — turned into real, playable songs' (24px, muted). (4) Stats: '102 songs · 11 albums · 5 hr 32 min' (18px). (5) A visual grid of 6 album-colored squares (each album's accent color) arranged in a 3x2 grid to suggest album art. (6) Small footer: 'lennys-greatest-hits.vercel.app'. Make it look like a Spotify Wrapped card — dark, bold, colorful. DONE: OG image is visually compelling. DO NOT TOUCH: track/album-specific OG images in app/track and app/album dirs. VERIFY: pnpm build passes.",
+      "steps": ["Read app/opengraph-image.tsx", "Redesign with striking visual", "pnpm build passes"],
+      "files": ["app/opengraph-image.tsx"],
+      "passes": false
     },
     {
       "id": 2,
-      "category": "bugfix",
+      "category": "feature",
       "priority": 0,
-      "description": "Fix ALL CRITICAL and HIGH issues from Round 7 mobile audit. Read content/qa/round7-mobile-audit.md. For every CRITICAL and HIGH issue, make the fix described. If a fix risks breaking something, skip it. DONE: All critical/high mobile issues fixed. VERIFY: pnpm build passes.",
-      "steps": ["Read audit", "Fix all critical issues", "Fix all high issues", "pnpm build passes"],
-      "files": [],
-      "passes": true
+      "description": "CRITICAL: Improve per-track OG images. The app/api/og/route.tsx generates OG images for tracks and albums, but it's text-only — no visual hook. When someone shares a specific song on X/LinkedIn, the preview should make people want to click. FIX: For track OG images (renderTrackOG function): (1) Add a large album accent color block/stripe on the left side (80px wide, full height). (2) Make the track title HUGE (64px, bold white). (3) Show the guest name prominently: 'Based on [guest]'s episode with Lenny' (22px). (4) Show the keyQuote in italics if it exists. (5) Bottom: 'lennys-greatest-hits.vercel.app · Hit Play'. For album OG images: (1) Show the album title huge (72px). (2) Show subtitle. (3) Show track count. (4) Accent color stripe. Make both look like premium music app share cards. DONE: Track and album OG images are visually compelling. DO NOT TOUCH: the edge runtime or imports (keep it under 1MB). VERIFY: pnpm build passes.",
+      "steps": ["Read app/api/og/route.tsx", "Redesign track OG", "Redesign album OG", "pnpm build passes"],
+      "files": ["app/api/og/route.tsx"],
+      "passes": false
     },
     {
       "id": 3,
-      "category": "quality",
+      "category": "feature",
       "priority": 0,
-      "description": "QA Round 7 — Performance audit. Read app/layout.tsx, lib/albums.ts (check file size with wc -c), app/page.tsx, app/track/[slug]/TrackPageClient.tsx. Check: (1) How big is lib/albums.ts? Run `wc -c lib/albums.ts`. If over 300KB, that's too much client-side JS. (2) Are images using Next.js Image with width/height? (3) Are there unnecessary client-side fetches on every page load? (4) Could any pages be server components instead of client? (5) Is the audio element preloading too aggressively? Write content/qa/round7-performance-audit.md with specific issues and fixes. DONE: Audit exists. DO NOT TOUCH: code. VERIFY: pnpm build passes.",
-      "steps": ["Check file sizes", "Read pages for perf issues", "Write audit", "pnpm build passes"],
-      "files": ["content/qa/round7-performance-audit.md"],
-      "passes": true
+      "description": "Add sitemap.xml and robots.txt for basic discoverability. Even though SEO isn't the priority, having a sitemap helps social platforms crawl and cache OG images faster. FIX: (1) Create app/sitemap.ts that generates a sitemap with all track URLs, album URLs, and the homepage. Use Next.js built-in sitemap generation (export default function sitemap()). (2) Create app/robots.ts that allows all crawlers. Both are simple server-side files. DONE: /sitemap.xml and /robots.txt are accessible. DO NOT TOUCH: any client components. VERIFY: pnpm build passes.",
+      "steps": ["Create app/sitemap.ts", "Create app/robots.ts", "pnpm build passes"],
+      "files": ["app/sitemap.ts", "app/robots.ts"],
+      "passes": false
     },
     {
       "id": 4,
-      "category": "bugfix",
-      "priority": 1,
-      "description": "Fix the #1 performance issue from Round 7 performance audit. Read content/qa/round7-performance-audit.md. Implement the single highest-impact performance fix. Common fixes: lazy-load data, split large files, reduce bundle size. DONE: Top perf issue fixed. VERIFY: pnpm build passes.",
-      "steps": ["Read audit", "Fix #1 issue", "pnpm build passes"],
-      "files": [],
-      "passes": true
+      "category": "feature",
+      "priority": 0,
+      "description": "Improve share text across all share points. Current share text is generic. FIX: (1) In app/track/[slug]/TrackPageClient.tsx: shareText should be `\"[Track Title] — [Guest]'s insights from Lenny's podcast, turned into a song 🎵 [url]\"`. If no guest, use `\"[Track Title] — startup wisdom turned into music you can actually feel 🎵\"`. (2) In app/album/[slug]/AlbumPageClient.tsx: album share text should be `\"[Album Title]: [track count] songs about [subtitle]. Built from Lenny's podcast archive 🎵\"`. (3) In components/NowPlayingBar.tsx: the copy-link share currently just copies the URL. After copying, the tooltip should say 'Link copied! Share it with your team'. (4) Check all handleShareX functions — make sure the X share text is compelling, not just the title. DONE: All share text is compelling and explains what LGH is. VERIFY: pnpm build passes.",
+      "steps": ["Update TrackPageClient share text", "Update AlbumPageClient share text", "Update NowPlayingBar copy tooltip", "pnpm build passes"],
+      "files": ["app/track/[slug]/TrackPageClient.tsx", "app/album/[slug]/AlbumPageClient.tsx", "components/NowPlayingBar.tsx"],
+      "passes": false
     },
     {
       "id": 5,
-      "category": "quality",
+      "category": "feature",
       "priority": 1,
-      "description": "QA Round 7 — First-time visitor audit. Read app/page.tsx, components/OnboardingTooltips.tsx, components/TrackRow.tsx, components/NowPlayingBar.tsx, app/about/page.tsx. Walk through the first 60 seconds as a new visitor from Lenny's Slack. Focus on: (1) Is the tagline clear? (2) How fast to first play? (3) What would make them share? (4) What's confusing? (5) What's missing? Write content/qa/round7-visitor-audit.md. DONE: Audit exists. DO NOT TOUCH: code. VERIFY: pnpm build passes.",
-      "steps": ["Read pages", "Walk through journey", "Write audit", "pnpm build passes"],
-      "files": ["content/qa/round7-visitor-audit.md"],
-      "passes": true
+      "description": "Add structured data (JSON-LD) for tracks and albums. This helps social platforms and search engines understand the content type. FIX: (1) In app/track/[slug]/page.tsx (the server component), add a JSON-LD script tag with MusicRecording schema: { '@type': 'MusicRecording', name, byArtist: 'Lenny\\'s Greatest Hits', inAlbum, duration, url }. (2) In app/album/[slug]/page.tsx, add MusicAlbum schema: { '@type': 'MusicAlbum', name, numTracks, track: [...] }. (3) Check if app/layout.tsx already has a WebApplication schema — if so, update it with the correct track count. DONE: Structured data on all pages. VERIFY: pnpm build passes.",
+      "steps": ["Add JSON-LD to track pages", "Add JSON-LD to album pages", "Update layout.tsx schema", "pnpm build passes"],
+      "files": ["app/track/[slug]/page.tsx", "app/album/[slug]/page.tsx", "app/layout.tsx"],
+      "passes": false
     },
     {
       "id": 6,
-      "category": "bugfix",
+      "category": "feature",
       "priority": 1,
-      "description": "Fix ALL CRITICAL and HIGH issues from Round 7 visitor audit. Read content/qa/round7-visitor-audit.md. Fix every critical and high issue. DONE: All fixed. VERIFY: pnpm build passes.",
-      "steps": ["Read audit", "Fix all critical/high", "pnpm build passes"],
-      "files": [],
-      "passes": true
+      "description": "Add proper meta titles and descriptions to all pages. FIX: (1) In app/track/[slug]/page.tsx: generateMetadata should return { title: '[Track] — [Guest] | Lenny\\'s Greatest Hits', description: '[concept]. Based on [source title].' }. Check if this already exists — if so, verify the description is compelling, not just the concept field. (2) In app/album/[slug]/page.tsx: { title: '[Album] | Lenny\\'s Greatest Hits', description: '[album description]' }. (3) In app/songs/page.tsx: add metadata { title: 'All Songs | Lenny\\'s Greatest Hits', description: 'Browse all [N] songs...' }. (4) In app/about/page.tsx: add metadata. DONE: Every page has a unique, compelling title and description. VERIFY: pnpm build passes.",
+      "steps": ["Check/update track page metadata", "Check/update album page metadata", "Add metadata to songs/about pages", "pnpm build passes"],
+      "files": ["app/track/[slug]/page.tsx", "app/album/[slug]/page.tsx", "app/songs/page.tsx", "app/about/page.tsx"],
+      "passes": false
     },
     {
       "id": 7,
       "category": "quality",
       "priority": 1,
-      "description": "QA Round 7 — Content accuracy spot-check. Read lib/albums.ts. Pick 5 tracks at random (use different albums). For each, use mcp__lennysdata__search_content to verify: (1) guest actually appeared on Lenny's podcast, (2) keyQuote is real, (3) source URLs are valid. Write content/qa/round7-accuracy-audit.md. DONE: Audit exists. DO NOT TOUCH: code. VERIFY: pnpm build passes.",
-      "steps": ["Pick 5 random tracks", "Verify via Lenny MCP", "Write audit", "pnpm build passes"],
-      "files": ["content/qa/round7-accuracy-audit.md"],
-      "passes": true
+      "description": "Content accuracy: spot-check 10 tracks across all 11 albums. Use mcp__lennysdata__search_content to verify for each: (1) guest appeared on Lenny's podcast/newsletter, (2) keyQuote is real or reasonable, (3) source URL looks valid. Pick 1 track per album (some albums have 15+ tracks, just pick one). Write content/qa/round8-accuracy-audit.md. DONE: Audit exists. DO NOT TOUCH: code. VERIFY: pnpm build passes.",
+      "steps": ["Pick 1 track per album", "Verify via Lenny MCP", "Write audit", "pnpm build passes"],
+      "files": ["content/qa/round8-accuracy-audit.md"],
+      "passes": false
     },
     {
       "id": 8,
       "category": "bugfix",
       "priority": 1,
-      "description": "Fix accuracy issues from Round 7 spot-check. Read content/qa/round7-accuracy-audit.md. Fix any wrong attributions, quotes, or URLs in lib/albums.ts. Use Lenny MCP to verify corrections. DONE: Fixed. VERIFY: pnpm build passes.",
+      "description": "Fix accuracy issues from Round 8 spot-check. Read content/qa/round8-accuracy-audit.md. Fix any wrong attributions, quotes, or URLs. Use Lenny MCP to verify. DONE: Fixed. VERIFY: pnpm build passes.",
       "steps": ["Read audit", "Fix issues", "pnpm build passes"],
       "files": ["lib/albums.ts"],
-      "passes": true
+      "passes": false
     },
     {
       "id": 9,
-      "category": "bugfix",
-      "priority": 1,
-      "description": "Fix ALL MEDIUM issues from Round 7 mobile audit. Read content/qa/round7-mobile-audit.md. Fix every MEDIUM severity issue. DONE: All medium mobile issues fixed. VERIFY: pnpm build passes.",
-      "steps": ["Read audit", "Fix all medium issues", "pnpm build passes"],
-      "files": [],
-      "passes": true
+      "category": "feature",
+      "priority": 2,
+      "description": "Add Twitter card meta tags explicitly. Next.js may auto-generate some, but verify each page has: twitter:card = 'summary_large_image', twitter:title, twitter:description, twitter:image. In app/layout.tsx metadata, ensure the twitter object has card: 'summary_large_image'. For track/album pages, the generateMetadata should include twitter-specific fields that reference the OG image API. DONE: Twitter cards show large image previews. VERIFY: pnpm build passes.",
+      "steps": ["Check layout.tsx twitter metadata", "Check track/album generateMetadata", "pnpm build passes"],
+      "files": ["app/layout.tsx", "app/track/[slug]/page.tsx", "app/album/[slug]/page.tsx"],
+      "passes": false
     },
     {
       "id": 10,
-      "category": "bugfix",
+      "category": "feature",
       "priority": 2,
-      "description": "Fix ALL MEDIUM issues from Round 7 visitor audit. Read content/qa/round7-visitor-audit.md. Fix every MEDIUM severity issue. DONE: All medium visitor issues fixed. VERIFY: pnpm build passes.",
-      "steps": ["Read audit", "Fix all medium issues", "pnpm build passes"],
-      "files": [],
-      "passes": true
+      "description": "Add canonical URLs to prevent duplicate content. FIX: In app/layout.tsx metadata, add metadataBase (may already exist) and ensure alternates.canonical is set on track and album pages. This tells search engines and social platforms the definitive URL. DONE: Canonical URLs set. VERIFY: pnpm build passes.",
+      "steps": ["Check metadataBase", "Add canonical URLs", "pnpm build passes"],
+      "files": ["app/layout.tsx", "app/track/[slug]/page.tsx"],
+      "passes": false
     }
   ]
 }
