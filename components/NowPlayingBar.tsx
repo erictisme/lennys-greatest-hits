@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
-import { Play, Pause, SkipBack, SkipForward, Share2, Loader2 } from "lucide-react";
+import { Play, Pause, SkipBack, SkipForward, Share2, Loader2, Repeat, Repeat1, Shuffle } from "lucide-react";
 import { useAudio } from "@/lib/audio-context";
 import { getAlbumForTrack, getAllTracks } from "@/lib/tracks";
 import { trackEvent } from "@/lib/analytics";
@@ -26,6 +26,9 @@ export default function NowPlayingBar() {
     countdown,
     cancelCountdown,
     setOnTrackChange,
+    repeatMode,
+    cycleRepeat,
+    shuffleAll,
   } = useAudio();
 
   const router = useRouter();
@@ -76,10 +79,10 @@ export default function NowPlayingBar() {
       {/* Up Next countdown banner */}
       {upNextTrack && countdown !== null && (
         <div
-          className="flex items-center justify-between px-3 sm:px-4 py-2 text-sm border-b border-border/30"
+          className="flex items-center justify-between px-3 sm:px-4 py-2 text-sm border-b border-border/30 min-w-0"
           style={{ backgroundColor: `${accentColor}15` }}
         >
-          <span className="text-muted-foreground">
+          <span className="text-muted-foreground min-w-0 flex-1 truncate">
             Up next: <span className="font-medium text-foreground">{upNextTrack.title}</span>
             {" "}- playing in {countdown}…
           </span>
@@ -153,7 +156,15 @@ export default function NowPlayingBar() {
         </Link>
 
         {/* Controls */}
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-1 sm:gap-3">
+          <button
+            onClick={() => shuffleAll()}
+            className="hidden sm:flex min-w-[44px] min-h-[44px] items-center justify-center text-muted-foreground hover:text-foreground transition-colors"
+            aria-label="Shuffle"
+          >
+            <Shuffle className="w-3.5 h-3.5" />
+          </button>
+
           <button
             onClick={() => prev()}
             className={`min-w-[44px] min-h-[44px] flex items-center justify-center ${hasPrev ? "text-muted-foreground hover:text-foreground" : "text-muted-foreground/30"} transition-colors`}
@@ -182,6 +193,23 @@ export default function NowPlayingBar() {
             disabled={!hasNext}
           >
             <SkipForward className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
+          </button>
+
+          <button
+            onClick={cycleRepeat}
+            className={`min-w-[44px] min-h-[44px] flex items-center justify-center transition-colors ${
+              repeatMode === "off"
+                ? "text-muted-foreground hover:text-foreground"
+                : ""
+            }`}
+            style={repeatMode !== "off" ? { color: accentColor } : undefined}
+            aria-label={repeatMode === "off" ? "Enable repeat" : repeatMode === "all" ? "Repeat one" : "Disable repeat"}
+          >
+            {repeatMode === "one" ? (
+              <Repeat1 className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
+            ) : (
+              <Repeat className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
+            )}
           </button>
         </div>
 

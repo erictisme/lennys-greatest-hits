@@ -37,6 +37,8 @@ interface AudioState {
   countdown: number | null;
   cancelCountdown: () => void;
   setOnTrackChange: (cb: ((slug: string) => void) | null) => void;
+  repeatMode: "off" | "all" | "one";
+  cycleRepeat: () => void;
 }
 
 const AudioContext = createContext<AudioState | null>(null);
@@ -57,6 +59,9 @@ export function AudioProvider({ children }: { children: ReactNode }) {
   const [upNextTrack, setUpNextTrack] = useState<Track | null>(null);
   const [countdown, setCountdown] = useState<number | null>(null);
   const [isBuffering, setIsBuffering] = useState(false);
+  const [repeatMode, setRepeatMode] = useState<"off" | "all" | "one">("off");
+  const repeatModeRef = useRef(repeatMode);
+  repeatModeRef.current = repeatMode;
   const countdownRef = useRef<ReturnType<typeof setInterval> | null>(null);
   const onTrackChangeRef = useRef<((slug: string) => void) | null>(null);
 
@@ -199,6 +204,13 @@ export function AudioProvider({ children }: { children: ReactNode }) {
     setIsPlaying(false);
   }, [clearCountdown]);
 
+  const cycleRepeat = useCallback(() => {
+    setRepeatMode((prev) => {
+      const next = prev === "off" ? "all" : prev === "all" ? "one" : "off";
+      return next;
+    });
+  }, []);
+
   // Start playing the up-next track (used by countdown completion)
   const playUpNext = useCallback((track: Track, newQueue?: Track[]) => {
     const audio = audioRef.current;
@@ -244,8 +256,16 @@ export function AudioProvider({ children }: { children: ReactNode }) {
     if (!audio) return;
 
     const onEnded = () => {
+      const mode = repeatModeRef.current;
+
+      // Repeat One: just restart the same track
+      if (mode === "one") {
+        audio.currentTime = 0;
+        audio.play().catch(() => {});
+        return;
+      }
+
       const currentQueue = queueRef.current;
-      // Read current track synchronously via a state getter
       setCurrentTrack((prev) => {
         if (!prev) {
           setIsPlaying(false);
@@ -261,8 +281,22 @@ export function AudioProvider({ children }: { children: ReactNode }) {
             break;
           }
         }
-        if (!nextTrackToPlay) {
-          // Queue exhausted — try next album with unlocked tracks
+
+        // Repeat All: wrap around to first track in queue
+        if (!nextTrackToPlay && mode === "all") {
+          const firstUnlocked = currentQueue.find((t) => !t.isLocked);
+          if (firstUnlocked && firstUnlocked.slug !== prev.slug) {
+            nextTrackToPlay = firstUnlocked;
+          } else if (firstUnlocked) {
+            // Only one track in queue — loop it
+            audio.currentTime = 0;
+            audio.play().catch(() => {});
+            return prev;
+          }
+        }
+
+        if (!nextTrackToPlay && mode === "off") {
+          // Queue exhausted — try next album
           const albumIdx = albums.findIndex((a) => a.slug === prev.albumSlug);
           for (let a = albumIdx + 1; a < albums.length; a++) {
             const nextAlbum = albums[a];
@@ -275,15 +309,13 @@ export function AudioProvider({ children }: { children: ReactNode }) {
         }
 
         if (nextTrackToPlay) {
-          // Start countdown instead of immediate play
           setUpNextTrack(nextTrackToPlay);
           setCountdown(5);
           setIsPlaying(false);
         } else {
-          // Last album — stop playback
           setIsPlaying(false);
         }
-        return prev; // Keep current track displayed during countdown
+        return prev;
       });
     };
 
@@ -559,6 +591,8 @@ export function AudioProvider({ children }: { children: ReactNode }) {
         countdown,
         cancelCountdown,
         setOnTrackChange,
+        repeatMode,
+        cycleRepeat,
       }}
     >
       {children}
