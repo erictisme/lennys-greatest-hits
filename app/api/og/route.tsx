@@ -128,12 +128,29 @@ function renderTrackOG(slug: string) {
   );
 }
 
+function parseDuration(d: string): number {
+  const parts = d.split(":").map(Number);
+  if (parts.length === 2) return parts[0] * 60 + parts[1];
+  if (parts.length === 3) return parts[0] * 3600 + parts[1] * 60 + parts[2];
+  return 0;
+}
+
+function formatTotalDuration(tracks: { duration: string }[]): string {
+  const totalSeconds = tracks.reduce((sum, t) => sum + parseDuration(t.duration), 0);
+  const mins = Math.floor(totalSeconds / 60);
+  const secs = totalSeconds % 60;
+  return `${mins}:${secs.toString().padStart(2, "0")}`;
+}
+
 function renderAlbumOG(slug: string) {
   const album = getAlbumBySlug(slug);
 
   if (!album) {
     return renderDefaultOG();
   }
+
+  const first5 = album.tracks.slice(0, 5);
+  const totalDuration = formatTotalDuration(album.tracks);
 
   return new ImageResponse(
     (
@@ -142,70 +159,97 @@ function renderAlbumOG(slug: string) {
           width: "100%",
           height: "100%",
           display: "flex",
-          flexDirection: "column",
-          justifyContent: "center",
-          padding: "60px",
-          background: `linear-gradient(135deg, #0a0a0a 0%, ${album.accentColor}33 60%, #0a0a0a 100%)`,
+          background: "#0a0a0a",
           fontFamily: "sans-serif",
         }}
       >
-        {/* Accent bar */}
+        {/* Left accent stripe */}
         <div
           style={{
             width: "80px",
-            height: "6px",
-            borderRadius: "3px",
+            height: "100%",
             backgroundColor: album.accentColor,
-            marginBottom: "24px",
+            flexShrink: 0,
           }}
         />
-        {/* Album title */}
-        <div
-          style={{
-            fontSize: "64px",
-            fontWeight: 700,
-            color: "#fafafa",
-            lineHeight: 1.15,
-            marginBottom: "12px",
-          }}
-        >
-          {album.title}
-        </div>
-        {/* Subtitle */}
-        <div
-          style={{
-            fontSize: "26px",
-            color: "#a1a1aa",
-            marginBottom: "32px",
-          }}
-        >
-          {album.subtitle}
-        </div>
-        {/* Track list */}
-        <div style={{ display: "flex", flexDirection: "column", gap: "8px" }}>
-          {album.tracks.map((track) => (
-            <div
-              key={track.slug}
-              style={{
-                fontSize: "20px",
-                color: "#71717a",
-              }}
-            >
-              {track.trackNumber}. {track.title}
-            </div>
-          ))}
-        </div>
-        {/* Footer */}
+        {/* Content area */}
         <div
           style={{
             display: "flex",
-            alignItems: "center",
-            marginTop: "auto",
-            gap: "12px",
+            flexDirection: "column",
+            justifyContent: "center",
+            padding: "60px 60px 60px 48px",
+            flex: 1,
           }}
         >
-          <div style={{ fontSize: "18px", color: "#71717a" }}>
-            Lenny&apos;s Greatest Hits &middot; {album.tracks.length} tracks
+          {/* Album title */}
+          <div
+            style={{
+              fontSize: "72px",
+              fontWeight: 700,
+              color: "#fafafa",
+              lineHeight: 1.1,
+              marginBottom: "12px",
+            }}
+          >
+            {album.title}
+          </div>
+          {/* Subtitle */}
+          <div
+            style={{
+              fontSize: "26px",
+              color: "#a1a1aa",
+              marginBottom: "24px",
+            }}
+          >
+            {album.subtitle}
+          </div>
+          {/* Track count + duration */}
+          <div
+            style={{
+              fontSize: "20px",
+              color: album.accentColor,
+              marginBottom: "28px",
+            }}
+          >
+            {album.tracks.length} tracks &middot; {totalDuration}
+          </div>
+          {/* First 5 track names */}
+          <div style={{ display: "flex", flexDirection: "column", gap: "6px" }}>
+            {first5.map((track, i) => (
+              <div
+                key={track.slug}
+                style={{
+                  fontSize: "20px",
+                  color: "#71717a",
+                }}
+              >
+                {i + 1}. {track.title}
+              </div>
+            ))}
+            {album.tracks.length > 5 && (
+              <div
+                style={{
+                  fontSize: "18px",
+                  color: "#52525b",
+                  marginTop: "4px",
+                }}
+              >
+                +{album.tracks.length - 5} more
+              </div>
+            )}
+          </div>
+          {/* Footer */}
+          <div
+            style={{
+              display: "flex",
+              alignItems: "center",
+              marginTop: "auto",
+              fontSize: "18px",
+              color: "#71717a",
+            }}
+          >
+            lennys-greatest-hits.vercel.app &middot; Hit Play
           </div>
         </div>
       </div>

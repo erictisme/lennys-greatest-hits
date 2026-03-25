@@ -3,3 +3,5 @@ Task 1: Redesigned homepage OG image — dark bg, warm gradient, 3x2 album grid,
 Build passes.
 Task 2: Redesigned per-track OG images — 80px left accent stripe, 64px title, guest attribution, italic keyQuote, branded footer.
 Build passes.
+Task 3: Redesigned per-album OG images — 80px left accent stripe, 72px title, subtitle, track count + total duration, first 5 track names.
+Build passes.

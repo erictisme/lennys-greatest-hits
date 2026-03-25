@@ -25,7 +25,7 @@
       "description": "Redesign per-ALBUM OG images. Read app/api/og/route.tsx — the renderAlbumOG function. Add: (1) accent color stripe on left, (2) album title huge (72px), (3) subtitle, (4) track count + total duration, (5) first 5 track names listed. IMPORTANT: Stay under 1MB — no new imports. DONE: Album OG images are compelling. DO NOT TOUCH: renderTrackOG or renderDefaultOG. VERIFY: pnpm build passes.",
       "steps": ["Read app/api/og/route.tsx", "Redesign renderAlbumOG only", "pnpm build passes"],
       "files": ["app/api/og/route.tsx"],
-      "passes": false
+      "passes": true
     },
     {
       "id": 4,
