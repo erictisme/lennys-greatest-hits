@@ -115,7 +115,7 @@
       "description": "Create an /about page. Contest judges want to understand the project. Create app/about/page.tsx — a simple server component. Content: 3-4 paragraphs explaining: (1) What this is — Lenny's podcast/newsletter insights turned into real songs. (2) How songs were made — AI-assisted research from 638 episodes, lyrics written to capture the insight, generated on Suno. (3) Why — contest entry for Lenny's 'build something cool with my data'. (4) Who — 'Built by Eric Tan' with LinkedIn link. Keep it minimal, same dark theme. Add a link to /about in the homepage footer. DONE: /about page exists and is linked from footer. DO NOT TOUCH: other pages. VERIFY: pnpm build passes.",
       "steps": ["Create app/about/page.tsx", "Add link in homepage footer", "pnpm build passes"],
       "files": ["app/about/page.tsx", "app/page.tsx"],
-      "passes": false
+      "passes": true
     }
   ]
 }

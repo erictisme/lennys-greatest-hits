@@ -30,6 +30,13 @@ export default function Home() {
     return () => clearTimeout(timer);
   }, [searchQuery]);
 
+  // Track search queries
+  useEffect(() => {
+    if (debouncedQuery.trim()) {
+      trackEvent("search_query", { query: debouncedQuery, result_count: filteredTracks.length });
+    }
+  }, [debouncedQuery]); // eslint-disable-line react-hooks/exhaustive-deps
+
   // Fetch plays today
   useEffect(() => {
     fetch("/api/play?today=true")
@@ -116,7 +123,7 @@ export default function Home() {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.3 }}
-      className="flex flex-col min-h-screen max-w-5xl mx-auto w-full px-4 sm:px-6"
+      className="flex flex-col min-h-screen max-w-5xl mx-auto w-full px-4 sm:px-6 overflow-x-hidden"
     >
       {/* 1. Artist Header */}
       <header className="relative pt-12 sm:pt-16 pb-6">
@@ -124,6 +131,7 @@ export default function Home() {
         <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight leading-[1.05]">
           Lenny&apos;s Greatest Hits
         </h1>
+        <p className="text-base sm:text-lg text-muted-foreground/70 mt-1">The insights you quote on X, turned into music you can feel.</p>
         <div className="flex items-center gap-2 mt-2">
           <p className="text-sm text-muted-foreground">
             {allTracks.length} songs &middot; {allAlbums.filter((a) => !a.comingSoon).length} albums &middot; {(() => {
@@ -218,6 +226,7 @@ export default function Home() {
                 onNavigate={() => handleTrackNavigate(track)}
                 isCurrentTrack={audio.currentTrack?.slug === track.slug}
                 isPlaying={audio.currentTrack?.slug === track.slug && audio.isPlaying}
+                accentColor={getAlbumForTrack(track.slug)?.accentColor}
               />
             ))}
             {filteredTracks.length === 0 && (
@@ -258,6 +267,7 @@ export default function Home() {
                   onNavigate={() => handleTrackNavigate(track)}
                   isCurrentTrack={audio.currentTrack?.slug === track.slug}
                   isPlaying={audio.currentTrack?.slug === track.slug && audio.isPlaying}
+                  accentColor={getAlbumForTrack(track.slug)?.accentColor}
                 />
               ))}
             </section>
@@ -342,6 +352,13 @@ export default function Home() {
                 </a>
               </p>
               <p className="text-xs text-muted-foreground/30 mt-1">
+                <Link
+                  href="/about"
+                  className="hover:text-foreground/50 transition-colors"
+                >
+                  About
+                </Link>
+                {" · "}
                 <Link
                   href="/feedback"
                   className="hover:text-foreground/50 transition-colors"

@@ -1,3 +1,4 @@
 # Ralph PROD run Wed Mar 25 14:07:47 +08 2026
 Task 12: Added max-w-[45%] truncate to prev/next nav links on track page to prevent long titles from overflowing on mobile.
 Tasks 1-11: Already implemented in code — marked passes:true in prd.json.
+Task 13: Created /about page (app/about/page.tsx) with project explanation + LinkedIn link. Added About link to homepage footer.
