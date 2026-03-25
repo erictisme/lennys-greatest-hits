@@ -19,3 +19,5 @@ Task 7: Fixed 'Do Things That Don't Scale' quote attribution — changed from fa
 Build passes.
 Task 10: Added `hidden sm:flex` to keyboard shortcuts ? button so it only shows on desktop/tablet where keyboards exist.
 Build passes.
+Task 11: Spot-checked 5 tracks (crossing-the-chasm, the-hiring-playbook, burnout, plg, the-obsession) via Lenny MCP. 3 clean, 2 have fabricated keyQuotes (crossing-the-chasm, plg use song lyrics as quotes).
+Build passes.

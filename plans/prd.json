@@ -97,7 +97,7 @@
       "description": "Verify Round 3 Lenny accuracy: spot-check 5 more tracks. The Lenny audit only checked 5 tracks. Use mcp__lennysdata__search_content to verify 5 MORE tracks chosen from different albums: (1) 'crossing-the-chasm' (Growth Engine), (2) 'the-hiring-playbook' (Talent Search), (3) 'burnout' (Human Side), (4) 'plg' (Growth Engine), (5) 'the-obsession' (By the Numbers). For each: verify the guest actually appeared on Lenny's podcast, the keyQuote is real, the concept is correctly attributed. Write findings to content/qa/round5-accuracy-spotcheck.md. DONE: Spot-check exists. DO NOT TOUCH: code. VERIFY: pnpm build passes.",
       "steps": ["Verify 5 tracks via Lenny MCP", "Write findings", "pnpm build passes"],
       "files": ["content/qa/round5-accuracy-spotcheck.md"],
-      "passes": false
+      "passes": true
     },
     {
       "id": 12,
