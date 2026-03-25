@@ -34,7 +34,7 @@
       "description": "Create sitemap.xml. Create app/sitemap.ts using Next.js built-in sitemap generation. Include: homepage, /songs, /albums, /about, /feedback, all /track/[slug] URLs, all /album/[slug] URLs, all /topics/[tag] URLs. Use getAllTracks() and getAllAlbums() to generate the lists. DONE: /sitemap.xml returns valid XML with all URLs. DO NOT TOUCH: client components. VERIFY: pnpm build passes.",
       "steps": ["Create app/sitemap.ts", "pnpm build passes"],
       "files": ["app/sitemap.ts"],
-      "passes": false
+      "passes": true
     },
     {
       "id": 5,
