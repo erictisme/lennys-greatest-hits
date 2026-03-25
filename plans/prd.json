@@ -196,7 +196,7 @@
       "description": "Content gap audit part 1: Survey the Lenny archive. Use mcp__lennysdata__list_content to get a list of all available podcast episodes and newsletters. Also use mcp__lennysdata__search_content with broad queries like 'product', 'growth', 'leadership', 'hiring', 'AI', 'career' to find top episodes. Write content/songs/batch8/archive-survey.md listing the top 50 most important/popular Lenny episodes with guest name and topic. DONE: Survey exists. DO NOT TOUCH: code. VERIFY: pnpm build passes.",
       "steps": ["Use Lenny MCP to list/search content", "Identify top 50 episodes", "Write survey", "pnpm build passes"],
       "files": ["content/songs/batch8/archive-survey.md"],
-      "passes": false
+      "passes": true
     },
     {
       "id": 23,
@@ -205,7 +205,7 @@
       "description": "Content gap audit part 2: Compare archive to existing tracks. Read content/songs/batch8/archive-survey.md (the top 50 episodes). Read lib/albums.ts — extract all guest names and source titles from existing tracks. Compare: which top episodes have NO song yet? Write content/songs/batch8/missing-episodes.md listing every uncovered top episode with guest, title, and why it matters. DONE: Missing episodes list exists. DO NOT TOUCH: code. VERIFY: pnpm build passes.",
       "steps": ["Read archive survey", "Read lib/albums.ts for existing coverage", "Compare and find gaps", "Write missing episodes", "pnpm build passes"],
       "files": ["content/songs/batch8/missing-episodes.md"],
-      "passes": false
+      "passes": true
     },
     {
       "id": 24,
