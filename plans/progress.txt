@@ -7,3 +7,5 @@ Task 3: Redesigned per-album OG images — 80px left accent stripe, 72px title, 
 Build passes.
 Task 4: Created app/sitemap.ts — generates sitemap.xml with all static pages, tracks, albums, and topic URLs.
 Build passes.
+Task 5: Created app/robots.ts — allows all crawlers, points to sitemap.
+Build passes.

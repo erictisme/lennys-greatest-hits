@@ -43,7 +43,7 @@
       "description": "Create robots.txt. Create app/robots.ts using Next.js built-in robots generation. Allow all crawlers. Point to sitemap: 'Sitemap: https://lennys-greatest-hits.vercel.app/sitemap.xml'. DONE: /robots.txt is accessible. VERIFY: pnpm build passes.",
       "steps": ["Create app/robots.ts", "pnpm build passes"],
       "files": ["app/robots.ts"],
-      "passes": false
+      "passes": true
     },
     {
       "id": 6,
