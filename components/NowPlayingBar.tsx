@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
-import { Play, Pause, SkipBack, SkipForward, Share2, Loader2, Repeat, Repeat1, Shuffle } from "lucide-react";
+import { Play, Pause, SkipBack, SkipForward, Share2, Loader2, Repeat, Repeat1, Shuffle, Volume2, Volume1, VolumeX } from "lucide-react";
 import { useAudio } from "@/lib/audio-context";
 import { getAlbumForTrack, getAllTracks } from "@/lib/tracks";
 import { trackEvent } from "@/lib/analytics";
@@ -29,11 +29,14 @@ export default function NowPlayingBar() {
     repeatMode,
     cycleRepeat,
     shuffleAll,
+    volume,
+    setVolume,
   } = useAudio();
 
   const router = useRouter();
   const [hoverTime, setHoverTime] = useState<{ time: number; x: number } | null>(null);
   const [copied, setCopied] = useState(false);
+  const [preMuteVolume, setPreMuteVolume] = useState<number | null>(null);
 
   // Register router-based navigation for auto-advance
   useEffect(() => {
@@ -220,6 +223,42 @@ export default function NowPlayingBar() {
           <span>{duration > 0 ? formatTime(duration) : currentTrack.duration}</span>
         </div>
 
+        {/* Volume control */}
+        <div className="hidden sm:flex items-center gap-1.5 group/vol">
+          <button
+            onClick={() => {
+              if (volume > 0) {
+                setPreMuteVolume(volume);
+                setVolume(0);
+              } else {
+                setVolume(preMuteVolume ?? 1);
+                setPreMuteVolume(null);
+              }
+            }}
+            className="min-w-[44px] min-h-[44px] flex items-center justify-center text-muted-foreground hover:text-foreground transition-colors"
+            aria-label={volume === 0 ? "Unmute" : "Mute"}
+          >
+            {volume === 0 ? (
+              <VolumeX className="w-4 h-4" />
+            ) : volume < 0.5 ? (
+              <Volume1 className="w-4 h-4" />
+            ) : (
+              <Volume2 className="w-4 h-4" />
+            )}
+          </button>
+          <input
+            type="range"
+            min={0}
+            max={1}
+            step={0.01}
+            value={volume}
+            onChange={(e) => setVolume(parseFloat(e.target.value))}
+            className="w-20 h-1 accent-current cursor-pointer opacity-60 hover:opacity-100 transition-opacity"
+            style={{ accentColor: accentColor }}
+            aria-label="Volume"
+          />
+        </div>
+
         {/* Share — primary click copies link */}
         <div className="relative">
           <button
@@ -236,7 +275,7 @@ export default function NowPlayingBar() {
           </button>
           {copied && (
             <div className="absolute bottom-full right-0 mb-2 px-2 py-1 bg-foreground text-background text-xs rounded whitespace-nowrap pointer-events-none">
-              Copied!
+              Link copied! Share it with your team
             </div>
           )}
         </div>

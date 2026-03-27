@@ -31,6 +31,8 @@ interface AudioState {
   setAlbumQueue: (albumSlug: string) => void;
   setQueue: (tracks: Track[]) => void;
   shuffleAll: () => Track | null;
+  volume: number;
+  setVolume: (v: number) => void;
   accentColor: string;
   getPlayCount: (slug: string) => number;
   upNextTrack: Track | null;
@@ -59,6 +61,7 @@ export function AudioProvider({ children }: { children: ReactNode }) {
   const [upNextTrack, setUpNextTrack] = useState<Track | null>(null);
   const [countdown, setCountdown] = useState<number | null>(null);
   const [isBuffering, setIsBuffering] = useState(false);
+  const [volume, setVolumeState] = useState(1);
   const [repeatMode, setRepeatMode] = useState<"off" | "all" | "one">("off");
   const repeatModeRef = useRef(repeatMode);
   repeatModeRef.current = repeatMode;
@@ -106,7 +109,10 @@ export function AudioProvider({ children }: { children: ReactNode }) {
     // Restore saved volume
     try {
       const savedVol = localStorage.getItem("lgh-volume");
-      if (savedVol) audio.volume = parseFloat(savedVol);
+      if (savedVol) {
+        audio.volume = parseFloat(savedVol);
+        setVolumeState(parseFloat(savedVol));
+      }
     } catch {
       // ignore
     }
@@ -118,6 +124,7 @@ export function AudioProvider({ children }: { children: ReactNode }) {
     const onPause = () => setIsPlaying(false);
 
     const onVolumeChange = () => {
+      setVolumeState(audio.volume);
       try { localStorage.setItem("lgh-volume", String(audio.volume)); } catch { /* ignore */ }
     };
 
@@ -366,6 +373,12 @@ export function AudioProvider({ children }: { children: ReactNode }) {
     setCurrentTime(time);
   }, []);
 
+  const setVolume = useCallback((v: number) => {
+    const audio = audioRef.current;
+    if (!audio) return;
+    audio.volume = Math.max(0, Math.min(1, v));
+  }, []);
+
   const next = useCallback(() => {
     if (!currentTrack) return;
     const idx = queue.findIndex((t) => t.slug === currentTrack.slug);
@@ -585,6 +598,8 @@ export function AudioProvider({ children }: { children: ReactNode }) {
         setAlbumQueue,
         setQueue,
         shuffleAll,
+        volume,
+        setVolume,
         accentColor,
         getPlayCount,
         upNextTrack,
