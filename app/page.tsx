@@ -433,6 +433,9 @@ export default function Home() {
                   Build with us on Code Riff
                 </a>
               </p>
+              <p className="text-xs text-muted-foreground/30 mt-3">
+                Made in Singapore 🇸🇬
+              </p>
             </footer>
           </motion.div>
         )}

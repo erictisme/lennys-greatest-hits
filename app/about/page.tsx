@@ -55,13 +55,16 @@ export default function AboutPage() {
         </p>
       </div>
 
-      <footer className="border-t border-border/50 py-8 mt-12 text-center">
+      <footer className="border-t border-border/50 py-8 mt-12 text-center space-y-2">
         <Link
           href="/"
           className="text-sm text-muted-foreground/60 hover:text-foreground transition-colors"
         >
           &larr; Back to music
         </Link>
+        <p className="text-xs text-muted-foreground/30">
+          Made in Singapore 🇸🇬
+        </p>
       </footer>
     </div>
   );
