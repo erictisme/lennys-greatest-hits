@@ -6,3 +6,12 @@ logs/
 *.tsbuildinfo
 next-env.d.ts
 .vercel
+
+# Claude Code internal files
+.claude/
+
+# Ralph session transcripts (large, contain internal context)
+*-full.txt
+
+# Video clips (large files, not for git)
+content/launch/*.mp4
