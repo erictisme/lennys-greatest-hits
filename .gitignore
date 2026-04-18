@@ -15,3 +15,12 @@ next-env.d.ts
 
 # Video clips (large files, not for git)
 content/launch/*.mp4
+
+# Internal ops docs — not for public repo
+plans/
+content/qa/
+content/improvements/
+.claude.json
+CONTEST-STRATEGY.md
+2026-03-19-*.md
+2026-03-19-*.txt

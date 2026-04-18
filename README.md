@@ -58,7 +58,7 @@ I have a violin diploma and sing in a church band. I spent years wanting to writ
 
 Then Lenny announced his hackathon. I thought: what if I could turn his best insights into songs I'd actually listen to?
 
-I'm not a developer. I built this entirely by directing AI tools — Claude Code for the code and lyrics, Suno for the music. No code written by hand. I started around my 34th birthday, worked nights for about 3 weeks, and won the contest.
+I'm not a developer. I built this entirely by directing AI tools — Claude Code for the code and lyrics, Suno for the music. No code written by hand. I started around my 28th birthday, worked nights for about 3 weeks, and won the contest.
 
 ---
 
