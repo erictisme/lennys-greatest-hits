@@ -69,8 +69,6 @@ The full song generation pipeline is open-sourced here:
 - `content/songs/` — lyrics, research briefs, Suno prompts for all 102 songs across 8 batches
 - `plans/` — the PRD, AI agent run instructions, batch feedback loops
 - `content/lyric-craft-guide.md` — 6 rules for writing lyrics that don't sound like AI slop
-- `content/brainstorm/lyric-principles.md` — 10 songwriting principles from studying reference artists
-- `content/brainstorm/suno-lyric-tips.md` — 13-point Suno v5 technical checklist
 
 ---
 
@@ -82,8 +80,6 @@ The full song generation pipeline is open-sourced here:
 
 ---
 
-## License
-
-MIT
+© 2026 Eric Tan. All rights reserved.
 
 Built by [Eric Tan](https://github.com/erictisme) · Singapore
